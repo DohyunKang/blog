@@ -1,0 +1,4 @@
+[
+  {"slug":"hello","title":"블로그를 열며","date":"2026-10-22","tags":["일기"],"summary":"직접 만들어 보며 배운 것들을 여기에 적어 둡니다."},
+  {"slug":"how-to-write","title":"새 글 쓰는 법 (메모)","date":"2026-10-22","tags":["메모"],"summary":"posts 폴더에 마크다운 파일 하나, index.json에 한 줄이면 끝."}
+]
