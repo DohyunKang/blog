@@ -86,48 +86,18 @@
       scrollTo(0,0);
     });
     progress(true);
-    comments(p.slug);
+    contact(p.title);
   }
 
-  // ───── 댓글: 로그인 없이 닉네임+비밀번호(디시 방식). 서버 연결 전에는 내 브라우저에만 저장되는 미리보기 ─────
-  var live=!!(cfg.supabaseUrl&&cfg.anonKey);
-  function api(path,opt){opt=opt||{};opt.headers=Object.assign({apikey:cfg.anonKey,Authorization:'Bearer '+cfg.anonKey,'Content-Type':'application/json'},opt.headers||{});return fetch(cfg.supabaseUrl+'/rest/v1/'+path,opt)}
-  var store={
-    list:function(slug){
-      if(live)return api('comments_public?slug=eq.'+encodeURIComponent(slug)+'&order=created_at.asc&limit=200').then(function(r){return r.json()});
-      try{return Promise.resolve(JSON.parse(localStorage.getItem('cm-'+slug)||'[]'))}catch(e){return Promise.resolve([])}
-    },
-    add:function(slug,nick,pw,body){
-      if(live)return api('rpc/add_comment',{method:'POST',body:JSON.stringify({p_slug:slug,p_nick:nick,p_pw:pw,p_body:body})}).then(function(r){if(!r.ok)throw 0});
-      var a=JSON.parse(localStorage.getItem('cm-'+slug)||'[]');a.push({id:Date.now(),nick:nick,body:body,pw:pw,created_at:new Date().toISOString()});localStorage.setItem('cm-'+slug,JSON.stringify(a));return Promise.resolve();
-    },
-    del:function(slug,id,pw){
-      if(live)return api('rpc/delete_comment',{method:'POST',body:JSON.stringify({p_id:id,p_pw:pw})}).then(function(r){return r.json()});
-      var a=JSON.parse(localStorage.getItem('cm-'+slug)||'[]'),n=a.filter(function(c){return!(c.id===id&&c.pw===pw)});localStorage.setItem('cm-'+slug,JSON.stringify(n));return Promise.resolve(n.length<a.length);
-    }
-  };
-  function ago(s){var d=(Date.now()-new Date(s))/1000;if(d<60)return'방금';if(d<3600)return Math.floor(d/60)+'분 전';if(d<86400)return Math.floor(d/3600)+'시간 전';return s.slice(0,10)}
-  function comments(slug){
-    var el=document.getElementById('cmt');
-    el.innerHTML='<h2>💬 댓글 <span class="meta" id="cn"></span></h2><p class="note">로그인 없이 닉네임과 비밀번호만 적으면 됩니다. 비밀번호는 삭제할 때만 쓰여요.</p>'+
-      (live?'':'<p class="warn">⚠ 댓글 서버 연결 전 미리보기 — 지금 쓴 댓글은 내 브라우저에만 저장됩니다.</p>')+
-      '<form class="cform" id="cf" autocomplete="off"><input id="cn1" maxlength="20" placeholder="닉네임" value="ㅇㅇ" required><input id="cp1" type="password" maxlength="40" minlength="2" placeholder="비밀번호 (삭제용)" required>'+
-      '<input class="hp" id="hp" tabindex="-1" autocomplete="off" placeholder="비워 두세요"><textarea id="cb1" maxlength="1000" placeholder="댓글을 남겨 주세요" required></textarea>'+
-      '<div class="row"><span id="cs"></span><button class="btn" type="submit">등록</button></div></form><div class="cl" id="cl"></div>';
-    var cl=document.getElementById('cl'),cs=document.getElementById('cs');
-    function load(){store.list(slug).then(function(a){
-      document.getElementById('cn').textContent=a.length+'개';
-      cl.innerHTML=a.length?a.map(function(c){return'<div class="ci"><div class="h"><b>'+esc(c.nick)+'</b><span>'+ago(c.created_at)+'</span><button data-id="'+c.id+'">삭제</button></div><p>'+esc(c.body)+'</p></div>'}).join(''):'<p class="empty" style="padding:14px 0">첫 댓글을 남겨 보세요.</p>';
-      [].forEach.call(cl.querySelectorAll('button'),function(b){b.onclick=function(){var pw=prompt('댓글 작성 때 적은 비밀번호');if(pw==null)return;store.del(slug,+b.dataset.id,pw).then(function(ok){if(!ok)alert('비밀번호가 맞지 않아요.');load()})}});
-    }).catch(function(){cl.innerHTML='<p class="empty">댓글을 불러오지 못했어요.</p>'})}
-    document.getElementById('cf').onsubmit=function(e){
-      e.preventDefault();if(document.getElementById('hp').value)return;
-      var last=+sessionStorage.getItem('cm-last')||0;if(Date.now()-last<15000){cs.textContent='조금 있다가 다시 남겨 주세요 (도배 방지 15초)';return}
-      var n=document.getElementById('cn1').value.trim(),pw=document.getElementById('cp1').value,b=document.getElementById('cb1').value.trim();
-      if(!n||!b||pw.length<2)return;cs.textContent='등록 중…';
-      store.add(slug,n,pw,b).then(function(){sessionStorage.setItem('cm-last',Date.now());document.getElementById('cb1').value='';cs.textContent='';load()},function(){cs.textContent='등록에 실패했어요. 잠시 뒤 다시 시도해 주세요.'});
-    };
-    load();
+  // ───── 댓글 대신 연락: 글을 읽고 하고 싶은 말은 메일로 ─────
+  var MAIL='kid708502@gmail.com';
+  function contact(title){
+    var el=document.getElementById('cmt'),sub=encodeURIComponent('[블로그] '+title);
+    el.innerHTML='<h2>✉️ 이 글 어떠셨나요?</h2><p class="note">댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.</p>'+
+      '<p style="display:flex;gap:8px;flex-wrap:wrap;margin:0"><a class="btn pri" href="mailto:'+MAIL+'?subject='+sub+'">메일 보내기</a>'+
+      '<a class="btn" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&to='+MAIL+'&su='+sub+'">Gmail로 쓰기</a>'+
+      '<button class="btn" id="cpm" type="button">'+MAIL+' 복사</button></p>';
+    document.getElementById('cpm').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(MAIL):Promise.reject()).then(function(){b.textContent='복사됨 ✓'},function(){b.textContent=MAIL})};
   }
 
   function route(){
