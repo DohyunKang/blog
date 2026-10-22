@@ -35,7 +35,7 @@
   document.getElementById('lang').onchange=function(){LANG=this.value;try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
-    return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
+    return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
       '<div class="glass box ctc"><h3>'+t('연락처')+'</h3><div class="lk"><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
@@ -130,8 +130,17 @@
     document.getElementById('cpm').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(MAIL):Promise.reject()).then(function(){b.textContent='복사됨 ✓'},function(){b.textContent=MAIL})};
   }
 
+  function lightbox(){
+    var b=document.getElementById('av');if(!b)return;
+    b.onclick=function(){
+      var o=document.createElement('div');o.className='lb-ov';o.innerHTML='<img src="img/me.jpg" alt="강도현">';
+      function close(){o.remove();removeEventListener('keydown',k)}
+      function k(e){if(e.key==='Escape')close()}
+      o.onclick=close;addEventListener('keydown',k);document.body.appendChild(o);
+    };
+  }
   function route(){
-    chrome();var h=location.hash,m;
+    chrome();setTimeout(lightbox,0);var h=location.hash,m;
     if(m=h.match(/^#\/post\/(.+)$/))post(decodeURIComponent(m[1]));
     else if(m=h.match(/^#\/tag\/(.+)$/)){var t=decodeURIComponent(m[1]);home(function(p){return p.tags.indexOf(t)>=0},'#'+t,'t:'+t)}
     else if(m=h.match(/^#\/series\/(.+)$/)){var s=decodeURIComponent(m[1]);home(function(p){return p.series===s},s,'s:'+s)}
