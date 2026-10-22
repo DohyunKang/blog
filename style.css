@@ -31,7 +31,7 @@ button{font-family:inherit}
 
 /* 머리 */
 header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:var(--glass);border-bottom:1px solid var(--line)}
-.hd{max-width:1080px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;gap:22px}
+.hd{max-width:1240px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;gap:22px}
 .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
 .logo i{font-style:normal;color:var(--accent)}
 .hd nav{display:flex;gap:20px}
@@ -42,7 +42,7 @@ header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);-webkit-b
 .ib{border:0;background:var(--glass2);color:var(--ink);width:32px;height:32px;border-radius:50%;cursor:pointer;flex:none}
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:60}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px 70px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px 70px}
 .glass{background:var(--glass);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 50px -28px rgba(0,0,0,.7)}
 
 /* 홈: 글자로 시작 */
@@ -52,13 +52,13 @@ header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);-webkit-b
 .hero p{margin:16px 0 0;color:var(--sub);font-size:1.05rem;max-width:34em}
 .hero .st{margin-top:18px;font-size:.85rem;color:var(--faint)}
 .hero .st b{color:var(--ink);margin-right:3px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
 
 /* 대표 글 */
 .feat{display:grid;grid-template-columns:1.05fr 1fr;overflow:hidden;margin-bottom:22px;transition:transform .25s}
 .feat:hover{transform:translateY(-3px)}
-.feat .th{min-height:260px;border-radius:0}
-.feat .fb{padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
+.feat .th{min-height:330px;border-radius:0}
+.feat .fb{padding:36px 38px;display:flex;flex-direction:column;justify-content:center}
 .feat .lb{font-size:.74rem;font-weight:800;letter-spacing:.12em;color:var(--warm);margin-bottom:10px}
 .feat h2{margin:0 0 10px;font-size:1.55rem;line-height:1.38;letter-spacing:-.025em}
 .feat p{margin:0 0 16px;color:var(--sub);font-size:.95rem}
@@ -69,16 +69,16 @@ header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);-webkit-b
 .lh h3{margin:0;font-size:1.05rem}
 .lh input{margin-left:auto;font:inherit;font-size:.88rem;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--glass2);color:var(--ink);min-width:150px}
 .lh input::placeholder{color:var(--faint)}
-.row{display:grid;grid-template-columns:1fr 150px;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:center}
+.row{display:grid;grid-template-columns:1fr 210px;gap:26px;padding:28px 0;border-top:1px solid var(--line);align-items:center}
 .row .cat{display:flex;gap:8px;align-items:center;margin-bottom:6px;font-size:.78rem}
 .cat .sr{font-weight:800;color:var(--accent);background:var(--glass2);padding:2px 10px;border-radius:999px}
 .cat span{color:var(--faint)}
-.row h2{margin:0 0 5px;font-size:1.18rem;line-height:1.45;letter-spacing:-.02em}
+.row h2{margin:0 0 6px;font-size:1.32rem;line-height:1.45;letter-spacing:-.02em}
 .row:hover h2{color:var(--accent)}
-.row p{margin:0 0 8px;color:var(--sub);font-size:.9rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.row p{margin:0 0 10px;color:var(--sub);font-size:1rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .meta{font-size:.78rem;color:var(--faint)}
 .th{background-repeat:no-repeat;position:relative}
-.row .th{height:100px;border-radius:12px}
+.row .th{height:136px;border-radius:12px}
 .pin{color:var(--warm);font-size:.78rem;font-weight:800;margin-right:6px}
 .empty{color:var(--faint);text-align:center;padding:40px 0}
 
@@ -182,3 +182,5 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
 .ctc .lk{display:flex;gap:16px;flex-wrap:wrap;margin:0}.ctc .lk a{font-size:.9rem;font-weight:600;color:var(--accent)}.ctc h3{margin:0 0 10px}
 .prof h2 a:hover{color:var(--accent)!important}
+
+.lsel{font:inherit;font-size:.82rem;font-weight:600;color:var(--sub);background:var(--glass2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}.lsel option{color:#111}

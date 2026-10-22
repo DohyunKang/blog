@@ -3,11 +3,12 @@
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
   // 언어(한/영): 저장된 선택 > 브라우저 언어
-  var LANG='ko';try{LANG=localStorage.getItem('blog-lang')||(/^ko/i.test(navigator.language)?'ko':'en')}catch(e){}
-  var D={en:{'글':'Posts','소개':'About','포트폴리오':'Portfolio','메일':'Mail','최근 글':'Recent','최신순':'Newest','오래된순':'Oldest','태그':'Tags','시리즈':'Series','전체':'All','전체 글':'All posts','고정':'Pinned','검색':'Search','맞는 글이 없어요.':'Nothing found.','불러오는 중…':'Loading…','링크 복사':'Copy link','복사됨 ✓':'Copied ✓','주소창에서 복사해 주세요':'Copy from the address bar','← 목록':'← List','← 이전 글':'← Previous','다음 글 →':'Next →','목차':'Contents','분 읽기':' min read','이 글 어떠셨나요?':'What did you think?','댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.':'No comments here, just email. Opinions, questions, small talk are all welcome.','메일 보내기':'Send mail','Gmail로 쓰기':'Write in Gmail','복사':'Copy','글을 찾을 수 없어요.':'Post not found.','편':' posts','시리즈 수':' series','태그 수':' tags','일하다가, 운동하다가, 문득 든 생각을 그냥 적어요.':'Work, workouts, and whatever crosses my mind. I just write it down.','연락처':'Contact','강도현':'Dohyun Kang','나의 방향':'My Direction','AI 시대 고찰':'Thoughts on the AI Era','일상':'Daily','운동':'Workout','생각':'Thoughts','일기':'Diary','오늘 있었던 일을 적어요.':'Writing down what happened today.'}};
-  function t(k){return (LANG==='en'&&D.en[k])||k}
-  function pt(p){return LANG==='en'&&p.title_en?p.title_en:p.title}
-  function ps(p){return LANG==='en'&&p.summary_en?p.summary_en:p.summary}
+  var LANG='ko';try{LANG=localStorage.getItem('blog-lang')||(/^ja/i.test(navigator.language)?'ja':/^zh/i.test(navigator.language)?'zh':/^ko/i.test(navigator.language)?'ko':'en')}catch(e){}
+  var D={"en": {"글": "Posts", "소개": "About", "포트폴리오": "Portfolio", "메일": "Mail", "최근 글": "Recent", "태그": "Tags", "시리즈": "Series", "전체": "All", "전체 글": "All posts", "고정": "Pinned", "검색": "Search", "맞는 글이 없어요.": "Nothing found.", "불러오는 중…": "Loading…", "링크 복사": "Copy link", "복사됨 ✓": "Copied ✓", "주소창에서 복사해 주세요": "Copy from the address bar", "← 목록": "← List", "← 이전 글": "← Previous", "다음 글 →": "Next →", "목차": "Contents", "분 읽기": " min read", "이 글 어떠셨나요?": "What did you think?", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "No comments here, just email. Opinions, questions, small talk are all welcome.", "메일 보내기": "Send mail", "Gmail로 쓰기": "Write in Gmail", "복사": "Copy", "글을 찾을 수 없어요.": "Post not found.", "강도현": "Dohyun Kang", "나의 방향": "My Direction", "AI 시대 고찰": "Thoughts on the AI Era", "일상": "Daily", "운동": "Workout", "생각": "Thoughts", "일기": "Diary", "오늘 있었던 일을 적어요.": "Writing down what happened today.", "최신순": "Newest", "오래된순": "Oldest", "연락처": "Contact", "재밌게 살자.": "Enjoy your life.", "연락": "Contact", "글 수": " posts", "시리즈 수": " series", "태그 수": " tags"}, "ja": {"글": "記事", "소개": "紹介", "포트폴리오": "ポートフォリオ", "메일": "メール", "최근 글": "最近の記事", "태그": "タグ", "시리즈": "シリーズ", "전체": "すべて", "전체 글": "すべての記事", "고정": "固定", "검색": "検索", "맞는 글이 없어요.": "見つかりませんでした。", "불러오는 중…": "読み込み中…", "링크 복사": "リンクをコピー", "복사됨 ✓": "コピーしました ✓", "주소창에서 복사해 주세요": "アドレスバーからコピーしてください", "← 목록": "← 一覧", "← 이전 글": "← 前の記事", "다음 글 →": "次の記事 →", "목차": "目次", "분 읽기": "分で読めます", "이 글 어떠셨나요?": "どうでしたか？", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "コメントの代わりにメールで受け付けています。意見・質問・雑談、何でも歓迎です。", "메일 보내기": "メールを送る", "Gmail로 쓰기": "Gmailで書く", "복사": "コピー", "글을 찾을 수 없어요.": "記事が見つかりません。", "강도현": "カン・ドヒョン", "나의 방향": "私の方向", "AI 시대 고찰": "AI時代を考える", "일상": "日常", "운동": "運動", "생각": "思ったこと", "일기": "日記", "오늘 있었던 일을 적어요.": "今日あったことを書きます。", "최신순": "新しい順", "오래된순": "古い順", "연락처": "連絡先", "재밌게 살자.": "人生、楽しもう。", "연락": "連絡先", "글 수": "記事", "시리즈 수": "シリーズ", "태그 수": "タグ"}, "zh": {"글": "文章", "소개": "关于", "포트폴리오": "作品集", "메일": "邮件", "최근 글": "最近文章", "태그": "标签", "시리즈": "系列", "전체": "全部", "전체 글": "全部文章", "고정": "置顶", "검색": "搜索", "맞는 글이 없어요.": "没有找到。", "불러오는 중…": "加载中…", "링크 복사": "复制链接", "복사됨 ✓": "已复制 ✓", "주소창에서 복사해 주세요": "请从地址栏复制", "← 목록": "← 列表", "← 이전 글": "← 上一篇", "다음 글 →": "下一篇 →", "목차": "目录", "분 읽기": "分钟阅读", "이 글 어떠셨나요?": "你觉得怎么样？", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "这里不设评论，欢迎发邮件。意见、问题、闲聊都可以。", "메일 보내기": "发邮件", "Gmail로 쓰기": "用 Gmail 写", "복사": "复制", "글을 찾을 수 없어요.": "找不到这篇文章。", "강도현": "姜道贤", "나의 방향": "我的方向", "AI 시대 고찰": "AI 时代的思考", "일상": "日常", "운동": "运动", "생각": "想法", "일기": "日记", "오늘 있었던 일을 적어요.": "写下今天发生的事。", "최신순": "最新", "오래된순": "最早", "연락처": "联系方式", "재밌게 살자.": "好好享受生活。", "연락": "联系方式", "글 수": "篇", "시리즈 수": "个系列", "태그 수": "个标签"}};
+  D.ko={'글 수':'글','시리즈 수':'시리즈','태그 수':'태그'};
+  function t(k){return (D[LANG]&&D[LANG][k])||k}
+  function pt(p){return LANG!=='ko'&&p['title_'+LANG]?p['title_'+LANG]:p.title}
+  function ps(p){return LANG!=='ko'&&p['summary_'+LANG]?p['summary_'+LANG]:p.summary}
   function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
   // 썸네일: 같은 야경 사진을 글마다 다른 부분으로 잘라 색을 입힘 — 이모지·무지개 그라데이션 없이 사이트와 한 톤
   function thumb(p,extra){
@@ -29,12 +30,12 @@
     var n=document.querySelectorAll('.hd nav a');n[0].textContent=t('글');n[1].textContent=t('소개');
     document.querySelectorAll('.tl2')[0].textContent=t('포트폴리오');
     document.documentElement.lang=LANG;
-    var lb=document.getElementById('lang');lb.textContent=LANG==='en'?'한국어':'EN';
+    document.getElementById('lang').value=LANG;
   }
-  document.getElementById('lang').onclick=function(){LANG=LANG==='en'?'ko':'en';try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
+  document.getElementById('lang').onchange=function(){LANG=this.value;try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
-    return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+(LANG==='en'?'Enjoy your life.':'재밌게 살자.')+'</p></div></div>'+
+    return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
       '<div class="glass box ctc"><h3>'+t('연락처')+'</h3><div class="lk"><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
@@ -51,7 +52,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+(p.title_en||'')+(p.summary_en||'')+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1))});
     var top=(!filter&&!q)?shown[0]:null,rest=top?shown.slice(1):shown;
-    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+(LANG==='en'?' posts':'글')+' · <b>'+Object.keys(counts('series')).length+'</b>'+(LANG==='en'?' series':'시리즈')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+(LANG==='en'?' tags':'태그')+'</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
+    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+t('글 수')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
     var feat=top?'<a class="glass feat" href="'+link(top)+'">'+thumb(top)+'<div class="fb"><div class="lb">'+(state.asc?'OLDEST':(top.pinned?'PINNED':'LATEST'))+'</div><h2>'+esc(pt(top))+'</h2><p>'+esc(ps(top))+'</p><span class="meta">'+esc(top.date)+top.tags.map(function(x){return' · #'+esc(t(x))}).join('')+'</span></div></a>':'';
     app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+t(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
       (rest.length?rest.map(row).join(''):'<p class="empty">'+(shown.length?'':t('맞는 글이 없어요.'))+'</p>')+'</div></section>'+side(cur)+'</div>';
@@ -63,7 +64,7 @@
 
   // 소개 = 회사 임직원 프로필 페이지처럼
   function about(){
-    document.title=(LANG==='en'?'About':'소개')+' · dohyun.log';
+    document.title=t('소개')+' · dohyun.log';
     var pics=['img/p1.jpg','img/p2.jpg'];
     var imgs=pics.map(function(u,i){return'<img src="'+u+'" alt="'+(i?'':'강도현')+'" style="animation-duration:'+(pics.length*7)+'s;animation-delay:-'+(i*7)+'s">'}).join('');
     function li(t,d,x){return'<li><small>'+d+'</small><b>'+t+'</b><span>'+x+'</span></li>'}
@@ -76,23 +77,12 @@
       li('Techways — 현장실습','2024.08 – 2025.02','시험 자동화 도구 개발 (C#, LabVIEW)')+
       li('한국알프스 — R&D 센터 인턴','2024.01 – 2024.02','CAN/CAN FD 차량 스위치 검증')+
       li('고주파 안테나 설계 연구실 — 학부연구생','2022.09 – 2023.12','양봉 IoT, CST 안테나 설계')+
-      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+(LANG==='en'?'resume.en.html':'resume.html')+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a> <a class="btn" href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a></p></div></div>';
+      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+({ko:'resume.html',en:'resume.en.html',ja:'resume.ja.html',zh:'resume.zh.html'}[LANG])+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a> <a class="btn" href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a></p></div></div>';
 
-    if(LANG==='en'){
-      var AB={'소속':'Company','하는 일':'Role','학력':'Education','연락':'Contact','이력서 보기':'Resume','이력':'Timeline','포트폴리오':'Portfolio',
-        '직접 개발하고 경험하며 PM의 길을 걷고 있습니다.':'Building things myself and learning the PM path along the way.',
-        '제품·마케팅 기획, 팀 간 조율, 개발':'Product and marketing planning, team coordination, development',
-        '제품·마케팅 기획, 팀 간 조율 / 개발':'Product and marketing planning, team coordination / development',
-        '인천대학교 정보통신공학과 (학점 3.93 / 4.5)':'Incheon National University, Information and Telecommunication Engineering (GPA 3.93 / 4.5)',
-        'ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상':'ACK 2024 Excellent Paper Award · Hanium Contest Honorable Mention · Industry-Academia Capstone Silver · Field Practice Essay Contest Grand Prize',
-        'C/C++ · 리눅스 커널 · 디바이스 드라이버':'C/C++ · Linux kernel · Device drivers',
-        'Telechips 아카데미':'Telechips Academy','Techways — 현장실습':'Techways — Field practice',
-        '시험 자동화 도구 개발 (C#, LabVIEW)':'Test automation tool development (C#, LabVIEW)',
-        '한국알프스 — R':'Alps Alpine Korea — R','CAN/CAN FD 차량 스위치 검증':'CAN/CAN FD vehicle switch verification',
-        '센터 인턴':'Center intern','고주파 안테나 설계 연구실 — 학부연구생':'RF Antenna Design Lab — Undergraduate researcher','양봉 IoT, CST 안테나 설계':'Beekeeping IoT, CST antenna design',
-        '강도현 <span':'Dohyun Kang <span','<span class="meta">Dohyun Kang</span>':'','수상':'Awards'};
+    if(LANG!=='ko'){
+      var AB={"en": {"소속": "Company", "하는 일": "Role", "학력": "Education", "연락": "Contact", "이력서 보기": "Resume", "이력": "Timeline", "포트폴리오": "Portfolio", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "Building things myself and learning the PM path along the way.", "제품·마케팅 기획, 팀 간 조율, 개발": "Product and marketing planning, team coordination, development", "제품·마케팅 기획, 팀 간 조율 / 개발": "Product and marketing planning, team coordination / development", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "Incheon National University, Information and Telecommunication Engineering (GPA 3.93 / 4.5)", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 Excellent Paper Award · Hanium Contest Honorable Mention · Industry-Academia Capstone Silver · Field Practice Essay Contest Grand Prize", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linux kernel · Device drivers", "Telechips 아카데미": "Telechips Academy", "Techways — 현장실습": "Techways — Field practice", "시험 자동화 도구 개발 (C#, LabVIEW)": "Test automation tool development (C#, LabVIEW)", "한국알프스 — R": "Alps Alpine Korea — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD vehicle switch verification", "센터 인턴": "Center intern", "고주파 안테나 설계 연구실 — 학부연구생": "RF Antenna Design Lab — Undergraduate researcher", "양봉 IoT, CST 안테나 설계": "Beekeeping IoT, CST antenna design", "강도현 <span": "Dohyun Kang <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "Awards"}, "ja": {"소속": "所属", "하는 일": "担当", "학력": "学歴", "연락": "連絡先", "이력서 보기": "履歴書", "이력": "経歴", "포트폴리오": "ポートフォリオ", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "自分で開発し、経験しながらPMの道を歩いています。", "제품·마케팅 기획, 팀 간 조율, 개발": "製品・マーケティング企画、チーム間の調整、開発", "제품·마케팅 기획, 팀 간 조율 / 개발": "製品・マーケティング企画、チーム間の調整 / 開発", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "仁川大学 情報通信工学科（GPA 3.93 / 4.5）", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 論文優秀賞 · ハニウム公募展 入選 · 産学キャップストーン 銀賞 · 現場実習手記コンテスト 最優秀賞", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linuxカーネル · デバイスドライバ", "Telechips 아카데미": "Telechips アカデミー", "Techways — 현장실습": "Techways — 現場実習", "시험 자동화 도구 개발 (C#, LabVIEW)": "試験自動化ツール開発（C#, LabVIEW）", "한국알프스 — R": "韓国アルプス — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD 車載スイッチ検証", "센터 인턴": "センター インターン", "고주파 안테나 설계 연구실 — 학부연구생": "高周波アンテナ設計研究室 — 学部研究生", "양봉 IoT, CST 안테나 설계": "養蜂IoT、CSTアンテナ設計", "강도현 <span": "カン・ドヒョン <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "受賞"}, "zh": {"소속": "公司", "하는 일": "工作内容", "학력": "学历", "연락": "联系", "이력서 보기": "简历", "이력": "经历", "포트폴리오": "作品集", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "一边亲手开发、积累经验，一边走PM的路。", "제품·마케팅 기획, 팀 간 조율, 개발": "产品与营销策划、跨团队协调、开发", "제품·마케팅 기획, 팀 간 조율 / 개발": "产品与营销策划、跨团队协调 / 开发", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "仁川大学 信息通信工程系（GPA 3.93 / 4.5）", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 论文优秀奖 · Hanium 竞赛入选 · 产学 Capstone 银奖 · 现场实习征文大赛 最优秀奖", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linux 内核 · 设备驱动", "Telechips 아카데미": "Telechips 学院", "Techways — 현장실습": "Techways — 现场实习", "시험 자동화 도구 개발 (C#, LabVIEW)": "测试自动化工具开发（C#, LabVIEW）", "한국알프스 — R": "韩国阿尔卑斯 — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD 车载开关验证", "센터 인턴": "中心实习生", "고주파 안테나 설계 연구실 — 학부연구생": "高频天线设计实验室 — 本科研究生", "양봉 IoT, CST 안테나 설계": "养蜂IoT、CST天线设计", "강도현 <span": "姜道贤 <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "获奖"}}[LANG];
       var s=app.innerHTML;Object.keys(AB).forEach(function(k){s=s.split(k).join(AB[k])});app.innerHTML=s;
-      document.title='About · dohyun.log';
+      document.title=t('소개')+' · dohyun.log';
     }
     progress(false);
   }
@@ -115,7 +105,7 @@
       '<div class="pn">'+(posts[i+1]?'<a class="glass" href="'+link(posts[i+1])+'"><small>'+t('← 이전 글')+'</small>'+esc(pt(posts[i+1]))+'</a>':'<span></span>')+(posts[i-1]?'<a class="glass" href="'+link(posts[i-1])+'"><small>'+t('다음 글 →')+'</small>'+esc(pt(posts[i-1]))+'</a>':'<span></span>')+'</div>'+
       '<section class="glass cmt" id="cmt"></section></div><aside class="glass toc" id="toc"><h3>'+t('목차')+'</h3></aside></div>';
     document.getElementById('cplink').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(function(){b.textContent=t('복사됨 ✓')},function(){b.textContent=t('주소창에서 복사해 주세요')})};
-    fetch('posts/'+encodeURIComponent(p.slug)+(LANG==='en'?'.en':'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
+    fetch('posts/'+encodeURIComponent(p.slug)+(LANG!=='ko'?'.'+LANG:'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
       var b=document.getElementById('body');b.innerHTML=marked.parse(md);
       document.getElementById('rt').textContent=mins(b.textContent)+t('분 읽기');
       var toc=document.getElementById('toc'),hs=b.querySelectorAll('h2,h3'),links=[];

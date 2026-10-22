@@ -14,7 +14,11 @@
   "pos": "96% 44%",
   "size": "260%",
   "title_en": "I Took Body Profile Photos",
-  "summary_en": "I set a date and saw it through. Sort of practicing for work, with my body first."
+  "summary_en": "I set a date and saw it through. Sort of practicing for work, with my body first.",
+  "title_ja": "ボディプロフィールを撮った — 期間を決めて最後までやってみた記録",
+  "summary_ja": "日にちを決めて、最後までやった。仕事の練習を、体で先にやってみた感じ。",
+  "title_zh": "我拍了身体写真——定好期限，做到底的记录",
+  "summary_zh": "定好日期，一路做到底。算是把工作需要的东西，先用身体试了一遍。"
  },
  {
   "slug": "my-direction",
@@ -29,7 +33,11 @@
   "pinned": true,
   "summary": "뭐가 되고 싶은지보다, 왜 하고 싶은지를 적어 봤다.",
   "title_en": "Where I'm Headed, and Why",
-  "summary_en": "Not what I want to be, but why I want it. I wrote it down."
+  "summary_en": "Not what I want to be, but why I want it. I wrote it down.",
+  "title_ja": "私はなぜ、開発者でありPMであり、いろいろなエンターテイナーになりたいのか",
+  "summary_ja": "何になりたいかではなく、なぜなりたいのか。それを書いておいた。",
+  "title_zh": "我为什么想成为开发者、PM，还有一个多面的entertainer",
+  "summary_zh": "比起想成为什么，我更想写下为什么想做。"
  },
  {
   "slug": "ai-era-what-to-do",
@@ -43,6 +51,10 @@
   "emoji": "🤖",
   "summary": "AI가 코드를 짜 주는 시대에 뭘로 먹고살지. 구현 말고 사람한테 남는 게 뭔지 생각해 봤다.",
   "title_en": "What Is a Developer Supposed to Do in the AI Era?",
-  "summary_en": "What I've been thinking: when AI writes the code, what's left for people?"
+  "summary_en": "What I've been thinking: when AI writes the code, what's left for people?",
+  "title_ja": "AIがコードを代わりに書いてくれる時代、私は何で食べていくのか",
+  "summary_ja": "実装が安くなった今、大事になったものと、自分で決めたルールを書いた。",
+  "title_zh": "AI替人写代码的时代，我靠什么吃饭",
+  "summary_zh": "AI写代码的时代，靠什么吃饭。除了实现，留给人的是什么，我想了想。"
  }
 ]
