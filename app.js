@@ -14,7 +14,7 @@
   function counts(key){var m={};posts.forEach(function(p){(key==='tags'?p.tags:(p.series?[p.series]:[])).forEach(function(x){m[x]=(m[x]||0)+1})});return m}
   function side(cur){
     var tg=counts('tags'),sr=counts('series');
-    return '<aside class="side"><div class="glass prof"><img src="me.jpg" alt="강도현"><div><h2>강도현</h2><p>직접 만들어 보며 배우고,<br>배운 걸 기록합니다.</p>'+
+    return '<aside class="side"><div class="glass prof"><div class="ph"><img src="img/p1.jpg" alt="강도현" loading="eager"><img src="img/p2.jpg" alt="" loading="lazy"></div><div><h2>강도현</h2><p>직접 만들어 보며 배우고,<br>배운 걸 기록합니다.</p>'+
       '<div class="links"><a href="https://dohyunkang.github.io/">포트폴리오</a><a href="https://dohyunkang.github.io/resume.html">이력서</a><a href="https://github.com/DohyunKang">GitHub</a></div></div></div>'+
       '<div class="glass box"><h3>Tags</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">전체<b>'+posts.length+'</b></a>'+
       Object.keys(tg).map(function(t){return'<a class="chip'+(cur==='t:'+t?' on':'')+'" href="#/tag/'+encodeURIComponent(t)+'">#'+esc(t)+'<b>'+tg[t]+'</b></a>'}).join('')+'</div></div>'+
@@ -29,7 +29,9 @@
     var q=state.q.toLowerCase();
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
-    app.innerHTML='<div class="grid">'+side(cur)+'<section><div class="sech"><h1>'+esc(title)+' <span class="meta">'+shown.length+'개</span></h1><input id="q" type="search" placeholder="글 검색" value="'+esc(state.q)+'"></div>'+
+    var sr=Object.keys(counts('series')).length,tgn=Object.keys(counts('tags')).length;
+    var mast=(!filter&&!q)?'<section class="glass mast"><div><p class="eyebrow">dohyun&#39;s log</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p class="lead">직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="stat"><div><b>'+posts.length+'</b>글</div><div><b>'+sr+'</b>시리즈</div><div><b>'+tgn+'</b>태그</div></div><div class="act"><a class="btn pri" href="#/about">소개 보기</a><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a></div></div><div class="frame">'+'<div class="ph"><img src="img/p1.jpg" alt="강도현" loading="eager"><img src="img/p2.jpg" alt="" loading="lazy"></div>'+'</div></section>':'';
+    app.innerHTML=mast+'<div class="grid">'+side(cur)+'<section><div class="sech"><h1>'+esc(title)+' <span class="meta">'+shown.length+'개</span></h1><input id="q" type="search" placeholder="글 검색" value="'+esc(state.q)+'"></div>'+
       (shown.length?'<div class="cards">'+shown.map(card).join('')+'</div>':'<p class="empty">맞는 글이 없어요.</p>')+'</section></div>';
     var qi=document.getElementById('q');
     qi.oninput=function(){state.q=qi.value.trim();var pos=qi.selectionStart;home(filter,title,cur);var n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
