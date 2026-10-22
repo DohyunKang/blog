@@ -169,3 +169,8 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 
 @media (max-width:900px){.grid{grid-template-columns:1fr}aside.side{position:static}.pgrid{grid-template-columns:1fr}aside.toc{display:none}.feat{grid-template-columns:1fr}.feat .th{min-height:170px}}
 @media (max-width:760px){.hd nav{display:none}.hd{gap:12px}.hero{padding:40px 0 24px}.row{grid-template-columns:1fr 96px;gap:14px}.row .th{height:76px}.list{padding:6px 18px}article.post{padding:28px 22px}.mem{grid-template-columns:1fr;padding:26px 22px}.frame{justify-self:center;width:230px}.pn{grid-template-columns:1fr}}
+
+.th.real{background-repeat:no-repeat}
+.th.cover{height:260px;border-radius:14px;margin:0 0 22px}
+@media (max-width:760px){.th.cover{height:170px}}
+.th.cover.real{background-size:150%!important;background-position:100% 62%!important}

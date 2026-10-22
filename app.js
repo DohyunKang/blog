@@ -4,6 +4,7 @@
   function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
   // 썸네일: 같은 야경 사진을 글마다 다른 부분으로 잘라 색을 입힘 — 이모지·무지개 그라데이션 없이 사이트와 한 톤
   function thumb(p,extra){
+    if(p.thumb)return'<div class="th'+(extra||'')+' real" style="background-image:url('+p.thumb+');background-size:'+(p.size||'cover')+';background-position:'+(p.pos||'center')+'"></div>';
     var h=hash(p.slug),hue=(h%80)+215,x=(h%90)+5,y=(h>>3)%70+15;
     return'<div class="th'+(extra||'')+'" style="background-image:linear-gradient(135deg,hsla('+hue+',75%,52%,.5),hsla('+(hue+40)+',70%,22%,.62)),url(img/night.jpg);background-size:cover,auto 380%;background-position:center,'+x+'% '+y+'%"></div>';
   }
@@ -76,7 +77,7 @@
     if(!p){app.innerHTML='<p class="empty">글을 찾을 수 없어요.</p>';return}
     document.title=p.title+' · dohyun.log';
     app.innerHTML='<div class="pgrid"><div><article class="glass post"><div class="ph0 cat">'+(p.series?'<em class="sr" style="font-style:normal">'+esc(p.series)+'</em>':'')+p.tags.map(function(x){return'<span>#'+esc(x)+'</span>'}).join('')+'</div>'+
-      '<h1>'+esc(p.title)+'</h1><div class="by"><div class="ph one"><img src="img/me.jpg" alt=""></div><span><b>강도현</b> · '+esc(p.date)+' · <span id="rt"></span></span></div>'+
+      '<h1>'+esc(p.title)+'</h1>'+thumb(p,' cover')+'<div class="by"><div class="ph one"><img src="img/me.jpg" alt=""></div><span><b>강도현</b> · '+esc(p.date)+' · <span id="rt"></span></span></div>'+
       '<div class="pbody" id="body">불러오는 중…</div><div class="share"><button class="btn" id="cplink" type="button">링크 복사</button><a class="btn" href="#/">← 목록</a></div></article>'+
       '<div class="pn">'+(posts[i+1]?'<a class="glass" href="'+link(posts[i+1])+'"><small>← 이전 글</small>'+esc(posts[i+1].title)+'</a>':'<span></span>')+(posts[i-1]?'<a class="glass" href="'+link(posts[i-1])+'"><small>다음 글 →</small>'+esc(posts[i-1].title)+'</a>':'<span></span>')+'</div>'+
       '<section class="glass cmt" id="cmt"></section></div><aside class="glass toc" id="toc"><h3>목차</h3></aside></div>';
