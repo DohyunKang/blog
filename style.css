@@ -191,3 +191,15 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .lb-ov{position:fixed;inset:0;z-index:999;background:rgba(6,8,18,.82);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:lbin .2s}
 .lb-ov img{max-width:min(88vw,520px);max-height:86vh;border-radius:22px;padding:0;border:1.5px solid color-mix(in srgb,var(--accent) 55%,transparent);box-shadow:0 40px 90px -20px rgba(0,0,0,.8)}
 @keyframes lbin{from{opacity:0}to{opacity:1}}
+
+/* 모바일 보강 */
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.feat{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .hd{padding:0 16px;gap:14px}.hd nav{display:flex;gap:14px}.tl2{display:none}
+  .lh{flex-wrap:wrap}.lh h3{white-space:nowrap}.srt{white-space:nowrap}.lh input{flex:1;min-width:0}
+  .row{grid-template-columns:minmax(0,1fr) 92px}.rank span{min-width:0;overflow-wrap:anywhere}
+  .feat .fb{padding:22px 22px 24px}.feat h2{font-size:1.3rem}.feat .th{min-height:200px}
+  .prof{padding:18px}.prof .ph{width:84px;height:84px}
+  body{overflow-x:hidden}
+}
