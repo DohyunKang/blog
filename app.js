@@ -30,7 +30,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
     var sr=Object.keys(counts('series')).length,tgn=Object.keys(counts('tags')).length;
-    var mast=(!filter&&!q)?'<section class="glass mast"><div><p class="eyebrow">dohyun&#39;s log</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p class="lead">직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="stat"><div><b>'+posts.length+'</b>글</div><div><b>'+sr+'</b>시리즈</div><div><b>'+tgn+'</b>태그</div></div><div class="act"><a class="btn pri" href="#/about">소개 보기</a><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a></div></div><div class="frame">'+'<div class="ph one"><img src="img/me.jpg" alt="강도현"></div>'+'</div></section>':'';
+    var mast=(!filter&&!q)?'<section class="glass mast"><div><p class="eyebrow">dohyun&#39;s log</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p class="lead">직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="stat"><div><b>'+posts.length+'</b>글</div><div><b>'+sr+'</b>시리즈</div><div><b>'+tgn+'</b>태그</div></div><div class="act"><a class="btn pri" href="#/about">소개 보기</a><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a></div></div></section>':'';
     app.innerHTML=mast+'<div class="grid">'+side(cur)+'<section><div class="sech"><h1>'+esc(title)+' <span class="meta">'+shown.length+'개</span></h1><input id="q" type="search" placeholder="글 검색" value="'+esc(state.q)+'"></div>'+
       (shown.length?'<div class="cards">'+shown.map(card).join('')+'</div>':'<p class="empty">맞는 글이 없어요.</p>')+'</section></div>';
     var qi=document.getElementById('q');

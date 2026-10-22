@@ -187,3 +187,4 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .ph.one img{opacity:1;animation:none;transform:none}
 .prof .ph.one img{object-position:50% 20%}
 .frame .ph.one{aspect-ratio:4/5}
+.mast{grid-template-columns:1fr}.mast .lead{max-width:40em}
