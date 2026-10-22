@@ -17,3 +17,6 @@
 
 ## 올리는 순서
 `posts/<이름>.md` 작성 → `posts/index.json`에 한 줄(제목·날짜·태그·시리즈·summary, 사진 있으면 thumb) → 로컬 확인 → push
+
+## 썸네일
+사진을 안 정한 글은 `img/th/t1~t7.jpg`(Wikimedia Commons)가 오래된 글부터 순서대로 자동으로 붙는다(이웃 글끼리 안 겹침). 직접 쓸 사진이 있으면 index.json에 thumb. 사진을 늘릴 땐 푸터 출처(index.html)도 같이 추가.

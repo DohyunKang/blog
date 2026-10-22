@@ -4,6 +4,7 @@
   function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
   // 썸네일: 같은 야경 사진을 글마다 다른 부분으로 잘라 색을 입힘 — 이모지·무지개 그라데이션 없이 사이트와 한 톤
   function thumb(p,extra){
+    if(!p.thumb&&p.auto)p={thumb:p.auto,pos:'center',slug:p.slug};
     if(p.thumb)return'<div class="th'+(extra||'')+' real" style="background-image:url('+p.thumb+');background-size:'+(p.size||'cover')+';background-position:'+(p.pos||'center')+'"></div>';
     var h=hash(p.slug),hue=(h%80)+215,x=(h%90)+5,y=(h>>3)%70+15;
     return'<div class="th'+(extra||'')+'" style="background-image:linear-gradient(135deg,hsla('+hue+',75%,52%,.5),hsla('+(hue+40)+',70%,22%,.62)),url(img/night.jpg);background-size:cover,auto 380%;background-position:center,'+x+'% '+y+'%"></div>';
@@ -117,6 +118,8 @@
     document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'?'#/about':(h.indexOf('#/post')===0?'':'#/')))});
     if(h.indexOf('#/post')!==0)scrollTo(0,0);
   }
-  fetch('posts/index.json').then(function(r){return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});route()});
+  fetch('posts/index.json').then(function(r){return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});
+    // 사진 없는 글은 오래된 글부터 순서대로 사진 7장을 돌려 붙임 → 이웃한 글끼리 안 겹치고, 새 글이 생겨도 기존 글 사진은 그대로
+    var k=0;posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+(k++%7+1)+'.jpg'});route()});
   addEventListener('hashchange',route);
 })();
