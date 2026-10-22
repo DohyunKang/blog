@@ -12,7 +12,9 @@
   "summary": "날짜를 정해 놓고 끝까지 가 봤다. 일에서 필요한 걸 몸으로 먼저 해 본 셈이다.",
   "thumb": "img/bp1.jpg",
   "pos": "96% 44%",
-  "size": "260%"
+  "size": "260%",
+  "title_en": "I Took Body Profile Photos",
+  "summary_en": "I set a date and saw it through. Sort of practicing for work, with my body first."
  },
  {
   "slug": "my-direction",
@@ -25,7 +27,9 @@
   "series": "나의 방향",
   "emoji": "🧭",
   "pinned": true,
-  "summary": "뭐가 되고 싶은지보다, 왜 하고 싶은지를 적어 봤다."
+  "summary": "뭐가 되고 싶은지보다, 왜 하고 싶은지를 적어 봤다.",
+  "title_en": "Where I'm Headed, and Why",
+  "summary_en": "Not what I want to be, but why I want it. I wrote it down."
  },
  {
   "slug": "ai-era-what-to-do",
@@ -37,6 +41,8 @@
   ],
   "series": "AI 시대 고찰",
   "emoji": "🤖",
-  "summary": "AI가 코드를 짜 주는 시대에 뭘로 먹고살지. 구현 말고 사람한테 남는 게 뭔지 생각해 봤다."
+  "summary": "AI가 코드를 짜 주는 시대에 뭘로 먹고살지. 구현 말고 사람한테 남는 게 뭔지 생각해 봤다.",
+  "title_en": "What Is a Developer Supposed to Do in the AI Era?",
+  "summary_en": "What I've been thinking: when AI writes the code, what's left for people?"
  }
 ]
