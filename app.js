@@ -14,7 +14,7 @@
   function counts(key){var m={};posts.forEach(function(p){(key==='tags'?p.tags:(p.series?[p.series]:[])).forEach(function(x){m[x]=(m[x]||0)+1})});return m}
   function side(cur){
     var tg=counts('tags'),sr=counts('series');
-    return '<aside class="side"><div class="glass prof"><div class="ph"><img src="img/p1.jpg" alt="강도현" loading="eager"><img src="img/p2.jpg" alt="" loading="lazy"></div><div><h2>강도현</h2><p>직접 만들어 보며 배우고,<br>배운 걸 기록합니다.</p>'+
+    return '<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2>강도현</h2><p>직접 만들어 보며 배우고,<br>배운 걸 기록합니다.</p>'+
       '<div class="links"><a href="https://dohyunkang.github.io/">포트폴리오</a><a href="https://dohyunkang.github.io/resume.html">이력서</a><a href="https://github.com/DohyunKang">GitHub</a></div></div></div>'+
       '<div class="glass box"><h3>Tags</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">전체<b>'+posts.length+'</b></a>'+
       Object.keys(tg).map(function(t){return'<a class="chip'+(cur==='t:'+t?' on':'')+'" href="#/tag/'+encodeURIComponent(t)+'">#'+esc(t)+'<b>'+tg[t]+'</b></a>'}).join('')+'</div></div>'+
@@ -30,7 +30,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
     var sr=Object.keys(counts('series')).length,tgn=Object.keys(counts('tags')).length;
-    var mast=(!filter&&!q)?'<section class="glass mast"><div><p class="eyebrow">dohyun&#39;s log</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p class="lead">직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="stat"><div><b>'+posts.length+'</b>글</div><div><b>'+sr+'</b>시리즈</div><div><b>'+tgn+'</b>태그</div></div><div class="act"><a class="btn pri" href="#/about">소개 보기</a><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a></div></div><div class="frame">'+'<div class="ph"><img src="img/p1.jpg" alt="강도현" loading="eager"><img src="img/p2.jpg" alt="" loading="lazy"></div>'+'</div></section>':'';
+    var mast=(!filter&&!q)?'<section class="glass mast"><div><p class="eyebrow">dohyun&#39;s log</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p class="lead">직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="stat"><div><b>'+posts.length+'</b>글</div><div><b>'+sr+'</b>시리즈</div><div><b>'+tgn+'</b>태그</div></div><div class="act"><a class="btn pri" href="#/about">소개 보기</a><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a></div></div><div class="frame">'+'<div class="ph one"><img src="img/me.jpg" alt="강도현"></div>'+'</div></section>':'';
     app.innerHTML=mast+'<div class="grid">'+side(cur)+'<section><div class="sech"><h1>'+esc(title)+' <span class="meta">'+shown.length+'개</span></h1><input id="q" type="search" placeholder="글 검색" value="'+esc(state.q)+'"></div>'+
       (shown.length?'<div class="cards">'+shown.map(card).join('')+'</div>':'<p class="empty">맞는 글이 없어요.</p>')+'</section></div>';
     var qi=document.getElementById('q');
@@ -39,10 +39,20 @@
   }
   function about(){
     document.title='소개 · 도현의 블로그';
-    app.innerHTML='<div class="grid">'+side('')+'<section class="glass" style="padding:30px 34px"><h1 style="margin-top:0">안녕하세요, 강도현입니다 👋</h1>'+
-      '<p>직접 개발하고 경험하며 PM의 길을 걷고 있습니다. 임베디드와 차량 통신에서 시작해서, 지금은 제품을 기획하고 AI로 개발도 합니다.</p>'+
-      '<p>포트폴리오는 "결과"를 보여 주는 곳이라, 과정에서 배운 것과 헤맨 것은 여기에 적습니다. 짧아도 되고, "왜 안 되지?"를 끝까지 따라간 기록을 좋아합니다.</p>'+
-      '<p><a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a> <a class="btn" href="https://dohyunkang.github.io/resume.html">이력서</a> <a class="btn" href="https://github.com/DohyunKang">GitHub</a></p></section></div>';
+    // 프로필 소개 사진: 이 목록의 사진이 교차 전환됨
+    var pics=['img/p1.jpg','img/p2.jpg'];
+    var imgs=pics.map(function(u,i){return'<img src="'+u+'" alt="'+(i?'':'강도현')+'" style="animation-duration:'+(pics.length*7)+'s;animation-delay:-'+(i*7)+'s">'}).join('');
+    function li(t,d,x){return'<li><small>'+d+'</small><b>'+t+'</b><span>'+x+'</span></li>'}
+    app.innerHTML='<div class="glass mem"><div class="frame"><div class="ph">'+imgs+'</div></div><div>'+
+      '<p class="role">Junior PM · AI/AX</p><h1>강도현 <span class="meta">Dohyun Kang</span></h1><p class="tagl">직접 개발하고 경험하며 PM의 길을 걷고 있습니다.</p>'+
+      '<dl class="kv"><dt>소속</dt><dd>Allie Research Inc.</dd><dt>하는 일</dt><dd>제품·마케팅 기획, 팀 간 조율, 개발</dd><dt>학력</dt><dd>인천대학교 정보통신공학과 (학점 3.93 / 4.5)</dd><dt>수상</dt><dd>ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상</dd><dt>연락</dt><dd>kid708502@gmail.com</dd></dl>'+
+      '<h3>이력</h3><ul class="tl">'+
+      li('Allie Research Inc. — Junior PM','2026.08 –','제품·마케팅 기획, 팀 간 조율 / 개발')+
+      li('Telechips 아카데미','2026.02 – 2026.05','C/C++ · 리눅스 커널 · 디바이스 드라이버')+
+      li('Techways — 현장실습','2024.08 – 2025.02','시험 자동화 도구 개발 (C#, LabVIEW)')+
+      li('한국알프스 — R&D 센터 인턴','2024.01 – 2024.02','CAN/CAN FD 차량 스위치 검증')+
+      li('고주파 안테나 설계 연구실 — 학부연구생','2022.09 – 2023.12','양봉 IoT, CST 안테나 설계')+
+      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/resume.html">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang">GitHub</a></p></div></div>';
     progress(false);
   }
 

@@ -1,5 +1,5 @@
 [
-  {"slug":"gp-exit-time","title":"데이터가 적을 땐 모델을 키우지 말고 가정을 줄이자 — 주차 앱 출차 예측","date":"2026-10-22","tags":["프로젝트","머신러닝"],"series":"주차 앱 일지","emoji":"🚗","pinned":true,"summary":"출차 시간 예측이 널뛰던 이유와, 가우시안 프로세스로 바꾼 뒤 알게 된 것."},
-  {"slug":"can-long-message","title":"CAN 진단 응답이 자꾸 끊겼다 — ISO-TP 흐름 제어 삽질기","date":"2026-10-21","tags":["임베디드","CAN"],"series":"현장실습 기록","emoji":"📡","summary":"짧은 응답은 멀쩡한데 긴 응답만 깨졌던 이유와 고친 방법."},
+  {"slug":"my-direction","title":"앞으로 이렇게 살아 보려 한다 — 만드는 PM이 되기로 했다","date":"2026-10-22","tags":["생각","일상"],"series":"나의 방향","emoji":"🧭","pinned":true,"summary":"만드는 PM, 기본기, 기록, 그리고 몸. 지금 시점의 내 방향을 적어 둔다."},
+  {"slug":"ai-era-what-to-do","title":"AI가 코드를 대신 짜 주는 시대, 나는 무엇으로 먹고살까","date":"2026-10-21","tags":["생각","AI"],"series":"AI 시대 고찰","emoji":"🤖","summary":"구현이 싸질수록 비싸지는 것, 내가 정한 규칙들."},
   {"slug":"hello","title":"블로그를 열며","date":"2026-10-20","tags":["일기"],"series":"","emoji":"🌙","summary":"직접 만들어 보며 배운 것들을 여기에 적어 둡니다."}
 ]
