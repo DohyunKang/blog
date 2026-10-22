@@ -37,7 +37,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
     var top=(!filter&&!q)?shown[0]:null,rest=top?shown.slice(1):shown;
-    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1>도현의 일기장</h1><p>일하다가, 운동하다가, 문득 든 생각을 그냥 적어요.</p><div class="st"><b>'+posts.length+'</b>글 · <b>'+Object.keys(counts('series')).length+'</b>시리즈 · <b>'+Object.keys(counts('tags')).length+'</b>태그</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(title)+'</h1></section>';
+    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>일하다가, 운동하다가, 문득 든 생각을 그냥 적어요.</p><div class="st"><b>'+posts.length+'</b>글 · <b>'+Object.keys(counts('series')).length+'</b>시리즈 · <b>'+Object.keys(counts('tags')).length+'</b>태그</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(title)+'</h1></section>';
     var feat=top?'<a class="glass feat" href="'+link(top)+'">'+thumb(top)+'<div class="fb"><div class="lb">'+(top.pinned?'PINNED':'LATEST')+'</div><h2>'+esc(top.title)+'</h2><p>'+esc(top.summary)+'</p><span class="meta">'+esc(top.date)+top.tags.map(function(x){return' · #'+esc(x)}).join('')+'</span></div></a>':'';
     app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><input id="q" type="search" placeholder="검색" value="'+esc(state.q)+'"></div>'+
       (rest.length?rest.map(row).join(''):'<p class="empty">'+(shown.length?'':'맞는 글이 없어요.')+'</p>')+'</div></section>'+side(cur)+'</div>';
@@ -119,7 +119,7 @@
     if(h.indexOf('#/post')!==0)scrollTo(0,0);
   }
   fetch('posts/index.json').then(function(r){return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});
-    // 사진 없는 글은 오래된 글부터 순서대로 사진 7장을 돌려 붙임 → 이웃한 글끼리 안 겹치고, 새 글이 생겨도 기존 글 사진은 그대로
-    var k=0;posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+(k++%7+1)+'.jpg'});route()});
+    // 사진 없는 글은 오래된 글부터 순서대로 사진 13장을 돌려 붙임 → 이웃한 글끼리 안 겹치고, 새 글이 생겨도 기존 글 사진은 그대로
+    var k=0;var ORD=[2,8,9,4,10,11,3,12,13,5,6,7,1];posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+ORD[k++%ORD.length]+'.jpg'});route()});
   addEventListener('hashchange',route);
 })();
