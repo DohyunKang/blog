@@ -1,51 +1,49 @@
-When someone asked "What do you want to do next?", I used to answer with a job title, like "developer" or "PM". Lately I'd rather start with the **why**. So this post isn't a list of things I want to do. It's a note on **why I want to do each one**.
+When someone asked "What do you want to do next?", I used to answer with a job title. "Developer." "PM." Lately the "why" comes before the title. So I write down why I want to do each thing.
 
-## The big picture: a many-sided entertainer
+## In one line
 
-Short version: I don't want to be someone who's described by one job. I develop, I plan, I enter competitions, I make videos. I want to tie all of that together under one line: **"someone who makes things and shows them."** That's why I call myself a "many-sided entertainer". It sounds a bit grand, but what I mean is that I want people to enjoy what I make and learn something from it.
+I don't want to be someone one job can describe. I develop, I plan, I enter competitions, I make videos. Put together, it's something like "someone who makes things and shows them." I call myself a "many-sided entertainer." I know that's a bit grand. What I mean is that I'd like people to enjoy what I make.
 
-## Why this direction, and why now: what matters more because of AI
+## Why now
 
-AI makes everything fast, so sometimes I wonder if people aren't needed anymore. But after using it every day, I noticed some things that matter **more because of AI**. My whole direction comes from these.
+AI makes everything fast, and sometimes I wonder what people are for now. But after using it every day, I saw what matters more than before.
 
-- **Judgment and taste.** Anyone can generate output. The eye that picks what's good and throws out the rest is what makes the difference.
-- **The habit of asking "why".** AI can't decide what to build for you. Better questions get better answers.
-- **Hands-on experience.** Even with the same AI, someone who has run into real problems can spot a wrong answer.
-- **A person's story, and trust.** Making things got cheap, but people are still drawn to "who made this and why". The more output there is, the more a **story with a face** stands out.
-- **Steady records.** In a world where everyone gets similar results, the process you've piled up becomes your own.
+- An eye for what's good. Anyone can generate output.
+- Asking "why." AI won't decide what to build.
+- Hands-on experience. Someone who has run into problems can spot a wrong answer.
+- People's stories. Making things got cheap, but people still care who made something and why.
+- Records I keep. When everyone makes similar things, the process is what's mine.
 
-That's why I do development and planning together, enter competitions, and show my work through videos and writing. All of it builds those five things.
+So I develop and plan together, enter competitions, and leave a trail in videos and writing. It all comes down to growing those five.
 
-## 1. I want to grow as a developer. Why?
+## I want to grow as a developer
 
-People say AI writes the code now. True. But that's exactly why I want to be a developer who **knows the basics underneath**. To tell whether the code AI gave me is right or wrong, I can only see as much as I understand. The stronger the tools get, the more the user's understanding decides the result.
+People say this is the age of AI writing code. True. That's why I want to know the basics underneath. To check whether AI's code is right, I can only see as much as I know.
 
-## 2. I want to grow as a PM. Why?
+## I want to grow as a PM too
 
-In the AI era the bottleneck moves from "building" to **"what to build, and why."** I think people who choose that well will be worth more. And since I can build things myself, I can be a PM who **shows up with something that actually runs**, not one who only plans on paper. That's why I don't want to pick one of developer or PM. I want to stand where the two meet.
+I think the hard part now is choosing what to build, not building it. I can build, so I can be a PM who brings something that runs, not one who only talks. Instead of picking one of the two, I want to stand where they meet.
 
-## 3. I keep entering competitions. Why?
+## Competitions, still
 
-I think competitions are the fastest way to grow. **There's a deadline, other people judge you, and the result comes out as a number.** Things I'd skim past when working alone, I end up digging into all the way. Whether I won or not, I always came away with something. So I'll keep entering.
+There's a deadline, other people watch, and the result comes out as a number. Things I'd skim over alone, I finish in a competition. Win or lose, something stayed with me. So I'll keep entering.
 
-## 4. Beyond my job, I'm building my own channel. Why?
+## My own channel
 
-I'm learning a lot at work right now, doing marketing and planning. But it feels like a waste to **use what I learn only inside the company.** So I'm planning to start a **personal YouTube channel** based on it. Three reasons:
+I learn a lot at work doing marketing and planning. It feels like a waste to use it only inside the company. So I'm going to try a personal YouTube channel.
 
-- **I learn by teaching.** You only really know something if you can explain it to someone else.
-- **Records pile up.** If a blog is a record of writing, a video is a record of the process.
-- **I should have something under my own name.** An asset that stays even if I change companies.
+- When I explain something, I learn it first.
+- If a blog is a record of writing, a video is a record of the process.
+- I'd like to have at least one thing under my own name that stays even if the company changes.
 
-(I can't share work stuff, so the topics will be things I study and make on my own.)
+I can't share work stuff, so the topics will be things I studied and made myself.
 
-## 5. My body is a challenge too. Why?
+## My body too
 
-Taking body profile photos was the same idea. **A set period, consistency, records, a result.** It's exactly what work needs, so I practiced it with my body first. I put [the body profile log here](#/post/body-profile).
+I did the body profile for a similar reason. Set a date, keep going, keep records, see the result. Work needs the same things, so I tried it on my body first. [The body profile story is here](#/post/body-profile).
 
-## I'm anxious, but I've picked a direction
+## I'm anxious, though
 
-The world is changing so fast because of AI that it makes me anxious. What's true this year might be wrong next year. Still, I've decided on one thing.
+AI is changing things so fast that I'm honestly anxious. What's true this year may be wrong next year. So I decided on one thing. Instead of trying to get the answer right, try fast and fix fast.
 
-> Don't try to get the answer right. Be **someone who tries fast and fixes fast.** And show that process.
-
-I wonder how different things will look when I open this post again in a year. I'm writing it down now so I can laugh at it then.
+I wonder how this post will look in a year. I'm writing it down now so I can laugh at it then.

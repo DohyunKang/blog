@@ -1,6 +1,6 @@
-I took body profile photos. My job is sitting at a desk, and I know that's where the body breaks down first, so I wanted to **set a period and see it through to the end** at least once.
+I took body profile photos. My job is sitting at a desk, and I figured my body would break down first. I wanted to set a date and see it through at least once.
 
-I blurred the faces of the friends who shot with me, since I didn't get their consent. (My face is as it is. Finding me in each photo might be a small game.)
+I blurred the faces of the friends who shot with me, since I didn't get their consent. My face is as it is. Finding me in each photo might be a small game.
 
 ![On the sofa — I'm on the right](img/bp1.jpg)
 
@@ -10,16 +10,16 @@ I blurred the faces of the friends who shot with me, since I didn't get their co
 
 ## Why I did it
 
-The reason is simple. **A fixed date, consistency, records, and a result.** It's exactly what work needs, so I wanted to practice it with my body first.
+There's a date, you have to keep at it, records pile up, and a result comes out. Work needs the same things, so I wanted to try it on my body first.
 
-Whether it's development, competitions, or videos, the person who builds a little every day wins in the end. But knowing that in your head and going through it with your body are different. Holding back on food you want, going on days you don't feel like it, and one day seeing in the mirror a change you couldn't see before. Only people who've done it know that.
+Development, competitions, videos. In the end the person who stacks a little every day wins. But knowing that in your head and going through it in your body are different. Skipping food you want, going on days you don't feel like it, and one day seeing a change in the mirror that you couldn't see before. People who've done it know.
 
-## What I noticed along the way
+## What I learned
 
-1. **Don't trust motivation.** You need a system that keeps running on days you have none.
-2. **Keeping records keeps you steady.** You can compare today's you with yesterday's you.
-3. **A deadline gets you to the end.** The shoot date was fixed, so I couldn't coast. Same principle as competitions.
+1. I don't trust motivation. It has to keep running on days I have none.
+2. Writing things down keeps me steadier. I can compare with yesterday's me.
+3. A deadline gets me to the end. The shoot date was fixed, so I couldn't coast. Same as competitions.
 
 ## From here
 
-The body isn't a finished project. It's closer to **a service you keep maintaining.** It means nothing if I slack off after the shoot, so I want to carry it into daily life. I'd also like to talk about this experience in a video someday.
+It's pointless if I slack off after the shoot, so I'll just keep going. I'd like to talk about this in a video someday too.

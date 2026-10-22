@@ -1,10 +1,10 @@
 (function(){
-  var app=document.getElementById('app'),posts=[],prog=document.getElementById('prog'),state={q:''},MAIL='kid708502@gmail.com';
+  var app=document.getElementById('app'),posts=[],prog=document.getElementById('prog'),state={q:'',asc:false},MAIL='kid708502@gmail.com';
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
   // 언어(한/영): 저장된 선택 > 브라우저 언어
   var LANG='ko';try{LANG=localStorage.getItem('blog-lang')||(/^ko/i.test(navigator.language)?'ko':'en')}catch(e){}
-  var D={en:{'글':'Posts','소개':'About','포트폴리오':'Portfolio','메일':'Mail','최근 글':'Recent','태그':'Tags','시리즈':'Series','전체':'All','전체 글':'All posts','고정':'Pinned','검색':'Search','맞는 글이 없어요.':'Nothing found.','불러오는 중…':'Loading…','링크 복사':'Copy link','복사됨 ✓':'Copied ✓','주소창에서 복사해 주세요':'Copy from the address bar','← 목록':'← List','← 이전 글':'← Previous','다음 글 →':'Next →','목차':'Contents','분 읽기':' min read','이 글 어떠셨나요?':'What did you think?','댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.':'No comments here, just email. Opinions, questions, small talk are all welcome.','메일 보내기':'Send mail','Gmail로 쓰기':'Write in Gmail','복사':'Copy','글을 찾을 수 없어요.':'Post not found.','편':' posts','시리즈 수':' series','태그 수':' tags','재밌게 살자.':"Let's have fun.",'강도현':'Dohyun Kang','나의 방향':'My Direction','AI 시대 고찰':'Thoughts on the AI Era','일상':'Daily','운동':'Workout','생각':'Thoughts','일기':'Diary','오늘 있었던 일을 적어요.':'Writing down what happened today.'}};
+  var D={en:{'글':'Posts','소개':'About','포트폴리오':'Portfolio','메일':'Mail','최근 글':'Recent','최신순':'Newest','오래된순':'Oldest','태그':'Tags','시리즈':'Series','전체':'All','전체 글':'All posts','고정':'Pinned','검색':'Search','맞는 글이 없어요.':'Nothing found.','불러오는 중…':'Loading…','링크 복사':'Copy link','복사됨 ✓':'Copied ✓','주소창에서 복사해 주세요':'Copy from the address bar','← 목록':'← List','← 이전 글':'← Previous','다음 글 →':'Next →','목차':'Contents','분 읽기':' min read','이 글 어떠셨나요?':'What did you think?','댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.':'No comments here, just email. Opinions, questions, small talk are all welcome.','메일 보내기':'Send mail','Gmail로 쓰기':'Write in Gmail','복사':'Copy','글을 찾을 수 없어요.':'Post not found.','편':' posts','시리즈 수':' series','태그 수':' tags','재밌게 살자.':"Let's have fun.",'강도현':'Dohyun Kang','나의 방향':'My Direction','AI 시대 고찰':'Thoughts on the AI Era','일상':'Daily','운동':'Workout','생각':'Thoughts','일기':'Diary','오늘 있었던 일을 적어요.':'Writing down what happened today.'}};
   function t(k){return (LANG==='en'&&D.en[k])||k}
   function pt(p){return LANG==='en'&&p.title_en?p.title_en:p.title}
   function ps(p){return LANG==='en'&&p.summary_en?p.summary_en:p.summary}
@@ -35,7 +35,7 @@
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
     return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2>'+t('강도현')+'</h2><p>'+t('오늘 있었던 일을 적어요.')+'</p>'+
-      '<div class="lk"><a href="#/about">'+t('소개')+'</a><a href="https://dohyunkang.github.io/">'+t('포트폴리오')+'</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div></div>'+
+      '<div class="lk"><a href="#/about">'+t('소개')+'</a><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
       Object.keys(tg).map(function(tx){return'<a class="chip'+(cur==='t:'+tx?' on':'')+'" href="#/tag/'+encodeURIComponent(tx)+'">#'+esc(t(tx))+'<b>'+tg[tx]+'</b></a>'}).join('')+'</div></div>'+
@@ -49,12 +49,13 @@
     document.title='dohyun.log';
     var q=state.q.toLowerCase();
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+(p.title_en||'')+(p.summary_en||'')+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
-    shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
-    var top=(!filter&&!q)?shown[0]:null,rest=top?shown.slice(1):shown;
+    shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1))});
+    var top=(!filter&&!q&&!state.asc)?shown[0]:null,rest=top?shown.slice(1):shown;
     var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">'+t('강도현')+'</h1><p>'+t('재밌게 살자.')+'</p><div class="st"><b>'+posts.length+'</b>'+t('편')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
     var feat=top?'<a class="glass feat" href="'+link(top)+'">'+thumb(top)+'<div class="fb"><div class="lb">'+(top.pinned?'PINNED':'LATEST')+'</div><h2>'+esc(pt(top))+'</h2><p>'+esc(ps(top))+'</p><span class="meta">'+esc(top.date)+top.tags.map(function(x){return' · #'+esc(t(x))}).join('')+'</span></div></a>':'';
-    app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+t(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
+    app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+t(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
       (rest.length?rest.map(row).join(''):'<p class="empty">'+(shown.length?'':t('맞는 글이 없어요.'))+'</p>')+'</div></section>'+side(cur)+'</div>';
+    document.getElementById('srt').onclick=function(){state.asc=!state.asc;home(filter,title,cur)};
     var qi=document.getElementById('q');
     qi.oninput=function(){state.q=qi.value.trim();var pos=qi.selectionStart;home(filter,title,cur);var n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
     progress(false);
@@ -75,7 +76,7 @@
       li('Techways — 현장실습','2024.08 – 2025.02','시험 자동화 도구 개발 (C#, LabVIEW)')+
       li('한국알프스 — R&D 센터 인턴','2024.01 – 2024.02','CAN/CAN FD 차량 스위치 검증')+
       li('고주파 안테나 설계 연구실 — 학부연구생','2022.09 – 2023.12','양봉 IoT, CST 안테나 설계')+
-      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+(LANG==='en'?'resume.en.html':'resume.html')+'">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang">GitHub</a></p></div></div>';
+      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+(LANG==='en'?'resume.en.html':'resume.html')+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a></p></div></div>';
 
     if(LANG==='en'){
       var AB={'소속':'Company','하는 일':'Role','학력':'Education','연락':'Contact','이력서 보기':'Resume','이력':'Timeline','포트폴리오':'Portfolio',

@@ -176,3 +176,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .th.cover.real{background-size:150%!important;background-position:100% 62%!important}
 
 .hero h1.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:clamp(3rem,8vw,5.2rem);line-height:1.05}
+
+.lh{gap:8px}.srt{padding:7px 14px;font-size:.82rem;margin-left:auto}
+.srt+input{margin-left:0}
