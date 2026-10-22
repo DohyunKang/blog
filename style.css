@@ -84,10 +84,10 @@ header.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);-webkit-b
 
 /* 오른쪽 */
 aside.side{position:sticky;top:78px;display:flex;flex-direction:column;gap:14px}
-.prof{padding:20px;display:flex;gap:14px;align-items:center}
-.prof .ph{width:64px;height:64px;border-radius:50%;flex:none}
-.prof h2{margin:0;font-size:1.05rem}
-.prof p{margin:2px 0 0;font-size:.82rem;color:var(--sub);line-height:1.5}
+.prof{padding:24px;display:flex;gap:18px;align-items:center}
+.prof .ph{width:104px;height:104px;border-radius:50%;flex:none}
+.prof h2{margin:0;font-size:1.4rem;letter-spacing:-.02em}
+.prof p{margin:4px 0 0;font-size:.95rem;color:var(--sub);line-height:1.5}
 .prof .lk{display:flex;gap:12px;margin-top:6px;font-size:.78rem;font-weight:700}
 .prof .lk a{color:var(--accent)}
 .box{padding:18px 20px}
