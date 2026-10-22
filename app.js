@@ -35,7 +35,7 @@
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
     return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2>'+t('강도현')+'</h2><p>'+t('오늘 있었던 일을 적어요.')+'</p>'+
-      '<div class="lk"><a href="#/about">'+t('소개')+'</a><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div></div>'+
+      '<div class="lk"><a href="#/about">'+t('소개')+'</a><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
       Object.keys(tg).map(function(tx){return'<a class="chip'+(cur==='t:'+tx?' on':'')+'" href="#/tag/'+encodeURIComponent(tx)+'">#'+esc(t(tx))+'<b>'+tg[tx]+'</b></a>'}).join('')+'</div></div>'+
@@ -76,7 +76,7 @@
       li('Techways — 현장실습','2024.08 – 2025.02','시험 자동화 도구 개발 (C#, LabVIEW)')+
       li('한국알프스 — R&D 센터 인턴','2024.01 – 2024.02','CAN/CAN FD 차량 스위치 검증')+
       li('고주파 안테나 설계 연구실 — 학부연구생','2022.09 – 2023.12','양봉 IoT, CST 안테나 설계')+
-      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+(LANG==='en'?'resume.en.html':'resume.html')+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a></p></div></div>';
+      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+(LANG==='en'?'resume.en.html':'resume.html')+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a> <a class="btn" href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a></p></div></div>';
 
     if(LANG==='en'){
       var AB={'소속':'Company','하는 일':'Role','학력':'Education','연락':'Contact','이력서 보기':'Resume','이력':'Timeline','포트폴리오':'Portfolio',
