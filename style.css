@@ -203,3 +203,15 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .prof{padding:18px}.prof .ph{width:84px;height:84px}
   body{overflow-x:hidden}
 }
+
+/* 모바일 순서: 프로필 → 연락처 → 최신 글 → 태그·시리즈 → 글 목록 (최근 글은 목록과 같아서 숨김) */
+@media (max-width:900px){
+  .grid{display:flex;flex-direction:column;gap:14px}
+  .grid>section.main,.grid>aside.side{display:contents}
+  .prof{order:1}.ctc{order:2}.feat{order:3;margin-bottom:0}.tagbox{order:4}.ser{order:5}.list{order:6}.rank{display:none}
+  .ctc{padding:12px 20px}.ctc h3{display:none}.ctc .lk{justify-content:space-around}
+  .tagbox,.ser{padding:14px 18px}.tagbox h3,.ser h3{margin:0 0 8px;font-size:.82rem;color:var(--faint);font-weight:700}
+  .ser{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}.ser h3{width:100%}
+  .ser a{padding:2px 0}.ser a b{margin-left:6px;color:var(--faint);font-weight:600}
+}
+@media (max-width:900px){.prof,.ctc,.tagbox,.ser,.list,.feat{width:100%;box-sizing:border-box;align-self:stretch}.prof{padding:16px 20px}.prof .ph{width:72px;height:72px}.prof h2{font-size:1.25rem}}

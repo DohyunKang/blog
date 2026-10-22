@@ -38,7 +38,7 @@
     return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
       '<div class="glass box ctc"><h3>'+t('연락처')+'</h3><div class="lk"><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
-      '<div class="glass box"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
+      '<div class="glass box tagbox"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
       Object.keys(tg).map(function(tx){return'<a class="chip'+(cur==='t:'+tx?' on':'')+'" href="#/tag/'+encodeURIComponent(tx)+'">#'+esc(t(tx))+'<b>'+tg[tx]+'</b></a>'}).join('')+'</div></div>'+
       (Object.keys(sr).length?'<div class="glass box ser"><h3>'+t('시리즈')+'</h3>'+Object.keys(sr).map(function(s){return'<a href="#/series/'+encodeURIComponent(s)+'"><span>'+esc(t(s))+'</span><b>'+sr[s]+'</b></a>'}).join('')+'</div>':'')+'</aside>';
   }
@@ -54,7 +54,7 @@
     var top=(!filter&&!q)?shown[0]:null,rest=top?shown.slice(1):shown;
     var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+t('글 수')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
     var feat=top?'<a class="glass feat" href="'+link(top)+'">'+thumb(top)+'<div class="fb"><div class="lb">'+(state.asc?'OLDEST':(top.pinned?'PINNED':'LATEST'))+'</div><h2>'+esc(pt(top))+'</h2><p>'+esc(ps(top))+'</p><span class="meta">'+esc(top.date)+top.tags.map(function(x){return' · #'+esc(t(x))}).join('')+'</span></div></a>':'';
-    app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+t(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
+    app.innerHTML=hero+'<div class="grid"><section class="main">'+feat+'<div class="glass list"><div class="lh"><h3>'+t(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
       (rest.length?rest.map(row).join(''):'<p class="empty">'+(shown.length?'':t('맞는 글이 없어요.'))+'</p>')+'</div></section>'+side(cur)+'</div>';
     document.getElementById('srt').onclick=function(){state.asc=!state.asc;home(filter,title,cur)};
     var qi=document.getElementById('q');
