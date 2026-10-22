@@ -19,7 +19,7 @@
 
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
-    return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2>강도현</h2><p>직접 만들어 보며 배우고, 기록합니다.</p>'+
+    return'<aside class="side"><div class="glass prof"><div class="ph one"><img src="img/me.jpg" alt="강도현"></div><div><h2>강도현</h2><p>오늘 있었던 일을 적어요.</p>'+
       '<div class="lk"><a href="#/about">소개</a><a href="https://dohyunkang.github.io/">포트폴리오</a><a href="mailto:'+MAIL+'">메일</a></div></div></div>'+
       '<div class="glass box rank"><h3>최근 글</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(p.title)+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box"><h3>태그</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">전체<b>'+posts.length+'</b></a>'+
@@ -36,7 +36,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return(b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1)});
     var top=(!filter&&!q)?shown[0]:null,rest=top?shown.slice(1):shown;
-    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1>만들면서 배운 것들을<br>기록합니다</h1><p>직접 해 보고, 막히고, 알게 된 것. 결과는 포트폴리오에, 과정은 여기에 적어 둡니다.</p><div class="st"><b>'+posts.length+'</b>글 · <b>'+Object.keys(counts('series')).length+'</b>시리즈 · <b>'+Object.keys(counts('tags')).length+'</b>태그</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(title)+'</h1></section>';
+    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1>도현의 일기장</h1><p>일하다가, 운동하다가, 문득 든 생각을 그냥 적어요.</p><div class="st"><b>'+posts.length+'</b>글 · <b>'+Object.keys(counts('series')).length+'</b>시리즈 · <b>'+Object.keys(counts('tags')).length+'</b>태그</div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(title)+'</h1></section>';
     var feat=top?'<a class="glass feat" href="'+link(top)+'">'+thumb(top)+'<div class="fb"><div class="lb">'+(top.pinned?'PINNED':'LATEST')+'</div><h2>'+esc(top.title)+'</h2><p>'+esc(top.summary)+'</p><span class="meta">'+esc(top.date)+top.tags.map(function(x){return' · #'+esc(x)}).join('')+'</span></div></a>':'';
     app.innerHTML=hero+'<div class="grid"><section>'+feat+'<div class="glass list"><div class="lh"><h3>'+(top?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><input id="q" type="search" placeholder="검색" value="'+esc(state.q)+'"></div>'+
       (rest.length?rest.map(row).join(''):'<p class="empty">'+(shown.length?'':'맞는 글이 없어요.')+'</p>')+'</div></section>'+side(cur)+'</div>';
