@@ -215,3 +215,8 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .ser a{padding:2px 0}.ser a b{margin-left:6px;color:var(--faint);font-weight:600}
 }
 @media (max-width:900px){.prof,.ctc,.tagbox,.ser,.list,.feat{width:100%;box-sizing:border-box;align-self:stretch}.prof{padding:16px 20px}.prof .ph{width:72px;height:72px}.prof h2{font-size:1.25rem}}
+
+/* 키보드 접근성: 탭으로 이동할 때 현재 위치가 보이게 */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.chip:focus-visible,.btn:focus-visible,.lsel:focus-visible{outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

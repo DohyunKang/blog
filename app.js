@@ -33,6 +33,7 @@
     document.getElementById('lang').value=LANG;
   }
   document.getElementById('lang').onchange=function(){LANG=this.value;try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
+  function errMsg(){return {ko:'불러오지 못했어요. 새로고침해 주세요.',en:"Couldn't load. Please refresh.",ja:'読み込めませんでした。再読み込みしてください。',zh:'加载失败，请刷新页面。'}[LANG]}
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
     return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
@@ -106,7 +107,7 @@
       '<section class="glass cmt" id="cmt"></section></div><aside class="glass toc" id="toc"><h3>'+t('목차')+'</h3></aside></div>';
     document.getElementById('cplink').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(function(){b.textContent=t('복사됨 ✓')},function(){b.textContent=t('주소창에서 복사해 주세요')})};
     fetch('posts/'+encodeURIComponent(p.slug)+(LANG!=='ko'?'.'+LANG:'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
-      var b=document.getElementById('body');b.innerHTML=marked.parse(md);
+      var b=document.getElementById('body');b.innerHTML=marked.parse(md);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});
       document.getElementById('rt').textContent=mins(b.textContent)+t('분 읽기');
       var toc=document.getElementById('toc'),hs=b.querySelectorAll('h2,h3'),links=[];
       [].forEach.call(hs,function(h,k){h.id='h'+k;var a=document.createElement('a');a.textContent=h.textContent;a.className=h.tagName==='H3'?'l3':'';a.onclick=function(){h.scrollIntoView({behavior:'smooth'})};toc.appendChild(a);links.push(a)});
@@ -115,7 +116,7 @@
       function spy(){var k=0;[].forEach.call(hs,function(h,n){if(h.getBoundingClientRect().top<120)k=n});links.forEach(function(a,n){a.classList.toggle('on',n===k)})}
       addEventListener('scroll',spy,{passive:true});spy();
       scrollTo(0,0);
-    });
+    }).catch(function(){var bb=document.getElementById('body');if(bb)bb.textContent=errMsg()});
     progress(true);
     contact(pt(p));
   }
@@ -149,8 +150,8 @@
     document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'?'#/about':(h.indexOf('#/post')===0?'':'#/')))});
     if(h.indexOf('#/post')!==0)scrollTo(0,0);
   }
-  fetch('posts/index.json').then(function(r){return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});
+  fetch('posts/index.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});
     // 사진 없는 글은 오래된 글부터 순서대로 사진 13장을 돌려 붙임 → 이웃한 글끼리 안 겹치고, 새 글이 생겨도 기존 글 사진은 그대로
-    var k=0;var ORD=[2,8,9,4,10,11,3,12,13,5,6,7,1];posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+ORD[k++%ORD.length]+'.jpg'});route()});
+    var k=0;var ORD=[2,8,9,4,10,11,3,12,13,5,6,7,1];posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+ORD[k++%ORD.length]+'.jpg'});route()}).catch(function(){app.innerHTML='<p class="empty">'+errMsg()+'</p>'});
   addEventListener('hashchange',route);
 })();
