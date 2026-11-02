@@ -144,7 +144,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "보안 글 다섯 편을 암호, 웹 공격, 키, AI 보안, 개인정보로 나눠서 한 줄씩 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "보안 글 다섯 편을 암호, 웹 공격, 키, AI 보안, 개인정보로 나눠서 한 줄씩 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "Information Security Map",
+  "summary_en": "I've grouped five security articles into categories—encryption, web attacks, keys, AI security, and personal information—with a brief line for each first, then linked to detailed posts for those who want to learn more.",
+  "title_ja": "情報セキュリティマップ",
+  "summary_ja": "セキュリティに関する 5 つの記事を、暗号、ウェブ攻撃、鍵、AI セキュリティ、個人情報という 5 つのテーマに分け、それぞれについて一言ずつ先に記載し、気になる方は詳細な記事へリンクしています。",
+  "title_zh": "信息安全地图",
+  "summary_zh": "我将五篇安全文章按密码、Web 攻击、密钥、AI 安全和隐私保护进行分类，先逐条列出标题，再引导读者阅读详细文章。"
  },
  {
   "slug": "algo-map",
@@ -193,7 +199,11 @@
   "emoji": "🗃️",
   "summary": "SQLD는 데이터 모델링과 SQL 두 과목이라, 열 편을 순서대로 한 줄씩 묶어 두었다.",
   "title_en": "SQLD map",
-  "summary_en": "SQLD covers two subjects: data modeling and SQL, so I've grouped them into lines in order for the first part."
+  "summary_en": "SQLD covers two subjects: data modeling and SQL, so I've grouped them into lines in order for the first part.",
+  "title_ja": "SQLD マップ",
+  "summary_ja": "SQLD はデータモデリングと SQL の 2 つの科目であるため、第 1 編を順番に 1 行ずつまとめておいた。",
+  "title_zh": "SQLD 映射",
+  "summary_zh": "SQLD 包含数据建模和 SQL 两门课程，因此将前两部分按顺序逐行整理在一起。"
  },
  {
   "slug": "adsp-map",
@@ -1482,7 +1492,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "암호화·해시·서명은 각자 하는 일이 달라서, 어디에 뭘 쓰는지부터 갈라 놓고 보니 TLS까지 한 번에 이어졌다."
+  "summary": "암호화·해시·서명은 각자 하는 일이 달라서, 어디에 뭘 쓰는지부터 갈라 놓고 보니 TLS까지 한 번에 이어졌다.",
+  "title_en": "Basics of Encryption, Hashing, and Authentication",
+  "summary_en": "Encryption, hashing, and signing each serve different purposes; once we distinguish their uses, even TLS fits into the picture all at once.",
+  "title_ja": "暗号化・ハッシュ・認証の基礎",
+  "summary_ja": "暗号化、ハッシュ、署名はそれぞれ役割が異なるため、どこに何を適用するかで分けて考えるだけで、TLS も一度に理解できるようになりました。",
+  "title_zh": "加密、哈希与认证基础",
+  "summary_zh": "加密、哈希和签名各自用途不同，一旦区分了它们的应用场景，TLS 也就顺势被串联进来了。"
  },
  {
   "slug": "sec-owasp",
@@ -1494,7 +1510,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "SQL 인젝션·XSS·CSRF가 왜 뚫리는지, 공통 원인이 \"데이터가 명령으로 해석되는 것\"이라는 점부터 정리했다."
+  "summary": "SQL 인젝션·XSS·CSRF가 왜 뚫리는지, 공통 원인이 \"데이터가 명령으로 해석되는 것\"이라는 점부터 정리했다.",
+  "title_en": "Web Vulnerabilities and OWASP",
+  "summary_en": "Why SQL Injection, XSS, and CSRF are being exploited: we've summarized the common root cause—that data is being interpreted as commands—from the start.",
+  "title_ja": "ウェブ脆弱性と OWASP",
+  "summary_ja": "SQL インジェクション、XSS、CSRF がなぜ突破されるのか、その共通の原因は「データがコマンドとして解釈されてしまうこと」であることを整理しました。",
+  "title_zh": "Web 漏洞与 OWASP",
+  "summary_zh": "SQL 注入、XSS 和 CSRF 为何会被利用，其共同原因在于“数据被当作命令解析”，本文首先对此进行梳理。"
  },
  {
   "slug": "sec-keys",
@@ -1506,7 +1528,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "키는 새는 걸 막는 것보다 새도 바로 폐기할 수 있게 해 두는 쪽이 더 현실적이더라."
+  "summary": "키는 새는 걸 막는 것보다 새도 바로 폐기할 수 있게 해 두는 쪽이 더 현실적이더라.",
+  "title_en": "Key & Secret Management",
+  "summary_en": "It turned out to be more practical to make it possible to discard birds immediately rather than preventing them from being new.",
+  "title_ja": "キー・シークレット管理",
+  "summary_ja": "身長は、鳥を飛ぶのを防ぐことよりも、すぐに廃棄できるようにしておく方が現実的だった。",
+  "title_zh": "密钥·秘密管理",
+  "summary_zh": "原来，与其防止鸟类筑巢，不如让它们能够立即被废弃更为现实。"
  },
  {
   "slug": "sec-prompt-injection",
@@ -1518,7 +1546,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "모델은 지시와 데이터를 구분 못 해서, 읽는 글 속 한 줄이 명령이 될 수 있더라. 그래서 막는 것보다 권한을 줄이는 쪽이 먼저였다."
+  "summary": "모델은 지시와 데이터를 구분 못 해서, 읽는 글 속 한 줄이 명령이 될 수 있더라. 그래서 막는 것보다 권한을 줄이는 쪽이 먼저였다.",
+  "title_en": "Prompt Injection and AI Security",
+  "summary_en": "The model couldn't distinguish between instructions and data, so a single line of text in the input could become a command. Therefore, reducing permissions was the first step rather than just blocking things.",
+  "title_ja": "プロンプトインジェクションと AI セキュリティ",
+  "summary_ja": "モデルは指示とデータを区別できず、読み込む文章の一行が命令になり得るという問題があった。そのため、ブロックするよりも権限を制限することが優先だった。",
+  "title_zh": "提示注入与 AI 安全",
+  "summary_zh": "模型无法区分指令与数据，导致阅读文本中的一行可能被误认为是命令。因此，与其直接禁止，不如先限制权限更为妥当。"
  },
  {
   "slug": "sec-privacy",
@@ -1530,7 +1564,13 @@
   ],
   "series": "정보보안",
   "emoji": "🔐",
-  "summary": "개인정보는 이름만이 아니라 다른 정보와 합쳐서 사람을 알아볼 수 있으면 다 해당돼서, 처음부터 덜 모으는 게 제일 확실하더라."
+  "summary": "개인정보는 이름만이 아니라 다른 정보와 합쳐서 사람을 알아볼 수 있으면 다 해당돼서, 처음부터 덜 모으는 게 제일 확실하더라.",
+  "title_en": "Privacy and Data Protection",
+  "summary_en": "Personal information includes not just names but any data that can be used to identify an individual when combined with other information, so it's best to collect as little as possible from the start.",
+  "title_ja": "個人情報とデータ保護",
+  "summary_ja": "個人情報とは、氏名だけでなく他の情報と組み合わせて個人を特定できるものも含まれるため、最初から収集しすぎないのが最も確実だと感じています。",
+  "title_zh": "隐私与数据保护",
+  "summary_zh": "个人信息不仅限于姓名，任何能与其他信息结合从而识别出特定个人的数据都属于此类，因此从一开始就尽量减少收集才是最稳妥的做法。"
  },
  {
   "slug": "algo-complexity",
@@ -1741,7 +1781,13 @@
   ],
   "series": "AI 소식·분석",
   "emoji": "🔭",
-  "summary": "Ollama는 모델을 직접 돌리는 엔진이라기보다, 모델 파일 관리와 GPU 배치를 맡는 Go 서버에 가깝더라."
+  "summary": "Ollama는 모델을 직접 돌리는 엔진이라기보다, 모델 파일 관리와 GPU 배치를 맡는 Go 서버에 가깝더라.",
+  "title_en": "Open Source Analysis: Ollama",
+  "summary_en": "Ollama is more like a Go server responsible for managing model files and GPU allocation rather than an engine that directly runs models.",
+  "title_ja": "オープンソース分析：Ollama",
+  "summary_ja": "Ollama は、モデルを直接動かすエンジンというよりは、モデルファイルの管理と GPU 割り当てを担当する Go サーバーに近いようです。",
+  "title_zh": "开源分析：Ollama",
+  "summary_zh": "Ollama 更像是一个负责模型文件管理和 GPU 调度的 Go 服务器，而非直接运行模型的引擎。"
  },
  {
   "slug": "repo-llama-cpp",
@@ -1754,7 +1800,13 @@
   ],
   "series": "AI 소식·분석",
   "emoji": "🔭",
-  "summary": "llama.cpp는 모델 파일 한 개와 C++ 라이브러리 하나로 LLM을 내 PC에서 돌리는 추론 엔진이고, 양자화 형식이 곧 파일 구조더라."
+  "summary": "llama.cpp는 모델 파일 한 개와 C++ 라이브러리 하나로 LLM을 내 PC에서 돌리는 추론 엔진이고, 양자화 형식이 곧 파일 구조더라.",
+  "title_en": "Open Source Analysis: llama.cpp",
+  "summary_en": "llama.cpp is an inference engine that runs LLMs on your PC with a single model file and one C++ library, and the quantization format is essentially the file structure itself.",
+  "title_ja": "オープンソース分析：llama.cpp",
+  "summary_ja": "llama.cpp は、LLM を自分の PC で動かすための推論エンジンであり、1 つのモデルファイルと 1 つの C++ ライブラリで構成されています。また、量子化形式がそのままファイル構造になっているのです。",
+  "title_zh": "开源分析：llama.cpp",
+  "summary_zh": "llama.cpp 是一个推理引擎，它仅用一个模型文件和一个 C++ 库就能在我的 PC 上运行 LLM；而量化格式其实就是文件结构。"
  },
  {
   "slug": "repo-vllm",
@@ -1767,7 +1819,13 @@
   ],
   "series": "AI 소식·분석",
   "emoji": "🔭",
-  "summary": "vLLM은 KV 캐시를 OS 페이지처럼 잘라 쓰고, 스케줄러가 매 스텝 토큰을 나눠 주는 서버라서 같은 GPU에 더 많은 요청이 올라가더라."
+  "summary": "vLLM은 KV 캐시를 OS 페이지처럼 잘라 쓰고, 스케줄러가 매 스텝 토큰을 나눠 주는 서버라서 같은 GPU에 더 많은 요청이 올라가더라.",
+  "title_en": "Open Source Analysis: vLLM",
+  "summary_en": "vLLM slices the KV cache like OS pages, and since the scheduler distributes tokens per step to servers, more requests can be handled on the same GPU.",
+  "title_ja": "オープンソース分析：vLLM",
+  "summary_ja": "vLLM は、KV キャッシュを OS のページのように分割して管理し、スケジューラが各ステップのトークンをサーバー間で分配するため、同じ GPU に対してより多くのリクエストが処理できることがわかりました。",
+  "title_zh": "开源分析：vLLM",
+  "summary_zh": "vLLM 像将 KV 缓存切分成类似操作系统页面的形式，并由调度器在每个步骤为每个 token 分配服务器，因此同一块 GPU 上可以处理更多请求。"
  },
  {
   "slug": "mk-content-calendar",
@@ -2115,7 +2173,13 @@
   ],
   "series": "AI 소식·분석",
   "emoji": "🔭",
-  "summary": "모델 호출은 한 곳으로 모으고 나머지는 플러그인과 while 루프로 붙여 둔 구조였다."
+  "summary": "모델 호출은 한 곳으로 모으고 나머지는 플러그인과 while 루프로 붙여 둔 구조였다.",
+  "title_en": "Open Source Analysis: simonw/llm",
+  "summary_en": "The model invocation was structured to consolidate everything into a single location, with the rest attached via plugins and while loops.",
+  "title_ja": "オープンソース分析：simonw/llm",
+  "summary_ja": "モデルの呼び出しは 1 つの場所に集約し、残りはプラグインと while ループで補完する構造となっていた。",
+  "title_zh": "开源分析：simonw/llm",
+  "summary_zh": "模型调用采用集中式管理，其余部分通过插件和 while 循环进行扩展。"
  },
  {
   "slug": "mk-shortform-pipeline",
@@ -2182,7 +2246,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "모델링은 현실을 개념, 논리, 물리 순서로 점점 구체적인 설계로 옮기는 일이고, 시험에서는 이 단계 구분과 3단계 스키마를 헷갈리지 않는 게 먼저더라."
+  "summary": "모델링은 현실을 개념, 논리, 물리 순서로 점점 구체적인 설계로 옮기는 일이고, 시험에서는 이 단계 구분과 3단계 스키마를 헷갈리지 않는 게 먼저더라.",
+  "title_en": "Understanding Data Modeling",
+  "summary_en": "Modeling is the process of gradually transforming reality into more concrete designs through conceptual, logical, and physical layers; in exams, it's important to distinguish these stages and not confuse them with the three-schema architecture.",
+  "title_ja": "データモデリングの理解",
+  "summary_ja": "モデリングとは、現実を概念、論理、物理の順に徐々に具体的な設計へと移す作業であり、試験ではこの段階の区別と 3 つのスキーマを混同しないことがまず重要だ。",
+  "title_zh": "理解数据建模",
+  "summary_zh": "建模是将现实逐步转化为概念、逻辑和物理层面的具体设计的过程，而在考试中，首先要区分这些阶段，不要混淆三范式（3NF）的三种模式。"
  },
  {
   "slug": "sqld-entity-attr",
@@ -2194,7 +2264,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "엔터티와 속성은 모델링 문제에서 제일 자주 나오는 용어 정의라서, 분류 기준 두 개와 특징 다섯 개만 잡으면 대부분 풀린다."
+  "summary": "엔터티와 속성은 모델링 문제에서 제일 자주 나오는 용어 정의라서, 분류 기준 두 개와 특징 다섯 개만 잡으면 대부분 풀린다.",
+  "title_en": "Entities and Attributes",
+  "summary_en": "Entity and attribute are among the most frequently encountered terms in modeling problems; identifying just two classification criteria and five characteristics usually resolves most issues.",
+  "title_ja": "エンティティと属性",
+  "summary_ja": "エンティティと属性はモデリング問題で最も頻出する用語の定義なので、分類基準を 2 つ、特徴を 5 つだけ把握しておけば、大半の問題は解決します。",
+  "title_zh": "实体与属性",
+  "summary_zh": "实体和属性是建模问题中最常出现的术语定义，只需掌握两个分类标准和五个特征，大部分问题就能解决。"
  },
  {
   "slug": "sqld-relation-identifier",
@@ -2206,7 +2282,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "관계는 차수와 선택성으로, 식별자는 PK가 어디서 오느냐로 갈라 보면 문제가 훨씬 덜 헷갈리더라."
+  "summary": "관계는 차수와 선택성으로, 식별자는 PK가 어디서 오느냐로 갈라 보면 문제가 훨씬 덜 헷갈리더라.",
+  "title_en": "Relationships and Identifiers",
+  "summary_en": "Relationships can be split into cardinality and selectivity, while identifiers can be traced back to where the PK comes from; this makes the problem much less confusing.",
+  "title_ja": "関係と識別子",
+  "summary_ja": "関係は度数と選択性で、識別子は PK がどこから来るかという点で分ければ、問題ははるかに分かりやすかった。",
+  "title_zh": "关系与标识符",
+  "summary_zh": "关系可以按基数和选择性来划分，而标识符则看主键（PK）是从哪里来的，这样问题就没那么混乱了。"
  },
  {
   "slug": "sqld-norm-perf",
@@ -2218,7 +2300,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "정규화는 중복을 걷어내는 일이고 반정규화는 일부러 되돌리는 일인데, 시험은 어느 쪽으로 풀지 고르는 문제가 많더라."
+  "summary": "정규화는 중복을 걷어내는 일이고 반정규화는 일부러 되돌리는 일인데, 시험은 어느 쪽으로 풀지 고르는 문제가 많더라.",
+  "title_en": "Regularization and Performance Data Modeling",
+  "summary_en": "Normalization is about removing redundancy, while denormalization is intentionally reintroducing it, and there are many exam questions asking you to choose which approach to take.",
+  "title_ja": "正規化とパフォーマンスデータモデリング",
+  "summary_ja": "正規化は重複を排除することであり、逆正規化は意図的に戻すことだが、試験ではどちらの方向で解くかを選ぶ問題が多いようだ。",
+  "title_zh": "正则化和性能数据建模",
+  "summary_zh": "规范化是去除冗余的过程，而反规范化则是故意引入冗余，考试中有很多题目就是让你在这两者之间做出选择。"
  },
  {
   "slug": "sqld-select-func",
@@ -2232,7 +2320,11 @@
   "emoji": "🗃️",
   "summary": "SELECT는 쓰는 순서와 실행되는 순서가 달라서, NULL 하나만 제대로 잡아도 이 단원 문제 절반은 풀리더라.",
   "title_ja": "SELECT と関数",
-  "summary_ja": "SELECT の書式と実行順序が異なるため、NULL の一つだけ正しく扱えればこの単元の問題は半分は解けてしまう。"
+  "summary_ja": "SELECT の書式と実行順序が異なるため、NULL の一つだけ正しく扱えればこの単元の問題は半分は解けてしまう。",
+  "title_en": "SELECT and Functions",
+  "summary_en": "The SELECT statement's write order differs from its execution order, so catching just one NULL correctly solves half of the problems in this unit.",
+  "title_zh": "SELECT 和函数",
+  "summary_zh": "SELECT 的书写顺序和执行顺序不同，只要正确处理一个 NULL，就能解决本单元一半的问题。"
  },
  {
   "slug": "sqld-join-subquery",
@@ -2244,7 +2336,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "조인은 표를 옆으로 붙이는 일이고 서브쿼리는 쿼리 안에 쿼리를 넣는 일이라, 어디서 행이 사라지는지만 따라가면 문제가 풀리더라."
+  "summary": "조인은 표를 옆으로 붙이는 일이고 서브쿼리는 쿼리 안에 쿼리를 넣는 일이라, 어디서 행이 사라지는지만 따라가면 문제가 풀리더라.",
+  "title_en": "JOIN and Subquery",
+  "summary_en": "Jo-in is about joining tables side by side, while a subquery involves nesting queries within queries; so if you just follow where the rows disappear, the problem gets solved.",
+  "title_ja": "JOIN とサブクエリ",
+  "summary_ja": "JOIN は表を横に結合すること、サブクエリはクエリの中にクエリを入れることなので、どこで行が消失しているかを追うだけで問題は解決しました。",
+  "title_zh": "JOIN 和子查询",
+  "summary_zh": "JOIN 是将表横向连接，而子查询是在查询中嵌套查询，只要追踪行在哪里消失，问题就能解决。"
  },
  {
   "slug": "sqld-group-set",
@@ -2256,7 +2354,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "집계는 행을 묶어서 한 줄로 줄이는 일이고, 집합 연산은 결과 두 개를 위아래로 붙이거나 빼는 일이라서 둘을 나눠 보면 덜 헷갈렸다."
+  "summary": "집계는 행을 묶어서 한 줄로 줄이는 일이고, 집합 연산은 결과 두 개를 위아래로 붙이거나 빼는 일이라서 둘을 나눠 보면 덜 헷갈렸다.",
+  "title_en": "GROUP BY and Set Operations",
+  "summary_en": "Aggregation is about grouping rows into a single line, while set operations involve combining or subtracting two results vertically; separating them made it less confusing.",
+  "title_ja": "GROUP BY と集合演算",
+  "summary_ja": "集計は行を束ねて 1 行にまとめる作業であり、集合演算は結果を 2 つ上下に結合したり引いたりする作業なので、両方を分けて考えると少し混乱しにくくなった。",
+  "title_zh": "GROUP BY 与集合运算",
+  "summary_zh": "聚合是将多行合并为一行，而集合运算则是将两个结果上下拼接或相减，这样分开来看就更容易理解了。"
  },
  {
   "slug": "sqld-window-advanced",
@@ -2268,7 +2372,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "윈도우 함수는 행을 줄이지 않고 옆에 계산값을 붙이는 거라서, OVER 안의 세 칸만 구분하면 나머지는 따라오더라."
+  "summary": "윈도우 함수는 행을 줄이지 않고 옆에 계산값을 붙이는 거라서, OVER 안의 세 칸만 구분하면 나머지는 따라오더라.",
+  "title_en": "Windows Functions and Advanced SQL",
+  "summary_en": "Window functions append calculated values to the side without reducing rows, so once you distinguish the three parts within OVER, the rest follows naturally.",
+  "title_ja": "Windows 関数と高度な SQL",
+  "summary_ja": "WINDOW 関数は行を減らさず横に計算結果を追加するため、OVER 内の 3 つの要素だけ区別すれば残りは自動的に決まる。",
+  "title_zh": "Windows 函数与高级 SQL",
+  "summary_zh": "窗口函数不会减少行数，而是将计算结果附加到行旁边，因此只要区分 OVER 子句中的三个部分，其余部分自然就能对应。"
  },
  {
   "slug": "sqld-dml-ddl",
@@ -2280,7 +2390,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "데이터를 바꾸는 DML, 확정하는 TCL, 구조를 만드는 DDL, 잘못된 값을 막는 제약조건을 시험에 나오는 순서로 묶어 봤다."
+  "summary": "데이터를 바꾸는 DML, 확정하는 TCL, 구조를 만드는 DDL, 잘못된 값을 막는 제약조건을 시험에 나오는 순서로 묶어 봤다.",
+  "title_en": "DML, TCL, DDL, and Constraints",
+  "summary_en": "I've grouped them in the order they appear in exams: DML for modifying data, TCL for committing transactions, DDL for defining structure, and constraints to prevent invalid values.",
+  "title_ja": "DML・TCL・DDL と制約条件",
+  "summary_ja": "データを操作する DML、確定させる TCL、構造を作成する DDL、不正な値を防ぐ制約条件を、試験に登場する順にまとめた。",
+  "title_zh": "DML、TCL 和 DDL 以及约束条件",
+  "summary_zh": "我将数据操作语言（DML）、事务控制语言（TCL）、数据定义语言（DDL）以及用于防止错误值的约束条件，按照考试中出现的顺序进行了整理。"
  },
  {
   "slug": "sqld-dcl-procedure",
@@ -2292,7 +2408,13 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "DCL은 권한을 주고 뺏는 명령이고, 절차형 SQL은 SQL을 DB 안에 저장해 두고 쓰는 방식이라는 걸 시험 기준으로 정리했다."
+  "summary": "DCL은 권한을 주고 뺏는 명령이고, 절차형 SQL은 SQL을 DB 안에 저장해 두고 쓰는 방식이라는 걸 시험 기준으로 정리했다.",
+  "title_en": "DCL and Procedural SQL",
+  "summary_en": "DCL is a command for granting and revoking permissions, and procedural SQL refers to storing and using SQL within the database; I've summarized these points based on exam criteria.",
+  "title_ja": "DCL と手続き型 SQL",
+  "summary_ja": "DCL は権限を付与・剥奪するコマンドであり、手続き型 SQL は SQL をデータベース内に保存して使用する方式であることを試験基準として整理した。",
+  "title_zh": "DCL 和过程化 SQL",
+  "summary_zh": "DCL 是用于授予和撤销权限的命令，而过程化 SQL 则是将 SQL 语句保存在数据库中进行使用的模式。以下根据考试标准进行了总结。"
  },
  {
   "slug": "adsp-data-understanding",
@@ -3096,7 +3218,13 @@
   ],
   "series": "AI 모델",
   "emoji": "📘",
-  "summary": "10월 초에 나온 Claude Haiku 5.5가 뭐가 달라졌는지, 가격표와 발표문을 보면서 정리해 봤다."
+  "summary": "10월 초에 나온 Claude Haiku 5.5가 뭐가 달라졌는지, 가격표와 발표문을 보면서 정리해 봤다.",
+  "title_en": "Claude Haiku 5.5, the smallest model has dropped to this price point",
+  "summary_en": "I've reviewed the price list and announcement to summarize what's new with Claude Haiku 5.5, released in early October.",
+  "title_ja": "Claude Haiku 5.5、最も小さいモデルがこれほど安くなりました",
+  "summary_ja": "10 月初に登場した Claude Haiku 5.5 が何がどう変わったのか、価格表と発表資料を見て整理してみた。",
+  "title_zh": "Claude Haiku 5.5，最小的模型价格竟如此低廉",
+  "summary_zh": "我查看了 10 月初发布的 Claude Haiku 5.5 的价格表和发布会内容，整理了它与之前版本的不同之处。"
  },
  {
   "slug": "news-model-2",
@@ -3108,7 +3236,13 @@
   ],
   "series": "AI 모델",
   "emoji": "📘",
-  "summary": "오픈웨이트라고 해서 누구나 돌릴 수 있는 건 아니더라, 2.8조 파라미터 Kimi K3의 모델 카드와 라이선스를 직접 읽어 봤다."
+  "summary": "오픈웨이트라고 해서 누구나 돌릴 수 있는 건 아니더라, 2.8조 파라미터 Kimi K3의 모델 카드와 라이선스를 직접 읽어 봤다.",
+  "title_en": "Kimi K3 weights have been released — we opened up a 2.8 trillion parameter model",
+  "summary_en": "It turns out OpenWeight isn't something anyone can run; I directly read the model card and license for Kimi K3 with 2.8 trillion parameters.",
+  "title_ja": "Kimi K3 の重みが公開されました — 2.8 兆を解き放ちました",
+  "summary_ja": "OpenWeight とはいえ誰でも動かせるわけではなく、2.8 兆パラメータの Kimi K3 のモデルカードとライセンスを直接確認した。",
+  "title_zh": "Kimi K3 权重已公开——我们打开了价值 2.8 万亿的模型",
+  "summary_zh": "原来 OpenWeight 并非任何人都能运行，我直接阅读了拥有 2.8 万亿参数的 Kimi K3 的模型卡片和许可证。"
  },
  {
   "slug": "news-model-3",
@@ -3120,7 +3254,13 @@
   ],
   "series": "AI 모델",
   "emoji": "📘",
-  "summary": "모델 발표 때마다 나오는 점수표 자체가 틀렸다는 감사 결과가 가을 내내 쌓였길래 정리해 봤다."
+  "summary": "모델 발표 때마다 나오는 점수표 자체가 틀렸다는 감사 결과가 가을 내내 쌓였길래 정리해 봤다.",
+  "title_en": "Can You Trust Benchmark Scores? Epoch AI's Benchmark Review",
+  "summary_en": "Every time a model is announced, there's a scorecard that turns out to be wrong; audit results confirming this have piled up throughout the fall, so I've taken the time to organize them.",
+  "title_ja": "ベンチマークスコアを信じてよいのか、Epoch AI のベンチマークレビュー",
+  "summary_ja": "モデル発表ごとに「スコア表そのものが間違っている」という監査結果が秋中ずっと蓄積されていたので、整理してみた。",
+  "title_zh": "可以信赖基准测试分数吗？Epoch AI 的基准测试评测",
+  "summary_zh": "每次模型发布时都会出现的分数表本身被证实是错误的，相关审计结果在整个秋季陆续积累，因此进行了整理。"
  },
  {
   "slug": "news-harness-1",
@@ -3132,7 +3272,13 @@
   ],
   "series": "하네스·에이전트",
   "emoji": "📘",
-  "summary": "이번 주 Claude Code 업데이트 중 파일을 쓰는 도구에 울타리를 치는 설정이 눈에 띄어서, 작업 폴더 개념부터 다시 읽어 봤다."
+  "summary": "이번 주 Claude Code 업데이트 중 파일을 쓰는 도구에 울타리를 치는 설정이 눈에 띄어서, 작업 폴더 개념부터 다시 읽어 봤다.",
+  "title_en": "Claude Code 2.1.314: You can now prevent write operations from going outside the working folder.",
+  "summary_en": "While reviewing this week's Claude Code update, I noticed a setting that fences in file-writing tools, so I re-read the concept of working folders from scratch.",
+  "title_ja": "Claude Code 2.1.314、書き込み作業フォルダ外へのアクセスをブロックできるようになりました",
+  "summary_ja": "今週の Claude Code のアップデートで、ファイル書き込みツールの設定に「フェンス」が設けられていることに気づいたので、作業フォルダの概念を改めて読み直しました。",
+  "title_zh": "Claude Code 2.1.314，现已能够阻止在编辑模式下访问工作文件夹以外的目录。",
+  "summary_zh": "本周在查看 Claude Code 更新时，注意到“为写入文件的工具设置围栏”这一配置项，于是重新阅读了关于工作文件夹的概念。"
  },
  {
   "slug": "news-harness-2",
@@ -3144,7 +3290,13 @@
   ],
   "series": "하네스·에이전트",
   "emoji": "📘",
-  "summary": "Semantic Kernel과 AutoGen의 후속인 Agent Framework가 10월 한 달에 Python·.NET 릴리스를 여섯 번 냈길래 뭐가 바뀌었는지 훑어봤다."
+  "summary": "Semantic Kernel과 AutoGen의 후속인 Agent Framework가 10월 한 달에 Python·.NET 릴리스를 여섯 번 냈길래 뭐가 바뀌었는지 훑어봤다.",
+  "title_en": "Microsoft Agent Framework releases hit a peak in October",
+  "summary_en": "Following Semantic Kernel and AutoGen, the new Agent Framework released six versions in Python and .NET over October, so I took a look at what changed.",
+  "title_ja": "Microsoft Agent フレームワーク、10 月にリリースが殺到しました",
+  "summary_ja": "Semantic Kernel と AutoGen の後継である Agent Framework が、10 月だけで Python および .NET で 6 回のリリースを行ったので、何が変更されたのかを振り返ってみました。",
+  "title_zh": "Microsoft Agent Framework，10 月发布集中爆发",
+  "summary_zh": "作为 Semantic Kernel 和 AutoGen 的继任者，Agent Framework 在 10 月发布了六次 Python 和 .NET 版本，我来梳理一下都有哪些变化。"
  },
  {
   "slug": "news-harness-3",
@@ -3156,7 +3308,13 @@
   ],
   "series": "하네스·에이전트",
   "emoji": "📘",
-  "summary": "MCP 새 명세(2026-07-28)는 연결 시작 절차와 세션을 없애서, 서버를 평범한 웹 API처럼 여러 대로 늘리기 쉬워졌더라."
+  "summary": "MCP 새 명세(2026-07-28)는 연결 시작 절차와 세션을 없애서, 서버를 평범한 웹 API처럼 여러 대로 늘리기 쉬워졌더라.",
+  "title_en": "MCP 2026-07-28 Revised Edition: Sessions Disappear and Requests End in One Go",
+  "summary_en": "The new MCP specification (2026-07-28) simplifies scaling servers by removing the connection initiation procedure and sessions, making them easier to replicate like regular web APIs.",
+  "title_ja": "MCP 2026-07-28 改訂版：セッションが消失し、1 つのリクエストで終了する",
+  "summary_ja": "MCP の新しい仕様（2026-07-28）では、接続開始手順やセッションを廃止したため、サーバーを通常の Web API と同様に複数台簡単に増やすことが可能になりました。",
+  "title_zh": "MCP 2026-07-28 修订版：会话消失，一次请求即结束",
+  "summary_zh": "MCP 新规范（2026-07-28）通过移除连接启动步骤和会话，使得服务器更容易像普通 Web API 一样进行横向扩展。"
  },
  {
   "slug": "news-repo-1",
@@ -3168,7 +3326,13 @@
   ],
   "series": "GitHub 레포",
   "emoji": "📘",
-  "summary": "이번 주 GitHub 트렌딩을 훑다가 눈에 들어온 건, 트레이딩 회사의 역할 분담을 그대로 LLM 에이전트로 만든 TradingAgents였다."
+  "summary": "이번 주 GitHub 트렌딩을 훑다가 눈에 들어온 건, 트레이딩 회사의 역할 분담을 그대로 LLM 에이전트로 만든 TradingAgents였다.",
+  "title_en": "TradingAgents: A report that translates a trading company's organizational structure into agents",
+  "summary_en": "While browsing this week's GitHub trending, I noticed TradingAgents, which replicates the role division of a trading firm using LLM agents.",
+  "title_ja": "TradingAgents: 投資会社の組織図をエージェント化したレポート",
+  "summary_ja": "今週の GitHub Trending を眺めていたところ、目に留まったのは、トレーディング会社の役割分担をそのまま LLM エージェントとして実装した TradingAgents でした。",
+  "title_zh": "TradingAgents：将投资公司组织图转化为代理人的报告",
+  "summary_zh": "在浏览本周 GitHub 趋势时，引人注目的是将交易公司的职责分工直接转化为 LLM Agent 的 TradingAgents。"
  },
  {
   "slug": "news-repo-2",
@@ -3180,7 +3344,13 @@
   ],
   "series": "GitHub 레포",
   "emoji": "📘",
-  "summary": "가을에 코딩 에이전트 레포를 훑다가 OpenCode를 열어 보니, 기능보다 권한과 설정을 나누는 방식이 더 눈에 들어왔다."
+  "summary": "가을에 코딩 에이전트 레포를 훑다가 OpenCode를 열어 보니, 기능보다 권한과 설정을 나누는 방식이 더 눈에 들어왔다.",
+  "title_en": "OpenCode, an open-source coding agent spinning in the terminal",
+  "summary_en": "While browsing coding agent reports in autumn and opening OpenCode, I noticed that the way permissions and settings are separated was more prominent than the features themselves.",
+  "title_ja": "OpenCode、ターミナルで動くオープンソースコーディングエージェント",
+  "summary_ja": "秋にコーディングエージェントのレポを眺めていたところ、OpenCode を開くと、機能よりも権限と設定を分ける仕組みの方が目につきました。",
+  "title_zh": "OpenCode，终端中运行的开源代码代理",
+  "summary_zh": "在浏览秋季的 Coding Agent 报告时，打开 OpenCode 后发现，比起功能本身，权限与设置的划分方式更加引人注目。"
  },
  {
   "slug": "news-repo-3",
@@ -3192,7 +3362,13 @@
   ],
   "series": "GitHub 레포",
   "emoji": "📘",
-  "summary": "로컬 LLM 돌리는 도구 중 러스트로 만든 mistral.rs가 뭘 하는지, 릴리스 노트까지 읽어 봤다."
+  "summary": "로컬 LLM 돌리는 도구 중 러스트로 만든 mistral.rs가 뭘 하는지, 릴리스 노트까지 읽어 봤다.",
+  "title_en": "Exploring the inference engine mistral.rs built with Rust",
+  "summary_en": "I read through the release notes for mistral.rs, a tool for running local LLMs written in Rust, to understand what it does.",
+  "title_ja": "Rust で実装された推論エンジン「mistral.rs」を検証する",
+  "summary_ja": "ローカルで LLM を動かすツールとして、Rust で書かれた `mistral.rs` が何をするのか、リリースノートまで読んでみました。",
+  "title_zh": "探索用 Rust 构建的推理引擎 mistral.rs",
+  "summary_zh": "在运行本地 LLM 的工具中，我阅读了用 Rust 编写的 mistral.rs 的功能介绍，甚至包括其发布说明。"
  },
  {
   "slug": "os-process-thread",
@@ -3204,7 +3380,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "프로세스와 스레드의 차이는 결국 주소 공간을 같이 쓰느냐 마느냐였고, 컨텍스트 스위칭 비용도 거기서 갈리더라."
+  "summary": "프로세스와 스레드의 차이는 결국 주소 공간을 같이 쓰느냐 마느냐였고, 컨텍스트 스위칭 비용도 거기서 갈리더라.",
+  "title_en": "Processes and Threads: What Do They Share and What Do They Have Separately?",
+  "summary_en": "The difference between processes and threads ultimately comes down to whether they share address space or not, which also affects the cost of context switching.",
+  "title_ja": "プロセスとスレッド、何を共有し、何を個別に持つのか",
+  "summary_ja": "プロセスとスレッドの違いは、結局アドレス空間を共有するかしないかであり、コンテキストスイッチのコストもそこで分かれた。",
+  "title_zh": "进程与线程：共享什么，各自拥有什么？",
+  "summary_zh": "进程和线程的区别归根结底在于是否共享地址空间，而上下文切换的开销也由此产生差异。"
  },
  {
   "slug": "os-scheduling",
@@ -3216,7 +3398,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "스케줄러가 뭘 줄이려고 하느냐에 따라 FCFS·SJF·RR이 갈리고, 반환 시간과 반응 시간이 서로 당기는 관계라는 걸 숫자로 돌려 보면 한 번에 보인다."
+  "summary": "스케줄러가 뭘 줄이려고 하느냐에 따라 FCFS·SJF·RR이 갈리고, 반환 시간과 반응 시간이 서로 당기는 관계라는 걸 숫자로 돌려 보면 한 번에 보인다.",
+  "title_en": "CPU Scheduling",
+  "summary_en": "Depending on what the scheduler aims to minimize—whether it's FCFS, SJF, or RR—the trade-off between turnaround time and response time becomes evident when visualized numerically.",
+  "title_ja": "CPU スケジューリング",
+  "summary_ja": "スケジューラが何を優先しようとするかによって FCFS・SJF・RR に分かれ、ターンアラウンド時間と応答時間はトレードオフの関係にあることは、数値で計算すれば一目瞭然です。",
+  "title_zh": "CPU 调度",
+  "summary_zh": "根据调度器试图减少什么指标的不同，会分为 FCFS、SJF 和 RR；而返回时间与响应时间之间存在着相互制约的关系，通过数字分析可以一目了然地看到这一点。"
  },
  {
   "slug": "os-memory",
@@ -3228,7 +3416,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "가상 주소를 물리 주소로 바꾸는 표가 너무 크고 느려서 TLB와 다단계 테이블이 생겼고, 메모리가 모자라면 교체 정책이 성능을 갈랐다."
+  "summary": "가상 주소를 물리 주소로 바꾸는 표가 너무 크고 느려서 TLB와 다단계 테이블이 생겼고, 메모리가 모자라면 교체 정책이 성능을 갈랐다.",
+  "title_en": "Memory Management and Virtual Memory",
+  "summary_en": "The table that translates virtual addresses to physical addresses is too large and slow, leading to the introduction of TLBs and multi-level tables; when memory runs out, replacement policies have become a performance bottleneck.",
+  "title_ja": "メモリ管理と仮想メモリー",
+  "summary_ja": "仮想的なアドレスを実際のアドレスに変換するテーブルが大きすぎて遅いので、TLB と多段テーブルが導入され、メモリが不足すると置換ポリシーが性能を左右することになりました。",
+  "title_zh": "内存管理与虚拟内存",
+  "summary_zh": "由于将虚拟地址转换为物理地址的页表过大且缓慢，因此引入了 TLB 和多级页表；当内存不足时，替换策略对性能产生了决定性影响。"
  },
  {
   "slug": "os-sync-deadlock",
@@ -3240,7 +3434,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "락을 걸어서 값이 꼬이는 건 막았는데, 락 두 개를 서로 반대로 잡는 순간 둘 다 멈추는 이유와 그걸 피하는 방법을 코드로 돌려 보며 정리했다."
+  "summary": "락을 걸어서 값이 꼬이는 건 막았는데, 락 두 개를 서로 반대로 잡는 순간 둘 다 멈추는 이유와 그걸 피하는 방법을 코드로 돌려 보며 정리했다.",
+  "title_en": "Synchronization and Deadlock",
+  "summary_en": "I've addressed the issue where locks cause values to become inconsistent, and through code examples, I've clarified why both transactions stop when two locks are held in opposite directions and how to avoid this scenario.",
+  "title_ja": "同期とデッドロック",
+  "summary_ja": "ロックを掛けて値が乱れるのを防いだが、2 つのロックを逆方向に取得しようとした瞬間に両方が止まる理由とそれを回避する方法についてコードを実行しながら整理した。",
+  "title_zh": "同步与死锁",
+  "summary_zh": "虽然已经解决了因锁竞争导致数据错乱的问题，但通过代码梳理了当两个锁被反向获取时双方都会停止的原因以及避免该问题的方法。"
  },
  {
   "slug": "os-filesystem",
@@ -3252,7 +3452,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "파일 이름은 사실 inode 번호를 가리키는 꼬리표일 뿐이고, open 한 번에 경로 길이만큼 디스크를 읽는다는 걸 알고 나니 파일 관련 시스템 콜이 한 줄로 이어졌다."
+  "summary": "파일 이름은 사실 inode 번호를 가리키는 꼬리표일 뿐이고, open 한 번에 경로 길이만큼 디스크를 읽는다는 걸 알고 나니 파일 관련 시스템 콜이 한 줄로 이어졌다.",
+  "title_en": "File System and I/O",
+  "summary_en": "The file name is actually just a label pointing to an inode number, and once I realized that opening a file reads the entire path length from disk, system calls related to files all lined up in a single line.",
+  "title_ja": "ファイルシステムと入出力",
+  "summary_ja": "ファイル名は実際にはインオード番号を指すラベルに過ぎず、一度 open するとパスの長さ分だけディスクを読み取ることを知ったので、ファイル関連のシステムコールが一行で繋がっていった。",
+  "title_zh": "文件系统与输入输出",
+  "summary_zh": "文件名实际上只是一个指向 inode 编号的标签，而一旦明白了每次打开文件都需要读取路径长度对应的磁盘空间，关于文件的系统调用就一目了然了。"
  },
  {
   "slug": "net-osi-tcpip",
@@ -3264,7 +3470,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "계층은 통신을 역할별로 쪼갠 약속이고, 데이터가 내려가며 헤더가 한 겹씩 붙는 걸 직접 만들어 보니 훨씬 선명했다."
+  "summary": "계층은 통신을 역할별로 쪼갠 약속이고, 데이터가 내려가며 헤더가 한 겹씩 붙는 걸 직접 만들어 보니 훨씬 선명했다.",
+  "title_en": "OSI 7-Layer Model and TCP/IP",
+  "summary_en": "Layers are agreements that split communication by function, and building it myself while data flows down with headers added layer by layer made the concept much clearer.",
+  "title_ja": "OSI 7 層と TCP/IP",
+  "summary_ja": "階層とは、通信を役割ごとに分割した約束であり、実際にデータを下へ落としながらヘッダーが一段ずつ付いていく仕組みを作ってみると、はるかに明確に理解できました。",
+  "title_zh": "OSI 七层模型与 TCP/IP",
+  "summary_zh": "层级是对通信按角色划分的约定，亲手实现数据下行且每层添加一个头的过程后，感觉清晰了许多。"
  },
  {
   "slug": "net-tcp-udp",
@@ -3276,7 +3488,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "같은 전송 계층인데 TCP는 연결·순서·속도 조절까지 해 주고 UDP는 포트와 체크섬만 붙여 던진다."
+  "summary": "같은 전송 계층인데 TCP는 연결·순서·속도 조절까지 해 주고 UDP는 포트와 체크섬만 붙여 던진다.",
+  "title_en": "TCP and UDP",
+  "summary_en": "They're both transport layer protocols, but TCP handles connection establishment, ordering, and flow control, while UDP just attaches ports and checksums before sending.",
+  "title_ja": "TCP と UDP",
+  "summary_ja": "同じトランスポート層であるが、TCP は接続・順序・速度制御まで行い、UDP はポートとチェックサムだけ付与して投げつける。",
+  "title_zh": "TCP 和 UDP",
+  "summary_zh": "同样是传输层协议，TCP 负责建立连接、保证顺序和流量控制，而 UDP 仅添加端口号和校验和。"
  },
  {
   "slug": "net-http",
@@ -3288,7 +3506,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "HTTP 메시지는 그냥 줄 단위 텍스트라서, 소켓으로 직접 쏴 보면 메서드·상태코드·캐시·TLS가 한 번에 정리되더라."
+  "summary": "HTTP 메시지는 그냥 줄 단위 텍스트라서, 소켓으로 직접 쏴 보면 메서드·상태코드·캐시·TLS가 한 번에 정리되더라.",
+  "title_en": "HTTP and HTTPS",
+  "summary_en": "HTTP messages are just line-based text, so when you shoot them directly over a socket, the method, status code, caching, and TLS all get handled at once.",
+  "title_ja": "HTTP と HTTPS",
+  "summary_ja": "HTTP メッセージは単なる行単位のテキストなので、ソケットから直接送信すると、メソッド・ステータスコード・キャッシュ・TLS が一発で整理できる。",
+  "title_zh": "HTTP 和 HTTPS",
+  "summary_zh": "HTTP 消息只是按行组织的文本，因此通过套接字直接发送时，方法、状态码、缓存和 TLS 等都能一次性处理完毕。"
  },
  {
   "slug": "net-dns-routing",
@@ -3318,7 +3542,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "소켓은 바이트가 흐르는 관일 뿐이라 메시지 경계는 내가 정해야 하고, 웹소켓은 그 위에 프레임 규칙을 얹은 것이더라."
+  "summary": "소켓은 바이트가 흐르는 관일 뿐이라 메시지 경계는 내가 정해야 하고, 웹소켓은 그 위에 프레임 규칙을 얹은 것이더라.",
+  "title_en": "Sockets and WebSockets",
+  "summary_en": "A socket is just a pipe through which bytes flow, so I have to define the message boundaries myself; WebSocket adds frame rules on top of that.",
+  "title_ja": "ソケットと WebSockets",
+  "summary_ja": "ソケットは単にバイトが流れる管であり、メッセージの境界は私が定義する必要があるものであり、WebSocket はその上にフレームの規則を載せたものだった。",
+  "title_zh": "Socket 与 WebSocket",
+  "summary_zh": "Socket 只是一个让字节流动的管道，消息边界需要我来定义；而 WebSocket 则是在此之上加上了帧的规则。"
  },
  {
   "slug": "se-methodology",
@@ -3330,7 +3560,13 @@
   ],
   "series": "소프트웨어 공학",
   "emoji": "🧱",
-  "summary": "폭포수는 왜 욕을 먹고 스크럼·XP·칸반은 각각 뭘 조이는지, 진행 방식 네 가지를 나란히 놓고 봤다."
+  "summary": "폭포수는 왜 욕을 먹고 스크럼·XP·칸반은 각각 뭘 조이는지, 진행 방식 네 가지를 나란히 놓고 봤다.",
+  "title_en": "Development Methodology",
+  "summary_en": "Why waterfalls get a bad rap and what Scrum, XP, and Kanban each focus on were examined side by side with four approaches to execution.",
+  "title_ja": "開発手法",
+  "summary_ja": "なぜフォールは嫌われ、スクラム・XP・カンバンがそれぞれ何を重視しているのか、4 つの進行方法を並べて比較した。",
+  "title_zh": "开发方法论",
+  "summary_zh": "瀑布模型为何备受诟病，而 Scrum、XP 和 Kanban 各自又解决了哪些问题？文章将这四种推进方式并列进行了对比分析。"
  },
  {
   "slug": "se-requirements-design",
@@ -3342,7 +3578,13 @@
   ],
   "series": "소프트웨어 공학",
   "emoji": "🧱",
-  "summary": "뭘 만들지 적는 일과 어떻게 짤지 그리는 일이 어떻게 이어지는지, 요구사항·UML·아키텍처 스타일을 한 줄로 꿰어 봤다."
+  "summary": "뭘 만들지 적는 일과 어떻게 짤지 그리는 일이 어떻게 이어지는지, 요구사항·UML·아키텍처 스타일을 한 줄로 꿰어 봤다.",
+  "title_en": "Requirements and Design",
+  "summary_en": "How writing down what to build connects with drawing how it will be structured, and how requirements, UML, and architecture styles are all tied together in a single line.",
+  "title_ja": "要件と設計",
+  "summary_ja": "何を作るかを書く作業と、どのように切れるかを描く作業がどう繋がるのか、要件・UML・アーキテクチャスタイルを一列に紐解いてみた。",
+  "title_zh": "需求与设计",
+  "summary_zh": "记录了要做什么、如何拆分，以及需求、UML 与架构风格如何串联成一线。"
  },
  {
   "slug": "se-testing",
@@ -3354,7 +3596,13 @@
   ],
   "series": "소프트웨어 공학",
   "emoji": "🧱",
-  "summary": "테스트를 많이 짜는 것보다 어떤 입력을 고르고 무엇을 두고 비교할지가 핵심이라서, 케이스 설계·커버리지·TDD·목을 직접 돌려 보며 정리했다."
+  "summary": "테스트를 많이 짜는 것보다 어떤 입력을 고르고 무엇을 두고 비교할지가 핵심이라서, 케이스 설계·커버리지·TDD·목을 직접 돌려 보며 정리했다.",
+  "title_en": "The test is a matter of how to select cases.",
+  "summary_en": "Rather than writing many tests, the key is deciding which inputs to select and what to compare; I organized this by designing cases, covering scenarios, applying TDD, and manually running through the flow.",
+  "title_ja": "テストは、どのケースを選ぶかが問題です",
+  "summary_ja": "テストを多く書くことよりも、どの入力を選択し、何を固定して比較するかが重要なので、ケース設計・カバレッジ・TDD・木を直接回しながら整理しました。",
+  "title_zh": "测试的关键在于如何选择用例。",
+  "summary_zh": "与其编写大量测试，关键在于选择哪些输入、保留什么进行比较，因此我通过亲手设计用例、覆盖场景、实践 TDD 以及手动执行代码来总结这些经验。"
  },
  {
   "slug": "se-cicd",
@@ -3366,7 +3614,13 @@
   ],
   "series": "소프트웨어 공학",
   "emoji": "🧱",
-  "summary": "Git 사용법보다 앞에 있는 '무엇을 기준으로 삼고 어떻게 바꾸나'를 형상 관리로 풀어 보고, 브랜치 전략과 CI가 그 위에서 어떻게 붙는지 정리했다."
+  "summary": "Git 사용법보다 앞에 있는 '무엇을 기준으로 삼고 어떻게 바꾸나'를 형상 관리로 풀어 보고, 브랜치 전략과 CI가 그 위에서 어떻게 붙는지 정리했다.",
+  "title_en": "Source Control and CI/CD",
+  "summary_en": "I explored version control by interpreting \"what to base changes on and how to make them\" that precedes Git usage, and organized how branching strategies and CI build upon it.",
+  "title_ja": "バージョン管理と CI/CD",
+  "summary_ja": "Git の使い方よりも先に、「何を基準にしてどのように変更するか」を「形像管理」として整理し、その上でのブランチ戦略と CI がどのように接続されているかをまとめました。",
+  "title_zh": "版本管理与 CI/CD",
+  "summary_zh": "在讲解 Git 用法之前，先以“形塑管理”来阐释“基于什么进行变更以及如何变更”，并在此基础上梳理分支策略与 CI 是如何与之结合的。"
  },
  {
   "slug": "ca-cpu",
@@ -3441,6 +3695,34 @@
   "summary_zh": "为了防止 CPU 因等待磁盘、网卡等慢速设备而停止工作，才引入了中断和 DMA，而总线则是连接它们之间的路径。"
  },
  {
+  "slug": "ai-evals",
+  "title": "LLM 평가(Evals)",
+  "date": "2026-11-03",
+  "tags": [
+   "공부노트",
+   "AI",
+   "평가",
+   "LLMOps"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "LLM 기능은 같은 입력에도 답이 달라서, 바꿀 때마다 돌려 볼 시험지(평가 세트)가 있어야 안 무너지더라."
+ },
+ {
+  "slug": "ai-finetuning",
+  "title": "파인튜닝과 LoRA",
+  "date": "2026-11-03",
+  "tags": [
+   "공부노트",
+   "AI",
+   "파인튜닝",
+   "LoRA"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "파인튜닝은 모델 가중치를 직접 고치는 방법이고, LoRA는 그 가중치는 얼려 두고 작은 행렬 두 개만 학습시키는 요령이더라."
+ },
+ {
   "slug": "ai-graph-db",
   "title": "그래프 DB(Neo4j·Cypher)",
   "date": "2026-11-02",
@@ -3467,6 +3749,20 @@
   "series": "AI 용어사전",
   "emoji": "📘",
   "summary": "일반 RAG는 \"이 문서 묶음 전체에서 큰 주제가 뭐냐\" 같은 질문에 약한데, GraphRAG는 문서를 지식그래프로 바꿔 묶음별 요약을 미리 만들어 두는 쪽으로 푼다."
+ },
+ {
+  "slug": "ai-guardrails",
+  "title": "AI 가드레일과 프롬프트 인젝션",
+  "date": "2026-11-03",
+  "tags": [
+   "공부노트",
+   "AI",
+   "보안",
+   "가드레일"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "모델 하나가 완벽하게 막아 주길 기대하지 말고, 입력·출력·권한·사람 승인 네 겹으로 피해를 줄이는 게 공식 가이드들의 공통된 얘기더라."
  },
  {
   "slug": "ai-knowledge-graph",
