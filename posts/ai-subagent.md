@@ -104,15 +104,6 @@ specific, actionable feedback on quality, security, and best practices.
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Claude Code 서브에이전트 문서(독립 컨텍스트, 결과만 반환, 사용 기준, 중첩·동시 실행 한도, 모델 선택 순서, 내장 에이전트), Anthropic 멀티에이전트 리서치 글(90.2%, 4배·15배, 80%·95%, 위임 실패 사례, 규모 규칙), Building effective agents(병렬화와 오케스트레이터-워커 구분), Cognition 글(두 원칙, Flappy Bird 예시, 대안).
-
-확인 못 함: Anthropic 내부 평가를 직접 재현하지 못했다. 문서 페이지 뒷부분 약 16,000자는 읽지 못했다(도구가 앞 100,000자까지만 돌려줌). 문서의 모델 이름과 한도는 자주 바뀔 수 있어 쓸 때 다시 봐야 한다. 서브에이전트를 직접 돌려 본 비용 측정은 하지 않았다. 코드는 문서 예시를 옮긴 것이라 실행하지 않았다.
-
-</details>
-
 ← [개념 지도로](#/post/ai-map)
 
 관련 글: [에이전트 루프](#/post/ai-agent-loop) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [프롬프트 캐싱](#/post/ai-prompt-caching)
@@ -120,6 +111,6 @@ specific, actionable feedback on quality, security, and best practices.
 ## 근거 링크
 
 - Anthropic, How we built our multi-agent research system: https://www.anthropic.com/engineering/multi-agent-research-system
-- Claude Code 문서, Subagents: https://code.claude.com/docs/en/sub-agents (뒷부분 일부만 읽지 못함)
+- Claude Code 문서, Subagents: https://code.claude.com/docs/en/sub-agents
 - Anthropic, Building effective agents: https://www.anthropic.com/engineering/building-effective-agents
 - Cognition, Don't Build Multi-Agents: https://cognition.com/blog/dont-build-multi-agents

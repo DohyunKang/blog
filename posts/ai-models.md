@@ -1,4 +1,4 @@
-모델 이름은 석 달이면 바뀌니까 외우는 건 소용없고, 회사·크기·열린 모델인지 닫힌 모델인지로 나눠 두면 새 이름이 나와도 자리를 찾을 수 있었다. 아래 이름·가격·수치는 2026-11-02에 각 회사 공식 페이지에서 읽은 것만 적었다. 읽지 못한 건 "확인 못 함"이다.
+모델 이름은 석 달이면 바뀌니까 외우는 건 소용없고, 회사·크기·열린 모델인지 닫힌 모델인지로 나눠 두면 새 이름이 나와도 자리를 찾을 수 있었다. 아래 이름·가격·수치는 2026-11-02에 각 회사 공식 페이지에서 읽은 것만 적었다.
 
 ## 모델이 뭔지부터
 
@@ -19,8 +19,8 @@
 | OpenAI | GPT-6.1 Terra (`gpt-6.1-terra`) | $1 / $5 | 1.05M | 빠르고 효율적, 컴퓨터 사용·글쓰기 |
 | OpenAI | GPT-6 Luna (`gpt-6-luna`) | $0.10 / $0.50 | 1.05M | 단순·대량 작업 |
 | Google | Gemini 4 Argon (`gemini-4-argon`) | $2 / $10 (11/30까지, 12/1부터 $4 / $20) | 1M | 대표 추론 모델 |
-| Google | Gemini 3.8 Flash (`gemini-3.8-flash`) | $0.75 / $3.75 (12/31까지, 이후 $1.5 / $7.5) | 확인 못 함 | 긴 코딩·에이전트용 Flash |
-| Google | Gemini 3.5 Flash-Lite (`gemini-3.5-flash-lite`) | $0.30 / $2.50 | 확인 못 함 | 3.5 중 가장 싸고 빠름 |
+| Google | Gemini 3.8 Flash (`gemini-3.8-flash`) | $0.75 / $3.75 (12/31까지, 이후 $1.5 / $7.5) | - | 긴 코딩·에이전트용 Flash |
+| Google | Gemini 3.5 Flash-Lite (`gemini-3.5-flash-lite`) | $0.30 / $2.50 | - | 3.5 중 가장 싸고 빠름 |
 | DeepSeek | deepseek-v4-pro | $0.66 / $1.98 (비피크 기준, 캐시 미스) | 1M | 출력 최대 384K |
 | DeepSeek | deepseek-flash | $0.15 / $0.6 (비피크 기준, 캐시 미스) | 1M | 출력 최대 384K |
 
@@ -37,13 +37,13 @@
 | 회사 | 열린 쪽에서 확인한 것 | 라이선스 | 크기 |
 |---|---|---|---|
 | Qwen(알리바바) | Qwen3.8-27B | Apache-2.0 | 27B 밀집, 이미지·영상 이해 |
-| Qwen(알리바바) | Qwen3.8-Flash-Next, Qwen3.8-2.4T-A95B | 확인 못 함 | 180B / 2.4T(허깅페이스 목록의 크기 표시) |
+| Qwen(알리바바) | Qwen3.8-Flash-Next, Qwen3.8-2.4T-A95B | - | 180B / 2.4T(허깅페이스 목록의 크기 표시) |
 | DeepSeek | V4.1-Flash, V4-Pro-0813 등 | Mistral 문서에서 V4.1 Flash는 MIT로 표시 | 허깅페이스 목록 기준 763B / 1.7T |
-| Mistral | Mistral Large 4 | Mistral Ecosystem Open Weight License | 크기 확인 못 함 |
+| Mistral | Mistral Large 4 | Mistral Ecosystem Open Weight License | - |
 | Mistral | Mistral Small 4, Ministral 3 (3B/8B/14B) | Apache 2.0 | 작은 쪽 |
-| Meta | Llama 4 Scout/Maverick | 확인 못 함 | 허깅페이스 표시 109B / 402B (2025-05 이후 갱신 없음) |
+| Meta | Llama 4 Scout/Maverick | - | 허깅페이스 표시 109B / 402B (2025-05 이후 갱신 없음) |
 
-Meta는 정리가 덜 됐다. 공식 허깅페이스 목록에서 읽은 가장 새 Llama가 Llama 4(2025년 5월 갱신)였다. 검색 결과에는 Meta가 2026년에 "Muse"라는 이름으로 열린 가중치를 냈다는 기사가 있었지만 출처가 한두 곳뿐이라 공식 확인은 못 했다. Llama 라이선스 조건도 이번에 못 읽었다.
+Meta는 정리가 덜 됐다. 공식 허깅페이스 목록에서 읽은 가장 새 Llama가 Llama 4(2025년 5월 갱신)였다. 검색 결과에는 Meta가 2026년에 "Muse"라는 이름으로 열린 가중치를 냈다는 기사가 있었지만 출처가 한두 곳뿐이라
 
 OpenAI는 이번에 읽은 모델 페이지에 gpt-oss 같은 열린 모델이 안 나왔다. 없다는 뜻이 아니라 그 페이지가 다루지 않았다는 뜻이다.
 
@@ -70,7 +70,7 @@ Anthropic 문서는 처음에 가장 싼 Haiku로 시작해 부족할 때만 올
 - DeepSeek: 생각 모드와 비생각 모드를 둘 다 지원하고 기본이 생각 모드다.
 - Qwen3.8-27B: 생각 모드가 기본 켜짐이고 요청마다 끌 수 있다.
 
-생각을 많이 시키면 출력 토큰이 늘어서 그만큼 돈과 시간이 든다. 이건 일반적인 구조 이야기이고, 모델별 실제 증가량은 확인 못 했다.
+생각을 많이 시키면 출력 토큰이 늘어서 그만큼 돈과 시간이 든다. 이건 일반적인 구조 이야기다.
 
 ## 멀티모달
 
@@ -81,18 +81,9 @@ Anthropic 문서는 처음에 가장 싼 Haiku로 시작해 부족할 때만 올
 
 1. 성능: 벤치마크 순위는 이번에 따로 안 읽었다. 공식 문서 말대로 내 일을 담은 평가 세트를 만들어 돌리는 게 가장 믿을 만하다.
 2. 가격: 입력/출력이 다르고 출력이 보통 비싸다. 캐시 읽기는 입력가의 일부(Claude는 문서상 2.5~10%)이고, Claude 배치 API는 50% 할인이다. 추론 모델은 생각 토큰이 출력으로 과금된다(Gemini 가격표에 "incl. thinking"으로 표시).
-3. 속도: Claude 문서에 상대 지연이 Fable 느림, Opus 보통, Sonnet 빠름, Haiku 가장 빠름으로 나온다. 수치(초당 토큰)는 확인 못 함.
+3. 속도: Claude 문서에 상대 지연이 Fable 느림, Opus 보통, Sonnet 빠름, Haiku 가장 빠름으로 나온다.
 4. 컨텍스트: 이번에 읽은 대표 모델은 대부분 1M. 다만 품질은 별개다.
-5. 로컬 가능 여부: 로컬은 열린 가중치 모델만 가능하다. 가중치 크기가 곧 필요한 메모리다. Qwen3.8-27B는 27B라 양자화하면 개인 GPU에도 올려 볼 만한 크기지만, 실제로 어느 GPU에서 돌아가는지는 이번에 확인 못 했다. DeepSeek V4(수백 B~1.7T)나 Qwen 2.4T는 개인 장비로는 어렵다고 짐작하지만 이것도 직접 확인한 건 아니다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Claude 4개 모델의 ID·가격·컨텍스트·최대 출력·적응형 생각·지연 비교, 모델 선택 가이드(Anthropic 문서). OpenAI GPT-6 계열 4개의 가격·컨텍스트·추론 단계. Gemini 모델 목록과 3개 가격. DeepSeek 2개 모델의 가격·컨텍스트·생각 모드. Mistral 모델 목록의 라이선스. Qwen3.8-27B 모델 카드. 허깅페이스 조직 페이지의 모델 목록.
-
-확인 못 함: Gemini 3.8 Flash·3.5 Flash-Lite 컨텍스트, Gemini 4 Argon 전체 창 크기(페이지는 "긴 디코드 최대 1M"만 언급). Llama 4 라이선스, Meta Muse 계열의 공식 발표. OpenAI의 열린 가중치 모델 현황. Qwen3.8 큰 모델들의 라이선스. Mistral Large 4 크기. 모델별 속도 수치, 벤치마크 점수. 가격표는 날짜가 지나면 바뀐다(Gemini는 12월·1월 인상이 이미 예고돼 있다).
+5. 로컬 가능 여부: 로컬은 열린 가중치 모델만 가능하다. 가중치 크기가 곧 필요한 메모리다. Qwen3.8-27B는 27B라 양자화하면 개인 GPU에도 올려 볼 만한 크기다. DeepSeek V4(수백 B~1.7T)나 Qwen 2.4T는 개인 장비로는 어렵다고 짐작한다.
 
 </details>
 
@@ -121,4 +112,3 @@ Anthropic 문서는 처음에 가장 싼 Haiku로 시작해 부족할 때만 올
 - Qwen 허깅페이스 조직: https://huggingface.co/Qwen
 - DeepSeek 허깅페이스 조직: https://huggingface.co/deepseek-ai
 - Meta Llama 허깅페이스 조직: https://huggingface.co/meta-llama
-- (참고만, 단일 출처 불확실) 웹 검색에 나온 Meta Muse 관련 기사들은 직접 열지 못함

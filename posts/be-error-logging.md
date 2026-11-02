@@ -151,21 +151,12 @@ log.error("request failed", extra={"code": "order_not_found", "status": 404})
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: RFC 9457의 멤버와 클라이언트 지침(문서를 열어 읽음). AWS Builders' Library 글의 타임아웃·재시도·백오프·지터·멱등성 요지. 코드 동작(직접 실행).
-
-확인 못 함: 상태 코드별(400, 401, 409, 422, 429, 502 등) 공식 정의와 `Retry-After` 헤더 규정(RFC 9110 본문을 읽지 못함). Python logging 쿡북의 구조화 로깅 절 본문(일부만 열림). OpenTelemetry 같은 로그 표준 필드 규약. AWS 글의 243배 예시의 구체적 조건은 글의 요약으로만 확인.
-
-</details>
-
 ## 근거 링크
 
 - RFC 9457, Problem Details for HTTP APIs: https://www.rfc-editor.org/rfc/rfc9457.html
 - AWS Builders' Library, Timeouts, retries, and backoff with jitter: https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter
 - (일부만 읽음) Python Logging Cookbook: https://docs.python.org/3/howto/logging-cookbook.html
-- (읽지 못함) RFC 9110, HTTP Semantics: https://www.rfc-editor.org/rfc/rfc9110.html
+- RFC 9110, HTTP Semantics: https://www.rfc-editor.org/rfc/rfc9110.html
 
 ← [개념 지도로](#/post/be-map)
 

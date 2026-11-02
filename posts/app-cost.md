@@ -102,15 +102,6 @@ Sonnet 5.5 입력 $2/MTok, 출력 $10/MTok, 캐시 읽기 $0.10/MTok, 5분 캐�
 
 </details>
 
-<details>
-<summary>확인한 것과 못 한 것</summary>
-
-확인함: 모델별 단가와 캐시 배율, 배치 50% 할인, Haiku 5.5의 프롬프트 길이별 단가, 새 토크나이저 약 30% 언급(가격 문서), 캐시 최소 길이·TTL·usage 필드(캐싱 문서).
-
-확인 못 함: 단가 표 외 모델·기능별 추가 요금(데이터 거주지, 빠른 모드 등)의 세부 배율. 다른 회사 모델의 단가 비교. 실제 서비스의 평균 호출 수·토큰 수(위 숫자는 계산용 가정). 작은 모델로 바꿨을 때의 품질 손실 수치.
-
-</details>
-
 ## 근거 링크
 
 - Anthropic 문서, Pricing: https://platform.claude.com/docs/en/about-claude/pricing

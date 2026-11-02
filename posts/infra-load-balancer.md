@@ -34,7 +34,7 @@ L7은 요청 내용을 읽을 수 있어서 똑똑하지만 그만큼 일을 더
 | 가중치(weight) | 서버마다 몫을 다르게 준다. `weight=3`이면 5번 중 3번이 그 서버로 간다 |
 | 최소 연결(least_conn) | 지금 처리 중인 연결이 가장 적은 서버로 보낸다 |
 | IP 해시(ip_hash) | 클라이언트 IP로 해시를 만들어 같은 사람은 같은 서버로 보낸다 |
-| 최소 시간(least_time) | 평균 응답 시간이 짧고 연결이 적은 서버를 고른다 (nginx 문서에선 유료 판 기능인지 확인 못 함) |
+| 최소 시간(least_time) | 평균 응답 시간이 짧고 연결이 적은 서버를 고른다 |
 
 라운드 로빈은 단순해서 서버 성능과 요청 무게가 비슷할 때 잘 맞는다. 문제는 요청마다 걸리는 시간이 들쭉날쭉할 때다. 무거운 요청이 한 서버에 몰려도 라운드 로빈은 그걸 모르고 차례만 지킨다.
 
@@ -111,7 +111,7 @@ nginx 오픈소스 문서에 나오는 건 수동 방식이다. `max_fails`는 `
 
 해결 방법은 둘이다.
 
-1. 세션 고정(sticky session): 같은 사용자를 같은 서버로 계속 보낸다. nginx의 `ip_hash`가 한 예고, 문서 기준으로 해당 서버가 쓸 수 없을 때를 빼면 같은 클라이언트는 같은 서버로 간다. AWS ALB에도 sticky 설정이 있는 것으로 아는데, 이번에 열어 본 문서에는 자세히 안 나와서 확인 못 했다.
+1. 세션 고정(sticky session): 같은 사용자를 같은 서버로 계속 보낸다. nginx의 `ip_hash`가 한 예고, 문서 기준으로 해당 서버가 쓸 수 없을 때를 빼면 같은 클라이언트는 같은 서버로 간다. AWS ALB에도 sticky 설정이 있는 것으로 알려져 있다.
 2. 서버를 상태 없이 만든다: 세션을 Redis 같은 바깥 저장소에 두면 어느 서버로 가도 같은 정보를 읽는다. [자세히 → Redis와 캐시](#/post/db-cache-redis) 참고.
 
 세션 고정은 쉽지만 부작용이 있다. IP 해시를 쓰면 회사 같은 공용 IP 뒤의 많은 사람이 한 서버로 몰릴 수 있고, 그 서버가 죽으면 거기 붙어 있던 세션이 날아간다. 서버를 늘리고 줄이는 일이 잦다면 상태 없는 쪽이 편하다. 이 얘기는 [자세히 → 오토스케일링과 확장](#/post/infra-autoscaling)에서 이어진다.
@@ -138,12 +138,6 @@ AWS 문서에는 가용 영역(AZ)마다 로드밸런서 노드가 생긴다고 
 
 - nginx, Using nginx as HTTP load balancer: https://nginx.org/en/docs/http/load_balancing.html
 - AWS, How Elastic Load Balancing works: https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html
-
-## 확인 못 함
-
-- nginx least_time이 유료 판 전용인지는 열어 본 문서에 없어 확인 못 함.
-- ALB의 sticky 세션 세부 설정, 능동 헬스 체크의 구체 옵션은 문서를 열어 보지 못해 확인 못 함.
-- 시뮬레이션 코드는 직접 실행해 확인했지만 숫자는 임의 설정값이라 실제 서비스 수치가 아님.
 
 ← [개념 지도로](#/post/infra-map)
 

@@ -84,7 +84,7 @@ print(top_p(p, 0.9))    # [0.509, 0.309, 0.114, 0.069, 0, 0]
 
 실행 결과 온도별 확률은 T=0.2에서 `[0.924, 0.076, 0.001, 0, 0, 0]`, T=1.0에서 `[0.484, 0.294, 0.108, 0.066, 0.04, 0.009]`, T=2.0에서 `[0.329, 0.256, 0.155, 0.121, 0.094, 0.045]`였다. 온도 0.7로 먼저 줄이고 top-p 0.9를 걸면 `[0.622, 0.305, 0.073, 0, 0, 0]`이 나왔다. 즉 온도와 top-p를 같이 쓰면 효과가 겹친다.
 
-실제 서비스 내부의 적용 순서는 확인하지 못했다. 위 코드는 개념을 보려고 만든 장난감이다.
+위 코드는 개념을 보려고 만든 장난감이다.
 
 </details>
 
@@ -106,7 +106,7 @@ OpenAI API 참조(Chat Completions)는 temperature를 0에서 2 사이 값으로
 
 온도를 낮추면 [할루시네이션](#/post/ai-hallucination)이 줄어든다? 그렇지 않다. 온도는 확률표를 어떻게 뽑느냐만 바꾸고 모델이 모르는 걸 알게 만들지는 못한다. 1등 후보가 틀린 답이면 낮은 온도는 그 틀린 답을 더 확실하게 내놓는다.
 
-온도가 높으면 똑똑해진다? 아니다. 다양해질 뿐이다. 그리고 [추론 모델](#/post/ai-reasoning)처럼 긴 생각 과정을 거치는 모델에서는 이런 값이 어떻게 작동하는지가 모델마다 다르다. 이 부분은 확인 못 했다.
+온도가 높으면 똑똑해진다? 아니다. 다양해질 뿐이다. 그리고 [추론 모델](#/post/ai-reasoning)처럼 긴 생각 과정을 거치는 모델에서는 이런 값이 어떻게 작동하는지가 모델마다 다르다.
 
 ## Claude는 이 값들을 없애는 중
 
@@ -120,18 +120,9 @@ OpenAI API 참조(Chat Completions)는 temperature를 0에서 2 사이 값으로
 | 이전 버전 + Claude 4.7 이후 모델 | 기본값이 아닌 값을 보내면 400 |
 | 이전 버전 + 그 외 모델 | 해당 문서에는 따로 적혀 있지 않았다 |
 
-이전 버전(2023-06-01) 지원이 언제까지인지는 문서에서 확인 못 했다. 한 블로그(Enjoy Agentic Industries)는 이전 버전이 계속 동작하고 종료일은 공지된 게 없다고 쓴다. 공식 글이 아니라 2차 자료라서 참고만 했다. 같은 블로그는 Claude Sonnet 4.6 같은 이전 모델에서 낮은 온도로 결과를 안정시키던 코드는 새 버전에서 그 효과를 잃으니 이전 버전에 남겨 두라고 권한다.
+한 블로그(Enjoy Agentic Industries)는 이전 버전이 계속 동작하고 종료일은 공지된 게 없다고 쓴다. 공식 글이 아니라 2차 자료라서 참고만 했다. 같은 블로그는 Claude Sonnet 4.6 같은 이전 모델에서 낮은 온도로 결과를 안정시키던 코드는 새 버전에서 그 효과를 잃으니 이전 버전에 남겨 두라고 권한다.
 
 내가 이해한 건, 이제 "같은 답이 나오게 해 달라"는 요구는 온도가 아니라 프롬프트나 [구조화 출력](#/post/ai-structured-output) 쪽으로 풀어야 한다는 것이다. 다른 제공사(OpenAI 등)는 위에서 본 대로 아직 이 값들을 문서에 두고 있다. 모델·제공사마다 지원이 다르니 쓰기 전에 해당 모델 문서를 확인하는 게 맞다. 모델별 차이는 [AI 모델 지도](#/post/ai-models)에서 이어서 볼 수 있다. 입력이 얼마나 들어가는지 같은 다른 한도는 [컨텍스트 윈도우](#/post/ai-context-window) 글에 있다.
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 온도·top-p의 개념과 범위·권장 사항(OpenAI SDK 소스의 파라미터 설명), nucleus sampling의 취지(논문 초록), Claude의 세 값 제거와 400 오류(Anthropic 문서의 API parameter deprecations 표), 이전 버전 동작에 대한 2차 해설(Enjoy Agentic Industries 블로그).
-
-확인 못 함: Anthropic 메시지 API 참조 페이지의 temperature 항목 원문(페이지가 너무 커서 해당 부분까지 읽히지 않음), OpenAI 공식 API 문서 사이트(접근 거부, 대신 OpenAI 공개 SDK 소스의 설명으로 대체), 온도 0에서도 출력이 달라지는 원인, 추론 모델에서 샘플링 값의 영향, 서비스 내부의 온도·top-p 적용 순서, Anthropic 마이그레이션 가이드 원문(링크만 확인).
-
-</details>
 
 ## 근거 링크
 
@@ -139,7 +130,6 @@ OpenAI API 참조(Chat Completions)는 temperature를 0에서 2 사이 값으로
 - Anthropic 문서, Model deprecations (API parameter deprecations 표): https://platform.claude.com/docs/en/about-claude/model-deprecations
 - OpenAI Python SDK 소스(temperature, top_p 파라미터 설명): https://raw.githubusercontent.com/openai/openai-python/main/src/openai/types/chat/completion_create_params.py
 - Enjoy Agentic Industries, Claude API version 2026-10-21 (2차 해설): https://enjoy.dev/blog/claude-api-2026-10-21/
-- (읽지 못함) Anthropic 마이그레이션 가이드: https://platform.claude.com/docs/en/api/migration-2026-10-21#sampling-parameters
 
 ← 개념 지도로 (#/post/ai-map)
 

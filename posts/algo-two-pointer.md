@@ -247,11 +247,4 @@ print(count_k([1, 2, 3, -3, 3], 3))  # 5
 - itertools.accumulate (Python 공식 문서): https://docs.python.org/3/library/itertools.html (accumulate와 initial 옵션을 확인)
 - 사용한 문제: 구명보트 https://school.programmers.co.kr/learn/courses/30/lessons/42885 · 연속된 부분 수열의 합 https://school.programmers.co.kr/learn/courses/30/lessons/178870 · 보석 쇼핑 https://school.programmers.co.kr/learn/courses/30/lessons/67258 · 연속 부분 수열 합의 개수 https://school.programmers.co.kr/learn/courses/30/lessons/131701 · 파괴되지 않은 건물 https://school.programmers.co.kr/learn/courses/30/lessons/92344 · LeetCode 3 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-## 확인 못 함
-
-- 프로그래머스 문제는 페이지를 열어 제목·요약·제한을 확인했다. LeetCode 3은 사이트가 직접 열리지 않아 검색 결과의 문제 페이지 정보로 확인했다. 제출 채점 결과는 확인 못 했다.
-- 보석 쇼핑은 코드를 쓰지 않았고 제목·요약만 확인했다.
-- 투 포인터·슬라이딩 윈도우의 용어 구분은 공식 정의를 찾지 못했고 관례를 따랐다.
-- 덱으로 창 최댓값을 구하는 방법은 코드를 실행하지 않았다.
-
 ← 개념 지도로 (#/post/algo-map)

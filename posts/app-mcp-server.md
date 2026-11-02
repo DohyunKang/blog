@@ -33,7 +33,6 @@ log = logging.getLogger(__name__)
 mcp = MCPServer("notes")
 NOTES: dict[str, str] = {}
 
-
 @mcp.tool()
 def add_note(title: str, body: str) -> str:
     """메모를 저장한다. 같은 제목이 있으면 덮어쓴다."""
@@ -41,12 +40,10 @@ def add_note(title: str, body: str) -> str:
     log.info("saved %s", title)
     return f"저장함: {title}"
 
-
 @mcp.tool()
 def search_notes(keyword: str) -> list[str]:
     """제목이나 본문에 keyword가 들어간 메모의 제목 목록을 돌려준다."""
     return [t for t, b in NOTES.items() if keyword in t or keyword in b]
-
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
@@ -147,15 +144,6 @@ def get_note(title: str) -> str:
 ← [개념 지도로](#/post/app-map)
 
 관련 글: [MCP](#/post/ai-mcp) · [도구 호출](#/post/ai-tool-use) · [에이전트 설계](#/post/app-agent-design)
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-직접 실행해 확인함: 위 `notes_server.py`를 mcp 2.3.0(Python 3.13, venv)에서 stdio로 띄우고 SDK 클라이언트로 `list_tools`와 `call_tool` 두 개를 호출해 결과를 얻음. 입력 스키마가 타입 힌트에서 자동 생성되는 것, 일반 예외가 "Error executing tool"로 가려지는 것, `ToolError` 메시지가 전달되는 것도 같은 방식으로 확인함.
-
-확인 못 함: MCP Inspector 실행, Claude Desktop 연결(설정 JSON은 공식 튜토리얼 내용), 공식 튜토리얼의 날씨 서버(외부 API 호출 부분)를 직접 돌려 보는 것, TypeScript SDK 방식, HTTP 전송 방식 서버 배포.
-
-</details>
 
 ## 근거 링크
 

@@ -93,14 +93,14 @@ NoSQL을 얘기하면 CAP이 따라 나온다. 분산 저장소에서 일관성(
 
 "셋 중 둘을 고른다"는 말은 오해를 낳는다. 네트워크 분할은 현실에서 피할 수 없어서, 실제 선택은 분할이 생긴 동안 일관성을 택할지 가용성을 택할지다. Brewer 본인도 나중에 이 식의 이해가 오도하기 쉽다고 했고, 분할이 없을 때는 둘 다 충족할 수 있다. 2010년 Abadi는 여기에 PACELC를 붙였다. 분할이 있으면 가용성 대 일관성, 없어도 지연(latency) 대 일관성을 고르게 된다는 확장이다.
 
-그래서 "Cassandra는 AP, MongoDB는 CP" 식의 딱지는 조심해서 읽는다. 설정에 따라 달라지는 제품이 많고, 이 글에서는 제품별 분류를 확인하지 못했다. 복제와 샤딩 쪽 이야기는 다음 글에 이어진다. [자세히 → 복제와 샤딩](#/post/db-scaling)
+그래서 "Cassandra는 AP, MongoDB는 CP" 식의 딱지는 조심해서 읽는다. 설정에 따라 달라지는 제품이 많고, 복제와 샤딩 쪽 이야기는 다음 글에 이어진다. [자세히 → 복제와 샤딩](#/post/db-scaling)
 
 ## 흔한 오해
 
 - NoSQL은 SQL이 필요 없다: 분류 이름일 뿐이고, SQL 비슷한 언어를 가진 제품도 있다.
 - NoSQL이 RDB보다 빠르다: 모양이 맞는 질의에서 빠른 것이고, 안 맞는 질의에서는 오히려 느리거나 못 한다.
 - 스키마가 없어서 설계를 안 해도 된다: 문서 DB도 임베드할지 참조할지 정해야 하고, 안 정하면 앱 코드에 흩어진다.
-- NoSQL은 트랜잭션이 안 된다: 제품마다 다르다. 이 글에서는 제품별 지원 범위를 확인하지 못했다.
+- NoSQL은 트랜잭션이 안 된다: 제품마다 다르다.
 
 ## 어떻게 고르나
 
@@ -128,8 +128,3 @@ NoSQL을 얘기하면 CAP이 따라 나온다. 분산 저장소에서 일관성(
 - Cassandra 아키텍처 개요: https://cassandra.apache.org/doc/latest/cassandra/architecture/overview.html
 - Neo4j 그래프 DB 소개: https://neo4j.com/docs/getting-started/get-started-with-neo4j/graph-database/
 
-## 확인 못 함
-
-- 제품별 CAP 분류(Cassandra, MongoDB 등)와 설정에 따른 변화
-- 제품별 트랜잭션·조인 지원 범위, Cassandra의 tunable consistency(가져온 페이지에 설명 없음)
-- 친구의 친구 질의의 실제 성능 차이(작은 데이터로 결과만 확인, 속도는 측정 안 함)

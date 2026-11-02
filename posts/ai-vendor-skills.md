@@ -87,23 +87,16 @@ ChatGPT의 GPTs는 파일을 폴더에 두는 방식과 결이 다르다. 지침
 | 항목 | Claude Code | Codex |
 |---|---|---|
 | 필수 필드 | 없음(description 권장) | name, description |
-| 사람만 호출 | `disable-model-invocation: true` | (확인 못 함) |
+| 사람만 호출 | `disable-model-invocation: true` | - |
 | 모델 자동 호출 끄기 | 위와 같음 | `agents/openai.yaml`의 `allow_implicit_invocation: false` |
 | 직접 호출 | `/이름` | `$이름` |
-| 서브에이전트 실행 | `context: fork` | (확인 못 함) |
+| 서브에이전트 실행 | `context: fork` | - |
 
 </details>
 
 ← 개념 지도로 (#/post/ai-map)
 
 관련 글: [스킬](#/post/ai-skills), [MCP](#/post/ai-mcp), [하네스](#/post/ai-harness)
-
-## 확인 못 함
-
-- Cursor의 스킬·MCP 지원 여부와 위치(확인한 건 규칙과 AGENTS.md뿐이다)
-- Codex의 MCP 설정 위치, Claude Code의 프로젝트 MCP 설정 파일 위치
-- ChatGPT GPTs의 세부 제한은 OpenAI 도움말 본문을 직접 열지 못하고(403) 검색 요약으로만 확인했다.
-- Antigravity CLI의 확장 방식
 
 ## 근거 링크
 

@@ -112,13 +112,6 @@ customer 1 ──< orders 1 ──< order_item >── 1 product
 
 참고로 Microsoft 문서는 4NF를 BCNF라고 부르는데, Wikipedia는 BCNF를 3NF보다 엄격한 별도 형태로 놓는다. 둘이 다르게 말해서, 여기서는 BCNF를 Wikipedia 쪽 설명으로 이해했다. 테이블 간 관계를 SQL로 다루는 방법은 [관계형 DB와 SQL](#/post/db-rdb-sql)에, 쪼갠 테이블을 한꺼번에 고칠 때 필요한 건 [트랜잭션](#/post/db-transaction)에 있다.
 
-## 확인 못 함
-
-- 4NF·5NF의 정확한 정의와 예(문서에서 이름만 확인).
-- BCNF 정의의 형식적 증명과 3NF와 달라지는 구체적 반례.
-- 반정규화가 실제 서비스에서 몇 배 빨라지는지 같은 수치(찾지 않았고 직접 측정도 안 함).
-- 예제는 SQLite에서만 실행했다. MySQL·PostgreSQL에서의 동작은 확인 못 함.
-
 ## 근거 링크
 
 - Microsoft Learn, Database normalization description: https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description

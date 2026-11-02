@@ -196,10 +196,4 @@ O(V+E), 공간 O(V+E).
 - Disjoint-set data structure (Wikipedia): https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 - Topological sorting (Wikipedia): https://en.wikipedia.org/wiki/Topological_sorting
 
-## 확인 못 함
-
-- 프로그래머스 문제 5개(배달, 합승 택시 요금, 네트워크, 호텔 방 배정, 섬 연결하기)는 페이지를 열어 제목과 내용을 확인했다. 위상 정렬은 프로그래머스에서 확인된 문제를 찾지 못해 LeetCode 210·207로 적었는데, 사이트가 직접 열리지 않아(403) 검색 결과로 제목과 유형만 확인했다.
-- 위키피디아 Dijkstra 문서는 앞 10만 자만 읽었다.
-- 코드는 위 예시 입력으로 직접 실행해 결과를 확인했다. 대용량 입력의 속도는 실행해 보지 않았다.
-
 ← [개념 지도로](#/post/algo-map)

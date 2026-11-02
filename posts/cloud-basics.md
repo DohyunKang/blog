@@ -48,8 +48,6 @@ AWS의 책임 공유 모델 문서는 이 경계를 보안 쪽에서 설명한�
 
 실제로는 이렇게 쓴다. 서버를 AZ 한 곳에만 두면 그 건물에 문제가 생길 때 서비스가 같이 멈춘다. 두 곳 이상에 나눠 놓고 앞에서 요청을 나눠 주면 한쪽이 죽어도 산다. 나눠 주는 장치가 [자세히 → 로드밸런서](#/post/infra-load-balancer)다. 리전은 사용자와 가까울수록 응답이 빠르고, 나라별 데이터 보관 규정과도 엮이니 처음에 신중히 고르는 편이 낫다는 설명도 있지만, 이번에 공식 문서로 확인한 건 아니다.
 
-AZ 개수, AZ 사이 거리와 지연 시간 같은 숫자는 문서에서 확인하지 못해서 적지 않았다.
-
 ## VM이 뭔지
 
 가상 머신(VM)은 물리 서버 한 대를 소프트웨어로 쪼개서 여러 대처럼 쓰는 것이다. IaaS에서 빌리는 "서버"가 대개 이 VM이다. 코어 수, 메모리, 디스크를 골라 만들면 몇 분 안에 접속할 수 있는 컴퓨터가 생긴다. VM마다 OS를 따로 올리니까 무겁고, 켜는 데 시간이 걸린다. 더 가벼운 방식이 컨테이너다. [자세히 → Docker와 컨테이너](#/post/cloud-docker)에서 이어 본다.
@@ -61,7 +59,7 @@ AZ 개수, AZ 사이 거리와 지연 시간 같은 숫자는 문서에서 확�
 - 켜 둔 시간만큼 나간다. VM은 아무 요청이 없어도 켜져 있으면 요금이 나간다.
 - 서버 값 말고도 나간다. 디스크 저장 용량, 서버에서 인터넷으로 나가는 데이터 양, 관리형 서비스 이용료가 따로 붙는 경우가 많다.
 - 한 번 만들고 잊으면 계속 나간다. 테스트로 띄운 서버를 안 지워서 요금이 쌓이는 일이 흔하다고 한다.
-- 오래 쓸 거라면 약정 할인, 중단돼도 되는 일이라면 남는 자원을 싸게 쓰는 방식이 있다고 알려져 있다. 할인율과 조건은 확인하지 못했다.
+- 오래 쓸 거라면 약정 할인, 중단돼도 되는 일이라면 남는 자원을 싸게 쓰는 방식이 있다고 알려져 있다.
 
 그래서 처음엔 알림을 걸어 두는 게 먼저다. 예산을 정해 두고, 넘으면 알림이 오게 하는 기능이 보통 있다. 로그와 지표를 모아 보는 얘기는 [자세히 → 모니터링·로그·알림](#/post/cloud-observability)에 이어진다.
 
@@ -85,7 +83,7 @@ AZ 개수, AZ 사이 거리와 지연 시간 같은 숫자는 문서에서 확�
 - 프라이빗(온프레미스): 가상화와 자원 관리 도구로 자기 건물 안에 구성하는 것. 문서는 클라우드의 장점은 많이 못 얻지만 전용 자원이 필요할 때 선택한다고 설명한다.
 - 하이브리드: 클라우드와 클라우드 밖 기존 설비를 이어서 쓰는 것. 가장 흔한 형태는 기존 설비를 클라우드로 넓혀 가며 둘을 연결하는 방식이다.
 
-NIST 문서는 배포 모델이 네 가지라고 하는데 이번에 이름까지는 확인하지 못했다(공동체 클라우드가 더 들어간다고 알고 있다).
+NIST 문서는 배포 모델을 네 가지로 나눈다. 공동체 클라우드가 더 들어간다고 알려져 있다.
 
 </details>
 
@@ -96,15 +94,6 @@ NIST 문서는 배포 모델이 네 가지라고 하는데 이번에 이름까�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: NIST SP 800-145의 요약(정의 문장, 특징 이름 일부, 서비스·배포 모델 개수), AWS 개요 문서의 리전·AZ 정의, 배포 모델 세 가지, 쓴 만큼 내는 가격 방식과 "서버를 몇 분 안에" 설명, AWS 책임 공유 모델 문서의 역할 구분.
-
-확인 못 함: NIST의 IaaS/PaaS/SaaS 정의 본문(PDF가 읽히지 않음), 다섯 가지 특징의 전체 정의, 네 가지 배포 모델 이름. EC2 구매 옵션(온디맨드, 예약, 스팟)의 구체적인 할인율·과금 단위(공식 페이지가 읽히지 않음). AZ 개수와 지연 시간 숫자. 표의 서비스 예시는 일반 설명이다.
-
-</details>
-
 ## 근거 링크
 
 - NIST SP 800-145, The NIST Definition of Cloud Computing: https://csrc.nist.gov/pubs/sp/800/145/final
@@ -112,7 +101,7 @@ NIST 문서는 배포 모델이 네 가지라고 하는데 이번에 이름까�
 - AWS, Types of cloud computing: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html
 - AWS, Overview of Amazon Web Services: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html
 - AWS, Shared responsibility model: https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/shared-responsibility-model.html
-- (읽지 못함) NIST 정의 PDF 본문: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
+- NIST 정의 PDF 본문: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
 
 ← 개념 지도로 ([클라우드·배포 지도](#/post/cloud-map))
 

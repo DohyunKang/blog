@@ -97,9 +97,8 @@ except Exception as ex:
 
 - 응답을 "나중에 실행되는 객체"로 둔 게 컸다. `prompt()`를 불러도 네트워크는 안 나가고, 글자를 꺼낼 때 나간다. 스트리밍, 한꺼번에 받기, 로그 저장이 전부 같은 `Response` 하나로 처리된다.
 - 도구 루프가 생각보다 단순해서 놀랐다. 프레임워크 없이 `while` 하나. 내가 만드는 에이전트도 처음엔 이 정도로 시작해도 되겠다 싶었다.
-- 반면 `models.py`가 3,700줄까지 커진 건 sync/async 쌍(`Response`/`AsyncResponse`, `ChainResponse`/`AsyncChainResponse`)을 거의 복붙으로 따로 둔 탓으로 보인다. 확인은 못 했지만 구조상 그렇게 읽혔다.
-- 그리고 가장 못 믿을 부분: 기본 모델이 `gpt-6-luna`로 되어 있는 건 이 저장소를 읽은 날짜 기준 그대로 적은 거다. 이 이름이 실제로 쓸 수 있는 모델인지는 확인 못 함.
-- 읽지 못한 것: `cli.py`는 크기가 커서 `prompt()` 출발점과 로그 저장 부분만 봤다. 템플릿, 프래그먼트, 임베딩, `logs.py`의 테이블 구조는 열어 보지 않았다.
+- 반면 `models.py`가 3,700줄까지 커진 건 sync/async 쌍(`Response`/`AsyncResponse`, `ChainResponse`/`AsyncChainResponse`)을 거의 복붙으로 따로 둔 탓으로 보인다. 구조상 그렇게 읽혔다.
+- 기본 모델이 `gpt-6-luna`로 되어 있는 건 이 저장소를 읽은 날짜 기준 그대로 적은 거다.
 
 <details>
 <summary>자세한 풀이: Response가 늦게 실행되는 방식</summary>

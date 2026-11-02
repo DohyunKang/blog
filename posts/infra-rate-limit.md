@@ -135,14 +135,6 @@ Stripe는 이 네 가지(요청 속도, 동시 요청, 서비스 전체 부하 �
 - RFC 6585 section 4: https://www.rfc-editor.org/rfc/rfc6585#section-4
 - AWS Builders' Library, Timeouts, retries, and backoff with jitter: https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter
 
-## 확인 못 함
-
-- Stripe 글에 토큰 버킷의 용량·채움 속도 값은 적혀 있지 않았다.
-- 클라우드 서비스(Cloudflare, API Gateway 등)의 실제 레이트 리밋 설정값과 기본 한도는 확인하지 않았다.
-- `RateLimit-*` 응답 헤더 표준화 상황은 확인하지 않았다.
-- DDoS 대응 구조는 확인하지 않았다.
-- 위 코드는 로컬에서 실행해 결과를 확인했지만, 여러 서버에서 Redis로 원자적으로 세는 구현은 실행 확인 못 함.
-
 ← [개념 지도로](#/post/infra-map)
 
 관련 글: [로드 밸런서](#/post/infra-load-balancer) · [오토스케일링](#/post/infra-autoscaling) · [비동기 큐](#/post/be-async-queue)

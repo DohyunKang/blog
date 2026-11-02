@@ -126,18 +126,13 @@ for acc in [SavingsAccount("lee", 1000), CheckingAccount("park", 10)]:
 
 - 객체지향이 더 좋은 방식이다: 둘은 도구가 다르고, 짧은 스크립트에 클래스를 억지로 넣으면 코드만 길어진다. 현대 코드도 함수와 객체를 섞어 쓴다.
 - 클래스를 쓰면 객체지향이다: 데이터만 담고 동작은 밖 함수에 있는 클래스는 딕셔너리를 이름 붙인 것에 가깝다.
-- 상속을 많이 쓸수록 재사용이 잘 된다: 상속이 깊어지면 부모를 고칠 때 자식이 줄줄이 깨진다. 이 부분의 대안은 위의 SOLID·디자인 패턴 글에서 다룬다. 여기서는 확인하지 않았다.
+- 상속을 많이 쓸수록 재사용이 잘 된다: 상속이 깊어지면 부모를 고칠 때 자식이 줄줄이 깨진다. 이 부분의 대안은 위의 SOLID·디자인 패턴 글에서 다룬다.
 - 파이썬에도 private이 있다: 위에서 본 대로 약속과 이름 바꾸기뿐이다.
 
 ## 근거 링크
 
 - Python 공식 튜토리얼, Classes: https://docs.python.org/3/tutorial/classes.html
 - Wikipedia, Procedural programming: https://en.wikipedia.org/wiki/Procedural_programming
-
-## 확인 못 함
-
-- 상속 대신 합성을 쓰라는 일반론의 출처는 이번에 읽지 않았다.
-- 계좌 예제 코드는 파이썬으로 실행해 위 출력과 같은 걸 확인했다(AttributeError 포함). 이자 계산 결과 1020.0도 확인했다.
 
 ← 개념 지도로 (#/post/cs-map)
 

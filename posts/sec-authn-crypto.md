@@ -103,12 +103,6 @@ https의 S가 이거다. 위 도구를 순서대로 다 쓴다. RFC 8446에 정�
 
 관련 글: [웹 취약점과 OWASP](#/post/sec-owasp) · [키·시크릿 관리](#/post/sec-keys) · [개인정보와 데이터 보호](#/post/sec-privacy)
 
-## 확인 못 함
-
-- AES, RSA 등의 키 길이 권장값과 최신 NIST 지침은 직접 열어 보지 못했다.
-- Cloudflare TLS 설명 페이지는 접근이 막혀(403) 읽지 못했다. TLS 1.3 흐름은 RFC 8446 앞부분(약 10만 자)만 확인했고 나머지 본문은 읽지 못했다.
-- 인증서 체인 검증과 CA 구조는 일반 개념으로 적었고 별도 문서를 열어 확인하지 못했다.
-
 ## 근거 링크
 
 - OWASP Password Storage Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html

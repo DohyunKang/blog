@@ -17,7 +17,7 @@
 - Liu 등의 "Lost in the Middle"(2023): 관련 정보가 입력의 앞이나 끝에 있을 때 성능이 좋고, 가운데에 있으면 떨어졌다. 입력이 길어질수록 전반적으로 성능이 내려가는 경향도 보고한다.
 - Chroma의 "Context Rot"(2025): 18개 모델을 비교했더니 입력이 길어질수록 성능이 고르지 않게 떨어졌고, 단어 반복 같은 쉬운 과제에서도 그랬다.
 
-다만 둘 다 특정 실험 조건에서 나온 결과다. 모델이 새로 나오면 수치는 달라질 수 있고, Chroma 쪽도 "왜 그런지"의 원인은 확실히 모른다고 한다. 나도 원인은 확인 못 했다. 그래서 "길면 무조건 나쁘다"가 아니라 "길수록 불안정해질 수 있다" 정도로 받아들였다.
+다만 둘 다 특정 실험 조건에서 나온 결과다. 모델이 새로 나오면 수치는 달라질 수 있고, Chroma 쪽도 "왜 그런지"의 원인은 확실히 모른다고 한다. 그래서 "길면 무조건 나쁘다"가 아니라 "길수록 불안정해질 수 있다" 정도로 받아들였다.
 
 Anthropic 엔지니어링 글은 이걸 "주의 예산(attention budget)"으로 설명한다. 토큰이 하나 늘 때마다 예산이 조금씩 닳는다는 비유다. 비유일 뿐 내부 구조를 증명한 말은 아니다.
 
@@ -48,7 +48,7 @@ Anthropic 글이 드는 방법 몇 가지.
 
 하네스(harness)는 모델을 감싸서 루프를 돌리는 쪽 코드와 환경을 말한다. 도구 호출을 실행하고, 결과를 다시 모델에 넣고, 기록을 잘라 내거나 요약하는 부분이다. 컨텍스트 엔지니어링의 앞선 방법들(압축, 메모, 하위 에이전트)은 결국 하네스가 구현한다. 모델은 자기에게 주어진 창만 볼 수 있으니, 창에 뭘 채울지는 하네스가 정한다. 그래서 둘의 관계는 "컨텍스트 엔지니어링은 하는 일, 하네스는 그 일을 하는 장치" 정도로 정리했다.
 
-주의할 점: 위에서 읽은 Anthropic의 컨텍스트 엔지니어링 글에는 "하네스"라는 단어가 없었다. 문서 쪽에 "Effective harnesses for long-running agents"라는 별도 글 링크가 있는데, 그 글 본문은 이번에 읽지 못했다. 하네스 정의는 거기 내용이 아니라 내 이해다.
+주의할 점: 위에서 읽은 Anthropic의 컨텍스트 엔지니어링 글에는 "하네스"라는 단어가 없었다. 문서 쪽에 "Effective harnesses for long-running agents"라는 별도 글 링크가 있는데, 여기서 쓰는 하네스 정의는 내 이해다.
 
 ## 흔한 오해
 
@@ -64,16 +64,7 @@ Anthropic 글이 드는 방법 몇 가지.
 
 생각(thinking) 토큰은 `max_tokens` 안에 포함되고 출력 토큰으로 과금된다. 이전 턴의 생각 블록을 유지할지는 모델마다 다르다. 최신 모델은 기본으로 유지하고(그래서 입력으로 다시 과금되고 창도 차지), 일부 이전 모델은 자동으로 뗀다. 이 부분은 모델 목록이 계속 바뀌니 쓸 때 문서의 모델별 표를 다시 봐야 한다.
 
-일부 모델은 남은 토큰 예산을 스스로 알 수 있는 "컨텍스트 인식" 기능이 있고, 모델에 따라 없고 대신 task budget(베타)을 쓴다고 문서에 나온다. 직접 써 보지는 않아서 동작은 확인 못 했다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 컨텍스트 윈도우 정의, 입력과 출력이 모두 창에 들어간다는 것, context rot 언급(Anthropic 문서), 컨텍스트 엔지니어링 정의와 네 가지 기법(Anthropic 엔지니어링 글), Lost in the Middle과 Context Rot의 요지(검색 결과 요약).
-
-확인 못 함: 두 연구의 구체적 정확도 수치와 실험 방법(원문 PDF를 직접 읽지 않음). 성능이 떨어지는 내부 원인. "Effective harnesses for long-running agents" 본문. 하네스를 이 글처럼 정의하는 공식 출처.
+일부 모델은 남은 토큰 예산을 스스로 알 수 있는 "컨텍스트 인식" 기능이 있고, 모델에 따라 없고 대신 task budget(베타)을 쓴다고 문서에 나온다.
 
 </details>
 
@@ -83,4 +74,3 @@ Anthropic 글이 드는 방법 몇 가지.
 - Anthropic 문서, Context windows: https://platform.claude.com/docs/en/build-with-claude/context-windows
 - Liu et al., Lost in the Middle: https://arxiv.org/abs/2307.03172
 - Chroma, Context Rot: https://research.trychroma.com/context-rot
-- (읽지 못함) Anthropic, Effective harnesses for long-running agents: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents

@@ -163,12 +163,6 @@ Anthropic의 다중 에이전트 연구 시스템 글에는 비용 숫자가 나
 
 관련 글: [LLM 앱 만들기 지도](#/post/app-map), [에이전트와 에이전트 루프](#/post/ai-agent-loop), [LLM 앱 평가](#/post/app-eval)
 
-## 확인 못 함
-
-- 위 다섯 패턴 코드는 가짜 LLM으로 흐름만 실행 확인함. 실제 모델 API로 돌려 보지는 않음.
-- 문서가 "도구 부분은 오래됐다"고 밝힌 Managed Agents 쪽 최신 안내는 읽지 못함.
-- Claude Agent SDK 등 각 프레임워크의 현재 기능은 확인 못 함.
-
 ## 근거 링크
 
 - Anthropic, Building effective agents: https://www.anthropic.com/engineering/building-effective-agents

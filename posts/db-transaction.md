@@ -155,15 +155,6 @@ PostgreSQL 문서가 Read Uncommitted를 Read Committed로 매핑하는 이유�
 </details>
 
 <details>
-<summary>자세한 풀이: 실험에서 확인한 것과 못 한 것</summary>
-
-직접 실행해서 확인함(파이썬 3.13 + sqlite3): 롤백 후 잔액 복원, 커밋 전 변경이 다른 연결에 안 보이는 것, 읽기-계산-쓰기 방식의 갱신 손실(기대 20, 결과 50), `bal = bal - n` 방식(결과 20), 버전 컬럼 방식의 충돌 감지(A 성공 1, B 0).
-
-실행 확인 못 함: PostgreSQL에서의 격리 수준별 실제 동작(문서 내용을 읽은 것뿐), `SELECT ... FOR UPDATE` 코드와 위 SQL 블록 전부, 데드락 재현(sqlite로 시도했지만 "database is locked" 에러만 나서 데드락 재현으로 쓰지 않음).
-
-</details>
-
-<details>
 <summary>자세한 풀이: 용어 정리</summary>
 
 - 커밋(commit): 트랜잭션의 변경을 확정한다.
@@ -177,13 +168,6 @@ PostgreSQL 문서가 Read Uncommitted를 Read Committed로 매핑하는 이유�
 
 - PostgreSQL 문서, Transaction Isolation: https://www.postgresql.org/docs/current/transaction-iso.html
 - PostgreSQL 문서, Explicit Locking (데드락, SELECT FOR UPDATE): https://www.postgresql.org/docs/current/explicit-locking.html
-
-## 확인 못 함
-
-- PostgreSQL에서 직접 돌려 본 결과(실험은 sqlite3만, `FOR UPDATE`와 격리 수준별 동작은 문서로만 확인)
-- 데드락 감지 방식과 `deadlock_timeout` 기본값(읽은 문서 쪽에 설명이 없었음)
-- MySQL·Oracle 등 다른 DB의 격리 수준 구현 차이
-- ACID 각 글자(특히 일관성·지속성)의 공식 정의 문서
 
 ← [개념 지도로](#/post/db-map)
 

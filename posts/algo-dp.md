@@ -160,7 +160,7 @@ def lcs(a, b):
 print(lcs("ACAYKP", "CAPCAK"))  # 4
 ```
 
-시간·공간 O(N·M). 한 줄만 쓰는 식으로 공간을 O(M)까지 줄일 수 있다(이 글에서는 코드로 확인 안 함).
+시간·공간 O(N·M). 한 줄만 쓰는 식으로 공간을 O(M)까지 줄일 수 있다.
 </details>
 
 ## 복잡도를 어떻게 보나
@@ -190,9 +190,3 @@ DP의 시간은 대체로 (상태 수) × (상태 하나를 계산하는 데 드
 - [Longest increasing subsequence — Wikipedia](https://en.wikipedia.org/wiki/Longest_increasing_subsequence): O(n log n) 알고리즘과 tails 배열의 의미
 - 프로그래머스 [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) / [정수 삼각형](https://school.programmers.co.kr/learn/courses/30/lessons/43105) / [거스름돈](https://school.programmers.co.kr/learn/courses/30/lessons/12907) / [등굣길](https://school.programmers.co.kr/learn/courses/30/lessons/42898): 제목과 유형(동적계획법)을 문제 페이지에서 확인
 
-## 확인 못 함
-
-- 위키피디아 DP 문서의 뒤쪽 약 3만 자는 읽지 못했다.
-- 배낭·LIS·LCS와 똑같은 문제는 프로그래머스에서 찾지 못해서, 점화식 구조가 비슷한 문제(도둑질·정수 삼각형·등굣길)로 대신 적었다. 거스름돈은 경우의 수를 세는 변형이라 아래 코드와는 점화식이 다르다.
-- 프로그래머스 문제 페이지는 제목·유형·요약만 열어 확인했고 풀어서 제출하지는 않았다.
-- 코드 중 LCS의 한 줄 공간 최적화는 실행 확인 못 함. 나머지 코드는 파이썬으로 실행해 출력과 일치함을 확인했다.

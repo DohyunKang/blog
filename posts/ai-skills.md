@@ -49,8 +49,6 @@ description: Extract text and tables from PDF files, fill forms, merge documents
 
 ## 프롬프트·도구·MCP와 뭐가 다른가
 
-
-
 | | 하는 일 | 컨텍스트에 올라가는 시점 |
 |---|---|---|
 | [프롬프트](#/post/ai-prompt) | 이번 대화의 지시 | 매번 직접 적을 때 |
@@ -88,7 +86,7 @@ Claude Code 문서에는 설명이 길면 잘린다는 내용도 있다. `descri
 
 ## 흔한 오해
 
-- 스킬을 많이 깔면 컨텍스트가 터진다: 평소에는 스킬당 이름·설명(문서 기준 약 100 토큰)만 올라간다. 본문은 쓰일 때만 들어온다. 다만 스킬이 수백 개로 늘면 그 설명 목록 자체도 커질 테니 공짜는 아니다. 이 규모에서 어떻게 되는지는 확인 못 했다.
+- 스킬을 많이 깔면 컨텍스트가 터진다: 평소에는 스킬당 이름·설명(문서 기준 약 100 토큰)만 올라간다. 본문은 쓰일 때만 들어온다. 다만 스킬이 수백 개로 늘면 그 설명 목록 자체도 커질 테니 공짜는 아니다.
 - 한 번 불러온 스킬은 계속 유지된다: Claude Code 문서는 스킬이 쓰이면 본문이 대화에 한 번 들어와서 이후 턴에도 남는다고 한다. 그래서 오래 쓰는 작업에서는 그만큼 자리를 차지한다.
 - 스킬은 다 믿고 써도 된다: 스킬은 지침과 코드를 같이 주기 때문에 나쁜 스킬은 모델이 도구를 엉뚱하게 부르게 만들 수 있다. 문서는 직접 만들었거나 Anthropic에서 받은 것만 쓰라고 하고, 모르는 출처라면 안에 든 파일(스크립트, 이미지 포함)을 전부 감사하라고 한다. 외부 URL을 가져오는 스킬은 더 위험하다고 적는다. 소프트웨어 설치와 같은 태도로 보면 된다.
 - 스킬이 있으면 모델이 반드시 쓴다: 쓸지는 모델이 설명을 보고 정한다. 그래서 설명이 모호하면("문서를 돕는다") 안 불릴 수 있다. 문서가 이름과 설명을 특히 중요하게 꼽는 이유다.
@@ -118,21 +116,12 @@ Claude Code 문서에는 머리말에 `context: fork`를 넣으면 스킬을 별
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함(공식 문서를 열어 읽음): Agent Skills 개요(구조, 3단계 로딩과 토큰 비용, 필드 제한, 지원 환경, 보안 주의), best practices(500줄, 3인칭 설명, 한 단계 참조, 자유도, 평가 먼저), 엔지니어링 블로그(정의, 점진적 공개, 코드 실행, 보안), Claude Code 스킬 문서(저장 위치, 머리말 필드, 호출 제어, 설명 1,536자 제한, 압축 때 재첨부).
-
-확인 못 함: Claude Code 스킬 문서는 분량이 길어 끝부분 약 18,000자를 읽지 못했다. 직접 스킬을 만들어 돌려 본 실험은 하지 않았다. 스킬이 수백 개일 때의 선택 정확도나 설명 목록 비용은 문서에서 못 찾았다. API 쪽 Skills 가이드(`/v1/skills` 상세)와 엔터프라이즈 문서는 열지 않았다.
-
-</details>
-
 ## 근거 링크
 
 - Anthropic 문서, Agent Skills 개요: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
 - Anthropic 문서, Skill authoring best practices: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
 - Anthropic 엔지니어링, Equipping agents for the real world with Agent Skills: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
-- Claude Code 문서, Skills: https://code.claude.com/docs/en/skills (끝부분 일부 읽지 못함)
+- Claude Code 문서, Skills: https://code.claude.com/docs/en/skills
 
 ← [개념 지도로](#/post/ai-map)
 

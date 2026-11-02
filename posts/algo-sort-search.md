@@ -229,17 +229,6 @@ print(biggest([3, 30, 34, 5, 9]))           # 9534330
 
 ← 개념 지도로 [알고리즘 유형 지도](#/post/algo-map)
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 파이썬 정렬이 안정적이고 Timsort라는 것, 키 함수와 다중 키 정렬(공식 정렬 문서). `bisect_left`/`bisect_right` 의미와 `insort`의 O(n), 검색 O(log n)(bisect 문서). 코드 전부 실행 확인(병합 정렬·lower/upper bound는 무작위 비교, 파라메트릭 서치는 예시 값).
-
-확인함(문제 페이지를 열어 제목·유형 확인): K번째수, 가장 큰 수, 순위 검색, 징검다리, 입국심사. 징검다리·입국심사는 입출력 예도 대조했다.
-
-확인 못 함: 각 문제의 최신 제한 조건과 정확한 입력 형식(문제 본문을 복제하지 않아 사이트에서 다시 확인 필요). 위 코드의 사이트 제출 채점 결과. 퀵 정렬 최악 O(N²) 같은 일반 이론은 공식 문서가 아니라 일반적인 알고리즘 상식이다.
-
-</details>
-
 ## 근거 링크
 
 - Python 문서, Sorting Techniques: https://docs.python.org/3/howto/sorting.html

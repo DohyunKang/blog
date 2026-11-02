@@ -161,8 +161,3 @@ CrUX는 Chrome 사용자에게서 모은 28일 롤링 데이터셋이다. 실험
 - Code-splitting with React.lazy and Suspense: https://web.dev/articles/code-splitting-suspense
 - 실험실·현장 데이터 차이: https://web.dev/articles/lab-and-field-data-differences
 
-## 확인 못 함
-
-- 위 HTML·JSX 코드는 실행해 보지 않았다(실행 확인 못 함).
-- INP가 Core Web Vital이 된 정확한 날짜는 INP 문서에 없어서 확인 못 함(vitals 문서에는 2024년으로 나옴).
-- 번들 분석 도구(webpack-bundle-analyzer 등)와 web-vitals 라이브러리 사용법은 열어 보지 않아 다루지 않았다.

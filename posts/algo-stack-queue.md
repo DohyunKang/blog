@@ -183,13 +183,6 @@ print(printer([1, 1, 9, 1, 1, 1], 0))  # 5
 - Python 튜토리얼, 자료구조(리스트를 스택·큐로 쓰기): https://docs.python.org/3/tutorial/datastructures.html
 - 사용한 문제(프로그래머스, 페이지를 열어 제목·유형 확인): 올바른 괄호 https://school.programmers.co.kr/learn/courses/30/lessons/12909 · 뒤에 있는 큰 수 찾기 https://school.programmers.co.kr/learn/courses/30/lessons/154539 · 주식가격 https://school.programmers.co.kr/learn/courses/30/lessons/42584 · 카드 뭉치 https://school.programmers.co.kr/learn/courses/30/lessons/159994 · 프로세스 https://school.programmers.co.kr/learn/courses/30/lessons/42587 · 두 큐 합 같게 만들기 https://school.programmers.co.kr/learn/courses/30/lessons/118667
 
-## 확인 못 함
-
-- 위 코드는 예시 입력 몇 개로만 돌렸고, 실제 채점 사이트에서 통과하는지는 확인 못 했다.
-- 시간 비교(0.155초 대 0.002초)는 내 PC에서 한 번 잰 값이다.
-- 프로세스의 O(n²) 풀이가 실제 채점을 통과하는지는 확인 못 했다(제한은 우선순위 100개 이하).
-- 두 큐 합 같게 만들기는 코드를 쓰지 않았고, 문제 페이지의 제목·요약만 확인했다.
-
 ← 개념 지도로 (#/post/algo-map)
 
 관련 글: [배열·문자열·해시](#/post/algo-array-hash) · [BFS·DFS와 그래프](#/post/algo-graph-search) · [트리·힙·우선순위 큐](#/post/algo-tree-heap)

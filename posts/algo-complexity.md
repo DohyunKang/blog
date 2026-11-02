@@ -144,9 +144,3 @@ DB에서 인덱스를 거는 이유도 비슷한 계산이다. 전체를 훑는 
 - Python 공식 문서, collections.deque (리스트의 `pop(0)` O(n), deque 양 끝 O(1), 가운데 인덱스 O(n)): https://docs.python.org/3/library/collections.html#collections.deque
 - Python 공식 문서, 내장 타입의 시퀀스 항목(불변 시퀀스 반복 이어 붙이기 제곱 시간, `join` 권장, `sort()` 안정 정렬): https://docs.python.org/3/library/stdtypes.html
 
-## 확인 못 함
-
-- Python 위키 TimeComplexity 표(딕셔너리·set의 평균 O(1), 리스트 연산별 표)는 리다이렉트 때문에 열지 못했다. 본문의 dict/set 평균 O(1)은 그 표가 아니라 일반적으로 알려진 내용이다.
-- "1초에 파이썬으로 수천만 번"이라는 기준과 n 범위 표는 출처 없는 어림이다.
-- `sys.setrecursionlimit` 사용법과 `sorted`의 정렬 알고리즘 이름은 문서에서 확인하지 못했다.
-- 시간 측정은 내 PC 한 번의 결과다.

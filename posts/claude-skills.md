@@ -69,7 +69,7 @@ description과 when_to_use를 합친 글은 목록에서 1,536자에서 잘린�
 
 ## 슬래시 명령: 이제 스킬과 한 몸
 
-문서 기준으로 커스텀 명령은 스킬에 합쳐졌다. `.claude/commands/deploy.md`와 `.claude/skills/deploy/SKILL.md`는 둘 다 `/deploy`를 만들고 똑같이 동작한다. 기존 command 파일은 그대로 되고, 새로 만들 땐 스킬을 권한다. 이름이 겹치면 스킬이 이긴다. 내장 명령은 문서에서 `/help`, `/compact`, `/skills`, `/add-dir`, `/status`, `/usage` 등이 언급되는데 전체 목록은 명령 레퍼런스에 있다고 해서 그 페이지는 확인 못 했다.
+문서 기준으로 커스텀 명령은 스킬에 합쳐졌다. `.claude/commands/deploy.md`와 `.claude/skills/deploy/SKILL.md`는 둘 다 `/deploy`를 만들고 똑같이 동작한다. 기존 command 파일은 그대로 되고, 새로 만들 땐 스킬을 권한다. 이름이 겹치면 스킬이 이긴다. 내장 명령은 문서에서 `/help`, `/compact`, `/skills`, `/add-dir`, `/status`, `/usage` 등이 언급되는데 전체 목록은 명령 레퍼런스에 있다고 한다.
 
 ## 훅: 반드시 일어나게 하는 장치
 
@@ -132,15 +132,6 @@ description과 when_to_use를 합친 글은 목록에서 1,536자에서 잘린�
 <summary>자세한 풀이: 훅 설정 예(문서 흐름 요약)</summary>
 
 문서의 첫 예제는 `~/.claude/settings.json`에 `Notification` 훅을 넣어 Claude가 입력을 기다릴 때 데스크톱 알림을 띄우는 것이다. 이미 `hooks` 키가 있으면 통째로 바꾸지 말고 이벤트 키를 형제로 추가한다. 편집 후 포맷은 `PostToolUse`+`Edit|Write` 매처, 보호 파일 차단은 `PreToolUse`가 파일 경로를 검사해 일치하면 stderr에 이유를 쓰고 `exit 2`를 하는 스크립트다. 판단이 필요한 조건은 모델이 평가하는 prompt 기반·agent 기반 훅도 있다고 나오는데 직접 확인하진 않았다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 스킬 페이지(필드, 위치, description 요령, 1,536자, 500줄), 메모리 페이지(CLAUDE.md 위치·200줄·/init·imports·rules), 훅 가이드(설정 위치, 이벤트, 종료 코드), 서브에이전트 페이지(위치·필드·기본 제공), 권한 페이지(deny→ask→allow, 설정 위치), 권한 모드 페이지(플랜 모드 진입·모드 표), MCP 페이지(scope·`.mcp.json`).
-
-확인 못 함: 각 페이지는 길어서 일부(대략 끝 15~50KB)를 읽지 못했다. 내장 슬래시 명령 전체 목록, 훅 이벤트 전체 스키마(훅 레퍼런스), 플러그인, auto memory 세부, 스킬 레퍼런스의 나머지 필드 설명. 직접 써 본 결과가 아니라 문서 읽은 내용이다.
 
 </details>
 

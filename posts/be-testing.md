@@ -45,12 +45,10 @@ Martin Fowler의 글에 나오는 테스트 피라미드는 이 세 종류를 �
 class OutOfStock(Exception):
     pass
 
-
 def apply_discount(price: int, percent: int) -> int:
     if not 0 <= percent <= 100:
         raise ValueError("percent must be 0..100")
     return price * (100 - percent) // 100
-
 
 class OrderService:
     def __init__(self, repo, mailer):
@@ -77,17 +75,14 @@ from unittest.mock import Mock
 import pytest
 from shop import apply_discount, OrderService, OutOfStock
 
-
 # 단위 테스트: 순수 함수
 @pytest.mark.parametrize("price,pct,expected", [(10000, 10, 9000), (999, 0, 999), (500, 100, 0)])
 def test_discount(price, pct, expected):
     assert apply_discount(price, pct) == expected
 
-
 def test_discount_rejects_bad_percent():
     with pytest.raises(ValueError):
         apply_discount(1000, 120)
-
 
 # 목을 쓴 테스트: 메일러를 가짜로 바꾼다
 class FakeRepo:
@@ -96,13 +91,11 @@ class FakeRepo:
     def get_stock(self, i): return self.stock[i]
     def set_stock(self, i, n): self.stock[i] = n
 
-
 def test_place_sends_mail():
     mailer = Mock()
     svc = OrderService(FakeRepo(5), mailer)
     assert svc.place("a@b.c", "A", 2) == 3
     mailer.send.assert_called_once_with("a@b.c", "주문 완료: A x2")
-
 
 def test_place_out_of_stock_no_mail():
     mailer = Mock()
@@ -110,7 +103,6 @@ def test_place_out_of_stock_no_mail():
     with pytest.raises(OutOfStock):
         svc.place("a@b.c", "A", 2)
     mailer.send.assert_not_called()
-
 
 # 통합 테스트: 진짜 SQL(메모리 SQLite)에 붙인다
 class SqlRepo:
@@ -120,7 +112,6 @@ class SqlRepo:
     def set_stock(self, i, n):
         self.con.execute("UPDATE stock SET qty=? WHERE id=?", (n, i))
 
-
 @pytest.fixture
 def con():
     c = sqlite3.connect(":memory:")
@@ -128,7 +119,6 @@ def con():
     c.execute("INSERT INTO stock VALUES ('A', 5)")
     yield c
     c.close()
-
 
 def test_place_with_real_db(con):
     svc = OrderService(SqlRepo(con), Mock())
@@ -171,15 +161,6 @@ def test_place_with_real_db(con):
 
 - Martin Fowler, The Practical Test Pyramid: https://martinfowler.com/articles/practical-test-pyramid.html
 - pytest 문서, How to use fixtures: https://docs.pytest.org/en/stable/how-to/fixtures.html
-
-<details>
-<summary>확인한 것과 못 한 것</summary>
-
-확인함: 테스트 피라미드의 층 구분과 비율 조언, E2E의 단점, 계약 테스트 개념(Fowler 글 요약), fixture·yield·scope 설명(pytest 문서), 본문 pytest 코드 실행(7 passed).
-
-확인 못 함: 웹 프레임워크(FastAPI·Django 등)의 테스트 클라이언트 사용법과 코드 실행. 두 문서를 WebFetch 요약으로 읽었고 전문을 직접 읽지는 않았다. "테스트가 개발 속도에 주는 영향"을 수치로 보여 주는 연구. 커버리지 도구(pytest-cov) 사용법.
-
-</details>
 
 ← [개념 지도로](#/post/be-map)
 

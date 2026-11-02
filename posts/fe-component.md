@@ -76,7 +76,7 @@ state는 최소로 둔다. 문서는 세 가지를 묻는다. 시간이 지나�
 
 ## 컨테이너/프레젠테이션
 
-데이터를 가져오고 상태를 다루는 컴포넌트(컨테이너)와, props만 받아 그리는 컴포넌트(프레젠테이션)를 나누는 패턴이 있다. 이 이름은 Dan Abramov의 글로 퍼졌다. 그 글 맨 위에는 지금은 이렇게 나누길 권하지 않는다는 갱신 메모가 붙어 있다. 코드베이스에 자연스럽게 맞으면 쓸 만하지만 교조적으로 강제하는 걸 너무 많이 봤다는 취지이고, 상태 로직을 분리하려던 목적은 훅(hook)으로도 임의의 경계 없이 된다고 한다. 나는 이 부분을 검색 결과 요약으로만 읽었고 원문은 열지 못했다.
+데이터를 가져오고 상태를 다루는 컴포넌트(컨테이너)와, props만 받아 그리는 컴포넌트(프레젠테이션)를 나누는 패턴이 있다. 이 이름은 Dan Abramov의 글로 퍼졌다. 그 글 맨 위에는 지금은 이렇게 나누길 권하지 않는다는 갱신 메모가 붙어 있다. 코드베이스에 자연스럽게 맞으면 쓸 만하지만 교조적으로 강제하는 걸 너무 많이 봤다는 취지이고, 상태 로직을 분리하려던 목적은 훅(hook)으로도 임의의 경계 없이 된다고 한다.
 
 그래서 이 패턴은 "파일을 두 개로 쪼개라"보다 "그리는 코드와 데이터를 다루는 코드를 섞지 마라"는 생각으로 가져가려 한다. 지금은 커스텀 훅으로 로직을 빼는 쪽이 더 흔하다.
 
@@ -131,15 +131,6 @@ function Panel({ title, children, isActive, onShow }) {
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 컴포넌트 분리 기준과 계층 예시, props와 state의 역할, state 최소화 질문 세 가지, 데이터 하향 흐름과 이벤트 상향(Thinking in React). props가 유일한 인자이고 읽기 전용이라는 것, children 합성, 스프레드 주의, 기본값 동작(Passing Props). 상태 끌어올리기, 제어/비제어, single source of truth(Sharing State).
-
-확인 못 함: Dan Abramov 글 원문(Medium이 접근을 막아 검색 결과 요약만 확인), 갱신 메모의 정확한 날짜(2019년이라는 2차 출처 언급뿐). 본문 JSX 코드는 실행해 확인하지 않았다(실행 확인 못 함). 세 번 이상 나오면 추상화하라는 식의 규칙은 공식 문서 내용이 아닌 경험칙이라 근거 링크가 없다.
-
-</details>
-
 ← [프론트엔드 지도로](#/post/fe-map)
 
 관련 글: [상태 관리](#/post/fe-state) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · [SOLID 원칙](#/post/cs-solid) · [디자인 패턴](#/post/cs-design-patterns)
@@ -149,4 +140,4 @@ function Panel({ title, children, isActive, onShow }) {
 - React 문서, Thinking in React: https://react.dev/learn/thinking-in-react
 - React 문서, Passing Props to a Component: https://react.dev/learn/passing-props-to-a-component
 - React 문서, Sharing State Between Components: https://react.dev/learn/sharing-state-between-components
-- Dan Abramov, Presentational and Container Components (원문 열지 못함, 검색 결과로 갱신 메모만 확인): https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+- Dan Abramov, Presentational and Container Components: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0

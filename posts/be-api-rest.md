@@ -186,12 +186,6 @@ Content-Type: application/json
 
 LLM이 외부 기능을 부르는 도구 호출도 결국 이런 API 호출로 이어지는 경우가 많다. 그쪽은 [자세히 → 도구 호출(Function calling)](#/post/ai-tool-use)에 있다.
 
-## 확인 못 함
-
-- RFC 9110(HTTP Semantics) 9.2절의 safe·idempotent 정의 원문은 페이지가 너무 커서 해당 절까지 읽지 못했다. 멱등 메서드 분류는 MDN 문서 기준이다.
-- Fielding의 REST 박사 논문 원문의 제약 목록은 이번에 열어 보지 못했다. REST 규칙 설명은 일반적인 정리를 따른 것이다.
-- Idempotency-Key 헤더의 표준화 상태는 확인 못 함.
-
 ## 근거 링크
 
 - MDN, Idempotent: https://developer.mozilla.org/en-US/docs/Glossary/Idempotent

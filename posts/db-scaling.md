@@ -169,12 +169,6 @@ ring 3->4 moved: 0.2392
 - PostgreSQL Documentation, Table Partitioning: https://www.postgresql.org/docs/current/ddl-partitioning.html
 - Wikipedia, Consistent hashing: https://en.wikipedia.org/wiki/Consistent_hashing
 
-## 확인 못 함
-
-- 샤드 키 방식 표(범위·해시·디렉터리)와 분산 트랜잭션·재분배 설명은 위 링크에서 직접 확인한 문장이 아니라 일반적으로 알려진 내용이다. 출처 확인은 못 했다.
-- PostgreSQL 파티션 SQL 예시는 실행해 보지 않았다.
-- 복제 지연이 "몇 밀리초~몇 초"라는 수치는 환경마다 달라 출처를 확인하지 못했다.
-
 ← [개념 지도로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [캐시와 Redis](#/post/db-cache-redis) · [로드밸런서](#/post/infra-load-balancer)

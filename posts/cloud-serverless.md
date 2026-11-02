@@ -52,7 +52,7 @@ Lambda 문서는 콜드 스타트가 보통 호출의 1% 미만에서 일어나�
 
 Init에 시간을 쓰는 건 결국 내 코드다. 문서는 패키지 크기(라이브러리, 레이어), 초기화 작업량, 연결 설정 속도를 주요 요인으로 꼽는다. 줄이는 방법도 그 반대다. 필요한 라이브러리만 가져오고, 안 쓰는 경로의 객체는 필요할 때 만든다.
 
-예측 가능한 시작 시간이 꼭 필요하면 Provisioned Concurrency라는 옵션이 있다. 환경을 미리 만들어 두는 것인데, 그만큼 켜 두는 비용 개념이 다시 들어온다. SnapStart는 초기화가 끝난 상태의 스냅샷을 저장해 두고 거기서 재개하는 방식으로 지원 범위가 정해져 있다. 어느 런타임에서 되는지는 확인 못 했다.
+예측 가능한 시작 시간이 꼭 필요하면 Provisioned Concurrency라는 옵션이 있다. 환경을 미리 만들어 두는 것인데, 그만큼 켜 두는 비용 개념이 다시 들어온다. SnapStart는 초기화가 끝난 상태의 스냅샷을 저장해 두고 거기서 재개하는 방식으로 지원 범위가 정해져 있다.
 
 ## 한계
 
@@ -79,7 +79,7 @@ Lambda 기본 할당량에서 눈에 띈 것들이다.
 
 반대로 하루 종일 꾸준히 요청이 들어오는 서비스라면 서버를 켜 두는 쪽이 싸질 수 있다. 어디서 뒤집히는지는 트래픽과 실행 시간마다 달라서 일반 숫자를 찾지 못했다.
 
-Vercel Functions는 계산 방식이 조금 다르다. 문서에 따르면 Active CPU, Provisioned Memory, 호출 수로 요금을 매기고, Fluid compute라는 방식은 한 인스턴스가 동시에 여러 요청을 처리해서 기다리는 시간(외부 API 응답 대기 등)을 활용한다고 한다. 그래서 콜드 스타트와 비용이 줄어든다고 설명한다. 세부 단가는 확인 못 했다.
+Vercel Functions는 계산 방식이 조금 다르다. 문서에 따르면 Active CPU, Provisioned Memory, 호출 수로 요금을 매기고, Fluid compute라는 방식은 한 인스턴스가 동시에 여러 요청을 처리해서 기다리는 시간(외부 API 응답 대기 등)을 활용한다고 한다. 그래서 콜드 스타트와 비용이 줄어든다고 설명한다.
 
 ## 쓰기 좋은 경우, 아닌 경우
 
@@ -104,15 +104,6 @@ Vercel Functions는 계산 방식이 조금 다르다. 문서에 따르면 Activ
 실행 중 오류나 타임아웃이 나면 환경이 리셋되고, 다음 호출에서 Init부터 다시 한다. 문서는 이때도 /tmp 내용은 지워지지 않는다고 적는다. 전체 요청 흐름은 [요청이 지나가는 길](#/post/infra-request-journey)에서 따로 본다.
 
 로그와 지표는 [관측성](#/post/cloud-observability)에서 다루는 것처럼 따로 챙겨야 한다. Lambda는 REPORT 로그에 Duration, Billed Duration, Init Duration 같은 값을 남긴다고 문서 예시에 나온다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Lambda 실행 환경 생애주기(Init, Invoke, Shutdown, 얼림과 재사용), 콜드 스타트 설명과 Provisioned Concurrency 언급, Lambda 할당량 표, Lambda 가격 구조와 무료 구간(AWS 가격 페이지 요약), Vercel Functions의 요청 단위 실행·0까지 축소·Fluid compute 설명. 위 Python 코드는 로컬에서 직접 실행해 출력까지 확인했다.
-
-확인 못 함: 실제 Lambda에서의 콜드 스타트 시간 측정, SnapStart 지원 런타임 범위, Vercel의 정확한 단가와 실행 한도, 서버를 켜 두는 쪽이 싸지는 손익분기 지점, 가격 페이지의 메모리별 밀리초 요금표(페이지에서 표가 보이지 않음), Cloudflare Workers·Google Cloud Run 같은 다른 서비스의 세부 방식.
 
 </details>
 

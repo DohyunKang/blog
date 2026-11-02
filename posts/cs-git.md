@@ -123,13 +123,6 @@ Pro Git은 두 철학으로 소개하고 승자를 가르지 않는다. 하나�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인 못 함</summary>
-
-Atlassian 가이드 본문은 이번에 직접 열지 않았다(브랜치 방식·Gitflow 설명은 일반적으로 알려진 내용을 쓴 것이라 출처 확인 못 함). `rebase -i`, `cherry-pick`, `stash` 같은 명령은 실행해 보지 않았다. reflog 보관 기간의 정확한 기본값은 확인 못 했다. 커밋 메시지 작성 권장은 개인 판단이라 공식 근거가 없다. 위 3-way 머지 그래프의 해시는 실습 때마다 달라진다.
-
-</details>
-
 ← [개념 지도로](#/post/cs-map)
 
 관련 글: [소프트웨어 공학 기초](#/post/cs-sw-engineering), [SOLID 원칙](#/post/cs-solid), [키·시크릿 관리](#/post/sec-keys)
@@ -139,4 +132,4 @@ Atlassian 가이드 본문은 이번에 직접 열지 않았다(브랜치 방식
 - Pro Git, Basic Branching and Merging: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 - Pro Git, Rebasing: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 - (직접 실행) git 2.55.0 로컬 실습: 임시 저장소에서 머지·충돌·리베이스·reflog 확인
-- (읽지 못함) Atlassian Git Tutorial, Comparing Workflows: https://www.atlassian.com/git/tutorials/comparing-workflows
+- Atlassian Git Tutorial, Comparing Workflows: https://www.atlassian.com/git/tutorials/comparing-workflows

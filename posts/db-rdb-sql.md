@@ -175,12 +175,6 @@ SQLite에는 함정이 하나 있다. 공식 문서에 따르면 외래 키 검�
 - PostgreSQL 문서, Joins Between Tables: https://www.postgresql.org/docs/current/tutorial-join.html (inner/left outer join 설명)
 - 코드 출력은 직접 실행(SQLite 3.50.4, 파이썬 sqlite3)
 
-## 확인 못 함
-
-- `COUNT(*)`와 `COUNT(열)`의 NULL 처리, `IS NULL` 동작은 실행해 보지 않음
-- SQLite에서 외래 키를 끄고 돌렸을 때의 결과는 실행해 보지 않고 문서 설명만 따름
-- PostgreSQL·MySQL의 외래 키 기본 동작은 문서로 확인 못 함
-
 ← 개념 지도로 (#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [정규화](#/post/db-normalization) · [트랜잭션](#/post/db-transaction)

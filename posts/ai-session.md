@@ -86,7 +86,7 @@ print(chat("내 이름 뭐라고 했지?", keep=False))  # ('모르겠다', 1)
 | `previous_response_id` | OpenAI 서버 | 이전 응답 ID를 넘겨 이어 간다. 기본 30일 보관, `store`를 false로 끄면 보관 안 함 |
 | Conversations API | OpenAI 서버 | 고유 ID를 가진 대화 객체로 오래 유지. 30일 제한을 받지 않는다고 문서에 있다 |
 
-서버가 들어 주면 코드는 편해지지만, 무엇이 모델에 들어가는지 내가 직접 다루기 어려워진다. Anthropic 쪽에서 이 방식의 같은 기능이 있는지는 이번에 확인하지 못했다.
+서버가 들어 주면 코드는 편해지지만, 무엇이 모델에 들어가는지 내가 직접 다루기 어려워진다.
 
 ## 세션과 장기 기억은 다르다
 
@@ -121,16 +121,7 @@ Anthropic의 memory tool 문서가 한 예다. 이 도구는 대화와 대화 �
 - 배열이 길어지면 오래된 부분을 요약하거나 자른다. 뭘 남길지가 설계다.
 - 사용자별 데이터가 섞이지 않게 세션 ID와 사용자를 묶어 둔다. 기록에 개인정보가 들어가면 보관 기간도 정해야 한다.
 
-OpenAI 문서는 추론 모델을 쓸 때 응답의 `output` 배열을 통째로 다시 넣으라고 권한다. 추론 항목 같은 것이 끊기지 않게 하려는 것이다. 즉 "assistant 문장만 저장"하면 안 되는 경우가 있다. Anthropic 쪽 비슷한 규칙은 이번에 확인하지 못했다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Messages API가 stateless multi-turn에 쓰인다는 설명과 messages 예시(Anthropic API 문서). OpenAI의 stateless 설명, previous_response_id, Conversations API, 컨텍스트 윈도우 정의, 체인된 입력 토큰도 청구된다는 설명(OpenAI 문서). memory tool이 클라이언트 쪽 저장이라는 점과 자동으로 붙는 시스템 프롬프트(Anthropic 문서). 위 가짜 함수 코드의 실행 결과.
-
-확인 못 함: Anthropic 쪽에 서버가 대화를 들어 주는 기능이 있는지. ChatGPT·Claude 앱이 "나를 기억한다"는 기능을 내부에서 어떻게 구현하는지. Anthropic Messages API 문서는 매우 길어서 앞부분만 읽었다. 실제 API 호출은 직접 해 보지 않았다(코드는 가짜 함수로만 실행).
+OpenAI 문서는 추론 모델을 쓸 때 응답의 `output` 배열을 통째로 다시 넣으라고 권한다. 추론 항목 같은 것이 끊기지 않게 하려는 것이다. 즉 "assistant 문장만 저장"하면 안 되는 경우가 있다.
 
 </details>
 

@@ -130,12 +130,6 @@ for r in db.execute(q2): print(r)
 - 플랫폼 화면에서 이미 보여 주니 필요 없다: 플랫폼이 둘 이상이고 보관 기간이 정해져 있으면, 직접 쌓아 두는 쪽이 비교와 장기 추세에 맞다.
 - 자동 수집이면 숫자가 정확하다: 지연, 추정치, 정의 변경이 있어서 "대략 이 정도"로 읽는 게 맞다.
 
-## 확인 못 함
-
-- 실제 플랫폼 API를 호출해 본 적은 없다. 지표 정의는 공식 문서 기준이고, 인증 방식과 호출 한도는 읽지 못했다.
-- Instagram 문서의 `views`, `total_interactions`는 문서에서 "개발 중(in development)"으로 표시되어 있다. 이후 바뀔 수 있다.
-- BI 도구(Metabase, Looker Studio 등) 비교는 하지 않았다.
-
 ## 근거 링크
 
 - YouTube Analytics API 지표 목록: https://developers.google.com/youtube/analytics/metrics

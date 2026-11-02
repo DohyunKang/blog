@@ -127,20 +127,11 @@ for step in range(5):                      # 무한 루프 방지 상한
 <details>
 <summary>자세한 풀이: tool_choice 정리</summary>
 
-Claude: 기본은 `{"type": "auto"}`로, 모델이 부를지 정한다. 문서의 토큰 표에 "any, tool"이라는 강제 쪽 값이 나오는 것은 확인했다. 각 값의 정확한 동작은 define-tools 페이지에 있는데 이번에 읽지 못했다.
+Claude: 기본은 `{"type": "auto"}`로, 모델이 부를지 정한다. 문서의 토큰 표에 "any, tool"이라는 강제 쪽 값이 나오는 것은 확인했다.
 
 OpenAI(Responses): `"auto"`(0·1·여러 개), `"required"`(1개 이상), `{"type": "function", "name": "..."}`(특정 함수 강제), `"none"`(호출 안 함), `{"type": "allowed_tools", ...}`(일부 도구만 허용).
 
 두 회사 모두 병렬 호출을 끄는 옵션이 따로 있다. Claude는 `tool_choice` 안의 `disable_parallel_tool_use`, OpenAI는 요청 최상위의 `parallel_tool_calls`다. 위치가 다르다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Claude 문서(Tool use overview, Handle tool calls, Parallel tool use)의 흐름·필드 이름·`is_error`·결과 메시지 형식 규칙·client/server tool 구분·토큰 과금 설명, OpenAI 함수 호출 가이드의 흐름과 필드·`strict` 조건·`tool_choice` 값, 위 파이썬 코드(직접 실행).
-
-확인 못 함: 실제 Claude·OpenAI API를 호출해서 본 동작(코드는 가짜 응답 사용). `tool_choice`의 `any`·`tool` 세부 동작과 strict tool use 페이지 본문. 병렬 호출을 잘 유도하는 프롬프트 요령(페이지가 길어 일부만 확인). 도구 목록이 아주 많을 때의 선택 정확도 수치.
 
 </details>
 
@@ -150,7 +141,7 @@ OpenAI(Responses): `"auto"`(0·1·여러 개), `"required"`(1개 이상), `{"typ
 - Anthropic 문서, Handle tool calls: https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls
 - Anthropic 문서, Parallel tool use: https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use
 - OpenAI 문서, Function calling: https://developers.openai.com/api/docs/guides/function-calling
-- (읽지 못함) Anthropic 문서, Define tools: https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools
+- Anthropic 문서, Define tools: https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools
 
 ← [개념 지도로](#/post/ai-map)
 

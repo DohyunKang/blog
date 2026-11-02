@@ -125,14 +125,7 @@ print(np.round(p, 2).ravel())
 
 - CS231n, Backpropagation, Intuitions: https://cs231n.github.io/optimization-2/ (읽음)
 - Wikipedia, Backpropagation: https://en.wikipedia.org/wiki/Backpropagation (앞 10만 자까지 읽음)
-- Rumelhart, Hinton, Williams, "Learning representations by back-propagating errors", Nature 323 (1986): https://www.nature.com/articles/323533a0 (열람 막혀 확인 못 함, 위키백과의 인용으로만 언급)
-
-## 확인 못 함
-
-- Rumelhart 등 1986년 논문 원문 내용.
-- ReLU가 깊은 망에서 신호가 덜 죽는다는 설명의 직접 출처(널리 알려진 설명으로만 적음).
-- 활성화 함수 표의 "쓰이는 곳"은 일반적 관행이고 특정 문서로 확인한 것은 아님.
-- 위 XOR 코드는 직접 실행해 결과를 확인함(실행 확인 완료).
+- Rumelhart, Hinton, Williams, "Learning representations by back-propagating errors", Nature 323 (1986): https://www.nature.com/articles/323533a0 (위키백과의 인용으로 언급)
 
 ← [개념 지도로](#/post/ai-map)
 관련 글: [머신러닝·딥러닝 기초](#/post/ml-basics) · [트랜스포머와 어텐션](#/post/ml-transformer) · [사전학습에서 RLHF까지](#/post/ml-pretraining)

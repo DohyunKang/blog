@@ -135,8 +135,3 @@ Google SRE 책과 Prometheus 문서가 공통으로 하는 말은 비슷하다.
 - Google SRE Book, Monitoring Distributed Systems: https://sre.google/sre-book/monitoring-distributed-systems/
 - Prometheus, Alerting practices: https://prometheus.io/docs/practices/alerting/
 
-## 확인 못 함
-
-- OpenTelemetry 문서에서 세 신호가 서로 연결되는 방식(상관관계)은 해당 페이지에 자세히 나오지 않아 확인하지 못했다.
-- 모니터링과 관측 가능성의 구분, 장애 대응 5단계 순서는 읽은 문서에 없는 일반적인 설명이라 출처를 달지 못했다.
-- Prometheus 알림의 `for` 지속 시간 같은 구체적 임계값은 확인하지 못했다.

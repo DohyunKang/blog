@@ -20,7 +20,7 @@
 2. 없으면(miss) DB에서 읽는다.
 3. 읽은 값을 캐시에 넣고 돌려준다.
 
-쓸 때는 DB를 고치고 해당 캐시 항목을 지운다(invalidate). 다음 읽기가 miss가 되면서 새 값이 채워진다. 캐시를 덮어쓰지 않고 지우는 이유는 아래 '확인 못 함'에 적었다.
+쓸 때는 DB를 고치고 해당 캐시 항목을 지운다(invalidate). 다음 읽기가 miss가 되면서 새 값이 채워진다.
 
 비슷한 이름으로 read-through, write-through, write-behind가 있다. 캐시 시스템이 DB 읽기·쓰기를 대신해 주는 방식이다. cache-aside는 캐시가 그 기능을 안 줄 때 애플리케이션이 흉내 내는 쪽이라고 문서가 설명한다.
 
@@ -153,8 +153,3 @@ TTL이 있으니 일관성 문제는 알아서 풀린다는 생각도 있다. TT
 - [Key eviction (redis.io)](https://redis.io/docs/latest/develop/reference/eviction/)
 - [EXPIRE (redis.io)](https://redis.io/docs/latest/commands/expire/)
 
-## 확인 못 함
-
-- 위 파이썬 코드는 실행해서 결과를 확인했지만, 실제 Redis 서버에는 붙여 보지 못했다(Redis와 redis-py가 이 PC에 없다). TTL 동작은 공식 문서 예제 기준이다.
-- cache-aside에서 쓸 때 캐시를 덮어쓰지 않고 지우는 이유는 문서에 명시돼 있지 않다.
-- 캐시가 만료되는 순간 요청이 한꺼번에 DB로 몰리는 현상(stampede)과 그 대책은 이번에 확인한 문서에 없어서 다루지 않았다.

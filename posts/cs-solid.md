@@ -2,7 +2,7 @@ SOLID는 객체지향 설계에서 "코드가 바뀔 때 덜 깨지게" 만드�
 
 ## 어디서 나온 말인지
 
-Wikipedia 기준으로 Robert C. Martin이 2000년 논문 "Design Principles and Design Patterns"에서 기본 원칙들을 소개했고, SOLID라는 머리글자는 Michael Feathers가 2004년쯤 붙였다. 다섯 원칙마다 처음 만든 사람이 따로 있는지는 읽은 자료에 없어서 확인 못 했다.
+Wikipedia 기준으로 Robert C. Martin이 2000년 논문 "Design Principles and Design Patterns"에서 기본 원칙들을 소개했고, SOLID라는 머리글자는 Michael Feathers가 2004년쯤 붙였다.
 
 | 글자 | 이름 | 한 줄 |
 |---|---|---|
@@ -151,15 +151,6 @@ class OrderService:
 | 테스트에서 외부 서비스를 못 떼어낸다 | D |
 
 외울 필요 없이, 고치다가 불편한 지점이 이 표에 걸리면 해당 원칙을 떠올리면 된다. 이 표의 "냄새" 열은 위 예시에서 일어난 일을 줄인 것이고 공식 목록은 아니다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 다섯 원칙의 한 줄 정의, Martin 2000년 논문·Feathers의 머리글자 명명(Wikipedia), SRP를 액터 기준으로 설명한 Martin의 글과 `Employee` 예, 위 Python 코드 전부의 실행 결과(LSP 10/4, 할인 12600/11000, 가짜 알림 기록, Protocol 두 구현).
-
-확인 못 함: 각 원칙을 처음 만든 사람과 연도(Liskov, Meyer 등)는 읽은 문서에 없었다. LSP의 형식적 정의(행동 부분타입 조건)는 직접 읽지 않았다. 언어별(Java, C# 등) 적용 차이는 확인하지 않았다.
 
 </details>
 

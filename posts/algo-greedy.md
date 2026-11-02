@@ -147,13 +147,6 @@ print(coin_dp([1, 4, 5], 8))  # 2
 - [Activity selection problem — Wikipedia](https://en.wikipedia.org/wiki/Activity_selection_problem) (끝나는 시각 기준, 증명 아이디어, 가중치 버전)
 - 프로그래머스 [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884) / [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) / [디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627) / [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885): 제목과 유형을 문제 페이지에서 확인
 
-## 확인 못 함
-
-- 프로그래머스 대표 문제는 제목·유형·요약만 문제 페이지에서 확인했고, 직접 풀어 제출하지는 않았다.
-- 동전 0·보석 도둑과 똑같은 문제는 프로그래머스에서 찾지 못해서 비슷한 유형(큰 수 만들기·디스크 컨트롤러)으로 대신 적었다.
-- 길이 0 회의 같은 특수 입력이 실제 채점에 있는지(확인할 문제를 열지 못함)
-- 위키피디아 외 교재의 "탐욕 선택 속성·최적 부분 구조" 표현 출처(용어 자체는 본문에서 찾지 못함)
-
 ← [개념 지도로](#/post/algo-map)
 
 관련 글: [동적 계획법(DP)](#/post/algo-dp) / [정렬과 이분 탐색](#/post/algo-sort-search) / [트리·힙·우선순위 큐](#/post/algo-tree-heap)

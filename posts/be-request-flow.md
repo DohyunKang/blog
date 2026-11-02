@@ -164,10 +164,6 @@ print("\n".join(log))
 - MDN, An overview of HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview (읽음)
 - Express, Using middleware: https://expressjs.com/en/guide/using-middleware.html (읽음)
 
-## 확인 못 함
-- FastAPI·Spring 등 다른 프레임워크의 내부 처리 순서는 직접 확인하지 않았다(Express 문서와 직접 만든 미니 코드만 근거).
-- 실제 프로덕션 프레임워크에서 예외가 로깅 미들웨어를 건너뛰는지는 프레임워크마다 다를 수 있다. 위 결과는 이 미니 코드에 한한다.
-
 ← [개념 지도로](#/post/be-map)
 
 관련 글: [REST API](#/post/be-api-rest) · [계층 구조](#/post/be-layered-architecture) · [요청이 서버에 닿기까지](#/post/infra-request-journey)

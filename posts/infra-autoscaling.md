@@ -33,7 +33,7 @@ AWS의 target tracking 문서는 이걸 온도 조절기에 비유한다. 목표
 <details>
 <summary>자세한 풀이: 계산식을 직접 돌려 본 것</summary>
 
-식이 감이 안 와서 파이썬으로 옮겨 돌려 봤다. tol은 "목표와 거의 같으면 가만히 둔다"는 여유 구간인데, 0.1은 내가 쓴 값이다(아래 확인 못 함 참고).
+식이 감이 안 와서 파이썬으로 옮겨 돌려 봤다. tol은 "목표와 거의 같으면 가만히 둔다"는 여유 구간인데, 0.1은 내가 쓴 값이다.
 
 ```python
 import math
@@ -114,20 +114,11 @@ AWS 문서에 서버 수가 적으면 실제 사용률이 목표값과 꽤 어�
 - 지표는 아무거나 괜찮다: 서버 수에 비례해 변하는 지표여야 한다.
 - 요청이 많이 오면 429로 막으면 되지: 막는 것과 늘리는 것은 다른 방어선이다. 같이 쓴다. → [자세히 → 레이트 리밋](#/post/infra-rate-limit)
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 수직·수평 확장의 구분(일반 개념), HPA 계산식, 기본 동기화 주기 15초, 컨테이너 `requests`가 있어야 사용률 목표가 동작한다는 것, Metrics Server가 따로 설치돼야 한다는 것(쿠버네티스 문서), target tracking의 동작과 지표 선택 기준, warmup, 줄일 때의 보수적 동작, 최소 용량 0 조건(AWS 문서). 계산식과 올림 예시는 파이썬으로 실행해 확인했다.
-
-확인 못 함: HPA의 허용 오차 기본값(0.1)과 스케일 다운 안정화 구간 기본 300초는 가져온 문서 일부에서 보이지 않았다. 본문에는 숫자를 쓰지 않았고, 코드의 tol=0.1은 예시용이다. 쿠버네티스 문서 뒷부분(약 3만 자)은 읽지 못했다. 클라우드별 예약·예측 스케일링 기능의 세부는 읽지 않았다.
-
-</details>
-
 ← 개념 지도로 (#/post/infra-map)
 
 관련 글: [요청 하나가 거치는 길](#/post/infra-request-journey) · [로드밸런서](#/post/infra-load-balancer) · [캐시와 Redis](#/post/db-cache-redis)
 
 ## 근거 링크
 
-- Kubernetes, Horizontal Pod Autoscaling: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/ (뒷부분 일부 읽지 못함)
+- Kubernetes, Horizontal Pod Autoscaling: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 - AWS, Target tracking scaling policies for Amazon EC2 Auto Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html

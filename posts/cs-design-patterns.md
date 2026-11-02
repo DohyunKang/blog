@@ -1,4 +1,4 @@
-디자인 패턴은 객체지향 설계에서 자주 만나는 문제와 그 풀이 방식에 이름을 붙여 모아 둔 것이다. 정처기에 나오는 건 이름과 분류 위주지만, 상황과 같이 보면 외우기가 훨씬 쉬웠다.
+디자인 패턴은 객체지향 설계에서 자주 만나는 문제와 그 풀이 방식에 이름을 붙여 모아 둔 것이다. 이름과 분류만 보면 헷갈리지만, 상황과 같이 보면 훨씬 쉬웠다.
 
 ## 패턴이 뭔지
 
@@ -18,9 +18,9 @@ GoF는 패턴을 목적에 따라 셋으로 나눈다.
 | 구조(Structural) | 클래스·객체를 어떻게 엮을까 | Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy |
 | 행위(Behavioral) | 객체끼리 역할·통신을 어떻게 나눌까 | Observer, Strategy, Command, State, Iterator, Template Method 등 |
 
-원서 기준 개수는 생성 5, 구조 7, 행위 11로 합쳐 23개다. 일부 사이트(Refactoring.guru)는 Interpreter를 빼고 22개로 소개하는데, 원서와 개수가 다른 건 이 때문인 것 같다. 시험 범위는 책 기준 23개로 보는 쪽이 안전하다.
+원서 기준 개수는 생성 5, 구조 7, 행위 11로 합쳐 23개다. 일부 사이트(Refactoring.guru)는 Interpreter를 빼고 22개로 소개하는데, 원서와 개수가 다른 건 이 때문인 것 같다. 개수는 책 기준 23개로 보는 쪽이 안전하다.
 
-행위 패턴 목록(Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor)이 길어서 시험에서 제일 많이 헷갈린다. 한 줄씩 붙여 두면 이렇다.
+행위 패턴 목록(Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor)이 길어서 제일 많이 헷갈린다. 한 줄씩 붙여 두면 이렇다.
 
 - Chain of Responsibility: 요청을 처리할 수 있는 객체가 나올 때까지 줄줄이 넘김
 - Command: 요청 자체를 객체로 만들어 저장·취소·큐잉
@@ -76,7 +76,7 @@ def make_notifier(kind):
 print(make_notifier("sms").send("hi"))   # sms: hi
 ```
 
-엄밀히 GoF의 Factory Method는 부모 클래스가 생성 메서드를 정의하고 자식이 오버라이드하는 형태다. 위 코드는 같은 의도를 함수로 줄인 간단 팩토리에 가깝다. 시험 문장으로는 "객체 생성을 서브클래스에 위임"을 기억하면 된다.
+엄밀히 GoF의 Factory Method는 부모 클래스가 생성 메서드를 정의하고 자식이 오버라이드하는 형태다. 위 코드는 같은 의도를 함수로 줄인 간단 팩토리에 가깝다. 한 줄로 줄이면 "객체 생성을 서브클래스에 위임"이다.
 
 ### Adapter: 맞지 않는 인터페이스 연결
 
@@ -158,13 +158,13 @@ if-else로 방식을 분기하던 걸 객체(여기선 함수)로 빼면 새 방
 
 - 많이 쓸수록 좋은 설계다: 문제가 없는데 패턴을 끼우면 클래스만 늘고 읽기 어려워진다. 필요해질 때 적용하는 쪽이 낫다.
 - 패턴은 객체지향 언어에서만 쓴다: 책이 객체지향 기준일 뿐이다. 위 Strategy 예시처럼 함수를 값으로 넘길 수 있는 언어에서는 클래스 없이 훨씬 짧게 쓴다.
-- 외우면 설계가 된다: 이름을 아는 것과 상황을 알아보는 것은 다르다. 시험은 이름, 실무는 상황이다.
+- 외우면 설계가 된다: 이름을 아는 것과 상황을 알아보는 것은 다르다. 설계는 상황을 알아보는 데서 나온다.
 - Singleton은 무조건 좋다: 가장 쉽게 쓰이지만 가장 자주 비판받는 패턴이다. 전역 상태가 되기 쉽다.
 
 <details>
-<summary>자세한 풀이: 정처기용 암기 틀</summary>
+<summary>자세한 풀이: 키워드로 패턴 찾기</summary>
 
-시험에서는 보통 "이런 설명은 어떤 패턴이냐"를 묻는다. 키워드와 패턴을 묶어 두면 빨랐다.
+패턴을 알아볼 때는 "이런 설명은 어떤 패턴이냐"를 따져 보게 된다. 키워드와 패턴을 묶어 두면 빨랐다.
 
 | 설명 키워드 | 패턴 |
 |---|---|
@@ -183,17 +183,6 @@ if-else로 방식을 분기하던 걸 객체(여기선 함수)로 빼면 새 방
 | 변경을 구독자에게 통지 | Observer |
 | 알고리즘 교체 | Strategy |
 | 요청을 객체로 캡슐화 | Command |
-
-생성 패턴 다섯 개는 "싱글 팩토리 추상 빌더 프로토" 식으로 첫 글자를 이어 외우는 방법이 있는데, 내가 쓴 게 아니라 흔한 암기법이라 출처는 확인 못 했다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: GoF 책의 출판 연도(1994), 저자 네 명, 23개 패턴과 세 분류별 개수(Wikipedia 문서). 22개 분류 목록과 분류별 한 줄 설명(Refactoring.guru). 본문 Python 코드 여섯 개는 직접 실행해 출력 확인.
-
-확인 못 함: 원서 본문. 멀티스레드 Singleton 락 처리 코드. 정처기 출제 범위의 최신 공식 문서(범위가 바뀌었을 수 있다). 암기법 출처.
 
 </details>
 

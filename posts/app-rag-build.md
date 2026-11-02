@@ -137,7 +137,7 @@ if __name__ == "__main__":
 <details>
 <summary>자세한 풀이: 답까지 재는 지표들</summary>
 
-hit@k는 검색만 잰다. 답의 품질까지 재려는 도구로 Ragas가 있다. 문서 목록 페이지에서 확인한 이름은 검색 쪽 Context Precision, Context Recall, 생성 쪽 Faithfulness, Response Relevancy다. 페이지에 정의가 적혀 있지 않아서 각 지표가 정확히 어떻게 계산되는지는 확인하지 못했다. 이름만 보면 검색이 필요한 청크를 가져왔는지, 답이 가져온 자료에 충실한지, 질문에 맞는 답인지를 나눠서 재는 구성으로 보인다.
+hit@k는 검색만 잰다. 답의 품질까지 재려는 도구로 Ragas가 있다. 문서 목록 페이지에서 확인한 이름은 검색 쪽 Context Precision, Context Recall, 생성 쪽 Faithfulness, Response Relevancy다. 이름만 보면 검색이 필요한 청크를 가져왔는지, 답이 가져온 자료에 충실한지, 질문에 맞는 답인지를 나눠서 재는 구성으로 보인다.
 
 직접 하려면 질문-정답 쌍 20~30개를 손으로 만들고, 바꿀 때마다(청크 크기, k, 임베딩 모델) hit@k를 다시 재는 것으로 시작하면 된다. 숫자가 올랐는지로 판단하고, 감으로 고치지 않는 게 요점이다.
 
@@ -154,24 +154,11 @@ hit@k는 검색만 잰다. 답의 품질까지 재려는 도구로 Ragas가 있�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 위 코드 전체를 파이썬 3.13, numpy 2.5.4에서 실행(청크 6개, hit@1 = 1.0, 프롬프트 출력). Contextual Retrieval 글의 청킹 언급, top-K 5·10·20 비교, 임베딩+BM25 순위 융합, 오류 코드 예시. Ragas 문서 목록 페이지의 지표 이름.
-
-확인 못 함: 진짜 임베딩 모델이나 LLM을 붙인 실행, 벡터 DB 사용, 질문을 바꿔 말했을 때 장난감 임베딩이 실제로 얼마나 틀리는지, Ragas 지표의 정의와 계산 방식.
-
-</details>
-
 ## 근거 링크
 
 - Anthropic, Introducing Contextual Retrieval: https://www.anthropic.com/news/contextual-retrieval
 - Ragas, Available Metrics (지표 이름 목록만 확인): https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/
 - 이 글의 코드: 직접 작성해 실행함(링크 없음)
-
-## 확인 못 함
-
-진짜 임베딩·LLM·벡터 DB를 붙인 실행, 바꿔 말한 질문에서의 검색 성능, Ragas 지표 정의.
 
 ← [개념 지도로](#/post/ai-map)
 

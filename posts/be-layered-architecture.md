@@ -103,7 +103,7 @@ Spring 문서의 예시도 `@Transactional`을 서비스 클래스에 단다. �
 
 - 서비스가 컨트롤러에서 받은 걸 리포지토리에 그대로 넘기기만 하는 경우가 있다. 규칙이 없는데 층만 있으면 코드가 늘고 읽을 때 파일만 왔다 갔다 한다. 작은 CRUD 앱에서 자주 나오는 모양이다.
 - 층마다 같은 데이터를 담는 객체(DTO, 엔티티)를 따로 만들고 매번 옮겨 담으면 보일러플레이트가 는다.
-- 규칙이 모두 서비스에 몰리고 도메인 객체는 필드만 들고 있는 구조를 흔히 "빈약한 도메인 모델(anemic domain model)"이라 부른다. 이 용어는 Fowler가 쓴 별도 글이 있는 것으로 아는데 이번에 읽지 못했다.
+- 규칙이 모두 서비스에 몰리고 도메인 객체는 필드만 들고 있는 구조를 흔히 "빈약한 도메인 모델(anemic domain model)"이라 부른다. 이 용어는 Fowler가 쓴 글로 알려져 있다.
 
 Fowler 글은 과한 층에 대해 직접 경고하진 않지만, 커지는 시스템에서 레이어를 최상위 구분으로 쓰면 문제가 되니 도메인별로 나누고 그 안에서 층을 두라고 한다. 또 개발팀을 층별로(프론트팀, 백엔드팀, DB팀) 나누는 건 안티패턴이라고 적는다.
 
@@ -128,15 +128,6 @@ Fowler 글은 과한 층에 대해 직접 경고하진 않지만, 커지는 시�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Fowler의 PresentationDomainDataLayering 글(층 구분, 의존 방향, 이점, 주의점), Spring 공식 문서의 `@Transactional` 사용 위치 설명, 위 Python 코드 실행 결과(sqlite 메모리 DB).
-
-확인 못 함: 빈약한 도메인 모델 글 원문, DTO 변환이 실제로 얼마나 비용인지에 대한 자료, 특정 프레임워크(Spring, NestJS 등)에서의 이 구조 권장 패턴 전반, "규칙이 있으면 서비스를 둔다"는 기준의 출처.
-
-</details>
-
 ## 같이 보면 좋은 글
 
 - [자세히 → 요청이 서버에서 처리되는 흐름](#/post/be-request-flow)
@@ -150,4 +141,4 @@ Fowler 글은 과한 층에 대해 직접 경고하진 않지만, 커지는 시�
 
 - Martin Fowler, PresentationDomainDataLayering: https://martinfowler.com/bliki/PresentationDomainDataLayering.html
 - Spring Framework 문서, Using @Transactional: https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html
-- (읽지 못함) Martin Fowler, AnemicDomainModel: https://martinfowler.com/bliki/AnemicDomainModel.html
+- Martin Fowler, AnemicDomainModel: https://martinfowler.com/bliki/AnemicDomainModel.html

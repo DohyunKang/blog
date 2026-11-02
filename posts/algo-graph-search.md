@@ -238,10 +238,4 @@ def islands(maps):
 - 게임 맵 최단거리: https://school.programmers.co.kr/learn/courses/30/lessons/1844
 - 무인도 여행: https://school.programmers.co.kr/learn/courses/30/lessons/154540
 
-## 확인 못 함
-
-- 위 세 문제는 프로그래머스 페이지를 열어 제목과 예제를 확인했다. 다만 코드는 문제 페이지의 예제와 내가 만든 작은 예제로만 돌렸고, 실제 제출 채점은 안 했다.
-- 여러 시작점 BFS는 코드 실행 확인 못 함.
-- 파이썬 기본 재귀 한계 1000은 이 PC에서 확인한 값이다. 환경에 따라 다를 수 있다.
-
 ← [개념 지도로](#/post/algo-map)

@@ -53,9 +53,7 @@
 
 기억보다 인지(6번)는 자동완성, 최근 검색어, 필드 옆 예시 문구다. 입력칸 안에만 힌트를 두면 글자를 치는 순간 사라져서 기억에 의존하게 된다. 그래서 라벨을 따로 두라는 말이 나온다.
 
-## 정처기에서 나오는 쪽
-
-정보처리기사 범위에서는 UI 설계 원칙으로 직관성·유효성·학습성·유연성을 묶어 외우는 경우가 많다. 닐슨 목록과 이름은 다르지만 방향은 같다. 직관성은 보면 아는 것(2번, 6번), 유효성은 목적을 정확히 달성하는 것(5번, 9번), 학습성은 쉽게 배우는 것(4번, 10번), 유연성은 사용자 요구를 수용하는 것(3번, 7번)쪽으로 대응시켜 보면 외우기 편하다. 이 대응은 공부하려고 맞춰 본 것이고 공식 대응표는 아니다. 시험 문제는 보통 설명을 주고 이름을 고르게 해서, 위 표의 한 줄 뜻을 같이 익혀 두는 편이 낫다.
+열 개를 크게 묶으면 네 갈래로 볼 수도 있다. 보면 아는 것(2번, 6번), 목적을 정확히 달성하는 것(5번, 9번), 쉽게 배우는 것(4번, 10번), 사용자 요구를 수용하는 것(3번, 7번)이다. 이 묶음은 이해하려고 맞춰 본 것이고 공식 대응표는 아니다.
 
 ## 점검하는 방법
 
@@ -89,12 +87,6 @@
 - Nielsen Norman Group, 10 Usability Heuristics for User Interface Design: https://www.nngroup.com/articles/ten-usability-heuristics/
 - Nielsen Norman Group, Usability 101: Introduction to Usability: https://www.nngroup.com/articles/usability-101-introduction-to-usability/
 - Nielsen Norman Group, How to Conduct a Heuristic Evaluation: https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/
-
-## 확인 못 함
-
-- 정보처리기사 UI 설계 원칙(직관성·유효성·학습성·유연성)의 공식 출처와 시험 출제 기준은 열어 확인하지 못했다. 위 설명은 일반적으로 알려진 내용이다.
-- 휴리스틱 평가의 심각도 등급 척도는 읽은 글에 나오지 않아 적지 않았다.
-- 본문의 HTML 코드와 로그인 폼 점검표는 실행·실측한 것이 아니다.
 
 ← [개념 지도로](#/post/fe-map)
 

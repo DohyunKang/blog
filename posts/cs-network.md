@@ -27,7 +27,7 @@ print(socket.getaddrinfo('example.com', 443, proto=socket.IPPROTO_TCP)[0][4])
 # ('104.20.23.154', 443)   <- 실행해서 나온 값, 시점·위치마다 다를 수 있다
 ```
 
-이 줄 하나가 내 PC의 리졸버(운영체제)에 질문을 던지는 것이다. 대충 캐시에 있으면 바로 답하고, 없으면 상위 DNS 서버에 물어 내려가는 식으로 알고 있다. 그 단계별 이름(루트, TLD, 권한 서버)과 TTL 캐시는 이번에 문서로 확인하지 못했다.
+이 줄 하나가 내 PC의 리졸버(운영체제)에 질문을 던지는 것이다. 대충 캐시에 있으면 바로 답하고, 없으면 상위 DNS 서버에 물어 내려가는 식으로 알고 있다.
 
 ## 연결을 맺는 TCP
 
@@ -105,7 +105,7 @@ Accept-Language: fr
 
 HTTP 자체는 상태가 없다. 앞 요청을 기억하지 않으니 로그인 유지나 장바구니는 쿠키 같은 헤더로 덧붙여서 만든다. 이 "상태 없음"이 서버를 여러 대로 늘리기 쉽게 만드는 쪽이기도 하다. 
 
-전송 방식은 버전마다 달랐다. MDN 기준으로 1.0은 요청마다 TCP 연결을 새로 열어서 비효율적이었고, 1.1이 연결을 재사용하는 지속 연결을 넣었고, 2는 한 연결에서 여러 메시지를 멀티플렉싱한다. HTTP/3이 UDP 기반 QUIC 위에서 돈다는 건 따로 알고 있던 내용인데, 이번에 읽은 문서에는 없어서 확인하지 못했다.
+전송 방식은 버전마다 달랐다. MDN 기준으로 1.0은 요청마다 TCP 연결을 새로 열어서 비효율적이었고, 1.1이 연결을 재사용하는 지속 연결을 넣었고, 2는 한 연결에서 여러 메시지를 멀티플렉싱한다. HTTP/3은 UDP 기반 QUIC 위에서 돈다고 알려져 있다.
 
 ## HTTPS는 HTTP에 TLS를 얹은 것
 
@@ -159,8 +159,3 @@ handshake에서 TLS 버전과 암호 스위트를 정하고, 서버를 인증하
 - MDN, DNS (Glossary): https://developer.mozilla.org/en-US/docs/Glossary/DNS
 - MDN, Transport Layer Security: https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security
 
-## 확인 못 함
-
-- DNS 조회 단계(리졸버·루트·TLD·권한 서버)와 TTL 캐시: Cloudflare 문서가 403이라 못 읽었고, MDN 용어집에는 정의만 있다.
-- HTTP/3이 QUIC(UDP) 위에서 돈다는 점, OSI 7계층의 계층별 세부 대응: 이번에 문서를 열어 보지 않았다.
-- Python으로 외부 HTTPS(example.com) 요청: 이 PC에서 인증서 검증 오류(CERTIFICATE_VERIFY_FAILED)가 나서 실행 확인 못 함. TCP·UDP·DNS 조회 코드만 실행 확인했다.

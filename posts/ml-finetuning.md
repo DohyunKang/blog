@@ -125,15 +125,6 @@ LoRA는 학습할 파라미터를 줄였지만 기본 모델은 여전히 16비�
 
 [추론 최적화](#/post/ml-inference)는 병합하고 난 모델을 어떻게 빠르게 돌리는지를 다룬다.
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: LoRA 논문 초록의 수치(학습 파라미터 약 10,000분의 1, GPU 메모리 약 3분의 1, 추론 지연 없음), QLoRA 논문 초록의 세 기법과 65B/48GB 주장, PEFT 문서의 랭크·스케일·대상 층·병합 설명, LoRA 수식의 numpy 확인.
-
-확인 못 함: 전체 파인튜닝의 정확한 메모리 배수. 어댑터 파일 크기의 실제 수치. 파인튜닝 대비 RAG의 지식 주입 안정성을 비교한 근거. 학습 데이터 양과 품질에 관한 근거. r, alpha의 권장값. 실제 GPU에서의 학습 실행.
-
-</details>
-
 ## 근거 링크
 
 - Hu et al., LoRA: Low-Rank Adaptation of Large Language Models: https://arxiv.org/abs/2106.09685

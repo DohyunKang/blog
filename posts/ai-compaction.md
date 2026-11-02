@@ -75,15 +75,6 @@ Anthropic이 제공하는 메모리 도구(memory tool)는 이걸 파일 기반�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 컴팩션의 정의와 세 가지 방식 비교(Anthropic 문서 개요), 베타 헤더 이름, 컴팩션이 남기고 버리는 것·재현율 우선 튜닝·도구 결과 지우기·구조화된 노트·트레이드오프(Anthropic 엔지니어링 글), 메모리 도구의 명령·클라이언트 쪽 동작·시스템 프롬프트 자동 삽입·컴팩션과 함께 쓰라는 권고(Anthropic 메모리 도구 문서).
-
-확인 못 함: 요청 시/임계값 컴팩션 하위 페이지의 세부(트리거 기준 값, 기본 요약 프롬프트 내용, 과금 방식, 지원 모델 목록). 컨텍스트 편집 문서. 컴팩션 후 품질이 실제로 얼마나 유지되는지에 대한 수치. 직접 코드를 돌려 본 것도 없다(이 글에 실행한 코드는 없음).
-
-</details>
-
 ← [개념 지도로](#/post/ai-map)
 
 관련 글: [세션과 대화 기록](#/post/ai-session) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [하네스](#/post/ai-harness)
@@ -93,4 +84,3 @@ Anthropic이 제공하는 메모리 도구(memory tool)는 이걸 파일 기반�
 - Anthropic 문서, Compaction overview: https://platform.claude.com/docs/en/build-with-claude/compaction
 - Anthropic, Effective context engineering for AI agents: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - Anthropic 문서, Memory tool: https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool
-- (읽지 못함) Anthropic 문서, Context editing: https://platform.claude.com/docs/en/build-with-claude/context-editing

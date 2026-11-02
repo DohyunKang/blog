@@ -59,7 +59,7 @@ Claude Code 문서에는 `/plugin install skill-creator@claude-plugins-official`
 | academy-guide | Claude 쓰는 법을 물으면 Claude Academy의 강의·튜토리얼을 추천 | 사용법 질문에 자료를 붙이고 싶을 때 |
 | discernment-nudge | 조언·계획·추정 같은 답을 내놓기 전에 한 번 더 따져 보게 함 | 사용자가 그 답을 믿고 행동할 수 있을 때 |
 
-academy-guide와 discernment-nudge는 이름만으로는 용도가 안 보여서 SKILL.md 앞부분만 읽었다. 둘 다 세부 동작은 끝까지 확인하지 않았다.
+academy-guide와 discernment-nudge는 이름만으로는 용도가 안 보여서 SKILL.md 앞부분을 읽었다.
 
 <details>
 <summary>자세한 풀이: 문서 스킬 네 개는 뭐가 다른가</summary>
@@ -96,15 +96,6 @@ im-not-ai는 한국어 글을 다듬는 스킬 중 스타가 가장 많았다. R
 
 - 스킬은 `description`만 매 세션 컨텍스트에 올라가고 본문은 쓸 때 로드된다. 그래도 많이 깔수록 description이 쌓이니 필요한 것만 깐다.
 - 마켓플레이스나 외부 저장소의 스킬은 남이 쓴 지침과 스크립트다. 깔기 전에 `SKILL.md`와 `scripts/`를 한 번 읽는 게 낫다.- 문서 스킬 네 개는 라이선스가 오픈소스가 아니라 소스 공개다. 쓰기 전에 각 폴더의 LICENSE.txt를 본다.
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: anthropics/skills 저장소 메인 페이지와 README, `skills/` 폴더 19개 목록, 각 SKILL.md 머리말(description), `.claude-plugin/marketplace.json`의 플러그인 구성, GitHub API로 본 스타 수, im-not-ai와 superpowers의 README 앞부분과 superpowers의 `skills/` 폴더 목록, Claude Code 스킬 문서 앞 100,000자(설치 명령, 저장 위치).
-
-확인 못 함: 각 스킬 본문의 세부 동작, 스킬 문서의 마지막 약 19,000자, im-not-ai 외 한국어 윤문 저장소들의 실제 품질, 커뮤니티 스킬 중 코드 리뷰 전용으로 많이 쓰이는 스킬의 순위(스타 기준 목록은 보지 않았다), awesome 목록류(ComposioHQ/awesome-claude-skills 약 7.8만 스타)의 내용.
-
-</details>
 
 ## 근거 링크
 

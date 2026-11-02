@@ -103,15 +103,6 @@ console.log(st.get(), calls);           // { count: 2 } 1
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 끌어올리기, 제어·비제어, single source of truth(React 문서). 상태 구조 다섯 원칙(React 문서). 서버 상태 정의와 TanStack Query가 맡는 일(TanStack 문서). 스토어 예제 코드는 node로 실행해 `{ count: 2 } 1` 출력을 확인했다.
-
-확인 못 함: Redux·Zustand·Context의 최신 API와 권장 사용법(공식 문서를 열지 않음, 위 표의 "맞는 경우"는 일반적인 이해). Context로 인한 불필요한 다시 그리기의 구체 동작. 서버 상태 도구를 쓸 때 코드량이 실제로 얼마나 줄어드는지. React 컴포넌트 코드는 실행하지 않았다.
-
-</details>
-
 ## 근거 링크
 
 - React 문서, Sharing State Between Components: https://react.dev/learn/sharing-state-between-components

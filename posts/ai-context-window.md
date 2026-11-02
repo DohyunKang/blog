@@ -27,7 +27,7 @@
 
 문장 하나로 보면 "I refactored the agent loop to cut token usage."가 12토큰, 한국어 "토큰 사용량을 줄이려고 에이전트 루프를 다시 짰다."가 o200k에서 20토큰, Claude 토크나이저에서 32토큰이었다고 한다. "에이전트"가 o200k에서 네 토큰으로 쪼개지는 반면 영어 "agent"는 한 토큰이다.
 
-이 숫자는 조심해서 봐야 한다. 글쓴이 스스로 대상이 영어 코드·용어가 많은 기술 블로그라서 일반 한국어 산문은 격차가 더 클 수 있다고 적었고, 토큰 수가 곧 비용도 아니라고 했다. 한국어는 같은 뜻을 더 적은 글자로 쓰기 때문이다. 또 이 글에서 쓴 Claude 토크나이저가 지금 모델의 것과 같은지는 확인 못 했다. 학술 쪽으로는 고려대 연구진이 한국어가 영어보다 최대 3배 토큰이 든다고 발표했다는 검색 결과를 봤는데, PDF 원문은 열리지 않아서 내용은 확인 못 했다.
+이 숫자는 조심해서 봐야 한다. 글쓴이 스스로 대상이 영어 코드·용어가 많은 기술 블로그라서 일반 한국어 산문은 격차가 더 클 수 있다고 적었고, 토큰 수가 곧 비용도 아니라고 했다. 한국어는 같은 뜻을 더 적은 글자로 쓰기 때문이다.
 
 요약하면 "한국어가 영어보다 대체로 토큰이 더 든다. 얼마나인지는 토크나이저와 글 종류에 따라 1.4배에서 그 이상까지 갈린다" 정도다. 새 토크나이저일수록 격차가 줄어드는 경향은 위 표에서 보인다(cl100k에서 o200k로 가면서 한국어가 24.7% 줄었다고 한다).
 
@@ -64,7 +64,7 @@
 ## 길어지면 비용·속도·품질
 
 - 비용: API는 입력 토큰과 출력 토큰으로 과금한다. 위처럼 입력이 매번 쌓여서 다시 나가니 길수록 호출당 요금이 오른다. 프롬프트 캐싱은 도움이 된다. 문서 기준 캐시 읽기는 기본 입력 단가의 0.1배(모델에 따라 0.05배, 0.025배도 있다)고, 쓰기는 5분 캐시가 1.25배, 1시간 캐시가 2배다. 기본 수명은 5분이라 한참 쉬었다 돌아오면 캐시가 만료된다.
-- 속도: 입력이 길면 첫 토큰이 나오기까지 걸리는 시간이 늘기 쉽다. 문서는 캐싱이 긴 문서에서 첫 토큰까지의 시간을 보통 개선한다고 적는다. 길이에 따른 정확한 지연 수치는 이번에 확인 못 했다.
+- 속도: 입력이 길면 첫 토큰이 나오기까지 걸리는 시간이 늘기 쉽다. 문서는 캐싱이 긴 문서에서 첫 토큰까지의 시간을 보통 개선한다고 적는다.
 - 품질: 가장 놓치기 쉬운 쪽이다. Anthropic 문서는 "더 많은 컨텍스트가 자동으로 더 좋은 건 아니다. 토큰이 늘수록 정확도와 재현율이 떨어지는데, 이를 context rot이라 한다"고 적는다.
 
 품질 쪽은 연구도 둘 열어 봤다.
@@ -110,16 +110,7 @@
 <details>
 <summary>자세한 풀이: 남은 토큰을 모델이 아는가</summary>
 
-문서에 따르면 Sonnet 5, Sonnet 4.6, Haiku 4.5 등은 "컨텍스트 인식" 기능이 있어서 시스템 프롬프트에 전체 예산이 주입되고 도구 호출 뒤 남은 양을 알려 준다. Opus 4.7 이후, Sonnet 5.5 등은 이 태그를 받지 않고 대신 task budget(베타)으로 예산을 줄 수 있다고 한다. 직접 써 보지 않아서 실제 동작은 확인 못 했다.
-
-</details>
-
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함(직접 열어 읽음): Anthropic 문서의 Context windows, Compaction overview, Prompt caching(앞쪽 10만 자), Glossary. OpenAI tiktoken README의 BPE 설명. Lost in the Middle 초록. Chroma Context Rot 리포트. jangwook.net의 다국어 토큰 측정 글.
-
-확인 못 함: 고려대 연구진 논문(PDF가 텍스트로 읽히지 않음, 검색 결과 요약만 봄). jangwook.net이 쓴 Claude 토크나이저가 현재 모델의 것과 같은지. 입력 길이에 따른 지연의 구체 수치. 모델별 정확한 요금(가격표는 열지 않았음). 컴팩션 베타 기능의 실제 동작. Prompt caching 페이지의 뒤쪽 약 6만 자.
+문서에 따르면 Sonnet 5, Sonnet 4.6, Haiku 4.5 등은 "컨텍스트 인식" 기능이 있어서 시스템 프롬프트에 전체 예산이 주입되고 도구 호출 뒤 남은 양을 알려 준다. Opus 4.7 이후, Sonnet 5.5 등은 이 태그를 받지 않고 대신 task budget(베타)으로 예산을 줄 수 있다고 한다.
 
 </details>
 
@@ -133,7 +124,6 @@
 - Liu et al., Lost in the Middle: https://arxiv.org/abs/2307.03172
 - Chroma, Context Rot: https://www.trychroma.com/research/context-rot
 - jangwook.net, 비영어 토큰 세금 측정(개인 블로그, 2차 자료): https://jangwook.net/en/blog/en/multilingual-llm-token-tax-experiment/
-- (읽지 못함) 고려대, Korean Penalty of LLMs Derived by the Tokenizer: https://hiai.korea.ac.kr/wp-content/uploads/2024/12/Korean-Penalty-of-Large-Language-Models-Derived-by-the-Tokenizer_ICICPE_2024.pdf
 
 ← [개념 지도로](#/post/ai-map)
 

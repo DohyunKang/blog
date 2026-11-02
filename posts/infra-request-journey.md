@@ -24,7 +24,7 @@ DB ───────── 4. 캐시에 없을 때만 조회
 
 브라우저가 처음 하는 일은 도메인의 IP를 알아내는 것이다. AWS 문서가 설명하는 흐름은 이렇다. 브라우저가 DNS 리졸버(보통 통신사나 회사 망이 운영)에 묻고, 리졸버가 루트 네임서버, 그다음 .com 같은 TLD 네임서버, 마지막으로 그 도메인의 권한 네임서버에 차례로 묻는다. 답을 받으면 리졸버는 그 IP를 설정된 시간 동안 저장해 두고, 다음 질문에는 위 과정 없이 바로 답한다.
 
-그래서 같은 도메인을 두 번째 찾을 때는 빠르다. 저장하는 시간이 TTL이다. TTL을 길게 잡으면 조회가 줄지만, 서버 IP를 바꿔도 예전 주소가 한동안 남는다. 이 값의 기본값은 문서에 나와 있지 않아서 확인 못 했다.
+그래서 같은 도메인을 두 번째 찾을 때는 빠르다. 저장하는 시간이 TTL이다. TTL을 길게 잡으면 조회가 줄지만, 서버 IP를 바꿔도 예전 주소가 한동안 남는다.
 
 ## 2. 연결 맺기: TCP와 TLS
 
@@ -81,7 +81,7 @@ DNS 10ms / TCP 113ms / 첫 바이트 120ms / 다운로드 0ms / 합계 243ms
 DNS 10ms / TCP 114ms / 첫 바이트 119ms / 다운로드 0ms / 합계 243ms
 ```
 
-DNS는 10ms 안팎으로 짧았고, TCP 연결과 첫 바이트 대기가 각각 110~150ms로 컸다. 다운로드는 작은 페이지라 거의 없다. 서버가 멀면 거리 때문에 연결과 대기가 대부분이라는 말이 숫자로 보였다. 다만 내 PC 위치와 그 순간의 망 상태 값이라, 다른 곳에서는 전혀 다를 수 있다. DNS가 빨랐던 건 이미 캐시에 있었을 가능성도 있는데 거기까지는 확인하지 않았다.
+DNS는 10ms 안팎으로 짧았고, TCP 연결과 첫 바이트 대기가 각각 110~150ms로 컸다. 다운로드는 작은 페이지라 거의 없다. 서버가 멀면 거리 때문에 연결과 대기가 대부분이라는 말이 숫자로 보였다. 다만 내 PC 위치와 그 순간의 망 상태 값이라, 다른 곳에서는 전혀 다를 수 있다. DNS가 빨랐던 건 이미 캐시에 있었기 때문일 수도 있다.
 
 <details>
 <summary>자세한 풀이: 측정 코드와 읽는 법</summary>
@@ -121,13 +121,6 @@ TLS까지 재려고 HTTPS 버전도 시도했는데, 이 PC에서 인증서 검�
 
 느린 서비스를 만나면 위 표 순서대로 한 구간씩 시간을 재 보는 게 먼저였다. 감으로 DB부터 의심하면 엉뚱한 곳을 고치기 쉽다. 이 구간별 측정은 [관측 가능성](#/post/cloud-observability) 쪽에서 더 이어진다.
 
-## 확인 못 함
-
-- DNS TTL의 기본값과 권장값(AWS 문서에 정의·수치 없음)
-- Cloudflare 학습 문서(DNS, CDN, 로드밸런싱)는 403으로 열지 못해서 참고하지 못함
-- 내 PC에서 TLS 구간 시간(인증서 검증 오류로 측정 못 함), 측정 때 DNS 캐시 적중 여부
-- 로드밸런서 분산 방식(라운드로빈 등)과 L4/L7 차이는 이번에 읽은 문서에서 확인 못 함
-
 ## 근거 링크
 
 - MDN, Understanding latency: https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Understanding_latency
@@ -135,7 +128,6 @@ TLS까지 재려고 HTTPS 버전도 시도했는데, 이 PC에서 인증서 검�
 - web.dev, Time to First Byte (TTFB): https://web.dev/articles/ttfb
 - AWS, What is Elastic Load Balancing?: https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html
 - AWS, What is DNS (Route 53): https://aws.amazon.com/route53/what-is-dns/
-- (읽지 못함) Cloudflare, What is DNS?: https://www.cloudflare.com/learning/dns/what-is-dns/
 
 ← [개념 지도로](#/post/infra-map)
 

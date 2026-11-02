@@ -141,17 +141,6 @@ Google 강좌도 같은 신호를 말한다. 훈련 손실은 계속 줄거나 �
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: 경사하강법의 반복 절차, 갱신식, 학습률 개념, MSE 설명, 볼록 손실에서 전역 최솟값에 도달한다는 서술(Google 강좌). 과적합·일반화 정의, 훈련/검증/테스트 역할 일부, 훈련 손실은 줄고 검증 손실이 오르면 과적합이라는 서술(Google 강좌). 두 코드는 직접 실행했고 표의 숫자는 그 출력이다(난수 시드 0 고정).
-
-참고: Google 강좌 페이지는 "학습률"이라는 용어 대신 "step size"로 같은 개념을 설명했고, 검증 세트의 역할은 자세히 풀어 주지 않았다. 검증·테스트의 역할 구분과 테스트를 한 번만 쓴다는 설명은 일반적인 관행으로 적은 것이다.
-
-확인 못 함: 크로스 엔트로피 손실의 수식. 규제·조기 종료의 구체적 효과(직접 실험 안 함). 신경망에서 경사하강법이 최솟값에 도달하는 조건. 테스트 세트(`te`)로 실제 점수를 내는 실험.
-
-</details>
-
 ## 근거 링크
 
 - Google, Machine Learning Crash Course, Overfitting: https://developers.google.com/machine-learning/crash-course/overfitting/overfitting

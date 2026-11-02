@@ -160,15 +160,6 @@ OWASP 항목과 Anthropic 글을 합쳐 체크 목록으로 줄이면 이렇다.
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Anthropic 문서의 탈옥·주입 대응 항목(사전 분류, 입력 검증, tool_result 격리, JSON 감싸기, 최소 권한, 도구 출력 검사, 레드팀, 모니터링), Building effective agents의 샌드박스·체크포인트·중단 조건·도구 설계, OWASP LLM Top 10 목록과 LLM05·LLM06 상세 페이지, 위 코드의 실행 결과.
-
-확인 못 함: OWASP LLM01 Prompt Injection, LLM02 Sensitive Information Disclosure, LLM10 Unbounded Consumption의 상세 페이지(목록의 한 줄 설명만 봄). 각 가드레일의 실제 탐지율·오탐률 수치. 위 코드는 모델과 실제 API를 붙이지 않은 도구 실행부만 실행했다.
-
-</details>
-
 ## 근거 링크
 
 - Anthropic 문서, Mitigate jailbreaks and prompt injections: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks

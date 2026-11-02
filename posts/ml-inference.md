@@ -38,7 +38,7 @@ LLM은 답을 한 번에 만들지 않는다. 토큰을 하나 만들고, 그 �
 
 실제 모델이 아니라 계산용으로 가정한 값이다. 32층, 32헤드, 헤드 차원 128, fp16(2바이트)이면 토큰 하나에 524,288바이트(0.5MB)다. 4,096토큰 대화 하나가 2GB가 된다. 요청 10개를 동시에 받으면 캐시만 20GB다. (python으로 계산해 확인했다.)
 
-최근 모델 중에는 key/value 헤드 수를 줄여 이 크기를 줄이는 구조를 쓰는 것들이 있다. 어떤 모델이 어떤 구조인지는 확인하지 않았다.
+최근 모델 중에는 key/value 헤드 수를 줄여 이 크기를 줄이는 구조를 쓰는 것들이 있다.
 </details>
 
 ## 배치와 연속 배치
@@ -104,13 +104,6 @@ Leviathan 등의 논문은 T5-XXL에서 기존 구현 대비 대략 2~3배 빨�
 - Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention: https://arxiv.org/abs/2309.06180
 - Leviathan et al., Fast Inference from Transformers via Speculative Decoding: https://arxiv.org/abs/2211.17192
 - Yu et al., Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI 2022): https://www.usenix.org/conference/osdi22/presentation/yu
-
-## 확인 못 함
-
-- 세 자료는 초록·소개 페이지만 읽었고 논문 본문의 수식과 실험 조건은 확인하지 못했다.
-- 특정 모델의 층 수·헤드 수·KV 구조와 상용 서비스(API)가 실제로 어떤 최적화를 쓰는지.
-- 프리필·디코딩이 각각 계산·메모리 병목이라는 설명의 직접 출처(위 논문 초록에는 없음).
-- 양자화·모델 병렬의 구체적 효과 수치.
 
 ← 개념 지도로 (#/post/ml-map)
 

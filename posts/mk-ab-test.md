@@ -113,15 +113,6 @@ peeking 시뮬레이션은 같은 3%인 두 그룹에서 각 5,000명을 뽑고,
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: peeking 문제와 사전 고정 표본, 어림식, 대안(순차 검정·베이지안)은 Evan Miller 글. 다중 비교와 본페로니·Holm 보정은 위키피디아. 표본 크기 계산과 peeking 21%는 직접 파이썬으로 실행.
-
-확인 못 함: 유튜브 등 플랫폼의 썸네일 시험 기능의 구체적 동작. 시험 기간 최소 한 주라는 경험칙의 공식 출처. 베이지안 방법과 순차 검정의 구체 절차.
-
-</details>
-
 ← [개념 지도로](#/post/ai-map)
 
 관련 글: [대시보드 만들기](#/post/mk-dashboard), [콘텐츠 캘린더 자동화](#/post/mk-content-calendar), [트렌드 수집 자동화](#/post/mk-trend-collect)

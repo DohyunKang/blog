@@ -114,15 +114,6 @@ BM25는 단어가 얼마나 자주, 얼마나 희귀하게 나오는지를 보�
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: RAG 논문의 제안과 파라메트릭/비파라메트릭 구분(arXiv 초록), Contextual Retrieval 글의 하이브리드·재순위·실패율 표·청크 관련 언급·20만 토큰 기준, Lost in the Middle 초록의 위치별 성능 결과, RAG와 파인튜닝 비교에 대한 실무 글 검색 결과의 요약(원문 페이지는 열지 않음).
-
-확인 못 함: 청크 크기의 적정 토큰 수, 문단 단위 청킹이 낫다는 일반론의 근거, 재순위 모델 내부 방식, 파인튜닝이 사실 암기에 약하다는 주장의 실험 근거, RAG 논문 본문 PDF의 세부(두 가지 생성 방식의 성능 차이 등), 내가 직접 돌려 본 수치.
-
-</details>
-
 ## 근거 링크
 
 - Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks: https://arxiv.org/abs/2005.11401

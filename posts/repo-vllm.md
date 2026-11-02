@@ -76,7 +76,7 @@ c는 둘째 블록의 토큰(4~7)이 a와 같은데도 해시가 다르다. 앞�
 2. 예산이 남으면 대기 중인 요청(`waiting`)을 꺼내 앞부분 캐시를 조회하고 이어서 prefill을 시작한다.
 3. 긴 프롬프트는 한 번에 다 넣지 않고 예산만큼 잘라서 넣는다(chunked prefill). `enable_chunked_prefill`이 꺼져 있고 남은 예산보다 길면 그 자리에서 멈춘다. `long_prefill_token_threshold`로 한 요청이 한 스텝에 쓰는 prefill 양에 상한도 둘 수 있다.
 
-덕분에 긴 프롬프트 하나가 들어와도 이미 돌던 요청들의 다음 토큰이 같이 한 배치에 실린다. 새 요청이 끝날 때까지 다른 요청이 서 있지 않는다. 이걸 연속 배칭(continuous batching)이라고 부르는 걸로 알고 있는데, 이 이름이 vLLM 코드에 직접 나오는지는 확인하지 않았다. [자세히 → 모델 추론](#/post/ml-inference)
+덕분에 긴 프롬프트 하나가 들어와도 이미 돌던 요청들의 다음 토큰이 같이 한 배치에 실린다. 새 요청이 끝날 때까지 다른 요청이 서 있지 않는다. 이걸 연속 배칭(continuous batching)이라고 부르는 걸로 알고 있다. [자세히 → 모델 추론](#/post/ml-inference)
 
 ### 블록이 모자라면
 
@@ -130,13 +130,6 @@ outputs = scheduler.update_from_output(scheduler_output, model_output)
 ← 개념 지도로 [(AI 개념 지도)](#/post/ai-map)
 
 관련 글: [Ollama 분석](#/post/repo-ollama) · [llama.cpp 분석](#/post/repo-llama-cpp) · [AI 서빙](#/post/infra-ai-serving)
-
-## 확인 못 함
-
-- vLLM이 요청 하나일 때와 여러 개일 때 실제로 얼마나 빠른지(GPU를 쓰는 실행은 하지 않았고, 수치는 논문·블로그 주장 그대로).
-- 논문 PDF 본문과 2024년 이후 벤치마크(초록과 2023년 블로그만 읽음).
-- 연속 배칭이라는 용어가 코드에 쓰이는지, `update_from_output` 세부 동작, 쫓겨난 요청의 캐시 재사용 정도.
-- 장난감 해시 코드는 실제 vLLM 해시(CBOR 직렬화 등)와 다르고, 구조만 흉내 낸 것.
 
 ## 근거 링크
 

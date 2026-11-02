@@ -137,13 +137,6 @@ CDN 응답 헤더로 캐시가 어떻게 처리됐는지 볼 수 있다. Cloudfl
 
 AI 쪽에도 같은 발상이 있다. 같은 프롬프트 앞부분을 다시 계산하지 않는 [자세히 → 프롬프트 캐싱](#/post/ai-prompt-caching)이 그렇다. 앞단에서 요청을 나누는 [자세히 → 로드 밸런서](#/post/infra-load-balancer)와 함께 놓고 보면 "원본까지 가는 요청을 줄인다"는 같은 목적이 보인다. 웹 성능 쪽 관점은 [자세히 → 프론트엔드 성능](#/post/fe-performance)에 있다.
 
-## 확인 못 함
-
-- Cloudflare 외 CDN(CloudFront, Fastly 등)의 기본 동작과 헤더 차이는 안 읽었다. 위 내용은 Cloudflare 문서 기준이다.
-- `s-maxage`와 `stale-while-revalidate`가 CDN별로 어떻게 처리되는지(지원 여부)는 확인 못 했다.
-- purge 후 브라우저 캐시에 남은 복사본이 어떻게 되는지 공식 문서 문장은 못 찾았다.
-- 시뮬레이션 코드는 개념 확인용이라 실제 CDN의 TTL·계층 구조와 다르다.
-
 ## 근거 링크
 
 - MDN, HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching

@@ -112,15 +112,6 @@ Instagram·Messenger 같은 Meta 플랫폼을 예로 문서를 읽었다. 다른
 
 </details>
 
-<details>
-<summary>자세한 풀이: 확인한 것과 못 한 것</summary>
-
-확인함: Meta 메시징 정책의 24시간 창·Human Agent 태그·자동 응답 규칙·자동임 고지(Messenger Platform 정책 개요 페이지), Instagram private reply의 7일·1회·권한 요건(해당 문서 페이지), 프롬프트 인젝션 정의와 완화책(OWASP).
-
-확인 못 함: Instagram API의 호출 횟수 제한 수치(문서 링크가 있었으나 해당 페이지에 수치가 없었음). 위 정책이 지금 이 순간 그대로인지. Meta 외 플랫폼(유튜브, X, 틱톡 등)의 규칙. 한국 법 기준의 자동 응답 고지 의무. 실제 서비스에서의 비용 수치.
-
-</details>
-
 ← 개념 지도로 (#/post/ai-map)
 
 관련 글: [RAG](#/post/ai-rag) · [환각](#/post/ai-hallucination) · [프롬프트 인젝션](#/post/sec-prompt-injection)
