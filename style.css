@@ -236,3 +236,8 @@ footer .credit{font-size:.7rem;opacity:.55;text-shadow:none}
 .fold summary span{flex:1}.fold summary b,.ser .leaf b{color:var(--faint);font-weight:600}
 .fold a.leaf,.fold a.all{padding:4px 0 4px 18px;font-size:.85rem}.fold a.leaf.on{color:var(--ink);font-weight:700}.fold a.all{color:var(--faint)}
 @media (max-width:900px){.ser{display:block}.fold a{display:flex;justify-content:space-between}}
+
+.sdrop .tdrop{position:absolute;z-index:20;top:calc(100% + 8px);left:0;width:min(460px,88vw);max-height:70vh;overflow:auto;padding:12px 14px;border-radius:14px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.sdrop .tdrop .chips{position:static;width:auto;padding:0;border:0;box-shadow:none;background:none;backdrop-filter:none;margin:4px 0 12px}
+.tg .tgh{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;padding:4px 0;color:var(--ink)}.tg .tgh.on{color:var(--accent,#8b9cff)}.tg .tgh b{color:var(--faint);font-weight:600}
+.sdrop .tdrop{background:#10142e}:root[data-theme=light] .sdrop .tdrop{background:#f3f5ff}
