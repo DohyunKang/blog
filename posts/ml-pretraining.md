@@ -72,7 +72,7 @@ RLHF는 보상 모델을 따로 만들고 강화학습까지 돌려야 해서 �
 - 파라미터가 크면 무조건 낫다: InstructGPT는 1.3B가 175B보다 선호됐고, Chinchilla는 작은 모델에 데이터를 더 먹여 이겼다. 크기만이 아니라 데이터 양과 후속 단계도 영향이 크다.
 - DPO는 RLHF와 완전히 다른 것: 둘 다 사람 선호 데이터를 쓴다. 보상 모델과 강화학습 단계를 건너뛰는 게 차이다.
 
-← 개념 지도로 (#/post/ml-map)
+← 개념 map으로 (#/post/ml-map)
 
 관련 글: [트랜스포머](#/post/ml-transformer) · [파인튜닝: 전체 vs LoRA/QLoRA](#/post/ml-finetuning) · [LLM이란](#/post/ai-llm)
 

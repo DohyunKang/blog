@@ -168,6 +168,6 @@ OWASP 항목과 Anthropic 글을 합쳐 체크 목록으로 줄이면 이렇다.
 - OWASP LLM06:2025 Excessive Agency: https://genai.owasp.org/llmrisk/llm062025-excessive-agency/
 - OWASP LLM05:2025 Improper Output Handling: https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/
 
-← [개념 지도로](#/post/app-map)
+← [개념 map으로](#/post/app-map)
 
 관련 글: [에이전트 설계 패턴](#/post/app-agent-design) · [프롬프트 주입과 AI 보안](#/post/sec-prompt-injection) · [도구 호출](#/post/ai-tool-use)

@@ -75,7 +75,7 @@ Anthropic이 제공하는 메모리 도구(memory tool)는 이걸 파일 기반�
 
 </details>
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [세션과 대화 기록](#/post/ai-session) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [하네스](#/post/ai-harness)
 

@@ -196,4 +196,4 @@ O(V+E), 공간 O(V+E).
 - Disjoint-set data structure (Wikipedia): https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 - Topological sorting (Wikipedia): https://en.wikipedia.org/wiki/Topological_sorting
 
-← [개념 지도로](#/post/algo-map)
+← [개념 map으로](#/post/algo-map)

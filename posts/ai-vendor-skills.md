@@ -94,7 +94,7 @@ ChatGPT의 GPTs는 파일을 폴더에 두는 방식과 결이 다르다. 지침
 
 </details>
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [스킬](#/post/ai-skills), [MCP](#/post/ai-mcp), [하네스](#/post/ai-harness)
 

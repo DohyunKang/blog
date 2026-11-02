@@ -104,7 +104,7 @@ specific, actionable feedback on quality, security, and best practices.
 
 </details>
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [에이전트 루프](#/post/ai-agent-loop) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [프롬프트 캐싱](#/post/ai-prompt-caching)
 

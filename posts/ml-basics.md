@@ -146,6 +146,6 @@ Google 강좌도 같은 신호를 말한다. 훈련 손실은 계속 줄거나 �
 - Google, Machine Learning Crash Course, Overfitting: https://developers.google.com/machine-learning/crash-course/overfitting/overfitting
 - Google, Machine Learning Crash Course, Gradient descent: https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent
 
-[← 개념 지도로](#/post/ml-map)
+[← 개념 map으로](#/post/ml-map)
 
 관련 글: [신경망과 역전파](#/post/ml-neural-net) · [사전학습과 RLHF](#/post/ml-pretraining) · [파인튜닝](#/post/ml-finetuning)

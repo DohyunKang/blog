@@ -238,4 +238,4 @@ def islands(maps):
 - 게임 맵 최단거리: https://school.programmers.co.kr/learn/courses/30/lessons/1844
 - 무인도 여행: https://school.programmers.co.kr/learn/courses/30/lessons/154540
 
-← [개념 지도로](#/post/algo-map)
+← [개념 map으로](#/post/algo-map)

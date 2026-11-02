@@ -50,4 +50,4 @@
 - [인증과 인가](#/post/be-auth)
 - [가드레일과 안전장치](#/post/app-guardrails)
 
-← 다른 시리즈 개념 지도로 (#/post/ai-map)
+← 다른 시리즈 개념 map으로 (#/post/ai-map)

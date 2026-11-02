@@ -41,4 +41,4 @@
 - 서버를 띄우고 배포하는 쪽은 [자세히 → 클라우드 기초](#/post/cloud-basics)
 - LLM 호출 자체가 궁금하면 [자세히 → LLM이란 무엇인가](#/post/ai-llm)
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)

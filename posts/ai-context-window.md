@@ -125,6 +125,6 @@
 - Chroma, Context Rot: https://www.trychroma.com/research/context-rot
 - jangwook.net, 비영어 토큰 세금 측정(개인 블로그, 2차 자료): https://jangwook.net/en/blog/en/multilingual-llm-token-tax-experiment/
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [LLM](#/post/ai-llm) · [하네스](#/post/ai-harness)

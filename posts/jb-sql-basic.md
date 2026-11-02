@@ -190,7 +190,7 @@ WITH GRANT OPTION을 붙여 권한을 받은 사용자는 그 권한을 다른 �
 
 결과를 묻는 문제는 데이터를 표로 그려서 한 단계씩 손으로 따라가는 게 가장 안전했다. 위 예제를 손으로 먼저 예상하고 돌려서 맞춰 보는 방식으로 연습하기 좋다.
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [정규화와 트랜잭션](#/post/jb-normalization-transaction) · [DB 물리 설계와 분산 DB](#/post/jb-physical-design) · [데이터베이스 기본과 데이터 모델](#/post/jb-db-concept)
 

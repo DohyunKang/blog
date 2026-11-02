@@ -160,6 +160,6 @@ hit@k는 검색만 잰다. 답의 품질까지 재려는 도구로 Ragas가 있�
 - Ragas, Available Metrics (지표 이름 목록만 확인): https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/
 - 이 글의 코드: 직접 작성해 실행함(링크 없음)
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [RAG](#/post/ai-rag) · [임베딩](#/post/ai-embedding) · [벡터 DB](#/post/db-vector)

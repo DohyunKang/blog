@@ -124,7 +124,7 @@ IaaS, PaaS, SaaS 순으로 고객이 관리할 범위가 줄어든다. 문제에
 
 </details>
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [클라우드 기초](#/post/cloud-basics) · [정보 보안](#/post/jb-security) · [네트워크](#/post/jb-network)
 

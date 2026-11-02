@@ -138,6 +138,6 @@ XP(익스트림 프로그래밍)는 Kent Beck이 Chrysler의 급여 시스템 �
 - Scrum Guide: https://scrumguides.org/scrum-guide.html
 - Wikipedia, Extreme programming: https://en.wikipedia.org/wiki/Extreme_programming
 
-← 개념 지도로 ([정보처리기사 지도](#/post/jb-map))
+← 개념 map으로 ([정보처리기사 map](#/post/jb-map))
 
 관련 글: [UML과 객체지향 분석](#/post/jb-uml) · [소프트웨어 테스트](#/post/jb-testing) · [프로젝트 관리](#/post/jb-project-mgmt)

@@ -157,7 +157,7 @@ p와 q를 고를 때 ACF가 단서가 된다. 직접 시뮬레이션해서 이�
 
 - 필요한 개념: [자세히 → 통계 분석 기초](#/post/adsp-stat-basic), [자세히 → 회귀 분석](#/post/adsp-regression)
 - 다음 단원: [자세히 → 정형 데이터 마이닝](#/post/adsp-datamining)
-- ← 개념 지도로 (#/post/adsp-map)
+- ← 개념 map으로 (#/post/adsp-map)
 
 ## 근거 링크
 

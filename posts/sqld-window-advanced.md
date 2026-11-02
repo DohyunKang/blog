@@ -214,7 +214,7 @@ WHERE REGEXP_LIKE (first_name, '^Ste(v|ph)en$');   -- Steven, Stephen
 
 윈도우 함수를 처음 보면 OVER 안이 복잡해 보이는데, 위 세 칸에 뭘 넣었는지만 보면 읽힌다.
 
-[← 개념 지도로](#/post/sqld-map)
+[← 개념 map으로](#/post/sqld-map)
 
 관련 글: [GROUP BY와 집합 연산](#/post/sqld-group-set), [조인과 서브쿼리](#/post/sqld-join-subquery), [SELECT와 함수](#/post/sqld-select-func), [DML·TCL·DDL과 제약조건](#/post/sqld-dml-ddl)
 

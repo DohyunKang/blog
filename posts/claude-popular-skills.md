@@ -105,6 +105,6 @@ im-not-ai는 한국어 글을 다듬는 스킬 중 스타가 가장 많았다. R
 - epoko77-ai/im-not-ai: https://github.com/epoko77-ai/im-not-ai
 - obra/superpowers: https://github.com/obra/superpowers
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [Claude 스킬·설정, 언제 뭘 쓰나](#/post/claude-skills) · [MCP](#/post/ai-mcp) · [Claude 토큰 아끼는 법](#/post/claude-tokens)

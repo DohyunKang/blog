@@ -135,6 +135,6 @@ Next.js 문서에 따르면 ISR이 켜진 페이지의 응답에는 `x-nextjs-ca
 - Next.js, Server and Client Components: https://nextjs.org/docs/app/getting-started/server-and-client-components
 - Next.js, Incremental Static Regeneration: https://nextjs.org/docs/app/guides/incremental-static-regeneration
 
-← 개념 지도로 (#/post/fe-map)
+← 개념 map으로 (#/post/fe-map)
 
 관련 글: [브라우저가 화면을 그리는 과정](#/post/fe-browser-render) · [프론트엔드 성능](#/post/fe-performance) · [CDN과 캐시 전략](#/post/infra-cdn-cache)

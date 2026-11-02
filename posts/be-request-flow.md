@@ -164,6 +164,6 @@ print("\n".join(log))
 - MDN, An overview of HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview (읽음)
 - Express, Using middleware: https://expressjs.com/en/guide/using-middleware.html (읽음)
 
-← [개념 지도로](#/post/be-map)
+← [개념 map으로](#/post/be-map)
 
 관련 글: [REST API](#/post/be-api-rest) · [계층 구조](#/post/be-layered-architecture) · [요청이 서버에 닿기까지](#/post/infra-request-journey)

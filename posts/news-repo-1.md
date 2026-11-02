@@ -60,6 +60,6 @@ README는 이 프로젝트가 연구 목적으로 만들어졌고 금융·투자
 
 ---
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [에이전트 설계 패턴](#/post/app-agent-design) · [서브에이전트와 멀티에이전트](#/post/ai-subagent) · [에이전트와 에이전트 루프](#/post/ai-agent-loop)

@@ -132,6 +132,6 @@ t분포, 카이제곱분포, F분포는 이름과 쓰임이 짝으로 나온다.
 - [Sampling (statistics) (Wikipedia)](https://en.wikipedia.org/wiki/Sampling_(statistics))
 - [Central limit theorem (Wikipedia)](https://en.wikipedia.org/wiki/Central_limit_theorem)
 
-← [개념 지도로 (ADsP 지도)](#/post/adsp-map)
+← [개념 map으로 (ADsP map)](#/post/adsp-map)
 
 관련 글: [R 기초와 데이터 마트](#/post/adsp-r-datamart) · [가설 검정](#/post/adsp-hypothesis) · [회귀 분석](#/post/adsp-regression)

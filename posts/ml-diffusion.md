@@ -105,7 +105,7 @@ ComfyUI 문서는 자신을 생성형 AI용 노드 기반 인터페이스이자 
 - LLM과 같은 원리다: 신경망을 쓴다는 점은 같지만 다음 토큰을 고르는 방식과 노이즈를 걷는 방식은 생성 과정이 다르다.
 - 프롬프트가 곧 그림이다: 같은 프롬프트라도 처음 노이즈가 다르면 다른 그림이 나온다. 씨드(seed)가 이 초기 노이즈를 고정하는 값이다.
 
-← 개념 지도로 ([AI 개념 지도](#/post/ai-map), [AI 원리 지도](#/post/ml-map))
+← 개념 map으로 ([AI 개념 map](#/post/ai-map), [AI 원리 map](#/post/ml-map))
 
 관련 글: [생성형 AI](#/post/ai-generative) · [멀티모달](#/post/ai-multimodal) · [로컬 모델](#/post/ml-local-models)
 

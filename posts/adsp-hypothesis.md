@@ -135,7 +135,7 @@ print(f.statistic, f.pvalue)                 # 31.04, 1.8e-05
 
 풀이는 이 순서로 했다. 먼저 검정 대상이 평균인지 비율·빈도인지 보고, 집단 수를 센다. 그다음 p값과 α를 비교해 결론을 낸다. 용어 문제는 1종·2종 표를 머릿속에 그려서 푼다.
 
-← [개념 지도로](#/post/adsp-map)
+← [개념 map으로](#/post/adsp-map)
 
 관련 글: [통계 분석 기초](#/post/adsp-stat-basic) · [회귀 분석](#/post/adsp-regression) · [다변량 분석과 시계열](#/post/adsp-multivariate-ts)
 

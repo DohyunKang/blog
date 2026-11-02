@@ -135,6 +135,6 @@ for r in db.execute(q2): print(r)
 - YouTube Analytics API 지표 목록: https://developers.google.com/youtube/analytics/metrics
 - Instagram Platform, Media Insights 레퍼런스: https://developers.facebook.com/docs/instagram-platform/reference/instagram-media/insights
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [콘텐츠 캘린더 자동화](#/post/mk-content-calendar) · [A/B 테스트](#/post/mk-ab-test) · [트렌드 수집](#/post/mk-trend-collect)

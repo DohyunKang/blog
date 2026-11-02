@@ -169,6 +169,6 @@ ring 3->4 moved: 0.2392
 - PostgreSQL Documentation, Table Partitioning: https://www.postgresql.org/docs/current/ddl-partitioning.html
 - Wikipedia, Consistent hashing: https://en.wikipedia.org/wiki/Consistent_hashing
 
-← [개념 지도로](#/post/db-map)
+← [개념 map으로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [캐시와 Redis](#/post/db-cache-redis) · [로드밸런서](#/post/infra-load-balancer)

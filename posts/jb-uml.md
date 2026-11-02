@@ -95,7 +95,7 @@ include는 로그인 확인처럼 늘 거치는 부분, extend는 "비밀번호 
 - 배치·컴포넌트 다이어그램은 행위 쪽이다: 둘 다 구조 쪽이다.
 - 시험 일정이나 문제 유형 비율은 이 글에서 다루지 않는다. 일정·접수는 공식 사이트에서 확인한다.
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글: [요구사항 확인과 분석](#/post/jb-requirements) · [객체지향과 언어 코드 읽기](#/post/jb-oop-lang) · [디자인 패턴](#/post/jb-design-pattern)
 

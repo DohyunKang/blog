@@ -133,7 +133,7 @@ yes/no처럼 이진으로 시작하는 게 관리하기 쉽다. Hamel도 처음�
 
 [프롬프트 인젝션](#/post/sec-prompt-injection) 같은 공격 사례는 평가 문제에 따로 모아 두면 방어가 무너졌는지 바로 알 수 있다. 
 
-← [개념 지도로](#/post/ai-map) · [LLM 앱 만들기 지도](#/post/app-map)
+← [개념 map으로](#/post/ai-map) · [LLM 앱 만들기 map](#/post/app-map)
 
 관련 글: [가드레일과 안전장치](#/post/app-guardrails) · [AI 서비스 원가](#/post/app-cost) · [환각](#/post/ai-hallucination)
 

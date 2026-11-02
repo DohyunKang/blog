@@ -121,6 +121,6 @@ BM25는 단어가 얼마나 자주, 얼마나 희귀하게 나오는지를 보�
 - Liu et al., Lost in the Middle: https://arxiv.org/abs/2307.03172
 - (검색 결과 요약만 확인) RAG vs Fine-Tuning 실무 글 모음, 예: https://blog.premai.io/fine-tuning-vs-rag-a-decision-framework-for-custom-llm-applications
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [임베딩](#/post/ai-embedding) · [컨텍스트 윈도우](#/post/ai-context-window) · [환각](#/post/ai-hallucination)

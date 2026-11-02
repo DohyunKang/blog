@@ -159,6 +159,6 @@ class OrderService:
 - Wikipedia, SOLID: https://en.wikipedia.org/wiki/SOLID
 - Robert C. Martin, The Single Responsibility Principle (2014): https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
 
-← [개념 지도로](#/post/cs-map)
+← [개념 map으로](#/post/cs-map)
 
 관련 글: [절차지향 vs 객체지향](#/post/cs-procedural-oop) · [디자인 패턴](#/post/cs-design-patterns) · [결합도·응집도](#/post/be-coupling-cohesion)

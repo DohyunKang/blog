@@ -108,7 +108,7 @@ GPT-3 논문 초록이 말하는 "자기회귀(autoregressive)"는 앞에서 뽑
 
 </details>
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [생성형 AI](#/post/ai-generative) · [컨텍스트 윈도우](#/post/ai-context-window) · [환각](#/post/ai-hallucination)
 

@@ -134,6 +134,6 @@ for acc in [SavingsAccount("lee", 1000), CheckingAccount("park", 10)]:
 - Python 공식 튜토리얼, Classes: https://docs.python.org/3/tutorial/classes.html
 - Wikipedia, Procedural programming: https://en.wikipedia.org/wiki/Procedural_programming
 
-← 개념 지도로 (#/post/cs-map)
+← 개념 map으로 (#/post/cs-map)
 
 관련 글: [SOLID 원칙](#/post/cs-solid) · [디자인 패턴](#/post/cs-design-patterns) · [결합도와 응집도](#/post/be-coupling-cohesion)

@@ -177,6 +177,6 @@ Strategy는 할인 방식 같은 알고리즘을 함수나 객체로 넘겨 바�
 - Wikipedia, Design Patterns (book): https://en.wikipedia.org/wiki/Design_Patterns
 - Refactoring.guru, Classification of patterns: https://refactoring.guru/design-patterns/classification
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글: [UML과 객체지향 분석](#/post/jb-uml) · [소프트웨어 아키텍처](#/post/jb-architecture-pattern) · [객체지향과 언어 코드 읽기](#/post/jb-oop-lang)

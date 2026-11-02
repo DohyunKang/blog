@@ -165,7 +165,7 @@ CREATE TABLE emp (
 - 인조식별자를 두면 업무 키는 필요 없다? 아니다. 업무상 유일해야 하는 값은 유니크 제약으로 따로 지킨다.
 - 복합 식별자는 속성이 여러 개지만 "최소" 조건은 여전히 적용된다. 빼도 유일하면 불필요한 속성이다.
 
-← 개념 지도로 (#/post/sqld-map)
+← 개념 map으로 (#/post/sqld-map)
 
 관련 글: [엔터티와 속성](#/post/sqld-entity-attr) · [데이터 모델링의 이해](#/post/sqld-modeling) · [정규화와 성능 데이터 모델링](#/post/sqld-norm-perf)
 

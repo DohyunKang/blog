@@ -51,8 +51,8 @@
 
 ## 이어서 볼 만한 곳
 
-- 서버가 놓이는 환경은 [클라우드·배포 지도](#/post/cloud-map)
-- 데이터 쪽은 [데이터베이스 지도](#/post/db-map)
-- 화면 쪽은 [프론트엔드 지도](#/post/fe-map)
+- 서버가 놓이는 환경은 [클라우드·배포 map](#/post/cloud-map)
+- 데이터 쪽은 [데이터베이스 map](#/post/db-map)
+- 화면 쪽은 [프론트엔드 map](#/post/fe-map)
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)

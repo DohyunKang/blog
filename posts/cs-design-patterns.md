@@ -191,6 +191,6 @@ if-else로 방식을 분기하던 걸 객체(여기선 함수)로 빼면 새 방
 - Wikipedia, Design Patterns (book): https://en.wikipedia.org/wiki/Design_Patterns
 - Refactoring.guru, Classification of patterns: https://refactoring.guru/design-patterns/classification
 
-← 개념 지도로 (#/post/cs-map)
+← 개념 map으로 (#/post/cs-map)
 
 관련 글: [SOLID 원칙](#/post/cs-solid) · [절차지향과 객체지향](#/post/cs-procedural-oop) · [결합도와 응집도](#/post/be-coupling-cohesion)

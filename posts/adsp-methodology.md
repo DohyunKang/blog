@@ -153,6 +153,6 @@ CRISP-DM으로 읽으면, 먼저 이탈을 줄인다는 업무 목표와 데이�
 
 시험 일정과 응시 방법은 공식 사이트에서 확인한다.
 
-← 개념 지도로 ([ADsP 지도](#/post/adsp-map))
+← 개념 map으로 ([ADsP map](#/post/adsp-map))
 
 관련 글: [분석 기획의 이해](#/post/adsp-planning) · [분석 과제와 마스터플랜](#/post/adsp-task-masterplan) · [정형 데이터 마이닝](#/post/adsp-datamining)

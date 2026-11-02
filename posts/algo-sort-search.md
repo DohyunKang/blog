@@ -227,7 +227,7 @@ print(biggest([3, 30, 34, 5, 9]))           # 9534330
 - 값 범위가 작을 때는 [배열·해시](#/post/algo-array-hash)의 카운트가 이분 탐색보다 쉽다.
 - 최적화 문제 중 단조성이 없으면 [DP](#/post/algo-dp) 쪽으로 간다.
 
-← 개념 지도로 [알고리즘 유형 지도](#/post/algo-map)
+← 개념 map으로 [알고리즘 유형 map](#/post/algo-map)
 
 ## 근거 링크
 

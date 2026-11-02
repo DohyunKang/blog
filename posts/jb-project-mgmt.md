@@ -156,7 +156,7 @@ ITIL은 IT 서비스 관리의 모범 사례 모음이다. 3판은 프로세스�
 
 계산 문제 세 종류(CPM 전진·후진, PERT 기댓값, COCOMO 식)는 한 번씩 직접 손으로 풀어 두면 시험장에서 식이 기억난다. 나머지는 표로 외운다. 앞뒤 단원은 [소프트웨어 테스트](#/post/jb-testing), [신기술과 IT 용어](#/post/jb-it-trend)와 같이 보면 이어진다.
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [요구사항 확인과 분석](#/post/jb-requirements) · [형상관리와 빌드·배포](#/post/jb-build-release) · [소프트웨어 테스트](#/post/jb-testing)
 

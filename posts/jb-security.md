@@ -171,7 +171,7 @@ print(html.escape("<script>x</script>"))  # &lt;script&gt;x&lt;/script&gt;
 
 표 네 개(암호, 키 역할, 접근통제, 공격)를 머릿속에 두고, 문제가 나오면 지키려는 성질부터 찾으면 된다.
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [네트워크](#/post/jb-network) · [운영체제](#/post/jb-os) · [소프트웨어 테스트](#/post/jb-testing)
 

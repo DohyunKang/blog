@@ -117,6 +117,6 @@ customer 1 ──< orders 1 ──< order_item >── 1 product
 - Microsoft Learn, Database normalization description: https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description
 - Wikipedia, Database normalization: https://en.wikipedia.org/wiki/Database_normalization
 
-← 개념 지도로 (#/post/db-map)
+← 개념 map으로 (#/post/db-map)
 
 관련 글: [관계형 DB와 SQL](#/post/db-rdb-sql) · [인덱스](#/post/db-index) · [NoSQL](#/post/db-nosql)

@@ -148,6 +148,6 @@ PCA의 단점도 같이 묶어 둔다.
 - [scikit-learn: Feature selection](https://scikit-learn.org/stable/modules/feature_selection.html)
 - [scikit-learn: Decomposing signals in components (PCA)](https://scikit-learn.org/stable/modules/decomposition.html#pca)
 
-← [개념 지도로](#/post/bd-map)
+← [개념 map으로](#/post/bd-map)
 
 관련 글: [데이터 전처리](#/post/bd-preprocessing) · [분석 모형 설계](#/post/bd-model-design) · [비지도학습 모형](#/post/bd-unsupervised)

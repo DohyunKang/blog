@@ -254,7 +254,7 @@ SELECT * FROM v_dev;   -- 박 400 / 최 200
 
 ---
 
-← [개념 지도로](#/post/sqld-map)
+← [개념 map으로](#/post/sqld-map)
 
 관련 글: [GROUP BY와 집합 연산](#/post/sqld-group-set) · [윈도우 함수와 고급 SQL](#/post/sqld-window-advanced) · [관계형 DB와 SQL 기본](#/post/db-rdb-sql)
 

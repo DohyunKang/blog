@@ -189,7 +189,7 @@ np.bincount(c), np.bincount(d)   # [757 43], [189 11]
 
 변수를 줄이고 고르는 단계는 [자세히 → 변수 선택과 차원 축소](#/post/bd-feature-select)에서 이어진다.
 
-← [개념 지도로](#/post/bd-map)
+← [개념 map으로](#/post/bd-map)
 
 관련 글: [탐색적 분석과 기초 통계](#/post/bd-eda-stats), [변수 선택과 차원 축소](#/post/bd-feature-select), [모형 평가](#/post/bd-evaluation)
 

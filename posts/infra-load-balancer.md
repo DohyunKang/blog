@@ -139,6 +139,6 @@ AWS 문서에는 가용 영역(AZ)마다 로드밸런서 노드가 생긴다고 
 - nginx, Using nginx as HTTP load balancer: https://nginx.org/en/docs/http/load_balancing.html
 - AWS, How Elastic Load Balancing works: https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html
 
-← [개념 지도로](#/post/infra-map)
+← [개념 map으로](#/post/infra-map)
 
 관련 글: [요청 하나가 거치는 길](#/post/infra-request-journey) · [오토스케일링과 확장](#/post/infra-autoscaling) · [CDN과 캐싱 계층](#/post/infra-cdn-cache)

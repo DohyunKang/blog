@@ -177,7 +177,7 @@ WBS(작업 분할 구조)는 프로젝트 정의 및 계획 수립 태스크의 
 
 ---
 
-← 개념 지도로 ([빅데이터분석기사 지도](#/post/bd-map))
+← 개념 map으로 ([빅데이터분석기사 map](#/post/bd-map))
 
 관련 글: [빅데이터 개요와 활용](#/post/bd-overview) · [분석 방법론](#/post/adsp-methodology) · [분석 과제와 마스터플랜](#/post/adsp-task-masterplan)
 

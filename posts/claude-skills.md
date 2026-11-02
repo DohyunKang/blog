@@ -146,6 +146,6 @@ description과 when_to_use를 합친 글은 목록에서 1,536자에서 잘린�
 - Claude Code 문서, MCP: https://code.claude.com/docs/en/mcp
 - Claude Code 문서, Slash commands: https://code.claude.com/docs/en/slash-commands
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [Claude 토큰 아끼는 법](#/post/claude-tokens) · [MCP](#/post/ai-mcp) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context)

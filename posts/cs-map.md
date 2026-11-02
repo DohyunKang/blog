@@ -50,4 +50,4 @@ CS·설계 기초는 범위가 넓어서 어디서부터 봐야 할지 막막하
 | 프로세스·스레드·메모리 | 운영체제 기초 |
 | 팀에서 코드 합치는 법 | Git 제대로 알기 |
 
-← 다른 지도: [AI 개념 지도](#/post/ai-map) · [백엔드 지도](#/post/be-map) · [알고리즘 유형 지도](#/post/algo-map)
+← 다른 map: [AI 개념 map](#/post/ai-map) · [백엔드 map](#/post/be-map) · [알고리즘 유형 map](#/post/algo-map)

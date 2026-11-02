@@ -222,7 +222,7 @@ Oracle 문서가 정리한 규칙은 이렇다.
 
 윈도우 함수로 그룹 안에서 순위를 매기는 건 [자세히 → 윈도우 함수와 고급 SQL](#/post/sqld-window-advanced)에서 이어진다. 시험 일정과 응시료는 공식 사이트에서 확인한다.
 
-← 개념 지도로 (#/post/sqld-map)
+← 개념 map으로 (#/post/sqld-map)
 
 관련 글: [SELECT문과 함수](#/post/sqld-select-func) · [조인과 서브쿼리](#/post/sqld-join-subquery) · [윈도우 함수와 고급 SQL](#/post/sqld-window-advanced)
 

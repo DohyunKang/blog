@@ -175,6 +175,6 @@ SQLite에는 함정이 하나 있다. 공식 문서에 따르면 외래 키 검�
 - PostgreSQL 문서, Joins Between Tables: https://www.postgresql.org/docs/current/tutorial-join.html (inner/left outer join 설명)
 - 코드 출력은 직접 실행(SQLite 3.50.4, 파이썬 sqlite3)
 
-← 개념 지도로 (#/post/db-map)
+← 개념 map으로 (#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [정규화](#/post/db-normalization) · [트랜잭션](#/post/db-transaction)

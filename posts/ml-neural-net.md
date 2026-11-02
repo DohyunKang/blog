@@ -127,5 +127,5 @@ print(np.round(p, 2).ravel())
 - Wikipedia, Backpropagation: https://en.wikipedia.org/wiki/Backpropagation (앞 10만 자까지 읽음)
 - Rumelhart, Hinton, Williams, "Learning representations by back-propagating errors", Nature 323 (1986): https://www.nature.com/articles/323533a0 (위키백과의 인용으로 언급)
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 관련 글: [머신러닝·딥러닝 기초](#/post/ml-basics) · [트랜스포머와 어텐션](#/post/ml-transformer) · [사전학습에서 RLHF까지](#/post/ml-pretraining)

@@ -191,7 +191,7 @@ AUC는 0.992로 변하지 않는데 임계값에 따라 오류의 종류가 완�
 
 실기에서는 이 흐름을 코드로 옮기는 연습이 필요하다. 그 부분은 [자세히 → 실기 파이썬 요점](#/post/bd-practical-python)에 이어진다.
 
-← [개념 지도로 (#/post/bd-map)](#/post/bd-map)
+← [개념 map으로 (#/post/bd-map)](#/post/bd-map)
 
 관련 글: [모형 평가](#/post/bd-evaluation), [분석 모형 설계](#/post/bd-model-design), [실기 파이썬 요점](#/post/bd-practical-python)
 

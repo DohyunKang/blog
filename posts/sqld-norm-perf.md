@@ -151,6 +151,6 @@ EXPLAIN QUERY PLAN SELECT * FROM emp WHERE dept_id = 10;
 - [Database normalization — Wikipedia](https://en.wikipedia.org/wiki/Database_normalization)
 - [Partitioning Concepts — Oracle Database VLDB and Partitioning Guide 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/vldbg/partition-concepts.html)
 
-← [개념 지도로](#/post/sqld-map)
+← [개념 map으로](#/post/sqld-map)
 
 관련 글: [데이터 모델링의 이해](#/post/sqld-modeling) · [관계와 식별자](#/post/sqld-relation-identifier) · [정규화(DB 일반)](#/post/db-normalization)

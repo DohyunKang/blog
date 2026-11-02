@@ -203,7 +203,7 @@ push는 배열 끝에 새 값을 붙인 뒤 부모와 비교하며 위로 올린
 
 </details>
 
-← [개념 지도로](#/post/algo-map)
+← [개념 map으로](#/post/algo-map)
 
 관련 글: [그래프 탐색](#/post/algo-graph-search) · [스택·큐](#/post/algo-stack-queue) · [그리디](#/post/algo-greedy)
 

@@ -79,7 +79,7 @@
 
 이 단원은 앞뒤 단원과 이어진다. 데이터의 종류와 빅데이터 개념은 [자세히 → 데이터의 이해](#/post/adsp-data-understanding)에서, 빅데이터를 어디에 어떻게 쓰고 어떤 위기 요인이 있는지는 [자세히 → 데이터의 가치와 미래](#/post/adsp-data-value)에서 다룬다. 데이터 사이언티스트는 그 빅데이터를 실제 분석으로 바꾸는 사람이라, 두 단원을 읽고 오면 역량 목록이 더 잘 붙는다.
 
-분석 과제를 어떻게 세우는지는 다음 과목 흐름인 [자세히 → 분석 기획의 이해](#/post/adsp-planning)로 넘어가고, 분석을 어떤 순서로 진행하는지는 [자세히 → 분석 방법론](#/post/adsp-methodology)에서 이어진다. 전체 흐름과 공부 순서는 [자세히 → ADsP 지도](#/post/adsp-map)에 모아 뒀다.
+분석 과제를 어떻게 세우는지는 다음 과목 흐름인 [자세히 → 분석 기획의 이해](#/post/adsp-planning)로 넘어가고, 분석을 어떤 순서로 진행하는지는 [자세히 → 분석 방법론](#/post/adsp-methodology)에서 이어진다. 전체 흐름과 공부 순서는 [자세히 → ADsP map](#/post/adsp-map)에 모아 뒀다.
 
 ## 정리
 
@@ -90,7 +90,7 @@
 - 인문학 열풍: 단순→복잡, 제품→서비스, 생산→시장 창조
 - 시험 일정과 접수 정보는 공식 사이트에서 확인
 
-← 개념 지도로 ([ADsP 지도](#/post/adsp-map))
+← 개념 map으로 ([ADsP map](#/post/adsp-map))
 
 관련 글: [데이터의 이해](#/post/adsp-data-understanding) · [데이터의 가치와 미래](#/post/adsp-data-value) · [분석 기획의 이해](#/post/adsp-planning)
 

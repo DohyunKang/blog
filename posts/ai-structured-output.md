@@ -134,6 +134,6 @@ print(ask("문의 메일 분석", lambda p: next(answers)))
 - Anthropic 문서, Structured outputs: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
 - OpenAI 문서, Structured Outputs: https://developers.openai.com/api/docs/guides/structured-outputs
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [도구 호출](#/post/ai-tool-use) · [프롬프트](#/post/ai-prompt) · [환각](#/post/ai-hallucination)

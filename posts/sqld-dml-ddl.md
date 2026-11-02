@@ -160,9 +160,9 @@ DEFAULT는 엄밀히는 규칙이 아니라 기본값이지만 같이 묶어 외
 - "UPDATE에 WHERE를 안 쓰면 오류가 난다." 오류 없이 전체 행이 바뀐다.
 - "ROLLBACK은 DDL도 되돌린다." Oracle에서 DDL은 자동 확정이라 못 되돌린다고 알려져 있다.
 
-SELECT 쪽 함수와 조건은 [자세히 → SELECT와 함수](#/post/sqld-select-func)에, 전체 흐름은 지도에 있다.
+SELECT 쪽 함수와 조건은 [자세히 → SELECT와 함수](#/post/sqld-select-func)에, 전체 흐름은 map에 있다.
 
-← [개념 지도로](#/post/sqld-map)
+← [개념 map으로](#/post/sqld-map)
 
 관련 글: [DCL과 절차형 SQL](#/post/sqld-dcl-procedure) · [트랜잭션](#/post/db-transaction) · [관계와 식별자](#/post/sqld-relation-identifier)
 

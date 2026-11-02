@@ -124,6 +124,6 @@ llama.cpp 저장소는 최소한의 설정으로 어디서나 추론하는 것�
 - llama.cpp 저장소: https://github.com/ggml-org/llama.cpp
 - Ollama FAQ: https://docs.ollama.com/faq
 
-← 개념 지도로 (#/post/ml-map)
+← 개념 map으로 (#/post/ml-map)
 
 관련 글: [추론 최적화](#/post/ml-inference) · [파인튜닝](#/post/ml-finetuning) · [오픈소스 분석: llama.cpp](#/post/repo-llama-cpp)

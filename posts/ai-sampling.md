@@ -122,7 +122,7 @@ OpenAI API 참조(Chat Completions)는 temperature를 0에서 2 사이 값으로
 
 한 블로그(Enjoy Agentic Industries)는 이전 버전이 계속 동작하고 종료일은 공지된 게 없다고 쓴다. 공식 글이 아니라 2차 자료라서 참고만 했다. 같은 블로그는 Claude Sonnet 4.6 같은 이전 모델에서 낮은 온도로 결과를 안정시키던 코드는 새 버전에서 그 효과를 잃으니 이전 버전에 남겨 두라고 권한다.
 
-내가 이해한 건, 이제 "같은 답이 나오게 해 달라"는 요구는 온도가 아니라 프롬프트나 [구조화 출력](#/post/ai-structured-output) 쪽으로 풀어야 한다는 것이다. 다른 제공사(OpenAI 등)는 위에서 본 대로 아직 이 값들을 문서에 두고 있다. 모델·제공사마다 지원이 다르니 쓰기 전에 해당 모델 문서를 확인하는 게 맞다. 모델별 차이는 [AI 모델 지도](#/post/ai-models)에서 이어서 볼 수 있다. 입력이 얼마나 들어가는지 같은 다른 한도는 [컨텍스트 윈도우](#/post/ai-context-window) 글에 있다.
+내가 이해한 건, 이제 "같은 답이 나오게 해 달라"는 요구는 온도가 아니라 프롬프트나 [구조화 출력](#/post/ai-structured-output) 쪽으로 풀어야 한다는 것이다. 다른 제공사(OpenAI 등)는 위에서 본 대로 아직 이 값들을 문서에 두고 있다. 모델·제공사마다 지원이 다르니 쓰기 전에 해당 모델 문서를 확인하는 게 맞다. 모델별 차이는 [AI 모델 map](#/post/ai-models)에서 이어서 볼 수 있다. 입력이 얼마나 들어가는지 같은 다른 한도는 [컨텍스트 윈도우](#/post/ai-context-window) 글에 있다.
 
 ## 근거 링크
 
@@ -131,6 +131,6 @@ OpenAI API 참조(Chat Completions)는 temperature를 0에서 2 사이 값으로
 - OpenAI Python SDK 소스(temperature, top_p 파라미터 설명): https://raw.githubusercontent.com/openai/openai-python/main/src/openai/types/chat/completion_create_params.py
 - Enjoy Agentic Industries, Claude API version 2026-10-21 (2차 해설): https://enjoy.dev/blog/claude-api-2026-10-21/
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [LLM이란 무엇인가](#/post/ai-llm) · [할루시네이션](#/post/ai-hallucination) · [구조화 출력](#/post/ai-structured-output)

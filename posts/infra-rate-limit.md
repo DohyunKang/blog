@@ -135,6 +135,6 @@ Stripe는 이 네 가지(요청 속도, 동시 요청, 서비스 전체 부하 �
 - RFC 6585 section 4: https://www.rfc-editor.org/rfc/rfc6585#section-4
 - AWS Builders' Library, Timeouts, retries, and backoff with jitter: https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter
 
-← [개념 지도로](#/post/infra-map)
+← [개념 map으로](#/post/infra-map)
 
 관련 글: [로드 밸런서](#/post/infra-load-balancer) · [오토스케일링](#/post/infra-autoscaling) · [비동기 큐](#/post/be-async-queue)

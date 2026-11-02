@@ -260,6 +260,6 @@ print(dfs(adj, 1), bfs(adj, 1))
 - Tree traversal (전위·중위·후위·레벨 순회, 전위+중위로 트리 결정): https://en.wikipedia.org/wiki/Tree_traversal
 - Binary search tree (평균·최악 복잡도, 편향, AVL): https://en.wikipedia.org/wiki/Binary_search_tree
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글: [정렬·탐색과 알고리즘 복잡도](#/post/jb-algorithm-complexity) · [스택·큐·덱](#/post/algo-stack-queue) · [BFS·DFS와 그래프](#/post/algo-graph-search)

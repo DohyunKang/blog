@@ -180,7 +180,7 @@ binary_search([1, 3, 5, 7, 9, 11], 7)   # 3
 - 해시는 "항상 O(1)"이 아니라 평균이 O(1)이다.
 - 중첩 반복문이어도 안쪽 범위가 절반씩 줄면 n²이 아니다.
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글: [자료구조](#/post/jb-data-structure) · [시간복잡도와 파이썬 기본](#/post/algo-complexity) · [배열·문자열·해시](#/post/algo-array-hash)
 

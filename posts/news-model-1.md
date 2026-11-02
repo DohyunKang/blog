@@ -94,9 +94,9 @@ Sonnet 5.5의 캐시 읽기 가격이 백만 토큰당 $0.20에서 $0.10으로 �
 
 다만 내 작업에서 품질이 충분한지는 직접 돌려 봐야 안다. 벤치마크는 발표한 쪽이 고른 표다.
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
-관련 글: [AI 모델 지도](#/post/ai-models), [프롬프트 캐싱](#/post/ai-prompt-caching), [서브에이전트와 멀티에이전트](#/post/ai-subagent)
+관련 글: [AI 모델 map](#/post/ai-models), [프롬프트 캐싱](#/post/ai-prompt-caching), [서브에이전트와 멀티에이전트](#/post/ai-subagent)
 
 ## 근거 링크
 

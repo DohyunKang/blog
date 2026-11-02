@@ -138,6 +138,6 @@ print(np.round(w_c, 2))     # 위쪽 삼각형이 0
 - Vaswani et al., "Attention Is All You Need" (2017): https://arxiv.org/abs/1706.03762
 - Jay Alammar, "The Illustrated Transformer": https://jalammar.github.io/illustrated-transformer/
 
-← 개념 지도로 (#/post/ml-map)
+← 개념 map으로 (#/post/ml-map)
 
 관련 글: [신경망과 역전파](#/post/ml-neural-net) · [LLM이란 무엇인가](#/post/ai-llm) · [임베딩과 벡터 검색](#/post/ai-embedding)

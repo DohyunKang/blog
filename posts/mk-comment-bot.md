@@ -112,7 +112,7 @@ Instagram·Messenger 같은 Meta 플랫폼을 예로 문서를 읽었다. 다른
 
 </details>
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [RAG](#/post/ai-rag) · [환각](#/post/ai-hallucination) · [프롬프트 인젝션](#/post/sec-prompt-injection)
 

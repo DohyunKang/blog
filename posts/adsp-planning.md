@@ -100,7 +100,7 @@ ADsP 2과목 데이터분석 기획의 첫 단원이다. 분석 기획은 어떤
 
 ---
 
-← 개념 지도로 ([ADsP 지도](#/post/adsp-map))
+← 개념 map으로 ([ADsP map](#/post/adsp-map))
 
 관련 글: [분석 방법론](#/post/adsp-methodology) · [분석 과제와 마스터플랜](#/post/adsp-task-masterplan) · [데이터 사이언스와 인재](#/post/adsp-ds-bigdata)
 

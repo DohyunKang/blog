@@ -84,6 +84,6 @@ OpenAI 문서는 복잡한 문제 풀이, 코딩, 과학적 추론, 여러 단�
 - OpenAI 문서, Reasoning: https://developers.openai.com/api/docs/guides/reasoning
 - Wei et al., Chain-of-Thought Prompting Elicits Reasoning in LLMs(초록): https://arxiv.org/abs/2201.11903
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [프롬프트 캐싱](#/post/ai-prompt-caching) · [에이전트 루프](#/post/ai-agent-loop) · [AI 서비스 원가](#/post/app-cost)

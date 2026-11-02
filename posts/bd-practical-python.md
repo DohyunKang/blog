@@ -154,7 +154,7 @@ out.to_csv("result.csv", index=False)
 
 ---
 
-← [개념 지도로](#/post/bd-map)
+← [개념 map으로](#/post/bd-map)
 
 관련 글: [데이터 전처리](#/post/bd-preprocessing) · [지도학습 모형](#/post/bd-supervised) · [모형 평가](#/post/bd-evaluation)
 

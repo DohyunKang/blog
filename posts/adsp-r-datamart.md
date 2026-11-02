@@ -1,6 +1,6 @@
 ADsP 3과목(데이터 분석)의 앞부분이다. R 자료형과 전처리, 결측치·이상값, 데이터 마트(요약·파생변수), 데이터 합치기와 reshape까지가 한 덩어리다. 개념은 단순한데 "이 코드를 돌리면 뭐가 나오나"를 묻는 형태가 많아서, 아래 코드는 전부 R 4.6.2에서 직접 돌려 본 결과를 적었다.
 
-시험 일정과 응시료는 공식 사이트에서 확인하면 된다. 이 글은 단원 핵심과 자주 나오는 유형만 다룬다. 시험 전체 흐름은 [자세히 → ADsP 지도](#/post/adsp-map)에 있다.
+시험 일정과 응시료는 공식 사이트에서 확인하면 된다. 이 글은 단원 핵심과 자주 나오는 유형만 다룬다. 시험 전체 흐름은 [자세히 → ADsP map](#/post/adsp-map)에 있다.
 
 ## 자료형과 자료구조
 
@@ -193,7 +193,7 @@ reshape(long, direction="wide", idvar="id", timevar="time", v.names="score")
 
 풀 때는 먼저 NA가 있는지 보고, 그다음 함수가 행·열·그룹 중 어디에 적용되는지 확인하면 거의 걸러진다. 통계 쪽 기초는 [자세히 → 통계 분석 기초](#/post/adsp-stat-basic)로 이어진다.
 
-← 개념 지도로 ([ADsP 지도](#/post/adsp-map))
+← 개념 map으로 ([ADsP map](#/post/adsp-map))
 
 관련 글: [자세히 → 데이터의 이해](#/post/adsp-data-understanding) · [자세히 → 분석 방법론](#/post/adsp-methodology) · [자세히 → 통계 분석 기초](#/post/adsp-stat-basic)
 

@@ -171,6 +171,6 @@ WebAIM이 매년 상위 100만 개 홈페이지를 자동 검사하는 WebAIM Mi
 - W3C, Using ARIA (Discontinued Draft): https://www.w3.org/TR/using-aria/
 - WebAIM, The WebAIM Million: https://webaim.org/projects/million/
 
-← 개념 지도로 (#/post/fe-map)
+← 개념 map으로 (#/post/fe-map)
 
 관련 글: [사용성](#/post/fe-usability) · [컴포넌트](#/post/fe-component) · [브라우저 렌더링](#/post/fe-browser-render)

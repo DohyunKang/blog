@@ -146,6 +146,6 @@ AI 쪽에도 같은 발상이 있다. 같은 프롬프트 앞부분을 다시 �
 - Cloudflare Docs, Cloudflare cache responses: https://developers.cloudflare.com/cache/concepts/cache-responses/
 - Cloudflare Docs, Purge cache: https://developers.cloudflare.com/cache/how-to/purge-cache/
 
-← 개념 지도로 (#/post/infra-map)
+← 개념 map으로 (#/post/infra-map)
 
 관련 글: [요청 하나가 거치는 길](#/post/infra-request-journey) · [로드 밸런서](#/post/infra-load-balancer) · [캐시와 Redis](#/post/db-cache-redis)

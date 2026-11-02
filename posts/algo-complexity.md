@@ -131,11 +131,11 @@ print(n, m, arr)
 
 DB에서 인덱스를 거는 이유도 비슷한 계산이다. 전체를 훑는 O(n) 대신 트리를 타고 O(log n)으로 찾겠다는 것이다. 그쪽은 [자세히 → 인덱스](#/post/db-index)에서 다룬다.
 
-알고리즘 유형이 전체적으로 어떻게 나뉘는지는 지도 글에 모아 둘 예정이다. [자세히 → 알고리즘 유형 지도](#/post/algo-map)
+알고리즘 유형이 전체적으로 어떻게 나뉘는지는 지도 글에 모아 둘 예정이다. [자세히 → 알고리즘 유형 map](#/post/algo-map)
 
 대부분의 시간 초과는 코드를 늦게 짜서가 아니라 짜기 전에 n을 안 봐서 났다.
 
-← 개념 지도로 (#/post/algo-map)
+← 개념 map으로 (#/post/algo-map)
 
 관련 글: [배열·문자열·해시](#/post/algo-array-hash) · [정렬과 이분 탐색](#/post/algo-sort-search) · [스택·큐·덱](#/post/algo-stack-queue)
 

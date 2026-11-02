@@ -130,7 +130,7 @@ PK와 FK는 [관계와 식별자](#/post/sqld-relation-identifier)에서 식별�
 
 시험 일정과 응시 관련 내용은 공식 사이트에서 확인한다.
 
-← [개념 지도로](#/post/sqld-map)
+← [개념 map으로](#/post/sqld-map)
 
 관련 글: [데이터 모델링의 이해](#/post/sqld-modeling) · [관계와 식별자](#/post/sqld-relation-identifier) · [정규화와 성능 데이터 모델링](#/post/sqld-norm-perf)
 

@@ -152,6 +152,6 @@ AI 호출비는 글 수 × (입력 토큰 + 출력 토큰) × 단가로 계산�
 - GitHub Docs, Events that trigger workflows (schedule): https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
 - n8n Docs, Schedule Trigger node: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger/
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [트렌드 수집 자동화](#/post/mk-trend-collect) · [숏폼 자동화 파이프라인](#/post/mk-shortform-pipeline) · [성과 대시보드 만들기](#/post/mk-dashboard)

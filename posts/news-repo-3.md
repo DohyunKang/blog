@@ -115,6 +115,6 @@ README 기준으로 이런 순서로 보면 된다.
 - [EricLBuehler/mistral.rs (GitHub 저장소)](https://github.com/EricLBuehler/mistral.rs) — 2026-11-02 확인
 - [mistral.rs 릴리스 페이지](https://github.com/EricLBuehler/mistral.rs/releases) — 2026-11-02 확인
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [로컬 모델 돌리기](#/post/ml-local-models) · [추론 최적화](#/post/ml-inference) · [오픈소스 분석: llama.cpp](#/post/repo-llama-cpp)

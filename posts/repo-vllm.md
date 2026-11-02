@@ -127,7 +127,7 @@ outputs = scheduler.update_from_output(scheduler_output, model_output)
 
 </details>
 
-← 개념 지도로 [(AI 개념 지도)](#/post/ai-map)
+← 개념 map으로 [(AI 개념 map)](#/post/ai-map)
 
 관련 글: [Ollama 분석](#/post/repo-ollama) · [llama.cpp 분석](#/post/repo-llama-cpp) · [AI 서빙](#/post/infra-ai-serving)
 

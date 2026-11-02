@@ -52,7 +52,7 @@ Claude Code는 이걸 자동으로 처리해 주고, 내가 할 일은 캐시를
 
 ## 모델을 나눠 쓰기
 
-비용 문서는 Sonnet이 대부분의 코딩 작업을 잘 하면서 Opus보다 싸고, Opus는 복잡한 설계 결정이나 여러 단계 추론에 아껴 두라고 한다. 단순한 하위 에이전트 일은 `model: haiku`로 지정하라고도 한다. 문서가 예로 든 "예상 밖으로 높은 지출"의 흔한 원인이 오래 안 비운 세션과, Opus를 기본 모델로 둔 것이다. [자세히 → 모델 지도](#/post/ai-models)
+비용 문서는 Sonnet이 대부분의 코딩 작업을 잘 하면서 Opus보다 싸고, Opus는 복잡한 설계 결정이나 여러 단계 추론에 아껴 두라고 한다. 단순한 하위 에이전트 일은 `model: haiku`로 지정하라고도 한다. 문서가 예로 든 "예상 밖으로 높은 지출"의 흔한 원인이 오래 안 비운 세션과, Opus를 기본 모델로 둔 것이다. [자세히 → 모델 map](#/post/ai-models)
 
 주의할 점은 앞 절 내용과 부딪히는 부분이다. 모델을 바꾸면 캐시가 깨지니까, 작업 중간에 왔다 갔다 하기보다 하위 에이전트에 모델을 지정해서 나누는 쪽이 캐시에는 덜 해롭다. 하위 에이전트는 자기만의 대화와 캐시를 가지고, 부모의 캐시에는 영향이 없다고 문서에 나온다.
 
@@ -113,6 +113,6 @@ MCP는 도구 정의가 기본적으로 지연 로딩이라서 도구 이름과 
 - Claude Code, How Claude Code uses prompt caching: https://code.claude.com/docs/en/prompt-caching
 - Anthropic API 문서, Prompt caching(배율·TTL·최소 길이, 2026-11-02 재확인): https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [Claude 스킬·설정 잘 쓰는 법](#/post/claude-skills) · [MCP](#/post/ai-mcp)

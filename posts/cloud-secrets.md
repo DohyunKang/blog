@@ -127,6 +127,6 @@ GitHub 문서는 Git 히스토리에서 지우는 건 시간이 많이 들고 �
 - GitHub 문서, About secret scanning: https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning
 - OWASP, Secrets Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html
 
-← 개념 지도로 (#/post/cloud-map)
+← 개념 map으로 (#/post/cloud-map)
 
 관련 글: [자세히 → 키와 시크릿 보안](#/post/sec-keys) · [자세히 → 클라우드 기초](#/post/cloud-basics) · [자세히 → 서버리스](#/post/cloud-serverless)

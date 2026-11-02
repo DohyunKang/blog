@@ -150,6 +150,6 @@ def w2():
 - OSTEP, 가상 메모리 소개(The Abstraction: Address Spaces): https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf
 - OSTEP, CPU 스케줄링 소개(Scheduling: Introduction): https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf
 
-← 개념 지도로 (#/post/cs-map)
+← 개념 map으로 (#/post/cs-map)
 
 관련 글: [Docker와 컨테이너](#/post/cloud-docker) · [비동기 처리와 메시지 큐](#/post/be-async-queue) · [트랜잭션과 격리 수준](#/post/db-transaction)

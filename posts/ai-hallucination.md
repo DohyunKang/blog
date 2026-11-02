@@ -90,6 +90,6 @@ Anthropic 문서는 이 기법들이 할루시네이션을 크게 줄이지만 �
 - Lin 등, TruthfulQA: https://arxiv.org/abs/2109.07958
 - Min 등, FActScore: https://arxiv.org/abs/2305.14251
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [RAG](#/post/ai-rag) · [LLM](#/post/ai-llm) · [컨텍스트](#/post/ai-context)

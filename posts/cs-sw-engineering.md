@@ -130,6 +130,6 @@ unittest.main()
 - [스크럼 가이드](https://scrumguides.org/scrum-guide.html)
 - [The Practical Test Pyramid (Martin Fowler)](https://martinfowler.com/articles/practical-test-pyramid.html)
 
-← 개념 지도로 ([CS·설계 기초 지도](#/post/cs-map))
+← 개념 map으로 ([CS·설계 기초 map](#/post/cs-map))
 
 관련 글: [Git 제대로 알기](#/post/cs-git) · [백엔드 테스트](#/post/be-testing) · [모듈 응집도와 결합도](#/post/be-coupling-cohesion)

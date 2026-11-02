@@ -135,7 +135,7 @@ print([grade(*c) for c in cond])  # ['B', 'C']
 
 개념을 다 외우려 하기보다 표 세 개를 머릿속에 두고 문제를 풀면 된다. 코드가 나오면 케이스를 직접 대입해 본다.
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [소프트웨어 설계와 요구사항](#/post/jb-requirements) · [형상관리와 빌드·배포](#/post/jb-build-release) · [디자인 패턴](#/post/jb-design-pattern)
 

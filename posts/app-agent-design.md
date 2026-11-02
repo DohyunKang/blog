@@ -159,9 +159,9 @@ Anthropic의 다중 에이전트 연구 시스템 글에는 비용 숫자가 나
 - 멀티에이전트면 더 똑똑하다: 연구 글 기준으로 토큰이 15배 가까이 든다. 맥락 공유가 많은 일은 오히려 안 맞는다.
 - 평가-개선은 많이 돌릴수록 좋다: 기준이 모호하면 돌기만 한다. 횟수 상한이 필요하다.
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
-관련 글: [LLM 앱 만들기 지도](#/post/app-map), [에이전트와 에이전트 루프](#/post/ai-agent-loop), [LLM 앱 평가](#/post/app-eval)
+관련 글: [LLM 앱 만들기 map](#/post/app-map), [에이전트와 에이전트 루프](#/post/ai-agent-loop), [LLM 앱 평가](#/post/app-eval)
 
 ## 근거 링크
 

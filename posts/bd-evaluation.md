@@ -200,6 +200,6 @@ print(cross_val_score(DecisionTreeClassifier(max_depth=3, random_state=42), Xtr,
 - scikit-learn, Metrics and scoring: https://scikit-learn.org/stable/modules/model_evaluation.html
 - scikit-learn, Tuning the hyper-parameters of an estimator: https://scikit-learn.org/stable/modules/grid_search.html
 
-← [개념 지도로](#/post/bd-map)
+← [개념 map으로](#/post/bd-map)
 
 관련 글: [분석 모형 설계](#/post/bd-model-design) · [지도학습 모형](#/post/bd-supervised) · [실기 파이썬 요점](#/post/bd-practical-python)

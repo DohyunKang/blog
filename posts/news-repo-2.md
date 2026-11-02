@@ -109,7 +109,7 @@ CLI로는 `opencode agent create`로 대화형 생성, `opencode agent list`로 
 
 별이 22만이라는 숫자보다, 권한 값 세 개와 마지막 규칙이 이기는 패턴 매칭이 이 레포를 이해하는 데 더 쓸모 있었다. 설정 파일 하나로 읽기·쓰기·셸을 나눠서 허용하는 방식은 다른 코딩 에이전트를 볼 때도 비교 기준이 될 것 같다.
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [서브에이전트와 멀티에이전트](#/post/ai-subagent) · [도구 호출(Function calling)](#/post/ai-tool-use) · [에이전트와 에이전트 루프](#/post/ai-agent-loop)
 

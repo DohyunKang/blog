@@ -117,7 +117,7 @@ ROC 곡선은 기준값(임계값)을 바꿔 가며 FPR을 가로, TPR(재현율
 
 회귀로 수치를 예측하는 쪽은 [자세히 → 회귀 분석](#/post/adsp-regression)에, 차원을 줄이는 다변량 기법은 [자세히 → 다변량 분석과 시계열](#/post/adsp-multivariate-ts)에, 평균 차이를 검정하는 쪽은 [자세히 → 가설 검정](#/post/adsp-hypothesis)에 있다. 시험 일정과 출제 범위는 공식 사이트에서 확인한다.
 
-[← ADsP 지도로](#/post/adsp-map)
+[← ADsP map으로](#/post/adsp-map)
 
 관련 글: [분석 방법론](#/post/adsp-methodology) · [회귀 분석](#/post/adsp-regression) · [다변량 분석과 시계열](#/post/adsp-multivariate-ts)
 

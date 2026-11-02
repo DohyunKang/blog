@@ -107,7 +107,7 @@ ERD(Entity Relationship Diagram)는 엔터티와 엔터티 사이의 관계를 �
 
 ---
 
-← 개념 지도로 ([SQLD 지도](#/post/sqld-map))
+← 개념 map으로 ([SQLD map](#/post/sqld-map))
 
 관련 글: [엔터티와 속성](#/post/sqld-entity-attr) · [정규화와 모델링](#/post/db-normalization) · [인덱스](#/post/db-index)
 

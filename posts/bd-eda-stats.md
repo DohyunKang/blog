@@ -172,7 +172,7 @@ print(stats.shapiro(a))
 
 실기에서는 같은 계산을 파이썬으로 한다. 흐름은 [자세히 → 실기 파이썬 요점](#/post/bd-practical-python)에 정리했다.
 
-← 개념 지도로 (#/post/bd-map)
+← 개념 map으로 (#/post/bd-map)
 
 관련 글: [데이터 전처리](#/post/bd-preprocessing) · [변수 선택과 차원 축소](#/post/bd-feature-select) · [고급 분석 기법](#/post/bd-advanced-analysis)
 

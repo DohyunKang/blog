@@ -125,7 +125,7 @@ Google SRE 책과 Prometheus 문서가 공통으로 하는 말은 비슷하다.
 - 평균 지연이 괜찮으면 괜찮은 서비스라는 생각은 위의 코드가 반례다.
 - 알림은 많을수록 안전하다는 것도 반대다. 울리는 족족 무시되면 알림이 없는 것과 같다.
 
-← 개념 지도로 (#/post/cloud-map)
+← 개념 map으로 (#/post/cloud-map)
 
 관련 글: [에러 처리와 로깅](#/post/be-error-logging) · [CI/CD](#/post/cloud-cicd) · [오토스케일링](#/post/infra-autoscaling)
 

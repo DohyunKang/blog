@@ -177,7 +177,7 @@ print(phone.str.replace(r"-\d{4}$", "-****", regex=True))
 - 비식별 기법 다섯 가지는 가명처리·총계처리·데이터 삭제·범주화·데이터 마스킹
 - 비식별 절차는 사전검토 → 비식별 조치 → 적정성 평가(k-익명성) → 사후관리
 
-← 개념 지도로 ([빅데이터분석기사 지도](#/post/bd-map))
+← 개념 map으로 ([빅데이터분석기사 map](#/post/bd-map))
 
 관련 글: [분석 과제 정의와 분석 계획](#/post/bd-planning) · [데이터 수집과 저장](#/post/bd-collection-storage) · [데이터 전처리](#/post/bd-preprocessing)
 

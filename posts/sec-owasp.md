@@ -189,6 +189,6 @@ print(check("sess-99", t))        # False (다른 세션의 토큰)
 - Cross Site Scripting Prevention Cheat Sheet — https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
 - Cross-Site Request Forgery Prevention Cheat Sheet — https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
 
-← [개념 지도로](#/post/sec-map)
+← [개념 map으로](#/post/sec-map)
 
 관련 글: [인증과 인가](#/post/be-auth) · [키·시크릿 관리](#/post/sec-keys) · [프롬프트 인젝션과 AI 보안](#/post/sec-prompt-injection)

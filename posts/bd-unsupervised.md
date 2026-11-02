@@ -144,7 +144,7 @@ print(p.explained_variance_ratio_.cumsum().round(3))
 - PCA 전에 표준화를 안 하면 단위가 큰 변수가 첫 주성분을 차지한다.
 - 데이터를 훈련·시험으로 나누는 개념은 지도학습 쪽 이야기라, 군집에는 그대로 적용되지 않는다. 데이터 분할은 [분석 모형 설계](#/post/bd-model-design)에서 정리했다.
 
-← [빅데이터분석기사 지도로](#/post/bd-map)
+← [빅데이터분석기사 map으로](#/post/bd-map)
 
 관련 글: [지도학습 모형](#/post/bd-supervised) · [모형 평가](#/post/bd-evaluation) · [변수 선택과 차원 축소](#/post/bd-feature-select)
 

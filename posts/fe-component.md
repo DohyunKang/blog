@@ -131,7 +131,7 @@ function Panel({ title, children, isActive, onShow }) {
 
 </details>
 
-← [프론트엔드 지도로](#/post/fe-map)
+← [프론트엔드 map으로](#/post/fe-map)
 
 관련 글: [상태 관리](#/post/fe-state) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · [SOLID 원칙](#/post/cs-solid) · [디자인 패턴](#/post/cs-design-patterns)
 

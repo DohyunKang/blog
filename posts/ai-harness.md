@@ -94,6 +94,6 @@ Managed Agents 글에서 하네스는 컨테이너 안에 있지 않다. 하네�
 - Anthropic, Building effective agents: https://www.anthropic.com/engineering/building-effective-agents
 - (원문 못 읽음, 검색 발췌만) OpenAI, Harness engineering: https://openai.com/index/harness-engineering/
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [컨텍스트 엔지니어링](#/post/ai-context) · [MCP](#/post/ai-mcp) · [컨텍스트 윈도우](#/post/ai-context-window)

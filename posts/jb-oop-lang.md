@@ -188,6 +188,6 @@ Java는 `private`, `protected`, `public`, 아무것도 안 붙인 기본 접근�
 - Python 공식 튜토리얼, 클래스: https://docs.python.org/3/tutorial/classes.html
 - Oracle Java Tutorials, Polymorphism: https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글: [UML과 객체지향 분석](#/post/jb-uml) · [디자인 패턴](#/post/jb-design-pattern) · [자료구조](#/post/jb-data-structure)

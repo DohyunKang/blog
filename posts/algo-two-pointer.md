@@ -247,4 +247,4 @@ print(count_k([1, 2, 3, -3, 3], 3))  # 5
 - itertools.accumulate (Python 공식 문서): https://docs.python.org/3/library/itertools.html (accumulate와 initial 옵션을 확인)
 - 사용한 문제: 구명보트 https://school.programmers.co.kr/learn/courses/30/lessons/42885 · 연속된 부분 수열의 합 https://school.programmers.co.kr/learn/courses/30/lessons/178870 · 보석 쇼핑 https://school.programmers.co.kr/learn/courses/30/lessons/67258 · 연속 부분 수열 합의 개수 https://school.programmers.co.kr/learn/courses/30/lessons/131701 · 파괴되지 않은 건물 https://school.programmers.co.kr/learn/courses/30/lessons/92344 · LeetCode 3 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-← 개념 지도로 (#/post/algo-map)
+← 개념 map으로 (#/post/algo-map)

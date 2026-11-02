@@ -137,6 +137,6 @@ GPT-5.6 이전 모델은 같은 접두를 공유하는 요청에 같은 `prompt_
 - OpenAI 문서, Prompt caching: https://developers.openai.com/api/docs/guides/prompt-caching.md
 - (검색 결과로만 확인, 본문 안 읽음) OpenAI Cookbook, Prompt Caching 101: https://developers.openai.com/cookbook/examples/prompt_caching101
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [컨텍스트 윈도우](#/post/ai-context-window) · [컨텍스트 압축](#/post/ai-compaction)

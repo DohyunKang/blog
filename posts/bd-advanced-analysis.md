@@ -176,7 +176,7 @@ print(sens * p / (sens * p + fp * (1 - p)))
 
 ## 문제 풀 때 순서
 
-보기에 기법 이름이 섞여 있으면 먼저 자료의 모양을 본다. 변수가 많으면 다변량, 시간 순서가 있으면 시계열, 정규성·표본 크기가 걸리면 비모수, 사전확률이 지문에 있으면 베이지안이다. 그다음 표에서 세부 이름을 고른다. 전체 단원 지도는 [자세히 → 빅데이터분석기사 지도](#/post/bd-map)에 있다.
+보기에 기법 이름이 섞여 있으면 먼저 자료의 모양을 본다. 변수가 많으면 다변량, 시간 순서가 있으면 시계열, 정규성·표본 크기가 걸리면 비모수, 사전확률이 지문에 있으면 베이지안이다. 그다음 표에서 세부 이름을 고른다. 전체 단원 지도는 [자세히 → 빅데이터분석기사 map](#/post/bd-map)에 있다.
 
 ## 근거 링크
 
@@ -185,6 +185,6 @@ print(sens * p / (sens * p + fp * (1 - p)))
 - NIST e-Handbook, 시계열 분석 개요: https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm
 - NIST e-Handbook, Box-Jenkins 모형: https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc445.htm
 
-← 개념 지도로 [(#/post/bd-map)](#/post/bd-map)
+← 개념 map으로 [(#/post/bd-map)](#/post/bd-map)
 
 관련 글: [변수 선택과 차원 축소](#/post/bd-feature-select) · [탐색적 분석과 기초 통계](#/post/bd-eda-stats) · [비지도학습 모형](#/post/bd-unsupervised)

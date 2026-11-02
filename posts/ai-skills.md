@@ -123,6 +123,6 @@ Claude Code 문서에는 머리말에 `context: fork`를 넣으면 스킬을 별
 - Anthropic 엔지니어링, Equipping agents for the real world with Agent Skills: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - Claude Code 문서, Skills: https://code.claude.com/docs/en/skills
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [도구 호출](#/post/ai-tool-use) · [서브에이전트](#/post/ai-subagent) · [Claude Code 스킬·설정](#/post/claude-skills)

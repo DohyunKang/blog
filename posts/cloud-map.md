@@ -37,6 +37,6 @@
 
 ## 같이 보면 좋은 지도
 
-요청이 실제로 거치는 경로와 확장은 [서비스 인프라 지도](#/post/infra-map)에, 서버 안쪽 구조는 [백엔드 지도](#/post/be-map)에, 키 유출 같은 보안 쪽은 [정보보안 지도](#/post/sec-map)에 있다.
+요청이 실제로 거치는 경로와 확장은 [서비스 인프라 map](#/post/infra-map)에, 서버 안쪽 구조는 [백엔드 map](#/post/be-map)에, 키 유출 같은 보안 쪽은 [정보보안 map](#/post/sec-map)에 있다.
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)

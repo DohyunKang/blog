@@ -155,7 +155,7 @@ SQLite 문서에는 WAL 모드에서 읽기 트랜잭션이 쓰기로 올라가�
 
 기출문제 원문은 옮기지 않았다. 최근 기출은 공식 사이트나 기출 제공 서비스에서 직접 풀어 보는 게 맞다.
 
-← [개념 지도로 (정보처리기사 지도)](#/post/jb-map)
+← [개념 map으로 (정보처리기사 map)](#/post/jb-map)
 
 관련 글: [데이터베이스 기본과 데이터 모델](#/post/jb-db-concept) · [SQL 응용](#/post/jb-sql-basic) · [DB 물리 설계와 분산 DB](#/post/jb-physical-design)
 

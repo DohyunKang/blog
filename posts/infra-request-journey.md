@@ -129,6 +129,6 @@ TLS까지 재려고 HTTPS 버전도 시도했는데, 이 PC에서 인증서 검�
 - AWS, What is Elastic Load Balancing?: https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html
 - AWS, What is DNS (Route 53): https://aws.amazon.com/route53/what-is-dns/
 
-← [개념 지도로](#/post/infra-map)
+← [개념 map으로](#/post/infra-map)
 
 관련 글: [로드밸런서](#/post/infra-load-balancer) · [CDN과 캐시](#/post/infra-cdn-cache) · [캐시와 Redis](#/post/db-cache-redis)

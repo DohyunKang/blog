@@ -126,7 +126,7 @@ CREATE TABLE measurement_y2006m02 PARTITION OF measurement
 
 개념 정의를 묻는 문제는 위 표의 키워드(주제 지향·통합·시계열·비휘발성, 범위·리스트·해시)를 그대로 떠올릴 수 있으면 풀린다. "이 상황에서 무엇을 쓰나" 유형은 이렇게 본다. 날짜 기준으로 오래된 데이터를 자주 지운다면 범위 파티션, 특정 컬럼 검색이 느리면 인덱스, 조인이 너무 많아 느리면 반정규화, 분석용 집계가 목적이면 웨어하우스. 시험 일정과 방식은 공식 사이트에서 확인하면 된다.
 
-← [정보처리기사 지도로](#/post/jb-map)
+← [정보처리기사 map으로](#/post/jb-map)
 
 관련 글: [정규화와 트랜잭션](#/post/jb-normalization-transaction), [SQL 응용](#/post/jb-sql-basic), [복제와 샤딩](#/post/db-scaling)
 

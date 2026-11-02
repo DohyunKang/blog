@@ -129,6 +129,6 @@ Anthropic 글도 통제를 유지하는 방법으로 최대 반복 횟수 같은
 - Anthropic 문서, How tool use works: https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works
 - Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models (초록만 읽음): https://arxiv.org/abs/2210.03629
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [도구 호출](#/post/ai-tool-use) · [서브에이전트와 멀티에이전트](#/post/ai-subagent) · [하네스](#/post/ai-harness)

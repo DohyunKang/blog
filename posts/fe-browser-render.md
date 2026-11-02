@@ -116,6 +116,6 @@ items.forEach((el, i) => {
 - web.dev, Render-tree Construction, Layout, and Paint: https://web.dev/articles/critical-rendering-path/render-tree-construction
 - MDN, How browsers work: https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work
 
-← 개념 지도로 (#/post/fe-map)
+← 개념 map으로 (#/post/fe-map)
 
 관련 글: [렌더링 방식](#/post/fe-rendering-modes) · [프론트엔드 성능](#/post/fe-performance) · [네트워크](#/post/cs-network)

@@ -95,7 +95,7 @@ print(vecs @ vecs.T)   # 정규화했으니 내적 = 코사인 유사도 표
 
 ANN 알고리즘 중 자주 이름이 나오는 게 HNSW다. 2016년 논문(Malkov & Yashunin) 초록에 따르면 층층이 쌓은 근접 그래프로 구성하고, 위쪽 층에서 크게 훑다가 아래 층에서 좁혀 가는 구조다. 탐색 복잡도가 로그 규모로 늘어난다고 주장한다. 건너뛰기 목록(skip list)과 구조가 비슷하다는 설명도 있다.
 
-비유하자면 전 세계 지도에서 도로를 찾을 때, 먼저 고속도로 지도로 대략 가고 거기서 동네 지도로 바꾸는 식이다. 이 비유는 내가 이해하려고 붙인 거라 논문 표현은 아니다.
+비유하자면 전 세계 지도에서 도로를 찾을 때, 먼저 고속도로 map으로 대략 가고 거기서 동네 지도로 바꾸는 식이다. 이 비유는 내가 이해하려고 붙인 거라 논문 표현은 아니다.
 
 <details>
 <summary>자세한 풀이: 정확도를 내주는 대가</summary>
@@ -118,6 +118,6 @@ ANN은 가장 가까운 것을 놓칠 수 있다. 그래서 재현율(recall)이
 - Malkov & Yashunin, HNSW (arXiv 1603.09320): https://arxiv.org/abs/1603.09320
 - Mikolov et al., Efficient Estimation of Word Representations in Vector Space (arXiv 1301.3781): https://arxiv.org/abs/1301.3781
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [RAG](#/post/ai-rag) · [LLM](#/post/ai-llm) · [컨텍스트 윈도우](#/post/ai-context-window)

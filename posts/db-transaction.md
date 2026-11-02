@@ -169,6 +169,6 @@ PostgreSQL 문서가 Read Uncommitted를 Read Committed로 매핑하는 이유�
 - PostgreSQL 문서, Transaction Isolation: https://www.postgresql.org/docs/current/transaction-iso.html
 - PostgreSQL 문서, Explicit Locking (데드락, SELECT FOR UPDATE): https://www.postgresql.org/docs/current/explicit-locking.html
 
-← [개념 지도로](#/post/db-map)
+← [개념 map으로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [관계형 DB와 SQL 기본](#/post/db-rdb-sql) · [정규화와 모델링](#/post/db-normalization)

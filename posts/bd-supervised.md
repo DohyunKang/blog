@@ -126,6 +126,6 @@ for name, m in models.items():
 - scikit-learn, Linear Models (로지스틱·릿지·라쏘): https://scikit-learn.org/stable/modules/linear_model.html
 - scikit-learn, Neural network models (supervised): https://scikit-learn.org/stable/modules/neural_networks_supervised.html
 
-← 개념 지도로 ([빅데이터분석기사 지도](#/post/bd-map))
+← 개념 map으로 ([빅데이터분석기사 map](#/post/bd-map))
 
 관련 글: [분석 모형 설계](#/post/bd-model-design) · [비지도학습 모형](#/post/bd-unsupervised) · [모형 평가](#/post/bd-evaluation)

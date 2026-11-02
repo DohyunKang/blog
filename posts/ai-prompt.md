@@ -103,7 +103,7 @@ CoT 쪽은 이유를 먼저 쓰게 하는 식이다.
 
 </details>
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [LLM](#/post/ai-llm) · [환각](#/post/ai-hallucination)
 

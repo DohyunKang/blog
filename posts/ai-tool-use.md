@@ -143,6 +143,6 @@ OpenAI(Responses): `"auto"`(0·1·여러 개), `"required"`(1개 이상), `{"typ
 - OpenAI 문서, Function calling: https://developers.openai.com/api/docs/guides/function-calling
 - Anthropic 문서, Define tools: https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [에이전트와 에이전트 루프](#/post/ai-agent-loop) · [MCP](#/post/ai-mcp) · [구조화 출력](#/post/ai-structured-output)

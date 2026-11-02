@@ -131,6 +131,6 @@ OpenAI 문서는 추론 모델을 쓸 때 응답의 `output` 배열을 통째로
 - Anthropic, Memory tool: https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool
 - OpenAI, Conversation state: https://developers.openai.com/api/docs/guides/conversation-state
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [컴팩션과 메모리](#/post/ai-compaction) · [컨텍스트와 컨텍스트 엔지니어링](#/post/ai-context) · [프롬프트 캐싱](#/post/ai-prompt-caching)

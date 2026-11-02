@@ -117,9 +117,9 @@ select * from sal_log;   -- (1, 300, 350)
 
 풀 때는 문장 속 키워드부터 본다. 보기에 "자동으로"가 있으면 트리거, "반환"이 있으면 함수, "객체"가 있으면 GRANT OPTION 쪽으로 먼저 좁히면 대부분 두세 개로 줄어든다. 문제에서 쓰는 DBMS가 Oracle인지 SQL Server인지도 같이 본다. 세부 문법이 제품마다 다르다.
 
-관련해서 함께 읽으면 좋은 글은 제약조건과 DDL을 다룬 [DML·TCL·DDL과 제약조건](#/post/sqld-dml-ddl), 기본 조회 문법의 [SELECT와 함수](#/post/sqld-select-func), 그리고 전체 흐름을 보는 [SQLD 지도](#/post/sqld-map)다.
+관련해서 함께 읽으면 좋은 글은 제약조건과 DDL을 다룬 [DML·TCL·DDL과 제약조건](#/post/sqld-dml-ddl), 기본 조회 문법의 [SELECT와 함수](#/post/sqld-select-func), 그리고 전체 흐름을 보는 [SQLD map](#/post/sqld-map)다.
 
-← 개념 지도로 (#/post/sqld-map)
+← 개념 map으로 (#/post/sqld-map)
 
 ## 근거 링크
 

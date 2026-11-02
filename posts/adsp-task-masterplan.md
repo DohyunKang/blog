@@ -144,9 +144,9 @@ PMBOK 7판(2021)은 이 지식 영역 대신 여덟 개의 성과 영역으로 �
 
 풀 때는 보기의 키워드를 먼저 본다. "파일럿"은 2단계, "변화 관리"는 3단계, "아이디어 발굴"은 1단계로 거의 바로 좁혀진다. 기출 문제는 공식 사이트나 교재에서 직접 풀어 보는 편이 낫다.
 
-이어서 읽을 글은 이 과제를 수행하며 쓰는 도구 쪽인 [R 기초와 데이터 마트](#/post/adsp-r-datamart), 앞 단원인 [분석 방법론](#/post/adsp-methodology), 전체 흐름을 보는 [ADsP 지도](#/post/adsp-map)다.
+이어서 읽을 글은 이 과제를 수행하며 쓰는 도구 쪽인 [R 기초와 데이터 마트](#/post/adsp-r-datamart), 앞 단원인 [분석 방법론](#/post/adsp-methodology), 전체 흐름을 보는 [ADsP map](#/post/adsp-map)다.
 
-← 개념 지도로 (#/post/adsp-map)
+← 개념 map으로 (#/post/adsp-map)
 
 ## 근거 링크
 

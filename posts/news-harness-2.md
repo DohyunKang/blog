@@ -73,7 +73,7 @@ GitHub 저장소 설명은 "AI 에이전트와 멀티 에이전트 워크플로�
 
 [자세히 → 에이전트 루프](#/post/ai-agent-loop)
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [하네스](#/post/ai-harness), [MCP](#/post/ai-mcp), [컴팩션](#/post/ai-compaction)
 

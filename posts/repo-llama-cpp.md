@@ -100,6 +100,6 @@ Q4_K 쪽은 256개 슈퍼블록 안에 작은 블록들이 있고 그 스케일�
 - 정수 내적(ggml-cpu/quants.c): https://github.com/ggml-org/llama.cpp/blob/master/ggml/src/ggml-cpu/quants.c
 - 추론 루프(llama-context.cpp): https://github.com/ggml-org/llama.cpp/blob/master/src/llama-context.cpp
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [추론](#/post/ml-inference) · [로컬 모델](#/post/ml-local-models) · [Ollama](#/post/repo-ollama)

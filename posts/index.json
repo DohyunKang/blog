@@ -1,7 +1,7 @@
 [
  {
   "slug": "ml-map",
-  "title": "AI 원리 지도",
+  "title": "AI 원리 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -12,7 +12,7 @@
  },
  {
   "slug": "app-map",
-  "title": "LLM 앱 만들기 지도",
+  "title": "LLM 앱 만들기 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -23,7 +23,7 @@
  },
  {
   "slug": "be-map",
-  "title": "백엔드 지도",
+  "title": "백엔드 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -34,7 +34,7 @@
  },
  {
   "slug": "fe-map",
-  "title": "프론트엔드 지도",
+  "title": "프론트엔드 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -45,7 +45,7 @@
  },
  {
   "slug": "db-map",
-  "title": "데이터베이스 지도",
+  "title": "데이터베이스 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -56,7 +56,7 @@
  },
  {
   "slug": "cloud-map",
-  "title": "클라우드·배포 지도",
+  "title": "클라우드·배포 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -67,7 +67,7 @@
  },
  {
   "slug": "infra-map",
-  "title": "서비스 인프라 지도",
+  "title": "서비스 인프라 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -78,7 +78,7 @@
  },
  {
   "slug": "cs-map",
-  "title": "CS·설계 기초 지도",
+  "title": "CS·설계 기초 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -89,7 +89,7 @@
  },
  {
   "slug": "sec-map",
-  "title": "정보보안 지도",
+  "title": "정보보안 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -100,7 +100,7 @@
  },
  {
   "slug": "algo-map",
-  "title": "알고리즘 유형 지도",
+  "title": "알고리즘 유형 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트"
@@ -111,7 +111,7 @@
  },
  {
   "slug": "ai-map",
-  "title": "AI 개념 지도",
+  "title": "AI 개념 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트",
@@ -123,7 +123,7 @@
  },
  {
   "slug": "sqld-map",
-  "title": "SQLD 지도",
+  "title": "SQLD map",
   "date": "2026-11-02",
   "tags": [
    "공부노트",
@@ -135,7 +135,7 @@
  },
  {
   "slug": "adsp-map",
-  "title": "ADsP 지도",
+  "title": "ADsP map",
   "date": "2026-11-02",
   "tags": [
    "공부노트",
@@ -147,7 +147,7 @@
  },
  {
   "slug": "jb-map",
-  "title": "정보처리기사 지도",
+  "title": "정보처리기사 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트",
@@ -159,7 +159,7 @@
  },
  {
   "slug": "bd-map",
-  "title": "빅데이터분석기사 지도",
+  "title": "빅데이터분석기사 map",
   "date": "2026-11-02",
   "tags": [
    "공부노트",
@@ -1413,7 +1413,7 @@
  },
  {
   "slug": "ai-models",
-  "title": "AI 모델 지도: 지금 쓸 수 있는 모델과 고르는 기준",
+  "title": "AI 모델 map: 지금 쓸 수 있는 모델과 고르는 기준",
   "date": "2026-11-02",
   "tags": [
    "공부노트",

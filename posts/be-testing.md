@@ -162,6 +162,6 @@ def test_place_with_real_db(con):
 - Martin Fowler, The Practical Test Pyramid: https://martinfowler.com/articles/practical-test-pyramid.html
 - pytest 문서, How to use fixtures: https://docs.pytest.org/en/stable/how-to/fixtures.html
 
-← [개념 지도로](#/post/be-map)
+← [개념 map으로](#/post/be-map)
 
 관련 글: [에러 처리와 로깅](#/post/be-error-logging) · [레이어드 아키텍처](#/post/be-layered-architecture) · [CI/CD와 배포 전략](#/post/cloud-cicd)

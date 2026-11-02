@@ -68,7 +68,7 @@ HLE와 OSWorld 리뷰 모두 AI를 먼저 돌려서 의심스러운 문제를 �
 
 모델 발표의 비교표를 볼 때 이제 벤치마크 이름 옆에 Epoch 판정이 있는지 한 번 보게 된다. Flawed가 붙었다고 점수가 의미 없는 것은 아니다. 20%라는 선은 Epoch가 정한 기준이고, 같은 오류가 모든 모델에 비슷하게 작용하면 순위는 대체로 유지될 수도 있다. 다만 "몇 점 올랐다"는 차이가 작을 때는 시험지 오류 범위 안일 수 있다.
 
-[LLM 앱 평가](#/post/app-eval)에서 다루는 골든셋과 채점기 점검도 같은 이야기다. 공개 벤치마크를 믿기 어려워질수록, 내 앱에서 직접 돌리는 작은 평가셋이 더 쓸모 있어진다. 모델 선택 자체는 [AI 모델 지도](#/post/ai-models)에서 계열별로 볼 수 있다.
+[LLM 앱 평가](#/post/app-eval)에서 다루는 골든셋과 채점기 점검도 같은 이야기다. 공개 벤치마크를 믿기 어려워질수록, 내 앱에서 직접 돌리는 작은 평가셋이 더 쓸모 있어진다. 모델 선택 자체는 [AI 모델 map](#/post/ai-models)에서 계열별로 볼 수 있다.
 
 ## 근거 링크
 
@@ -78,6 +78,6 @@ HLE와 OSWorld 리뷰 모두 AI를 먼저 돌려서 의심스러운 문제를 �
 - Epoch AI, OSWorld 2.1 리뷰: https://epoch.ai/benchmarks/osworld-2-1/review
 - Epoch AI, FrontierMath Tiers 1-3 (v2): https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
-관련 글: [AI 모델 지도](#/post/ai-models) · [LLM 앱 평가](#/post/app-eval) · [할루시네이션](#/post/ai-hallucination)
+관련 글: [AI 모델 map](#/post/ai-models) · [LLM 앱 평가](#/post/app-eval) · [할루시네이션](#/post/ai-hallucination)

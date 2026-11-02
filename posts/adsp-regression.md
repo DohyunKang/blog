@@ -116,6 +116,6 @@ Wikipedia의 stepwise regression 항목도 같은 순서로 설명하고, 판단
 - Wikipedia, Variance inflation factor: https://en.wikipedia.org/wiki/Variance_inflation_factor
 - Wikipedia, Stepwise regression: https://en.wikipedia.org/wiki/Stepwise_regression
 
-← 개념 지도로 ([ADsP 지도](#/post/adsp-map))
+← 개념 map으로 ([ADsP map](#/post/adsp-map))
 
 관련 글: [통계 분석 기초](#/post/adsp-stat-basic) · [가설 검정](#/post/adsp-hypothesis) · [정형 데이터 마이닝](#/post/adsp-datamining)

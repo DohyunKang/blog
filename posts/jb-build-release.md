@@ -130,7 +130,7 @@ Maven 문서에서 확인한 기본 생명주기 단계는 이렇다.
 
 일정·비용처럼 관리 쪽 개념은 [자세히 → 프로젝트 관리](#/post/jb-project-mgmt)에서 이어진다.
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [소프트웨어 테스트](#/post/jb-testing) · [Git 제대로 알기](#/post/cs-git) · [CI/CD와 배포 전략](#/post/cloud-cicd)
 

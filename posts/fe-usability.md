@@ -88,6 +88,6 @@
 - Nielsen Norman Group, Usability 101: Introduction to Usability: https://www.nngroup.com/articles/usability-101-introduction-to-usability/
 - Nielsen Norman Group, How to Conduct a Heuristic Evaluation: https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/
 
-← [개념 지도로](#/post/fe-map)
+← [개념 map으로](#/post/fe-map)
 
 관련 글: [웹 접근성](#/post/fe-accessibility) · [컴포넌트 설계](#/post/fe-component) · [프론트 성능](#/post/fe-performance)

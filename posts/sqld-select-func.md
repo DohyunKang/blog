@@ -152,7 +152,7 @@ from emp order by id;
 
 풀 때는 먼저 FROM과 WHERE로 행을 추리고, 그다음 SELECT에서 계산한 값을 본다. NULL이 있으면 행마다 따로 평가한다.
 
-← 개념 지도로 ([SQLD 지도](#/post/sqld-map))
+← 개념 map으로 ([SQLD map](#/post/sqld-map))
 
 관련 글: [자세히 → 조인과 서브쿼리](#/post/sqld-join-subquery) · [자세히 → GROUP BY와 집합 연산](#/post/sqld-group-set) · [자세히 → 관계형 DB와 SQL 기본](#/post/db-rdb-sql)
 

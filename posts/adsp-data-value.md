@@ -108,6 +108,6 @@ Mayer-Schönberger와 Cukier의 《Big Data》는 변화를 세 가지로 묶는
 - 보안뉴스, 개인정보 비식별화 가이드라인에서의 K-익명성: http://www.boannews.com/news/articleView.html?idxno=52020
 - Oxford Internet Institute, Big Data (Mayer-Schönberger, Cukier): https://www.oii.ox.ac.uk/books/big-data/
 
-← 개념 지도로 (#/post/adsp-map)
+← 개념 map으로 (#/post/adsp-map)
 
 관련 글: [데이터의 이해](#/post/adsp-data-understanding) · [데이터 사이언스와 인재](#/post/adsp-ds-bigdata) · [정형 데이터 마이닝](#/post/adsp-datamining)

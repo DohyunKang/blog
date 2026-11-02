@@ -154,6 +154,6 @@ print(round(s.mean(), 3))  # 0.974
 - scikit-learn, Cross-validation: evaluating estimator performance — https://scikit-learn.org/stable/modules/cross_validation.html
 - scikit-learn, Underfitting vs. Overfitting — https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html
 
-← 개념 지도로 (#/post/bd-map)
+← 개념 map으로 (#/post/bd-map)
 
 관련 글: [분석 모형 설계 앞단 · 변수 선택과 차원 축소](#/post/bd-feature-select) · [지도학습 모형](#/post/bd-supervised) · [모형 평가](#/post/bd-evaluation)

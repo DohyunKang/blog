@@ -149,7 +149,7 @@ print(list(ipaddress.ip_network("192.168.10.0/24").subnets(new_prefix=26)))
 
 네트워크는 정보 보안 단원과도 맞닿아 있다. 암호화 통신과 인증은 [자세히 → 정보 보안](#/post/jb-security)에서 이어서 본다.
 
-← 개념 지도로 (#/post/jb-map)
+← 개념 map으로 (#/post/jb-map)
 
 관련 글
 - [운영체제](#/post/jb-os)

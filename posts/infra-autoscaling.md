@@ -114,7 +114,7 @@ AWS 문서에 서버 수가 적으면 실제 사용률이 목표값과 꽤 어�
 - 지표는 아무거나 괜찮다: 서버 수에 비례해 변하는 지표여야 한다.
 - 요청이 많이 오면 429로 막으면 되지: 막는 것과 늘리는 것은 다른 방어선이다. 같이 쓴다. → [자세히 → 레이트 리밋](#/post/infra-rate-limit)
 
-← 개념 지도로 (#/post/infra-map)
+← 개념 map으로 (#/post/infra-map)
 
 관련 글: [요청 하나가 거치는 길](#/post/infra-request-journey) · [로드밸런서](#/post/infra-load-balancer) · [캐시와 Redis](#/post/db-cache-redis)
 

@@ -105,6 +105,6 @@ Leviathan 등의 논문은 T5-XXL에서 기존 구현 대비 대략 2~3배 빨�
 - Leviathan et al., Fast Inference from Transformers via Speculative Decoding: https://arxiv.org/abs/2211.17192
 - Yu et al., Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI 2022): https://www.usenix.org/conference/osdi22/presentation/yu
 
-← 개념 지도로 (#/post/ml-map)
+← 개념 map으로 (#/post/ml-map)
 
 관련 글: [자세히 → 트랜스포머](#/post/ml-transformer) · [자세히 → 로컬 모델](#/post/ml-local-models) · [자세히 → 프롬프트 캐싱](#/post/ai-prompt-caching)

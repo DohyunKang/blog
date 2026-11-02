@@ -75,6 +75,6 @@ Anthropic 비전 문서에서 확인한 내용이다.
 - Radford et al., CLIP(Learning Transferable Visual Models From Natural Language Supervision): https://arxiv.org/abs/2103.00020
 - Dosovitskiy et al., ViT(An Image is Worth 16x16 Words): https://arxiv.org/abs/2010.11929
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [임베딩](#/post/ai-embedding) · [컨텍스트 윈도우](#/post/ai-context-window) · [확산 모델](#/post/ml-diffusion)

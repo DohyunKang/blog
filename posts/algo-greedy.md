@@ -147,6 +147,6 @@ print(coin_dp([1, 4, 5], 8))  # 2
 - [Activity selection problem — Wikipedia](https://en.wikipedia.org/wiki/Activity_selection_problem) (끝나는 시각 기준, 증명 아이디어, 가중치 버전)
 - 프로그래머스 [단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884) / [큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883) / [디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627) / [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885): 제목과 유형을 문제 페이지에서 확인
 
-← [개념 지도로](#/post/algo-map)
+← [개념 map으로](#/post/algo-map)
 
 관련 글: [동적 계획법(DP)](#/post/algo-dp) / [정렬과 이분 탐색](#/post/algo-sort-search) / [트리·힙·우선순위 큐](#/post/algo-tree-heap)

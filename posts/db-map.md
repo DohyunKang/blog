@@ -48,6 +48,6 @@ DB 한 대가 모자랄 때 → 복제·샤딩
 
 처음이면 위에서 아래로 읽으면 된다. 이미 SQL은 아는 상태에서 서비스가 느려진 경우라면 인덱스 → 캐시 → 복제와 샤딩 순서가 문제 푸는 순서와 비슷하다. 데이터를 어떻게 쪼갤지 고민이면 정규화와 NoSQL을 같이 보면 비교가 된다.
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [요청이 처리되는 흐름](#/post/be-request-flow) · [로드밸런서](#/post/infra-load-balancer) · [AI 서비스 서빙 구조](#/post/infra-ai-serving)

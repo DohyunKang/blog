@@ -173,6 +173,6 @@ OAuth를 "구글로 로그인"과 같은 걸로 보기 쉬운데, RFC 6749가 �
 - RFC 7519, JSON Web Token: https://datatracker.ietf.org/doc/html/rfc7519 (구조, 등록 클레임, 서명과 암호화)
 - RFC 6749, OAuth 2.0: https://datatracker.ietf.org/doc/html/rfc6749 (네 역할, 인가 코드 흐름, 토큰) — 문서 앞 약 절반만 읽음
 
-← [개념 지도로](#/post/be-map)
+← [개념 map으로](#/post/be-map)
 
 관련 글: [API와 REST](#/post/be-api-rest) · [요청이 처리되는 흐름](#/post/be-request-flow) · [환경변수와 시크릿 관리](#/post/cloud-secrets)

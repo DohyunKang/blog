@@ -123,7 +123,7 @@ Pro Git은 두 철학으로 소개하고 승자를 가르지 않는다. 하나�
 
 </details>
 
-← [개념 지도로](#/post/cs-map)
+← [개념 map으로](#/post/cs-map)
 
 관련 글: [소프트웨어 공학 기초](#/post/cs-sw-engineering), [SOLID 원칙](#/post/cs-solid), [키·시크릿 관리](#/post/sec-keys)
 

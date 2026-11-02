@@ -141,6 +141,6 @@ for no, name in scan(sample):
 - GitHub Docs, About push protection: https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection
 - GitHub Docs, Removing sensitive data from a repository: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 
-← 개념 지도로 (#/post/sec-map)
+← 개념 map으로 (#/post/sec-map)
 
 관련 글: [환경변수와 시크릿 관리](#/post/cloud-secrets) · [인증과 암호 기초](#/post/sec-authn-crypto) · [웹 취약점과 OWASP](#/post/sec-owasp)

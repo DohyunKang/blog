@@ -133,6 +133,6 @@ Wikipedia의 Cohesion 항목이 기능 응집을 가장 좋은 쪽으로 두고 
 - [Coupling (computer programming) - Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
 - [Cohesion (computer science) - Wikipedia](https://en.wikipedia.org/wiki/Cohesion_(computer_science))
 
-← [개념 지도로](#/post/jb-map)
+← [개념 map으로](#/post/jb-map)
 
 관련 글: [디자인 패턴](#/post/jb-design-pattern) · [UML과 객체지향 분석](#/post/jb-uml) · [SOLID](#/post/cs-solid)

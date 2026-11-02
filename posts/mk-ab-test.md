@@ -113,7 +113,7 @@ peeking 시뮬레이션은 같은 3%인 두 그룹에서 각 5,000명을 뽑고,
 
 </details>
 
-← [개념 지도로](#/post/ai-map)
+← [개념 map으로](#/post/ai-map)
 
 관련 글: [대시보드 만들기](#/post/mk-dashboard), [콘텐츠 캘린더 자동화](#/post/mk-content-calendar), [트렌드 수집 자동화](#/post/mk-trend-collect)
 

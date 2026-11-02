@@ -95,7 +95,7 @@ Anthropic 문서는 처음에 가장 싼 Haiku로 시작해 부족할 때만 올
 - 오픈소스와 열린 가중치는 같다: 가중치만 공개하고 학습 데이터·코드는 안 주는 경우가 많다. 라이선스도 Apache 2.0부터 회사 전용 라이선스까지 다르다. 위 표의 Mistral Large 4가 그 예다.
 - 이름에 숫자가 크면 최신이다: Claude Fable 5.1과 Opus 5.5가 동시에 현행이다. 숫자는 계열 안에서만 비교된다.
 
-← 개념 지도로 (#/post/ai-map)
+← 개념 map으로 (#/post/ai-map)
 
 관련 글: [LLM](#/post/ai-llm) · [컨텍스트 윈도우](#/post/ai-context-window) · [환각](#/post/ai-hallucination)
 

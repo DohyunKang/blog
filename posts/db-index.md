@@ -133,7 +133,7 @@ c.execute("create index idx_city_age on users(city, age)")
 
 인덱스로도 감당이 안 되면 앞에 캐시를 두거나([자세히 → 캐시와 Redis](#/post/db-cache-redis)) DB 자체를 나눈다([자세히 → 복제와 샤딩](#/post/db-scaling)). 순서는 보통 쿼리와 인덱스를 먼저 보고 그다음이라고 알고 있다.
 
-← 개념 지도로 (#/post/db-map)
+← 개념 map으로 (#/post/db-map)
 
 관련 글: [관계형 DB와 SQL 기본](#/post/db-rdb-sql) · [트랜잭션과 격리 수준](#/post/db-transaction) · [캐시와 Redis](#/post/db-cache-redis)
 

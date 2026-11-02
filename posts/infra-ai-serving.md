@@ -191,6 +191,6 @@ Anthropic 오류 문서에서 옮긴 요약이다.
 - Anthropic 문서, Streaming messages: https://platform.claude.com/docs/en/build-with-claude/streaming
 - Anthropic 문서, Prompt caching: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
 
-← 개념 지도로 (#/post/infra-map)
+← 개념 map으로 (#/post/infra-map)
 
 관련 글: [레이트 리밋과 트래픽 제어](#/post/infra-rate-limit) · [프롬프트 캐싱](#/post/ai-prompt-caching) · [AI 서비스 원가 구조](#/post/app-cost)

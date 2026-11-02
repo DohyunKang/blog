@@ -114,6 +114,6 @@ Vercel Functions는 계산 방식이 조금 다르다. 문서에 따르면 Activ
 - AWS, Lambda pricing: https://aws.amazon.com/lambda/pricing/
 - Vercel, Vercel Functions: https://vercel.com/docs/functions
 
-← 개념 지도로 (#/post/cloud-map)
+← 개념 map으로 (#/post/cloud-map)
 
 관련 글: [클라우드 기초](#/post/cloud-basics) · [Docker와 컨테이너](#/post/cloud-docker) · [오토스케일링](#/post/infra-autoscaling)
