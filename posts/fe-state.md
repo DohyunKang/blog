@@ -118,6 +118,6 @@ console.log(st.get(), calls);           // { count: 2 } 1
 - React 문서, Choosing the State Structure: https://react.dev/learn/choosing-the-state-structure
 - TanStack Query, Overview: https://tanstack.com/query/latest/docs/framework/react/overview
 
-← 개념 지도로
+← [개념 지도로](#/post/fe-map)
 
 관련 글: [컴포넌트 설계](#/post/fe-component) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · [프런트엔드 성능](#/post/fe-performance)

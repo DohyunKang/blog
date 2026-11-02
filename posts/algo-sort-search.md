@@ -191,7 +191,7 @@ print(immigration(6, [7, 10]))              # 28
 - 값 범위가 작을 때는 [배열·해시](#/post/algo-array-hash)의 카운트가 이분 탐색보다 쉽다.
 - 최적화 문제 중 단조성이 없으면 [DP](#/post/algo-dp) 쪽으로 간다.
 
-← 개념 지도로 알고리즘 유형 지도
+← 개념 지도로 [알고리즘 유형 지도](#/post/algo-map)
 
 <details>
 <summary>자세한 풀이: 확인한 것과 못 한 것</summary>

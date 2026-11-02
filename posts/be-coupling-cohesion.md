@@ -135,6 +135,6 @@ assert r.saved == [{"id": 1}] and n.sent == [("a@b.c", "ok")]
 - [Coupling (computer programming) - Wikipedia](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
 - [Cohesion (computer science) - Wikipedia](https://en.wikipedia.org/wiki/Cohesion_(computer_science))
 
-← 개념 지도로
+← [개념 지도로](#/post/be-map)
 
 관련 글: [레이어드 아키텍처](#/post/be-layered-architecture) · [SOLID](#/post/cs-solid) · [테스트](#/post/be-testing)

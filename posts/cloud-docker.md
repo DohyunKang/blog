@@ -153,7 +153,7 @@ Dockerfile은 이 과정을 자동으로 해 준다고 문서에 나온다. 줄�
 
 [자세히 → 서버리스](#/post/cloud-serverless) · [자세히 → CI/CD와 배포 전략](#/post/cloud-cicd) · [자세히 → 환경변수와 시크릿 관리](#/post/cloud-secrets)
 
-← 클라우드·배포 지도로
+← [클라우드·배포 지도로](#/post/cloud-map)
 
 관련 글: [클라우드 기초](#/post/cloud-basics) · [서버리스](#/post/cloud-serverless) · [CI/CD와 배포 전략](#/post/cloud-cicd)
 

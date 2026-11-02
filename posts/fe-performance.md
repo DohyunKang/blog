@@ -147,7 +147,7 @@ CrUX는 Chrome 사용자에게서 모은 28일 롤링 데이터셋이다. 실험
 
 ---
 
-← 개념 지도로 (프론트엔드 지도)
+← 개념 지도로 ([프론트엔드 지도](#/post/fe-map))
 
 관련 글: [브라우저가 화면을 그리는 과정](#/post/fe-browser-render) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · [컴포넌트 설계](#/post/fe-component)
 

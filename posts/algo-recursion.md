@@ -202,7 +202,7 @@ n=1~9에 대해 돌려 보니 1, 0, 0, 2, 10, 4, 40, 92, 352가 나왔다. n=8�
 - 시간 복잡도를 어림잡는 법: [자세히 → 시간·공간 복잡도](#/post/algo-complexity)
 - 호출 스택 구조가 궁금하면 [자세히 → 스택·큐](#/post/algo-stack-queue)
 
-← 개념 지도로
+← [개념 지도로](#/post/algo-map)
 
 관련 글: [그래프 탐색](#/post/algo-graph-search) · [동적 계획법](#/post/algo-dp) · [그리디](#/post/algo-greedy)
 

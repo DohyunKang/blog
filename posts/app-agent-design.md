@@ -161,7 +161,7 @@ Anthropic의 다중 에이전트 연구 시스템 글에는 비용 숫자가 나
 
 ← [개념 지도로](#/post/ai-map)
 
-관련 글: LLM 앱 만들기 지도, [에이전트와 에이전트 루프](#/post/ai-agent-loop), [LLM 앱 평가](#/post/app-eval)
+관련 글: [LLM 앱 만들기 지도](#/post/app-map), [에이전트와 에이전트 루프](#/post/ai-agent-loop), [LLM 앱 평가](#/post/app-eval)
 
 ## 확인 못 함
 

@@ -144,7 +144,7 @@ yes/no처럼 이진으로 시작하는 게 관리하기 쉽다. Hamel도 처음�
 
 </details>
 
-← [개념 지도로](#/post/ai-map) · LLM 앱 만들기 지도
+← [개념 지도로](#/post/ai-map) · [LLM 앱 만들기 지도](#/post/app-map)
 
 관련 글: [가드레일과 안전장치](#/post/app-guardrails) · [AI 서비스 원가](#/post/app-cost) · [환각](#/post/ai-hallucination)
 

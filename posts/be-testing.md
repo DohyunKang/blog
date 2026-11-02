@@ -181,6 +181,6 @@ def test_place_with_real_db(con):
 
 </details>
 
-← 개념 지도로
+← [개념 지도로](#/post/be-map)
 
 관련 글: [에러 처리와 로깅](#/post/be-error-logging) · [레이어드 아키텍처](#/post/be-layered-architecture) · [CI/CD와 배포 전략](#/post/cloud-cicd)

@@ -143,6 +143,6 @@ Stripe는 이 네 가지(요청 속도, 동시 요청, 서비스 전체 부하 �
 - DDoS 대응 구조는 확인하지 않았다.
 - 위 코드는 로컬에서 실행해 결과를 확인했지만, 여러 서버에서 Redis로 원자적으로 세는 구현은 실행 확인 못 함.
 
-← 개념 지도로
+← [개념 지도로](#/post/infra-map)
 
 관련 글: [로드 밸런서](#/post/infra-load-balancer) · [오토스케일링](#/post/infra-autoscaling) · [비동기 큐](#/post/be-async-queue)

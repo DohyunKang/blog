@@ -108,6 +108,6 @@ AI를 쓸 때 개인정보가 새는 길은 대충 정해져 있었다.
 - 개인정보 보호법 해설(서울시교육청): https://www.sen.go.kr/resources/www/data/infoprotect_3_03.pdf (검색 결과 요약만 확인)
 - (읽지 못함) OpenAI, Enterprise privacy: https://openai.com/enterprise-privacy/
 
-← 개념 지도로
+← [개념 지도로](#/post/sec-map)
 
 관련 글: [키 관리](#/post/sec-keys) · [프롬프트 인젝션과 AI 보안](#/post/sec-prompt-injection) · [RAG](#/post/ai-rag)

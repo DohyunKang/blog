@@ -145,6 +145,6 @@ AWS 문서에는 가용 영역(AZ)마다 로드밸런서 노드가 생긴다고 
 - ALB의 sticky 세션 세부 설정, 능동 헬스 체크의 구체 옵션은 문서를 열어 보지 못해 확인 못 함.
 - 시뮬레이션 코드는 직접 실행해 확인했지만 숫자는 임의 설정값이라 실제 서비스 수치가 아님.
 
-← 개념 지도로
+← [개념 지도로](#/post/infra-map)
 
 관련 글: [요청 하나가 거치는 길](#/post/infra-request-journey) · [오토스케일링과 확장](#/post/infra-autoscaling) · [CDN과 캐싱 계층](#/post/infra-cdn-cache)

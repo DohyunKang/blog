@@ -96,6 +96,6 @@
 - 휴리스틱 평가의 심각도 등급 척도는 읽은 글에 나오지 않아 적지 않았다.
 - 본문의 HTML 코드와 로그인 폼 점검표는 실행·실측한 것이 아니다.
 
-← 개념 지도로
+← [개념 지도로](#/post/fe-map)
 
 관련 글: [웹 접근성](#/post/fe-accessibility) · [컴포넌트 설계](#/post/fe-component) · [프론트 성능](#/post/fe-performance)

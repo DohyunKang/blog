@@ -106,6 +106,6 @@ Willison도 같은 얘기를 한다. 공격 탐지 제품이 95% 잡는다고 �
 
 확인 못 함: CaMeL(Google DeepMind) 논문 원문, MCP 조합과 삼중주의 직접 관련 자료, 모델 크기와 인젝션 내성의 관계, 개별 상용 탐지 제품의 실제 탐지율.
 
-← 개념 지도로
+← [개념 지도로](#/post/sec-map)
 
 관련 글: [OWASP 웹 보안](#/post/sec-owasp) · [가드레일과 안전장치](#/post/app-guardrails) · [툴 사용](#/post/ai-tool-use)

@@ -175,6 +175,6 @@ ring 3->4 moved: 0.2392
 - PostgreSQL 파티션 SQL 예시는 실행해 보지 않았다.
 - 복제 지연이 "몇 밀리초~몇 초"라는 수치는 환경마다 달라 출처를 확인하지 못했다.
 
-← 개념 지도로
+← [개념 지도로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [캐시와 Redis](#/post/db-cache-redis) · [로드밸런서](#/post/infra-load-balancer)

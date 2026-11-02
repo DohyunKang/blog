@@ -140,6 +140,6 @@ LoRA는 학습할 파라미터를 줄였지만 기본 모델은 여전히 16비�
 - Dettmers et al., QLoRA: Efficient Finetuning of Quantized LLMs: https://arxiv.org/abs/2305.14314
 - Hugging Face PEFT, LoRA 개념 가이드: https://huggingface.co/docs/peft/main/en/conceptual_guides/lora
 
-← 개념 지도로
+← [개념 지도로](#/post/ml-map)
 
 관련 글: [사전학습에서 RLHF까지](#/post/ml-pretraining) · [RAG](#/post/ai-rag) · [로컬 모델 돌리기](#/post/ml-local-models)

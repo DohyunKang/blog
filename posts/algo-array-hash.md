@@ -154,6 +154,6 @@ print(two_sum([2, 7, 11, 15], 9))   # [0, 1]
 - [Python 문서: Time complexity of built-in types](https://docs.python.org/3/builtins/time-complexity.html)
 - [Python 문서: collections — Counter](https://docs.python.org/3/library/collections.html)
 
-← 개념 지도로 (알고리즘 지도)
+← 개념 지도로 ([알고리즘 지도](#/post/algo-map))
 
 관련 글: [시간·공간 복잡도](#/post/algo-complexity) · [투 포인터](#/post/algo-two-pointer) · [스택·큐](#/post/algo-stack-queue)

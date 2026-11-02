@@ -113,7 +113,7 @@ ComfyUI 문서는 자신을 생성형 AI용 노드 기반 인터페이스이자 
 - 모델이 학습 이미지를 거의 그대로 재현하는 사례의 유무, steps 증가의 효과 한계(직접 비교 안 함).
 - 최신 모델에서 U-Net과 트랜스포머 중 어느 쪽이 주류인지.
 
-← 개념 지도로 ([AI 개념 지도](#/post/ai-map), AI 원리 지도)
+← 개념 지도로 ([AI 개념 지도](#/post/ai-map), [AI 원리 지도](#/post/ml-map))
 
 관련 글: [생성형 AI](#/post/ai-generative) · [멀티모달](#/post/ai-multimodal) · [로컬 모델](#/post/ml-local-models)
 

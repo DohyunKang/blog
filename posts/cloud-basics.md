@@ -114,6 +114,6 @@ NIST 문서는 배포 모델이 네 가지라고 하는데 이번에 이름까�
 - AWS, Shared responsibility model: https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/shared-responsibility-model.html
 - (읽지 못함) NIST 정의 PDF 본문: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
 
-← 개념 지도로 (클라우드·배포 지도)
+← 개념 지도로 ([클라우드·배포 지도](#/post/cloud-map))
 
 관련 글: [Docker와 컨테이너](#/post/cloud-docker) · [서버리스](#/post/cloud-serverless) · [오토스케일링과 확장](#/post/infra-autoscaling)

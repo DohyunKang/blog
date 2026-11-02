@@ -144,6 +144,6 @@ spec:
 - [Kubernetes — Performing a Rolling Update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/)
 - [GitHub Docs — Understanding GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions)
 
-← 개념 지도로
+← [개념 지도로](#/post/cloud-map)
 
 관련 글: [Docker와 컨테이너](#/post/cloud-docker) · [환경변수와 시크릿 관리](#/post/cloud-secrets) · [모니터링·로그·알림](#/post/cloud-observability)

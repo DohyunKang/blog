@@ -167,6 +167,6 @@ log.error("request failed", extra={"code": "order_not_found", "status": 404})
 - (일부만 읽음) Python Logging Cookbook: https://docs.python.org/3/howto/logging-cookbook.html
 - (읽지 못함) RFC 9110, HTTP Semantics: https://www.rfc-editor.org/rfc/rfc9110.html
 
-← 개념 지도로
+← [개념 지도로](#/post/be-map)
 
 관련 글: [요청이 처리되는 흐름](#/post/be-request-flow) · [비동기 처리와 메시지 큐](#/post/be-async-queue) · [관측 가능성](#/post/cloud-observability)

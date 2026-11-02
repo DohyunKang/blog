@@ -142,7 +142,7 @@ TTL이 있으니 일관성 문제는 알아서 풀린다는 생각도 있다. TT
 
 ---
 
-← 데이터베이스 지도로
+← [데이터베이스 지도로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [NoSQL 종류와 선택](#/post/db-nosql) · [CDN과 캐싱 계층](#/post/infra-cdn-cache)
 

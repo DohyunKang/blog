@@ -130,7 +130,7 @@ Atlassian 가이드 본문은 이번에 직접 열지 않았다(브랜치 방식
 
 </details>
 
-← 개념 지도로
+← [개념 지도로](#/post/cs-map)
 
 관련 글: [소프트웨어 공학 기초](#/post/cs-sw-engineering), [SOLID 원칙](#/post/cs-solid), [키·시크릿 관리](#/post/sec-keys)
 

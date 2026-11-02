@@ -185,6 +185,6 @@ PostgreSQL 문서가 Read Uncommitted를 Read Committed로 매핑하는 이유�
 - MySQL·Oracle 등 다른 DB의 격리 수준 구현 차이
 - ACID 각 글자(특히 일관성·지속성)의 공식 정의 문서
 
-← 개념 지도로
+← [개념 지도로](#/post/db-map)
 
 관련 글: [인덱스](#/post/db-index) · [관계형 DB와 SQL 기본](#/post/db-rdb-sql) · [정규화와 모델링](#/post/db-normalization)

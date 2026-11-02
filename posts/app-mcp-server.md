@@ -144,7 +144,7 @@ def get_note(title: str) -> str:
 - 코드를 고치면 바로 반영된다: Claude Desktop은 완전히 종료 후 재시작해야 한다.
 - 에러는 예외를 던지면 알아서 전달된다: 일반 예외는 이유가 가려진다. 예상한 실패는 `ToolError`로 사유를 적어 준다. 이 동작은 내가 쓴 SDK 2.3.0에서 확인한 것이다.
 
-← 개념 지도로
+← [개념 지도로](#/post/app-map)
 
 관련 글: [MCP](#/post/ai-mcp) · [도구 호출](#/post/ai-tool-use) · [에이전트 설계](#/post/app-agent-design)
 
