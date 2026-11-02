@@ -84,7 +84,7 @@ llama.cpp는 CPU와 GPU를 섞어 쓰는 하이브리드 추론을 지원한다�
 
 ## Ollama와 llama.cpp
 
-둘의 관계는 자세히 → 오픈소스 분석: llama.cpp와 [자세히 → 오픈소스 분석: Ollama](#/post/repo-ollama)에서 따로 본다. 여기서는 쓰는 쪽에서 본 차이만 적는다.
+둘의 관계는 [자세히 → 오픈소스 분석: llama.cpp](#/post/repo-llama-cpp)와 [자세히 → 오픈소스 분석: Ollama](#/post/repo-ollama)에서 따로 본다. 여기서는 쓰는 쪽에서 본 차이만 적는다.
 
 | | llama.cpp | Ollama |
 |---|---|---|
@@ -132,4 +132,4 @@ llama.cpp 저장소는 최소한의 설정으로 어디서나 추론하는 것�
 
 ← 개념 지도로 (#/post/ml-map)
 
-관련 글: [추론 최적화](#/post/ml-inference) · [파인튜닝](#/post/ml-finetuning) · 오픈소스 분석: llama.cpp
+관련 글: [추론 최적화](#/post/ml-inference) · [파인튜닝](#/post/ml-finetuning) · [오픈소스 분석: llama.cpp](#/post/repo-llama-cpp)

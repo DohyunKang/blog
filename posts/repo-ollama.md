@@ -96,12 +96,12 @@ GPU 레이어 수(`-ngl`), 스레드 수(`-t`), 플래시 어텐션, KV 캐시 �
 
 - Ollama가 자기 엔진으로 추론한다: 이 시점 소스에서 GGUF 모델은 llama-server 프로세스가 계산한다. Ollama는 관리·스케줄링·API 쪽이다. 애플 실리콘용 MLX 러너(`mlxrunner/`)는 별도 경로로 존재한다.
 - 모델을 한 번 받으면 항상 메모리에 있다: 기본 5분 뒤에 내려간다. `ollama ps`에서 보이는 목록은 지금 올라가 있는 것만이다.
-- 동시 요청이 많으면 알아서 빨라진다: `OLLAMA_NUM_PARALLEL` 기본이 1이고, 일부 아키텍처는 코드가 1로 강제한다. 대기열이 넘치면 에러가 난다. 서비스용 서빙 구조는 [자세히 → AI 서빙](#/post/infra-ai-serving)과 자세히 → vLLM 분석이 다룬다.
+- 동시 요청이 많으면 알아서 빨라진다: `OLLAMA_NUM_PARALLEL` 기본이 1이고, 일부 아키텍처는 코드가 1로 강제한다. 대기열이 넘치면 에러가 난다. 서비스용 서빙 구조는 [자세히 → AI 서빙](#/post/infra-ai-serving)과 [자세히 → vLLM 분석](#/post/repo-vllm)이 다룬다.
 - OpenAI 호환이라서 내부도 OpenAI 방식이다: 호환 레이어는 앞쪽 미들웨어이고 내부는 Ollama 형식으로 통일된다.
 
 ## 읽고 나서
 
-엔진인 줄 알았던 프로젝트가 사실은 "모델 관리자 + 메모리 스케줄러 + API 변환기"였다. 추론 쪽이 궁금하면 자세히 → llama.cpp 분석으로 이어서 봐야 한다. 이 글은 서버 쪽 흐름까지다.
+엔진인 줄 알았던 프로젝트가 사실은 "모델 관리자 + 메모리 스케줄러 + API 변환기"였다. 추론 쪽이 궁금하면 [자세히 → llama.cpp 분석](#/post/repo-llama-cpp)으로 이어서 봐야 한다. 이 글은 서버 쪽 흐름까지다.
 
 ## 확인 못 함
 
@@ -115,4 +115,4 @@ GPU 레이어 수(`-ngl`), 스레드 수(`-t`), 플래시 어텐션, KV 캐시 �
 - Ollama 저장소: https://github.com/ollama/ollama (README, MIT 라이선스, 2026-10-31 기준 소스를 clone해서 읽음)
 - `server/routes.go`, `server/sched.go`, `llm/server.go`, `llm/llama_server.go`, `envconfig/config.go`, `manifest/layer.go`, `llama/README.md` (모두 위 저장소 안, 직접 열어 확인)
 
-← 관련 글: llama.cpp 분석 · vLLM 분석 · [AI 서빙](#/post/infra-ai-serving)
+← 관련 글: [llama.cpp 분석](#/post/repo-llama-cpp) · [vLLM 분석](#/post/repo-vllm) · [AI 서빙](#/post/infra-ai-serving)
