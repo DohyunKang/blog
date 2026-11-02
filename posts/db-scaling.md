@@ -12,7 +12,7 @@
 
 ## 읽기 복제
 
-구조는 단순하다. 쓰기를 받는 서버 하나(primary, MySQL 문서에선 source)가 있고, 그 변경 내용을 따라 받아 적용하는 서버(replica, standby)가 여러 대 있다. 쓰기는 primary로, 읽기는 replica들로 흩뿌린다. 대부분의 서비스는 읽기가 쓰기보다 훨씬 많아서 이것만으로도 꽤 버틴다. 요청을 나눠 보내는 부분은 로드밸런서나 애플리케이션의 연결 설정이 맡는다.
+구조는 단순하다. 쓰기를 받는 서버 하나(primary, MySQL 문서에선 source)가 있고, 그 변경 내용을 따라 받아 적용하는 서버(replica, standby)가 여러 대 있다. 쓰기는 primary로, 읽기는 replica들로 흩뿌린다. 대부분의 서비스는 읽기가 쓰기보다 훨씬 많아서 이것만으로도 꽤 버틴다. 요청을 나눠 보내는 부분은 [로드밸런서](#/post/infra-load-balancer)나 애플리케이션의 연결 설정이 맡는다.
 
 MySQL 공식 문서가 꼽는 복제의 쓰임새는 읽기 분산(scale-out) 말고도 있다. replica에서 백업을 돌리면 primary에 영향이 없고, 무거운 분석 쿼리도 replica에서 돌릴 수 있고, 멀리 있는 지점에 사본을 둘 수도 있다. primary가 죽으면 replica 하나를 primary로 올려 이어가는 것(failover)도 같은 구조에서 나온다.
 
@@ -177,4 +177,4 @@ ring 3->4 moved: 0.2392
 
 ← 개념 지도로
 
-관련 글: [인덱스](#/post/db-index) · [캐시와 Redis](#/post/db-cache-redis) · 로드밸런서
+관련 글: [인덱스](#/post/db-index) · [캐시와 Redis](#/post/db-cache-redis) · [로드밸런서](#/post/infra-load-balancer)

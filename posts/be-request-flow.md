@@ -20,7 +20,7 @@ Content-Type: application/json
 
 주소창에 주소를 넣으면 브라우저가 TCP 연결을 열거나 있던 연결을 재사용하고, 위 같은 요청을 보낸다. 응답이 HTML이면 브라우저가 파싱하면서 거기 적힌 스크립트·CSS·이미지를 다시 요청한다. 한 번 엔터를 쳤는데 서버에 요청이 여러 개 가는 이유다. 화면이 그려지는 쪽은 [브라우저가 화면을 그리는 과정 → 렌더링](#/post/fe-browser-render)에서 따로 본다.
 
-클라이언트와 서버 사이에 프록시가 끼기도 한다. MDN은 프록시가 캐시, 필터링, 로드 밸런싱, 인증, 로깅을 할 수 있다고 적는다. 서버 앞단에 이런 것들이 얼마나 줄줄이 서 있는지는 요청이 서버에 닿기까지 → 여정에서 다룬다.
+클라이언트와 서버 사이에 프록시가 끼기도 한다. MDN은 프록시가 캐시, 필터링, 로드 밸런싱, 인증, 로깅을 할 수 있다고 적는다. 서버 앞단에 이런 것들이 얼마나 줄줄이 서 있는지는 [요청이 서버에 닿기까지 → 여정](#/post/infra-request-journey)에서 다룬다.
 
 ## 서버 안에서
 
@@ -170,4 +170,4 @@ print("\n".join(log))
 
 ← 개념 지도로
 
-관련 글: [REST API](#/post/be-api-rest) · [계층 구조](#/post/be-layered-architecture) · 요청이 서버에 닿기까지
+관련 글: [REST API](#/post/be-api-rest) · [계층 구조](#/post/be-layered-architecture) · [요청이 서버에 닿기까지](#/post/infra-request-journey)
