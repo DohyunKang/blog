@@ -2,7 +2,7 @@
 
 ## 주소를 치고 나서
 
-화면을 그리기 전에 HTML부터 받아야 한다. MDN 문서 기준으로 순서는 이렇다. DNS로 호스트 이름을 IP로 바꾸고, TCP 연결을 맺고(3-way handshake), HTTPS면 TLS 협상을 거친다. 그다음 HTTP GET을 보내고 첫 HTML 조각이 오면 그때부터 해석을 시작한다. 첫 패킷이 도착하기까지 걸린 시간이 TTFB다. 이 앞단은 네트워크 이야기라 자세히 → 네트워크에 따로 있다. 여기서는 HTML 첫 조각이 도착한 뒤부터 본다.
+화면을 그리기 전에 HTML부터 받아야 한다. MDN 문서 기준으로 순서는 이렇다. DNS로 호스트 이름을 IP로 바꾸고, TCP 연결을 맺고(3-way handshake), HTTPS면 TLS 협상을 거친다. 그다음 HTTP GET을 보내고 첫 HTML 조각이 오면 그때부터 해석을 시작한다. 첫 패킷이 도착하기까지 걸린 시간이 TTFB다. 이 앞단은 네트워크 이야기라 [자세히 → 네트워크](#/post/cs-network)에 따로 있다. 여기서는 HTML 첫 조각이 도착한 뒤부터 본다.
 
 ## 전체 흐름
 
@@ -127,4 +127,4 @@ items.forEach((el, i) => {
 
 ← 개념 지도로 (#/post/fe-map)
 
-관련 글: [렌더링 방식](#/post/fe-rendering-modes) · [프론트엔드 성능](#/post/fe-performance) · 네트워크
+관련 글: [렌더링 방식](#/post/fe-rendering-modes) · [프론트엔드 성능](#/post/fe-performance) · [네트워크](#/post/cs-network)

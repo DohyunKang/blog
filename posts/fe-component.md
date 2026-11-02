@@ -28,7 +28,7 @@ FilterableProductTable
    └─ ProductRow
 ```
 
-표 머리글은 따로 안 뺀다. 다만 정렬 같은 기능이 붙어 머리글이 복잡해지면 그때 `ProductTableHeader`로 뺀다고 문서가 말한다. 미리 나누지 말고 커졌을 때 나누라는 얘기로 읽었다. [응집도·결합도](#/post/be-coupling-cohesion)나 SOLID의 단일 책임과 같은 줄기다.
+표 머리글은 따로 안 뺀다. 다만 정렬 같은 기능이 붙어 머리글이 복잡해지면 그때 `ProductTableHeader`로 뺀다고 문서가 말한다. 미리 나누지 말고 커졌을 때 나누라는 얘기로 읽었다. [응집도·결합도](#/post/be-coupling-cohesion)나 [SOLID](#/post/cs-solid)의 단일 책임과 같은 줄기다.
 
 ## 합성(composition)
 
@@ -142,7 +142,7 @@ function Panel({ title, children, isActive, onShow }) {
 
 ← 프론트엔드 지도로
 
-관련 글: [상태 관리](#/post/fe-state) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · SOLID 원칙 · 디자인 패턴
+관련 글: [상태 관리](#/post/fe-state) · [CSR·SSR·SSG](#/post/fe-rendering-modes) · [SOLID 원칙](#/post/cs-solid) · [디자인 패턴](#/post/cs-design-patterns)
 
 ## 근거 링크
 

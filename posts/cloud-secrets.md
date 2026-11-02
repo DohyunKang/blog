@@ -144,4 +144,4 @@ GitHub 문서는 Git 히스토리에서 지우는 건 시간이 많이 들고 �
 
 ← 개념 지도로 (#/post/cloud-map)
 
-관련 글: 자세히 → 키와 시크릿 보안 · [자세히 → 클라우드 기초](#/post/cloud-basics) · [자세히 → 서버리스](#/post/cloud-serverless)
+관련 글: [자세히 → 키와 시크릿 보안](#/post/sec-keys) · [자세히 → 클라우드 기초](#/post/cloud-basics) · [자세히 → 서버리스](#/post/cloud-serverless)

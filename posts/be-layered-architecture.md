@@ -141,8 +141,8 @@ Fowler 글은 과한 층에 대해 직접 경고하진 않지만, 커지는 시�
 
 - [자세히 → 요청이 서버에서 처리되는 흐름](#/post/be-request-flow)
 - [자세히 → 결합도와 응집도](#/post/be-coupling-cohesion)
-- 자세히 → SOLID
-- 자세히 → 디자인 패턴
+- [자세히 → SOLID](#/post/cs-solid)
+- [자세히 → 디자인 패턴](#/post/cs-design-patterns)
 
 ← 개념 지도로
 
