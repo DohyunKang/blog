@@ -8,7 +8,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "LLM이 안에서 어떻게 돌아가는지 궁금해서, 학습부터 돌리는 쪽까지 순서대로 한 줄씩 묶어 봤다."
+  "summary": "LLM이 안에서 어떻게 돌아가는지 궁금해서, 학습부터 돌리는 쪽까지 순서대로 한 줄씩 묶어 봤다.",
+  "title_en": "AI Principles Map",
+  "summary_en": "Curious about how LLMs work internally, I've broken down the process step by step from training to inference, grouping each line in order.",
+  "title_ja": "AI 原理マップ",
+  "summary_ja": "LLM が内部でどのように動作するのか興味があり、学習から実行まで順を追って一行ずつまとめました。",
+  "title_zh": "AI 原理图",
+  "summary_zh": "出于对 LLM 内部运作机制的好奇，我将学习流程及后续步骤逐一整理成单行代码。"
  },
  {
   "slug": "app-map",
@@ -19,7 +25,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "LLM 앱을 직접 만들 때 부딪히는 여섯 가지를 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "LLM 앱을 직접 만들 때 부딪히는 여섯 가지를 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "Building an LLM App Map",
+  "summary_en": "When building an LLM app yourself, I've listed six common challenges in a single line each and grouped detailed explanations for those you're curious about.",
+  "title_ja": "LLM アプリ作成マップ",
+  "summary_ja": "LLM アプリを自作する際に直面しがちな 6 つの課題を、それぞれ 1 行ずつ先に挙げ、詳細については後述します。",
+  "title_zh": "创建 LLM 应用地图",
+  "summary_zh": "在亲手构建 LLM 应用时，我总结了六个常见挑战，先以单行形式列出，随后再展开详细说明。"
  },
  {
   "slug": "be-map",
@@ -30,7 +42,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "백엔드 공부 글이 여덟 편 쌓여서, 요청이 들어와서 나가는 순서대로 한 줄씩 묶고 자세한 글로 넘어가게 했다."
+  "summary": "백엔드 공부 글이 여덟 편 쌓여서, 요청이 들어와서 나가는 순서대로 한 줄씩 묶고 자세한 글로 넘어가게 했다.",
+  "title_en": "Backend map",
+  "summary_en": "After eight backend study articles were accumulated, I organized them line by line in the order of incoming requests and outgoing responses, then moved on to detailed posts.",
+  "title_ja": "バックエンドマップ",
+  "summary_ja": "バックエンドの勉強記事が 8 本積み上がって、リクエストに応じて順次公開していく形式に改め、詳細な記事へとつなげています。",
+  "title_zh": "后端 map",
+  "summary_zh": "后端学习文章已积累八篇，按照收到请求后依次输出的顺序，将每篇文章单独整理并链接到详细内容。"
  },
  {
   "slug": "fe-map",
@@ -41,7 +59,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "화면이 그려지는 과정부터 만드는 방식, 쓰기 편한지까지 일곱 개 글을 순서대로 묶어 봤다."
+  "summary": "화면이 그려지는 과정부터 만드는 방식, 쓰기 편한지까지 일곱 개 글을 순서대로 묶어 봤다.",
+  "title_en": "Frontend Map",
+  "summary_en": "I've organized seven articles in order, covering everything from how the screen is drawn to how it's created and whether it's easy to use.",
+  "title_ja": "フロントエンド map",
+  "summary_ja": "画面が描かれるプロセスから作成方法、使いやすさまでを 7 つの記事に順を追ってまとめました。",
+  "title_zh": "前端 map",
+  "summary_zh": "从屏幕的绘制过程到制作方式，再到是否易于编写，我将七篇文章按顺序整理在了一起。"
  },
  {
   "slug": "db-map",
@@ -52,7 +76,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "DB 글이 여덟 편이라 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "DB 글이 여덟 편이라 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "Database map",
+  "summary_en": "There are eight articles on DB, so I'll list them one by one first and then group the detailed explanations for any questions you might have.",
+  "title_ja": "データベースマップ",
+  "summary_ja": "DB 記事は 8 編あるので、まずは一行ずつ記載し、気になる点は詳細な記事にまとめる形にしています。",
+  "title_zh": "数据库地图",
+  "summary_zh": "数据库文章共有八篇，我先逐条列出简要内容，具体疑问再在详细文章中展开说明。"
  },
  {
   "slug": "cloud-map",
@@ -63,7 +93,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "서버를 빌리는 것부터 올리고, 내보내고, 지켜보는 것까지 여섯 개념을 한 줄씩만 먼저 적고 자세한 글로 넘어가게 묶었다."
+  "summary": "서버를 빌리는 것부터 올리고, 내보내고, 지켜보는 것까지 여섯 개념을 한 줄씩만 먼저 적고 자세한 글로 넘어가게 묶었다.",
+  "title_en": "Cloud Deployment Map",
+  "summary_en": "I've grouped six concepts—from provisioning a server to deploying, exporting, and monitoring them—into individual lines before diving into the detailed content.",
+  "title_ja": "クラウド・デプロイマップ",
+  "summary_ja": "サーバーのレンタルからアップロード、ダウンロード、監視まで、6 つの概念をそれぞれ 1 行ずつ先に記載し、詳細な内容へとつなげるようにまとめた。",
+  "title_zh": "云部署 map",
+  "summary_zh": "从租用服务器、上传、导出到监控，共六个概念，先每行简单列出，再展开详细说明。"
  },
  {
   "slug": "infra-map",
@@ -74,7 +110,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "서비스 앞단에 놓이는 장치가 많아서, 요청이 지나가는 순서대로 한 줄씩만 먼저 적고 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "서비스 앞단에 놓이는 장치가 많아서, 요청이 지나가는 순서대로 한 줄씩만 먼저 적고 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "Service Infrastructure Map",
+  "summary_en": "Since there are many devices placed at the front of the service, I've listed only one line per request in order and grouped detailed explanations for any questions you might have.",
+  "title_ja": "サービスインフラマップ",
+  "summary_ja": "サービス前面に配置される装置が多いため、リクエストが通過する順序に従って一行ずつ先に記載し、気になる点は詳細な文章へとつなげるようにまとめてみました。",
+  "title_zh": "服务基础设施地图",
+  "summary_zh": "由于服务前端部署的设备众多，因此按照请求经过的顺序逐行列出，并将需要进一步了解的内容整理成详细文章。"
  },
  {
   "slug": "cs-map",
@@ -85,7 +127,13 @@
   ],
   "series": "CS·설계 기초",
   "emoji": "📐",
-  "summary": "코드 짜는 방식부터 네트워크, OS, 개발 과정, Git까지 일곱 가지를 한 줄씩 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "코드 짜는 방식부터 네트워크, OS, 개발 과정, Git까지 일곱 가지를 한 줄씩 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "CS Design Fundamentals Map",
+  "summary_en": "I've organized seven topics—coding style, networking, operating systems, development processes, and Git—into individual lines, with detailed articles available for any questions you might have.",
+  "title_ja": "CS 設計基礎マップ",
+  "summary_ja": "コーディングの手法からネットワーク、OS、開発プロセス、Git までを 7 つに分類し、それぞれについて詳しく知りたい場合は関連する記事へと進むようにまとめた。",
+  "title_zh": "CS 设计基础地图",
+  "summary_zh": "从编码方式、网络、操作系统、开发流程到 Git，共列举了七项内容，并将感兴趣的部分链接到更详细的文章。"
  },
  {
   "slug": "sec-map",
@@ -107,7 +155,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "코테 알고리즘 글이 열한 편이라, 문제를 보고 어느 유형인지 고르는 순서대로 한 줄씩 묶어 봤다."
+  "summary": "코테 알고리즘 글이 열한 편이라, 문제를 보고 어느 유형인지 고르는 순서대로 한 줄씩 묶어 봤다.",
+  "title_en": "Algorithm type map",
+  "summary_en": "Since there are eleven articles on coding algorithms, I grouped them line by line in the order of selecting the problem type after reading the problem statement.",
+  "title_ja": "アルゴリズムタイプ map",
+  "summary_ja": "コーディングテストのアルゴリズム記事は 11 本なので、問題を見てどのタイプかを選ぶ順序に合わせて 1 行ずつまとめてみました。",
+  "title_zh": "算法类型 map",
+  "summary_zh": "由于算法题共有十一篇，我按照“先看题目、再判断题型”的顺序，将每一行内容分别归类整理。"
  },
  {
   "slug": "ai-map",
@@ -169,7 +223,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보처리기사 필기는 다섯 과목이라, 열아홉 편을 과목별로 묶어 두었다."
+  "summary": "정보처리기사 필기는 다섯 과목이라, 열아홉 편을 과목별로 묶어 두었다.",
+  "title_en": "Information Processing Technician Map",
+  "summary_en": "The written exam for the Information Processing Technician consists of five subjects, so I have organized 19 chapters by subject.",
+  "title_ja": "情報処理技術者試験マップ",
+  "summary_ja": "情報処理技術者試験の筆記試験は 5 つの科目があるため、19 編を科目ごとにまとめました。",
+  "title_zh": "信息处理技术员考试地图",
+  "summary_zh": "信息处理技术员笔试共有五门科目，因此将十九篇资料按科目进行了整理。"
  },
  {
   "slug": "bd-map",
@@ -181,7 +241,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "빅데이터분석기사는 기획부터 해석까지 흐름이라, 13편을 단계별로 묶어 두었다."
+  "summary": "빅데이터분석기사는 기획부터 해석까지 흐름이라, 13편을 단계별로 묶어 두었다.",
+  "title_en": "Big Data Analysis Specialist Map",
+  "summary_en": "The Big Data Analysis series covers the entire flow from planning to interpretation, so I have grouped the 13 parts into stages.",
+  "title_ja": "ビッグデータ分析士 map",
+  "summary_ja": "ビッグデータ分析記事は、企画から解釈までの流れなので、13 編を段階ごとにまとめました。",
+  "title_zh": "大数据分析师 map",
+  "summary_zh": "大数据分析专栏涵盖了从策划到解读的完整流程，共分为 13 篇并分阶段整理。"
  },
  {
   "slug": "ai-session",
@@ -402,7 +468,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "학습은 결국 틀린 정도(손실)를 숫자로 재서 조금씩 줄여 가는 일이고, 훈련 데이터에서 잘 맞는다고 끝이 아니더라."
+  "summary": "학습은 결국 틀린 정도(손실)를 숫자로 재서 조금씩 줄여 가는 일이고, 훈련 데이터에서 잘 맞는다고 끝이 아니더라.",
+  "title_en": "Machine Learning & Deep Learning Basics",
+  "summary_en": "Learning is ultimately about quantifying errors (loss) as numbers and gradually reducing them; it doesn't end just because the model performs well on training data.",
+  "title_ja": "機械学習・ディープラーニングの基礎",
+  "summary_ja": "学習とは、結局誤差（損失）を数値化して少しずつ小さくしていく作業であり、訓練データに対してうまくいくだけで終わるものではない。",
+  "title_zh": "机器学习与深度学习基础",
+  "summary_zh": "学习本质上是将错误程度（损失）量化为数值并逐步降低的过程，而并非在训练数据上表现良好就万事大吉。"
  },
  {
   "slug": "ml-neural-net",
@@ -414,7 +486,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "신경망은 곱하고 더하고 휘는 걸 층층이 쌓은 함수고, 역전파는 그 가중치를 어느 쪽으로 고칠지 거꾸로 계산하는 방법이더라."
+  "summary": "신경망은 곱하고 더하고 휘는 걸 층층이 쌓은 함수고, 역전파는 그 가중치를 어느 쪽으로 고칠지 거꾸로 계산하는 방법이더라.",
+  "title_en": "Neural Networks and Backpropagation",
+  "summary_en": "A neural network is a function composed of layers that multiply, add, and bend inputs, while backpropagation is the method for calculating in reverse how to adjust those weights.",
+  "title_ja": "ニューラルネットワークとバックプロパゲーション",
+  "summary_ja": "ニューラルネットワークは、掛け算や足し算、曲げる操作を層ごとに積み重ねた関数であり、バックプロパゲーションはその重みをどちらに修正すべきかを逆算する手法だ。",
+  "title_zh": "神经网络与反向传播",
+  "summary_zh": "神经网络是一层层堆叠了乘法、加法和弯曲操作的函数，而反向传播则是反过来计算如何调整这些权重的方法。"
  },
  {
   "slug": "ml-transformer",
@@ -426,7 +504,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "트랜스포머는 단어마다 \"나는 어느 단어를 얼마나 볼까\"를 계산하는 구조라서, 순서대로 읽지 않고도 문맥을 잡는다."
+  "summary": "트랜스포머는 단어마다 \"나는 어느 단어를 얼마나 볼까\"를 계산하는 구조라서, 순서대로 읽지 않고도 문맥을 잡는다.",
+  "title_en": "Transformers and Attention",
+  "summary_en": "Transformers calculate how much attention to pay to each word, allowing them to understand context without reading in order.",
+  "title_ja": "トランスフォーマーとアテンション",
+  "summary_ja": "Transformer は、各単語ごとに「どの単語をどれくらい見るか」を計算する構造であり、順序通りに読み込まずとも文脈を理解できます。",
+  "title_zh": "Transformer 与注意力机制",
+  "summary_zh": "Transformer 的结构是计算“我对每个词能看到多少”，因此即使不按顺序阅读，也能捕捉上下文。"
  },
  {
   "slug": "ml-pretraining",
@@ -438,7 +522,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "챗봇이 말을 알아듣는 건 한 번에 배워서가 아니라, 글을 먹고(사전학습) 따라 하고(SFT) 골라 받는(RLHF·DPO) 세 단계를 거쳐서더라."
+  "summary": "챗봇이 말을 알아듣는 건 한 번에 배워서가 아니라, 글을 먹고(사전학습) 따라 하고(SFT) 골라 받는(RLHF·DPO) 세 단계를 거쳐서더라.",
+  "title_en": "From Pre-training to RLHF",
+  "summary_en": "The chatbot doesn't learn everything in one go; it goes through three stages: eating text (pre-training), following along (SFT), and receiving curated feedback (RLHF/DPO).",
+  "title_ja": "事前学習から RLHF まで",
+  "summary_ja": "チャットボットが言葉を理解するのは、一度に学習するのではなく、「文章を食べる（事前学習）」、「真似をする（SFT）」、「選別して受け取る（RLHF・DPO）」という 3 つの段階を踏むことでありました。",
+  "title_zh": "从预训练到 RLHF",
+  "summary_zh": "聊天机器人并非通过一次学习就能听懂说话，而是经历了“吃文章”（预训练）、“跟着做”（SFT）和“挑着学”（RLHF·DPO）这三个阶段。"
  },
  {
   "slug": "ml-finetuning",
@@ -450,7 +540,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "파인튜닝은 이미 배운 모델을 내 데이터로 조금 더 가르치는 일인데, LoRA 덕에 모델 전체를 건드리지 않고도 된다."
+  "summary": "파인튜닝은 이미 배운 모델을 내 데이터로 조금 더 가르치는 일인데, LoRA 덕에 모델 전체를 건드리지 않고도 된다.",
+  "title_en": "Fine-tuning: Full vs LoRA/QLoRA",
+  "summary_en": "Fine-tuning is essentially teaching a model you've already learned from with your own data a bit more, and thanks to LoRA, you don't need to touch the entire model.",
+  "title_ja": "ファインチューニング：全体 vs LoRA/QLoRA",
+  "summary_ja": "ファインチューニングとは、すでに学習済みのモデルを自分のデータでさらに訓練することですが、LoRA を使うことでモデル全体を触らなくても済みます。",
+  "title_zh": "微调：全量 vs LoRA/QLoRA",
+  "summary_zh": "微调是指用我自己的数据对已经学过的模型进行进一步训练，而得益于 LoRA，我们无需调整整个模型即可实现。"
  },
  {
   "slug": "ml-local-models",
@@ -462,7 +558,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "내 PC 그래픽카드에 모델이 들어가느냐는 파라미터 수, 양자화 비트 수, 컨텍스트 길이로 대충 계산이 되더라."
+  "summary": "내 PC 그래픽카드에 모델이 들어가느냐는 파라미터 수, 양자화 비트 수, 컨텍스트 길이로 대충 계산이 되더라.",
+  "title_en": "Running Local Models",
+  "summary_en": "It seems like it can be roughly calculated based on the number of parameters in my PC's graphics card, the quantization bit count, and the context length.",
+  "title_ja": "ローカルモデルを実行する",
+  "summary_ja": "PC のグラフィックカードにモデルが入るかどうかは、パラメータ数、量子化ビット数、コンテキスト長で概算できるようです。",
+  "title_zh": "运行本地模型",
+  "summary_zh": "我 PC 显卡的模型容量大致可以通过参数量、量化位数和上下文长度来估算。"
  },
  {
   "slug": "ml-inference",
@@ -474,7 +576,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "모델을 만드는 게 아니라 돌리는 쪽 이야기인데, 결국 GPU 메모리를 어떻게 나눠 쓰느냐로 모이더라."
+  "summary": "모델을 만드는 게 아니라 돌리는 쪽 이야기인데, 결국 GPU 메모리를 어떻게 나눠 쓰느냐로 모이더라.",
+  "title_en": "Inference Optimization",
+  "summary_en": "It's not about building models but running them; ultimately, it all comes down to how you allocate GPU memory.",
+  "title_ja": "推論最適化",
+  "summary_ja": "モデルを作る話ではなく、動かす話で、結局は GPU メモリをどう割り当てるかという点に集約された。",
+  "title_zh": "推理优化",
+  "summary_zh": "其实不是讲怎么构建模型，而是讲如何运行模型，最终大家发现关键在于如何分配使用 GPU 内存。"
  },
  {
   "slug": "ml-diffusion",
@@ -486,7 +594,13 @@
   ],
   "series": "AI 원리",
   "emoji": "🧠",
-  "summary": "이미지 생성 모델은 그림을 그리는 게 아니라 노이즈를 조금씩 걷어 내는 법을 배운 모델이라는 걸 알고 나니 ComfyUI 노드가 읽히더라."
+  "summary": "이미지 생성 모델은 그림을 그리는 게 아니라 노이즈를 조금씩 걷어 내는 법을 배운 모델이라는 걸 알고 나니 ComfyUI 노드가 읽히더라.",
+  "title_en": "Image Generation Model (Diffusion)",
+  "summary_en": "Once I realized that image generation models don't actually draw pictures but rather learn how to gradually remove noise, the ComfyUI node became clear to me.",
+  "title_ja": "画像生成モデル（拡散）",
+  "summary_ja": "画像生成モデルは「絵を描く」のではなく「ノイズを少しずつ除去する」ということを学んだモデルだと知った瞬間、ComfyUI のノードが読み取れるようになりました。",
+  "title_zh": "图像生成模型（扩散）",
+  "summary_zh": "知道了图像生成模型并不是在“画画”，而是在学习逐步去除噪声的方法后，ComfyUI 的节点就通顺了。"
  },
  {
   "slug": "app-agent-design",
@@ -499,7 +613,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "에이전트부터 만들기 전에, 정해진 순서로 짠 워크플로우로 되는지 먼저 보라는 얘기를 패턴별로 정리했다."
+  "summary": "에이전트부터 만들기 전에, 정해진 순서로 짠 워크플로우로 되는지 먼저 보라는 얘기를 패턴별로 정리했다.",
+  "title_en": "Agent Design Pattern",
+  "summary_en": "Before creating an agent, I've organized by pattern to first check whether it follows a predefined workflow sequence.",
+  "title_ja": "エージェント設計パターン",
+  "summary_ja": "エージェント作成前に、パターンごとに整理した「指定された順序でワークフローになっているか」を確認するよう言及しています。",
+  "title_zh": "Agent 设计模式",
+  "summary_zh": "在开始创建 Agent 之前，针对每种模式整理了说明：请先确认是否按照既定顺序执行了工作流。"
  },
  {
   "slug": "app-rag-build",
@@ -512,7 +632,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "RAG를 라이브러리 없이 파이썬 수십 줄로 직접 만들어 돌려 보고, 어디서 틀리는지 재는 법까지 정리했다."
+  "summary": "RAG를 라이브러리 없이 파이썬 수십 줄로 직접 만들어 돌려 보고, 어디서 틀리는지 재는 법까지 정리했다.",
+  "title_en": "Building RAG Directly",
+  "summary_en": "I built RAG from scratch in dozens of lines of Python without using any libraries and documented how to debug it when things go wrong.",
+  "title_ja": "RAG を直接構築する",
+  "summary_ja": "ライブラリを使わず、Python で数十行で RAG を自作して動かす方法と、どこで失敗するかを調べるコツまでまとめました。",
+  "title_zh": "直接构建 RAG",
+  "summary_zh": "无需依赖任何库，仅用几十行 Python 代码亲手实现 RAG 并运行，还整理了排查错误的方法。"
  },
  {
   "slug": "app-cost",
@@ -525,7 +651,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "AI 서비스는 쓸 때마다 돈이 나가서, 호출 한 번의 토큰 값부터 곱해 보면 사용자 1명의 한 달 원가가 나오더라."
+  "summary": "AI 서비스는 쓸 때마다 돈이 나가서, 호출 한 번의 토큰 값부터 곱해 보면 사용자 1명의 한 달 원가가 나오더라.",
+  "title_en": "AI Service Cost Structure",
+  "summary_en": "AI services incur costs every time they're used, so multiplying by the token cost per call reveals the monthly cost per user.",
+  "title_ja": "AI サービスのコスト構造",
+  "summary_ja": "AI サービスは毎回課金されるため、1 回の呼び出しあたりのトークン単価を掛ければ、1 ユーザーあたりの月間原価が算出できることが分かりました。",
+  "title_zh": "AI 服务成本结构",
+  "summary_zh": "AI 服务每次使用都会产生费用，因此从单次调用的 Token 成本乘以用户数量，就能算出单个用户的月度成本。"
  },
  {
   "slug": "app-eval",
@@ -538,7 +670,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "프롬프트를 고칠 때마다 느낌으로 확인하면 어딘가가 조용히 깨지니까, 정해 둔 문제 묶음으로 점수를 매겨 보는 법을 정리했다."
+  "summary": "프롬프트를 고칠 때마다 느낌으로 확인하면 어딘가가 조용히 깨지니까, 정해 둔 문제 묶음으로 점수를 매겨 보는 법을 정리했다.",
+  "title_en": "LLM App Evaluation",
+  "summary_en": "Every time I tweak a prompt and check it by feel, something quietly breaks somewhere, so I've documented how to score using a predefined set of problems.",
+  "title_ja": "LLM アプリ評価",
+  "summary_ja": "プロンプトを修正するたびに感覚で確認すると、どこかが静かに壊れてしまうので、あらかじめ用意した問題セットで採点する方法をまとめました。",
+  "title_zh": "LLM 应用评估",
+  "summary_zh": "每次调整提示词时，如果仅凭感觉去检查，总觉得哪里悄悄出了问题，因此我整理了一套用预设问题集进行评分的方法。"
  },
  {
   "slug": "app-guardrails",
@@ -551,7 +689,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "모델한테 조심하라고 부탁하는 건 안전장치가 아니라서, 코드 쪽에 막는 지점을 따로 둬야 하더라."
+  "summary": "모델한테 조심하라고 부탁하는 건 안전장치가 아니라서, 코드 쪽에 막는 지점을 따로 둬야 하더라.",
+  "title_en": "Guardrail and Safety Device",
+  "summary_en": "Asking the model to be careful isn't a safety measure, so we need to have separate safeguards in the code itself.",
+  "title_ja": "ガードレールと安全装置",
+  "summary_ja": "モデルに注意するよう頼むだけでは安全装置にはならないため、コード側にブロックする箇所を別途設けねばならなかった。",
+  "title_zh": "导轨与安全装置",
+  "summary_zh": "提醒模型要小心并不是安全措施，因此需要在代码层面单独设置阻止点。"
  },
  {
   "slug": "app-mcp-server",
@@ -564,7 +708,13 @@
   ],
   "series": "LLM 앱 만들기",
   "emoji": "🧩",
-  "summary": "MCP 서버는 함수에 설명을 붙여서 내놓는 일이라, 파이썬 파일 하나로 도구 두 개짜리 서버를 직접 돌려 봤다."
+  "summary": "MCP 서버는 함수에 설명을 붙여서 내놓는 일이라, 파이썬 파일 하나로 도구 두 개짜리 서버를 직접 돌려 봤다.",
+  "title_en": "Building an MCP Server",
+  "summary_en": "Since MCP servers are essentially about attaching descriptions to functions, I directly ran a server with two tools in a single Python file.",
+  "title_ja": "MCP サーバーを作成してみる",
+  "summary_ja": "MCP サーバーは、関数に説明を添えて出力する作業なので、Python の 1 つのファイルで 2 つのツールを持つサーバーを直接動かしてみました。",
+  "title_zh": "尝试创建 MCP 服务器",
+  "summary_zh": "MCP 服务器本质上是为函数添加描述，因此我直接用单个 Python 文件运行了一个包含两个工具的服务器。"
  },
  {
   "slug": "be-api-rest",
@@ -576,7 +726,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "REST API는 주소로 대상을 가리키고 HTTP 메서드로 동작을 말하는 약속이고, 같은 요청을 두 번 보내도 되는지(멱등성)가 설계에서 은근히 중요하더라."
+  "summary": "REST API는 주소로 대상을 가리키고 HTTP 메서드로 동작을 말하는 약속이고, 같은 요청을 두 번 보내도 되는지(멱등성)가 설계에서 은근히 중요하더라.",
+  "title_en": "API and REST",
+  "summary_en": "A REST API is a contract that uses an address to point to a resource and an HTTP method to specify the action; whether the same request can be sent twice (idempotency) is subtly important in the design.",
+  "title_ja": "API と REST",
+  "summary_ja": "REST API は、アドレスで対象を指し示し、HTTP メソッドで動作を規定する約束であり、同じリクエストを 2 回送ってもよいのか（冪等性）が設計において非常に重要だと感じました。",
+  "title_zh": "API 与 REST",
+  "summary_zh": "REST API 是一种通过 URL 指向资源、并通过 HTTP 方法描述操作的约定，而在设计中，是否允许重复发送相同的请求（幂等性）往往显得尤为重要。"
  },
  {
   "slug": "be-auth",
@@ -588,7 +744,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "로그인(인증)과 \"이 일을 해도 되나\"(인가)는 다른 문제라서, 세션·JWT·OAuth·RBAC가 각각 어느 쪽을 맡는지 나눠서 정리했다."
+  "summary": "로그인(인증)과 \"이 일을 해도 되나\"(인가)는 다른 문제라서, 세션·JWT·OAuth·RBAC가 각각 어느 쪽을 맡는지 나눠서 정리했다.",
+  "title_en": "Authentication and Authorization",
+  "summary_en": "Login (authentication) and \"can this be done\" (authorization) are different concerns, so I've organized them separately by explaining which of session, JWT, OAuth, or RBAC handles each.",
+  "title_ja": "認証と認可",
+  "summary_ja": "ログイン（認証）と「このことをしてもよいか」（権限）は別の問題であるため、セッション・JWT・OAuth・RBAC がそれぞれどちらを担当するかを整理しました。",
+  "title_zh": "认证与授权",
+  "summary_zh": "登录（认证）与“能否做这件事”（授权）是两个不同的问题，因此我将分别整理会话、JWT、OAuth 和 RBAC 各自负责哪一部分。"
  },
  {
   "slug": "be-request-flow",
@@ -600,7 +762,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "주소창에 엔터를 치고 화면이 뜨기까지, 서버 안에서는 미들웨어 줄을 지나 라우터에서 핸들러로 가는 길이 있더라."
+  "summary": "주소창에 엔터를 치고 화면이 뜨기까지, 서버 안에서는 미들웨어 줄을 지나 라우터에서 핸들러로 가는 길이 있더라.",
+  "title_en": "Flow of request processing",
+  "summary_en": "After pressing Enter in the address bar and until the screen appears, there is a path through middleware lines on the server from the router to the handler.",
+  "title_ja": "リクエストが処理されるフロー",
+  "summary_ja": "アドレスバーで Enter を押して画面が表示されるまで、サーバー内ではミドルウェアの層を通過し、ルーターからハンドラーへ向かう道があるんだ。",
+  "title_zh": "请求处理流程",
+  "summary_zh": "在地址栏按下回车键到屏幕显示出来之间，服务器内部要经过中间件栈，从路由到达处理器的路径。"
  },
  {
   "slug": "be-layered-architecture",
@@ -612,7 +780,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "컨트롤러·서비스·리포지토리로 코드를 층층이 나누는 방식인데, 위에서 아래로만 의존하게 만드는 게 핵심이고 작은 프로젝트엔 과할 수 있더라."
+  "summary": "컨트롤러·서비스·리포지토리로 코드를 층층이 나누는 방식인데, 위에서 아래로만 의존하게 만드는 게 핵심이고 작은 프로젝트엔 과할 수 있더라.",
+  "title_en": "Layered Architecture",
+  "summary_en": "This approach layers code into controllers, services, and repositories, with the core principle being that dependencies flow only from top to bottom; however, it can feel excessive for small projects.",
+  "title_ja": "レイヤーアーキテクチャ",
+  "summary_ja": "コントローラー、サービス、リポジトリにコードを階層化して分割する方式ですが、上から下への依存関係のみを強制することが核心であり、小さなプロジェクトでは過剰な設計になり得るようです。",
+  "title_zh": "分层架构",
+  "summary_zh": "这是一种将代码分层为控制器（Controller）、服务（Service）和仓库（Repository）的方式，其核心在于只允许自上而下的依赖关系；不过对于小型项目来说，这种方式可能显得过于复杂。"
  },
  {
   "slug": "be-coupling-cohesion",
@@ -624,7 +798,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "한 모듈은 한 가지 일만 하고, 다른 모듈과는 가볍게 엮이는 게 좋다는 말이 응집도와 결합도더라."
+  "summary": "한 모듈은 한 가지 일만 하고, 다른 모듈과는 가볍게 엮이는 게 좋다는 말이 응집도와 결합도더라.",
+  "title_en": "Module Cohesion and Coupling",
+  "summary_en": "The saying that one module should do just one thing and be loosely coupled with other modules is cohesion and coupling.",
+  "title_ja": "モジュールの凝集度と結合度",
+  "summary_ja": "「一つのモジュールは一つのことに特化し、他のモジュールとは軽く結びつくべきだ」というのは、凝集性と結合性の話です。",
+  "title_zh": "模块内聚与耦合度",
+  "summary_zh": "一个模块只做一件事，并且与其他模块保持松耦合，这就是内聚和耦合。"
  },
  {
   "slug": "be-async-queue",
@@ -636,7 +816,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "오래 걸리는 일은 큐에 넣어 두고 워커가 따로 처리하게 하는데, 대신 같은 메시지가 두 번 올 수 있다는 걸 각오해야 하더라."
+  "summary": "오래 걸리는 일은 큐에 넣어 두고 워커가 따로 처리하게 하는데, 대신 같은 메시지가 두 번 올 수 있다는 걸 각오해야 하더라.",
+  "title_en": "Asynchronous Processing and Message Queues",
+  "summary_en": "For tasks that take a long time, you enqueue them and let workers process them separately, but be prepared for the same message to arrive twice.",
+  "title_ja": "非同期処理とメッセージキュー",
+  "summary_ja": "処理に時間がかかるタスクはキューに入れておき、ワーカーが別途処理するようにしていますが、その代わり同じメッセージが 2 回送られてくることがあるので覚悟しておいてください。",
+  "title_zh": "异步处理与消息队列",
+  "summary_zh": "耗时较长的任务可以放入队列，由专门的 Worker 异步处理，但需要做好同一消息可能被重复消费的准备。"
  },
  {
   "slug": "be-error-logging",
@@ -648,7 +834,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "에러는 터뜨리는 것보다 어디서 잡고 뭘 남기느냐가 일이라서, 재시도와 로그 형식까지 한 묶음으로 정리했다."
+  "summary": "에러는 터뜨리는 것보다 어디서 잡고 뭘 남기느냐가 일이라서, 재시도와 로그 형식까지 한 묶음으로 정리했다.",
+  "title_en": "Error Handling and Logging",
+  "summary_en": "It's more about catching errors and preserving what remains than just throwing them up; I've organized retries and log formats into a single package.",
+  "title_ja": "エラー処理とロギング",
+  "summary_ja": "エラーを発生させることよりも、どこでキャッチし、何を残すかが本業なので、リトライとログ形式まで一まとめに整理しました。",
+  "title_zh": "错误处理与日志记录",
+  "summary_zh": "与其让错误爆发，不如抓住源头并保留相关信息，因此将重试和日志格式一并整理。"
  },
  {
   "slug": "be-testing",
@@ -660,7 +852,13 @@
   ],
   "series": "백엔드",
   "emoji": "🗄️",
-  "summary": "테스트는 많이 쓰는 게 아니라 싸고 빠른 걸 아래에 많이 깔아 두는 일이더라."
+  "summary": "테스트는 많이 쓰는 게 아니라 싸고 빠른 걸 아래에 많이 깔아 두는 일이더라.",
+  "title_en": "Backend Test",
+  "summary_en": "It seems that testing isn't done frequently; instead, cheap and fast options are installed below for use.",
+  "title_ja": "バックエンドテスト",
+  "summary_ja": "テストはあまり使わないので、安くて速いものを下の方に多くインストールしておくんだって。",
+  "title_zh": "后端测试",
+  "summary_zh": "测试并不是用得很多，而是下面安装了很多便宜且快速的工具。"
  },
  {
   "slug": "fe-browser-render",
@@ -672,7 +870,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "HTML을 받고 나서 화면에 픽셀이 찍히기까지 단계가 꽤 많은데, 어디가 다시 도는지 알면 느린 이유가 보이더라."
+  "summary": "HTML을 받고 나서 화면에 픽셀이 찍히기까지 단계가 꽤 많은데, 어디가 다시 도는지 알면 느린 이유가 보이더라.",
+  "title_en": "How a browser renders the screen",
+  "summary_en": "There are quite a few steps between receiving HTML and pixels appearing on the screen; once you know where it's going wrong again, the reason for the slowness becomes clear.",
+  "title_ja": "ブラウザが画面を描画するプロセス",
+  "summary_ja": "HTML を受信してから画面にピクセルが描画されるまでには多くの段階があり、どこで時間がかかっているかが分かれば遅い理由が見えてきました。",
+  "title_zh": "浏览器绘制页面的过程",
+  "summary_zh": "收到 HTML 之后到屏幕上渲染出像素，中间经历了相当多的步骤，一旦知道哪里重绘了，就能看出变慢的原因。"
  },
  {
   "slug": "fe-rendering-modes",
@@ -684,7 +888,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "HTML을 누가 언제 만드느냐의 차이라서, 세 가지를 외우기보다 이 한 질문으로 보면 정리가 되더라."
+  "summary": "HTML을 누가 언제 만드느냐의 차이라서, 세 가지를 외우기보다 이 한 질문으로 보면 정리가 되더라.",
+  "title_en": "CSR · SSR · SSG",
+  "summary_en": "It's a matter of who created HTML and when; memorizing three things is less effective than understanding this single question, which makes everything clear.",
+  "title_ja": "CSR・SSR・SSG",
+  "summary_ja": "HTML が誰によっていつ作られたかという違いなので、三つを暗記するよりこの一つの質問で整理できた。",
+  "title_zh": "CSR·SSR·SSG",
+  "summary_zh": "这其实是关于“谁在什么时候创建了 HTML\"的区别，与其死记硬背这三点，不如从这个角度来理解，反而更清晰。"
  },
  {
   "slug": "fe-state",
@@ -696,7 +906,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "상태는 어디에 두느냐가 거의 전부라서, 라이브러리를 고르기 전에 이 값이 누구 것인지부터 나누게 되더라."
+  "summary": "상태는 어디에 두느냐가 거의 전부라서, 라이브러리를 고르기 전에 이 값이 누구 것인지부터 나누게 되더라.",
+  "title_en": "State Management",
+  "summary_en": "Since the state is almost entirely determined by where it's stored, I found myself distinguishing who owns this value before even choosing a library.",
+  "title_ja": "ステート管理",
+  "summary_ja": "状態をどこに置くかがほとんど全てなので、ライブラリを選ぶ前にこの値が誰のものかというのをまず区別させられました。",
+  "title_zh": "状态管理",
+  "summary_zh": "状态放在哪里几乎决定了全部，所以在选择库之前，先要弄清楚这个值属于谁。"
  },
  {
   "slug": "fe-component",
@@ -708,7 +924,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "컴포넌트는 UI를 쪼개는 단위인데, 잘게 쪼개는 것보다 어디서 멈추고 상태를 누가 갖느냐가 설계의 대부분이더라."
+  "summary": "컴포넌트는 UI를 쪼개는 단위인데, 잘게 쪼개는 것보다 어디서 멈추고 상태를 누가 갖느냐가 설계의 대부분이더라.",
+  "title_en": "Component Design",
+  "summary_en": "Components are units that break down the UI, but rather than breaking them into tiny pieces, most of the design revolves around where to stop and who holds the state.",
+  "title_ja": "コンポーネント設計",
+  "summary_ja": "コンポーネントは UI を分割する単位ですが、細かく分割することよりも「どこで区切り、状態を誰が保持するか」の方が設計の大部分を占めるものでした。",
+  "title_zh": "组件设计",
+  "summary_zh": "组件是将 UI 拆分的单元，但设计的关键往往不在于拆分得有多细，而在于在哪里停止拆分、由谁来持有状态。"
  },
  {
   "slug": "fe-usability",
@@ -720,7 +942,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "사용성은 취향 문제가 아니라 점검할 항목이 정해져 있어서, 닐슨의 10가지를 체크리스트처럼 들고 화면을 보게 되더라."
+  "summary": "사용성은 취향 문제가 아니라 점검할 항목이 정해져 있어서, 닐슨의 10가지를 체크리스트처럼 들고 화면을 보게 되더라.",
+  "title_en": "Usability Principles (UX)",
+  "summary_en": "Usability is not a matter of personal preference; there are established criteria to evaluate, so Nielsen's 10 items were presented as a checklist on the screen.",
+  "title_ja": "使いやすさの原則（UX）",
+  "summary_ja": "使いやすさは好みの問題ではなく、チェックすべき項目が決まっているため、ニールセンの 10 つをリストのように持ってきて画面に表示されるようになった。",
+  "title_zh": "可用性原则（UX）",
+  "summary_zh": "可用性并不是一个口味问题，而是有明确的检查项目，尼尔森列出了 10 项，像清单一样展示在屏幕上。"
  },
  {
   "slug": "fe-accessibility",
@@ -732,7 +960,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "접근성은 특별한 기능을 얹는 게 아니라 HTML을 제 용도대로 쓰는 일에 가깝고, ARIA는 그걸로 안 될 때 꺼내는 거더라."
+  "summary": "접근성은 특별한 기능을 얹는 게 아니라 HTML을 제 용도대로 쓰는 일에 가깝고, ARIA는 그걸로 안 될 때 꺼내는 거더라.",
+  "title_en": "Web Accessibility",
+  "summary_en": "Accessibility isn't about adding special features; it's more like using HTML for its intended purpose, while ARIA is what you turn to when that's not enough.",
+  "title_ja": "ウェブアクセシビリティ",
+  "summary_ja": "アクセシビリティは特別な機能を追加することではなく、HTML を本来の目的通りに使うことに近く、ARIA はそれで不十分な場合に使用するものです。",
+  "title_zh": "Web 无障碍性",
+  "summary_zh": "可访问性并非是在功能上叠加特殊的东西，而更接近于正确使用 HTML；ARIA 则是在仅靠 HTML 无法实现时使用的补充方案。"
  },
  {
   "slug": "fe-performance",
@@ -744,7 +978,13 @@
   ],
   "series": "프론트엔드",
   "emoji": "🖥️",
-  "summary": "빠르다는 느낌을 로딩·반응·안 흔들림 세 숫자로 쪼개 놓은 게 Core Web Vitals라서, 이것부터 알면 뭘 고칠지 보이더라."
+  "summary": "빠르다는 느낌을 로딩·반응·안 흔들림 세 숫자로 쪼개 놓은 게 Core Web Vitals라서, 이것부터 알면 뭘 고칠지 보이더라.",
+  "title_en": "Frontend Performance",
+  "summary_en": "That's why we break down the feeling of speed into three numbers: loading, responsiveness, and stability—that's what Core Web Vitals are. Once you understand these, it becomes clear what needs to be fixed.",
+  "title_ja": "フロントエンドパフォーマンス",
+  "summary_ja": "「速い」という感覚を、ロード時間・レスポンス速度・振動の 3 つの数値に分解したものが Core Web Vitals なので、これを理解すれば何を改善すべきかが見えてくる。",
+  "title_zh": "前端性能",
+  "summary_zh": "之所以将“快速感”拆解为加载、响应、不抖动这三个指标，是因为它们构成了 Core Web Vitals。只要了解这些指标，就能知道该如何进行优化。"
  },
  {
   "slug": "db-rdb-sql",
@@ -756,7 +996,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "관계형 DB는 표 여러 개를 키로 이어 붙여 쓰는 방식이라, 표 두 개와 쿼리 몇 줄이면 기본은 다 만져 볼 수 있더라."
+  "summary": "관계형 DB는 표 여러 개를 키로 이어 붙여 쓰는 방식이라, 표 두 개와 쿼리 몇 줄이면 기본은 다 만져 볼 수 있더라.",
+  "title_en": "Relational Databases and Basic SQL",
+  "summary_en": "Relational databases use a structure where multiple tables are joined via keys, so with just two tables and a few lines of query, you can handle the basics.",
+  "title_ja": "リレーショナルデータベースと SQL 基礎",
+  "summary_ja": "リレーショナル DB は、複数のテーブルをキーで結合して扱う方式なので、2 つのテーブルと数行のクエリがあれば基本的なことは何でも扱えるもんだ。",
+  "title_zh": "关系型数据库与 SQL 基础",
+  "summary_zh": "关系型数据库通过多个表以键连接的方式工作，仅用两个表和几行查询语句就能处理大部分基本操作。"
  },
  {
   "slug": "db-index",
@@ -768,7 +1014,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "인덱스는 책 뒤의 찾아보기 같은 거라, 읽을 땐 빠르고 쓸 땐 느려지니 어디에 만들지 고르는 게 일이더라."
+  "summary": "인덱스는 책 뒤의 찾아보기 같은 거라, 읽을 땐 빠르고 쓸 땐 느려지니 어디에 만들지 고르는 게 일이더라.",
+  "title_en": "Index",
+  "summary_en": "An index is like a book's back-of-book index; it speeds up reads but slows down writes, so choosing where to create one is a task.",
+  "title_ja": "インデックス",
+  "summary_ja": "インデックスは本の末尾にある索引のようなもので、読み込む際には速いが書き込む際には遅くなるため、どこに作成するかを選ぶのが大変だった。",
+  "title_zh": "索引",
+  "summary_zh": "索引就像书的目录，读的时候快，写的时候慢，所以选择在哪里创建索引是个需要斟酌的事情。"
  },
  {
   "slug": "db-transaction",
@@ -780,7 +1032,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "트랜잭션은 여러 쿼리를 한 덩어리로 묶는 장치이고, 격리 수준은 동시에 도는 덩어리끼리 얼마나 서로를 보게 둘지 정하는 다이얼이더라."
+  "summary": "트랜잭션은 여러 쿼리를 한 덩어리로 묶는 장치이고, 격리 수준은 동시에 도는 덩어리끼리 얼마나 서로를 보게 둘지 정하는 다이얼이더라.",
+  "title_en": "Transactions and Isolation Levels",
+  "summary_en": "A transaction is a mechanism that groups multiple queries into a single unit, and the isolation level determines how much visibility there is between concurrently running units.",
+  "title_ja": "トランザクションと隔離レベル",
+  "summary_ja": "トランザクションは複数のクエリを 1 つのまとまりとして扱う仕組みであり、イソレーションレベルは同時に実行されるまとまり同士が互いにどの程度見えるようにするかを決定するダイヤルのようなものです。",
+  "title_zh": "事务与隔离级别",
+  "summary_zh": "事务是将多个查询打包成一个整体的机制，而隔离级别则是控制同时运行的这些整体之间相互可见程度的“旋钮”。"
  },
  {
   "slug": "db-normalization",
@@ -792,7 +1050,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "같은 사실은 한 곳에만 적어 두자는 규칙이 정규화였고, 1NF~3NF는 그걸 단계로 나눈 것이더라."
+  "summary": "같은 사실은 한 곳에만 적어 두자는 규칙이 정규화였고, 1NF~3NF는 그걸 단계로 나눈 것이더라.",
+  "title_en": "Regularization and Modeling",
+  "summary_en": "The rule of storing a fact in only one place was normalization, and 1NF through 3NF were stages that divided it.",
+  "title_ja": "正規化とモデリング",
+  "summary_ja": "同じ事実を一つの場所だけに記すというルールが正規化であり、1NF〜3NF はそれを段階に分けたものだった。",
+  "title_zh": "正则化和建模",
+  "summary_zh": "将同一事实只记录在一个地方的规则就是规范化，而 1NF 到 3NF 则是将其划分为不同阶段。"
  },
  {
   "slug": "db-nosql",
@@ -804,7 +1068,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "NoSQL은 SQL을 버린 게 아니라 데이터를 쓰는 모양에 맞춰 저장 방식을 바꾼 것들의 묶음이더라."
+  "summary": "NoSQL은 SQL을 버린 게 아니라 데이터를 쓰는 모양에 맞춰 저장 방식을 바꾼 것들의 묶음이더라.",
+  "title_en": "Types of NoSQL and Selection",
+  "summary_en": "NoSQL isn't about abandoning SQL; it's a collection of systems that changed their storage methods to match how data is used.",
+  "title_ja": "NoSQL の種類と選択",
+  "summary_ja": "NoSQL は、SQL を捨てたのではなく、データの書き方の形態に合わせて保存方法を改変したものの集合体だったんだ。",
+  "title_zh": "NoSQL 类型与选型",
+  "summary_zh": "原来 NoSQL 并不是抛弃了 SQL，而是一组根据数据写入方式调整存储方案的集合。"
  },
  {
   "slug": "db-vector",
@@ -816,7 +1086,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "임베딩을 모아 두고 가까운 것을 빨리 찾아 주는 DB인데, 정확도를 조금 내주고 속도를 사는 구조더라."
+  "summary": "임베딩을 모아 두고 가까운 것을 빨리 찾아 주는 DB인데, 정확도를 조금 내주고 속도를 사는 구조더라.",
+  "title_en": "Vector DB",
+  "summary_en": "It's a database that stores embeddings and quickly retrieves similar ones, trading some accuracy for speed.",
+  "title_ja": "ベクトル DB",
+  "summary_ja": "埋め込みベクトルを蓄積し、類似したものを素早く検索するデータベースですが、精度を少し犠牲にして速度を優先した構造でした。",
+  "title_zh": "向量数据库",
+  "summary_zh": "这是一个用于收集嵌入向量并快速检索相似项的数据库，其结构是以牺牲一定的精度为代价来换取速度。"
  },
  {
   "slug": "db-cache-redis",
@@ -828,7 +1104,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "자주 읽는 데이터를 가까운 곳에 복사해 두는 게 캐시고, 문제는 복사본이 낡는 걸 어떻게 다루느냐더라."
+  "summary": "자주 읽는 데이터를 가까운 곳에 복사해 두는 게 캐시고, 문제는 복사본이 낡는 걸 어떻게 다루느냐더라.",
+  "title_en": "Cache and Redis",
+  "summary_en": "Caching is about copying frequently accessed data to a nearby location; the challenge lies in handling how to deal with stale copies.",
+  "title_ja": "キャッシュと Redis",
+  "summary_ja": "よく参照するデータを近所にコピーしておくのがキャッシュで、問題はコピーが古くなるのをどう扱うかだ。",
+  "title_zh": "缓存与 Redis",
+  "summary_zh": "将频繁访问的数据复制到靠近计算节点的位置，这就是缓存；而问题在于如何处理副本过期的情况。"
  },
  {
   "slug": "db-scaling",
@@ -840,7 +1122,13 @@
   ],
   "series": "데이터베이스",
   "emoji": "🛢️",
-  "summary": "DB 하나로 버티다 한계가 오면 읽기는 복제로, 쓰기는 샤딩으로 나누는데, 나눌수록 일관성과 편의를 내놓게 된다."
+  "summary": "DB 하나로 버티다 한계가 오면 읽기는 복제로, 쓰기는 샤딩으로 나누는데, 나눌수록 일관성과 편의를 내놓게 된다.",
+  "title_en": "Replication and Sharding",
+  "summary_en": "When a single DB reaches its limits, reads are handled via replication and writes via sharding, but as you shard further, you sacrifice consistency and convenience.",
+  "title_ja": "レプリケーションとシャーディング",
+  "summary_ja": "1 つの DB で耐えきれなくなったら、読み取りはレプリケーションで、書き込みはシャーディングに分けるが、分けるほど一貫性と利便性は犠牲になる。",
+  "title_zh": "复制与分片",
+  "summary_zh": "当单数据库难以支撑时，读操作通过复制实现，写操作通过分片进行，但分片越多，一致性和便利性就越难保证。"
  },
  {
   "slug": "cloud-basics",
@@ -852,7 +1140,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "클라우드는 남의 서버를 쓴 만큼 빌려 쓰는 건데, 어디까지 내가 관리하느냐에 따라 IaaS·PaaS·SaaS로 나뉘더라."
+  "summary": "클라우드는 남의 서버를 쓴 만큼 빌려 쓰는 건데, 어디까지 내가 관리하느냐에 따라 IaaS·PaaS·SaaS로 나뉘더라.",
+  "title_en": "Cloud Basics",
+  "summary_en": "Cloud computing is essentially renting someone else's servers, and it's categorized into IaaS, PaaS, and SaaS depending on how much management responsibility lies with you.",
+  "title_ja": "クラウド基礎",
+  "summary_ja": "クラウドは他者のサーバーを借りて使う仕組みであり、自分が管理する範囲によって IaaS・PaaS・SaaS に分類されます。",
+  "title_zh": "云基础",
+  "summary_zh": "云是按需租用他人服务器的模式，根据管理范围的不同，可分为 IaaS、PaaS 和 SaaS。"
  },
  {
   "slug": "cloud-docker",
@@ -864,7 +1158,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "Docker는 앱과 실행 환경을 한 덩어리로 묶어서, 어디서 돌려도 같게 돌게 해 주는 도구더라."
+  "summary": "Docker는 앱과 실행 환경을 한 덩어리로 묶어서, 어디서 돌려도 같게 돌게 해 주는 도구더라.",
+  "title_en": "Docker and Containers",
+  "summary_en": "Docker is a tool that bundles an application and its runtime environment together so it runs consistently anywhere.",
+  "title_ja": "Docker とコンテナ",
+  "summary_ja": "Docker は、アプリケーションと実行環境を 1 つのまとまりとしてパッケージ化し、どこで動かしても同じ挙動をするようにするツールです。",
+  "title_zh": "Docker 与容器",
+  "summary_zh": "Docker 是一种将应用程序及其运行环境打包在一起的工具，确保无论在何处运行都能保持一致。"
  },
  {
   "slug": "cloud-serverless",
@@ -876,7 +1176,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "서버리스는 서버가 없는 게 아니라 서버를 내가 안 만지는 것이고, 요청이 올 때만 함수가 떠서 돈도 그때만 나가더라."
+  "summary": "서버리스는 서버가 없는 게 아니라 서버를 내가 안 만지는 것이고, 요청이 올 때만 함수가 떠서 돈도 그때만 나가더라.",
+  "title_en": "Serverless",
+  "summary_en": "Serverless doesn't mean there are no servers; it means I don't manage the servers, and functions only run when requests come in, so costs are incurred only at that time.",
+  "title_ja": "サーバーレス",
+  "summary_ja": "サーバーレスとは、サーバーがないのではなく、サーバーを自分で管理しないことであり、リクエストが来る時にのみ関数が稼働するため、その時だけコストがかかるというものです。",
+  "title_zh": "无服务器",
+  "summary_zh": "无服务器（Serverless）并非真的没有服务器，而是指我不直接管理服务器；只有当有请求到来时函数才会运行，费用也仅在运行时产生。"
  },
  {
   "slug": "cloud-cicd",
@@ -888,7 +1194,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "코드를 올리면 테스트하고 배포까지 알아서 가는 파이프라인과, 새 버전을 안 터지게 내보내는 세 가지 방식을 정리했다."
+  "summary": "코드를 올리면 테스트하고 배포까지 알아서 가는 파이프라인과, 새 버전을 안 터지게 내보내는 세 가지 방식을 정리했다.",
+  "title_en": "CI/CD and Deployment Strategies",
+  "summary_en": "I've organized three approaches: a pipeline that automatically tests and deploys when you push code, and two methods to prevent new versions from breaking the application.",
+  "title_ja": "CI/CD とデプロイ戦略",
+  "summary_ja": "コードをアップロードすると、テストからデプロイまで自動的に実行されるパイプラインと、新しいバージョンが動作しないようにする 3 つの方法をまとめました。",
+  "title_zh": "CI/CD 与部署策略",
+  "summary_zh": "我们整理了三种方式：一种是在提交代码后自动进行测试并部署的流水线，另一种是阻止新版本发布的机制。"
  },
  {
   "slug": "cloud-secrets",
@@ -900,7 +1212,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "비밀번호나 키는 코드 밖에 두는 게 기본이고, .env로 시작해서 시크릿 매니저와 로테이션까지 단계가 있더라."
+  "summary": "비밀번호나 키는 코드 밖에 두는 게 기본이고, .env로 시작해서 시크릿 매니저와 로테이션까지 단계가 있더라.",
+  "title_en": "Environment Variables and Secrets Management",
+  "summary_en": "Passwords and keys are typically stored outside of the code, with stages ranging from `.env` to secret managers and rotation.",
+  "title_ja": "環境変数とシークレット管理",
+  "summary_ja": "パスワードやキーはコードに直接記述するのが基本ですが、`.env` から始まり、シークレットマネージャーやローテーションまで段階があるようです。",
+  "title_zh": "环境变量与密钥管理",
+  "summary_zh": "密码或密钥的基本做法是放在代码之外，从使用 `.env` 开始，再到秘密管理器以及轮换，存在多个阶段。"
  },
  {
   "slug": "cloud-observability",
@@ -912,7 +1230,13 @@
   ],
   "series": "클라우드·배포",
   "emoji": "☁️",
-  "summary": "서비스가 아픈 걸 사용자보다 먼저 알려면 메트릭·로그·트레이스를 어떻게 나눠 보고, 알림은 무엇에 걸어야 하는지 정리했다."
+  "summary": "서비스가 아픈 걸 사용자보다 먼저 알려면 메트릭·로그·트레이스를 어떻게 나눠 보고, 알림은 무엇에 걸어야 하는지 정리했다.",
+  "title_en": "Monitoring · Logs · Alerts",
+  "summary_en": "To alert users before they experience issues with the service, we've organized how to monitor metrics, logs, and traces separately, and what alerts should be triggered for each.",
+  "title_ja": "モニタリング・ログ・通知",
+  "summary_ja": "ユーザーよりも先にサービスが不調を検知するには、メトリクス・ログ・トレースをどのように分割して監視し、アラートをどの指標に設定すべきかを整理しました。",
+  "title_zh": "监控·日志·通知",
+  "summary_zh": "为了让服务在用户之前感知到问题，本文整理了如何划分指标、日志和追踪，以及应在哪些对象上设置告警。"
  },
  {
   "slug": "infra-request-journey",
@@ -924,7 +1248,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "주소창에 엔터를 치면 DNS부터 DB까지 여러 군데를 거치는데, 느린 곳은 대개 한두 군데라서 어디서 시간이 새는지 먼저 봐야 하더라."
+  "summary": "주소창에 엔터를 치면 DNS부터 DB까지 여러 군데를 거치는데, 느린 곳은 대개 한두 군데라서 어디서 시간이 새는지 먼저 봐야 하더라.",
+  "title_en": "The Journey of a Single Request",
+  "summary_en": "When you press Enter in the address bar, the request goes through multiple stages from DNS to the database, and since only one or two of these are usually slow, you need to check where the time is being lost first.",
+  "title_ja": "1 件のリクエストが通る道",
+  "summary_ja": "アドレスバーで Enter を押すと、DNS から DB までさまざまな箇所を通過しますが、遅いのは大抵一か所か二か所なので、まずどこで時間がかかっているかを確認する必要があります。",
+  "title_zh": "A Request's Journey",
+  "summary_zh": "在地址栏按回车后，请求会经过从 DNS 到数据库等多个环节，通常只有其中一两个环节较慢，所以得先找出时间都花在哪里了。"
  },
  {
   "slug": "infra-load-balancer",
@@ -936,7 +1266,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "로드밸런서는 서버 앞에서 요청을 나눠 주는 문지기인데, 어떻게 나누느냐보다 죽은 서버를 얼마나 빨리 빼느냐가 더 중요해 보였다."
+  "summary": "로드밸런서는 서버 앞에서 요청을 나눠 주는 문지기인데, 어떻게 나누느냐보다 죽은 서버를 얼마나 빨리 빼느냐가 더 중요해 보였다.",
+  "title_en": "Load Balancer",
+  "summary_en": "A load balancer acts like a doorman distributing requests in front of servers, but it seemed that how quickly you remove dead servers was more important than how you distribute them.",
+  "title_ja": "ロードバランサー",
+  "summary_ja": "ロードバランサーは、サーバーの前面でリクエストを振り分ける門番のようなものだが、どのように振り分けるかよりも、ダウンしたサーバーをいかに速やかに外すかがより重要だと感じた。",
+  "title_zh": "负载均衡器",
+  "summary_zh": "负载均衡器就像站在服务器前的门卫，负责分发请求，但在我看来，快速剔除已宕机的服务器比如何分发请求更为重要。"
  },
  {
   "slug": "infra-rate-limit",
@@ -948,7 +1284,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "레이트 리밋은 서버가 감당 못 할 요청을 문 앞에서 돌려보내는 장치인데, 어떤 알고리즘으로 세느냐에 따라 버스트를 받아 줄 수도 있고 경계에서 뚫리기도 하더라."
+  "summary": "레이트 리밋은 서버가 감당 못 할 요청을 문 앞에서 돌려보내는 장치인데, 어떤 알고리즘으로 세느냐에 따라 버스트를 받아 줄 수도 있고 경계에서 뚫리기도 하더라.",
+  "title_en": "Rate Limiting and Traffic Control",
+  "summary_en": "A rate limiter is a mechanism that rejects requests that the server cannot handle at the gate; depending on the algorithm used, it may allow bursts or be breached at the boundary.",
+  "title_ja": "レートリミットとトラフィック制御",
+  "summary_ja": "レートリミットは、サーバーが処理できないリクエストを門前で却下する仕組みですが、どのようなアルゴリズムを採用するかによって、バーストを受け入れる場合もあれば、境界から突破される場合もあるようです。",
+  "title_zh": "速率限制与流量控制",
+  "summary_zh": "速率限制（Rate Limit）是一种在服务器入口处拒绝超出其处理能力请求的机制，具体取决于所采用的算法，它既能承受突发流量，也可能在边界被突破。"
  },
  {
   "slug": "infra-autoscaling",
@@ -960,7 +1302,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "서버를 늘리는 방법은 크게 두 가지고, 자동으로 늘리려면 서버가 상태를 안 들고 있어야 하더라."
+  "summary": "서버를 늘리는 방법은 크게 두 가지고, 자동으로 늘리려면 서버가 상태를 안 들고 있어야 하더라.",
+  "title_en": "Auto-scaling and Scaling",
+  "summary_en": "There are mainly two ways to scale up servers; however, for automatic scaling, the server must not hold state.",
+  "title_ja": "オートスケーリングと拡張",
+  "summary_ja": "サーバーを増やす方法は主に 2 つあり、自動で増やしたい場合はサーバーがステートレスである必要があります。",
+  "title_zh": "自动扩展与扩容",
+  "summary_zh": "增加服务器的方法主要有两种，如果要实现自动扩容，服务器必须处于无状态。"
  },
  {
   "slug": "infra-cdn-cache",
@@ -972,7 +1320,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "CDN은 전 세계에 복사본을 깔아 두는 캐시이고, 어려운 건 복사본을 언제까지 믿을지를 헤더로 정하는 쪽이더라."
+  "summary": "CDN은 전 세계에 복사본을 깔아 두는 캐시이고, 어려운 건 복사본을 언제까지 믿을지를 헤더로 정하는 쪽이더라.",
+  "title_en": "CDN and Caching Layers",
+  "summary_en": "A CDN is a cache with copies deployed worldwide, and the tricky part is determining via headers how long to trust those copies.",
+  "title_ja": "CDN とキャッシュ階層",
+  "summary_ja": "CDN は世界中にコピーを配置したキャッシュであり、難しいのはそのコピーをいつまで信頼するかをヘッダーで決めることだ。",
+  "title_zh": "CDN 与缓存层级",
+  "summary_zh": "CDN 是一种在全球部署副本的缓存，难点在于通过头部确定可以信任这些副本的时间。"
  },
  {
   "slug": "infra-ai-serving",
@@ -984,7 +1338,13 @@
   ],
   "series": "서비스 인프라",
   "emoji": "🏗️",
-  "summary": "LLM API를 부르는 서비스는 느리고, 가끔 실패하고, 부를 때마다 돈이 나가서, 그 앞에 큐·캐시·타임아웃을 한 겹씩 세워 둬야 하더라."
+  "summary": "LLM API를 부르는 서비스는 느리고, 가끔 실패하고, 부를 때마다 돈이 나가서, 그 앞에 큐·캐시·타임아웃을 한 겹씩 세워 둬야 하더라.",
+  "title_en": "AI Service Serving Architecture",
+  "summary_en": "Services that call the LLM API are slow, occasionally fail, and incur costs with each call, so you have to layer on a queue, cache, and timeout in front of them.",
+  "title_ja": "AI サービスサービング構造",
+  "summary_ja": "LLM API を呼び出すサービスは遅く、たまに失敗し、毎回コストがかかるため、その前にキュー・キャッシュ・タイムアウトのレイヤーをそれぞれ追加しておかなければならないようだ。",
+  "title_zh": "AI 服务 Serving 架构",
+  "summary_zh": "调用 LLM API 的服务响应缓慢、偶尔失败，且每次调用都会产生费用，因此需要在其前面层层叠加队列、缓存和超时机制。"
  },
  {
   "slug": "cs-procedural-oop",
@@ -996,7 +1356,13 @@
   ],
   "series": "CS·설계 기초",
   "emoji": "📐",
-  "summary": "절차지향은 \"무슨 순서로 할까\"에서, 객체지향은 \"이 데이터를 누가 책임질까\"에서 시작하는 차이더라."
+  "summary": "절차지향은 \"무슨 순서로 할까\"에서, 객체지향은 \"이 데이터를 누가 책임질까\"에서 시작하는 차이더라.",
+  "title_en": "Procedural and Object-Oriented",
+  "summary_en": "Procedural programming starts with \"what order to do things in,\" while object-oriented programming starts with \"who is responsible for this data.\"",
+  "title_ja": "手続き型とオブジェクト指向",
+  "summary_ja": "手続き志向は「どの順序でやるか」から、オブジェクト志向は「このデータを誰が責任を持つのか」から始まる違いだ。",
+  "title_zh": "过程导向与面向对象",
+  "summary_zh": "面向过程是从“按什么顺序做”开始，而面向对象是从“谁来负责这些数据”开始的。"
  },
  {
   "slug": "cs-solid",
@@ -1008,7 +1374,13 @@
   ],
   "series": "CS·설계 기초",
   "emoji": "📐",
-  "summary": "SOLID는 코드를 바꿀 때 덜 아프게 만드는 다섯 가지 기준인데, 규칙이라기보다 냄새를 맡는 도구에 가깝더라."
+  "summary": "SOLID는 코드를 바꿀 때 덜 아프게 만드는 다섯 가지 기준인데, 규칙이라기보다 냄새를 맡는 도구에 가깝더라.",
+  "title_en": "SOLID Principles",
+  "summary_en": "SOLID is a set of five principles that make code less painful to change, but it's more like a tool for detecting smells than a strict rule.",
+  "title_ja": "SOLID 原則",
+  "summary_ja": "SOLID は、コードを変更する際に痛みを軽減するための 5 つの基準ですが、ルールというより「臭いを嗅ぐ道具」に近いものです。",
+  "title_zh": "SOLID 原则",
+  "summary_zh": "SOLID 是五条准则，旨在让修改代码时不那么痛苦，它更像是一种“嗅觉”工具，而非严格的规则。"
  },
  {
   "slug": "cs-design-patterns",
@@ -1020,7 +1392,13 @@
   ],
   "series": "CS·설계 기초",
   "emoji": "📐",
-  "summary": "디자인 패턴은 코드 짜다 반복해서 만나는 문제에 붙여 둔 이름표라서, 외우기보다 어떤 상황에 쓰는지부터 보니 훨씬 덜 헷갈렸다."
+  "summary": "디자인 패턴은 코드 짜다 반복해서 만나는 문제에 붙여 둔 이름표라서, 외우기보다 어떤 상황에 쓰는지부터 보니 훨씬 덜 헷갈렸다.",
+  "title_en": "Design Patterns",
+  "summary_en": "Design patterns are like name tags attached to problems we repeatedly encounter when writing code, so it was much less confusing for me to focus on understanding when to use them rather than trying to memorize them.",
+  "title_ja": "デザインパターン",
+  "summary_ja": "デザインパターンとは、コードを書く際に繰り返し直面する問題に付けられたラベルであり、暗記するよりも「どのような状況で使うか」を先に確認したほうがはるかに混乱しにくかった。",
+  "title_zh": "设计模式",
+  "summary_zh": "设计模式就像是给在写代码时反复遇到的那些问题贴上的标签，与其死记硬背，不如先了解它们适用于什么场景，这样会清晰得多。"
  },
  {
   "slug": "cs-network",
@@ -1032,7 +1410,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "브라우저에 주소를 치면 DNS, TCP, TLS, HTTP가 차례로 일하는데, 계층별로 나눠서 보면 훨씬 덜 헷갈리더라."
+  "summary": "브라우저에 주소를 치면 DNS, TCP, TLS, HTTP가 차례로 일하는데, 계층별로 나눠서 보면 훨씬 덜 헷갈리더라.",
+  "title_en": "Network Basics",
+  "summary_en": "When you type a URL into your browser, DNS, TCP, TLS, and HTTP operate in sequence; viewing them layer by layer makes it much less confusing.",
+  "title_ja": "ネットワーク基礎",
+  "summary_ja": "ブラウザにアドレスを入力すると、DNS、TCP、TLS、HTTP が順次動作しますが、階層ごとに分けて考えるとずっと分かりやすくなります。",
+  "title_zh": "网络基础",
+  "summary_zh": "在浏览器中输入地址后，DNS、TCP、TLS、HTTP 会依次工作；如果按层级分开来看，就会清晰很多。"
  },
  {
   "slug": "cs-os",
@@ -1044,7 +1428,13 @@
   ],
   "series": "운영체제",
   "emoji": "⚙️",
-  "summary": "운영체제는 한정된 CPU와 메모리를 여러 프로그램이 서로 모르게 나눠 쓰게 해 주는 관리자라고 이해하면 프로세스, 스케줄링, 가상 메모리가 한 줄로 이어졌다."
+  "summary": "운영체제는 한정된 CPU와 메모리를 여러 프로그램이 서로 모르게 나눠 쓰게 해 주는 관리자라고 이해하면 프로세스, 스케줄링, 가상 메모리가 한 줄로 이어졌다.",
+  "title_en": "Operating System Fundamentals",
+  "summary_en": "If you understand an operating system as a manager that allows multiple programs to share limited CPU and memory without knowing about each other, then processes, scheduling, and virtual memory naturally follow in a single line.",
+  "title_ja": "OS の基礎",
+  "summary_ja": "オペレーティングシステムを「限られた CPU とメモリを、複数のプログラムが互いに気づかずに共有できるように管理する管理者」と理解すれば、プロセス、スケジューリング、仮想メモリの概念が一条でつながる。",
+  "title_zh": "操作系统基础",
+  "summary_zh": "如果把操作系统理解为一种让多个程序在有限的 CPU 和内存资源下互不知情的情况下共同使用的管理者，那么进程、调度和虚拟内存就顺理成章地连成了一条线。"
  },
  {
   "slug": "cs-sw-engineering",
@@ -1056,7 +1446,13 @@
   ],
   "series": "소프트웨어 공학",
   "emoji": "🧱",
-  "summary": "코드를 짜는 법이 아니라 '만드는 과정'을 다루는 분야라서, 방법론·요구사항·UML·테스트·형상관리를 한 번에 훑어봤다."
+  "summary": "코드를 짜는 법이 아니라 '만드는 과정'을 다루는 분야라서, 방법론·요구사항·UML·테스트·형상관리를 한 번에 훑어봤다.",
+  "title_en": "Fundamentals of Software Engineering",
+  "summary_en": "Since it covers the \"process of building\" rather than just how to write code, we briefly reviewed methodology, requirements, UML, testing, and version control all at once.",
+  "title_ja": "ソフトウェア工学の基礎",
+  "summary_ja": "コードの書き方ではなく「作る過程」を扱う分野なので、メソッド論・要件定義・UML・テスト・バージョン管理を一気に見ておきました。",
+  "title_zh": "软件工程基础",
+  "summary_zh": "它不是教授如何编写代码，而是探讨“构建过程”的领域，因此一次性涵盖了方法论、需求分析、UML、测试和版本管理。"
  },
  {
   "slug": "cs-git",
@@ -1068,7 +1464,13 @@
   ],
   "series": "CS·설계 기초",
   "emoji": "📐",
-  "summary": "Git은 파일 변경 목록이 아니라 커밋 스냅샷을 가리키는 포인터 구조라서, 브랜치·머지·리베이스가 다 그 위에서 설명되더라."
+  "summary": "Git은 파일 변경 목록이 아니라 커밋 스냅샷을 가리키는 포인터 구조라서, 브랜치·머지·리베이스가 다 그 위에서 설명되더라.",
+  "title_en": "Understanding Git Properly",
+  "summary_en": "Git is a pointer structure that points to commit snapshots rather than a list of file changes, which is why branching, merging, and rebasing are all explained on top of it.",
+  "title_ja": "Git を正しく理解する",
+  "summary_ja": "Git はファイルの変更リストではなく、コミットのスナップショットを指すポインタ構造体であるため、ブランチ・マージ・リベースもすべてその上で説明されます。",
+  "title_zh": "彻底掌握 Git",
+  "summary_zh": "Git 是一个指向提交快照的指针结构，而非文件变更列表，因此分支、合并和变基等概念都是基于此构建的。"
  },
  {
   "slug": "sec-authn-crypto",
@@ -1176,7 +1578,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "스택은 마지막에 넣은 걸, 큐는 먼저 넣은 걸 꺼내는 통이고, 파이썬에선 리스트와 deque만 구분해도 대부분 풀리더라."
+  "summary": "스택은 마지막에 넣은 걸, 큐는 먼저 넣은 걸 꺼내는 통이고, 파이썬에선 리스트와 deque만 구분해도 대부분 풀리더라.",
+  "title_en": "Stack, Queue, Deck",
+  "summary_en": "A stack is a structure where you remove what was last added, while a queue removes what was first added; in Python, distinguishing between lists and deques usually solves most problems.",
+  "title_ja": "スタック・キュー・デッキ",
+  "summary_ja": "スタックは最後に追加したものを、キューは最初に追加したものを取り出すもので、Python ではリストと deque を区別すれば大部分の問題が解決できるようです。",
+  "title_zh": "栈·队列·双端队列",
+  "summary_zh": "栈是后进先出（LIFO），队列是先进先出（FIFO）；在 Python 中，只要区分 list 和 deque，大部分问题都能解决。"
  },
  {
   "slug": "algo-sort-search",
@@ -1188,7 +1596,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "정렬은 거의 sorted()로 끝나고, 진짜 연습할 건 정렬된 데이터에서 절반씩 줄이는 이분 탐색과 \"답을 이분 탐색\"하는 파라메트릭 서치더라."
+  "summary": "정렬은 거의 sorted()로 끝나고, 진짜 연습할 건 정렬된 데이터에서 절반씩 줄이는 이분 탐색과 \"답을 이분 탐색\"하는 파라메트릭 서치더라.",
+  "title_en": "Sorting and Binary Search Algorithms",
+  "summary_en": "Sorting mostly ends with `sorted()`, and the real practice lies in binary search on sorted data by halving it, and parametric search that \"binary searches for the answer.\"",
+  "title_ja": "ソートと二分探索アルゴリズム",
+  "summary_ja": "ソートはほぼ `sorted()` で終わり、本格的に練習すべきなのは、ソート済みデータから半分ずつ減らす二分探索と、「答えを二分探索する」パラメトリックサーチだ。",
+  "title_zh": "排序与二分查找算法",
+  "summary_zh": "排序几乎总是以 `sorted()` 结束，真正需要练习的是在已排序数据中减半查找的二分搜索，以及“对答案进行二分搜索”的参数化搜索。"
  },
  {
   "slug": "algo-two-pointer",
@@ -1200,7 +1614,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "구간을 매번 다시 더하지 않고, 끝만 밀어서 O(N)에 푸는 세 가지 방법을 정리했다."
+  "summary": "구간을 매번 다시 더하지 않고, 끝만 밀어서 O(N)에 푸는 세 가지 방법을 정리했다.",
+  "title_en": "Two Pointers · Sliding Window · Cumulative Sum",
+  "summary_en": "I've summarized three methods to solve this in O(N) by simply shifting the end without repeatedly adding intervals each time.",
+  "title_ja": "2 本ポインタ・スライディングウィンドウ・累積和",
+  "summary_ja": "区間を毎回足し合わせるのではなく、末尾だけをずらして O(N) で解く 3 つの方法をまとめました。",
+  "title_zh": "双指针·滑动窗口·累积和",
+  "summary_zh": "总结了三种方法，无需每次重新累加区间，只需将末尾向后推移即可在 O(N) 时间内解决问题。"
  },
  {
   "slug": "algo-recursion",
@@ -1212,7 +1632,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "재귀는 \"작은 같은 문제로 바꾸기\"고, 백트래킹은 그 재귀로 선택지를 하나씩 해 보다가 막히면 되돌아오는 거더라."
+  "summary": "재귀는 \"작은 같은 문제로 바꾸기\"고, 백트래킹은 그 재귀로 선택지를 하나씩 해 보다가 막히면 되돌아오는 거더라.",
+  "title_en": "Recursion and Backtracking",
+  "summary_en": "Recursion is about \"reducing a problem to a smaller, similar one,\" and backtracking is trying each option via that recursion and then backtracking when you hit a dead end.",
+  "title_ja": "再帰とバックトラック",
+  "summary_ja": "再帰とは「小さな同じ問題に変えること」であり、バックトラッキングとはその再帰の中で選択肢を一つずつ試してみて行き詰まったら戻ってくる仕組みだ。",
+  "title_zh": "递归与回溯",
+  "summary_zh": "递归是“将大问题转化为相同的小问题”，而回溯则是通过这种递归逐一尝试选项，遇到死胡同时再回退。"
  },
  {
   "slug": "algo-graph-search",
@@ -1224,7 +1650,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "그래프 탐색은 결국 \"다음에 볼 곳을 큐에 쌓느냐 스택에 쌓느냐\"의 차이라서, 그것만 잡으면 격자 문제까지 같은 틀로 풀리더라."
+  "summary": "그래프 탐색은 결국 \"다음에 볼 곳을 큐에 쌓느냐 스택에 쌓느냐\"의 차이라서, 그것만 잡으면 격자 문제까지 같은 틀로 풀리더라.",
+  "title_en": "BFS · DFS and Graphs",
+  "summary_en": "Graph traversal ultimately boils down to whether you push the next node to a queue or a stack; once you grasp that distinction, even grid problems can be solved within the same framework.",
+  "title_ja": "BFS・DFS とグラフ",
+  "summary_ja": "グラフ探索は結局「次に見る場所をキューに積むか、スタックに積むか」の違いなので、それを理解すれば格子問題も同じ枠組みで解けるんだ。",
+  "title_zh": "BFS·DFS 与图",
+  "summary_zh": "图搜索归根结底就是“下一个要访问的位置是放入队列还是栈”的区别，只要掌握了这一点，网格类问题也能用同样的框架来解决。"
  },
  {
   "slug": "algo-shortest-path",
@@ -1236,7 +1668,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "그래프 문제 중 길 찾기, 같은 편 묶기, 순서 정하기를 한 번에 정리했다."
+  "summary": "그래프 문제 중 길 찾기, 같은 편 묶기, 순서 정하기를 한 번에 정리했다.",
+  "title_en": "Shortest Path · Union Find · Topological Sort",
+  "summary_en": "This post covers graph problems including pathfinding, grouping connected components, and topological sorting all at once.",
+  "title_ja": "最短経路・ユニオンファインド・トポロジカルソート",
+  "summary_ja": "グラフ問題における経路探索、同じグループにまとめる、順序を決定するの 3 つをまとめて解説しました。",
+  "title_zh": "最短路径、Union-Find、拓扑排序",
+  "summary_zh": "本文一次性整理了图问题中的路径查找、同侧分组和排序。"
  },
  {
   "slug": "algo-dp",
@@ -1266,7 +1704,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "그리디는 매 순간 제일 좋아 보이는 걸 고르고 안 돌아보는 방식인데, 맞는 문제와 틀리는 문제를 가르는 게 전부더라."
+  "summary": "그리디는 매 순간 제일 좋아 보이는 걸 고르고 안 돌아보는 방식인데, 맞는 문제와 틀리는 문제를 가르는 게 전부더라.",
+  "title_en": "Greedy",
+  "summary_en": "Greedy is a way of picking what looks best at every moment and not looking back; it's all about distinguishing right answers from wrong ones.",
+  "title_ja": "グリディ",
+  "summary_ja": "グリディは、その瞬間に最も気に入ったものを選び、振り返らない方式で、正解と不正解を区別するのが全てだった。",
+  "title_zh": "贪心",
+  "summary_zh": "Greedy 总是选择当下看起来最好的选项，从不回头。它的全部逻辑就是区分正确的问题和错误的问题。"
  },
  {
   "slug": "algo-tree-heap",
@@ -1278,7 +1722,13 @@
   ],
   "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "트리는 순회 네 가지만 손에 익히면 되고, 힙은 \"제일 작은 것 하나를 계속 꺼내는\" 문제에서 heapq 한 줄로 끝나더라."
+  "summary": "트리는 순회 네 가지만 손에 익히면 되고, 힙은 \"제일 작은 것 하나를 계속 꺼내는\" 문제에서 heapq 한 줄로 끝나더라.",
+  "title_en": "Tree Heap Priority Queue",
+  "summary_en": "You just need to master four tree traversals, and heaps end with a single line of `heapq` for the problem of \"continuously extracting the smallest element.\"",
+  "title_ja": "木構造・ヒープ・優先度キュー",
+  "summary_ja": "木は、4 つの周回法さえ覚えておけばいいし、ヒープは「最小のものだけを続ける」という問題で `heapq` の一行で終わるんだ。",
+  "title_zh": "树·堆·优先级队列",
+  "summary_zh": "树只需要熟练掌握四种遍历方式，而堆在“持续取出最小元素”的问题中，仅用 `heapq` 一行代码就能解决。"
  },
  {
   "slug": "repo-ollama",
@@ -1329,7 +1779,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "콘텐츠 캘린더 자동화는 \"뭘 올릴지 정하는 일\"과 \"때 되면 올리는 일\"을 나눠서 보면 어디까지 맡길 수 있는지가 보였다."
+  "summary": "콘텐츠 캘린더 자동화는 \"뭘 올릴지 정하는 일\"과 \"때 되면 올리는 일\"을 나눠서 보면 어디까지 맡길 수 있는지가 보였다.",
+  "title_en": "Automated Content Calendar",
+  "summary_en": "Automating a content calendar can be viewed by separating it into \"deciding what to post\" and \"posting at the right time,\" revealing how much of the process can be delegated.",
+  "title_ja": "コンテンツカレンダーの自動化",
+  "summary_ja": "コンテンツカレンダーの自動化は、「何をアップロードするかを決めること」と「時期が来たらアップロードすること」を分けて考えると、どこまで任せることができるかが見えてきました。",
+  "title_zh": "内容日历自动化",
+  "summary_zh": "内容日历自动化将“决定发布什么”和“到点就发布”分开来看，就能看出可以委托到什么程度。"
  },
  {
   "slug": "mk-comment-bot",
@@ -1341,7 +1797,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "댓글과 DM 답장을 자동화하려면 AI가 쓰는 건 초안까지만 하고, 보내기 전에 사람이 보는 칸을 어디 둘지가 제일 중요하더라."
+  "summary": "댓글과 DM 답장을 자동화하려면 AI가 쓰는 건 초안까지만 하고, 보내기 전에 사람이 보는 칸을 어디 둘지가 제일 중요하더라.",
+  "title_en": "Automated Response to Comments and DMs",
+  "summary_en": "To automate replies to comments and DMs, it's most important to decide where the human will review the draft before sending, since the AI should only write up to the draft stage.",
+  "title_ja": "コメント・DM 対応の自動化",
+  "summary_ja": "コメントや DM の返信を自動化する場合、AI が作成するのは下書きのみとし、送信前に人間が確認する欄をどこに設けるかが最も重要だと感じました。",
+  "title_zh": "评论与私信自动回复",
+  "summary_zh": "如果要自动化回复评论和私信，关键在于在发送前设置人工审核的环节，而让 AI 仅负责撰写草稿。"
  },
  {
   "slug": "mk-trend-collect",
@@ -1353,7 +1815,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "트렌드 수집은 긁어 오는 기술보다 어디서 합법적으로, 얼마나 가져올 수 있느냐를 먼저 따져야 하더라."
+  "summary": "트렌드 수집은 긁어 오는 기술보다 어디서 합법적으로, 얼마나 가져올 수 있느냐를 먼저 따져야 하더라.",
+  "title_en": "Automated Trend Collection",
+  "summary_en": "It turns out that trend collection requires first considering where you can legally obtain data and how much, rather than just scraping it.",
+  "title_ja": "トレンド収集の自動化",
+  "summary_ja": "トレンド収集においては、スクレイピング技術よりも「どこから合法的に、どれくらいデータを取得できるか」をまず検討する必要があるようだ。",
+  "title_zh": "趋势收集自动化",
+  "summary_zh": "收集趋势时，首先需要考虑的是从哪里合法获取以及能获取多少，而不是单纯依赖抓取技术。"
  },
  {
   "slug": "mk-ab-test",
@@ -1365,7 +1833,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "A/B 시험은 둘 중 뭐가 낫나를 보는 일인데, 표본을 먼저 정하고 끝까지 기다리는 게 제일 어렵더라."
+  "summary": "A/B 시험은 둘 중 뭐가 낫나를 보는 일인데, 표본을 먼저 정하고 끝까지 기다리는 게 제일 어렵더라.",
+  "title_en": "Thumbnail Copy A/B Test",
+  "summary_en": "An A/B test is about determining which of two options performs better, but it's often the hardest part to define your sample upfront and wait until the end.",
+  "title_ja": "サムネイル・コピー A/B テスト",
+  "summary_ja": "A/B テストは、どちらが優れているかを確認するものですが、まずサンプルを確定させて最後まで待つのが最も難しいようです。",
+  "title_zh": "缩略图/文案 A/B 测试",
+  "summary_zh": "A/B 测试是看两者哪个更好，但先确定样本并坚持到结束是最难的。"
  },
  {
   "slug": "mk-dashboard",
@@ -1377,7 +1851,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "대시보드는 그림보다 지표 정의가 먼저였고, 수집·저장·보기 세 칸으로 나누면 작게 시작할 수 있더라."
+  "summary": "대시보드는 그림보다 지표 정의가 먼저였고, 수집·저장·보기 세 칸으로 나누면 작게 시작할 수 있더라.",
+  "title_en": "Create a Performance Dashboard",
+  "summary_en": "The dashboard started with defining metrics rather than visuals, and dividing it into three sections—collect, store, and view—made it easier to get started small.",
+  "title_ja": "パフォーマンスダッシュボードの作成",
+  "summary_ja": "ダッシュボードは、図よりも指標定義が先だった。収集・保存・表示の 3 つに分ければ、小さく始めることができた。",
+  "title_zh": "创建性能仪表板",
+  "summary_zh": "仪表板中，指标定义的优先级高于图表；若将其划分为收集、存储、查看三个部分，则可以从较小的规模起步。"
  },
  {
   "slug": "ai-context",
@@ -1598,7 +2078,13 @@
   ],
   "series": "Claude 활용",
   "emoji": "🛠️",
-  "summary": "토큰은 내가 친 글보다 매 요청마다 다시 실려 가는 대화 기록에서 더 많이 나가서, 줄이는 법도 대부분 맥락을 가볍게 두는 쪽이더라."
+  "summary": "토큰은 내가 친 글보다 매 요청마다 다시 실려 가는 대화 기록에서 더 많이 나가서, 줄이는 법도 대부분 맥락을 가볍게 두는 쪽이더라.",
+  "title_en": "How to Save Claude Tokens",
+  "summary_en": "Tokens are more frequently consumed from the conversation history that gets appended with each request rather than from my own generated text, so most methods to reduce token usage involve keeping the context lightweight.",
+  "title_ja": "Claude トークンを節約する方法",
+  "summary_ja": "トークンは、私が書いた文章よりも、各リクエストごとに再度読み込まれていく対話履歴から多く消費されるため、削減方法のほとんどはコンテキストを軽くする方向にある。",
+  "title_zh": "节省 Claude 令牌的方法",
+  "summary_zh": "Token 的消耗量往往超过了我亲自撰写的文本，因为每次请求都会重新载入对话记录。因此，减少 Token 使用量的方法大多是通过简化上下文来实现的。"
  },
  {
   "slug": "claude-skills",
@@ -1610,7 +2096,13 @@
   ],
   "series": "Claude 활용",
   "emoji": "🛠️",
-  "summary": "CLAUDE.md, 스킬, 훅, 서브에이전트, 권한, MCP가 다 달라 보여도 \"항상 켜 둘 것인가, 필요할 때만인가, 강제해야 하나\"로 나누면 정리되더라."
+  "summary": "CLAUDE.md, 스킬, 훅, 서브에이전트, 권한, MCP가 다 달라 보여도 \"항상 켜 둘 것인가, 필요할 때만인가, 강제해야 하나\"로 나누면 정리되더라.",
+  "title_en": "Claude Code Skills & Settings: When to Use What",
+  "summary_en": "Even though CLAUDE.md, skills, hooks, sub-agents, permissions, and MCP all seem different, organizing them by \"always on,\" \"only when needed,\" or \"enforced\" makes things clear.",
+  "title_ja": "Claude Code スキル・設定、いつ何をどう使うのか",
+  "summary_ja": "CLAUDE.md、スキル、フック、サブエージェント、権限、MCP がすべて異なって見える場合でも、「常時オンにするか、必要な時だけか、強制するか」で分類すれば整理できる。",
+  "title_zh": "Claude Code 技能与配置，何时使用什么",
+  "summary_zh": "尽管 CLAUDE.md、技能、钩子、子代理、权限和 MCP 看起来各不相同，但只要按“是否始终开启”、“仅在需要时启用”以及“是否强制启用”来分类，就能理清头绪。"
  },
  {
   "slug": "repo-simonw-llm",
@@ -1635,7 +2127,13 @@
   ],
   "series": "마케팅 자동화",
   "emoji": "📣",
-  "summary": "숏폼 자동화는 만드는 것보다 사람이 어디서 한 번 눈으로 보느냐를 정하는 일이 더 컸다."
+  "summary": "숏폼 자동화는 만드는 것보다 사람이 어디서 한 번 눈으로 보느냐를 정하는 일이 더 컸다.",
+  "title_en": "Short-form Automation Pipeline",
+  "summary_en": "For short-form content, automation is less about creation and more about determining where people first glance at it.",
+  "title_ja": "ショートフォーム自動化パイプライン",
+  "summary_ja": "ショートフォームの自動化において、作成することよりも「誰が一度でも目にするか」を決定することがより重要だった。",
+  "title_zh": "短视频自动化流水线",
+  "summary_zh": "在短视频领域，自动化工作的核心不在于制作内容本身，而在于确定用户第一次用眼睛看到内容的时机。"
  },
  {
   "slug": "claude-popular-skills",
@@ -1647,7 +2145,13 @@
   ],
   "series": "Claude 활용",
   "emoji": "🛠️",
-  "summary": "스킬을 직접 만들기 전에, Anthropic 공식 저장소와 커뮤니티에서 이미 많이 쓰이는 것부터 종류별로 훑어봤다."
+  "summary": "스킬을 직접 만들기 전에, Anthropic 공식 저장소와 커뮤니티에서 이미 많이 쓰이는 것부터 종류별로 훑어봤다.",
+  "title_en": "A collection of frequently used Claude skills",
+  "summary_en": "Before creating your own skills, I reviewed various types of ones already widely used in the official Anthropic repository and community.",
+  "title_ja": "よく使われる Claude スキルのまとめ",
+  "summary_ja": "スキルを直接作成する前に、Anthropic 公式リポジトリやコミュニティで既に広く使われているものをカテゴリ別に確認しました。",
+  "title_zh": "常用 Claude 技能合集",
+  "summary_zh": "在亲手创建技能之前，我先浏览了 Anthropic 官方仓库和社区中已广泛使用的各类技能。"
  },
  {
   "slug": "ai-vendor-skills",
@@ -2016,7 +2520,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정처기 1과목의 첫 단원인 요구사항과 개발 모델을, 시험에 나오는 단위로 끊어서 정리했다."
+  "summary": "정처기 1과목의 첫 단원인 요구사항과 개발 모델을, 시험에 나오는 단위로 끊어서 정리했다.",
+  "title_en": "Requirements Verification and Analysis",
+  "summary_en": "The first unit of the first subject on requirements and development models has been organized into exam-focused segments.",
+  "title_ja": "要件の確認と分析",
+  "summary_ja": "正処理 1 の最初の単元である「要件と開発モデル」を、試験に出る単位ごとに整理しました。",
+  "title_zh": "需求确认与分析",
+  "summary_zh": "将正处气第 1 科目的第一个单元“需求与开发模型”按考试出题单位进行了整理。"
  },
  {
   "slug": "jb-uml",
@@ -2028,7 +2538,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "UML은 14가지 다이어그램을 구조와 행위로 나눠 외우고, 클래스 관계의 화살표 모양만 구분하면 절반은 정리되더라."
+  "summary": "UML은 14가지 다이어그램을 구조와 행위로 나눠 외우고, 클래스 관계의 화살표 모양만 구분하면 절반은 정리되더라.",
+  "title_en": "UML and Object-Oriented Analysis",
+  "summary_en": "You can memorize UML's 14 diagrams by dividing them into structure and behavior; once you distinguish the arrow shapes for class relationships, you've sorted out half of it.",
+  "title_ja": "UML とオブジェクト指向分析",
+  "summary_ja": "UML は、構造図と振る舞い図の 14 つの図を分類して暗記し、クラス間の関係を示す矢印の種類さえ区別できれば半分は整理できる。",
+  "title_zh": "UML 与面向对象分析",
+  "summary_zh": "UML 的 14 种图表可分为结构图和行为图来记忆，只要区分清楚类关系中的箭头形状，就能掌握一半的内容。"
  },
  {
   "slug": "jb-architecture-pattern",
@@ -2040,7 +2556,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "아키텍처 패턴은 이름과 한 줄 특징만 매칭해 두면 되고, 모듈화 쪽은 결합도·응집도의 순서만 정확히 잡으면 된다."
+  "summary": "아키텍처 패턴은 이름과 한 줄 특징만 매칭해 두면 되고, 모듈화 쪽은 결합도·응집도의 순서만 정확히 잡으면 된다.",
+  "title_en": "Software Architecture",
+  "summary_en": "You just need to match architecture patterns by their name and a single-line description, and for modularization, you simply need to get the order of coupling and cohesion correct.",
+  "title_ja": "ソフトウェアアーキテクチャ",
+  "summary_ja": "アーキテクチャパターンは、名前と一行の特徴だけでマッチングできればよく、モジュール化については結合度と凝集度の順序を正確に把握すればよい。",
+  "title_zh": "软件架构",
+  "summary_zh": "架构模式只需匹配名称和一行特征，而模块化方面只需准确掌握耦合度和内聚度的顺序即可。"
  },
  {
   "slug": "jb-design-pattern",
@@ -2052,7 +2574,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보처리기사의 디자인 패턴은 23개를 생성·구조·행위로 나눠 이름과 한 줄 역할을 짝지어 두면 절반은 끝나더라."
+  "summary": "정보처리기사의 디자인 패턴은 23개를 생성·구조·행위로 나눠 이름과 한 줄 역할을 짝지어 두면 절반은 끝나더라.",
+  "title_en": "Design Patterns",
+  "summary_en": "The design patterns for information processing engineers are divided into creation, structure, and behavioral categories; if you pair them with their names and a one-line description, half the work is done.",
+  "title_ja": "デザインパターン",
+  "summary_ja": "情報処理アーキテクトのデザインパターンは、生成・構造・行為の 23 パターンを分類し、名前と一行の説明をペアにすれば半分は終わってしまう。",
+  "title_zh": "设计模式",
+  "summary_zh": "信息处理器的设计模式分为创建型、结构型和行为型三类，若将它们的名称与单行职责配对，一半的内容便已完成。"
  },
  {
   "slug": "jb-data-structure",
@@ -2064,7 +2592,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보처리기사 자료구조는 스택·큐·트리·그래프를 \"순서를 손으로 따라가는\" 문제가 대부분이라, 순회와 표기법 변환만 손에 익혀도 절반은 간다."
+  "summary": "정보처리기사 자료구조는 스택·큐·트리·그래프를 \"순서를 손으로 따라가는\" 문제가 대부분이라, 순회와 표기법 변환만 손에 익혀도 절반은 간다.",
+  "title_en": "Data Structures",
+  "summary_en": "For the Data Structures section of the Information Processing Technician exam, most problems involving stacks, queues, trees, and graphs can be solved by \"manually tracing through the order.\" Once you master traversal and notation conversion, you've covered half the material.",
+  "title_ja": "データ構造",
+  "summary_ja": "情報処理技術者試験のデータ構造は、スタック・キュー・木・グラフが「手を動かして順を追って解く」問題が多いので、巡回と表記法の変換を身につければ半分はクリアできる。",
+  "title_zh": "数据结构",
+  "summary_zh": "信息处理技术员考试中的数据结构部分，大部分题目是“按顺序手动遍历”的类型，只要熟练掌握遍历和表示法转换，就能解决一半的问题。"
  },
  {
   "slug": "jb-algorithm-complexity",
@@ -2076,7 +2610,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보처리기사에 단골로 나오는 정렬 비교표, 이진 탐색, 해시, 시간복잡도를 시험에서 물어보는 방식대로 묶어 봤다."
+  "summary": "정보처리기사에 단골로 나오는 정렬 비교표, 이진 탐색, 해시, 시간복잡도를 시험에서 물어보는 방식대로 묶어 봤다.",
+  "title_en": "Sorting, Searching, and Algorithm Complexity",
+  "summary_en": "I've grouped together sorting comparison tables, binary search, hashing, and time complexity—topics that frequently appear in the Information Processing Technician exam—in a format similar to how they're asked on the test.",
+  "title_ja": "ソート・探索とアルゴリズムの複雑度",
+  "summary_ja": "情報処理技術者試験で頻出であるソート比較表、二分探索、ハッシュ、時間計算量を、試験での問われ方に合わせてまとめた。",
+  "title_zh": "排序、搜索与算法复杂度",
+  "summary_zh": "整理了信息处理技术员考试中常考的排序比较表、二分查找、哈希和时间复杂度等内容，按照考试提问方式进行了归纳。"
  },
  {
   "slug": "jb-testing",
@@ -2088,7 +2628,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "테스트는 코드를 보느냐 안 보느냐, 어느 단계에서 하느냐, 얼마나 훑었냐로 나눠 외우면 정리가 되더라."
+  "summary": "테스트는 코드를 보느냐 안 보느냐, 어느 단계에서 하느냐, 얼마나 훑었냐로 나눠 외우면 정리가 되더라.",
+  "title_en": "Software Testing",
+  "summary_en": "It seems like I'm missing the actual Korean sentence to translate. Could you please provide the text you'd like me to translate? Once you share it, I'll ensure all markdown, links, URLs, numbers, inline code, placeholders (like @@CODE0@@), and technical terms are preserved exactly as requested in a natural English translation.",
+  "title_ja": "ソフトウェアテスト",
+  "summary_ja": "テストは、コードを見るかどうか、どの段階で行うか、どれくらいスキャンしたかで分類して覚えると整理がしやすい。",
+  "title_zh": "软件测试",
+  "summary_zh": "如果把测试分为“是否查看代码”、“在哪个阶段进行”以及“浏览了多少内容”这三类来记忆，会更容易整理清楚。"
  },
  {
   "slug": "jb-build-release",
@@ -2100,7 +2646,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "형상관리 4가지 활동, 버전관리 방식 세 갈래, 빌드 도구, 버전 번호 규칙, 코드 리뷰까지 시험에 나오는 단위로 묶어 봤다."
+  "summary": "형상관리 4가지 활동, 버전관리 방식 세 갈래, 빌드 도구, 버전 번호 규칙, 코드 리뷰까지 시험에 나오는 단위로 묶어 봤다.",
+  "title_en": "Source Control and Build & Deploy",
+  "summary_en": "I've grouped together exam-relevant units covering four activities in version control, three approaches to version management, build tools, version number rules, and code reviews.",
+  "title_ja": "バージョン管理とビルド・デプロイ",
+  "summary_ja": "形態管理の 4 つの活動、バージョン管理方式の 3 つの種類、ビルドツール、バージョン番号規則、コードレビューまでを試験に出る単位のまとめで整理しました。",
+  "title_zh": "版本管理与构建/部署",
+  "summary_zh": "涵盖了形版本管理的四种活动、三种版本控制方式、构建工具、版本号规则以及代码审查等考试常考知识点。"
  },
  {
   "slug": "jb-db-concept",
@@ -2112,7 +2664,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "DB 과목은 키, 관계대수, ER 모델 세 덩어리만 잡으면 뒤의 정규화와 SQL이 훨씬 편해지더라."
+  "summary": "DB 과목은 키, 관계대수, ER 모델 세 덩어리만 잡으면 뒤의 정규화와 SQL이 훨씬 편해지더라.",
+  "title_en": "Database Basics and Data Models",
+  "summary_en": "The DB subject becomes much easier later on if you just grasp three main parts: keys, relational algebra, and the ER model.",
+  "title_ja": "データベースの基礎とデータモデル",
+  "summary_ja": "DB 科目は、キー、関係演算子、ER モデルの 3 つを押さえれば、後の正規化や SQL が格段にやりやすくなる。",
+  "title_zh": "数据库基础与数据模型",
+  "summary_zh": "数据库课程只要掌握了键、关系代数、ER 模型这三个核心部分，后面的范式化和 SQL 就会变得容易得多。"
  },
  {
   "slug": "jb-normalization-transaction",
@@ -2124,7 +2682,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정규화는 한 사실을 한 곳에만 적어 두는 일이고, 트랜잭션은 여러 작업을 한 덩어리로 묶는 일이라고 잡으니 시험 문제가 덜 헷갈렸다."
+  "summary": "정규화는 한 사실을 한 곳에만 적어 두는 일이고, 트랜잭션은 여러 작업을 한 덩어리로 묶는 일이라고 잡으니 시험 문제가 덜 헷갈렸다.",
+  "title_en": "Normalization and Transactions",
+  "summary_en": "Normalization is about recording a fact in only one place, and transactions are about grouping multiple operations into a single unit; with this understanding, exam questions became less confusing.",
+  "title_ja": "正規化とトランザクション",
+  "summary_ja": "正規化は「事実を 1 か所だけ記述する」こと、トランザクションは「複数の作業を 1 つのまとまりとして扱う」ことと捉えると、試験問題はそれほど混乱しませんでした。",
+  "title_zh": "正则化和事务",
+  "summary_zh": "既然将规范化理解为“只在一个地方记录一个事实”，将事务理解为“将多个操作作为一个整体处理”，那么考试题目的困惑感就减少了。"
  },
  {
   "slug": "jb-sql-basic",
@@ -2136,7 +2700,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보처리기사 DB 파트의 SQL을 DDL·DML·DCL 분류부터 조인, 뷰, 인덱스까지 시험에 나오는 쪽으로 묶어 봤다."
+  "summary": "정보처리기사 DB 파트의 SQL을 DDL·DML·DCL 분류부터 조인, 뷰, 인덱스까지 시험에 나오는 쪽으로 묶어 봤다.",
+  "title_en": "SQL Application",
+  "summary_en": "I've organized the SQL content from the Information Processing Technician exam's database section, covering everything from DDL, DML, and DCL classifications to joins, views, and indexes.",
+  "title_ja": "SQL 応用",
+  "summary_ja": "情報処理技術者試験の DB パートにおける SQL を、DDL・DML・DCL の分類から JOIN、ビュー、インデックスまで、試験に出そうなものをまとめた。",
+  "title_zh": "SQL 应用",
+  "summary_zh": "针对信息处理技术员考试中的数据库部分，我已将 SQL 内容从 DDL、DML、DCL 分类开始，一直涵盖到连接查询、视图和索引等考试重点进行了整理。"
  },
  {
   "slug": "jb-physical-design",
@@ -2148,7 +2718,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "논리 설계로 만든 테이블을 실제 디스크 위에 어떻게 올릴지가 물리 설계고, 인덱스·파티션·분산·웨어하우스가 전부 그 이야기더라."
+  "summary": "논리 설계로 만든 테이블을 실제 디스크 위에 어떻게 올릴지가 물리 설계고, 인덱스·파티션·분산·웨어하우스가 전부 그 이야기더라.",
+  "title_en": "DB Physical Design and Distributed Databases",
+  "summary_en": "How to place a table created through logical design onto the actual disk is physical design, and indexes, partitions, distribution, and warehousing are all part of that discussion.",
+  "title_ja": "DB の物理設計と分散データベース",
+  "summary_ja": "論理設計で作成したテーブルを実際のディスク上にどう配置するかは物理設計であり、インデックス・パーティション・分散・ウェアハウスはすべてその話だ。",
+  "title_zh": "DB 物理设计与分布式数据库",
+  "summary_zh": "通过逻辑设计创建的表如何实际部署到磁盘上，属于物理设计范畴，而索引、分区、分布式架构和数据仓库等都属于这一领域。"
  },
  {
   "slug": "jb-os",
@@ -2160,7 +2736,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "프로세스·스케줄링·메모리·교착상태를 '한정된 자원을 누가 먼저, 얼마나 쓰느냐'로 묶으니 계산 문제 풀이 순서가 보였다."
+  "summary": "프로세스·스케줄링·메모리·교착상태를 '한정된 자원을 누가 먼저, 얼마나 쓰느냐'로 묶으니 계산 문제 풀이 순서가 보였다.",
+  "title_en": "Operating System",
+  "summary_en": "By grouping process, scheduling, memory, and deadlock under \"who uses limited resources first and how much,\" the order of solving computational problems became apparent.",
+  "title_ja": "オペレーティングシステム",
+  "summary_ja": "プロセス、スケジューリング、メモリ、デッドロックを「限られた資源を誰が先に、どれだけ使うか」という点にまとめると、計算問題を解く順序が見えてきた。",
+  "title_zh": "操作系统",
+  "summary_zh": "将进程、调度、内存和死锁归纳为“谁先使用有限资源以及使用多少”，解题的顺序便显现出来了。"
  },
  {
   "slug": "jb-network",
@@ -2172,7 +2754,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "네트워크 단원은 계층마다 맡은 일을 구분하고, 서브넷 계산 하나만 손에 익히면 절반은 풀리더라."
+  "summary": "네트워크 단원은 계층마다 맡은 일을 구분하고, 서브넷 계산 하나만 손에 익히면 절반은 풀리더라.",
+  "title_en": "Network Basics",
+  "summary_en": "Network team members divide responsibilities by layer, and once you master subnet calculation, you've solved half the puzzle.",
+  "title_ja": "ネットワーク基礎",
+  "summary_ja": "ネットワーク担当は階層ごとに役割を分担し、サブネット計算の一つさえマスターすれば半分は解けてしまう。",
+  "title_zh": "网络基础",
+  "summary_zh": "网络部分每个层级负责不同的任务，只要掌握子网计算这一项，就能解决一半的问题。"
  },
  {
   "slug": "jb-oop-lang",
@@ -2184,7 +2772,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "객체지향 4가지 특징을 외우는 것보다, 코드에서 어느 클래스의 메서드가 불리는지 손으로 따라가는 연습이 시험에 더 쓸모 있더라."
+  "summary": "객체지향 4가지 특징을 외우는 것보다, 코드에서 어느 클래스의 메서드가 불리는지 손으로 따라가는 연습이 시험에 더 쓸모 있더라.",
+  "title_en": "Object-Oriented Programming and Reading Language Code",
+  "summary_en": "Memorizing the four characteristics of object-oriented programming was less useful for the exam than practicing by manually tracing which class's methods are called in the code.",
+  "title_ja": "オブジェクト指向とコードの読み方",
+  "summary_ja": "オブジェクト指向の 4 つの特徴を暗記するよりも、コードの中でどのクラスのメソッドが呼び出されているかを手書きで追跡する練習の方が試験には役立った。",
+  "title_zh": "面向对象与语言代码阅读",
+  "summary_zh": "与其死记硬背面向对象的四个特征，不如动手追踪代码中哪个类的哪些方法被调用，这种练习对考试更有帮助。"
  },
  {
   "slug": "jb-integration-api",
@@ -2196,7 +2790,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "시스템끼리 데이터를 주고받는 연계 구조(직접·EAI·ESB)와 JSON·XML 포맷을 시험에 나오는 눈으로 묶어 봤다."
+  "summary": "시스템끼리 데이터를 주고받는 연계 구조(직접·EAI·ESB)와 JSON·XML 포맷을 시험에 나오는 눈으로 묶어 봤다.",
+  "title_en": "Unified Implementation and Interface",
+  "summary_en": "I've grouped together integration structures for data exchange between systems (direct, EAI, ESB) and formats like JSON and XML as they appear in exams.",
+  "title_ja": "統合実装とインターフェース",
+  "summary_ja": "システム間でのデータ授受の連携構造（直接・EAI・ESB）と、JSON・XML フォーマットを、試験に出そうな観点でまとめました。",
+  "title_zh": "统一实现与接口",
+  "summary_zh": "梳理了系统间数据交换的集成架构（直接、EAI、ESB）以及 JSON/XML 格式，并像考试题目一样进行了归纳。"
  },
  {
   "slug": "jb-project-mgmt",
@@ -2208,7 +2808,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "프로젝트 관리 단원은 계산 문제가 나오는 CPM·COCOMO·PERT만 손으로 풀어 두면 나머지는 용어 매칭이더라."
+  "summary": "프로젝트 관리 단원은 계산 문제가 나오는 CPM·COCOMO·PERT만 손으로 풀어 두면 나머지는 용어 매칭이더라.",
+  "title_en": "Project Management",
+  "summary_en": "The project management section only requires manually solving CPM, COCOMO, and PERT problems involving calculations; the rest is just terminology matching.",
+  "title_ja": "プロジェクト管理",
+  "summary_ja": "プロジェクト管理担当は、計算問題が出る CPM・COCOMO・PERT だけを手計算しておけば、あとは用語の対応付けだった。",
+  "title_zh": "项目管理",
+  "summary_zh": "项目管理部分的计算问题，只需手动解出 CPM、COCOMO 和 PERT 即可，其余部分只是术语匹配。"
  },
  {
   "slug": "jb-security",
@@ -2220,7 +2826,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "정보 보안 단원은 암호, 접근통제, 공격 유형, 인증을 '무엇을 지키려는 도구인지'로 갈라 놓으면 덜 헷갈리더라."
+  "summary": "정보 보안 단원은 암호, 접근통제, 공격 유형, 인증을 '무엇을 지키려는 도구인지'로 갈라 놓으면 덜 헷갈리더라.",
+  "title_en": "Information Security",
+  "summary_en": "The information security unit becomes less confusing if you categorize cryptography, access control, attack types, and authentication by what they aim to protect.",
+  "title_ja": "情報セキュリティ",
+  "summary_ja": "情報セキュリティの単元は、暗号、アクセス制御、攻撃タイプ、認証を「何を護ろうとする道具か」という観点で分類すると、少し整理がつきます。",
+  "title_zh": "信息安全",
+  "summary_zh": "信息安全模块如果将加密、访问控制、攻击类型和认证按照“旨在保护什么”进行分类，会更容易理解。"
  },
  {
   "slug": "jb-it-trend",
@@ -2232,7 +2844,13 @@
   ],
   "series": "정보처리기사",
   "emoji": "💻",
-  "summary": "클라우드·컨테이너·블록체인 같은 신기술 용어는 \"무슨 문제를 풀려고 나왔나\" 한 줄씩 붙여 외우면 덜 헷갈리더라."
+  "summary": "클라우드·컨테이너·블록체인 같은 신기술 용어는 \"무슨 문제를 풀려고 나왔나\" 한 줄씩 붙여 외우면 덜 헷갈리더라.",
+  "title_en": "New Technologies and IT Terms",
+  "summary_en": "Terms like cloud, container, and blockchain are easier to remember if you memorize them one by one with a single line explaining the problem they solve: \"What problem were they created to address?\"",
+  "title_ja": "新技術と IT 用語",
+  "summary_ja": "クラウド、コンテナ、ブロックチェーンといった新技術用語は、「何の問題を解決するために登場したのか」という一文ずつ暗記すると覚えやすいです。",
+  "title_zh": "新技术与 IT 术语",
+  "summary_zh": "像云计算、容器、区块链这样的新技术术语，如果逐条记住“是为了解决什么问题而出现的”，就会少一些混淆。"
  },
  {
   "slug": "bd-overview",
@@ -2244,7 +2862,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "빅데이터의 V 개수, 정형·반정형·비정형 구분, 개인정보를 가려서 쓰는 방법까지 필기 첫 단원에서 묻는 것만 골라 정리했다."
+  "summary": "빅데이터의 V 개수, 정형·반정형·비정형 구분, 개인정보를 가려서 쓰는 방법까지 필기 첫 단원에서 묻는 것만 골라 정리했다.",
+  "title_en": "Big Data Overview and Utilization",
+  "summary_en": "I've compiled only the key points from the first lesson of the Big Data course: the number of V's in Big Data, the classification into structured, semi-structured, and unstructured data, and how to handle personal information.",
+  "title_ja": "ビッグデータ概要と活用",
+  "summary_ja": "ビッグデータの「V」の数、構造化・準構造化・非構造化の分類、個人情報を隠して扱う方法まで、筆記の最初の単元で問われるものだけを厳選して整理しました。",
+  "title_zh": "大数据概述与应用",
+  "summary_zh": "本文仅整理了大数据中 V 的数量、结构化/半结构化/非结构化数据的分类，以及隐藏个人信息使用方法的笔记第一单元中的内容。"
  },
  {
   "slug": "bd-planning",
@@ -2256,7 +2880,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "빅데이터분석기사 분석 기획은 과제를 찾아 순서를 정하는 일과, 방법론 5단계 안에서 데이터와 위험을 미리 계획하는 일로 나뉘어서, 이 둘을 갈라 놓고 보면 정리가 되더라."
+  "summary": "빅데이터분석기사 분석 기획은 과제를 찾아 순서를 정하는 일과, 방법론 5단계 안에서 데이터와 위험을 미리 계획하는 일로 나뉘어서, 이 둘을 갈라 놓고 보면 정리가 되더라.",
+  "title_en": "Analysis Task Definition and Analysis Planning",
+  "summary_en": "Data analysis planning for the Big Data Analysis Specialist exam is divided into two parts: identifying tasks and determining their sequence, and pre-planning data and risks within the five-step methodology; separating these two makes things clearer.",
+  "title_ja": "分析タスクの定義と分析計画",
+  "summary_ja": "ビッグデータ分析士における「分析企画」は、課題を特定し順序を定めることと、方法論の 5 つのステップ内でデータとリスクを事前に計画することの 2 つに分けられ、この 2 つを分けて見ると整理がつかない。",
+  "title_zh": "分析任务定义与分析计划",
+  "summary_zh": "大数据分析师的“分析策划”可分为两部分：一是寻找课题并确定顺序，二是在方法论五步框架内预先规划数据与风险；将这两者分开来看，思路便清晰了。"
  },
  {
   "slug": "bd-collection-storage",
@@ -2268,7 +2898,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "수집은 어디서 어떤 모양으로 가져오느냐, 저장은 그 모양에 맞는 그릇을 고르는 문제였고, 품질 점검은 결국 결측·중복·범위·표기 네 가지를 세는 일이더라."
+  "summary": "수집은 어디서 어떤 모양으로 가져오느냐, 저장은 그 모양에 맞는 그릇을 고르는 문제였고, 품질 점검은 결국 결측·중복·범위·표기 네 가지를 세는 일이더라.",
+  "title_en": "Data Collection and Storage",
+  "summary_en": "Collection was about where and in what form to fetch data from, while storage was a matter of choosing the right container for that shape; quality inspection ultimately boiled down to counting four things: missing values, duplicates, out-of-range values, and notation issues.",
+  "title_ja": "データ収集と保存",
+  "summary_ja": "収集は「どこから、どのような形式で取得するか」、保存は「その形式に合った容器を選ぶ問題」であり、品質チェックは結局のところ、欠損・重複・範囲・表記の 4 つを数える作業だった。",
+  "title_zh": "数据收集与存储",
+  "summary_zh": "数据收集是从何处、以何种形态获取的问题，而存储则是选择与之匹配的容器；质量检查归根结底就是统计缺失、重复、范围和标注这四项内容。"
  },
  {
   "slug": "bd-preprocessing",
@@ -2280,7 +2916,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "결측치·이상치·스케일링·인코딩·불균형 처리를 시험에 나오는 순서로 묶고, 작은 표로 직접 돌려 숫자를 확인했다."
+  "summary": "결측치·이상치·스케일링·인코딩·불균형 처리를 시험에 나오는 순서로 묶고, 작은 표로 직접 돌려 숫자를 확인했다.",
+  "title_en": "Data Preprocessing",
+  "summary_en": "I grouped missing values, outliers, scaling, encoding, and imbalance handling in the order they appear on exams, and directly computed the numbers using a small table to verify them.",
+  "title_ja": "データ前処理",
+  "summary_ja": "欠損値・異常値・スケーリング・エンコーディング・不均衡処理を試験に出題される順にまとめ、小さな表で直接計算して数値を確認した。",
+  "title_zh": "数据预处理",
+  "summary_zh": "将缺失值、异常值、缩放、编码和类别不平衡处理按考试出现的顺序整理，并通过小表直接计算以确认数值。"
  },
  {
   "slug": "bd-eda-stats",
@@ -2292,7 +2934,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "모형 돌리기 전에 숫자를 먼저 훑는 단계인데, 평균·분산·상관·검정이 시험에서 어떤 모양으로 나오는지 한 번에 묶어 봤다."
+  "summary": "모형 돌리기 전에 숫자를 먼저 훑는 단계인데, 평균·분산·상관·검정이 시험에서 어떤 모양으로 나오는지 한 번에 묶어 봤다.",
+  "title_en": "Exploratory Analysis and Basic Statistics",
+  "summary_en": "This is a step where you examine numbers before running the model, and I've grouped together how mean, variance, correlation, and hypothesis tests might appear on an exam.",
+  "title_ja": "探索的解析と基礎統計",
+  "summary_ja": "モデルを回す前に数字を眺める段階だが、平均・分散・相関・検定について試験でどのような形で出題されるかをまとめてみた。",
+  "title_zh": "探索性分析与基础统计",
+  "summary_zh": "这是在旋转模型之前先浏览数字的步骤，将平均数、方差、相关性、检验在考试中可能出现的形态一次性归纳在一起。"
  },
  {
   "slug": "bd-feature-select",
@@ -2304,7 +2952,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "변수가 많다고 좋은 게 아니라서, 줄이는 방법을 필터·래퍼·임베디드·PCA로 나눠 코드까지 돌려 봤다."
+  "summary": "변수가 많다고 좋은 게 아니라서, 줄이는 방법을 필터·래퍼·임베디드·PCA로 나눠 코드까지 돌려 봤다.",
+  "title_en": "Variable Selection and Dimension Reduction",
+  "summary_en": "Having many variables isn't necessarily good, so I divided methods to reduce them into filtering, wrapping, embedding, and PCA, and even ran the code for each.",
+  "title_ja": "変数選択と次元削減",
+  "summary_ja": "変数が多ければ良いわけではないので、削減方法を「フィルター」「ラッパー」「埋め込み」「PCA」に分けて、コードを実行してみました。",
+  "title_zh": "变量选择与降维",
+  "summary_zh": "变量多并不一定是好事，因此我尝试通过 filter、wrapper、embedded 和 PCA 四种方法减少变量数量，并运行了相应的代码。"
  },
  {
   "slug": "bd-advanced-analysis",
@@ -2316,7 +2970,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "다변량, 시계열, 비모수 검정, 베이지안은 이름이 낯설어도 \"언제 쓰는지\"만 짝지어 두면 문제가 풀리더라."
+  "summary": "다변량, 시계열, 비모수 검정, 베이지안은 이름이 낯설어도 \"언제 쓰는지\"만 짝지어 두면 문제가 풀리더라.",
+  "title_en": "Advanced Analytics Techniques",
+  "summary_en": "Multivariate, time series, nonparametric tests, and Bayesian methods—once you pair them with \"when to use them,\" the problem becomes much easier to solve.",
+  "title_ja": "高度分析技術",
+  "summary_ja": "多変量、時系列、ノンパラメトリック検定、ベイズは名前が難しければ「いつ使うか」をセットにしておけば問題が解決する。",
+  "title_zh": "高级分析技术",
+  "summary_zh": "多变量、时间序列、非参数检验、贝叶斯，即使名字陌生，只要记住“何时使用”，问题就能解决。"
  },
  {
   "slug": "bd-model-design",
@@ -2328,7 +2988,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "모형을 고르는 것보다 데이터를 어떻게 나눠서 점수를 매기느냐가 먼저라서, 분할·과적합·교차검증을 한 흐름으로 정리했다."
+  "summary": "모형을 고르는 것보다 데이터를 어떻게 나눠서 점수를 매기느냐가 먼저라서, 분할·과적합·교차검증을 한 흐름으로 정리했다.",
+  "title_en": "Analysis Model Design",
+  "summary_en": "Since how you split and score the data is more important than choosing a model, I've organized this in a flow covering splitting, overfitting, and cross-validation.",
+  "title_ja": "分析モデルの設計",
+  "summary_ja": "モデルを選ぶことよりも、データをどのように分割してスコアを付与するかが先なので、分割・過学習・交差検証の流れで整理しました。",
+  "title_zh": "分析模型设计",
+  "summary_zh": "选择模型之前，更重要的是如何划分数据并评分，因此我将相关内容整理为分片、过拟合和交叉验证的流程。"
  },
  {
   "slug": "bd-supervised",
@@ -2340,7 +3006,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "지도학습은 모형마다 '언제 과적합하고 뭘 맞춰 줘야 하는지'가 정해져 있어서, 모형별 한 줄 특징만 잡아도 문제가 풀리더라."
+  "summary": "지도학습은 모형마다 '언제 과적합하고 뭘 맞춰 줘야 하는지'가 정해져 있어서, 모형별 한 줄 특징만 잡아도 문제가 풀리더라.",
+  "title_en": "Supervised Learning Model",
+  "summary_en": "In supervised learning, since it's predetermined for each model \"when overfitting occurs and what needs to be fitted,\" solving the problem only requires identifying a single characteristic per model.",
+  "title_ja": "教師学習モデル",
+  "summary_ja": "教師学習では、モデルごとに「いつ過学習し、何を合わせるべきか」が決まっているため、各モデルの一行の特徴だけ捉えれば問題が解決した。",
+  "title_zh": "监督学习模型",
+  "summary_zh": "监督学习中，每个模型的“何时过拟合、需要拟合什么”都是预先确定的，因此只需抓住每个模型的一两个特征就能解决问题。"
  },
  {
   "slug": "bd-unsupervised",
@@ -2352,7 +3024,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "정답 없이 데이터끼리 묶고 줄이는 단원이라, 군집·연관분석·PCA를 어떤 상황에 쓰는지만 구분해도 절반은 먹고 들어가더라."
+  "summary": "정답 없이 데이터끼리 묶고 줄이는 단원이라, 군집·연관분석·PCA를 어떤 상황에 쓰는지만 구분해도 절반은 먹고 들어가더라.",
+  "title_en": "Unsupervised Learning Model",
+  "summary_en": "Since this unit involves grouping and reducing data without a specific answer, just being able to distinguish when to use clustering, association analysis, or PCA feels like I've already mastered half of it.",
+  "title_ja": "教師なし学習モデル",
+  "summary_ja": "正解がなくても、データをまとめる・削減する単元なので、「クラスタリング」「関連分析」「PCA」のどの状況を扱うかだけで半分以上は理解できてしまう。",
+  "title_zh": "无监督学习模型",
+  "summary_zh": "这是一个没有标准答案、仅对数据进行分组和降维的单元，只要分清在什么场景下使用聚类、关联分析和 PCA，就已经掌握了一半。"
  },
  {
   "slug": "bd-evaluation",
@@ -2364,7 +3042,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "정확도 하나만 보면 속기 쉬워서, 혼동행렬에서 재현율·F1·AUC까지 뭘 언제 보는지 정리했다."
+  "summary": "정확도 하나만 보면 속기 쉬워서, 혼동행렬에서 재현율·F1·AUC까지 뭘 언제 보는지 정리했다.",
+  "title_en": "Model Evaluation",
+  "summary_en": "Since accuracy alone can be misleading, I've organized when to look at recall, F1, and AUC from the confusion matrix.",
+  "title_ja": "モデル評価",
+  "summary_ja": "精度だけ見ると覚えやすいので、混同行列で再現率・F1・AUC などをいつ見るか整理しました。",
+  "title_zh": "模型评估",
+  "summary_zh": "只看准确率容易混淆，因此整理了在混淆矩阵中何时查看召回率、F1 分数和 AUC。"
  },
  {
   "slug": "bd-visualization",
@@ -2376,7 +3060,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "모형을 다 돌리고 나면 남는 건 숫자를 읽어 내는 일인데, 중요도와 효과 방향을 구분하는 것만으로 해석 문제가 꽤 풀리더라."
+  "summary": "모형을 다 돌리고 나면 남는 건 숫자를 읽어 내는 일인데, 중요도와 효과 방향을 구분하는 것만으로 해석 문제가 꽤 풀리더라.",
+  "title_en": "Visualization and Result Interpretation",
+  "summary_en": "Once you've run through all the models, what remains is interpreting the numbers, and simply distinguishing between importance and effect direction solves quite a few interpretation problems.",
+  "title_ja": "可視化と結果の解釈",
+  "summary_ja": "モデルをすべて回すと残るのは数字を読み取る作業だが、重要度と効果の方向を区別するだけで解釈の問題は結構解決できた。",
+  "title_zh": "可视化与结果解读",
+  "summary_zh": "模型跑完之后，剩下的就是解读数字了，仅通过区分重要性和效果方向，就能解决相当一部分解释问题。"
  },
  {
   "slug": "bd-practical-python",
@@ -2388,7 +3078,13 @@
   ],
   "series": "빅데이터분석기사",
   "emoji": "📊",
-  "summary": "실기 파이썬은 결측 처리 → 인코딩 → 분할 → 모형 → 평가 → 저장, 이 여섯 칸 흐름만 손에 붙이면 되더라."
+  "summary": "실기 파이썬은 결측 처리 → 인코딩 → 분할 → 모형 → 평가 → 저장, 이 여섯 칸 흐름만 손에 붙이면 되더라.",
+  "title_en": "Practical Python Key Points",
+  "summary_en": "For practical Python, you just need to master these six steps: handling missing values → encoding → splitting → modeling → evaluation → saving.",
+  "title_ja": "実技 Python 要点",
+  "summary_ja": "実習の Python は、欠損処理 → エンコーディング → 分割 → モデル → 評価 → 保存、この 6 つのステップの流れさえ頭に浮かべればよかった。",
+  "title_zh": "实机 Python 要点",
+  "summary_zh": "实战 Python 只需掌握这六个步骤：缺失值处理 → 编码 → 分割 → 建模 → 评估 → 保存，做到这些就足够了。"
  },
  {
   "slug": "news-model-1",
@@ -2604,7 +3300,13 @@
   ],
   "series": "네트워크",
   "emoji": "🌐",
-  "summary": "이름이 주소로 바뀌는 길(DNS)과 그 주소를 보고 패킷이 목적지로 가는 길(라우팅)을 직접 패킷을 만들고 표를 뒤져 보면서 따라가 봤다."
+  "summary": "이름이 주소로 바뀌는 길(DNS)과 그 주소를 보고 패킷이 목적지로 가는 길(라우팅)을 직접 패킷을 만들고 표를 뒤져 보면서 따라가 봤다.",
+  "title_en": "DNS and IP · Routing",
+  "summary_en": "I followed the path from a name to an address (DNS) and then traced the route of packets to their destination by examining the addresses (routing), creating packets directly and following them while looking through tables.",
+  "title_ja": "DNS と IP・ルーティング",
+  "summary_ja": "名前がアドレスに変わる道（DNS）と、そのアドレスを見てパケットが宛先に向かう道（ルーティング）を、実際にパケットを作りながらテーブルを調べて追ってみました。",
+  "title_zh": "DNS 与 IP/路由",
+  "summary_zh": "我亲自追踪了数据包从创建到抵达目的地的全过程：先是经历了将主机名解析为 IP 地址的路径（DNS），随后又沿着查看到的 IP 地址，通过路由表查找并跟随数据包前往目的地。"
  },
  {
   "slug": "net-socket",
@@ -2676,7 +3378,13 @@
   ],
   "series": "컴퓨터 구조",
   "emoji": "🔧",
-  "summary": "CPU는 메모리에서 명령어 하나를 꺼내 해석하고 실행하는 일을 끝없이 반복하는 기계이고, 파이프라인은 그 반복을 겹쳐서 빠르게 만든 구조더라."
+  "summary": "CPU는 메모리에서 명령어 하나를 꺼내 해석하고 실행하는 일을 끝없이 반복하는 기계이고, 파이프라인은 그 반복을 겹쳐서 빠르게 만든 구조더라.",
+  "title_en": "CPU and Instructions",
+  "summary_en": "A CPU is a machine that endlessly repeats the process of fetching an instruction from memory, decoding it, and executing it; a pipeline is a structure that overlaps these repetitions to make them faster.",
+  "title_ja": "CPU と命令語",
+  "summary_ja": "CPU は、メモリから 1 つの命令を取り出して解釈し実行するという作業を無限に繰り返す機械であり、パイプラインはその反復を重ねて高速化するための構造だ。",
+  "title_zh": "CPU 和指令",
+  "summary_zh": "CPU 是一种从内存中取出并解释、执行一条指令，然后无限重复这一过程的机器；而流水线则是一种通过重叠这些重复操作来加速执行的架构。"
  },
  {
   "slug": "ca-memory-hierarchy",
@@ -2688,7 +3396,13 @@
   ],
   "series": "컴퓨터 구조",
   "emoji": "🔧",
-  "summary": "빠른 메모리는 작고 큰 메모리는 느려서, 자주 쓰는 걸 가까운 곳에 두는 캐시가 왜 먹히는지 직접 시뮬레이션하며 따라가 봤다."
+  "summary": "빠른 메모리는 작고 큰 메모리는 느려서, 자주 쓰는 걸 가까운 곳에 두는 캐시가 왜 먹히는지 직접 시뮬레이션하며 따라가 봤다.",
+  "title_en": "Memory Hierarchy and Cache",
+  "summary_en": "Small memory is fast and large memory is slow, so I directly simulated and followed why caching works by keeping frequently used items close at hand.",
+  "title_ja": "メモリ階層とキャッシュ",
+  "summary_ja": "高速なメモリは小さく、低速なメモリは大きいため、頻繁にアクセスするデータを近くに配置するキャッシュがなぜ機能するのかを、実際にシミュレーションして追ってみました。",
+  "title_zh": "内存层次结构与缓存",
+  "summary_zh": "小内存快，大内存慢，我通过直接模拟并追踪缓存为何有效来理解这一现象。"
  },
  {
   "slug": "ca-data-representation",
@@ -2700,7 +3414,13 @@
   ],
   "series": "컴퓨터 구조",
   "emoji": "🔧",
-  "summary": "컴퓨터 안의 정수, 소수, 글자는 전부 정해진 길이의 비트 묶음이고, 그 묶음을 어떻게 읽기로 약속했느냐만 다르더라."
+  "summary": "컴퓨터 안의 정수, 소수, 글자는 전부 정해진 길이의 비트 묶음이고, 그 묶음을 어떻게 읽기로 약속했느냐만 다르더라.",
+  "title_en": "Data Representation",
+  "summary_en": "Integers, decimals, and characters inside a computer are all just bundles of bits with fixed lengths; the only difference is how we agree to interpret those bundles.",
+  "title_ja": "データ表現",
+  "summary_ja": "コンピュータ内の整数、小数、文字はすべて固定長のビット束であり、その束をどのように読み取るかという取り決めだけが異なるだけだった。",
+  "title_zh": "数据表示",
+  "summary_zh": "计算机中的整数、小数和字符本质上都是固定长度的比特组合，区别仅在于如何约定解读这些组合。"
  },
  {
   "slug": "ca-io-bus",
@@ -2712,7 +3432,69 @@
   ],
   "series": "컴퓨터 구조",
   "emoji": "🔧",
-  "summary": "CPU가 디스크나 네트워크 카드 같은 느린 장치를 기다리느라 멈추지 않게 하려고 인터럽트와 DMA가 생겼고, 버스는 그 사이를 잇는 길이더라."
+  "summary": "CPU가 디스크나 네트워크 카드 같은 느린 장치를 기다리느라 멈추지 않게 하려고 인터럽트와 DMA가 생겼고, 버스는 그 사이를 잇는 길이더라.",
+  "title_en": "Input/Output and Bus",
+  "summary_en": "Interrupts and DMA were introduced to prevent the CPU from stalling while waiting for slow devices like disks or network cards, and the bus serves as the pathway connecting them.",
+  "title_ja": "入出力とバス",
+  "summary_ja": "CPU 가 ディスクやネットワークカードといった低速なデバイスを待たせることなく動作し続けるために、インタラプトと DMA が登場し、バスはその間をつなぐ道だった。",
+  "title_zh": "输入输出与巴士",
+  "summary_zh": "为了防止 CPU 因等待磁盘、网卡等慢速设备而停止工作，才引入了中断和 DMA，而总线则是连接它们之间的路径。"
+ },
+ {
+  "slug": "ai-graph-db",
+  "title": "그래프 DB(Neo4j·Cypher)",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "AI",
+   "그래프DB",
+   "지식그래프"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "그래프 DB는 \"누구랑 누가 어떻게 이어져 있나\"를 JOIN 대신 선을 따라가며 푸는 DB라서, 관계가 질문의 중심일 때만 제값을 하더라."
+ },
+ {
+  "slug": "ai-graphrag",
+  "title": "GraphRAG",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "AI",
+   "GraphRAG",
+   "지식그래프"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "일반 RAG는 \"이 문서 묶음 전체에서 큰 주제가 뭐냐\" 같은 질문에 약한데, GraphRAG는 문서를 지식그래프로 바꿔 묶음별 요약을 미리 만들어 두는 쪽으로 푼다."
+ },
+ {
+  "slug": "ai-knowledge-graph",
+  "title": "지식그래프(Knowledge Graph)",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "AI",
+   "지식그래프"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "지식그래프는 \"A는 B와 이런 관계다\"라는 문장을 잔뜩 모아 선으로 이어 놓은 지도 같은 거라, 문서 검색과는 찾는 방식이 달랐다."
+ },
+ {
+  "slug": "ai-ontology-triple",
+  "title": "온톨로지와 트리플(RDF)",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "AI",
+   "온톨로지",
+   "RDF",
+   "지식그래프"
+  ],
+  "series": "AI 용어사전",
+  "emoji": "📘",
+  "summary": "지식을 \"주어-서술어-목적어\" 한 줄씩 쪼개 적고, 그 줄에 쓰는 낱말의 뜻을 따로 정해 두는 게 온톨로지 얘기의 절반이더라."
  },
  {
   "slug": "body-profile",
