@@ -122,6 +122,18 @@
   "summary": "용어가 너무 많아서 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
  },
  {
+  "slug": "sqld-map",
+  "title": "SQLD 지도",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "SQLD는 데이터 모델링과 SQL 두 과목이라, 열 편을 순서대로 한 줄씩 묶어 두었다."
+ },
+ {
   "slug": "ai-session",
   "title": "세션과 대화 기록",
   "date": "2026-11-02",
@@ -1449,6 +1461,126 @@
   "series": "AI 용어사전",
   "emoji": "📘",
   "summary": "Claude, Codex, Gemini CLI, Cursor 모두 마크다운 지침 파일에서 시작해 스킬·확장으로 넓히는 모양이라, 이름만 다르고 구조는 꽤 닮아 있더라."
+ },
+ {
+  "slug": "sqld-modeling",
+  "title": "데이터 모델링의 이해",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "모델링은 현실을 개념, 논리, 물리 순서로 점점 구체적인 설계로 옮기는 일이고, 시험에서는 이 단계 구분과 3단계 스키마를 헷갈리지 않는 게 먼저더라."
+ },
+ {
+  "slug": "sqld-entity-attr",
+  "title": "엔터티와 속성",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "엔터티와 속성은 모델링 문제에서 제일 자주 나오는 용어 정의라서, 분류 기준 두 개와 특징 다섯 개만 잡으면 대부분 풀린다."
+ },
+ {
+  "slug": "sqld-relation-identifier",
+  "title": "관계와 식별자",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "관계는 차수와 선택성으로, 식별자는 PK가 어디서 오느냐로 갈라 보면 문제가 훨씬 덜 헷갈리더라."
+ },
+ {
+  "slug": "sqld-norm-perf",
+  "title": "정규화와 성능 데이터 모델링",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "정규화는 중복을 걷어내는 일이고 반정규화는 일부러 되돌리는 일인데, 시험은 어느 쪽으로 풀지 고르는 문제가 많더라."
+ },
+ {
+  "slug": "sqld-select-func",
+  "title": "SELECT와 함수",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "SELECT는 쓰는 순서와 실행되는 순서가 달라서, NULL 하나만 제대로 잡아도 이 단원 문제 절반은 풀리더라."
+ },
+ {
+  "slug": "sqld-join-subquery",
+  "title": "조인과 서브쿼리",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "조인은 표를 옆으로 붙이는 일이고 서브쿼리는 쿼리 안에 쿼리를 넣는 일이라, 어디서 행이 사라지는지만 따라가면 문제가 풀리더라."
+ },
+ {
+  "slug": "sqld-group-set",
+  "title": "GROUP BY와 집합 연산",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "집계는 행을 묶어서 한 줄로 줄이는 일이고, 집합 연산은 결과 두 개를 위아래로 붙이거나 빼는 일이라서 둘을 나눠 보면 덜 헷갈렸다."
+ },
+ {
+  "slug": "sqld-window-advanced",
+  "title": "윈도우 함수와 고급 SQL",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "윈도우 함수는 행을 줄이지 않고 옆에 계산값을 붙이는 거라서, OVER 안의 세 칸만 구분하면 나머지는 따라오더라."
+ },
+ {
+  "slug": "sqld-dml-ddl",
+  "title": "DML·TCL·DDL과 제약조건",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "데이터를 바꾸는 DML, 확정하는 TCL, 구조를 만드는 DDL, 잘못된 값을 막는 제약조건을 시험에 나오는 순서로 묶어 봤다."
+ },
+ {
+  "slug": "sqld-dcl-procedure",
+  "title": "DCL과 절차형 SQL",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "자격증"
+  ],
+  "series": "SQLD",
+  "emoji": "🗃️",
+  "summary": "DCL은 권한을 주고 뺏는 명령이고, 절차형 SQL은 SQL을 DB 안에 저장해 두고 쓰는 방식이라는 걸 시험 기준으로 정리했다."
  },
  {
   "slug": "body-profile",
