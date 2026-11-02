@@ -2147,6 +2147,114 @@
   "summary": "실기 파이썬은 결측 처리 → 인코딩 → 분할 → 모형 → 평가 → 저장, 이 여섯 칸 흐름만 손에 붙이면 되더라."
  },
  {
+  "slug": "news-model-1",
+  "title": "Claude Haiku 5.5, 제일 작은 모델이 이만큼 싸졌다",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "AI 모델"
+  ],
+  "series": "AI 모델",
+  "emoji": "📘",
+  "summary": "10월 초에 나온 Claude Haiku 5.5가 뭐가 달라졌는지, 가격표와 발표문을 보면서 정리해 봤다."
+ },
+ {
+  "slug": "news-model-2",
+  "title": "Kimi K3 가중치가 공개됐다 — 2.8조짜리를 열어 봤다",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "AI 모델"
+  ],
+  "series": "AI 모델",
+  "emoji": "📘",
+  "summary": "오픈웨이트라고 해서 누구나 돌릴 수 있는 건 아니더라, 2.8조 파라미터 Kimi K3의 모델 카드와 라이선스를 직접 읽어 봤다."
+ },
+ {
+  "slug": "news-model-3",
+  "title": "벤치마크 점수를 믿어도 되나, Epoch AI의 벤치마크 리뷰",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "AI 모델"
+  ],
+  "series": "AI 모델",
+  "emoji": "📘",
+  "summary": "모델 발표 때마다 나오는 점수표 자체가 틀렸다는 감사 결과가 가을 내내 쌓였길래 정리해 봤다."
+ },
+ {
+  "slug": "news-harness-1",
+  "title": "Claude Code 2.1.314, 쓰기도 작업 폴더 밖으로 못 나가게 막을 수 있게 됐다",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "하네스·에이전트"
+  ],
+  "series": "하네스·에이전트",
+  "emoji": "📘",
+  "summary": "이번 주 Claude Code 업데이트 중 파일을 쓰는 도구에 울타리를 치는 설정이 눈에 띄어서, 작업 폴더 개념부터 다시 읽어 봤다."
+ },
+ {
+  "slug": "news-harness-2",
+  "title": "Microsoft Agent Framework, 10월에 릴리스가 몰렸다",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "하네스·에이전트"
+  ],
+  "series": "하네스·에이전트",
+  "emoji": "📘",
+  "summary": "Semantic Kernel과 AutoGen의 후속인 Agent Framework가 10월 한 달에 Python·.NET 릴리스를 여섯 번 냈길래 뭐가 바뀌었는지 훑어봤다."
+ },
+ {
+  "slug": "news-harness-3",
+  "title": "MCP 2026-07-28 개정판: 세션이 사라지고 요청 하나로 끝난다",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "하네스·에이전트"
+  ],
+  "series": "하네스·에이전트",
+  "emoji": "📘",
+  "summary": "MCP 새 명세(2026-07-28)는 연결 시작 절차와 세션을 없애서, 서버를 평범한 웹 API처럼 여러 대로 늘리기 쉬워졌더라."
+ },
+ {
+  "slug": "news-repo-1",
+  "title": "TradingAgents: 투자 회사 조직도를 에이전트로 옮긴 레포",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "GitHub 레포"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "이번 주 GitHub 트렌딩을 훑다가 눈에 들어온 건, 트레이딩 회사의 역할 분담을 그대로 LLM 에이전트로 만든 TradingAgents였다."
+ },
+ {
+  "slug": "news-repo-2",
+  "title": "OpenCode, 터미널에서 도는 오픈소스 코딩 에이전트",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "GitHub 레포"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "가을에 코딩 에이전트 레포를 훑다가 OpenCode를 열어 보니, 기능보다 권한과 설정을 나누는 방식이 더 눈에 들어왔다."
+ },
+ {
+  "slug": "news-repo-3",
+  "title": "러스트로 만든 추론 엔진 mistral.rs 살펴보기",
+  "date": "2026-11-02",
+  "tags": [
+   "AI소식",
+   "GitHub 레포"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "로컬 LLM 돌리는 도구 중 러스트로 만든 mistral.rs가 뭘 하는지, 릴리스 노트까지 읽어 봤다."
+ },
+ {
   "slug": "body-profile",
   "title": "바디프로필을 찍어보았다",
   "date": "2026-10-22",
