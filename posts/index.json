@@ -105,7 +105,7 @@
   "tags": [
    "공부노트"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "코테 알고리즘 글이 열한 편이라, 문제를 보고 어느 유형인지 고르는 순서대로 한 줄씩 묶어 봤다."
  },
@@ -119,7 +119,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "용어가 너무 많아서 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다."
+  "summary": "용어가 너무 많아서 한 줄씩만 먼저 적고, 궁금한 건 자세한 글로 넘어가게 묶어 봤다.",
+  "title_en": "AI concept map",
+  "summary_en": "There are too many terms, so I've listed them one by one first and grouped the detailed explanations for any questions you might have.",
+  "title_ja": "AI コンセプトマップ",
+  "summary_ja": "用語が多すぎるため、まずは一行ずつ書いておき、気になる点は詳細な文章にまとめることにしました。",
+  "title_zh": "AI 概念图",
+  "summary_zh": "由于术语太多，我先只列出每一行，关于不清楚的地方则通过详细的文章进行说明。"
  },
  {
   "slug": "sqld-map",
@@ -131,7 +137,9 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "SQLD는 데이터 모델링과 SQL 두 과목이라, 열 편을 순서대로 한 줄씩 묶어 두었다."
+  "summary": "SQLD는 데이터 모델링과 SQL 두 과목이라, 열 편을 순서대로 한 줄씩 묶어 두었다.",
+  "title_en": "SQLD map",
+  "summary_en": "SQLD covers two subjects: data modeling and SQL, so I've grouped them into lines in order for the first part."
  },
  {
   "slug": "adsp-map",
@@ -143,7 +151,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "ADsP는 데이터 이해, 분석 기획, 데이터 분석 세 과목이라, 열두 편을 순서대로 한 줄씩 묶어 두었다."
+  "summary": "ADsP는 데이터 이해, 분석 기획, 데이터 분석 세 과목이라, 열두 편을 순서대로 한 줄씩 묶어 두었다.",
+  "title_en": "ADsP map",
+  "summary_en": "ADsP consists of three subjects: data understanding, analysis planning, and data analysis, so I have grouped the twelve articles in order, one per line.",
+  "title_ja": "ADsP マップ",
+  "summary_ja": "ADSP は「データ理解」「分析企画」「データ分析」の 3 つの科目から構成されており、12 編を順番に 1 行ずつまとめた。",
+  "title_zh": "ADsP 地图",
+  "summary_zh": "ADsP 包含数据理解、分析策划、数据分析三门课程，因此将十二篇文章按顺序逐行整理在一起。"
  },
  {
   "slug": "jb-map",
@@ -180,7 +194,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "챗봇이 내 말을 기억하는 건 모델이 아니라 매번 기록을 다시 보내는 쪽이 하는 일이더라."
+  "summary": "챗봇이 내 말을 기억하는 건 모델이 아니라 매번 기록을 다시 보내는 쪽이 하는 일이더라.",
+  "title_en": "Session and Conversation History",
+  "summary_en": "It's not the model that remembers what I say; it's the side that resends the logs every time.",
+  "title_ja": "セッションと会話履歴",
+  "summary_ja": "チャットボットが私の話を覚えているのは、モデルではなく、毎回記録を再送信する側が行う作業だったんだ。",
+  "title_zh": "会话与对话记录",
+  "summary_zh": "聊天机器人记住我的话，并不是模型在记忆，而是每次重新发送记录的一方在做这件事。"
  },
  {
   "slug": "ai-compaction",
@@ -193,7 +213,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "컴팩션은 긴 대화를 요약으로 갈아 끼우는 일이고, 요약에서 빠질 것들은 따로 밖에 적어 두는 게 메모리더라."
+  "summary": "컴팩션은 긴 대화를 요약으로 갈아 끼우는 일이고, 요약에서 빠질 것들은 따로 밖에 적어 두는 게 메모리더라.",
+  "title_en": "Compaction and Memory",
+  "summary_en": "Compaction is about converting long conversations into summaries, with anything omitted from the summary noted separately in memory.",
+  "title_ja": "コンパクションとメモリ",
+  "summary_ja": "コンパクションとは、長い会話を要約に変換することであり、要約から外すものは別途メモっておくのがメモリだった。",
+  "title_zh": "压缩与内存",
+  "summary_zh": "Compaction 是将长对话压缩成摘要的过程，而摘要中需要省略的内容则单独记录在内存中。"
  },
  {
   "slug": "ai-skills",
@@ -206,7 +232,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "스킬은 \"이럴 땐 이렇게 해\"를 폴더로 묶어 두고 필요할 때만 꺼내 읽게 하는 방식이라, 이름과 설명만 항상 올라가 있더라."
+  "summary": "스킬은 \"이럴 땐 이렇게 해\"를 폴더로 묶어 두고 필요할 때만 꺼내 읽게 하는 방식이라, 이름과 설명만 항상 올라가 있더라.",
+  "title_en": "Skills",
+  "summary_en": "Skills are organized like folders containing \"do this when that happens,\" so you only open and read them when needed; the name and description always appear.",
+  "title_ja": "スキル（Skills）",
+  "summary_ja": "スキルは「こういうときはこうする」をフォルダにまとめ、必要なときにだけ読み出す方式なので、名前と説明だけが常に表示されていました。",
+  "title_zh": "技能 (Skills)",
+  "summary_zh": "技能是将“遇到这种情况就那样处理”的方法按文件夹归类存放，仅在需要时取出查阅，因此只需始终显示名称和说明即可。"
  },
  {
   "slug": "ai-tool-use",
@@ -219,7 +251,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "도구 호출은 모델이 함수를 직접 돌리는 게 아니라 \"이걸 이 인자로 실행해 줘\"라는 요청서를 쓰는 것이고, 실행은 내 코드가 하더라."
+  "summary": "도구 호출은 모델이 함수를 직접 돌리는 게 아니라 \"이걸 이 인자로 실행해 줘\"라는 요청서를 쓰는 것이고, 실행은 내 코드가 하더라.",
+  "title_en": "Tool Calling (Function Calling)",
+  "summary_en": "Tool calling is not about the model directly executing a function, but rather writing a request like \"execute this with these arguments,\" while the actual execution is handled by my code.",
+  "title_ja": "ツール呼び出し (Function Calling)",
+  "summary_ja": "ツール呼び出しは、モデルが関数を直接実行するのではなく、「これをこの引数で実行して」というリクエストを作成し、実行自体は私のコードが行うものです。",
+  "title_zh": "工具调用（Function calling）",
+  "summary_zh": "工具调用是指模型并非直接执行函数，而是生成一份“请用该参数执行此操作”的请求，而实际执行则由我的代码完成。"
  },
  {
   "slug": "ai-agent-loop",
@@ -232,7 +270,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "에이전트라고 해서 특별한 마법이 있는 게 아니라, 모델이 도구를 쓰고 결과를 보고 다시 판단하는 걸 끝날 때까지 반복하는 while문이더라."
+  "summary": "에이전트라고 해서 특별한 마법이 있는 게 아니라, 모델이 도구를 쓰고 결과를 보고 다시 판단하는 걸 끝날 때까지 반복하는 while문이더라.",
+  "title_en": "Agent and Agent Loop",
+  "summary_en": "It's not that there's some special magic called an agent; it's just a `while` loop where the model uses tools, observes the results, and makes another decision until it finishes.",
+  "title_ja": "エージェントとエージェントループ",
+  "summary_ja": "エージェントという特別な魔法があるわけではなく、モデルがツールを使い、結果を見て再度判断するこのプロセスを繰り返す while ループだったんだ。",
+  "title_zh": "Agent 与 Agent Loop",
+  "summary_zh": "所谓的 Agent 并没有特殊的魔法，它只是一个循环结构：模型使用工具、查看结果并重新判断，直到任务完成为止。"
  },
  {
   "slug": "ai-subagent",
@@ -245,7 +289,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "서브에이전트는 일을 나눠 맡기고 요약만 받는 방식인데, 토큰을 훨씬 더 쓰고 잘 안 맞는 일도 많더라."
+  "summary": "서브에이전트는 일을 나눠 맡기고 요약만 받는 방식인데, 토큰을 훨씬 더 쓰고 잘 안 맞는 일도 많더라.",
+  "title_en": "Sub-agent and Multi-agent",
+  "summary_en": "Sub-agents work by dividing tasks and receiving only summaries, but they consume far more tokens and often don't fit the job well.",
+  "title_ja": "サブエージェントとマルチエージェント",
+  "summary_ja": "サブエージェントはタスクを分担して、結果のみを受け取る方式ですが、トークン消費が非常に多く、うまくいかないことも多いようです。",
+  "title_zh": "子代理与多代理",
+  "summary_zh": "子代理采用分配任务并仅接收摘要的方式，但这种方式消耗的令牌数量要多得多，且经常不太合适。"
  },
  {
   "slug": "ai-prompt-caching",
@@ -258,7 +308,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "매번 똑같이 보내는 앞부분을 다시 계산하지 않게 해 주는 장치인데, 앞부분이 한 글자라도 바뀌면 통째로 무효가 되더라."
+  "summary": "매번 똑같이 보내는 앞부분을 다시 계산하지 않게 해 주는 장치인데, 앞부분이 한 글자라도 바뀌면 통째로 무효가 되더라.",
+  "title_en": "Prompt Caching",
+  "summary_en": "It's a mechanism that prevents recalculating the same prefix sent every time, but if even a single character in the prefix changes, it becomes entirely invalid.",
+  "title_ja": "プロンプトキャッシング",
+  "summary_ja": "毎回同じように送られる先頭部分の計算を再度行わせない仕組みですが、先頭部分が 1 文字でも変わると全部無効になっていました。",
+  "title_zh": "Prompt Caching",
+  "summary_zh": "这是一种避免重复计算前面相同部分的机制，但即使前面部分有一个字符发生变化，整个内容就会变为无效。"
  },
  {
   "slug": "ai-sampling",
@@ -271,7 +327,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "같은 질문에 답이 매번 다른 건 모델이 다음 단어를 주사위로 뽑기 때문이고, 온도와 top-p는 그 주사위를 조절하는 손잡이였다."
+  "summary": "같은 질문에 답이 매번 다른 건 모델이 다음 단어를 주사위로 뽑기 때문이고, 온도와 top-p는 그 주사위를 조절하는 손잡이였다.",
+  "title_en": "Sampling: temperature·top-p",
+  "summary_en": "The reason the model gives different answers to the same question each time is because it samples the next word like a die roll, and temperature and top-p are the knobs that control that die roll.",
+  "title_ja": "サンプリング：温度・top-p",
+  "summary_ja": "同じ質問に対して毎回異なる回答が返されるのは、モデルが次の単語をサイコロで選ぶためであり、temperature と top-p はそのサイコロを調整するノブだった。",
+  "title_zh": "采样：温度·top-p",
+  "summary_zh": "同一个问题每次得到的答案都不同，是因为模型在“掷骰子”选择下一个词，而温度和 top-p 就是调节这个骰子的旋钮。"
  },
  {
   "slug": "ai-reasoning",
@@ -284,7 +346,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "추론 모델은 답하기 전에 눈에 안 보이는 생각을 먼저 쓰고, 그 생각도 출력 요금으로 나가더라."
+  "summary": "추론 모델은 답하기 전에 눈에 안 보이는 생각을 먼저 쓰고, 그 생각도 출력 요금으로 나가더라.",
+  "title_en": "Inference Models and Thought Tokens",
+  "summary_en": "Inference models write down their invisible thoughts before answering, and those thoughts also incur output costs.",
+  "title_ja": "推論モデルと思考トークン",
+  "summary_ja": "推論モデルは、回答する前に目に見えない思考をまず書き出し、その思考も出力料金が発生します。",
+  "title_zh": "推理模型与思维令牌",
+  "summary_zh": "推理模型在给出答案之前，会先进行“看不见的思考”，而这些思考也会产生输出费用。"
  },
  {
   "slug": "ai-structured-output",
@@ -297,7 +365,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "모델 답을 프로그램이 바로 읽게 하려면 \"JSON으로 줘\"라고 부탁하는 것과 스키마로 강제하는 것이 다르더라."
+  "summary": "모델 답을 프로그램이 바로 읽게 하려면 \"JSON으로 줘\"라고 부탁하는 것과 스키마로 강제하는 것이 다르더라.",
+  "title_en": "Structured output (JSON · schema)",
+  "summary_en": "It seems different from asking for a JSON response to allow the program to read the model's answer directly versus enforcing it with a schema.",
+  "title_ja": "構造化出力（JSON・スキーマ）",
+  "summary_ja": "プログラムがモデルの回答を即座に読み取るようにするには、「JSON で返してください」と頼むのと、スキーマで強制させるのは異なります。",
+  "title_zh": "结构化输出（JSON、Schema）",
+  "summary_zh": "如果要让程序直接读取模型的回答，请求“以 JSON 格式返回”与强制使用 schema 是不同的。"
  },
  {
   "slug": "ai-multimodal",
@@ -310,7 +384,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "멀티모달은 글 말고 이미지·소리도 같이 받는다는 뜻인데, 이미지는 결국 작은 조각 토큰으로 쪼개져서 글자와 같은 창에 들어가더라."
+  "summary": "멀티모달은 글 말고 이미지·소리도 같이 받는다는 뜻인데, 이미지는 결국 작은 조각 토큰으로 쪼개져서 글자와 같은 창에 들어가더라.",
+  "title_en": "Multimodal",
+  "summary_en": "Multimodal means receiving not just text but also images and sound together; in the end, images are broken down into small token pieces and enter the same window as text.",
+  "title_ja": "マルチモーダル",
+  "summary_ja": "マルチモーダルとは、テキストだけでなく画像や音声も同時に扱うことを指しますが、結局のところ画像は小さなトークンの断片に分割され、テキストと同じウィンドウに入ることになります。",
+  "title_zh": "多模态",
+  "summary_zh": "多模态不仅接收文本，还包括图像和声音；而图像最终会被分割成小块 token，与文字一同输入到同一个窗口中。"
  },
  {
   "slug": "ml-basics",
@@ -950,8 +1030,8 @@
    "공부노트",
    "CS"
   ],
-  "series": "CS·설계 기초",
-  "emoji": "📐",
+  "series": "네트워크",
+  "emoji": "🌐",
   "summary": "브라우저에 주소를 치면 DNS, TCP, TLS, HTTP가 차례로 일하는데, 계층별로 나눠서 보면 훨씬 덜 헷갈리더라."
  },
  {
@@ -962,8 +1042,8 @@
    "공부노트",
    "CS"
   ],
-  "series": "CS·설계 기초",
-  "emoji": "📐",
+  "series": "운영체제",
+  "emoji": "⚙️",
   "summary": "운영체제는 한정된 CPU와 메모리를 여러 프로그램이 서로 모르게 나눠 쓰게 해 주는 관리자라고 이해하면 프로세스, 스케줄링, 가상 메모리가 한 줄로 이어졌다."
  },
  {
@@ -974,8 +1054,8 @@
    "공부노트",
    "CS"
   ],
-  "series": "CS·설계 기초",
-  "emoji": "📐",
+  "series": "소프트웨어 공학",
+  "emoji": "🧱",
   "summary": "코드를 짜는 법이 아니라 '만드는 과정'을 다루는 분야라서, 방법론·요구사항·UML·테스트·형상관리를 한 번에 훑어봤다."
  },
  {
@@ -1058,9 +1138,15 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "코테에서 \"이 코드가 시간 안에 도는가\"를 입력 크기로 미리 어림하는 법이랑, 파이썬에서 자주 느려지는 자리를 정리했다."
+  "summary": "코테에서 \"이 코드가 시간 안에 도는가\"를 입력 크기로 미리 어림하는 법이랑, 파이썬에서 자주 느려지는 자리를 정리했다.",
+  "title_en": "Time Complexity and Python Basics",
+  "summary_en": "I've compiled tips on how to estimate whether code will run within time limits based on input size during coding tests, along with common performance bottlenecks in Python.",
+  "title_ja": "時間計算量と Python 基本",
+  "summary_ja": "コーディングテストで「このコードは時間内に動作するか」を入力サイズで事前に推測する方法と、Python で特に遅くなりやすい箇所を整理しました。",
+  "title_zh": "时间复杂度和 Python 基础",
+  "summary_zh": "在代码竞赛中，我整理了根据输入规模预先估算“这段代码能否在规定时间内运行”的方法，以及 Python 中常见的性能瓶颈点。"
  },
  {
   "slug": "algo-array-hash",
@@ -1070,9 +1156,15 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "배열과 문자열 문제는 결국 '이미 본 걸 어디에 적어 두느냐'였고, 그 적어 두는 곳이 누적합이나 해시더라."
+  "summary": "배열과 문자열 문제는 결국 '이미 본 걸 어디에 적어 두느냐'였고, 그 적어 두는 곳이 누적합이나 해시더라.",
+  "title_en": "Arrays · Strings · Hashes",
+  "summary_en": "Array and string problems ultimately boil down to \"where do we store what we've already seen,\" and that storage mechanism is either a prefix sum or a hash map.",
+  "title_ja": "配列・文字列・ハッシュ",
+  "summary_ja": "配列と文字列の問題は結局「どこに記録しておくか」であり、その記録先が累積和やハッシュだった。",
+  "title_zh": "数组·字符串·哈希",
+  "summary_zh": "数组和字符串问题归根结底就是“把已经看过的东西记在哪里”，而那个记录的地方就是前缀和或者哈希表。"
  },
  {
   "slug": "algo-stack-queue",
@@ -1082,7 +1174,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "스택은 마지막에 넣은 걸, 큐는 먼저 넣은 걸 꺼내는 통이고, 파이썬에선 리스트와 deque만 구분해도 대부분 풀리더라."
  },
@@ -1094,7 +1186,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "정렬은 거의 sorted()로 끝나고, 진짜 연습할 건 정렬된 데이터에서 절반씩 줄이는 이분 탐색과 \"답을 이분 탐색\"하는 파라메트릭 서치더라."
  },
@@ -1106,7 +1198,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "구간을 매번 다시 더하지 않고, 끝만 밀어서 O(N)에 푸는 세 가지 방법을 정리했다."
  },
@@ -1118,7 +1210,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "재귀는 \"작은 같은 문제로 바꾸기\"고, 백트래킹은 그 재귀로 선택지를 하나씩 해 보다가 막히면 되돌아오는 거더라."
  },
@@ -1130,7 +1222,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "그래프 탐색은 결국 \"다음에 볼 곳을 큐에 쌓느냐 스택에 쌓느냐\"의 차이라서, 그것만 잡으면 격자 문제까지 같은 틀로 풀리더라."
  },
@@ -1142,7 +1234,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "그래프 문제 중 길 찾기, 같은 편 묶기, 순서 정하기를 한 번에 정리했다."
  },
@@ -1154,9 +1246,15 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
-  "summary": "DP는 같은 부분 문제를 두 번 풀지 않으려고 답을 적어 두는 방법이고, 점화식만 세우면 코드는 따라오더라."
+  "summary": "DP는 같은 부분 문제를 두 번 풀지 않으려고 답을 적어 두는 방법이고, 점화식만 세우면 코드는 따라오더라.",
+  "title_en": "Dynamic Programming (DP)",
+  "summary_en": "DP is a method of storing answers to avoid solving the same subproblem twice, and once you set up the recurrence relation, the code follows naturally.",
+  "title_ja": "動的計画法（DP）",
+  "summary_ja": "DP は同じ部分問題を二度解かないように答えをメモしておく方法であり、漸化式を立てるだけでコードは書けてしまう。",
+  "title_zh": "动态规划 (DP)",
+  "summary_zh": "DP 是为了避免重复解决相同的子问题而预先记录答案的方法，只要建立了递推公式，代码自然就出来了。"
  },
  {
   "slug": "algo-greedy",
@@ -1166,7 +1264,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "그리디는 매 순간 제일 좋아 보이는 걸 고르고 안 돌아보는 방식인데, 맞는 문제와 틀리는 문제를 가르는 게 전부더라."
  },
@@ -1178,7 +1276,7 @@
    "공부노트",
    "알고리즘"
   ],
-  "series": "알고리즘",
+  "series": "자료구조·알고리즘",
   "emoji": "🧮",
   "summary": "트리는 순회 네 가지만 손에 익히면 되고, 힙은 \"제일 작은 것 하나를 계속 꺼내는\" 문제에서 heapq 한 줄로 끝나더라."
  },
@@ -1292,7 +1390,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "컨텍스트는 모델이 한 번에 보는 작업대라서, 넓다고 다 좋은 게 아니라 뭘 올려 두느냐가 더 중요하더라."
+  "summary": "컨텍스트는 모델이 한 번에 보는 작업대라서, 넓다고 다 좋은 게 아니라 뭘 올려 두느냐가 더 중요하더라.",
+  "title_en": "Context and Context Engineering",
+  "summary_en": "The context is like a workspace that the model sees at once, so it's not about how wide it is, but rather what you put in it that matters more.",
+  "title_ja": "コンテキストとコンテキストエンジニアリング",
+  "summary_ja": "コンテキストとは、モデルが一度に扱う作業台のようなもので、広いことだけが善いわけではなく、何をおくかがより重要だと気づきました。",
+  "title_zh": "上下文与上下文工程",
+  "summary_zh": "上下文是模型一次性查看的工作台，所以并不是越宽越好，更重要的是上面放什么。"
  },
  {
   "slug": "ai-context-window",
@@ -1305,7 +1409,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "윈도우 크기는 한 번에 볼 수 있는 분량이고, 대화가 길어지면 매 호출마다 그 전체를 다시 내야 해서 돈과 시간이 같이 늘더라."
+  "summary": "윈도우 크기는 한 번에 볼 수 있는 분량이고, 대화가 길어지면 매 호출마다 그 전체를 다시 내야 해서 돈과 시간이 같이 늘더라.",
+  "title_en": "Context Window and Tokens",
+  "summary_en": "The window size represents the amount of content visible at once, and as conversations grow longer, I have to retrieve the entire history with every call, which increases both cost and time.",
+  "title_ja": "コンテキストウィンドウとトークン",
+  "summary_ja": "ウィンドウサイズは一度に表示できる量であり、対話が長くなると各呼び出しごとにその全体を再度取得する必要があり、コストと時間とも増大します。",
+  "title_zh": "上下文窗口与 Token",
+  "summary_zh": "窗口大小决定了每次能查看的内容量，随着对话变长，每次调用都需要重新获取全部内容，导致成本和时间也随之增加。"
  },
  {
   "slug": "ai-llm",
@@ -1318,7 +1428,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "LLM은 글 조각 다음에 올 조각을 계속 맞히는 아주 큰 모델이고, 챗봇처럼 보이는 건 그 위에 얹은 겉모습이더라."
+  "summary": "LLM은 글 조각 다음에 올 조각을 계속 맞히는 아주 큰 모델이고, 챗봇처럼 보이는 건 그 위에 얹은 겉모습이더라.",
+  "title_en": "What is an LLM?",
+  "summary_en": "An LLM is a very large model that continuously predicts the next piece of text following a given fragment, and what appears as a chatbot is just a layer built on top of it.",
+  "title_ja": "LLMとは何か",
+  "summary_ja": "LLM は、前の単語の後に続く単語を予測し続ける非常に大きなモデルであり、チャットボットのように見えるのはその上に重ねられた外見に過ぎなかった。",
+  "title_zh": "什么是 LLM",
+  "summary_zh": "LLM 是一个非常大的模型，它不断预测文本片段之后的下一个片段；而看起来像聊天机器人的部分，只是构建在其之上的界面。"
  },
  {
   "slug": "ai-generative",
@@ -1331,7 +1447,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "생성형 AI는 AI 안에서 \"새 걸 만들어 내는\" 쪽이라, 분류하는 AI와 뭐가 다른지부터 정리해 봤다."
+  "summary": "생성형 AI는 AI 안에서 \"새 걸 만들어 내는\" 쪽이라, 분류하는 AI와 뭐가 다른지부터 정리해 봤다.",
+  "title_en": "What is Generative AI?",
+  "summary_en": "Generative AI is about \"creating something new\" within AI, so I've clarified how it differs from classification-based AI.",
+  "title_ja": "生成型 AI とは",
+  "summary_ja": "生成型 AI は「新しいものを生み出す」側であり、分類する AI と何が違うのかを整理してみた。",
+  "title_zh": "什么是生成式 AI",
+  "summary_zh": "生成式 AI 属于在 AI 内部“创造新事物”的一类，因此我先整理了一下它与分类型 AI 的区别。"
  },
  {
   "slug": "ai-prompt",
@@ -1344,7 +1466,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "프롬프트는 모델에게 주는 입력 전부이고, 잘 쓰는 법은 대부분 \"명확하게, 예시를 곁들여, 형식을 정해서\"로 모였다."
+  "summary": "프롬프트는 모델에게 주는 입력 전부이고, 잘 쓰는 법은 대부분 \"명확하게, 예시를 곁들여, 형식을 정해서\"로 모였다.",
+  "title_en": "Prompt and Prompt Engineering",
+  "summary_en": "A prompt is everything given to the model as input, and most tips on how to use it well revolve around being clear, providing examples, and specifying a format.",
+  "title_ja": "プロンプトとプロンプトエンジニアリング",
+  "summary_ja": "プロンプトとはモデルへの入力全体を指し、上手に使う方法は「明確に、具体例を添えて、形式を整える」ことが集約されています。",
+  "title_zh": "提示词与提示工程",
+  "summary_zh": "提示（Prompt）是输入给模型的全部内容，而高效使用的方法大多可以归纳为“明确指令、提供示例、指定格式”。"
  },
  {
   "slug": "ai-hallucination",
@@ -1357,7 +1485,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "모델이 거짓말을 하는 게 아니라, 모르면 찍도록 만들어진 구조라서 생기는 일이더라."
+  "summary": "모델이 거짓말을 하는 게 아니라, 모르면 찍도록 만들어진 구조라서 생기는 일이더라.",
+  "title_en": "Hallucination — Why Models Make Plausible Mistakes",
+  "summary_en": "It's not that the model is lying; it's just a structure designed to generate output when it doesn't know something.",
+  "title_ja": "ハルシネーション — モデルが説得力のある誤りを犯す理由",
+  "summary_ja": "モデルが嘘をついているのではなく、知らない場合は撮影するように設計された構造から生じる問題でした。",
+  "title_zh": "幻觉——模型为何会看似合理却出错",
+  "summary_zh": "模型并没有在说谎，而是因为它被设计成“不知道就生成”，所以才会出现这种情况。"
  },
  {
   "slug": "ai-embedding",
@@ -1370,7 +1504,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "글을 숫자 좌표로 바꿔 놓고 가까운 것끼리 찾는 방식인데, 키워드 검색이 놓치는 걸 잡아 주더라."
+  "summary": "글을 숫자 좌표로 바꿔 놓고 가까운 것끼리 찾는 방식인데, 키워드 검색이 놓치는 걸 잡아 주더라.",
+  "title_en": "Embedding and Vector Search",
+  "summary_en": "It converts text into numerical coordinates and finds similar items based on proximity, effectively catching things that keyword search misses.",
+  "title_ja": "埋め込みとベクトル検索",
+  "summary_ja": "文章を数値座標に変換して近接するもの同士を検出する方法だが、キーワード検索で見落としがちなものを補完してくれていた。",
+  "title_zh": "Embedding 与向量检索",
+  "summary_zh": "这是一种将文本转换为数字坐标并寻找相近项的方法，它弥补了关键词搜索的不足。"
  },
  {
   "slug": "ai-rag",
@@ -1383,7 +1523,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "RAG는 모델한테 시험 볼 때 책을 펴 놓게 해 주는 방식인데, 책을 어떻게 쪼개고 어떻게 찾느냐에서 거의 다 갈리더라."
+  "summary": "RAG는 모델한테 시험 볼 때 책을 펴 놓게 해 주는 방식인데, 책을 어떻게 쪼개고 어떻게 찾느냐에서 거의 다 갈리더라.",
+  "title_en": "RAG (Retrieval-Augmented Generation)",
+  "summary_en": "RAG is like giving a model a book to read during an exam, but the main difference lies in how the book is split and how information is retrieved.",
+  "title_ja": "RAG（検索強化生成）",
+  "summary_ja": "RAG は、モデルに試験を与える際に教科書を開いておくような仕組みですが、その本をどのように分割し、どのように検索するかという点でほとんどが分かれていました。",
+  "title_zh": "RAG（检索增强生成）",
+  "summary_zh": "RAG 就像是在给模型“考试”时把书摊开供其查阅，但关键在于如何切分书籍以及如何检索内容，这两点几乎决定了成败。"
  },
  {
   "slug": "ai-mcp",
@@ -1396,7 +1542,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "MCP는 AI 앱과 외부 도구를 잇는 연결 규격이라서, 도구를 한 번 만들어 두면 여러 앱에서 꽂아 쓸 수 있더라."
+  "summary": "MCP는 AI 앱과 외부 도구를 잇는 연결 규격이라서, 도구를 한 번 만들어 두면 여러 앱에서 꽂아 쓸 수 있더라.",
+  "title_en": "MCP (Model Context Protocol)",
+  "summary_en": "MCP is a connection standard that links AI apps with external tools, so once you create a tool, you can plug it into multiple apps and use it.",
+  "title_ja": "MCP（モデルコンテキストプロトコル）",
+  "summary_ja": "MCP は、AI アプリと外部ツールをつなぐための接続規格なので、一度ツールを作成しておけば、複数のアプリで即座に利用できます。",
+  "title_zh": "MCP（模型上下文协议）",
+  "summary_zh": "MCP 是一种连接 AI 应用与外部工具的连接规范，因此只需制作一次工具，即可在多个应用中插拔使用。"
  },
  {
   "slug": "ai-harness",
@@ -1409,7 +1561,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "하네스는 모델 바깥에서 루프·도구·기록을 맡는 코드인데, 자료마다 어디까지를 가리키는지가 조금씩 달랐다."
+  "summary": "하네스는 모델 바깥에서 루프·도구·기록을 맡는 코드인데, 자료마다 어디까지를 가리키는지가 조금씩 달랐다.",
+  "title_en": "Hanes and Hanes Engineering",
+  "summary_en": "The harness is code that handles loops, tools, and recording outside the model, but the extent of what it refers to varied slightly depending on the dataset.",
+  "title_ja": "ハネスとハネスエンジニアリング",
+  "summary_ja": "ハンネスは、モデルの外側でループ・ツール・記録を担当するコードですが、データごとに指し示す範囲が少しずつ異なっていました。",
+  "title_zh": "Hanes 和 Hanes Engineering",
+  "summary_zh": "Hanes 在模型外部负责循环、工具和记录部分的代码，但针对不同的数据，其所指代的范围略有不同。"
  },
  {
   "slug": "ai-models",
@@ -1422,7 +1580,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "모델 이름이 너무 빨리 바뀌어서, 이름 대신 회사·크기·열린 모델이냐 닫힌 모델이냐로 나눠 지도를 그려 봤다."
+  "summary": "모델 이름이 너무 빨리 바뀌어서, 이름 대신 회사·크기·열린 모델이냐 닫힌 모델이냐로 나눠 지도를 그려 봤다.",
+  "title_en": "AI Model Map: Models Available Now and Selection Criteria",
+  "summary_en": "Since model names change too quickly, I drew a map categorizing them by company, size, and whether they are open or closed models instead of using their names.",
+  "title_ja": "AI モデルマップ：今すぐ使えるモデルと選び方の基準",
+  "summary_ja": "モデル名があまりにも頻繁に変化するため、代わりに会社・サイズ・オープンモデルかクローズドモデルかで分類し、地図を描いてみました。",
+  "title_zh": "AI 模型地图：当前可用的模型及选择标准",
+  "summary_zh": "由于模型名称变化太快，我们改用公司、大小以及是否为开源或闭源模型来划分并绘制了地图。"
  },
  {
   "slug": "claude-tokens",
@@ -1496,7 +1660,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "Claude, Codex, Gemini CLI, Cursor 모두 마크다운 지침 파일에서 시작해 스킬·확장으로 넓히는 모양이라, 이름만 다르고 구조는 꽤 닮아 있더라."
+  "summary": "Claude, Codex, Gemini CLI, Cursor 모두 마크다운 지침 파일에서 시작해 스킬·확장으로 넓히는 모양이라, 이름만 다르고 구조는 꽤 닮아 있더라.",
+  "title_en": "Model-Tool Skill Comparison and Expansion",
+  "summary_en": "It seems that Claude, Codex, Gemini CLI, and Cursor all start with a markdown instruction file and then expand into skills and extensions, so despite having different names, their structures are quite similar.",
+  "title_ja": "モデル・ツールごとのスキルと拡張の比較",
+  "summary_ja": "Claude、Codex、Gemini CLI、Cursor はすべて、マークダウンの指示ファイルから始まり、スキルや拡張で広がっていく構造をしているようだ。名称は異なるが、構造はかなり似ているとのことだ。",
+  "title_zh": "模型/工具技能与扩展对比",
+  "summary_zh": "Claude、Codex、Gemini CLI 和 Cursor 似乎都是从 Markdown 指令文件开始，再通过技能和扩展进行拓展，虽然名字不同，但结构相当相似。"
  },
  {
   "slug": "sqld-modeling",
@@ -1556,7 +1726,9 @@
   ],
   "series": "SQLD",
   "emoji": "🗃️",
-  "summary": "SELECT는 쓰는 순서와 실행되는 순서가 달라서, NULL 하나만 제대로 잡아도 이 단원 문제 절반은 풀리더라."
+  "summary": "SELECT는 쓰는 순서와 실행되는 순서가 달라서, NULL 하나만 제대로 잡아도 이 단원 문제 절반은 풀리더라.",
+  "title_ja": "SELECT と関数",
+  "summary_ja": "SELECT の書式と実行順序が異なるため、NULL の一つだけ正しく扱えればこの単元の問題は半分は解けてしまう。"
  },
  {
   "slug": "sqld-join-subquery",
@@ -1628,7 +1800,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "ADsP 1과목 첫 단원은 용어 구분이 전부라서, DIKW 네 단계와 DB 특징 네 가지, 웨어하우스 특징 네 가지만 잡으면 된다."
+  "summary": "ADsP 1과목 첫 단원은 용어 구분이 전부라서, DIKW 네 단계와 DB 특징 네 가지, 웨어하우스 특징 네 가지만 잡으면 된다.",
+  "title_en": "Understanding Data",
+  "summary_en": "The first unit of ADsP 1 is entirely about terminology differentiation; you only need to grasp the four stages of DIKW, the four characteristics of databases, and the four characteristics of data warehouses.",
+  "title_ja": "データ理解",
+  "summary_ja": "ADsP 1 과目の最初の単元は用語の区別が全てなので、DIKW の 4 つの段階と DB の特徴 4 つ、ウェアハウスの特徴 4 つだけ覚えておけばよい。",
+  "title_zh": "理解数据",
+  "summary_zh": "ADSP 第一门课程的第一章主要涉及术语区分，只需掌握 DIKW 四个阶段、数据库的四个特征以及数据仓库的四个特征即可。"
  },
  {
   "slug": "adsp-data-value",
@@ -1640,7 +1818,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "빅데이터가 뭐가 달라졌는지 네 쌍으로 외우고, 개인정보는 어떻게 가려서 쓰는지까지 한 장에 묶어 봤다."
+  "summary": "빅데이터가 뭐가 달라졌는지 네 쌍으로 외우고, 개인정보는 어떻게 가려서 쓰는지까지 한 장에 묶어 봤다.",
+  "title_en": "The Value and Future of Data",
+  "summary_en": "Memorize the four differences of big data and how to handle personal information on a single sheet.",
+  "title_ja": "データ価値と未来",
+  "summary_ja": "ビッグデータがどう変わったのかを 4 つのペアで暗記し、個人情報はどのように隠して使うのかも 1 ページにまとめた。",
+  "title_zh": "数据价值与未来",
+  "summary_zh": "大数据有何不同，请成对记忆；同时，一张纸上也涵盖了如何过滤使用个人信息的内容。"
  },
  {
   "slug": "adsp-ds-bigdata",
@@ -1652,7 +1836,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "데이터 사이언티스트는 분석만 잘하는 사람이 아니라 결과를 설득해서 일이 되게 만드는 사람이라는 걸 시험에서 어떻게 묻는지 정리했다."
+  "summary": "데이터 사이언티스트는 분석만 잘하는 사람이 아니라 결과를 설득해서 일이 되게 만드는 사람이라는 걸 시험에서 어떻게 묻는지 정리했다.",
+  "title_en": "Data Science and Talent",
+  "summary_en": "I've organized how to ask about this in an exam: a data scientist isn't just someone who is good at analysis, but someone who can persuade others and make things happen based on their results.",
+  "title_ja": "データサイエンスと人材",
+  "summary_ja": "データサイエンティストは分析だけができる人ではなく、結果を説得してプロジェクトを成功に導く人であるという点を、試験でどのように問われるのかを整理しました。",
+  "title_zh": "数据科学与人才",
+  "summary_zh": "我整理了考试中如何提问“数据科学家不仅是擅长分析的人，更是能够说服他人推动结果落地的人”这一知识点。"
  },
  {
   "slug": "adsp-planning",
@@ -1664,7 +1854,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "분석 기획은 무엇을 분석할지와 어떻게 분석할지를 아는지 모르는지로 갈라서 접근을 정하는 단원이고, 시험에서는 이 네 칸의 이름과 위치를 안 헷갈리는 게 먼저더라."
+  "summary": "분석 기획은 무엇을 분석할지와 어떻게 분석할지를 아는지 모르는지로 갈라서 접근을 정하는 단원이고, 시험에서는 이 네 칸의 이름과 위치를 안 헷갈리는 게 먼저더라.",
+  "title_en": "Understanding Analysis Planning",
+  "summary_en": "The Analysis Planning unit is about determining your approach based on whether you know what to analyze and how to analyze it. On the exam, it's important first to not get confused with the names and positions of these four quadrants.",
+  "title_ja": "分析計画の理解",
+  "summary_ja": "分析計画は「何を」「どのように」分析するかを把握しているかどうかでアプローチを決める単元であり、試験ではこの 4 つの箱の名前と位置を混同しないことがまず重要だった。",
+  "title_zh": "分析策划的理解",
+  "summary_zh": "分析规划是决定“要分析什么”和“如何分析”的章节，在考试中首先要记住这四个象限的名称和位置，不要混淆。"
  },
  {
   "slug": "adsp-methodology",
@@ -1676,7 +1872,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "분석 방법론은 단계 이름만 외우면 헷갈리고, 어디서 출발해서 어디로 되돌아가는지까지 같이 잡아야 정리되더라."
+  "summary": "분석 방법론은 단계 이름만 외우면 헷갈리고, 어디서 출발해서 어디로 되돌아가는지까지 같이 잡아야 정리되더라.",
+  "title_en": "Analysis Methodologies (KDD, CRISP-DM, Hierarchical Process)",
+  "summary_en": "The analysis methodology is confusing if you just memorize the step names; it becomes clear only when you also track where you start and where you return to.",
+  "title_ja": "分析手法論（KDD、CRISP-DM、階層的プロセス）",
+  "summary_ja": "分析手法を暗記するだけでは混乱してしまい、どこから始めてどこに戻ってくるのかまで把握しないと整理できないことがわかった。",
+  "title_zh": "分析方法论（KDD、CRISP-DM、分层流程）",
+  "summary_zh": "分析方法论如果只背阶段名称容易混淆，必须同时理清从哪里开始、又回到哪里，才能梳理清楚。"
  },
  {
   "slug": "adsp-task-masterplan",
@@ -1688,7 +1890,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "분석 과제를 어떻게 찾고, 시급성과 난이도로 순서를 정하고, 조직의 분석 수준을 진단하는지 ADsP 기준으로 정리했다."
+  "summary": "분석 과제를 어떻게 찾고, 시급성과 난이도로 순서를 정하고, 조직의 분석 수준을 진단하는지 ADsP 기준으로 정리했다.",
+  "title_en": "Analysis Assignment and Master Plan",
+  "summary_en": "We organized how to find analysis tasks, prioritize them by urgency and difficulty, and diagnose the organization's analysis level based on ADsP.",
+  "title_ja": "分析課題とマスタープラン",
+  "summary_ja": "ADsP を基準に、分析課題をどのように探し、緊急性と難易度で優先順位をつけ、組織の分析レベルを診断するかを整理しました。",
+  "title_zh": "分析任务与总体规划",
+  "summary_zh": "根据 ADsP 标准，整理了如何查找分析任务、按紧急程度和难度排序，以及诊断组织分析水平的方法。"
  },
  {
   "slug": "adsp-r-datamart",
@@ -1700,7 +1908,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "R은 문법보다 NA 하나 때문에 결과가 통째로 NA가 되는 걸 아는 게 먼저였고, 데이터 마트는 결국 분석하기 좋게 한 줄에 한 대상으로 묶는 일이더라."
+  "summary": "R은 문법보다 NA 하나 때문에 결과가 통째로 NA가 되는 걸 아는 게 먼저였고, 데이터 마트는 결국 분석하기 좋게 한 줄에 한 대상으로 묶는 일이더라.",
+  "title_en": "R Basics and Data Mart",
+  "summary_en": "First, it was important to understand that in R, a single NA value can cause the entire result to become NA, rather than focusing on syntax; ultimately, data mart is about organizing data so that each row represents a single target for analysis.",
+  "title_ja": "R の基礎とデータマート",
+  "summary_ja": "R は文法よりも 1 つの NA で結果がすべて NA になってしまうことを先に理解しておく必要があり、データマートは結局分析しやすいように 1 行 1 対象にまとめる作業だった。",
+  "title_zh": "R 基础与数据集市",
+  "summary_zh": "首先，需要知道 R 中即使只有一个 NA 值，整个结果也会变成 NA；而数据集市（Data Mart）本质上就是将数据整理成每行一个对象的格式，以便于分析。"
  },
  {
   "slug": "adsp-stat-basic",
@@ -1712,7 +1926,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "ADsP 통계 파트의 뿌리인 표본추출·척도·기술통계·확률분포·추정을 한 번에 훑어 봤다."
+  "summary": "ADsP 통계 파트의 뿌리인 표본추출·척도·기술통계·확률분포·추정을 한 번에 훑어 봤다.",
+  "title_en": "Basics of Statistical Analysis",
+  "summary_en": "I reviewed the foundations of ADsP Statistics all at once: sampling, scales, descriptive statistics, probability distributions, and estimation.",
+  "title_ja": "統計分析の基礎",
+  "summary_ja": "ADSP 統計部門の根幹である、標本抽出・尺度・記述統計・確率分布・推定を一度に網羅しました。",
+  "title_zh": "统计分析基础",
+  "summary_zh": "一次快速回顾了 ADsP 统计部分的基础内容，包括抽样、尺度、描述性统计、概率分布和估计。"
  },
  {
   "slug": "adsp-hypothesis",
@@ -1724,7 +1944,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "가설 검정은 '귀무가설이 맞다면 이 정도 결과가 얼마나 드문가'만 따지는 거라, 용어 뜻만 잡으면 문제 유형이 몇 개로 정리되더라."
+  "summary": "가설 검정은 '귀무가설이 맞다면 이 정도 결과가 얼마나 드문가'만 따지는 거라, 용어 뜻만 잡으면 문제 유형이 몇 개로 정리되더라.",
+  "title_en": "Hypothesis Testing",
+  "summary_en": "Hypothesis testing only considers \"how rare this result would be if the null hypothesis were true,\" so once you grasp the meaning of the terms, the types of problems can be summarized in just a few categories.",
+  "title_ja": "仮説検定",
+  "summary_ja": "仮説検定は「帰無仮説が正しいとすれば、この程度の結果が出る確率はどれくらいか」という点しか見ないため、用語の意味さえ把握していれば問題のタイプはいくつかに整理できるものだ。",
+  "title_zh": "假设检验",
+  "summary_zh": "假设检验只关注“如果零假设为真，出现这种程度的结果有多罕见”，只要掌握了术语含义，问题类型就能归纳为几类。"
  },
  {
   "slug": "adsp-regression",
@@ -1736,7 +1962,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "회귀 분석은 선 하나를 긋고 그 선이 얼마나 맞는지 재는 단원이라, 결정계수와 다중공선성만 잡으면 문제가 풀리더라."
+  "summary": "회귀 분석은 선 하나를 긋고 그 선이 얼마나 맞는지 재는 단원이라, 결정계수와 다중공선성만 잡으면 문제가 풀리더라.",
+  "title_en": "Regression Analysis",
+  "summary_en": "Regression analysis is a unit where you draw one line and measure how well it fits; once you grasp the coefficient of determination and multicollinearity, the problem gets solved.",
+  "title_ja": "回帰分析",
+  "summary_ja": "回帰分析は、1 本の直線を引いてその当てはまり具合を測る単元なので、決定係数と多重共線性を押さえれば問題が解決する。",
+  "title_zh": "回归分析",
+  "summary_zh": "回归分析是画一条直线并衡量其拟合程度的单元，只要掌握了决定系数和多重共线性，问题就解决了。"
  },
  {
   "slug": "adsp-multivariate-ts",
@@ -1748,7 +1980,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "주성분분석은 변수를 줄이고, 시계열은 시간 순서를 지키면서 정상으로 바꿔서 보는 거라 두 덩어리로 나눠 외우면 편하더라."
+  "summary": "주성분분석은 변수를 줄이고, 시계열은 시간 순서를 지키면서 정상으로 바꿔서 보는 거라 두 덩어리로 나눠 외우면 편하더라.",
+  "title_en": "Multivariate Analysis and Time Series",
+  "summary_en": "Principal Component Analysis reduces variables, while time series keeps the temporal order and transforms them to be stationary; so it's easier to remember by splitting them into two parts.",
+  "title_ja": "多変量解析と時系列",
+  "summary_ja": "主成分分析は変数を削減し、時系列は時間順序を保ったまま平稳化して見るものなので、2 つの塊に分けて覚えると覚えやすい。",
+  "title_zh": "多变量分析与时间序列",
+  "summary_zh": "主成分分析是减少变量，时间序列是在保持时间顺序的同时使其平稳化进行分析，分成这两块来记忆会比较方便。"
  },
  {
   "slug": "adsp-datamining",
@@ -1760,7 +1998,13 @@
   ],
   "series": "ADsP",
   "emoji": "📈",
-  "summary": "분류, 평가지표, 군집, 연관분석을 숫자 몇 개로 직접 계산해 보면 시험에서 헷갈리던 구분이 정리된다."
+  "summary": "분류, 평가지표, 군집, 연관분석을 숫자 몇 개로 직접 계산해 보면 시험에서 헷갈리던 구분이 정리된다.",
+  "title_en": "Structured Data Mining",
+  "summary_en": "Calculating classification, evaluation metrics, clustering, and association analysis directly with just a few numbers helps clarify the distinctions that were confusing during exams.",
+  "title_ja": "構造化データマイニング",
+  "summary_ja": "分類、評価指標、クラスタリング、関連分析を少数の数値で直接計算してみると、試験で混乱していた区別が整理される。",
+  "title_zh": "结构化数据挖掘",
+  "summary_zh": "通过直接计算分类、评价指标、聚类和相关分析所需的几个数值，可以理清考试中容易混淆的概念。"
  },
  {
   "slug": "jb-requirements",
@@ -2253,6 +2497,222 @@
   "series": "GitHub 레포",
   "emoji": "📘",
   "summary": "로컬 LLM 돌리는 도구 중 러스트로 만든 mistral.rs가 뭘 하는지, 릴리스 노트까지 읽어 봤다."
+ },
+ {
+  "slug": "os-process-thread",
+  "title": "프로세스와 스레드, 무엇을 공유하고 무엇을 따로 갖나",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "운영체제",
+  "emoji": "⚙️",
+  "summary": "프로세스와 스레드의 차이는 결국 주소 공간을 같이 쓰느냐 마느냐였고, 컨텍스트 스위칭 비용도 거기서 갈리더라."
+ },
+ {
+  "slug": "os-scheduling",
+  "title": "CPU 스케줄링",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "운영체제",
+  "emoji": "⚙️",
+  "summary": "스케줄러가 뭘 줄이려고 하느냐에 따라 FCFS·SJF·RR이 갈리고, 반환 시간과 반응 시간이 서로 당기는 관계라는 걸 숫자로 돌려 보면 한 번에 보인다."
+ },
+ {
+  "slug": "os-memory",
+  "title": "메모리 관리와 가상 메모리",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "운영체제",
+  "emoji": "⚙️",
+  "summary": "가상 주소를 물리 주소로 바꾸는 표가 너무 크고 느려서 TLB와 다단계 테이블이 생겼고, 메모리가 모자라면 교체 정책이 성능을 갈랐다."
+ },
+ {
+  "slug": "os-sync-deadlock",
+  "title": "동기화와 교착상태",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "운영체제",
+  "emoji": "⚙️",
+  "summary": "락을 걸어서 값이 꼬이는 건 막았는데, 락 두 개를 서로 반대로 잡는 순간 둘 다 멈추는 이유와 그걸 피하는 방법을 코드로 돌려 보며 정리했다."
+ },
+ {
+  "slug": "os-filesystem",
+  "title": "파일 시스템과 입출력",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "운영체제",
+  "emoji": "⚙️",
+  "summary": "파일 이름은 사실 inode 번호를 가리키는 꼬리표일 뿐이고, open 한 번에 경로 길이만큼 디스크를 읽는다는 걸 알고 나니 파일 관련 시스템 콜이 한 줄로 이어졌다."
+ },
+ {
+  "slug": "net-osi-tcpip",
+  "title": "OSI 7계층과 TCP/IP",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "네트워크",
+  "emoji": "🌐",
+  "summary": "계층은 통신을 역할별로 쪼갠 약속이고, 데이터가 내려가며 헤더가 한 겹씩 붙는 걸 직접 만들어 보니 훨씬 선명했다."
+ },
+ {
+  "slug": "net-tcp-udp",
+  "title": "TCP와 UDP",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "네트워크",
+  "emoji": "🌐",
+  "summary": "같은 전송 계층인데 TCP는 연결·순서·속도 조절까지 해 주고 UDP는 포트와 체크섬만 붙여 던진다."
+ },
+ {
+  "slug": "net-http",
+  "title": "HTTP와 HTTPS",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "네트워크",
+  "emoji": "🌐",
+  "summary": "HTTP 메시지는 그냥 줄 단위 텍스트라서, 소켓으로 직접 쏴 보면 메서드·상태코드·캐시·TLS가 한 번에 정리되더라."
+ },
+ {
+  "slug": "net-dns-routing",
+  "title": "DNS와 IP·라우팅",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "네트워크",
+  "emoji": "🌐",
+  "summary": "이름이 주소로 바뀌는 길(DNS)과 그 주소를 보고 패킷이 목적지로 가는 길(라우팅)을 직접 패킷을 만들고 표를 뒤져 보면서 따라가 봤다."
+ },
+ {
+  "slug": "net-socket",
+  "title": "소켓과 웹소켓",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "네트워크",
+  "emoji": "🌐",
+  "summary": "소켓은 바이트가 흐르는 관일 뿐이라 메시지 경계는 내가 정해야 하고, 웹소켓은 그 위에 프레임 규칙을 얹은 것이더라."
+ },
+ {
+  "slug": "se-methodology",
+  "title": "개발 방법론",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "소프트웨어 공학",
+  "emoji": "🧱",
+  "summary": "폭포수는 왜 욕을 먹고 스크럼·XP·칸반은 각각 뭘 조이는지, 진행 방식 네 가지를 나란히 놓고 봤다."
+ },
+ {
+  "slug": "se-requirements-design",
+  "title": "요구사항과 설계",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "소프트웨어 공학",
+  "emoji": "🧱",
+  "summary": "뭘 만들지 적는 일과 어떻게 짤지 그리는 일이 어떻게 이어지는지, 요구사항·UML·아키텍처 스타일을 한 줄로 꿰어 봤다."
+ },
+ {
+  "slug": "se-testing",
+  "title": "테스트는 케이스를 어떻게 고르느냐의 문제",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "소프트웨어 공학",
+  "emoji": "🧱",
+  "summary": "테스트를 많이 짜는 것보다 어떤 입력을 고르고 무엇을 두고 비교할지가 핵심이라서, 케이스 설계·커버리지·TDD·목을 직접 돌려 보며 정리했다."
+ },
+ {
+  "slug": "se-cicd",
+  "title": "형상 관리와 CI/CD",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "소프트웨어 공학",
+  "emoji": "🧱",
+  "summary": "Git 사용법보다 앞에 있는 '무엇을 기준으로 삼고 어떻게 바꾸나'를 형상 관리로 풀어 보고, 브랜치 전략과 CI가 그 위에서 어떻게 붙는지 정리했다."
+ },
+ {
+  "slug": "ca-cpu",
+  "title": "CPU와 명령어",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "컴퓨터 구조",
+  "emoji": "🔧",
+  "summary": "CPU는 메모리에서 명령어 하나를 꺼내 해석하고 실행하는 일을 끝없이 반복하는 기계이고, 파이프라인은 그 반복을 겹쳐서 빠르게 만든 구조더라."
+ },
+ {
+  "slug": "ca-memory-hierarchy",
+  "title": "메모리 계층과 캐시",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "컴퓨터 구조",
+  "emoji": "🔧",
+  "summary": "빠른 메모리는 작고 큰 메모리는 느려서, 자주 쓰는 걸 가까운 곳에 두는 캐시가 왜 먹히는지 직접 시뮬레이션하며 따라가 봤다."
+ },
+ {
+  "slug": "ca-data-representation",
+  "title": "데이터 표현",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "컴퓨터 구조",
+  "emoji": "🔧",
+  "summary": "컴퓨터 안의 정수, 소수, 글자는 전부 정해진 길이의 비트 묶음이고, 그 묶음을 어떻게 읽기로 약속했느냐만 다르더라."
+ },
+ {
+  "slug": "ca-io-bus",
+  "title": "입출력과 버스",
+  "date": "2026-11-02",
+  "tags": [
+   "공부노트",
+   "CS"
+  ],
+  "series": "컴퓨터 구조",
+  "emoji": "🔧",
+  "summary": "CPU가 디스크나 네트워크 카드 같은 느린 장치를 기다리느라 멈추지 않게 하려고 인터럽트와 DMA가 생겼고, 버스는 그 사이를 잇는 길이더라."
  },
  {
   "slug": "body-profile",

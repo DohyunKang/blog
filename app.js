@@ -34,7 +34,7 @@
   }
   document.getElementById('lang').onchange=function(){LANG=this.value;try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
   function errMsg(){return {ko:'불러오지 못했어요. 새로고침해 주세요.',en:"Couldn't load. Please refresh.",ja:'読み込めませんでした。再読み込みしてください。',zh:'加载失败，请刷新页面。'}[LANG]}
-  var TREE=[["AI",["AI 원리","AI 용어사전","AI 소식·분석","AI 모델","하네스·에이전트","GitHub 레포","LLM 앱 만들기","Claude 활용"]],["CS",["백엔드","프론트엔드","데이터베이스","클라우드·배포","알고리즘","CS·설계 기초","서비스 인프라","정보보안"]],["자격증",["정보처리기사","SQLD","ADsP","빅데이터분석기사"]],["자동화",["마케팅 자동화","업무 자동화"]],["일기장",["나의 방향","AI 시대 고찰"]]];
+  var TREE=[["AI",["AI 원리","AI 용어사전","AI 소식·분석","AI 모델","하네스·에이전트","GitHub 레포","LLM 앱 만들기","Claude 활용"]],["CS",["컴퓨터 구조","운영체제","네트워크","데이터베이스","소프트웨어 공학","자료구조·알고리즘","정보보안","백엔드","프론트엔드","클라우드·배포","서비스 인프라","CS·설계 기초"]],["자격증",["정보처리기사","SQLD","ADsP","빅데이터분석기사"]],["자동화",["마케팅 자동화","업무 자동화"]],["일기장",["나의 방향","AI 시대 고찰"]]];
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
     return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
