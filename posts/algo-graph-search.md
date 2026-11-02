@@ -98,7 +98,7 @@ def dfs_stack(graph, start):
 
 ## 대표 문제 1: 연결 요소 개수
 
-백준 11724번 "연결 요소의 개수"는 무방향 그래프에서 서로 오갈 수 있는 덩어리가 몇 개인지 세는 문제다.
+프로그래머스 "네트워크"는 컴퓨터 n대의 연결 정보가 주어질 때, 직접이든 다른 컴퓨터를 거쳐서든 서로 통하는 컴퓨터 묶음(네트워크)이 몇 개인지 세는 문제다. 무방향 그래프에서 서로 오갈 수 있는 덩어리가 몇 개인지 세는 연결 요소 문제 그대로다.
 
 생각 순서는 이렇다.
 
@@ -133,9 +133,19 @@ def components(n, edges):
 
 6개 점에 간선 (1,2), (2,5), (5,1), (3,4), (4,6)이면 2개, 마지막 간선을 빼면 6번이 혼자 남아 3개가 나왔다.
 
+이 문제는 연결 정보가 인접 행렬(`computers[i][j] == 1`이면 i번과 j번이 연결)로 주어진다. 위 `components`에 넣으려면 간선 목록으로 바꿔 주기만 하면 된다.
+
+```python
+def solution(n, computers):
+    edges = [(i + 1, j + 1) for i in range(n) for j in range(i + 1, n) if computers[i][j] == 1]
+    return components(n, edges)
+```
+
+문제 페이지의 예제 두 개(`[[1,1,0],[1,1,0],[0,0,1]]`은 2, `[[1,1,0],[1,1,1],[0,1,1]]`은 1)를 돌려 맞는 것을 확인했다.
+
 ## 대표 문제 2: 미로 최단 거리
 
-백준 2178번 "미로 탐색"은 0과 1로 된 격자에서 1인 칸만 밟아 (1,1)에서 (N,M)까지 가는 최소 칸 수를 구하는 문제다.
+프로그래머스 "게임 맵 최단거리"는 1이 길, 0이 벽인 격자에서 왼쪽 위에서 오른쪽 아래까지 상하좌우로만 움직여 지나가는 최소 칸 수를 구하는 문제다. 도착할 수 없으면 -1을 돌려준다.
 
 가중치 없는 격자에서 최단 거리는 BFS가 푼다. 층별로 도니까 어떤 칸에 처음 도착한 순간이 최소 거리이기 때문이다. 방문 배열 대신 거리 배열을 쓰면 방문 체크와 거리 기록이 한 번에 된다.
 
@@ -151,42 +161,42 @@ def maze(grid):
         y, x = q.popleft()
         for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             ny, nx = y + dy, x + dx
-            if 0 <= ny < n and 0 <= nx < m and grid[ny][nx] == '1' and dist[ny][nx] == -1:
+            if 0 <= ny < n and 0 <= nx < m and grid[ny][nx] == 1 and dist[ny][nx] == -1:
                 dist[ny][nx] = dist[y][x] + 1
                 q.append((ny, nx))
     return dist[n - 1][m - 1]
 ```
 
-예제 격자(`101111`, `101010`, `101011`, `111011`)로 돌리니 15가 나왔다. 이 문제는 DFS로 풀면 안 되는 대표 사례다. DFS는 먼저 닿은 길이 짧다는 보장이 없다.
+거리 배열을 -1로 채워 두니, 도착 칸이 끝까지 -1이면 그대로 "갈 수 없음"의 답이 된다. 문제 페이지의 예제 두 개를 돌리니 11과 -1이 나왔다. 이 문제는 DFS로 풀면 안 되는 대표 사례다. DFS는 먼저 닿은 길이 짧다는 보장이 없다.
 
 ## 대표 문제 3: 영역 크기 세기
 
-백준 2667번 "단지번호붙이기"는 격자에서 1로 이어진 덩어리가 몇 개고 각각 크기가 얼마인지 구하는 문제다. 최단 거리가 아니라 덩어리를 세는 거라 BFS든 DFS든 상관없다. 연결 요소와 같은 구조에 칸 수 세기만 붙은 셈이다.
+프로그래머스 "무인도 여행"은 바다(`X`)와 숫자(1~9, 식량 양)가 적힌 격자에서 상하좌우로 이어진 땅 덩어리마다 식량 합을 구해 오름차순으로 돌려주고, 땅이 없으면 `[-1]`을 돌려주는 문제다. 최단 거리가 아니라 덩어리를 세는 거라 BFS든 DFS든 상관없다. 연결 요소와 같은 구조에 덩어리 안의 값 더하기만 붙은 셈이다.
 
 ```python
-def islands(grid):
-    n, m = len(grid), len(grid[0])
+def islands(maps):
+    n, m = len(maps), len(maps[0])
     seen = [[False] * m for _ in range(n)]
-    sizes = []
+    sums = []
     for i in range(n):
         for j in range(m):
-            if grid[i][j] == '1' and not seen[i][j]:
+            if maps[i][j] != 'X' and not seen[i][j]:
                 seen[i][j] = True
                 st = [(i, j)]
-                size = 0
+                total = 0
                 while st:
                     y, x = st.pop()
-                    size += 1
+                    total += int(maps[y][x])
                     for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                         ny, nx = y + dy, x + dx
-                        if 0 <= ny < n and 0 <= nx < m and grid[ny][nx] == '1' and not seen[ny][nx]:
+                        if 0 <= ny < n and 0 <= nx < m and maps[ny][nx] != 'X' and not seen[ny][nx]:
                             seen[ny][nx] = True
                             st.append((ny, nx))
-                sizes.append(size)
-    return sorted(sizes)
+                sums.append(total)
+    return sorted(sums) if sums else [-1]
 ```
 
-`1101`, `1001`, `0011`, `1000`을 넣으니 크기 [1, 3, 4]가 나왔다. 여기서는 스택에 넣을 때 방문 표시를 했는데, 이렇게 하면 같은 칸이 중복으로 안 들어가서 순서를 신경 쓰지 않는 문제에는 이쪽이 단순하다.
+문제 페이지의 예제 `["X591X","X1X5X","X231X","1XXX1"]`을 넣으니 `[1, 1, 27]`, 땅이 하나도 없는 `["XXX","XXX","XXX"]`는 `[-1]`이 나왔다. 칸 수를 세려면 `total += 1`로 바꾸면 된다. 여기서는 스택에 넣을 때 방문 표시를 했는데, 이렇게 하면 같은 칸이 중복으로 안 들어가서 순서를 신경 쓰지 않는 문제에는 이쪽이 단순하다.
 
 ## 문제 보고 고르는 순서
 
@@ -208,8 +218,8 @@ def islands(grid):
 - 무방향 그래프 간선을 한쪽에만 넣는다.
 - 격자에서 범위 검사를 값 검사보다 뒤에 둬서 인덱스 에러가 난다. 범위 검사가 앞이다.
 - 점 번호가 1부터인데 배열을 N 크기로 만든다. N+1로 만든다.
-- 여러 시작점이 필요한 문제(익은 토마토처럼)를 시작점마다 따로 BFS 돌린다. 시작점을 처음에 큐에 한꺼번에 넣고 한 번만 돌리는 게 맞다. 이 부분은 원리만 알고 있고 이 글에서 코드를 돌려 보지는 않았다.
-- 입력이 많은 문제에서 `input()`이 느려서 시간 초과가 난다. `sys.stdin.readline`을 쓴다.
+- 여러 시작점이 필요한 문제(불이 여러 곳에서 번지는 격자 같은 것)를 시작점마다 따로 BFS 돌린다. 시작점을 처음에 큐에 한꺼번에 넣고 한 번만 돌리는 게 맞다. 이 부분은 원리만 알고 있고 이 글에서 코드를 돌려 보지는 않았다.
+- 표준 입력으로 큰 입력을 받는 문제에서 `input()`이 느려서 시간 초과가 난다. `sys.stdin.readline`을 쓴다.
 </details>
 
 ## 비슷한 유형
@@ -224,11 +234,13 @@ def islands(grid):
 
 - Python 문서, collections.deque: https://docs.python.org/3/library/collections.html#collections.deque
 - Python 문서, sys.setrecursionlimit: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
-- 문제 번호(본문 복제 없이 번호·이름만): 백준 11724, 2178, 2667
+- 네트워크: https://school.programmers.co.kr/learn/courses/30/lessons/43162
+- 게임 맵 최단거리: https://school.programmers.co.kr/learn/courses/30/lessons/1844
+- 무인도 여행: https://school.programmers.co.kr/learn/courses/30/lessons/154540
 
 ## 확인 못 함
 
-- 백준 문제 본문과 예제는 열어 보지 않았다. 위 문제 설명은 번호·이름에서 알려진 유형 기준이고, 코드는 내가 만든 작은 예제로만 돌렸다(실제 제출 채점은 안 함).
+- 위 세 문제는 프로그래머스 페이지를 열어 제목과 예제를 확인했다. 다만 코드는 문제 페이지의 예제와 내가 만든 작은 예제로만 돌렸고, 실제 제출 채점은 안 했다.
 - 여러 시작점 BFS는 코드 실행 확인 못 함.
 - 파이썬 기본 재귀 한계 1000은 이 PC에서 확인한 값이다. 환경에 따라 다를 수 있다.
 

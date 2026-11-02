@@ -22,8 +22,7 @@ BFS는 간선 하나를 1칸으로 셀 때만 최단 거리를 준다. 간선마
 
 ### 대표 문제
 
-- 백준 1753번 최단경로: 한 정점에서 모든 정점까지 최단 거리를 구한다.
-- 백준 1916번 최소비용 구하기: 도시 사이 버스 비용이 주어지고 출발·도착 도시 하나의 최소 비용을 구한다.
+- 프로그래머스 배달: 마을 N개가 양방향 도로로 이어져 있고, 1번 마을에서 K시간 이내에 갈 수 있는 마을이 몇 개인지 센다. 1번 마을에서 모든 마을까지 최단 거리를 구해 K 이하를 세면 된다.
 - 프로그래머스 합승 택시 요금: 출발점에서 두 목적지까지 공유 구간을 어떻게 나누면 싼지, 다익스트라를 여러 번 돌려 푼다.
 
 ### 풀이 생각 순서
@@ -78,9 +77,9 @@ def dijkstra(n, graph, start):
 
 ### 대표 문제
 
-- 백준 1717번 집합의 표현: 합치기와 같은 집합 여부 질의를 처리한다.
-- 백준 1976번 여행 가자: 도시 연결 정보가 주어지고, 여행 계획의 도시들이 모두 한 그룹인지 본다.
-- 백준 1197번 최소 스패닝 트리: 간선을 비용 순으로 정렬하고 사이클이 안 생기는 것만 고르는 크루스칼에 유니온 파인드가 들어간다.
+- 프로그래머스 네트워크: 컴퓨터 연결 정보가 주어지고, 서로 통하는 컴퓨터 묶음이 몇 개인지 센다. 합친 뒤 루트가 몇 종류인지 세면 되는, 그룹 묶기의 가장 기본형이다.
+- 프로그래머스 호텔 방 배정: 손님이 원하는 방이 차 있으면 그보다 번호가 큰 빈 방 중 가장 작은 곳을 준다. 방을 채울 때마다 "다음 빈 방"을 가리키게 이어 두는 식으로 유니온 파인드를 쓴다.
+- 프로그래머스 섬 연결하기: 다리 건설 비용이 주어지고, 모든 섬이 서로 오갈 수 있게 하는 최소 비용을 구한다. 간선을 비용 순으로 정렬하고 사이클이 안 생기는 것만 고르는 크루스칼에 유니온 파인드가 들어간다.
 
 ### 풀이 생각 순서
 
@@ -127,9 +126,9 @@ def union(p, size, a, b):
 
 ### 대표 문제
 
-- 백준 2252번 줄 세우기: 일부 학생 쌍의 키 비교만 주어질 때 줄을 세운다.
-- 백준 1766번 문제집: 선행 문제가 있고, 가능하면 쉬운(번호 작은) 문제부터. 큐 대신 힙을 쓰는 변형이다.
-- 프로그래머스 코스 문제로는 선수 과목 관련 문제가 자주 보이는데, 정확한 번호는 확인 못 함.
+- LeetCode 210 Course Schedule II: 선수 과목 관계가 주어질 때 모든 과목을 들을 수 있는 순서 하나를 돌려주고, 불가능하면 빈 배열을 돌려준다. 카안 알고리즘 그대로다.
+- LeetCode 207 Course Schedule: 같은 입력에서 순서는 필요 없이 모든 과목을 들을 수 있는지(사이클이 없는지)만 판단한다.
+- 선후 관계가 같을 때 번호가 작은 것부터 내보내라는 조건이 붙으면 큐 대신 힙을 쓰는 변형이 된다(아래 풀이 생각 순서 6번).
 
 ### 풀이 생각 순서
 
@@ -186,13 +185,20 @@ O(V+E), 공간 O(V+E).
 
 ## 근거 링크
 
+- 배달: https://school.programmers.co.kr/learn/courses/30/lessons/12978
+- 합승 택시 요금: https://school.programmers.co.kr/learn/courses/30/lessons/72413
+- 네트워크: https://school.programmers.co.kr/learn/courses/30/lessons/43162
+- 호텔 방 배정: https://school.programmers.co.kr/learn/courses/30/lessons/64063
+- 섬 연결하기: https://school.programmers.co.kr/learn/courses/30/lessons/42861
+- LeetCode Course Schedule II: https://leetcode.com/problems/course-schedule-ii/
+- LeetCode Course Schedule: https://leetcode.com/problems/course-schedule/
 - Dijkstra's algorithm (Wikipedia): https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - Disjoint-set data structure (Wikipedia): https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 - Topological sorting (Wikipedia): https://en.wikipedia.org/wiki/Topological_sorting
 
 ## 확인 못 함
 
-- 문제 번호·이름은 기억 기준이고 사이트에서 일일이 열어 확인하지 않았다. 프로그래머스 위상 정렬 문제는 번호를 특정하지 못했다.
+- 프로그래머스 문제 5개(배달, 합승 택시 요금, 네트워크, 호텔 방 배정, 섬 연결하기)는 페이지를 열어 제목과 내용을 확인했다. 위상 정렬은 프로그래머스에서 확인된 문제를 찾지 못해 LeetCode 210·207로 적었는데, 사이트가 직접 열리지 않아(403) 검색 결과로 제목과 유형만 확인했다.
 - 위키피디아 Dijkstra 문서는 앞 10만 자만 읽었다.
 - 코드는 위 예시 입력으로 직접 실행해 결과를 확인했다. 대용량 입력의 속도는 실행해 보지 않았다.
 

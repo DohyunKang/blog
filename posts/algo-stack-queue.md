@@ -20,13 +20,21 @@
 
 ## 대표 문제
 
-문제 본문은 옮기지 않고 번호와 이름만 적는다.
+문제 본문은 옮기지 않고 이름만 적는다. 전부 프로그래머스 문제이고, 문제 페이지를 열어 제목과 유형을 확인했다.
 
-- 백준 9012 괄호, 프로그래머스 올바른 괄호: 괄호 문자열이 올바른지 판별한다. 스택의 가장 기본 쓰임이다.
-- 백준 17298 오큰수: 각 원소의 오른쪽에서 처음 나오는 더 큰 수를 구한다. 스택에 "아직 답을 못 찾은 원소"를 쌓아 두는 유형이다.
+- 프로그래머스 올바른 괄호: 괄호 문자열이 올바른지 판별한다. 스택의 가장 기본 쓰임이다.
+- 프로그래머스 뒤에 있는 큰 수 찾기(오큰수): 각 원소의 오른쪽에서 처음 나오는 더 큰 수를 구한다. 스택에 "아직 답을 못 찾은 원소"를 쌓아 두는 유형이다.
 - 프로그래머스 주식가격: 각 시점의 가격이 떨어지지 않은 시간을 구한다. 오큰수와 같은 틀이다.
-- 백준 2164 카드2: 맨 위 카드를 버리고 그다음 카드를 맨 아래로 보내는 걸 반복한다. 큐 그대로다.
-- 백준 1966 프린터 큐: 앞에서 꺼내 보고 더 중요한 게 뒤에 있으면 다시 뒤로 보낸다. 큐에 (우선순위, 위치)를 같이 넣는 유형이다.
+- 프로그래머스 카드 뭉치: 두 카드 뭉치의 맨 앞 카드만 쓸 수 있을 때, 주어진 순서대로 단어를 만들 수 있는지 본다. 뭉치마다 앞에서 꺼내는 큐 그대로다.
+- 프로그래머스 프로세스: 앞에서 꺼내 보고 더 중요한 게 뒤에 있으면 다시 뒤로 보낸다. 큐에 (우선순위, 위치)를 같이 넣는 유형이다.
+- 프로그래머스 두 큐 합 같게 만들기: 두 큐 사이에서 원소를 옮겨 합을 같게 만든다. 큐의 앞에서 꺼내 다른 큐의 뒤에 넣는 연산 그대로다.
+
+- [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909)
+- [뒤에 있는 큰 수 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/154539)
+- [주식가격](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+- [카드 뭉치](https://school.programmers.co.kr/learn/courses/30/lessons/159994)
+- [프로세스](https://school.programmers.co.kr/learn/courses/30/lessons/42587)
+- [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
 
 ## 풀이 생각 순서
 
@@ -74,23 +82,30 @@ print(nge([3, 5, 2, 7]))  # [5, 7, 7, -1]
 print(nge([9, 5, 4, 8]))  # [-1, 8, 8, -1]
 ```
 
-### 카드2 (큐)
+### 카드 뭉치 (큐)
 
 ```python
 from collections import deque
 
-def card(n):
-    q = deque(range(1, n + 1))
-    while len(q) > 1:
-        q.popleft()             # 맨 위 카드 버리기
-        q.append(q.popleft())   # 다음 카드는 맨 아래로
-    return q[0]
+def can_make(cards1, cards2, goal):
+    q1, q2 = deque(cards1), deque(cards2)
+    for w in goal:
+        if q1 and q1[0] == w:
+            q1.popleft()          # 첫 뭉치의 맨 앞 카드 사용
+        elif q2 and q2[0] == w:
+            q2.popleft()          # 둘째 뭉치의 맨 앞 카드 사용
+        else:
+            return "No"
+    return "Yes"
 
-print(card(6), card(4))  # 4 4
+print(can_make(["i", "drink", "water"], ["want", "to"],
+               ["i", "want", "to", "drink", "water"]))   # Yes
+print(can_make(["i", "water", "drink"], ["want", "to"],
+               ["i", "want", "to", "drink", "water"]))   # No
 ```
 
 <details>
-<summary>주식가격과 프린터 큐 코드</summary>
+<summary>주식가격과 프로세스 코드</summary>
 
 주식가격은 오큰수와 비슷한데, 값이 "떨어지는" 순간 스택에서 꺼내 거리를 기록한다.
 
@@ -110,7 +125,7 @@ def prices(p):
 print(prices([1, 2, 3, 2, 3]))  # [4, 3, 1, 1, 0]
 ```
 
-프린터 큐는 큐에 (우선순위, 처음 위치)를 넣고, 꺼낸 것보다 높은 우선순위가 남아 있으면 뒤로 돌린다. 매번 `any`로 훑기 때문에 최악에는 O(n²)이다. 문제 제한이 작아서 통과하는 풀이다.
+프로세스는 큐에 (우선순위, 처음 위치)를 넣고, 꺼낸 것보다 높은 우선순위가 남아 있으면 뒤로 돌린다. 매번 `any`로 훑기 때문에 최악에는 O(n²)이다. 문제 페이지에서 확인한 제한이 우선순위 개수 100개 이하라 충분하다.
 
 ```python
 from collections import deque
@@ -139,8 +154,8 @@ print(printer([1, 1, 9, 1, 1, 1], 0))  # 5
 |---|---|---|---|
 | 올바른 괄호 | O(n) | O(n) | 글자마다 한 번 보고, 최악에는 전부 스택에 쌓임 |
 | 오큰수·주식가격 | O(n) | O(n) | 각 원소가 스택에 한 번 들어가고 한 번 나옴 |
-| 카드2 | O(n) | O(n) | 연산마다 deque 양쪽 끝만 만짐 |
-| 프린터 큐 | O(n²) | O(n) | 꺼낼 때마다 남은 우선순위를 훑음 |
+| 카드 뭉치 | O(n) | O(n) | 단어마다 deque의 맨 앞만 봄 |
+| 프로세스 | O(n²) | O(n) | 꺼낼 때마다 남은 우선순위를 훑음 |
 
 오큰수가 반복문 안에 `while`이 있는데도 O(n)인 게 처음엔 헷갈렸다. 안쪽 `while`이 도는 횟수를 전부 합치면 원소 수를 넘지 못한다. 한 원소는 한 번 들어가서 한 번만 나오기 때문이다. 이렇게 "전체 횟수를 합쳐서" 세는 방식이 스택 문제 복잡도 계산의 기본이다.
 
@@ -153,7 +168,7 @@ print(printer([1, 1, 9, 1, 1, 1], 0))  # 5
 
 ## 덱을 쓸 때
 
-양쪽 끝을 다 쓰는 문제에는 덱이 맞다. 백준 10866 덱처럼 명령을 그대로 구현하는 문제가 있고, 슬라이딩 윈도우 최댓값처럼 "윈도우 안에서 후보를 앞뒤로 정리"하는 문제에도 쓴다. `deque(maxlen=k)`로 만들면 가득 찬 뒤에 새 원소를 넣을 때 반대쪽 끝이 자동으로 밀려나서, 최근 k개만 유지할 때 편하다. 슬라이딩 윈도우는 [자세히 → 투 포인터·슬라이딩 윈도우·누적합](#/post/algo-two-pointer)에서 다룬다.
+양쪽 끝을 다 쓰는 문제에는 덱이 맞다. 두 큐 합 같게 만들기처럼 두 deque 사이에서 원소를 옮기는 문제가 있고, 슬라이딩 윈도우 최댓값처럼 "윈도우 안에서 후보를 앞뒤로 정리"하는 문제에도 쓴다. `deque(maxlen=k)`로 만들면 가득 찬 뒤에 새 원소를 넣을 때 반대쪽 끝이 자동으로 밀려나서, 최근 k개만 유지할 때 편하다. 슬라이딩 윈도우는 [자세히 → 투 포인터·슬라이딩 윈도우·누적합](#/post/algo-two-pointer)에서 다룬다.
 
 ## 다른 유형과 이어지는 곳
 
@@ -166,13 +181,14 @@ print(printer([1, 1, 9, 1, 1, 1], 0))  # 5
 
 - Python 문서, collections.deque: https://docs.python.org/3/library/collections.html (양쪽 끝 O(1), 리스트 `pop(0)` O(n), `maxlen` 동작을 확인)
 - Python 튜토리얼, 자료구조(리스트를 스택·큐로 쓰기): https://docs.python.org/3/tutorial/datastructures.html
+- 사용한 문제(프로그래머스, 페이지를 열어 제목·유형 확인): 올바른 괄호 https://school.programmers.co.kr/learn/courses/30/lessons/12909 · 뒤에 있는 큰 수 찾기 https://school.programmers.co.kr/learn/courses/30/lessons/154539 · 주식가격 https://school.programmers.co.kr/learn/courses/30/lessons/42584 · 카드 뭉치 https://school.programmers.co.kr/learn/courses/30/lessons/159994 · 프로세스 https://school.programmers.co.kr/learn/courses/30/lessons/42587 · 두 큐 합 같게 만들기 https://school.programmers.co.kr/learn/courses/30/lessons/118667
 
 ## 확인 못 함
 
-- 백준·프로그래머스 사이트에서 문제 본문과 제한을 직접 열어 보지 못했다. 문제 번호·이름은 기억에 의존했고, 요약도 그 기억 기준이다. 올리기 전에 번호와 이름을 한 번 대조해야 한다.
 - 위 코드는 예시 입력 몇 개로만 돌렸고, 실제 채점 사이트에서 통과하는지는 확인 못 했다.
 - 시간 비교(0.155초 대 0.002초)는 내 PC에서 한 번 잰 값이다.
-- 프린터 큐의 제한 크기와 O(n²)가 통과하는지는 확인 못 했다.
+- 프로세스의 O(n²) 풀이가 실제 채점을 통과하는지는 확인 못 했다(제한은 우선순위 100개 이하).
+- 두 큐 합 같게 만들기는 코드를 쓰지 않았고, 문제 페이지의 제목·요약만 확인했다.
 
 ← 개념 지도로 (#/post/algo-map)
 

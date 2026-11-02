@@ -79,12 +79,13 @@ def dfs(상태):
 
 ## 대표 문제
 
-번호·이름만 적고 본문은 옮기지 않는다.
+번호·이름만 적고 본문은 옮기지 않는다. 전부 프로그래머스 문제다.
 
-- 백준 15649 N과 M (1): 1~N에서 서로 다른 M개를 골라 나열하는 순열 문제.
-- 백준 15650 N과 M (2): 같은 설정에서 오름차순 조합.
-- 백준 9663 N-Queen: N×N 판에 퀸 N개를 서로 공격하지 않게 놓는 경우의 수.
-- 백준 1182 부분수열의 합: 부분수열 중 합이 S인 것의 개수(선택/비선택으로 갈라지는 재귀).
+- [피로도](https://school.programmers.co.kr/learn/courses/30/lessons/87946): 던전을 방문하는 순서를 모두 따져 가장 많이 탐험하는 경우를 찾는다. 순열 백트래킹이다.
+- [모음사전](https://school.programmers.co.kr/learn/courses/30/lessons/84512): 모음 A, E, I, O, U로 만든 길이 5 이하 단어를 사전순으로 나열할 때 주어진 단어가 몇 번째인지 구한다. 사전순으로 하나씩 만들어 가는 재귀다.
+- [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411): 주문 목록에서 메뉴 조합을 뽑아 가장 많이 함께 주문된 조합을 찾는다. 조합 나열에 해시를 붙인다.
+- [N-Queen](https://school.programmers.co.kr/learn/courses/30/lessons/12952): N×N 판에 퀸 N개를 서로 공격하지 않게 놓는 경우의 수.
+- [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165): 각 숫자에 +/- 부호를 붙여 합이 목표값이 되는 경우의 수. 숫자마다 둘로 갈라지는 재귀라서 아래 "넣거나 안 넣거나" 틀과 같다.
 
 ## 코드
 
@@ -123,7 +124,7 @@ def combinations_of(n, m):
 
 실행해서 `itertools.permutations(range(1,5), 2)`와 `itertools.combinations(range(1,6), 3)`의 결과와 같은 순서로 같은 값이 나오는 것을 확인했다(각각 12개, 10개).
 
-### 부분수열의 합: 넣거나 안 넣거나
+### 넣거나 안 넣거나(부분수열의 합, 타겟 넘버)
 
 ```python
 def count_subsets(a, target):
@@ -137,6 +138,39 @@ def count_subsets(a, target):
         dfs(i + 1, s)          # 안 넣는다
     dfs(0, 0)
     return cnt
+```
+
+타겟 넘버는 "안 넣는다" 자리를 "뺀다(`s - a[i]`)"로 바꾼 같은 틀이다. 프로그래머스 입출력 예 `[1, 1, 1, 1, 1], 3 → 5`와 `[4, 1, 2, 1], 4 → 2`를 돌려 같은 값이 나오는 걸 확인했다.
+
+```python
+def target_number(a, target):
+    cnt = 0
+    def dfs(i, s):
+        nonlocal cnt
+        if i == len(a):
+            if s == target: cnt += 1
+            return
+        dfs(i + 1, s + a[i])   # 더한다
+        dfs(i + 1, s - a[i])   # 뺀다
+    dfs(0, 0)
+    return cnt
+```
+
+피로도는 순열 틀에 "지금 피로도로 들어갈 수 있나"만 가지치기로 붙인 것이다. 입출력 예 `k=80, [[80,20],[50,40],[30,10]] → 3`이 나오는 걸 확인했다.
+
+```python
+def max_dungeons(k, dungeons):
+    best, used = 0, [False] * len(dungeons)
+    def dfs(k, cnt):
+        nonlocal best
+        best = max(best, cnt)
+        for i, (need, cost) in enumerate(dungeons):
+            if used[i] or k < need: continue   # 못 들어가면 가지치기
+            used[i] = True
+            dfs(k - cost, cnt + 1)
+            used[i] = False                    # 되돌리기
+    dfs(k, 0)
+    return best
 ```
 
 ### N-Queens: 행마다 하나씩, 열·대각선 검사
@@ -210,9 +244,10 @@ n=1~9에 대해 돌려 보니 1, 0, 0, 2, 10, 4, 40, 92, 352가 나왔다. n=8�
 
 - 파이썬 기본 재귀 한도 1000은 내 환경에서 실행해 확인한 값이고, 공식 문서 해당 구절에서 기본값 숫자는 확인하지 못했다.
 - 순열·조합·부분수열 합 코드의 정확한 시간 복잡도 상수는 이론 추정이며 측정하지 않았다.
-- 백준 문제 번호·이름은 기억에 의존했고 사이트에서 다시 열어 확인하지 않았다.
+- 문제 제한(입력 범위 등)과 사이트 채점 통과 여부는 확인하지 못했다. 문제 제목·유형은 프로그래머스 페이지를 열어 확인했고(피로도, 모음사전, 메뉴 리뉴얼, N-Queen, 타겟 넘버), 피로도·타겟 넘버는 입출력 예도 대조했다.
 
 ## 근거 링크
 
 - Python 문서, sys.setrecursionlimit: https://docs.python.org/3/library/sys.html#sys.setrecursionlimit
 - Wikipedia, Eight queens puzzle: https://en.wikipedia.org/wiki/Eight_queens_puzzle
+- 사용한 문제(프로그래머스): 피로도 https://school.programmers.co.kr/learn/courses/30/lessons/87946 · 모음사전 https://school.programmers.co.kr/learn/courses/30/lessons/84512 · 메뉴 리뉴얼 https://school.programmers.co.kr/learn/courses/30/lessons/72411 · N-Queen https://school.programmers.co.kr/learn/courses/30/lessons/12952 · 타겟 넘버 https://school.programmers.co.kr/learn/courses/30/lessons/43165

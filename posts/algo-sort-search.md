@@ -97,14 +97,13 @@ def upper_bound(a, x):   # a[i] > x 인 첫 i
 
 ## 대표 문제
 
-번호와 이름만 적는다. 본문은 각 사이트에서 봐야 한다.
+번호와 이름만 적는다. 본문은 각 사이트에서 봐야 한다. 전부 프로그래머스 문제다.
 
-- 백준 2751 수 정렬하기 2: N이 크니 O(N²) 정렬이 안 되고 내장 정렬을 쓴다. 입력은 `sys.stdin`으로 빠르게 받는다.
-- 백준 1920 수 찾기: 정렬해 두고 이분 탐색, 또는 집합(set)으로도 된다. 집합은 평균 O(1)이라 이 문제에서는 더 짧다. 이분 탐색을 연습하려면 직접 짜 본다.
-- 백준 10816 숫자 카드 2: 개수를 세야 해서 `bisect_right - bisect_left`를 쓴다(딕셔너리 카운트도 가능).
-- 백준 2805 나무 자르기: 파라메트릭 서치. 절단 높이 H를 이분 탐색한다.
-- 백준 1654 랜선 자르기: 파라메트릭 서치. 랜선 길이를 이분 탐색한다.
-- 프로그래머스 입국심사: 파라메트릭 서치. 시간 T를 이분 탐색한다.
+- [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748): 배열의 구간을 잘라 정렬한 뒤 k번째 값을 꺼낸다. 내장 정렬을 그대로 쓰는 가장 기본 문제다.
+- [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746): 숫자를 이어 붙여 가장 큰 수를 만든다. 두 수를 `a+b`와 `b+a`로 이어 붙여 비교하는 정렬 기준을 직접 준다.
+- [순위 검색](https://school.programmers.co.kr/learn/courses/30/lessons/72412): 조건별 점수 목록을 정렬해 두고 질의마다 이분 탐색으로 개수를 센다. `bisect`로 "x 이상인 개수"를 구하는 연습용이다.
+- [징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236): 바위를 n개 빼고 남은 바위 사이 거리의 최솟값을 최대로 만든다. 파라메트릭 서치(최댓값)다. 거리 기준값을 이분 탐색한다.
+- [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238): 파라메트릭 서치(최솟값). 시간 T를 이분 탐색한다.
 
 ## 풀이 생각 순서
 
@@ -115,7 +114,7 @@ def upper_bound(a, x):   # a[i] > x 인 첫 i
 
 ## 코드
 
-나무 자르기(2805) 형태. 높이 H로 자를 때 얻는 나무는 `H보다 큰 나무의 (높이 - H)` 합이다. 필요한 양 M 이상이 되는 최대 H를 찾는다.
+"절단 높이 H를 정하는" 유형. 높이 H로 자를 때 얻는 나무는 `H보다 큰 나무의 (높이 - H)` 합이다. 필요한 양 M 이상이 되는 최대 H를 찾는다.
 
 ```python
 def tree_cut(trees, need):
@@ -132,7 +131,7 @@ print(tree_cut([20, 15, 10, 17], 7))        # 15
 print(tree_cut([4, 42, 40, 26, 46], 20))    # 36
 ```
 
-랜선 자르기(1654)는 같은 틀에서 검사만 `sum(l // mid)`로 바꾸고 `lo`는 1에서 시작한다.
+"길이 L로 잘라 K개 이상 만들기" 유형은 같은 틀에서 검사만 `sum(l // mid)`로 바꾸고 `lo`는 1에서 시작한다.
 
 ```python
 def lan(lines, need):
@@ -164,7 +163,44 @@ def immigration(n, times):
 print(immigration(6, [7, 10]))              # 28
 ```
 
-위 코드는 전부 직접 실행해서 예시 값이 맞게 나오는 걸 확인했다(예시 숫자는 각 문제의 공개된 예제 형태를 따랐지만, 문제 사이트에 제출해서 채점받은 건 아니다).
+징검다리는 최댓값 찾기라서 올림 mid를 쓰고, 검사는 "기준값보다 가까운 바위를 치우면 몇 개 치워야 하나"를 앞에서부터 센다. 치운 개수가 n 이하면 가능하다.
+
+```python
+def bridge(distance, rocks, n):
+    pts = [0] + sorted(rocks) + [distance]
+    lo, hi = 1, distance
+    while lo < hi:
+        mid = (lo + hi + 1) // 2           # 최댓값 찾기: 올림
+        removed, prev = 0, 0
+        for p in pts[1:]:
+            if p - prev < mid:
+                removed += 1               # 너무 가까운 바위는 치운다
+            else:
+                prev = p
+        if removed <= n:
+            lo = mid                        # n개 이하로 치워도 됨 -> 기준을 키운다
+        else:
+            hi = mid - 1
+    return lo
+
+print(bridge(25, [2, 14, 11, 21, 17], 2))   # 4
+```
+
+가장 큰 수의 정렬 기준은 `cmp_to_key`로 준다.
+
+```python
+from functools import cmp_to_key
+
+def biggest(nums):
+    s = sorted(map(str, nums),
+               key=cmp_to_key(lambda a, b: (a + b < b + a) - (a + b > b + a)))
+    return str(int("".join(s)))             # 앞의 0이 몰려 "000"이 되는 경우 처리
+
+print(biggest([6, 10, 2]))                  # 6210
+print(biggest([3, 30, 34, 5, 9]))           # 9534330
+```
+
+위 코드는 전부 직접 실행해서 예시 값이 맞게 나오는 걸 확인했다. 입국심사(6, [7, 10] → 28)와 징검다리(25, [2, 14, 11, 21, 17], 2 → 4)는 프로그래머스 문제 페이지의 입출력 예와 같은 값이다. 문제 사이트에 제출해서 채점받은 건 아니다.
 
 ## 시간·공간 복잡도
 
@@ -198,6 +234,8 @@ print(immigration(6, [7, 10]))              # 28
 
 확인함: 파이썬 정렬이 안정적이고 Timsort라는 것, 키 함수와 다중 키 정렬(공식 정렬 문서). `bisect_left`/`bisect_right` 의미와 `insort`의 O(n), 검색 O(log n)(bisect 문서). 코드 전부 실행 확인(병합 정렬·lower/upper bound는 무작위 비교, 파라메트릭 서치는 예시 값).
 
+확인함(문제 페이지를 열어 제목·유형 확인): K번째수, 가장 큰 수, 순위 검색, 징검다리, 입국심사. 징검다리·입국심사는 입출력 예도 대조했다.
+
 확인 못 함: 각 문제의 최신 제한 조건과 정확한 입력 형식(문제 본문을 복제하지 않아 사이트에서 다시 확인 필요). 위 코드의 사이트 제출 채점 결과. 퀵 정렬 최악 O(N²) 같은 일반 이론은 공식 문서가 아니라 일반적인 알고리즘 상식이다.
 
 </details>
@@ -206,3 +244,4 @@ print(immigration(6, [7, 10]))              # 28
 
 - Python 문서, Sorting Techniques: https://docs.python.org/3/howto/sorting.html
 - Python 문서, bisect: https://docs.python.org/3/library/bisect.html
+- 사용한 문제(프로그래머스): K번째수 https://school.programmers.co.kr/learn/courses/30/lessons/42748 · 가장 큰 수 https://school.programmers.co.kr/learn/courses/30/lessons/42746 · 순위 검색 https://school.programmers.co.kr/learn/courses/30/lessons/72412 · 징검다리 https://school.programmers.co.kr/learn/courses/30/lessons/43236 · 입국심사 https://school.programmers.co.kr/learn/courses/30/lessons/43238

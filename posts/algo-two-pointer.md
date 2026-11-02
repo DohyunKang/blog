@@ -16,7 +16,7 @@
 
 ## 1. 투 포인터: 양끝에서 좁히기
 
-대표 문제는 백준 3273 「두 수의 합」이다. 수열에서 합이 X가 되는 쌍의 개수를 구하는 문제다. 정렬해 두고 왼쪽 끝(l)과 오른쪽 끝(r)에 포인터를 둔다.
+대표 문제는 프로그래머스 「구명보트」다. 보트 한 대에 최대 2명이 타고 무게 제한이 있을 때, 모두 구하는 데 필요한 보트의 최소 수를 구한다. 기본 틀은 "합이 target인 쌍 찾기"와 같다. 정렬해 두고 왼쪽 끝(l)과 오른쪽 끝(r)에 포인터를 둔다. 먼저 틀을 합이 target인 쌍 찾기로 보자.
 
 - 합이 X보다 작으면 l을 오른쪽으로 민다(더 큰 수가 필요하니까).
 - 합이 X보다 크면 r을 왼쪽으로 민다.
@@ -40,11 +40,28 @@ def two_sum_sorted(a, target):
 print(two_sum_sorted([1, 2, 3, 4, 5, 6], 9))  # (2, 5)
 ```
 
-시간은 정렬 O(N log N) + 탐색 O(N), 공간은 O(1)이다. 이미 정렬된 입력이면 탐색만 O(N)이다.
+구명보트는 같은 틀에서 조건만 바뀐다. 정렬한 뒤 가장 가벼운 사람(l)과 가장 무거운 사람(r)을 본다. 둘의 합이 제한 이하면 같이 태우고(l을 민다), 아니면 무거운 사람은 누구와도 못 타니 혼자 태운다. 어느 쪽이든 가장 무거운 사람(r)은 이번 보트에 타고 빠진다.
+
+```python
+def boats(people, limit):
+    a = sorted(people)
+    l, r, cnt = 0, len(a) - 1, 0
+    while l <= r:
+        if a[l] + a[r] <= limit:
+            l += 1               # 가장 가벼운 사람도 같이 탄다
+        r -= 1                   # 가장 무거운 사람은 이번 보트에 탄다
+        cnt += 1
+    return cnt
+
+print(boats([70, 50, 80, 50], 100))  # 3
+print(boats([70, 80, 50], 100))      # 3
+```
+
+시간은 정렬 O(N log N) + 탐색 O(N), 공간은 O(1)이다. 이미 정렬된 입력이면 탐색만 O(N)이다(구명보트는 정렬되어 있지 않아서 정렬이 필요하다).
 
 ## 2. 투 포인터: 구간을 늘였다 줄였다
 
-대표 문제는 백준 2003 「수들의 합 2」(합이 M인 연속 구간의 개수)와 백준 1806 「부분합」(합이 S 이상인 가장 짧은 구간)이다. 양수만 있다는 조건이 중요하다. 양수면 구간을 늘릴수록 합이 커지고 줄일수록 작아져서, 포인터를 되돌릴 일이 없다.
+대표 문제는 프로그래머스 「연속된 부분 수열의 합」(비내림차순으로 정렬된 수열에서 합이 k인 연속 구간 중 가장 짧은 것)이다. 아래 코드는 같은 틀로 "합이 M인 연속 구간의 개수"를 세고, 이어서 이 문제의 풀이를 붙였다. 수열의 값이 모두 1 이상이라는 조건이 중요하다. 양수면 구간을 늘릴수록 합이 커지고 줄일수록 작아져서, 포인터를 되돌릴 일이 없다.
 
 풀이 생각 순서는 이렇다.
 
@@ -68,7 +85,27 @@ def count_sub(a, m):
 print(count_sub([1, 2, 3, 2, 5, 1, 1, 1, 2], 5))  # 4
 ```
 
-l과 r은 각각 최대 N번만 움직이므로 전체 O(N)이다. for문 안에 while이 있어서 O(N²)처럼 보이지만, l은 한 번도 뒤로 가지 않는다. 안쪽 while의 총 실행 횟수가 N을 넘지 않는다. 공간은 O(1).
+연속된 부분 수열의 합은 개수가 아니라 "합이 k인 가장 짧은 구간"의 시작·끝 인덱스를 구한다. 같은 방식으로 합이 k인 구간을 만날 때마다 가장 짧은 것을 갱신한다.
+
+```python
+def shortest_k(seq, k):
+    l = s = 0
+    best = None
+    for r, x in enumerate(seq):
+        s += x
+        while s > k:
+            s -= seq[l]
+            l += 1
+        if s == k and (best is None or r - l < best[1] - best[0]):
+            best = (l, r)
+    return list(best)
+
+print(shortest_k([1, 2, 3, 4, 5], 7))           # [2, 3]
+print(shortest_k([1, 1, 1, 2, 3, 4, 5], 5))     # [6, 6]
+print(shortest_k([2, 2, 2, 2, 2], 6))           # [0, 2]
+```
+
+l과 r은 각각 최대 N번만 움직이므로 전체 O(N)이다. for문 안에 while이 있어서 O(N²)처럼 보이지만, l은 한 번도 뒤로 가지 않는다. 안쪽 while의 총 실행 횟수가 N을 넘지 않는다. 공간은 O(1). 문제 페이지의 제한은 수열 길이 최대 100만이라 O(N²)로는 안 되고 이 방식이 필요하다.
 
 <details>
 <summary>왜 O(N)인지 조금 더 자세히</summary>
@@ -79,7 +116,7 @@ l과 r은 각각 최대 N번만 움직이므로 전체 O(N)이다. for문 안에
 
 ## 3. 슬라이딩 윈도우
 
-대표 문제는 백준 2559 「수열」(연속된 K일의 온도 합 중 최댓값)과 LeetCode 3 「Longest Substring Without Repeating Characters」다.
+길이가 변하는 창의 대표 문제는 프로그래머스 「보석 쇼핑」(모든 종류의 보석을 하나 이상 포함하는 가장 짧은 구간)과 LeetCode 3 「Longest Substring Without Repeating Characters」다. 길이 K가 고정인 창은 "연속된 K일 합의 최댓값" 같은 문제의 기본형이고, 프로그래머스 「연속 부분 수열 합의 개수」는 길이를 1부터 N까지 바꿔 가며 모든 연속 구간의 합을 보는 문제라 창을 미는 발상이 그대로 쓰인다.
 
 ### 고정 길이 창
 
@@ -120,7 +157,7 @@ print(longest_distinct("abba"))      # 2
 
 ## 4. 누적합
 
-대표 문제는 백준 11659 「구간 합 구하기 4」다. 수열이 주어지고 "i번째부터 j번째까지 합"을 M번 물어본다. 질의마다 더하면 O(NM)이다. 대신 앞에서부터의 합을 한 번 만들어 둔다.
+대표 문제는 프로그래머스 「연속 부분 수열 합의 개수」다. 원형 수열(마지막 다음에 처음이 이어진다)에서 연속 부분 수열의 합이 몇 종류인지 센다. 원형은 수열을 두 번 이어 붙여 길이 2N 배열로 두면 일반 구간이 된다. 길이 L, 시작점 i인 구간의 합은 질의마다 새로 더하면 O(L)이라 전체가 O(N³)이다. 대신 앞에서부터의 합을 한 번 만들어 둔다.
 
 prefix[i] = a[0] + ... + a[i-1] 으로 정의하면(prefix[0] = 0), 구간 [i, j]의 합은 prefix[j+1] - prefix[i] 한 번의 뺄셈이다. 앞에 0을 하나 붙여 두면 i가 0일 때를 따로 처리하지 않아도 된다.
 
@@ -136,7 +173,25 @@ print(p)            # [0, 10, 30, 60, 100, 150]
 print(p[4] - p[1])  # 20+30+40 = 90
 ```
 
-전처리 O(N), 질의 하나당 O(1), 공간 O(N)이다. 파이썬에는 `itertools.accumulate`가 있어서 `list(accumulate(a, initial=0))`로 같은 배열을 만들 수 있다.
+전처리 O(N), 질의 하나당 O(1), 공간 O(N)이다. 원형 수열 문제에 적용하면 이렇다.
+
+```python
+def count_sums(e):
+    n = len(e)
+    d = e + e                    # 원형을 두 번 이어 붙임
+    p = [0]
+    for x in d:
+        p.append(p[-1] + x)
+    sums = set()
+    for length in range(1, n + 1):
+        for i in range(n):
+            sums.add(p[i + length] - p[i])
+    return len(sums)
+
+print(count_sums([7, 9, 1, 1, 4]))  # 18
+```
+
+구간 합을 O(1)로 구하니 전체는 O(N²)다. 문제 페이지의 제한은 원소 수 1,000 이하라 충분하다. 구간에 값을 더하는 작업이 아주 많은 문제(프로그래머스 「파괴되지 않은 건물」)에서는 누적합을 거꾸로 쓰는 차이 배열이 나온다. 자세한 건 [자세히 → 배열·문자열·해시](#/post/algo-array-hash)에서 다뤘다. 파이썬에는 `itertools.accumulate`가 있어서 `list(accumulate(a, initial=0))`로 같은 배열을 만들 수 있다.
 
 ### 누적합 + 해시: 합이 K인 구간 개수
 
@@ -190,10 +245,12 @@ print(count_k([1, 2, 3, -3, 3], 3))  # 5
 
 - Prefix sum (Wikipedia): https://en.wikipedia.org/wiki/Prefix_sum (누적합의 정의와 선형 시간 계산을 확인)
 - itertools.accumulate (Python 공식 문서): https://docs.python.org/3/library/itertools.html (accumulate와 initial 옵션을 확인)
+- 사용한 문제: 구명보트 https://school.programmers.co.kr/learn/courses/30/lessons/42885 · 연속된 부분 수열의 합 https://school.programmers.co.kr/learn/courses/30/lessons/178870 · 보석 쇼핑 https://school.programmers.co.kr/learn/courses/30/lessons/67258 · 연속 부분 수열 합의 개수 https://school.programmers.co.kr/learn/courses/30/lessons/131701 · 파괴되지 않은 건물 https://school.programmers.co.kr/learn/courses/30/lessons/92344 · LeetCode 3 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 ## 확인 못 함
 
-- 백준·LeetCode 문제 번호와 이름은 기억을 기준으로 적었고 사이트에서 다시 열어 확인하지 못했다. 문제 조건(입력 범위 등)은 직접 확인이 필요하다.
+- 프로그래머스 문제는 페이지를 열어 제목·요약·제한을 확인했다. LeetCode 3은 사이트가 직접 열리지 않아 검색 결과의 문제 페이지 정보로 확인했다. 제출 채점 결과는 확인 못 했다.
+- 보석 쇼핑은 코드를 쓰지 않았고 제목·요약만 확인했다.
 - 투 포인터·슬라이딩 윈도우의 용어 구분은 공식 정의를 찾지 못했고 관례를 따랐다.
 - 덱으로 창 최댓값을 구하는 방법은 코드를 실행하지 않았다.
 
