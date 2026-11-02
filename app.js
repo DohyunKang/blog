@@ -51,7 +51,7 @@
     document.title='dohyun.log';
     var q=state.q.toLowerCase();
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+(p.title_en||'')+(p.summary_en||'')+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
-    shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:-1))});
+    shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:a.date>b.date?-1:0))});
     var top=null;if(!filter&&!q){top=shown.filter(function(p){return p.featured})[0]||shown[0]}var rest=top?shown.filter(function(p){return p!==top}):shown;
     var PER=10,key=(cur||'')+'|'+q+'|'+state.asc;if(state.pkey!==key){state.pkey=key;state.page=1}
     var pages=Math.max(1,Math.ceil(rest.length/PER));if(state.page>pages)state.page=pages;
@@ -156,7 +156,7 @@
     document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'?'#/about':(h.indexOf('#/post')===0?'':'#/')))});
     if(h.indexOf('#/post')!==0)scrollTo(0,0);
   }
-  fetch('posts/index.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:-1});
+  fetch('posts/index.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0});
     // 사진 없는 글은 오래된 글부터 순서대로 사진 13장을 돌려 붙임 → 이웃한 글끼리 안 겹치고, 새 글이 생겨도 기존 글 사진은 그대로
     var k=0;var ORD=[2,8,9,4,10,11,3,12,13,5,6,7,1];posts.slice().reverse().forEach(function(p){if(!p.thumb)p.auto='img/th/t'+ORD[k++%ORD.length]+'.jpg'});route()}).catch(function(){app.innerHTML='<p class="empty">'+errMsg()+'</p>'});
   addEventListener('hashchange',route);
