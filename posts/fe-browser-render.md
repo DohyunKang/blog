@@ -84,7 +84,7 @@ MDN이 드는 실제 사례 하나는 이미지다. `width`와 `height` 없이 `
 - 화면이 떴으니 다 끝났다: MDN은 화면이 로드된 것처럼 보여도 메인 스레드가 큰 스크립트로 바쁘면 스크롤과 탭에 반응이 없을 수 있다고 한다. 이걸 재는 지표가 TTI다.
 - 크기를 안 바꾸면 비용이 없다: 색 하나 바꾸는 것도 리페인트는 일어난다. 다만 리플로우보다 싸다.
 
-성능 쪽 이야기는 자세히 → 프론트엔드 성능에서, 서버에서 HTML을 만들어 보내느냐 브라우저가 만드느냐의 문제는 [자세히 → 렌더링 방식](#/post/fe-rendering-modes)에서 이어진다.
+성능 쪽 이야기는 [자세히 → 프론트엔드 성능](#/post/fe-performance)에서, 서버에서 HTML을 만들어 보내느냐 브라우저가 만드느냐의 문제는 [자세히 → 렌더링 방식](#/post/fe-rendering-modes)에서 이어진다.
 
 <details>
 <summary>자세한 풀이: 한 번 더 도는 경우를 JS로 보기</summary>
@@ -127,4 +127,4 @@ items.forEach((el, i) => {
 
 ← 개념 지도로 (#/post/fe-map)
 
-관련 글: [렌더링 방식](#/post/fe-rendering-modes) · 프론트엔드 성능 · 네트워크
+관련 글: [렌더링 방식](#/post/fe-rendering-modes) · [프론트엔드 성능](#/post/fe-performance) · 네트워크
