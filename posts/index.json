@@ -3706,7 +3706,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "LLM 기능은 같은 입력에도 답이 달라서, 바꿀 때마다 돌려 볼 시험지(평가 세트)가 있어야 안 무너지더라."
+  "summary": "LLM 기능은 같은 입력에도 답이 달라서, 바꿀 때마다 돌려 볼 시험지(평가 세트)가 있어야 안 무너지더라.",
+  "title_en": "LLM Evaluation (Evals)",
+  "summary_en": "The LLM feature produces different answers for the same input, so it needs a test set (evaluation dataset) to try every time you make changes, otherwise it will break.",
+  "title_ja": "LLM 評価（Evals）",
+  "summary_ja": "LLM の機能は、同じ入力でも回答が異なるため、変更するたびに検証すべきテストセット（評価データ）を用意しておかないと不安定になる。",
+  "title_zh": "LLM 评估（Evals）",
+  "summary_zh": "LLM 功能对于相同的输入会给出不同的回答，因此每次修改时都需要重新测试（评估集），否则就会出问题。"
  },
  {
   "slug": "ai-finetuning",
@@ -3720,7 +3726,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "파인튜닝은 모델 가중치를 직접 고치는 방법이고, LoRA는 그 가중치는 얼려 두고 작은 행렬 두 개만 학습시키는 요령이더라."
+  "summary": "파인튜닝은 모델 가중치를 직접 고치는 방법이고, LoRA는 그 가중치는 얼려 두고 작은 행렬 두 개만 학습시키는 요령이더라.",
+  "title_en": "Fine-tuning and LoRA",
+  "summary_en": "Fine-tuning is a method where you directly modify the model weights, whereas LoRA freezes those weights and trains only two small matrices.",
+  "title_ja": "ファインチューニングと LoRA",
+  "summary_ja": "ファインチューニングはモデルの重みを直接修正する方法であり、LoRA はその重みを凍結したまま小さな行列 2 つだけを学習させる手法だった。",
+  "title_zh": "微调与 LoRA",
+  "summary_zh": "微调是直接修改模型权重的方法，而 LoRA 则是冻结权重并仅学习两个小矩阵的技巧。"
  },
  {
   "slug": "ai-graph-db",
@@ -3734,7 +3746,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "그래프 DB는 \"누구랑 누가 어떻게 이어져 있나\"를 JOIN 대신 선을 따라가며 푸는 DB라서, 관계가 질문의 중심일 때만 제값을 하더라."
+  "summary": "그래프 DB는 \"누구랑 누가 어떻게 이어져 있나\"를 JOIN 대신 선을 따라가며 푸는 DB라서, 관계가 질문의 중심일 때만 제값을 하더라.",
+  "title_en": "Graph DB (Neo4j · Cypher)",
+  "summary_en": "A graph DB is a database that solves problems by following edges instead of using JOINs for \"who is connected to whom and how,\" so it only shines when relationships are at the center of the query.",
+  "title_ja": "グラフ DB（Neo4j・Cypher）",
+  "summary_ja": "グラフ DB は「誰と誰がどのように繋がっているか」を JOIN ではなく線を追って解決するデータベースなので、関係性が質問の中心である場合にこそ真価を発揮します。",
+  "title_zh": "图数据库（Neo4j · Cypher）",
+  "summary_zh": "图数据库是一种通过沿着边遍历而非使用 JOIN 来解析“谁与谁如何相连”的数据库，因此只有在关系是查询核心时才能发挥其真正价值。"
  },
  {
   "slug": "ai-graphrag",
@@ -3748,7 +3766,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "일반 RAG는 \"이 문서 묶음 전체에서 큰 주제가 뭐냐\" 같은 질문에 약한데, GraphRAG는 문서를 지식그래프로 바꿔 묶음별 요약을 미리 만들어 두는 쪽으로 푼다."
+  "summary": "일반 RAG는 \"이 문서 묶음 전체에서 큰 주제가 뭐냐\" 같은 질문에 약한데, GraphRAG는 문서를 지식그래프로 바꿔 묶음별 요약을 미리 만들어 두는 쪽으로 푼다.",
+  "title_en": "GraphRAG",
+  "summary_en": "Standard RAG is weak at questions like \"What are the major topics in this entire collection of documents?\", whereas GraphRAG converts documents into a knowledge graph and pre-generates summaries for each collection.",
+  "title_ja": "GraphRAG",
+  "summary_ja": "一般的な RAG は「このドキュメントセット全体で大きなテーマは何ですか」といった質問に対して弱く、GraphRAG は文書を変換して知識グラフにし、セットごとのサマリーを事前に作成しておくアプローチをとる。",
+  "title_zh": "GraphRAG",
+  "summary_zh": "普通的 RAG 在处理“这个文档集合的主要主题是什么”这类问题时表现较弱，而 GraphRAG 则将文档转换为知识图谱，预先生成每个集合的摘要。"
  },
  {
   "slug": "ai-guardrails",
@@ -3762,7 +3786,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "모델 하나가 완벽하게 막아 주길 기대하지 말고, 입력·출력·권한·사람 승인 네 겹으로 피해를 줄이는 게 공식 가이드들의 공통된 얘기더라."
+  "summary": "모델 하나가 완벽하게 막아 주길 기대하지 말고, 입력·출력·권한·사람 승인 네 겹으로 피해를 줄이는 게 공식 가이드들의 공통된 얘기더라.",
+  "title_en": "AI Guardrails and Prompt Injection",
+  "summary_en": "Don't expect a single model to provide perfect protection; the common advice from official guides is to reduce risk through four layers: input, output, permissions, and human approval.",
+  "title_ja": "AI ガードレールとプロンプトインジェクション",
+  "summary_ja": "一つのモデルに完璧な防御を期待するのではなく、入力・出力・権限・承認の 4 つの層で被害を減らすことが公式ガイドラインの共通認識だ。",
+  "title_zh": "AI 护栏与提示注入",
+  "summary_zh": "不要指望单个模型能完全阻挡风险，而是应遵循官方指南的共识：通过输入、输出、权限和人员审批这四道防线来降低损害。"
  },
  {
   "slug": "ai-knowledge-graph",
@@ -3775,7 +3805,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "지식그래프는 \"A는 B와 이런 관계다\"라는 문장을 잔뜩 모아 선으로 이어 놓은 지도 같은 거라, 문서 검색과는 찾는 방식이 달랐다."
+  "summary": "지식그래프는 \"A는 B와 이런 관계다\"라는 문장을 잔뜩 모아 선으로 이어 놓은 지도 같은 거라, 문서 검색과는 찾는 방식이 달랐다.",
+  "title_en": "Knowledge Graph",
+  "summary_en": "A knowledge graph is like a map where sentences such as \"A has this relationship with B\" are collected and connected with lines, so the search method differs from document search.",
+  "title_ja": "知識グラフ（Knowledge Graph）",
+  "summary_ja": "知識グラフとは、「A は B とこのような関係にある」といった文を多数集めて線でつないだ地図のようなもので、ドキュメント検索とは検索方法が異なります。",
+  "title_zh": "知识图谱 (Knowledge Graph)",
+  "summary_zh": "知识图谱就像一张由\"A 与 B 存在某种关系”这类语句通过连线连接而成的地图，其搜索方式与文档检索截然不同。"
  },
  {
   "slug": "ai-ontology-triple",
@@ -3790,7 +3826,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "지식을 \"주어-서술어-목적어\" 한 줄씩 쪼개 적고, 그 줄에 쓰는 낱말의 뜻을 따로 정해 두는 게 온톨로지 얘기의 절반이더라."
+  "summary": "지식을 \"주어-서술어-목적어\" 한 줄씩 쪼개 적고, 그 줄에 쓰는 낱말의 뜻을 따로 정해 두는 게 온톨로지 얘기의 절반이더라.",
+  "title_en": "Ontology and Triples (RDF)",
+  "summary_en": "Breaking down knowledge into subject-predicate-object triples and separately defining the meanings of the words used in each triple is half the story of ontologies.",
+  "title_ja": "オントロジーとトリプル（RDF）",
+  "summary_ja": "知識を「主語・述語・目的語」ごとに一行ずつ分割して書き、その行に用いる単語の意味を別途定義しておくのが、オントロジーの話の半分だったんだ。",
+  "title_zh": "本体与三元组（RDF）",
+  "summary_zh": "将知识逐行拆分为“主语 - 谓语 - 宾语”的形式，并为每一行中的词语单独定义含义，这占了本体论讨论的一半内容。"
  },
  {
   "slug": "body-profile",
