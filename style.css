@@ -229,3 +229,10 @@ footer .credit{font-size:.7rem;opacity:.55;text-shadow:none}
 .pager{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:18px 0 6px}.pager button{min-width:34px;height:34px;padding:0 10px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--sub);font:inherit;font-size:.85rem;font-weight:600;cursor:pointer}.pager button:hover,.pager button.on{border-color:var(--accent);color:var(--accent)}.pager span{align-self:center;color:var(--faint)}
 
 .sdrop{position:relative}.sdrop summary{list-style:none;cursor:pointer}.sdrop summary::-webkit-details-marker{display:none}.sdrop .chips{position:absolute;z-index:20;top:calc(100% + 8px);left:0;width:min(440px,86vw);padding:12px;border-radius:14px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+
+.fold{border-bottom:1px solid var(--line,rgba(128,128,128,.15))}.fold:last-child{border:0}
+.fold summary{display:flex;justify-content:space-between;padding:7px 0;font-weight:700;font-size:.92rem;cursor:pointer;list-style:none}
+.fold summary::-webkit-details-marker{display:none}.fold summary::before{content:"▸";margin-right:6px;color:var(--faint)}.fold[open] summary::before{content:"▾"}
+.fold summary span{flex:1}.fold summary b,.ser .leaf b{color:var(--faint);font-weight:600}
+.fold a.leaf,.fold a.all{padding:4px 0 4px 18px;font-size:.85rem}.fold a.leaf.on{color:var(--ink);font-weight:700}.fold a.all{color:var(--faint)}
+@media (max-width:900px){.ser{display:block}.fold a{display:flex;justify-content:space-between}}

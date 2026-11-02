@@ -34,6 +34,7 @@
   }
   document.getElementById('lang').onchange=function(){LANG=this.value;try{localStorage.setItem('blog-lang',LANG)}catch(e){}chrome();route()};
   function errMsg(){return {ko:'불러오지 못했어요. 새로고침해 주세요.',en:"Couldn't load. Please refresh.",ja:'読み込めませんでした。再読み込みしてください。',zh:'加载失败，请刷新页面。'}[LANG]}
+  var TREE=[["AI",["AI 원리","AI 용어사전","AI 소식·분석","AI 모델","하네스·에이전트","GitHub 레포","LLM 앱 만들기","Claude 활용"]],["CS",["백엔드","프론트엔드","데이터베이스","클라우드·배포","알고리즘","CS·설계 기초","서비스 인프라","정보보안"]],["자격증",["정보처리기사","SQLD","ADsP","빅데이터분석기사"]],["자동화",["마케팅 자동화","업무 자동화"]],["일기장",["나의 방향","AI 시대 고찰"]]];
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
     return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
@@ -41,7 +42,7 @@
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box tagbox"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
       (function(){var ks=Object.keys(tg).sort(function(a,b){return tg[b]-tg[a]}),N=12,chip=function(tx){return'<a class="chip'+(cur==='t:'+tx?' on':'')+'" href="#/tag/'+encodeURIComponent(tx)+'">#'+esc(t(tx))+'<b>'+tg[tx]+'</b></a>'},head=ks.slice(0,N),rest=ks.slice(N);if(cur&&cur.indexOf('t:')===0){var c=cur.slice(2),i=rest.indexOf(c);if(i>-1){rest.splice(i,1);head.push(c)}}return head.map(chip).join('')+(rest.length?'<details class="moretag"><summary class="chip">'+t('더보기')+' +'+rest.length+'</summary><div class="chips">'+rest.map(chip).join('')+'</div></details>':'')})()+'</div></div>'+
-      (Object.keys(sr).length?'<div class="glass box ser"><h3>'+t('시리즈')+'</h3>'+Object.keys(sr).map(function(s){return'<a href="#/series/'+encodeURIComponent(s)+'"><span>'+esc(t(s))+'</span><b>'+sr[s]+'</b></a>'}).join('')+'</div>':'')+'</aside>';
+      (Object.keys(sr).length?'<div class="glass box ser"><h3>'+t('시리즈')+'</h3>'+TREE.map(function(g){var n=0;g[1].forEach(function(x){n+=sr[x]||0});var open=cur&&(cur==='c:'+g[0]||(cur.indexOf('s:')===0&&g[1].indexOf(cur.slice(2))>-1));return'<details class="fold"'+(open?' open':'')+'><summary><span>'+esc(t(g[0]))+'</span><b>'+n+'</b></summary><a class="all" href="#/cat/'+encodeURIComponent(g[0])+'"><span>'+t('전체 보기')+'</span></a>'+g[1].map(function(x){return'<a class="leaf'+(cur==='s:'+x?' on':'')+'" href="#/series/'+encodeURIComponent(x)+'"><span>'+esc(t(x))+'</span><b>'+(sr[x]||0)+'</b></a>'}).join('')+'</details>'}).join('')+'</div>':'')+'</aside>';
   }
   function row(p){
     return'<a class="row" href="'+link(p)+'"><div><div class="cat">'+(p.series?'<em class="sr" style="font-style:normal">'+esc(t(p.series))+'</em>':'')+p.tags.map(function(x){return'<span>#'+esc(t(x))+'</span>'}).join('')+'</div>'+
@@ -151,6 +152,7 @@
     if(m=h.match(/^#\/post\/(.+)$/))post(decodeURIComponent(m[1]));
     else if(m=h.match(/^#\/tag\/(.+)$/)){var t=decodeURIComponent(m[1]);home(function(p){return p.tags.indexOf(t)>=0},'#'+t,'t:'+t)}
     else if(m=h.match(/^#\/series\/(.+)$/)){var s=decodeURIComponent(m[1]);home(function(p){return p.series===s},s,'s:'+s)}
+    else if(m=h.match(/^#\/cat\/(.+)$/)){var c=decodeURIComponent(m[1]),g=TREE.filter(function(x){return x[0]===c})[0];home(function(p){return g&&g[1].indexOf(p.series)>-1},c,'c:'+c)}
     else if(h==='#/about')about();
     else home(null,'전체 글','');
     document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'?'#/about':(h.indexOf('#/post')===0?'':'#/')))});
