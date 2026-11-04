@@ -3706,7 +3706,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "LLM 요금은 토큰 수 × 단가라서, 모델을 고르고 호출을 줄이는 것만으로도 청구서가 꽤 달라지더라."
+  "summary": "LLM 요금은 토큰 수 × 단가라서, 모델을 고르고 호출을 줄이는 것만으로도 청구서가 꽤 달라지더라.",
+  "title_en": "How to Reduce AI Costs: Model Routing, Caching, and Batching",
+  "summary_en": "LLM fees are calculated as tokens × unit price, so simply choosing a model and reducing the number of calls can significantly change your bill.",
+  "title_ja": "AI 費用削減の手法：モデルルーティング・キャッシュ・バッチ処理",
+  "summary_ja": "LLM の料金はトークン数×単価なので、モデルの選択と呼び出し回数の削減だけでも請求額がかなり変わります。",
+  "title_zh": "降低 AI 成本的方法：模型路由、缓存与批量处理",
+  "summary_zh": "LLM 的费用是 token 数量乘以单价，因此选择合适的模型并减少调用次数，账单就会有显著差异。"
  },
  {
   "slug": "ai-evals",
@@ -3839,7 +3845,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "답이 이상하다는 제보가 오면 로그 한 줄로는 어디서 틀어졌는지 모르는데, 단계마다 trace로 남겨 두면 보이더라."
+  "summary": "답이 이상하다는 제보가 오면 로그 한 줄로는 어디서 틀어졌는지 모르는데, 단계마다 trace로 남겨 두면 보이더라.",
+  "title_en": "LLM Observability: Inspecting AI Services Through Tracing and Logging",
+  "summary_en": "When a report comes in that the answer seems strange, a single log line doesn't show where it went wrong, but leaving traces at each step reveals the issue.",
+  "title_ja": "LLM 観測性：トレーシング・ログで AI サービスを内側から見る",
+  "summary_ja": "回答が不自然だと報告された場合、ログの 1 行だけではどこで問題が発生したか分からないが、各段階でトレースを記録しておけば見える。",
+  "title_zh": "LLM 可观测性：通过追踪与日志洞察 AI 服务",
+  "summary_zh": "如果收到反馈说答案异常，仅看一行日志却不知道哪里出错了，但如果每个步骤都通过 trace 记录下来，问题就一目了然了。"
  },
  {
   "slug": "ai-ontology-triple",
@@ -3874,7 +3886,13 @@
   ],
   "series": "AI 용어사전",
   "emoji": "📘",
-  "summary": "양자화는 가중치를 적은 비트로 저장해 메모리를 줄이는 것이고, 증류는 큰 모델이 작은 모델을 가르치는 것이라 서로 다른 얘기더라."
+  "summary": "양자화는 가중치를 적은 비트로 저장해 메모리를 줄이는 것이고, 증류는 큰 모델이 작은 모델을 가르치는 것이라 서로 다른 얘기더라.",
+  "title_en": "Model Quantization & Distillation: The Principle of Running Large Models on Your PC",
+  "summary_en": "Quantization is about storing weights with fewer bits to reduce memory usage, while distillation is about a large model teaching a small model—they're quite different concepts.",
+  "title_ja": "モデル量子化・蒸留：大きなモデルを自分の PC で動かす原理",
+  "summary_ja": "量子化は重みを少ないビットで保存してメモリを削減するものであり、蒸留は大きなモデルが小さなモデルを教えるものであるため、全く別の話だ。",
+  "title_zh": "模型量化与蒸馏：在个人电脑上运行大模型的原理",
+  "summary_zh": "量化是用较少的比特存储权重以减少内存占用，而蒸馏是大模型指导小模型的过程，两者是完全不同的概念。"
  },
  {
   "slug": "body-profile",
