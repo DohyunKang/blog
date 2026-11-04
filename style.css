@@ -225,16 +225,18 @@ footer a:hover{color:var(--ink)}
 /* 고정+스크롤 전환: html.dkon일 때만(폭>=900·움직임 허용·JS) - 아니면 현재 레이아웃 그대로 */
 .dk-gow{display:none}
 .adots{display:none}
-.dkon .dk{height:calc(100vh - 60px + var(--R,90vh))}
-.dkon .dk-stage{position:sticky;top:60px;height:calc(100vh - 60px);display:flex;align-items:center;pointer-events:none}
+.dkon{--vh:1vh}
+@supports (height:100svh){.dkon.dkm{--vh:1svh}}
+.dkon .dk{height:calc(var(--vh)*100 - 60px + var(--dkR,50)*var(--vh))}
+.dkon .dk-stage{position:sticky;top:60px;height:calc(var(--vh)*100 - 60px);display:flex;align-items:center;pointer-events:none}
 .dkon .dk-stage .hero{padding:0 0 4vh;transform-origin:50% 40%;will-change:transform,opacity;pointer-events:auto}
 .dkon .dk-gow{display:block;margin-top:32px}
 .dkon .dk-go{height:40px;padding:0 22px;font-size:.9rem}
-.dkon .dk+.grid{position:relative;z-index:1;margin-top:calc(24px - 100vh + 60px)}
+.dkon .dk+.grid{position:relative;z-index:1;margin-top:calc(24px - var(--vh)*100 + 60px)}
 .dkon .dk-live .feat,.dkon .dk-live .list,.dkon .dk-live .side>*{transition:none!important}
 .dkon.dk-nt *{transition:none!important}
-.dkon .adk{height:calc(100vh - 60px + var(--AR,300vh))}
-.dkon .adk-stage{position:sticky;top:60px;height:calc(100vh - 60px);display:flex;align-items:center}
+.dkon .adk{height:calc(var(--vh)*100 - 60px + var(--adkR,175)*var(--vh))}
+.dkon .adk-stage{position:sticky;top:60px;height:calc(var(--vh)*100 - 60px);display:flex;align-items:center}
 .dkon .adk-stage .mem{margin-top:0;width:100%;align-items:center}
 .dkon .mcol{display:grid}
 .dkon .mcol .sc{grid-area:1/1;align-self:center;opacity:0;transform:translate3d(0,40px,0);visibility:hidden;pointer-events:none;transition:opacity .7s var(--ease),transform .7s var(--ease),visibility 0s .7s}

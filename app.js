@@ -77,7 +77,7 @@
     var pics=['img/p1.jpg','img/p2.jpg'];
     var imgs=pics.map(function(u,i){return'<img src="'+u+'" alt="'+(i?'':'강도현')+'" style="animation-duration:'+(pics.length*7)+'s;animation-delay:-'+(i*7)+'s">'}).join('');
     function li(t,d,x){return'<li><small>'+d+'</small><b>'+t+'</b><span>'+x+'</span></li>'}
-    app.innerHTML='<div class="adk" style="--AR:300vh"><div class="adk-stage"><div class="glass mem"><div class="frame"><div class="ph">'+imgs+'</div></div><div class="mcol"><div class="sc">'+
+    app.innerHTML='<div class="adk" ><div class="adk-stage"><div class="glass mem"><div class="frame"><div class="ph">'+imgs+'</div></div><div class="mcol"><div class="sc">'+
       '<p class="role">JUNIOR PM · AI/AX</p><h1>강도현 <span class="meta">Dohyun Kang</span></h1><p class="tagl">직접 개발하고 경험하며 PM의 길을 걷고 있습니다.</p></div><div class="sc">'+
       '<dl class="kv"><dt>소속</dt><dd>Allie Research Inc.</dd><dt>하는 일</dt><dd>제품·마케팅 기획, 팀 간 조율, 개발</dd><dt>학력</dt><dd>인천대학교 정보통신공학과 (학점 3.93 / 4.5)</dd><dt>수상</dt><dd>ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상</dd><dt>연락</dt><dd>'+MAIL+'</dd></dl></div><div class="sc">'+
       '<h3>이력</h3><ul class="tl">'+
@@ -112,7 +112,12 @@
   // 상태는 스크롤 위치에서만 계산(무상태) -> 새로고침 복원·해시 이동에도 안 깨짐. 라우트가 바뀌면 deckOff()가 전부 정리.
   var deck={kind:null,on:false,raf:0,els:null,idx:-1,fi:null},RM=matchMedia('(prefers-reduced-motion:reduce)');
   function clamp(x,a,b){return x<a?a:x>b?b:x}
-  function deckAllowed(){return innerWidth>=900&&innerHeight>=640&&!RM.matches}
+  // 스크롤 길이(vh 단위) - 이 한 곳만 고치면 CSS 높이·버튼 이동·점·전환 임계값이 모두 따라감
+  var DK_HOME=50,DK_HOME_M=45,DK_STEP=70,DK_N=3,DK_TAIL=35;
+  function deckMode(){if(RM.matches)return '';if(innerWidth>=900)return innerHeight>=640?'full':'';return deck.kind==='home'?'m':''}
+  function deckAllowed(){return !!deckMode()}
+  function dvh(){return innerHeight/100}
+  function homeR(d){return d.dk.offsetHeight-d.stage.offsetHeight}
   function deckQ(){
     var d=deck.els={};
     if(deck.kind==='home'){d.dk=app.querySelector('.dk');d.stage=app.querySelector('.dk-stage');d.hero=app.querySelector('.dk-stage .hero');d.grid=app.querySelector('.grid');
@@ -120,17 +125,21 @@
     else{d.dk=app.querySelector('.adk');d.stage=app.querySelector('.adk-stage');d.sc=[].slice.call(app.querySelectorAll('.adk .sc'));d.dots=[].slice.call(app.querySelectorAll('.adots button'));d.wrap=app.querySelector('.adots');if(!d.dk||!d.sc.length)return false}
     return true;
   }
-  function deckEnd(d){var r=d.dk.getBoundingClientRect(),R=d.dk.offsetHeight-d.stage.offsetHeight;scrollTo({top:scrollY+r.top-(60-R),behavior:'smooth'})}
+  function deckEnd(d){var r=d.dk.getBoundingClientRect(),R=homeR(d);scrollTo({top:scrollY+r.top-(60-R),behavior:'smooth'})}
+  function d0(){return deck.els}
   function deckStart(){
     if(!deckQ())return;
-    deck.on=true;deck.idx=-1;root.classList.add('dkon','dk-nt');
+    var m=deckMode()==='m';
+    if(m&&d0().hero.offsetHeight+60+24>innerHeight){deck.els=null;reveal();return}
+    deck.on=true;deck.idx=-1;deck.m=m;root.classList.add('dkon','dk-nt');if(m)root.classList.add('dkm');
+    root.style.setProperty('--dkR',m?DK_HOME_M:DK_HOME);root.style.setProperty('--adkR',(DK_N-1)*DK_STEP+DK_TAIL);
     [].forEach.call(app.querySelectorAll('.rv'),function(el){el.classList.add('in')});
     var d=deck.els;
     if(deck.kind==='home'){
       d.go.onclick=function(){deckEnd(d)};
-      deck.fi=function(){if(deck.on&&d.grid.style.transform){var r=d.dk.getBoundingClientRect(),R=d.dk.offsetHeight-d.stage.offsetHeight;scrollTo({top:scrollY+r.top-(60-R),behavior:'instant'})}};
+      deck.fi=function(){if(deck.on&&d.grid.style.transform){var r=d.dk.getBoundingClientRect(),R=homeR(d);scrollTo({top:scrollY+r.top-(60-R),behavior:'instant'})}};
       d.grid.addEventListener('focusin',deck.fi);
-    }else d.dots.forEach(function(b,i){b.onclick=function(){scrollTo({top:scrollY+d.dk.getBoundingClientRect().top-60+i*innerHeight*1.2+2,behavior:'instant'})}});
+    }else d.dots.forEach(function(b,i){b.onclick=function(){scrollTo({top:scrollY+d.dk.getBoundingClientRect().top-60+i*DK_STEP*dvh()+2,behavior:'instant'})}});
     addEventListener('scroll',deckReq,{passive:true});
     deckUpdate();
     requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.remove('dk-nt')})});
@@ -143,7 +152,7 @@
   function deckStop(){
     if(deck.raf){cancelAnimationFrame(deck.raf);deck.raf=0}
     removeEventListener('scroll',deckReq);
-    deckClear();deck.on=false;root.classList.remove('dkon','dk-nt');
+    deckClear();deck.on=false;root.classList.remove('dkon','dk-nt','dkm');root.style.removeProperty('--dkR');root.style.removeProperty('--adkR');
   }
   function deckOff(){deckStop();deck.kind=null;deck.els=null}
   function deckInit(kind){deckOff();deck.kind=kind;if(deckAllowed())deckStart();else reveal()}
@@ -151,6 +160,8 @@
   function deckSync(){
     if(!deck.kind)return;
     var ok=deckAllowed();
+    if(ok&&deck.on&&(deckMode()==='m')!==deck.m){deckStop();deckStart();return}
+    if(ok&&deck.on&&deck.m&&deck.els&&deck.els.hero.offsetHeight+84>innerHeight){deckStop();reveal();return}
     if(ok&&!deck.on)deckStart();else if(!ok&&deck.on)deckStop();else if(ok)deckReq();
   }
   addEventListener('resize',deckSync,{passive:true});
@@ -159,7 +170,7 @@
     var d=deck.els;if(!deck.on||!d||!d.dk.isConnected)return;
     var r=d.dk.getBoundingClientRect();
     if(deck.kind==='home'){
-      var R=Math.max(1,d.dk.offsetHeight-d.stage.offsetHeight),p=clamp((60-r.top)/R,0,1),hp=clamp(p/.5,0,1);
+      var R=Math.max(1,homeR(d)),p=clamp((60-r.top)/R,0,1),hp=clamp(p/.5,0,1);
       d.hero.style.opacity=1-hp;d.hero.style.transform='translate3d(0,'+(-20*hp)+'px,0) scale('+(1-.04*hp)+')';d.hero.style.pointerEvents=hp>.5?'none':'auto';
       if(p>=1){d.grid.classList.remove('dk-live');d.grid.style.removeProperty('transform');d.grid.style.removeProperty('pointer-events');d.items.forEach(function(el){el.style.removeProperty('opacity');el.style.removeProperty('transform')})}
       else{
@@ -167,7 +178,7 @@
         d.items.forEach(function(el,i){var l=clamp((p-.36-i*.035)/.4,0,1),e=1-Math.pow(1-l,3);el.style.opacity=e;el.style.transform='translate3d(0,'+(40*(1-e))+'px,0)'});
       }
     }else{
-      var n=d.sc.length,rr=clamp(60-r.top,0,1e9),i=clamp(Math.floor(rr/(innerHeight*1.2)),0,n-1);
+      var n=d.sc.length,rr=clamp(60-r.top,0,1e9),i=clamp(Math.floor(rr/(innerHeight*DK_STEP/100)),0,n-1);
       if(i!==deck.idx){deck.idx=i;d.sc.forEach(function(el,k){el.classList.toggle('on',k===i);el.classList.toggle('past',k<i)});d.dots.forEach(function(b,k){b.classList.toggle('on',k===i)})}
       d.wrap.classList.toggle('live',r.top<=70&&r.bottom>=innerHeight*.7);
     }
