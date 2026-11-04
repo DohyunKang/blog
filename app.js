@@ -67,7 +67,7 @@
     document.getElementById('srt').onclick=function(){state.asc=!state.asc;home(filter,title,cur)};
     var qi=document.getElementById('q');
     qi.oninput=function(){state.q=qi.value.trim();var pos=qi.selectionStart;home(filter,title,cur);var n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
-    progress(false);
+    progress(false);reveal();
   }
 
   // 소개 = 회사 임직원 프로필 페이지처럼
@@ -92,9 +92,20 @@
       var s=app.innerHTML;Object.keys(AB).forEach(function(k){s=s.split(k).join(AB[k])});app.innerHTML=s;
       document.title=t('소개')+' · dohyun.log';
     }
-    progress(false);
+    progress(false);reveal();
   }
 
+
+  // 스크롤 등장(홈·소개만, 글 본문 제외): JS가 클래스를 붙인 요소만 숨겼다가 한 번만 보여 줌
+  var hdr=document.querySelector('header.top');
+  function hs(){hdr.classList.toggle('sc',scrollY>8)}addEventListener('scroll',hs,{passive:true});hs();
+  function reveal(){
+    var els=[].slice.call(app.querySelectorAll('.feat,.row,.list>.lh,.side>*,.mem,.pager'));
+    if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    document.documentElement.classList.add('rvj');
+    var io=new IntersectionObserver(function(es){var n=0;es.forEach(function(e){if(e.isIntersecting){e.target.style.setProperty('--d',(n++*0.07)+'s');e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    els.forEach(function(el){el.classList.add('rv');io.observe(el)});
+  }
   var onScroll=null;
   function progress(on){
     if(onScroll)removeEventListener('scroll',onScroll);onScroll=null;prog.style.width='0';
