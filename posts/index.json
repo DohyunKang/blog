@@ -3695,6 +3695,61 @@
   "summary_zh": "为了防止 CPU 因等待磁盘、网卡等慢速设备而停止工作，才引入了中断和 DMA，而总线则是连接它们之间的路径。"
  },
  {
+  "slug": "news-261105-a",
+  "title": "Claude Code 2.1.316~2.1.318, 서브에이전트 effort 설정과 Opus 4.8 빠른 모드 종료 예고",
+  "date": "2026-11-05",
+  "tags": [
+   "AI",
+   "에이전트",
+   "Claude"
+  ],
+  "series": "하네스·에이전트",
+  "emoji": "📘",
+  "summary": "이번 주 Claude Code 릴리스 세 개를 변경 내역에서 읽어 보니, 서브에이전트 effort 환경 변수와 빠른 모드 종료 날짜가 눈에 띄었다.",
+  "title_en": "Claude Code 2.1.316–2.1.318: Subagent Effort Settings and Upcoming Shutdown of Opus 4.8 Fast Mode",
+  "summary_en": "Reading through the changelog for this week's three Claude Code releases, I noticed the subagent effort environment variable and the fast mode end date.",
+  "title_ja": "Claude Code 2.1.316〜2.1.318、サブエージェントの effort 設定と Opus 4.8 高速モード終了予告",
+  "summary_ja": "今週の Claude Code リリース 3 つの変更履歴を確認したところ、サブエージェントの effort 環境変数とクイックモード終了日が目立っていました。",
+  "title_zh": "Claude Code 2.1.316 ~ 2.1.318，子代理 effort 设置与 Opus 4.8 快速模式即将关闭预告",
+  "summary_zh": "本周从 Claude Code 的三个发布更新中注意到，subagent effort 环境变量和快速模式结束日期格外显眼。"
+ },
+ {
+  "slug": "news-261105-b",
+  "title": "Worktrunk, git worktree를 브랜치처럼 다루게 해 주는 CLI",
+  "date": "2026-11-05",
+  "tags": [
+   "AI",
+   "에이전트"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "에이전트를 여러 개 병렬로 돌릴 때 작업 폴더 나누는 일이 번거로운데, 이번 주 트렌딩에 오른 Worktrunk가 그걸 명령 몇 개로 줄여 준다.",
+  "title_en": "Worktrunk: A CLI that treats Git worktrees like branches",
+  "summary_en": "When running multiple agents in parallel, managing work folders can be cumbersome, but this week's trending tool, Worktrunk, simplifies it with just a few commands.",
+  "title_ja": "Worktrunk、git worktree をブランチのように扱える CLI",
+  "summary_ja": "エージェントを複数並列で動かす際、作業フォルダの整理が面倒な場合、今週トレンドに躍り出た Worktrunk が数コマンドでそれを解決してくれます。",
+  "title_zh": "Worktrunk，一个将 git worktree 像分支一样处理的命令行工具",
+  "summary_zh": "当需要并行运行多个代理时，划分工作文件夹非常繁琐，本周 trending 的 Worktrunk 只需几条命令即可简化这一流程。"
+ },
+ {
+  "slug": "mk-261105-c",
+  "title": "뉴스레터 자동 발송에서 지킬 것: 인증과 수신 거부",
+  "date": "2026-11-05",
+  "tags": [
+   "공부노트",
+   "AI"
+  ],
+  "series": "마케팅 자동화",
+  "emoji": "📣",
+  "summary": "이메일은 자동화하기 쉬운 채널인데, Gmail 발신자 요건 때문에 인증과 수신 거부 헤더를 먼저 갖춰야 한다.",
+  "title_en": "What to Avoid When Automating Newsletter Sends: Authentication and Unsubscribes",
+  "summary_en": "Email is an easy channel to automate, but due to Gmail sender requirements, you must first set up authentication and the received headers.",
+  "title_ja": "ニュースレターの自動配信で注意すべき点：認証と受信拒否",
+  "summary_ja": "メールは自動化しやすいチャネルだが、Gmail の送信者要件により、認証と受信拒否ヘッダーを先に用意する必要がある。",
+  "title_zh": "新闻通讯自动发送中需注意的事项：认证与退订",
+  "summary_zh": "电子邮件是一个易于自动化的渠道，但由于 Gmail 的发件人要求，必须先配置认证和接收拒绝头。"
+ },
+ {
   "slug": "ai-cost-routing",
   "title": "AI 비용 줄이는 법: 모델 라우팅·캐시·배치",
   "date": "2026-11-04",
