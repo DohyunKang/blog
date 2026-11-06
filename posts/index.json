@@ -3750,6 +3750,61 @@
   "summary_zh": "电子邮件是一个易于自动化的渠道，但由于 Gmail 的发件人要求，必须先配置认证和接收拒绝头。"
  },
  {
+  "slug": "news-261106-a",
+  "title": "Thinking Machines의 Inkling 2 Small, 594B MoE 모델과 다음 주 공개 예정인 가중치",
+  "date": "2026-11-06",
+  "tags": [
+   "AI",
+   "LLM"
+  ],
+  "series": "AI 모델",
+  "emoji": "📘",
+  "summary": "11월 5일 나온 Inkling 2 Small을 공식 글과 모델 카드로 읽어 보니, 활성 파라미터 17B에 컨텍스트 1M이고 가중치는 안전 검증 뒤 공개한다고 한다.",
+  "title_en": "Thinking Machines' Inkling 2 Small, a 594B MoE model, and weights scheduled for release next week",
+  "summary_en": "Looking at the official post and model card for Inkling 2 Small released on November 5th, it has 17B active parameters and a context window of 1M; weights will be released after safety verification.",
+  "title_ja": "Thinking Machines の Inkling 2 Small、594B MoE モデルと来週公開予定の重み",
+  "summary_ja": "11 月 5 日に公開された Inkling 2 Small を公式ブログとモデルカードから確認すると、アクティブパラメータは 17B、コンテキストウィンドウは 1M で、重みは安全検証後に公開されるようです。",
+  "title_zh": "Thinking Machines 的 Inkling 2 Small（594B MoE）模型与下周即将公开的权重",
+  "summary_zh": "11 月 5 日发布的 Inkling 2 Small，根据官方文章和模型卡片来看，其激活参数为 17B，上下文长度为 1M，权重将在安全验证后公开。"
+ },
+ {
+  "slug": "news-261106-b",
+  "title": "claude-mem, 코딩 에이전트 세션을 압축해 다음 세션에 다시 넣어 주는 플러그인",
+  "date": "2026-11-06",
+  "tags": [
+   "AI",
+   "에이전트",
+   "Claude"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "이번 주 GitHub 트렌딩 1위였던 claude-mem의 README를 읽어 보니, 훅으로 작업을 기록하고 SQLite와 Chroma로 검색하는 구조였다.",
+  "title_en": "claude-mem, a plugin that compresses coding agent sessions and stores them for reuse in subsequent sessions",
+  "summary_en": "Reading the README for claude-mem, which was GitHub's trending #1 this week, revealed that it uses hooks to log tasks and searches using SQLite and Chroma.",
+  "title_ja": "claude-mem、コーディングエージェントのセッションを圧縮して次のセッションに再投入するプラグイン",
+  "summary_ja": "今週の GitHub Trending で 1 位だった claude-mem の README を読むと、フックで作業を記録し、SQLite と Chroma で検索する構造となっていました。",
+  "title_zh": "claude-mem，一个压缩编码代理会话并在下一会话中重新加载的插件",
+  "summary_zh": "阅读上周 GitHub 趋势排名第一的 claude-mem 的 README 后发现，其结构是通过钩子记录操作，并使用 SQLite 和 Chroma 进行检索。"
+ },
+ {
+  "slug": "mk-261106-c",
+  "title": "링크 추적 자동화의 기본: UTM 규칙을 코드로 고정하기",
+  "date": "2026-11-06",
+  "tags": [
+   "공부노트",
+   "AI"
+  ],
+  "series": "마케팅 자동화",
+  "emoji": "📣",
+  "summary": "UTM은 대소문자까지 구분해서 값이 흔들리면 리포트가 쪼개지는데, 링크를 코드로 만들면 규칙을 강제할 수 있다.",
+  "title_en": "The Basics of Link Tracking Automation: Hardcoding UTM Rules with Code",
+  "summary_en": "UTM distinguishes between uppercase and lowercase letters, so if the values fluctuate, the report gets fragmented; however, by creating links as code, you can enforce rules.",
+  "title_ja": "リンク追跡自動化の基礎：UTM ルールをコードで固定する",
+  "summary_ja": "UTM は大文字小文字まで区別されるため、値が揺れ動くとレポートが分割されてしまいますが、リンクをコードとして作成すればルールを強制できます。",
+  "title_zh": "链接追踪自动化的基础：用代码固定 UTM 规则",
+  "summary_zh": "UTM 参数区分大小写，如果值发生变动会导致报告被拆分；而将链接转换为代码则可以强制遵循规则。"
+ },
+ {
   "slug": "ai-cost-routing",
   "title": "AI 비용 줄이는 법: 모델 라우팅·캐시·배치",
   "date": "2026-11-04",
