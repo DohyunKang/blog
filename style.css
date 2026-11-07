@@ -229,7 +229,8 @@ footer a:hover{color:var(--ink)}
 @supports (height:100svh){.dkon.dkm{--vh:1svh}}
 .dkon .dk{height:calc(var(--vh)*100 - 60px + var(--dkR,50)*var(--vh))}
 .dkon .dk-stage{position:sticky;top:60px;height:calc(var(--vh)*100 - 60px);display:flex;align-items:center;pointer-events:none}
-.dkon .dk-stage .hero{padding:0 0 4vh;transform-origin:50% 40%;will-change:transform,opacity;pointer-events:auto}
+.dkon .dk-stage .hero{padding:0 0 4vh;transform-origin:50% 40%;pointer-events:auto}
+@media (min-width:900px){.dkon .dk-stage .hero{will-change:transform,opacity}}
 .dkon .dk-gow{display:block;margin-top:32px}
 .dkon .dk-go{height:40px;padding:0 22px;font-size:.9rem}
 .dkon .dk+.grid{position:relative;z-index:1;margin-top:calc(24px - var(--vh)*100 + 60px)}
@@ -269,7 +270,7 @@ footer a:hover{color:var(--ink)}
   .hero{padding:48px 0 32px}
   .list{padding:12px}
   .row{grid-template-columns:minmax(0,1fr) 88px;gap:14px;padding:16px}.row .th{height:72px;border-radius:12px}
-  .lh input{flex:1;min-width:0}
+  .lh input{flex:1;min-width:0;font-size:16px}
   .feat .fb{padding:24px}.feat h2{font-size:1.35rem}
   .prof{padding:18px}.prof .ph{width:68px;height:68px}
   .th.cover{height:180px}
@@ -277,6 +278,83 @@ footer a:hover{color:var(--ink)}
   .pn{grid-template-columns:1fr}
   .cmt{padding:22px}
   .mem h1{font-size:1.9rem}.kv{grid-template-columns:70px 1fr}
+}
+
+/* 브런치 글 틀: 가운데 한 줄, 제목·부제·by·본문·keyword·이전/다음. 내용은 접지 않음 */
+.bcol,.bpost{max-width:700px;margin:0 auto;padding:72px 0 40px;min-width:0}
+.bhome h1,.bpost h1{margin:0;font-size:42px;font-weight:400;line-height:1.35;letter-spacing:-.6px;color:var(--ink)}
+.bbrand{margin:0 0 18px;font-size:13px;color:var(--faint)}
+.bsub{margin:14px 0 0;font-size:18px;line-height:1.6;color:#959595}
+:root[data-theme=dark] .bsub,:root[data-theme=dark] .bby,:root[data-theme=dark] .bmeta,:root[data-theme=dark] .bstats{color:var(--sub)}
+.bby{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:22px 0 0;font-size:13px;color:#959595}
+.bby a{color:var(--ink)}
+.bav{width:28px;height:28px;border-radius:50%;overflow:hidden;display:inline-block;flex:none}
+.bav img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.bstats{margin:18px 0 0;font-size:13px;color:#959595}
+.bstats b{color:var(--ink);font-weight:600}
+.btools{display:flex;gap:16px;align-items:center;margin:36px 0 8px}
+.btext{border:0;background:none;padding:0;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+.btools input{flex:1;min-width:0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:8px 0}
+.bseries,.btags{display:flex;flex-wrap:wrap;gap:8px 14px;margin:18px 0;font-size:14px;line-height:1.7}
+.bseries .bg{display:contents}
+.bseries a,.btags a{color:var(--sub)}
+.bseries a.on,.btags a.on,.bseries a.bh{color:var(--ink)}
+.bseries i{font-style:normal;color:var(--faint)}
+.bitem{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line);color:inherit}
+.bitem:hover h2{text-decoration:underline;text-underline-offset:3px}
+.btxt{min-width:0}
+.bitem h2{margin:0;font-size:22px;font-weight:400;line-height:1.4;letter-spacing:-.4px}
+.bitem .bsub{font-size:15px}
+.bmeta{margin:10px 0 0;font-size:13px;color:#959595}
+.bthumb{display:block}
+.bthumb .th{width:96px;height:72px;border-radius:2px}
+.bpost .pbody{max-width:none;padding-top:36px;font-size:17px;line-height:1.95}
+.bpost .pbody p{margin:0 0 28px}
+.bpost .pbody img{border-radius:0}
+.bpost .pbody details{background:none;border-radius:0;padding:0;margin:0 0 28px}
+.bkeys{margin-top:12px;font-size:14px}
+.bkeys strong{display:block;margin-bottom:8px;font-weight:700}
+.bkeys a{color:#00a99d;margin:0 12px 8px 0;display:inline-block}
+.bnav{display:flex;justify-content:space-between;gap:32px;margin-top:48px;padding-top:22px;border-top:1px solid var(--line)}
+.bnav a{max-width:46%;color:var(--ink);font-size:16px;line-height:1.45}
+.bnav span{display:block;color:#959595;font-size:13px;font-weight:400;margin-bottom:4px}
+.bnav .bnext{margin-left:auto;text-align:right}
+.blinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:28px 0 0;font-size:14px}
+.blinks a,.blinks button{border:0;background:none;padding:0;font:inherit;font-size:14px;color:#00a99d;cursor:pointer}
+.bmail{margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+.bmail h2{margin:0 0 6px;font-size:18px;font-weight:500}
+.bmail .note{margin:0 0 12px;color:var(--sub);font-size:14px}
+.bmail .btn{height:auto;padding:0;border-radius:0;background:none;color:#00a99d;font-weight:400}
+.bmail .btn.pri{background:none;color:#00a99d}
+.babout .bphotos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.babout .bphotos img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 14%;display:block}
+.babout .role{margin:0;font-size:13px;color:#959595}
+.babout h2{font-size:18px;font-weight:500;margin:8px 0 14px}
+.babout .kv{border-color:var(--line)}
+.babout .tl li::before{box-shadow:0 0 0 4px var(--bg)}
+.hd-break{display:none}
+@media (max-width:899px){
+  header.top.sc{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+}
+@media (max-width:760px){
+  footer{max-width:none;overflow-wrap:anywhere;word-break:break-word}
+  .bcol,.bpost{padding-top:28px}
+  .bhome h1,.bpost h1{font-size:30px;line-height:1.35}
+  .bsub{font-size:16px}
+  .bitem{grid-template-columns:72px minmax(0,1fr);gap:12px;padding:20px 0}
+  .bitem h2{font-size:18px;overflow-wrap:anywhere}
+  .bthumb .th{width:72px;height:54px}
+  .bmeta,.bby{overflow-wrap:anywhere}
+  .bnav{flex-direction:column;gap:18px}
+  .bnav a,.bnav .bnext{max-width:none;text-align:left;margin-left:0}
+  .babout .bphotos{grid-template-columns:1fr 1fr;gap:8px}
+  .babout .kv{grid-template-columns:68px minmax(0,1fr)}
+  .babout .kv dd{overflow-wrap:anywhere}
+  .bpost .pbody{font-size:16px;line-height:1.85}
+  .bpost .pbody pre,.bpost .pbody table{max-width:100%}
+  .bseries a,.btags a{padding:4px 0}
+  .wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  footer{padding-left:16px;padding-right:16px;padding-bottom:max(40px,env(safe-area-inset-bottom))}
 }
 
 @media (prefers-reduced-motion:reduce){

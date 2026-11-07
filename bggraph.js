@@ -10,16 +10,18 @@
   var WORDS = ['LLM', 'RAG', 'SQL', 'TCP', 'OS', 'API', 'graph', 'agent', 'embed', 'MCP', 'CPU', 'DB', 'eval', 'cache', 'C++', 'trace', 'node', 'edge'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function ink() {
+  var inkC = [20, 20, 20];
+  function readInk() {
     var c = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#141414';
     var m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(c);
-    if (!m) return [20, 20, 20];
+    if (!m) { inkC = [20, 20, 20]; return; }
     var h = m[1].length === 3 ? m[1].replace(/./g, '$&$&') : m[1];
-    return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+    inkC = [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
   }
 
   function build() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var narrow = window.innerWidth < 900;
+    dpr = narrow ? 1 : Math.min(window.devicePixelRatio || 1, 2);
     W = window.innerWidth; H = window.innerHeight;
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -38,7 +40,7 @@
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    var c = ink(), link = Math.min(190, Math.max(130, W / 7)), i, j, a, b, dx, dy, d;
+    var c = inkC, link = Math.min(190, Math.max(130, W / 7)), i, j, a, b, dx, dy, d;
     for (i = 0; i < nodes.length; i++) {
       a = nodes[i];
       if (!reduce) {
@@ -70,13 +72,31 @@
     }
   }
 
-  function loop() { draw(); raf = requestAnimationFrame(loop); }
-  function start() { cancelAnimationFrame(raf); build(); if (reduce) draw(); else loop(); }
+  var last = 0, paused = false, scrollT = 0;
+  function loop(ts) {
+    raf = requestAnimationFrame(loop);
+    if (window.innerWidth < 900 && ts - last < 32) return;
+    last = ts;
+    draw();
+  }
+  function start() { cancelAnimationFrame(raf); paused = false; build(); readInk(); if (reduce) draw(); else loop(0); }
 
   var t;
   window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(start, 200); });
   document.addEventListener('visibilitychange', function () {
-    if (document.hidden) cancelAnimationFrame(raf); else if (!reduce) loop();
+    if (document.hidden) cancelAnimationFrame(raf); else if (!reduce && !paused) loop(0);
   });
+  window.addEventListener('scroll', function () {
+    if (window.innerWidth >= 900 || reduce) return;
+    if (!paused) { paused = true; cancelAnimationFrame(raf); }
+    clearTimeout(scrollT);
+    scrollT = setTimeout(function () {
+      paused = false;
+      if (!document.hidden && !reduce) loop(0);
+    }, 180);
+  }, { passive: true });
+  if (window.MutationObserver) {
+    new MutationObserver(function () { readInk(); if (paused || reduce) draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
   start();
 })();

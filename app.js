@@ -20,6 +20,12 @@
   function mins(t){return Math.max(1,Math.round(t.replace(/\s+/g,'').length/500))}
   function counts(key){var m={};posts.forEach(function(p){(key==='tags'?p.tags:(p.series?[p.series]:[])).forEach(function(x){m[x]=(m[x]||0)+1})});return m}
   function link(p){return'#/post/'+encodeURIComponent(p.slug)}
+  function bdate(s){
+    var m=String(s||'').match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if(!m)return esc(s);
+    var mon=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return mon[+m[2]-1]+' '+(+m[3])+'. '+m[1];
+  }
 
   // 테마
   var root=document.documentElement,tb=document.getElementById('theme');
@@ -108,9 +114,9 @@
     els.forEach(function(el){el.classList.add('rv');io.observe(el)});
   }
 
-  // 고정+스크롤 전환(홈 히어로·소개만): 폭>=900·움직임 줄이기 아님일 때만. rAF 1개, passive scroll, transform/opacity만.
-  // 상태는 스크롤 위치에서만 계산(무상태) -> 새로고침 복원·해시 이동에도 안 깨짐. 라우트가 바뀌면 deckOff()가 전부 정리.
-  var deck={kind:null,on:false,raf:0,els:null,idx:-1,fi:null},RM=matchMedia('(prefers-reduced-motion:reduce)');
+  // 고정+스크롤 전환(홈 히어로·소개만). rAF 1개, passive scroll, transform/opacity만.
+  // 폰은 카드 수는 그대로 두고, 스크롤마다 높이를 다시 재지 않는다(그게 끊김의 원인).
+  var deck={kind:null,on:false,raf:0,els:null,idx:-1,fi:null,R:0,base:0,pk:-1},RM=matchMedia('(prefers-reduced-motion:reduce)');
   function clamp(x,a,b){return x<a?a:x>b?b:x}
   // 스크롤 길이(vh 단위) - 이 한 곳만 고치면 CSS 높이·버튼 이동·점·전환 임계값이 모두 따라감
   var DK_HOME=50,DK_HOME_M=45,DK_STEP=70,DK_N=3,DK_TAIL=35;
@@ -141,7 +147,7 @@
       d.grid.addEventListener('focusin',deck.fi);
     }else d.dots.forEach(function(b,i){b.onclick=function(){scrollTo({top:scrollY+d.dk.getBoundingClientRect().top-60+i*DK_STEP*dvh()+2,behavior:'instant'})}});
     addEventListener('scroll',deckReq,{passive:true});
-    deckUpdate();
+    deck.pk=-1;deckPin();deckUpdate();
     requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.remove('dk-nt')})});
   }
   function deckClear(){
@@ -162,15 +168,25 @@
     var ok=deckAllowed();
     if(ok&&deck.on&&(deckMode()==='m')!==deck.m){deckStop();deckStart();return}
     if(ok&&deck.on&&deck.m&&deck.els&&deck.els.hero.offsetHeight+84>innerHeight){deckStop();reveal();return}
-    if(ok&&!deck.on)deckStart();else if(!ok&&deck.on)deckStop();else if(ok)deckReq();
+    if(ok&&!deck.on)deckStart();else if(!ok&&deck.on)deckStop();else if(ok){if(deck.on)deckPin();deckReq()}
+  }
+  function deckPin(){
+    var d=deck.els;if(!d||!d.dk||!d.dk.isConnected)return;
+    deck.R=Math.max(1,homeR(d));
+    deck.base=scrollY+d.dk.getBoundingClientRect().top;
+    deck.pk=-1;
   }
   addEventListener('resize',deckSync,{passive:true});
   if(RM.addEventListener)RM.addEventListener('change',deckSync);
   function deckUpdate(){
     var d=deck.els;if(!deck.on||!d||!d.dk.isConnected)return;
-    var r=d.dk.getBoundingClientRect();
+    var r=deck.m?null:d.dk.getBoundingClientRect();
     if(deck.kind==='home'){
-      var R=Math.max(1,homeR(d)),p=clamp((60-r.top)/R,0,1),hp=clamp(p/.5,0,1);
+      var R,top;
+      if(deck.m){if(!deck.R)deckPin();R=deck.R;top=deck.base-scrollY}
+      else{R=Math.max(1,homeR(d));top=r.top}
+      var p=clamp((60-top)/R,0,1),hp=clamp(p/.5,0,1);
+      if(deck.m){var pk=p*1000|0;if(pk===deck.pk)return;deck.pk=pk}
       d.hero.style.opacity=1-hp;d.hero.style.transform='translate3d(0,'+(-20*hp)+'px,0) scale('+(1-.04*hp)+')';d.hero.style.pointerEvents=hp>.5?'none':'auto';
       if(p>=1){d.grid.classList.remove('dk-live');d.grid.style.removeProperty('transform');d.grid.style.removeProperty('pointer-events');d.items.forEach(function(el){el.style.removeProperty('opacity');el.style.removeProperty('transform')})}
       else{
@@ -195,21 +211,17 @@
     var i=posts.map(function(x){return x.slug}).indexOf(slug),p=posts[i];
     if(!p){app.innerHTML='<p class="empty">'+t('글을 찾을 수 없어요.')+'</p>';return}
     document.title=pt(p)+' · dohyun.log';
-    app.innerHTML='<div class="pgrid"><div><article class="glass post"><div class="ph0 cat">'+(p.series?'<em class="sr" style="font-style:normal">'+esc(t(p.series))+'</em>':'')+p.tags.map(function(x){return'<span>#'+esc(t(x))+'</span>'}).join('')+'</div>'+
-      '<h1>'+esc(pt(p))+'</h1>'+thumb(p,' cover')+'<div class="by"><div class="ph one"><img src="img/me.jpg" alt=""></div><span><b>'+t('강도현')+'</b> · '+esc(p.date)+' · <span id="rt"></span></span></div>'+
-      '<div class="pbody" id="body">'+t('불러오는 중…')+'</div><div class="share"><button class="btn" id="cplink" type="button">'+t('링크 복사')+'</button><a class="btn" href="#/">'+t('← 목록')+'</a></div></article>'+
-      '<div class="pn">'+(posts[i+1]?'<a class="glass" href="'+link(posts[i+1])+'"><small>'+t('← 이전 글')+'</small>'+esc(pt(posts[i+1]))+'</a>':'<span></span>')+(posts[i-1]?'<a class="glass" href="'+link(posts[i-1])+'"><small>'+t('다음 글 →')+'</small>'+esc(pt(posts[i-1]))+'</a>':'<span></span>')+'</div>'+
-      '<section class="glass cmt" id="cmt"></section></div><aside class="glass toc" id="toc"><h3>'+t('목차')+'</h3></aside></div>';
+    var older=posts[i+1],newer=posts[i-1];
+    app.innerHTML='<article class="bpost"><h1>'+esc(pt(p))+'</h1>'+(ps(p)?'<p class="bsub">'+esc(ps(p))+'</p>':'')+'<p class="bby"><a class="bav" href="#/about"><img src="img/me.jpg" alt=""></a>by <a href="#/about">'+t('강도현')+'</a><span>'+bdate(p.date)+'</span><span id="rt"></span></p>'+
+      '<div class="pbody" id="body">'+t('불러오는 중…')+'</div><div class="bkeys"><strong>keyword</strong>'+(p.series?'<a href="#/series/'+encodeURIComponent(p.series)+'">'+esc(t(p.series))+'</a>':'')+p.tags.map(function(x){return'<a href="#/tag/'+encodeURIComponent(x)+'">'+esc(t(x))+'</a>'}).join('')+'</div>'+
+      '<div class="bnav">'+(older?'<a href="'+link(older)+'"><span>'+t('← 이전 글')+'</span>'+esc(pt(older))+'</a>':'<span></span>')+(newer?'<a class="bnext" href="'+link(newer)+'"><span>'+t('다음 글 →')+'</span>'+esc(pt(newer))+'</a>':'<span></span>')+'</div>'+
+      '<p class="blinks"><button type="button" id="cplink">'+t('링크 복사')+'</button><a href="#/">'+t('← 목록')+'</a></p><section class="bmail" id="cmt"></section></article>';
     document.getElementById('cplink').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(function(){b.textContent=t('복사됨 ✓')},function(){b.textContent=t('주소창에서 복사해 주세요')})};
     fetch('posts/'+encodeURIComponent(p.slug)+(LANG!=='ko'?'.'+LANG:'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
-      var b=document.getElementById('body');b.innerHTML=marked.parse(md);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});
+      var b=document.getElementById('body');b.innerHTML=marked.parse(md);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});[].forEach.call(b.querySelectorAll('details'),function(d){d.open=true});
       document.getElementById('rt').textContent=mins(b.textContent)+t('분 읽기');
-      var toc=document.getElementById('toc'),hs=b.querySelectorAll('h2,h3'),links=[];
-      [].forEach.call(hs,function(h,k){h.id='h'+k;var a=document.createElement('a');a.textContent=h.textContent;a.className=h.tagName==='H3'?'l3':'';a.onclick=function(){h.scrollIntoView({behavior:'smooth'})};toc.appendChild(a);links.push(a)});
-      if(!hs.length)toc.style.display='none';
+      [].forEach.call(b.querySelectorAll('h2,h3'),function(h,k){h.id='h'+k});
       [].forEach.call(b.querySelectorAll('pre'),function(pre){var c=document.createElement('button');c.className='cp';c.textContent=t('복사');c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(pre.querySelector('code').textContent);c.textContent='✓';setTimeout(function(){c.textContent=t('복사')},1200)};pre.appendChild(c)});
-      function spy(){var k=0;[].forEach.call(hs,function(h,n){if(h.getBoundingClientRect().top<120)k=n});links.forEach(function(a,n){a.classList.toggle('on',n===k)})}
-      addEventListener('scroll',spy,{passive:true});spy();
       scrollTo(0,0);
     }).catch(function(){var bb=document.getElementById('body');if(bb)bb.textContent=errMsg()});
     progress(true);
