@@ -296,7 +296,9 @@ footer a:hover{color:var(--ink)}
 .btext{border:0;background:none;padding:0;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
 .btools input{flex:1;min-width:0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px;padding:8px 0}
 .bseries,.btags{display:flex;flex-wrap:wrap;gap:8px 14px;margin:18px 0;font-size:14px;line-height:1.7}
-.bseries .bg{display:contents}
+.bseries strong,.btags strong{display:block;width:100%;font-size:13px;font-weight:700;color:var(--ink)}
+.bseries .bg{display:flex;flex-wrap:wrap;gap:6px 14px;width:100%}
+.grid.bwrap{display:block}
 .bseries a,.btags a{color:var(--sub)}
 .bseries a.on,.btags a.on,.bseries a.bh{color:var(--ink)}
 .bseries i{font-style:normal;color:var(--faint)}
