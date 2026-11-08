@@ -50,24 +50,44 @@
       (function(){var ks=Object.keys(tg).sort(function(a,b){return tg[b]-tg[a]}),N=12,chip=function(tx){return'<a class="chip'+(cur==='t:'+tx?' on':'')+'" href="#/tag/'+encodeURIComponent(tx)+'">#'+esc(t(tx))+'<b>'+tg[tx]+'</b></a>'},head=ks.slice(0,N),rest=ks.slice(N);if(cur&&cur.indexOf('t:')===0){var c=cur.slice(2),i=rest.indexOf(c);if(i>-1){rest.splice(i,1);head.push(c)}}return head.map(chip).join('')+(rest.length?'<details class="moretag"><summary class="chip">'+t('더보기')+' +'+rest.length+'</summary><div class="chips">'+rest.map(chip).join('')+'</div></details>':'')})()+'</div></div>'+
       (Object.keys(sr).length?'<div class="glass box ser"><h3>'+t('시리즈')+'</h3>'+TREE.map(function(g){var n=0;g[1].forEach(function(x){n+=sr[x]||0});var open=cur&&(cur==='c:'+g[0]||(cur.indexOf('s:')===0&&g[1].indexOf(cur.slice(2))>-1));return'<details class="fold"'+(open?' open':'')+'><summary><span>'+esc(t(g[0]))+'</span><b>'+n+'</b></summary><a class="all" href="#/cat/'+encodeURIComponent(g[0])+'"><span>'+t('전체 보기')+'</span></a>'+g[1].map(function(x){return'<a class="leaf'+(cur==='s:'+x?' on':'')+'" href="#/series/'+encodeURIComponent(x)+'"><span>'+esc(t(x))+'</span><b>'+(sr[x]||0)+'</b></a>'}).join('')+'</details>'}).join('')+'</div>':'')+'</aside>';
   }
-  function bitem(p){
-    return'<a class="bitem" href="'+link(p)+'"><span class="bthumb">'+thumb(p)+'</span><div class="btxt"><h2>'+esc(pt(p))+'</h2><p class="bsub">'+esc(ps(p))+'</p><p class="bmeta">'+(p.pinned?t('고정')+' · ':'')+bdate(p.date)+(p.series?' · '+esc(t(p.series)):'')+p.tags.map(function(x){return' · '+esc(t(x))}).join('')+'</p></div></a>';
+  function row(p){
+    return'<a class="row" href="'+link(p)+'"><div><div class="cat">'+(p.series?'<em class="sr" style="font-style:normal">'+esc(t(p.series))+'</em>':'')+p.tags.map(function(x){return'<span>#'+esc(t(x))+'</span>'}).join('')+'</div>'+
+      '<h2>'+(p.pinned?'<span class="pin">'+t('고정')+'</span>':'')+esc(pt(p))+'</h2><p>'+esc(ps(p))+'</p><span class="meta">'+esc(p.date)+'</span></div>'+thumb(p)+'</a>';
   }
-  function tax(cur){
-    var tg=counts('tags'),sr=counts('series'),ks=Object.keys(tg).sort(function(a,b){return tg[b]-tg[a]});
-    return'<div class="bseries"><strong>'+t('시리즈')+'</strong><a class="'+(!cur?'bh':'')+'" href="#/">'+t('전체')+' <i>'+posts.length+'</i></a>'+TREE.map(function(g){var n=0;g[1].forEach(function(x){n+=sr[x]||0});return'<div class="bg"><a class="'+(cur==='c:'+g[0]?'on':'')+'" href="#/cat/'+encodeURIComponent(g[0])+'">'+esc(t(g[0]))+' <i>'+n+'</i></a>'+g[1].map(function(x){return'<a class="'+(cur==='s:'+x?'on':'')+'" href="#/series/'+encodeURIComponent(x)+'">'+esc(t(x))+' <i>'+(sr[x]||0)+'</i></a>'}).join('')+'</div>'}).join('')+'</div>'+
-      '<div class="btags"><strong>'+t('태그')+'</strong>'+ks.map(function(x){return'<a class="'+(cur==='t:'+x?'on':'')+'" href="#/tag/'+encodeURIComponent(x)+'">'+esc(t(x))+' <i>'+tg[x]+'</i></a>'}).join('')+'</div>';
+  var rollTimer=0;
+  function rollStop(){clearInterval(rollTimer);rollTimer=0}
+  function rollInit(){
+    rollStop();
+    var box=document.getElementById('roll');if(!box)return;
+    var track=box.querySelector('.roll-track'),dots=[].slice.call(box.querySelectorAll('.roll-dots button')),n=dots.length,i=0;
+    function go(k){i=(k+n)%n;track.style.transform='translate3d('+(-i*100)+'%,0,0)';dots.forEach(function(b,j){b.classList.toggle('on',j===i)})}
+    function arm(){rollStop();if(!n||n<2||RM.matches)return;rollTimer=setInterval(function(){if(!box.isConnected){rollStop();return}if(document.hidden)return;go(i+1)},5000)}
+    dots.forEach(function(b,j){b.onclick=function(){go(j);arm()}});
+    box.onmouseenter=rollStop;box.onmouseleave=arm;box.onfocusin=rollStop;box.onfocusout=arm;
+    arm();
   }
   function home(filter,title,cur){
     document.title='dohyun.log';
+    rollStop();
     var q=state.q.toLowerCase();
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+(p.title_en||'')+(p.summary_en||'')+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:a.date>b.date?-1:0))});
-    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+t('글 수')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div><div class="dk-gow"><button class="btn pri dk-go" type="button">'+t('글 보기')+' ↓</button></div></section>':'';
-    app.innerHTML=((!filter&&!q)?'<div class="dk"><div class="dk-stage">'+hero+'</div></div>':'')+'<div class="grid bwrap"><div class="bcol bhome list">'+((filter||q)?'<h1>'+esc(t(title))+'</h1>':'')+tax(cur)+'<div class="btools"><button class="btext" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+(shown.length?shown.map(bitem).join(''):'<p class="empty">'+t('맞는 글이 없어요.')+'</p>')+'</div></div>';
+    var mains=[];if(!filter&&!q){shown.forEach(function(p){if(p.featured&&mains.length<5)mains.push(p)});shown.forEach(function(p){if(mains.length<5&&mains.indexOf(p)<0)mains.push(p)})}
+    var rest=mains.length?shown.filter(function(p){return mains.indexOf(p)<0}):shown;
+    var PER=10,key=(cur||'')+'|'+q+'|'+state.asc;if(state.pkey!==key){state.pkey=key;state.page=1}
+    var pages=Math.max(1,Math.ceil(rest.length/PER));if(state.page>pages)state.page=pages;
+    var pg={items:rest.slice((state.page-1)*PER,state.page*PER),html:''};
+    if(pages>1){var nums=[];for(var i=1;i<=pages;i++){if(i===1||i===pages||Math.abs(i-state.page)<=2)nums.push(i);else if(nums[nums.length-1]!=='…')nums.push('…')}
+      pg.html='<nav class="pager" aria-label="pages">'+(state.page>1?'<button type="button" data-p="'+(state.page-1)+'">←</button>':'')+nums.map(function(n){return n==='…'?'<span>…</span>':'<button type="button" data-p="'+n+'"'+(n===state.page?' class="on" aria-current="page"':'')+'>'+n+'</button>'}).join('')+(state.page<pages?'<button type="button" data-p="'+(state.page+1)+'">→</button>':'')+'</nav>'}
+    var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+t('글 수')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div><div class="dk-gow"><button class="btn pri dk-go" type="button">'+t('글 보기')+' ↓</button></div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
+    var feat=mains.length?'<div class="glass feat roll" id="roll"><div class="roll-track">'+mains.map(function(p,i){return'<a class="roll-slide" href="'+link(p)+'">'+thumb(p)+'<div class="fb"><div class="lb">'+(i+1)+' / '+mains.length+'</div><h2>'+esc(pt(p))+'</h2><p>'+esc(ps(p))+'</p><span class="meta">'+esc(p.date)+p.tags.map(function(x){return' · #'+esc(t(x))}).join('')+'</span></div></a>'}).join('')+'</div><div class="roll-dots">'+mains.map(function(_,i){return'<button type="button" aria-label="'+(i+1)+' / '+mains.length+'"'+(i?'':' class="on"')+'></button>'}).join('')+'</div></div>':'';
+    app.innerHTML=((!filter&&!q)?'<div class="dk"><div class="dk-stage">'+hero+'</div></div>':hero)+'<div class="grid"><section class="main">'+feat+'<div class="glass list"><div class="lh"><h3>'+t(mains.length?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><details class="sdrop"><summary class="btn">'+t('시리즈')+' ▾</summary><div class="tdrop">'+TREE.map(function(g){var sr2=counts('series'),n=0;g[1].forEach(function(x){n+=sr2[x]||0});return'<div class="tg"><a class="tgh'+(cur==='c:'+g[0]?' on':'')+'" href="#/cat/'+encodeURIComponent(g[0])+'">'+esc(t(g[0]))+'<b>'+n+'</b></a><div class="chips">'+g[1].map(function(x){return'<a class="chip'+(cur==='s:'+x?' on':'')+'" href="#/series/'+encodeURIComponent(x)+'">'+esc(t(x))+'<b>'+(sr2[x]||0)+'</b></a>'}).join('')+'</div></div>'}).join('')+'</div></details><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
+      (rest.length?pg.items.map(row).join('')+pg.html:'<p class="empty">'+(shown.length?'':t('맞는 글이 없어요.'))+'</p>')+'</div></section>'+side(cur)+'</div>';
+    [].forEach.call(document.querySelectorAll('.pager [data-p]'),function(b){b.onclick=function(){state.page=+b.getAttribute('data-p');home(filter,title,cur);var l=document.querySelector('.list');if(l)scrollTo(0,l.getBoundingClientRect().top+pageYOffset-80)}});
     document.getElementById('srt').onclick=function(){state.asc=!state.asc;home(filter,title,cur)};
     var qi=document.getElementById('q');
     qi.oninput=function(){state.q=qi.value.trim();var pos=qi.selectionStart;home(filter,title,cur);var n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
+    rollInit();
     progress(false);
     if(!filter&&!q)deckInit('home');else{deckOff();reveal()}
   }
@@ -75,22 +95,26 @@
   // 소개 = 회사 임직원 프로필 페이지처럼
   function about(){
     document.title=t('소개')+' · dohyun.log';
+    var pics=['img/p1.jpg','img/p2.jpg'];
+    var imgs=pics.map(function(u,i){return'<img src="'+u+'" alt="'+(i?'':'강도현')+'" style="animation-duration:'+(pics.length*7)+'s;animation-delay:-'+(i*7)+'s">'}).join('');
     function li(t,d,x){return'<li><small>'+d+'</small><b>'+t+'</b><span>'+x+'</span></li>'}
-    app.innerHTML='<article class="bpost babout"><div class="bphotos"><img src="img/p1.jpg" alt="강도현"><img src="img/p2.jpg" alt=""></div><p class="role">JUNIOR PM · AI/AX</p><h1>강도현 <span class="meta">Dohyun Kang</span></h1><p class="bsub">직접 개발하고 경험하며 PM의 길을 걷고 있습니다.</p>'+
-      '<dl class="kv"><dt>소속</dt><dd>Allie Research Inc.</dd><dt>하는 일</dt><dd>제품·마케팅 기획, 팀 간 조율, 개발</dd><dt>학력</dt><dd>인천대학교 정보통신공학과 (학점 3.93 / 4.5)</dd><dt>수상</dt><dd>ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상</dd><dt>연락</dt><dd>'+MAIL+'</dd></dl><h2>이력</h2><ul class="tl">'+
+    app.innerHTML='<div class="adk" ><div class="adk-stage"><div class="glass mem"><div class="frame"><div class="ph">'+imgs+'</div></div><div class="mcol"><div class="sc">'+
+      '<p class="role">JUNIOR PM · AI/AX</p><h1>강도현 <span class="meta">Dohyun Kang</span></h1><p class="tagl">직접 개발하고 경험하며 PM의 길을 걷고 있습니다.</p></div><div class="sc">'+
+      '<dl class="kv"><dt>소속</dt><dd>Allie Research Inc.</dd><dt>하는 일</dt><dd>제품·마케팅 기획, 팀 간 조율, 개발</dd><dt>학력</dt><dd>인천대학교 정보통신공학과 (학점 3.93 / 4.5)</dd><dt>수상</dt><dd>ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상</dd><dt>연락</dt><dd>'+MAIL+'</dd></dl></div><div class="sc">'+
+      '<h3>이력</h3><ul class="tl">'+
       li('Allie Research Inc. — Junior PM','2026.08 –','제품·마케팅 기획, 팀 간 조율 / 개발')+
       li('Telechips 아카데미','2026.02 – 2026.05','C/C++ · 리눅스 커널 · 디바이스 드라이버')+
       li('Techways — 현장실습','2024.08 – 2025.02','시험 자동화 도구 개발 (C#, LabVIEW)')+
       li('한국알프스 — R&D 센터 인턴','2024.01 – 2024.02','CAN/CAN FD 차량 스위치 검증')+
       li('고주파 안테나 설계 연구실 — 학부연구생','2022.09 – 2023.12','양봉 IoT, CST 안테나 설계')+
-      '</ul><p class="blinks"><a href="https://dohyunkang.github.io/'+({ko:'resume.html',en:'resume.en.html',ja:'resume.ja.html',zh:'resume.zh.html'}[LANG])+'" target="_blank" rel="noopener">이력서 보기</a><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a><a href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a></p></article>';
+      '</ul><p style="margin:18px 0 0"><a class="btn pri" href="https://dohyunkang.github.io/'+({ko:'resume.html',en:'resume.en.html',ja:'resume.ja.html',zh:'resume.zh.html'}[LANG])+'" target="_blank" rel="noopener">이력서 보기</a> <a class="btn" href="https://dohyunkang.github.io/" target="_blank" rel="noopener">포트폴리오</a> <a class="btn" href="https://github.com/DohyunKang" target="_blank" rel="noopener">GitHub</a> <a class="btn" href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a></p></div></div></div></div><div class="adots" aria-hidden="true"><button type="button" tabindex="-1"></button><button type="button" tabindex="-1"></button><button type="button" tabindex="-1"></button></div></div>';
 
     if(LANG!=='ko'){
       var AB={"en": {"소속": "Company", "하는 일": "Role", "학력": "Education", "연락": "Contact", "이력서 보기": "Resume", "이력": "Timeline", "포트폴리오": "Portfolio", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "Building things myself and learning the PM path along the way.", "제품·마케팅 기획, 팀 간 조율, 개발": "Product and marketing planning, team coordination, development", "제품·마케팅 기획, 팀 간 조율 / 개발": "Product and marketing planning, team coordination / development", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "Incheon National University, Information and Telecommunication Engineering (GPA 3.93 / 4.5)", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 Excellent Paper Award · Hanium Contest Honorable Mention · Industry-Academia Capstone Silver · Field Practice Essay Contest Grand Prize", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linux kernel · Device drivers", "Telechips 아카데미": "Telechips Academy", "Techways — 현장실습": "Techways — Field practice", "시험 자동화 도구 개발 (C#, LabVIEW)": "Test automation tool development (C#, LabVIEW)", "한국알프스 — R": "Alps Alpine Korea — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD vehicle switch verification", "센터 인턴": "Center intern", "고주파 안테나 설계 연구실 — 학부연구생": "RF Antenna Design Lab — Undergraduate researcher", "양봉 IoT, CST 안테나 설계": "Beekeeping IoT, CST antenna design", "강도현 <span": "Dohyun Kang <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "Awards"}, "ja": {"소속": "所属", "하는 일": "担当", "학력": "学歴", "연락": "連絡先", "이력서 보기": "履歴書", "이력": "経歴", "포트폴리오": "ポートフォリオ", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "自分で開発し、経験しながらPMの道を歩いています。", "제품·마케팅 기획, 팀 간 조율, 개발": "製品・マーケティング企画、チーム間の調整、開発", "제품·마케팅 기획, 팀 간 조율 / 개발": "製品・マーケティング企画、チーム間の調整 / 開発", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "仁川大学 情報通信工学科（GPA 3.93 / 4.5）", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 論文優秀賞 · ハニウム公募展 入選 · 産学キャップストーン 銀賞 · 現場実習手記コンテスト 最優秀賞", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linuxカーネル · デバイスドライバ", "Telechips 아카데미": "Telechips アカデミー", "Techways — 현장실습": "Techways — 現場実習", "시험 자동화 도구 개발 (C#, LabVIEW)": "試験自動化ツール開発（C#, LabVIEW）", "한국알프스 — R": "韓国アルプス — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD 車載スイッチ検証", "센터 인턴": "センター インターン", "고주파 안테나 설계 연구실 — 학부연구생": "高周波アンテナ設計研究室 — 学部研究生", "양봉 IoT, CST 안테나 설계": "養蜂IoT、CSTアンテナ設計", "강도현 <span": "カン・ドヒョン <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "受賞"}, "zh": {"소속": "公司", "하는 일": "工作内容", "학력": "学历", "연락": "联系", "이력서 보기": "简历", "이력": "经历", "포트폴리오": "作品集", "직접 개발하고 경험하며 PM의 길을 걷고 있습니다.": "一边亲手开发、积累经验，一边走PM的路。", "제품·마케팅 기획, 팀 간 조율, 개발": "产品与营销策划、跨团队协调、开发", "제품·마케팅 기획, 팀 간 조율 / 개발": "产品与营销策划、跨团队协调 / 开发", "인천대학교 정보통신공학과 (학점 3.93 / 4.5)": "仁川大学 信息通信工程系（GPA 3.93 / 4.5）", "ACK 2024 논문 우수상 · 한이음 공모전 입선 · 산학 캡스톤 은상 · 현장실습 수기공모전 최우수상": "ACK 2024 论文优秀奖 · Hanium 竞赛入选 · 产学 Capstone 银奖 · 现场实习征文大赛 最优秀奖", "C/C++ · 리눅스 커널 · 디바이스 드라이버": "C/C++ · Linux 内核 · 设备驱动", "Telechips 아카데미": "Telechips 学院", "Techways — 현장실습": "Techways — 现场实习", "시험 자동화 도구 개발 (C#, LabVIEW)": "测试自动化工具开发（C#, LabVIEW）", "한국알프스 — R": "韩国阿尔卑斯 — R", "CAN/CAN FD 차량 스위치 검증": "CAN/CAN FD 车载开关验证", "센터 인턴": "中心实习生", "고주파 안테나 설계 연구실 — 학부연구생": "高频天线设计实验室 — 本科研究生", "양봉 IoT, CST 안테나 설계": "养蜂IoT、CST天线设计", "강도현 <span": "姜道贤 <span", "<span class=\"meta\">Dohyun Kang</span>": "", "수상": "获奖"}}[LANG];
       var s=app.innerHTML;Object.keys(AB).forEach(function(k){s=s.split(k).join(AB[k])});app.innerHTML=s;
       document.title=t('소개')+' · dohyun.log';
     }
-    progress(false);deckOff();
+    progress(false);deckInit('about');
   }
 
 

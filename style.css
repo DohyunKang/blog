@@ -55,6 +55,16 @@ header.top.sc{background:var(--nav);backdrop-filter:blur(14px);-webkit-backdrop-
 
 /* 대표 글 */
 .feat{display:grid;grid-template-columns:1.05fr 1fr;overflow:hidden;margin-bottom:24px;transition:transform var(--hov),background-color var(--hov)}
+.feat.roll{display:block;position:relative;border-radius:2px;overflow:hidden}
+.roll-track{display:flex;width:100%;transition:transform .7s var(--ease)}
+.roll-slide{flex:0 0 100%;min-width:0;display:grid;grid-template-columns:1.05fr 1fr;min-height:330px;color:inherit}
+.roll-slide .fb p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.roll-dots{position:absolute;right:28px;bottom:20px;display:flex;gap:8px;z-index:2}
+.roll-dots button{width:28px;height:16px;padding:0;border:0;background:linear-gradient(var(--ink),var(--ink)) center/100% 3px no-repeat;background-color:transparent;opacity:.28;cursor:pointer}
+.roll-dots button.on{opacity:1}
+.grid .glass,.grid .row,.grid .box,.grid .prof,.grid .sdrop .tdrop{border-radius:2px}
+.grid .row .th,.grid .chip,.grid .pin,.grid .cat .sr,.grid .btn,.grid .lh input,.grid .pager button{border-radius:2px}
+@media (prefers-reduced-motion:reduce){.roll-track{transition:none}}
 .feat:hover{transform:translateY(-2px);background:var(--glass2h)}
 .feat .th{min-height:330px;border-radius:0}
 .feat .fb{padding:40px;display:flex;flex-direction:column;justify-content:center}
@@ -260,7 +270,8 @@ footer a:hover{color:var(--ink)}
   .ctc{padding:14px 22px}.ctc h3{display:none}.ctc .lk{justify-content:space-around}
   .ser{display:block}.fold a{display:flex;justify-content:space-between}
   .pgrid{grid-template-columns:minmax(0,1fr)}aside.toc{display:none}
-  .feat{grid-template-columns:minmax(0,1fr)}.feat .th{min-height:200px}
+  .feat{grid-template-columns:minmax(0,1fr)}.feat .th,.roll-slide .th{min-height:200px}
+  .roll-slide{grid-template-columns:minmax(0,1fr);min-height:0}
   .hero{padding:64px 0 40px}
   .mem{grid-template-columns:minmax(0,1fr);padding:28px 22px;gap:28px}.frame{justify-self:center;width:230px}
 }
