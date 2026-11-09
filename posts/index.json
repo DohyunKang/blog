@@ -3805,6 +3805,59 @@
   "summary_zh": "UTM 参数区分大小写，如果值发生变动会导致报告被拆分；而将链接转换为代码则可以强制遵循规则。"
  },
  {
+  "slug": "cloud-k8s-intro",
+  "title": "컨테이너 오케스트레이션과 쿠버네티스 핵심 오브젝트",
+  "date": "2026-11-09",
+  "tags": [
+   "공부노트"
+  ],
+  "series": "클라우드·배포",
+  "emoji": "☁️",
+  "summary": "컨테이너가 수십 개가 되면 누가 켜고 끄고 연결하느냐가 문제인데, 쿠버네티스는 원하는 상태를 적어 두면 그 상태로 맞춰 주는 도구더라.",
+  "title_en": "Container Orchestration and Core Kubernetes Objects",
+  "summary_en": "When there are dozens of containers, the issue is who turns them on and off and connects them; Kubernetes is a tool that matches the desired state you specify.",
+  "title_ja": "コンテナオーケストレーションと Kubernetes の主要なオブジェクト",
+  "summary_ja": "コンテナが数十個になると、誰がオンオフや接続を行うかが問題になりますが、Kubernetes は望ましい状態を記述しておけば、その状態に合わせて調整してくれるツールでした。",
+  "title_zh": "容器编排与 Kubernetes 核心对象",
+  "summary_zh": "当容器数量达到数十个时，谁负责启动、关闭和连接就成了问题，而 Kubernetes 是一个只要你定义好期望状态，它就会自动调整到该状态的工具。"
+ },
+ {
+  "slug": "cloud-k8s-deploy",
+  "title": "쿠버네티스 배포·롤링 업데이트·헬스체크와 HPA",
+  "date": "2026-11-09",
+  "tags": [
+   "공부노트"
+  ],
+  "series": "클라우드·배포",
+  "emoji": "☁️",
+  "summary": "새 버전을 끊김 없이 올리고 부하에 따라 Pod 수를 늘리는 건, 결국 롤링 업데이트 숫자 두 개와 probe 세 종류, HPA의 비율 계산으로 설명되더라.",
+  "title_en": "Kubernetes Deployment, Rolling Update, Health Checks, and HPA",
+  "summary_en": "Uploading a new version seamlessly and scaling the number of Pods based on load is ultimately explained by two rolling update numbers, three types of probes, and HPA's ratio calculation.",
+  "title_ja": "Kubernetes デプロイ、ローリングアップデート、ヘルスチェックと HPA",
+  "summary_ja": "新しいバージョンを中断なくデプロイし、負荷に応じて Pod 数を増やすのは、結局のところロールリングアップデートの 2 つの数値とプローブの 3 つの種類、そして HPA の比率計算で説明できるのだ。",
+  "title_zh": "Kubernetes 部署、滚动更新与健康检查及 HPA",
+  "summary_zh": "升级新版本时实现无中断，并根据负载动态增加 Pod 数量，归根结底可以通过滚动更新的两个数字、三种探测类型以及 HPA 的比例计算来解释。"
+ },
+ {
+  "slug": "agent-orchestration",
+  "title": "멀티에이전트 오케스트레이션: 나누고 조율하고 실패를 다루는 법",
+  "date": "2026-11-09",
+  "tags": [
+   "공부노트",
+   "AI",
+   "에이전트"
+  ],
+  "series": "LLM 앱 만들기",
+  "emoji": "🧩",
+  "summary": "에이전트를 여럿 쓰는 건 일을 쪼개는 것보다, 쪼갠 뒤 누가 상태를 쥐고 실패와 비용을 어떻게 막느냐가 일이더라.",
+  "title_en": "Multi-Agent Orchestration: Dividing, Coordinating, and Handling Failures",
+  "summary_en": "Writing multiple agents isn't about dividing work; it's about who holds the state after division and how they prevent failure and manage costs.",
+  "title_ja": "マルチエージェントオーケストレーション：分割・調整・失敗への対処法",
+  "summary_ja": "エージェントを複数使うのは、仕事を分割するよりも、分割後に誰が状態を握り、失敗とコストを防ぐかが仕事だったんだ。",
+  "title_zh": "多智能体编排：如何分配、协调与处理失败",
+  "summary_zh": "写多个代理（agent）并非在于分工，而在于分好工之后，由谁来掌控状态、如何防范失败与成本。"
+ },
+ {
   "slug": "ai-cost-routing",
   "title": "AI 비용 줄이는 법: 모델 라우팅·캐시·배치",
   "date": "2026-11-04",
