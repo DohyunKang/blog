@@ -73,7 +73,7 @@
     var shown=posts.filter(function(p){return(!filter||filter(p))&&(!q||(p.title+p.summary+(p.title_en||'')+(p.summary_en||'')+p.tags.join(' ')).toLowerCase().indexOf(q)>=0)});
     shown.sort(function(a,b){return state.asc?(a.date<b.date?-1:a.date>b.date?1:0):((b.pinned?1:0)-(a.pinned?1:0)||(a.date<b.date?1:a.date>b.date?-1:0))});
     var mains=[];if(!filter&&!q){shown.forEach(function(p){if(p.featured&&mains.length<5)mains.push(p)});shown.forEach(function(p){if(mains.length<5&&mains.indexOf(p)<0)mains.push(p)})}
-    var rest=mains.length?shown.filter(function(p){return mains.indexOf(p)<0}):shown;
+    var rest=shown;
     var PER=10,key=(cur||'')+'|'+q+'|'+state.asc;if(state.pkey!==key){state.pkey=key;state.page=1}
     var pages=Math.max(1,Math.ceil(rest.length/PER));if(state.page>pages)state.page=pages;
     var pg={items:rest.slice((state.page-1)*PER,state.page*PER),html:''};
