@@ -3858,6 +3858,24 @@
   "summary_zh": "写多个代理（agent）并非在于分工，而在于分好工之后，由谁来掌控状态、如何防范失败与成本。"
  },
  {
+  "slug": "news-261109-b",
+  "title": "Scrapling, 요청 한 번부터 대규모 크롤링까지 한 프레임워크로 묶은 파이썬 스크래퍼",
+  "date": "2026-11-09",
+  "tags": [
+   "AI",
+   "에이전트"
+  ],
+  "series": "GitHub 레포",
+  "emoji": "📘",
+  "summary": "이번 주 GitHub 트렌딩에 오른 Scrapling의 README와 릴리스를 읽어 보니, 파서·스텔스 브라우저·스파이더에 AI 에이전트용 MCP 서버까지 한 패키지에 들어 있었다.",
+  "title_en": "Scrapling: A Python scraper framework that covers everything from a single request to large-scale crawling",
+  "summary_en": "Reading through Scrapling's README and release on this week's GitHub trending, I found that parsers, stealth browsers, spiders, and even an MCP server for AI agents were all included in a single package.",
+  "title_ja": "Scrapling: 単一のリクエストから大規模クロールまでを一つのフレームワークで実現する Python スクレイパー",
+  "summary_ja": "今週の GitHub Trending に掲載された Scrapling の README とリリースを読んでみると、パーサー・ステルスブラウザ・スパイダーに加え、AI エージェント用の MCP サーバーまで 1 つのパッケージに含まれていた。",
+  "title_zh": "从单次请求到大规模爬虫，Scrapling 是一个统一的 Python 爬虫框架",
+  "summary_zh": "本周 GitHub 趋势中的 Scrapling 的 README 和发布说明中提到，解析器、隐身浏览器、爬虫以及用于 AI 代理的 MCP 服务器都包含在一个包中。"
+ },
+ {
   "slug": "ai-cost-routing",
   "title": "AI 비용 줄이는 법: 모델 라우팅·캐시·배치",
   "date": "2026-11-04",
