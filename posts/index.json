@@ -1,5 +1,24 @@
 [
   {
+    "slug": "same-button-different-result",
+    "title": "같은 버튼을 두 번 눌렀는데 다른 일이 일어났다",
+    "date": "2026-11-11",
+    "tags": [
+      "공부노트",
+      "CS",
+      "백엔드"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🔑",
+    "summary": "자동화 앱에서 작은 어긋남이 세 번 있었는데, 캐시 키와 폴백 순서와 실행 주기 이야기였다.",
+    "title_en": "I Pressed the Same Button Twice and Got a Different Result",
+    "summary_en": "Three small mismatches in the automation app today, and they were about cache keys, fallback order, and run schedules.",
+    "title_ja": "同じボタンを二回押したら、違うことが起きた",
+    "summary_ja": "自動化アプリで小さなズレが三つあって、キャッシュキーとフォールバックの順番と実行周期の話だった。",
+    "title_zh": "同一个按钮按了两次，发生了不同的事",
+    "summary_zh": "自动化应用里有三处小小的对不上，说的是缓存键、回退顺序和运行周期。"
+  },
+  {
     "slug": "agent-overnight-retry-loop",
     "title": "에이전트가 멈췄을 때, 다시 돌릴지 사람에게 넘길지",
     "date": "2026-11-11",
