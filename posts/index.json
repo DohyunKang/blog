@@ -1,5 +1,24 @@
 [
  {
+  "slug": "news-261111-a",
+  "title": "agent-desktop, 스크린샷 없이 접근성 트리로 데스크톱 앱을 다루는 에이전트용 CLI",
+  "date": "2026-11-11",
+  "tags": [
+   "공부노트",
+   "AI",
+   "에이전트"
+  ],
+  "series": "AI 소식·분석",
+  "emoji": "🖥️",
+  "summary": "이번 주 트렌딩에 오른 agent-desktop을 읽어 보니, 화면을 찍는 대신 OS 접근성 트리를 읽고 ref로 누르는 방식이었다.",
+  "title_en": "agent-desktop: a CLI that lets agents operate desktop apps through the accessibility tree, no screenshots",
+  "summary_en": "I read up on agent-desktop from this week's trending. Instead of taking screenshots, it reads the OS accessibility tree and clicks by ref.",
+  "title_ja": "agent-desktop、スクリーンショットなしでアクセシビリティツリーからデスクトップアプリを操作するエージェント用 CLI",
+  "summary_ja": "今週のトレンドに入った agent-desktop を読んでみたら、画面を撮る代わりに OS のアクセシビリティツリーを読み、ref で押す仕組みだった。",
+  "title_zh": "agent-desktop：不用截图、靠无障碍树操作桌面应用的代理 CLI",
+  "summary_zh": "读了本周上榜的 agent-desktop，它不截屏，而是读取操作系统的无障碍树，再按 ref 点击。"
+ },
+ {
   "slug": "agent-coordinator-review-loop",
   "title": "AI 세션 여러 개 굴리기: 코디네이터, 승인 단계, 리뷰 루프",
   "date": "2026-11-10",
