@@ -34,7 +34,9 @@ flowchart TD
 
 Steps 5–7 are the point. If every verification failure gets retried automatically, the ones that need a judgment come out the same no matter how many times you rerun them, and you only spend more. So I split failures into two kinds. Something like background music being too loud can be retried automatically. Whether a still frame was already in the source, or a sound glitch is real, a human should hear or see it. For hours when no one can approve, I set a retry cap and a cost cap per attempt together. If it still fails, it sits in the approval queue in the morning, with the reason attached.
 
-That's human-in-the-loop. It isn't a person touching every step. It's putting a person only at the spots automation can't handle. A gate is that spot, fixed like a checkpoint, and a heartbeat is what keeps the loop from going quiet in the middle.
+1. **Human-in-the-loop** isn't a person touching every step. It's putting a person only at the spots automation can't handle.
+2. **Gate** is that spot, fixed like a checkpoint.
+3. **Heartbeat** is what keeps the loop from going quiet in the middle.
 
 Barry Zhang at Anthropic makes a similar point in [How We Build Effective Agents](https://www.youtube.com/watch?v=D7_ipDqhtwk). Agents can choose their next step, which makes them more useful, but cost and the price of a mistake go up too. If mistakes are serious and hard to catch, he says to narrow the permissions or have a human look in the middle. That's the same direction as leaving night-time retries on, but with caps on attempts and cost, and handing judgment-heavy failures to a person. The same ideas are in the post [Building effective agents](https://www.anthropic.com/research/building-effective-agents).
 
