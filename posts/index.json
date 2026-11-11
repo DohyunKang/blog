@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261112-a",
+    "title": "NVIDIA auto-ontology, 에이전트가 숫자를 지어내지 않게 DB 위에 뜻을 적어 두는 층",
+    "date": "2026-11-12",
+    "tags": [
+      "공부노트",
+      "AI",
+      "온톨로지"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🧭",
+    "summary": "이번 주 트렌딩 맨 위에 있던 auto-ontology를 읽어 보니, 사람이 확인한 정의를 먼저 찾고 나서 SQL을 쓰는 구조였다.",
+    "title_en": "NVIDIA auto-ontology: a layer of meaning over your databases so agents don't make up numbers",
+    "summary_en": "I read up on auto-ontology, top of this week's trending. It looks up definitions people have checked before writing any SQL.",
+    "title_ja": "NVIDIA auto-ontology、エージェントが数字をでっち上げないよう DB の上に意味を書いておく層",
+    "summary_ja": "今週のトレンドのいちばん上にあった auto-ontology を読んでみたら、人が確認した定義を先に探してから SQL を書く仕組みだった。",
+    "title_zh": "NVIDIA auto-ontology:在数据库上写清含义，让代理不再编数字的一层",
+    "summary_zh": "读了本周榜首的 auto-ontology,它先查人确认过的定义，再去写 SQL。"
+  },
+  {
     "slug": "same-button-different-result",
     "title": "같은 버튼을 두 번 눌렀는데 다른 일이 일어났다",
     "date": "2026-11-11",
