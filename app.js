@@ -30,7 +30,7 @@
   // 테마
   var root=document.documentElement,tb=document.getElementById('theme');
   try{var sv=localStorage.getItem('blog-theme');if(sv)root.dataset.theme=sv}catch(e){}
-  tb.onclick=function(){var l=root.dataset.theme==='light';root.dataset.theme=l?'dark':'light';try{localStorage.setItem('blog-theme',root.dataset.theme)}catch(e){}};
+  tb.onclick=function(){var l=root.dataset.theme==='light';root.dataset.theme=l?'dark':'light';try{localStorage.setItem('blog-theme',root.dataset.theme)}catch(e){}var bodyEl=document.getElementById('body');if(bodyEl)drawMermaid(bodyEl)};
 
   function chrome(){
     var n=document.querySelectorAll('.hd nav a');n[0].textContent=t('글');n[1].textContent=t('소개');
@@ -222,6 +222,24 @@
     addEventListener('scroll',onScroll,{passive:true});onScroll();
   }
 
+
+  function drawMermaid(root){
+    if(!root||typeof mermaid==='undefined')return;
+    mermaid.initialize({startOnLoad:false,theme:(root.ownerDocument||document).documentElement.dataset.theme==='dark'?'dark':'neutral',securityLevel:'antiscript'});
+    [].forEach.call(root.querySelectorAll('pre code.language-mermaid, pre code.mermaid'),function(code){
+      var pre=code.closest?code.closest('pre'):code.parentNode;
+      if(!pre||!pre.parentNode)return;
+      var wrap=document.createElement('div');
+      wrap.className='mermaid-wrap';
+      wrap.dataset.src=code.textContent;
+      pre.parentNode.replaceChild(wrap,pre);
+    });
+    [].forEach.call(root.querySelectorAll('.mermaid-wrap[data-src]'),function(wrap,i){
+      var id='mmd'+Date.now()+'-'+i, src=wrap.dataset.src;
+      mermaid.render(id,src).then(function(r){wrap.innerHTML=r.svg;if(r.bindFunctions)r.bindFunctions(wrap)}).catch(function(){wrap.innerHTML='<pre><code>'+esc(src)+'</code></pre>'});
+    });
+  }
+
   function post(slug){
     var i=posts.map(function(x){return x.slug}).indexOf(slug),p=posts[i];
     if(!p){app.innerHTML='<p class="empty">'+t('글을 찾을 수 없어요.')+'</p>';return}
@@ -233,10 +251,10 @@
       '<p class="blinks"><button type="button" id="cplink">'+t('링크 복사')+'</button><a href="#/">'+t('← 목록')+'</a></p><section class="bmail" id="cmt"></section></article>';
     document.getElementById('cplink').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(function(){b.textContent=t('복사됨 ✓')},function(){b.textContent=t('주소창에서 복사해 주세요')})};
     fetch('posts/'+encodeURIComponent(p.slug)+(LANG!=='ko'?'.'+LANG:'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
-      var b=document.getElementById('body');b.innerHTML=marked.parse(md);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});[].forEach.call(b.querySelectorAll('details'),function(d){d.open=true});
+      var b=document.getElementById('body');b.innerHTML=marked.parse(md);drawMermaid(b);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});[].forEach.call(b.querySelectorAll('details'),function(d){d.open=true});
       document.getElementById('rt').textContent=mins(b.textContent)+t('분 읽기');
       [].forEach.call(b.querySelectorAll('h2,h3'),function(h,k){h.id='h'+k});
-      [].forEach.call(b.querySelectorAll('pre'),function(pre){var c=document.createElement('button');c.className='cp';c.textContent=t('복사');c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(pre.querySelector('code').textContent);c.textContent='✓';setTimeout(function(){c.textContent=t('복사')},1200)};pre.appendChild(c)});
+      [].forEach.call(b.querySelectorAll('pre'),function(pre){if(pre.querySelector('code.language-mermaid,code.mermaid'))return;var code=pre.querySelector('code');if(!code)return;var c=document.createElement('button');c.className='cp';c.textContent=t('복사');c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(code.textContent);c.textContent='✓';setTimeout(function(){c.textContent=t('복사')},1200)};pre.appendChild(c)});
       scrollTo(0,0);
     }).catch(function(){var bb=document.getElementById('body');if(bb)bb.textContent=errMsg()});
     progress(true);
