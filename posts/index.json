@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261113-a",
+    "title": "Codex Security, 코딩 에이전트가 취약점을 찾고 확인하고 고치는 OpenAI 보안 도구",
+    "date": "2026-11-13",
+    "tags": [
+      "공부노트",
+      "AI",
+      "보안"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🛡️",
+    "summary": "트렌딩에 올라온 Codex Security를 읽어 보니, 찾은 취약점을 다시 확인하고 고친 뒤 또 확인하는 단계가 따로 나뉘어 있었다.",
+    "title_en": "Codex Security: OpenAI's tool where a coding agent finds, checks, and fixes vulnerabilities",
+    "summary_en": "I read up on Codex Security from today's trending. Finding, confirming, fixing, and re-checking a vulnerability are all separate steps.",
+    "title_ja": "Codex Security、コーディングエージェントが脆弱性を見つけて確かめて直す OpenAI のセキュリティツール",
+    "summary_ja": "トレンドに上がった Codex Security を読んでみたら、見つけた脆弱性を確かめ、直し、また確かめる段階が分かれていた。",
+    "title_zh": "Codex Security:让编程代理找漏洞、确认、再修复的 OpenAI 安全工具",
+    "summary_zh": "读了趋势榜上的 Codex Security,发现找到漏洞后的确认、修复、复查都是分开的步骤。"
+  },
+  {
     "slug": "news-261112-a",
     "title": "NVIDIA auto-ontology, 에이전트가 숫자를 지어내지 않게 DB 위에 뜻을 적어 두는 층",
     "date": "2026-11-12",
