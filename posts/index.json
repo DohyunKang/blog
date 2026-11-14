@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261114-a",
+    "title": "Modern Web Guidance, 코딩 에이전트가 옛날 웹 코드 대신 요즘 브라우저 기능을 쓰게 하는 스킬",
+    "date": "2026-11-14",
+    "tags": [
+      "공부노트",
+      "AI",
+      "프론트엔드"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🧩",
+    "summary": "오늘 트렌딩 별 수 1위였던 Modern Web Guidance를 읽어 보니, 모델을 바꾸지 않고 필요한 순간에 짧은 가이드를 찾아 넣어 주는 구조였다.",
+    "title_en": "Modern Web Guidance: skills that get coding agents to use today's browser features instead of old web code",
+    "summary_en": "I read up on Modern Web Guidance, which got the most stars on today's trending. It leaves the model alone and looks up a short guide at the moment it's needed.",
+    "title_ja": "Modern Web Guidance、コーディングエージェントに古い Web コードではなく今のブラウザ機能を使わせるスキル",
+    "summary_ja": "今日のトレンドで星がいちばん多かった Modern Web Guidance を読んでみたら、モデルは変えずに必要なときだけ短いガイドを探して渡す仕組みだった。",
+    "title_zh": "Modern Web Guidance:让编程代理不用老网页写法、改用现代浏览器功能的技能",
+    "summary_zh": "读了今天趋势榜涨星最多的 Modern Web Guidance,它不改模型，只在需要时找出一小段指南塞进去。"
+  },
+  {
     "slug": "news-261113-a",
     "title": "Codex Security, 코딩 에이전트가 취약점을 찾고 확인하고 고치는 OpenAI 보안 도구",
     "date": "2026-11-13",
