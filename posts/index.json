@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261116-a",
+    "title": "Plannotator, 코딩 에이전트의 계획과 diff에 사람이 코멘트를 달아 돌려보내는 리뷰 화면",
+    "date": "2026-11-16",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "📝",
+    "summary": "오늘 트렌딩에 오른 Plannotator를 읽어 보니, 에이전트가 허락을 구하는 순간에 훅으로 끼어들어 사람이 계획에 코멘트를 달고 돌려보내는 구조였다.",
+    "title_en": "Plannotator: a review screen where people comment on a coding agent's plans and diffs and send them back",
+    "summary_en": "I read up on Plannotator from today's trending. It hooks into the moment an agent asks for permission, so a person can comment on the plan and send it back.",
+    "title_ja": "Plannotator、コーディングエージェントの計画と diff に人がコメントをつけて返すレビュー画面",
+    "summary_ja": "今日のトレンドに載った Plannotator を読んでみたら、エージェントが許可を求める瞬間にフックで割り込み、人が計画にコメントをつけて返す仕組みだった。",
+    "title_zh": "Plannotator:让人给编程代理的计划和 diff 写评论再发回去的审阅界面",
+    "summary_zh": "读了今天上趋势榜的 Plannotator,它在代理请求许可的那一刻用钩子插进来，让人给计划写评论再发回去。"
+  },
+  {
     "slug": "same-engine-different-settings",
     "title": "계정이 하나 늘었는데 코드는 늘리지 않기로 했다",
     "date": "2026-11-15",
