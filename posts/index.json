@@ -1,5 +1,24 @@
 [
   {
+    "slug": "same-engine-different-settings",
+    "title": "계정이 하나 늘었는데 코드는 늘리지 않기로 했다",
+    "date": "2026-11-15",
+    "tags": [
+      "공부노트",
+      "CS",
+      "백엔드"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🧱",
+    "summary": "자동화 앱에 계정이 하나 늘었는데, 코드 대신 설정과 어댑터를 늘리는 쪽으로 정했다.",
+    "title_en": "One More Account, and We Decided Not to Add Code",
+    "summary_en": "The automation app got one more account, and we chose to grow settings and adapters instead of code.",
+    "title_ja": "アカウントがひとつ増えたけど、コードは増やさないことにした",
+    "summary_ja": "自動化アプリにアカウントがひとつ増えて、コードの代わりに設定とアダプターを増やすことにした。",
+    "title_zh": "账号多了一个，但我们决定不加代码",
+    "summary_zh": "自动化应用多了一个账号，我们选择增加设置和适配器，而不是代码。"
+  },
+  {
     "slug": "news-261115-a",
     "title": "Open Code Review, 틀리면 안 되는 단계는 코드가 맡고 판단만 모델에게 넘기는 알리바바의 AI 코드 리뷰 CLI",
     "date": "2026-11-15",
