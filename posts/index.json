@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261115-a",
+    "title": "Open Code Review, 틀리면 안 되는 단계는 코드가 맡고 판단만 모델에게 넘기는 알리바바의 AI 코드 리뷰 CLI",
+    "date": "2026-11-15",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🔍",
+    "summary": "오늘 트렌딩에 오른 알리바바 Open Code Review를 읽어 보니, 파일 고르기와 줄 위치 맞추기는 코드로 고정하고 모델에게는 판단만 맡기는 구조였다.",
+    "title_en": "Open Code Review: Alibaba's AI code review CLI that leaves the must-not-fail steps to code and only the judgment to the model",
+    "summary_en": "I read up on Alibaba's Open Code Review from today's trending. It pins file picking and line positioning in code and leaves only the judgment calls to the model.",
+    "title_ja": "Open Code Review、間違えてはいけない段階はコードが受け持ち、判断だけをモデルに任せるアリババの AI コードレビュー CLI",
+    "summary_ja": "今日のトレンドに載ったアリババの Open Code Review を読んでみたら、ファイル選びや行の位置合わせはコードで固定し、モデルには判断だけを任せる仕組みだった。",
+    "title_zh": "Open Code Review:不能出错的步骤交给代码、只把判断交给模型的阿里巴巴 AI 代码审查工具",
+    "summary_zh": "读了今天上趋势榜的阿里巴巴 Open Code Review,它把选文件、定位行号这些用代码固定下来，只让模型做判断。"
+  },
+  {
     "slug": "news-261114-a",
     "title": "Modern Web Guidance, 코딩 에이전트가 옛날 웹 코드 대신 요즘 브라우저 기능을 쓰게 하는 스킬",
     "date": "2026-11-14",
