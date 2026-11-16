@@ -1,5 +1,24 @@
 [
   {
+    "slug": "value-provenance-check",
+    "title": "값이 어디서 왔는지 꼬리표를 달기로 했다",
+    "date": "2026-11-16",
+    "tags": [
+      "공부노트",
+      "CS",
+      "백엔드"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🏷️",
+    "summary": "자동화 앱에서 참고 자료가 섞여서, 값마다 출처 꼬리표를 달고 실행 전에 막기로 했다.",
+    "title_en": "We Decided to Tag Where Each Value Came From",
+    "summary_en": "References got mixed up in the automation app, so we tagged each value with its source and block the run before it starts.",
+    "title_ja": "値がどこから来たか、タグをつけることにした",
+    "summary_ja": "自動化アプリで参考資料が混ざったので、値ごとに出どころのタグをつけて、実行前に止めることにした。",
+    "title_zh": "决定给每个值贴上来源标签",
+    "summary_zh": "自动化应用里参考资料混在了一起，于是给每个值贴上来源标签，在运行前就拦下来。"
+  },
+  {
     "slug": "news-261116-a",
     "title": "Plannotator, 코딩 에이전트의 계획과 diff에 사람이 코멘트를 달아 돌려보내는 리뷰 화면",
     "date": "2026-11-16",
