@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-18",
+    "emoji": "🎻",
+    "series": "AI 소식·분석",
+    "slug": "news-261118-a",
+    "summary": "오늘 트렌딩에 오른 Google의 PaperOrchestra를 읽어 보니, 논문을 다섯 역할로 나눠 쓰고 인용은 API로 확인하고 리뷰 점수가 떨어지면 되돌리는 구조였다.",
+    "summary_en": "I read up on Google's PaperOrchestra from today's trending. It splits a paper across five roles, checks citations against an API, and reverts when the review score drops.",
+    "summary_ja": "今日のトレンドに載った Google の PaperOrchestra を読んでみたら、論文を5つの役割に分けて書き、引用は API で確かめ、レビューの点が下がれば戻す仕組みだった。",
+    "summary_zh": "读了今天上趋势榜的 Google PaperOrchestra,它把论文拆给五个角色写，引用用 API 核对，审稿分数一降就回退。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "title": "PaperOrchestra, 실험 기록을 넣으면 에이전트 다섯이 나눠서 논문 초안을 쓰는 Google의 오픈소스",
+    "title_en": "PaperOrchestra: Google's open-source pipeline where five agents split up the work of drafting a paper from experiment notes",
+    "title_ja": "PaperOrchestra、実験記録を入れると5つのエージェントが分担して論文草稿を書く Google のオープンソース",
+    "title_zh": "PaperOrchestra:输入实验记录，由五个代理分工写出论文初稿的 Google 开源项目"
+  },
+  {
     "slug": "scoped-secret-keys",
     "title": "키를 넣기 전에 어디까지 쓸지부터 정했다",
     "date": "2026-11-17",
