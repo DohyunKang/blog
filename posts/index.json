@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261117-a",
+    "title": "Astryx, 에이전트가 문서를 CLI로 읽고 템플릿부터 베끼게 만든 Meta의 오픈소스 디자인 시스템",
+    "date": "2026-11-17",
+    "tags": [
+      "공부노트",
+      "AI",
+      "프론트엔드"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🧩",
+    "summary": "이번 주 트렌딩에 오른 Meta의 Astryx를 읽어 보니, 컴포넌트보다 에이전트가 CLI로 문서를 묻고 좋은 템플릿을 베끼게 만든 설계가 눈에 띄었다.",
+    "title_en": "Astryx: Meta's open-source design system that has agents read docs through a CLI and copy templates first",
+    "summary_en": "I read up on Meta's Astryx from this week's trending. More than the components, what stood out was a design that has agents ask the CLI for docs and copy good templates.",
+    "title_ja": "Astryx、エージェントが CLI でドキュメントを読み、テンプレートから真似るようにした Meta のオープンソースデザインシステム",
+    "summary_ja": "今週のトレンドに載った Meta の Astryx を読んでみたら、コンポーネントより、エージェントが CLI にドキュメントを聞いて良いテンプレートを真似るようにした設計が目についた。",
+    "title_zh": "Astryx:让代理用 CLI 读文档、先照模板抄的 Meta 开源设计系统",
+    "summary_zh": "读了这周上趋势榜的 Meta Astryx,比起组件，更显眼的是让代理通过 CLI 查文档、照着好模板抄的设计。"
+  },
+  {
     "slug": "value-provenance-check",
     "title": "값이 어디서 왔는지 꼬리표를 달기로 했다",
     "date": "2026-11-16",
