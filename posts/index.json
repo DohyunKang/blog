@@ -1,5 +1,24 @@
 [
   {
+    "slug": "scoped-secret-keys",
+    "title": "키를 넣기 전에 어디까지 쓸지부터 정했다",
+    "date": "2026-11-17",
+    "tags": [
+      "공부노트",
+      "보안",
+      "백엔드"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🔑",
+    "summary": "자동화 앱에 개인 키를 하나 연결하면서, 그 키가 쓰여도 되는 범위를 먼저 묶어 두기로 했다.",
+    "title_en": "Before Adding the Key, I Decided How Far It Could Go",
+    "summary_en": "While connecting one personal key to the automation app, I first pinned down where that key is allowed to be used.",
+    "title_ja": "キーを入れる前に、どこまで使うかを決めた",
+    "summary_ja": "自動化アプリに個人キーをひとつつなぐとき、そのキーを使っていい範囲を先に決めておいた。",
+    "title_zh": "放进密钥之前，先定好它能用到哪里",
+    "summary_zh": "给自动化应用接上一把个人密钥时，先把这把密钥能用的范围定了下来。"
+  },
+  {
     "slug": "news-261117-a",
     "title": "Astryx, 에이전트가 문서를 CLI로 읽고 템플릿부터 베끼게 만든 Meta의 오픈소스 디자인 시스템",
     "date": "2026-11-17",
