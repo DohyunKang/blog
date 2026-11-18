@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-19",
+    "emoji": "🧪",
+    "series": "AI 소식·분석",
+    "slug": "news-261119-a",
+    "summary": "트렌딩에 오른 NVIDIA SkillEvaluator를 읽어 보니, 에이전트 스킬을 검사만 하는 게 아니라 넣고 안 넣고를 같은 과제로 돌려 차이를 재는 도구였다.",
+    "summary_en": "I read up on NVIDIA's SkillEvaluator from today's trending. It doesn't just lint agent skills; it runs the same tasks with and without a skill and measures the difference.",
+    "summary_ja": "トレンドに載った NVIDIA の SkillEvaluator を読んでみたら、エージェントのスキルを検査するだけでなく、入れた場合と入れない場合を同じ課題で走らせて差を測るツールだった。",
+    "summary_zh": "读了上趋势榜的 NVIDIA SkillEvaluator,它不只检查代理技能，还会用同样的任务跑装与不装两次，量出差别。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "title": "SkillEvaluator, 에이전트 스킬을 넣었을 때와 뺐을 때를 같은 과제로 비교해 주는 NVIDIA의 오픈소스",
+    "title_en": "SkillEvaluator: NVIDIA's open-source tool that compares an agent with and without a skill on the same tasks",
+    "title_ja": "SkillEvaluator、エージェントのスキルを入れた場合と外した場合を同じ課題で比べる NVIDIA のオープンソース",
+    "title_zh": "SkillEvaluator:用同样任务对比代理装与不装技能的 NVIDIA 开源工具"
+  },
+  {
     "date": "2026-11-18",
     "emoji": "🧯",
     "series": "프로젝트에서 나온 개념",
