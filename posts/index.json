@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-18",
+    "emoji": "🧯",
+    "series": "프로젝트에서 나온 개념",
+    "slug": "fallback-and-rollback",
+    "summary": "오늘은 될 때보다 안 될 때를 먼저 정했다. 막히면 쓸 값, 되돌릴 길, 원래 깨져 있던 테스트까지.",
+    "summary_en": "Today I decided what happens when things fail before anything else: a fallback value, a way back, and the tests that were already broken.",
+    "summary_ja": "今日はうまくいく時より、うまくいかない時を先に決めた。止められた時の値、戻る道、もともと壊れていたテストまで。",
+    "summary_zh": "今天先定下了失败时怎么办：被挡住时用的值、退回的路，还有本来就坏的测试。",
+    "tags": [
+      "공부노트",
+      "백엔드",
+      "CS"
+    ],
+    "title": "안 될 때 쓸 값과 되돌릴 길부터 정했다",
+    "title_en": "Deciding the fallback and the way back first",
+    "title_ja": "うまくいかない時の値と戻る道から決めた",
+    "title_zh": "先定好失败时用的值和退路"
+  },
+  {
+    "date": "2026-11-18",
     "emoji": "🎻",
     "series": "AI 소식·분석",
     "slug": "news-261118-a",
