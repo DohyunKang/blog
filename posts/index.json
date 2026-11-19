@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-19",
+    "emoji": "🚪",
+    "series": "프로젝트에서 나온 개념",
+    "slug": "llm-proxy-model-routing",
+    "summary": "AI 모델을 섞어 쓰는 프록시를 깔았다가 지웠는데, 게이트웨이와 포트, 바인딩 주소 공부는 남았다.",
+    "summary_en": "I installed a proxy for mixing AI models and then removed it, but what I learned about gateways, ports and bind addresses stayed.",
+    "summary_ja": "AIモデルを混ぜて使うプロキシを入れてから消したけど、ゲートウェイやポート、バインドアドレスの勉強は残った。",
+    "summary_zh": "装了一个混用AI模型的代理又删掉了，但关于网关、端口和绑定地址学到的东西留下了。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "백엔드"
+    ],
+    "title": "모델 앞에 문 하나를 세웠다가 지웠다",
+    "title_en": "I put a door in front of the models, then took it down",
+    "title_ja": "モデルの前に扉をひとつ立てて、また外した",
+    "title_zh": "在模型前面立了一扇门，又拆掉了"
+  },
+  {
+    "date": "2026-11-19",
     "emoji": "🧪",
     "series": "AI 소식·분석",
     "slug": "news-261119-a",
