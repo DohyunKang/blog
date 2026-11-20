@@ -1,6 +1,25 @@
 [
   {
     "date": "2026-11-20",
+    "emoji": "🧱",
+    "series": "프로젝트에서 나온 개념",
+    "slug": "deterministic-checks-over-rules",
+    "summary": "에이전트가 같은 실수를 하면 규칙을 한 줄 더 쓰는 대신, 기계가 매번 잡는 검사로 바꿔야 한다는 걸 오늘 실수들을 모아 보며 알았다.",
+    "summary_en": "Gathering today's agent mistakes, I realized that instead of adding another rule line, a repeated mistake should become a check the machine runs every time.",
+    "summary_ja": "エージェントが同じミスをしたら、ルールを一行足すより、機械が毎回捕まえる検査に変えるべきだと、今日のミスを集めて気づいた。",
+    "summary_zh": "把今天代理犯的错收集起来才明白，同样的错误再出现时，不该再加一行规则，而是要变成机器每次都会执行的检查。",
+    "tags": [
+      "공부노트",
+      "에이전트",
+      "CS"
+    ],
+    "title": "규칙을 한 줄 더 쓰는 대신 검사를 하나 넣기로 했다",
+    "title_en": "Instead of one more rule, I decided to add a check",
+    "title_ja": "ルールをもう一行書く代わりに、検査をひとつ入れることにした",
+    "title_zh": "与其再写一行规则，不如加一个检查"
+  },
+  {
+    "date": "2026-11-20",
     "emoji": "🔎",
     "series": "AI 소식·분석",
     "slug": "news-261120-a",
