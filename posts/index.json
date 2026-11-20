@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-20",
+    "emoji": "🔎",
+    "series": "AI 소식·분석",
+    "slug": "news-261120-a",
+    "summary": "트렌딩에 오른 last30days-skill을 읽어 보니, 주제 하나로 Reddit, X, YouTube의 최근 30일 글을 모아 사람들이 반응한 순서로 묶어 주는 에이전트 스킬이었다.",
+    "summary_en": "I read up on last30days-skill from today's trending. It's an agent skill that takes one topic, gathers the last 30 days from Reddit, X and YouTube, and groups it by what people actually reacted to.",
+    "summary_ja": "トレンドに載った last30days-skill を読んでみたら、トピック一つで Reddit、X、YouTube の直近30日の投稿を集め、人が反応した順に束ねてくれるエージェント用スキルだった。",
+    "summary_zh": "读了上趋势榜的 last30days-skill,它是一个代理技能，给一个话题就把 Reddit、X、YouTube 最近30天的帖子收集起来，按人们的反应归组。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "title": "last30days-skill, 주제 하나로 Reddit·X·YouTube의 최근 30일을 모아 반응 순으로 묶어 주는 에이전트 스킬",
+    "title_en": "last30days-skill: an agent skill that gathers the last 30 days of Reddit, X and YouTube on one topic and ranks it by reactions",
+    "title_ja": "last30days-skill、トピック一つで Reddit・X・YouTube の直近30日を集めて反応順に束ねるエージェント用スキル",
+    "title_zh": "last30days-skill:给一个话题，就把 Reddit、X、YouTube 最近30天的内容按反应排好的代理技能"
+  },
+  {
     "date": "2026-11-19",
     "emoji": "🚪",
     "series": "프로젝트에서 나온 개념",
