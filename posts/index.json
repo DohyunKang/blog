@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-22",
+    "emoji": "🐞",
+    "series": "AI 소식·분석",
+    "slug": "news-261122-a",
+    "summary": "트렌딩 1위에 오른 Claude-BugHunter를 읽어 보니, 버그 바운티용 스킬 83개에 범위 확인은 코드로, 판단은 모델로 나눈 구조가 붙어 있었다.",
+    "summary_en": "I read Claude-BugHunter, today's #1 on Trending. It's 83 bug bounty skills, with scope checks left to code and only judgment calls left to the model.",
+    "summary_ja": "トレンド1位の Claude-BugHunter を読んでみたら、バグバウンティ用のスキル83個に、範囲チェックはコード、判断はモデルと分ける構造が付いていた。",
+    "summary_zh": "读了趋势榜第一的 Claude-BugHunter,它是 83 个漏洞赏金技能，范围检查交给代码，判断才交给模型。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "보안"
+    ],
+    "title": "Claude-BugHunter, 버그 바운티 스킬 83개를 묶고 범위 확인은 코드에 맡긴 Claude Code 스킬 묶음",
+    "title_en": "Claude-BugHunter: a Claude Code bundle of 83 bug bounty skills that leaves scope checks to code",
+    "title_ja": "Claude-BugHunter、バグバウンティのスキル83個をまとめ、範囲チェックはコードに任せた Claude Code スキル集",
+    "title_zh": "Claude-BugHunter:打包 83 个漏洞赏金技能、把范围检查交给代码的 Claude Code 技能包"
+  },
+  {
     "date": "2026-11-21",
     "emoji": "🧰",
     "series": "AI 소식·분석",
