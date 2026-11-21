@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-21",
+    "emoji": "🧰",
+    "series": "AI 소식·분석",
+    "slug": "news-261121-a",
+    "summary": "트렌딩에 오른 CLI-Anything을 읽어 보니, 마우스로 쓰던 데스크톱 프로그램에 에이전트가 쓸 명령줄 도구를 만들어 붙여 주는 프로젝트였다.",
+    "summary_en": "I read up on CLI-Anything from today's trending. It builds command-line tools for desktop programs made for the mouse, so agents can use them.",
+    "summary_ja": "トレンドに載った CLI-Anything を読んでみたら、マウスで使うデスクトップアプリに、エージェントが使えるコマンドラインツールを作って付けるプロジェクトだった。",
+    "summary_zh": "读了上趋势榜的 CLI-Anything,它给原本用鼠标操作的桌面程序做出代理能用的命令行工具。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "title": "CLI-Anything, 마우스로 쓰던 GIMP·Blender 같은 프로그램에 에이전트용 명령줄을 붙여 주는 홍콩대의 오픈소스",
+    "title_en": "CLI-Anything: HKU's open source that gives mouse-driven apps like GIMP and Blender a command line for agents",
+    "title_ja": "CLI-Anything、GIMP・Blender などマウスで使うアプリにエージェント用のコマンドラインを付ける香港大学のオープンソース",
+    "title_zh": "CLI-Anything:给 GIMP、Blender 这类鼠标操作的程序加上代理用命令行的港大开源项目"
+  },
+  {
     "date": "2026-11-20",
     "emoji": "🧱",
     "series": "프로젝트에서 나온 개념",
