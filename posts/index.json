@@ -1,5 +1,24 @@
 [
   {
+    "slug": "move-folders-without-breaking",
+    "title": "폴더 하나 옮기려다 계획서를 썼다",
+    "date": "2026-11-23",
+    "tags": [
+      "공부노트",
+      "CS",
+      "에이전트"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "📦",
+    "summary": "폴더만 옮기면 끝인 줄 알았는데, 그 폴더를 쓰는 쪽부터 찾아야 하더라.",
+    "title_en": "I Wrote a Plan Just to Move One Folder",
+    "summary_en": "I thought moving a folder was the whole job, but first I had to find everything that used it.",
+    "title_ja": "フォルダ一つ移すのに計画書を書いた",
+    "summary_ja": "フォルダを移せば終わりだと思っていたけど、まずそれを使っている側を探す必要があった。",
+    "title_zh": "为了搬一个文件夹写了份计划书",
+    "summary_zh": "以为搬个文件夹就完事了，结果得先找出谁在用它。"
+  },
+  {
     "date": "2026-11-23",
     "emoji": "🎨",
     "series": "AI 소식·분석",
