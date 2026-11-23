@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-23",
+    "emoji": "🎨",
+    "series": "AI 소식·분석",
+    "slug": "news-261123-a",
+    "title": "stitch-skills, 코딩 에이전트가 DESIGN.md 하나를 기준으로 화면을 만들고 코드로 옮기게 하는 Google Stitch 스킬 묶음",
+    "title_en": "stitch-skills: Google Stitch skills that let coding agents make screens and turn them into code around a single DESIGN.md",
+    "title_ja": "stitch-skills、コーディングエージェントが DESIGN.md 一つを基準に画面を作りコードに移す Google Stitch のスキル集",
+    "title_zh": "stitch-skills:让编程代理以一个 DESIGN.md 为准生成界面并转成代码的 Google Stitch 技能包",
+    "summary": "이번 주 트렌딩 2위 stitch-skills를 읽어 보니, 디자인 규칙을 DESIGN.md에 글로 적어 두고 에이전트가 화면을 만들 때마다 그걸 따르게 하는 구조였다.",
+    "summary_en": "I read stitch-skills, #2 on this week's Trending. Design rules are written out in a DESIGN.md, and the agent follows it every time it makes a screen.",
+    "summary_ja": "今週のトレンド2位 stitch-skills を読んでみたら、デザインのルールを DESIGN.md に文章で書いておき、エージェントが画面を作るたびにそれに従わせる構造だった。",
+    "summary_zh": "读了本周趋势榜第二的 stitch-skills,它把设计规则写进 DESIGN.md,让代理每次生成界面都照着它来。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "프론트엔드"
+    ]
+  },
+  {
     "date": "2026-11-22",
     "emoji": "🐞",
     "series": "AI 소식·분석",
