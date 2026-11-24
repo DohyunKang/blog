@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-24",
+    "emoji": "🎬",
+    "series": "AI 소식·분석",
+    "slug": "news-261124-a",
+    "title": "ffmpeg-skill, 코딩 에이전트에게 FFmpeg 영상 편집 도구 42개를 주고 결과 파일을 다시 재게 하는 스킬",
+    "title_en": "ffmpeg-skill: a skill that gives coding agents 42 FFmpeg video tools and makes them measure the output again",
+    "title_ja": "ffmpeg-skill、コーディングエージェントに FFmpeg の動画編集ツール42個を渡し、結果ファイルを測り直させるスキル",
+    "title_zh": "ffmpeg-skill:给编程代理 42 个 FFmpeg 视频工具，并让它重新测量输出文件的技能",
+    "summary": "이번 주 트렌딩에 있던 ffmpeg-skill을 읽어 보니, 에이전트가 FFmpeg 명령을 직접 짜지 않고 정해진 스크립트만 부르며, 잴 수 없는 건 확인 못 했다고 적어 돌려주는 구조였다.",
+    "summary_en": "I read ffmpeg-skill, on this week's Trending. The agent never writes FFmpeg commands itself, only calls fixed scripts, and anything that can't be measured comes back marked as not checked.",
+    "summary_ja": "今週のトレンドにあった ffmpeg-skill を読んでみたら、エージェントは FFmpeg のコマンドを自分で組まず決まったスクリプトだけを呼び、測れないものは確認できなかったと書いて返す構造だった。",
+    "summary_zh": "读了本周趋势榜上的 ffmpeg-skill。代理不自己写 FFmpeg 命令，只调用固定脚本，测不了的东西会注明未确认再返回。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ]
+  },
+  {
     "slug": "move-folders-without-breaking",
     "title": "폴더 하나 옮기려다 계획서를 썼다",
     "date": "2026-11-23",
