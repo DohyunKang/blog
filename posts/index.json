@@ -1,5 +1,24 @@
 [
   {
+    "date": "2026-11-25",
+    "emoji": "🔌",
+    "series": "AI 소식·분석",
+    "slug": "news-261125-a",
+    "title": "AG-UI, 에이전트가 앱 화면과 주고받는 이벤트를 하나로 맞춘 공개 규격",
+    "title_en": "AG-UI: an open spec that unifies the events an agent exchanges with the app screen",
+    "title_ja": "AG-UI、エージェントがアプリ画面とやり取りするイベントを一つにそろえた公開仕様",
+    "title_zh": "AG-UI:把代理与应用界面之间往来的事件统一起来的公开规范",
+    "summary": "이번 주 트렌딩에 있던 AG-UI를 읽어 보니, 에이전트는 정해진 이벤트만 흘려보내고 승인 대기는 실행을 끝냈다가 새 실행으로 이어 가는 구조였다.",
+    "summary_en": "I read AG-UI, on this week's Trending. The agent only streams fixed event types, and waiting for approval means ending the run and continuing in a new one.",
+    "summary_ja": "今週のトレンドにあった AG-UI を読んでみたら、エージェントは決まったイベントだけを流し、承認待ちは実行をいったん終えて新しい実行で続ける構造だった。",
+    "summary_zh": "读了本周趋势榜上的 AG-UI。代理只输出规定好的事件，等待批准时先结束本次运行，再用新的运行接着做。",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ]
+  },
+  {
     "date": "2026-11-24",
     "emoji": "🎬",
     "series": "AI 소식·분석",
