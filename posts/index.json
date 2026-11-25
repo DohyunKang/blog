@@ -1,6 +1,60 @@
 [
   {
     "date": "2026-11-25",
+    "emoji": "⚙️",
+    "series": "운영체제",
+    "slug": "os-concurrency-async",
+    "title": "동시성과 병렬성, 동기·비동기와 블로킹·논블로킹",
+    "title_en": "Concurrency vs. parallelism, sync/async and blocking/non-blocking",
+    "title_ja": "並行性と並列性、同期・非同期とブロッキング・ノンブロッキング",
+    "title_zh": "并发与并行，同步·异步与阻塞·非阻塞",
+    "summary": "비슷해 보이는 네 단어를 세 가지 질문으로 나누고, 소켓 recv와 asyncio로 블로킹·논블로킹과 기다림을 겹치는 방법을 직접 재 봤다.",
+    "summary_en": "I split four look-alike words into three questions, then timed blocking vs. non-blocking recv and three ways to overlap waiting with sockets and asyncio.",
+    "summary_ja": "似た4つの言葉を3つの問いに分け、ソケットの recv と asyncio でブロッキング・ノンブロッキングと待ちを重ねる方法を実際に測った。",
+    "summary_zh": "把四个相似的词拆成三个问题，用套接字 recv 和 asyncio 实测了阻塞·非阻塞以及让等待重叠的方法。",
+    "tags": [
+      "공부노트",
+      "CS"
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "emoji": "🗄️",
+    "series": "백엔드",
+    "slug": "js-event-loop",
+    "title": "자바스크립트 이벤트 루프: 콜 스택, 태스크와 마이크로태스크, Node 단계",
+    "title_en": "The JavaScript event loop: call stack, tasks vs. microtasks, Node phases",
+    "title_ja": "JavaScript のイベントループ：コールスタック、タスクとマイクロタスク、Node のフェーズ",
+    "title_zh": "JavaScript 事件循环：调用栈、任务与微任务、Node 的阶段",
+    "summary": "스레드 하나로 요청 수천 개를 받는 원리를 실행 순서 퍼즐, 마이크로태스크 굶주림, await 순차 vs Promise.all 실험으로 확인했다.",
+    "summary_en": "How one thread handles thousands of requests, checked with an execution-order puzzle, microtask starvation, and sequential await vs. Promise.all.",
+    "summary_ja": "スレッド1つで数千のリクエストを受ける仕組みを、実行順の当てっこ、マイクロタスクの飢餓、順次 await と Promise.all の実験で確かめた。",
+    "summary_zh": "用执行顺序谜题、微任务饿死、依次 await 与 Promise.all 的实验，验证了一个线程接住几千个请求的原理。",
+    "tags": [
+      "공부노트",
+      "백엔드"
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "emoji": "☁️",
+    "series": "클라우드·배포",
+    "slug": "cloud-aws-core",
+    "title": "AWS 핵심 세 가지: EC2, VPC, IAM",
+    "title_en": "The AWS core three: EC2, VPC, IAM",
+    "title_ja": "AWS の核心3つ：EC2、VPC、IAM",
+    "title_zh": "AWS 核心三件套：EC2、VPC、IAM",
+    "summary": "웹 서비스를 올릴 때 꼭 알아야 하는 서버(EC2), 사설 네트워크(VPC), 권한(IAM)을 서브넷 계산과 정책 평가 흉내 코드로 정리했다.",
+    "summary_en": "The server (EC2), private network (VPC), and permissions (IAM) you need to put a web service on AWS, with subnet math and a mock policy evaluator.",
+    "summary_ja": "Web サービスを載せるときに必須のサーバー(EC2)、プライベートネットワーク(VPC)、権限(IAM)を、サブネット計算とポリシー評価のまねをするコードで整理した。",
+    "summary_zh": "整理了部署 Web 服务必须懂的服务器（EC2）、私有网络（VPC）、权限（IAM），附子网计算和模拟策略评估的代码。",
+    "tags": [
+      "공부노트",
+      "클라우드"
+    ]
+  },
+  {
+    "date": "2026-11-25",
     "emoji": "🔌",
     "series": "AI 소식·분석",
     "slug": "news-261125-a",
