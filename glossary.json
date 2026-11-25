@@ -2029,6 +2029,26 @@
     "非阻塞",
     "异步 I/O"
    ]
+  },
+  {
+   "slug": "links-as-data-backlinks",
+   "ko": [
+    "역링크",
+    "백링크",
+    "캐시 버스팅"
+   ],
+   "en": [
+    "backlink",
+    "backlinks",
+    "cache busting"
+   ],
+   "ja": [
+    "バックリンク",
+    "キャッシュバスティング"
+   ],
+   "zh": [
+    "反向链接"
+   ]
   }
  ]
 }

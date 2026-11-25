@@ -1,5 +1,24 @@
 [
   {
+    "slug": "links-as-data-backlinks",
+    "title": "링크를 손으로 걸지 않기로 했다",
+    "date": "2026-11-25",
+    "tags": [
+      "공부노트",
+      "프론트엔드",
+      "CS"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🔗",
+    "summary": "글끼리 엮으려다, 링크도 데이터로 따로 빼 두는 게 낫다는 걸 알았다.",
+    "title_en": "I Decided to Stop Adding Links by Hand",
+    "summary_en": "I wanted posts to link to each other, and learned links work better as separate data.",
+    "title_ja": "リンクを手でつけるのをやめた",
+    "summary_ja": "記事同士をつなげようとして、リンクもデータとして分けておくほうがいいと分かった。",
+    "title_zh": "我决定不再手动加链接",
+    "summary_zh": "想让文章互相串起来，才发现链接也最好单独当成数据存着。"
+  },
+  {
     "date": "2026-11-25",
     "emoji": "⚙️",
     "series": "운영체제",
