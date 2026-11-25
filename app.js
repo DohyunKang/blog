@@ -6,6 +6,10 @@
   var LANG='ko';try{LANG=localStorage.getItem('blog-lang')||(/^ja/i.test(navigator.language)?'ja':/^zh/i.test(navigator.language)?'zh':/^ko/i.test(navigator.language)?'ko':'en')}catch(e){}
   var D={"en": {"프로젝트에서 나온 개념": "Concepts from Projects", "프로젝트 노트": "Project Notes", "글": "Posts", "소개": "About", "포트폴리오": "Portfolio", "메일": "Mail", "최근 글": "Recent", "태그": "Tags", "시리즈": "Series", "전체": "All", "전체 글": "All posts", "고정": "Pinned", "검색": "Search", "맞는 글이 없어요.": "Nothing found.", "불러오는 중…": "Loading…", "링크 복사": "Copy link", "복사됨 ✓": "Copied ✓", "주소창에서 복사해 주세요": "Copy from the address bar", "← 목록": "← List", "← 이전 글": "← Previous", "다음 글 →": "Next →", "목차": "Contents", "분 읽기": " min read", "이 글 어떠셨나요?": "What did you think?", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "No comments here, just email. Opinions, questions, small talk are all welcome.", "메일 보내기": "Send mail", "Gmail로 쓰기": "Write in Gmail", "복사": "Copy", "글을 찾을 수 없어요.": "Post not found.", "강도현": "Dohyun Kang", "나의 방향": "My Direction", "AI 시대 고찰": "Thoughts on the AI Era", "일상": "Daily", "운동": "Workout", "생각": "Thoughts", "일기": "Diary", "오늘 있었던 일을 적어요.": "Writing down what happened today.", "최신순": "Newest", "오래된순": "Oldest", "연락처": "Contact", "재밌게 살자.": "Enjoy your life.", "연락": "Contact", "글 보기": "Browse posts", "글 수": " posts", "시리즈 수": " series", "태그 수": " tags"}, "ja": {"프로젝트에서 나온 개념": "プロジェクトで出た概念", "프로젝트 노트": "プロジェクトノート", "글": "記事", "소개": "紹介", "포트폴리오": "ポートフォリオ", "메일": "メール", "최근 글": "最近の記事", "태그": "タグ", "시리즈": "シリーズ", "전체": "すべて", "전체 글": "すべての記事", "고정": "固定", "검색": "検索", "맞는 글이 없어요.": "見つかりませんでした。", "불러오는 중…": "読み込み中…", "링크 복사": "リンクをコピー", "복사됨 ✓": "コピーしました ✓", "주소창에서 복사해 주세요": "アドレスバーからコピーしてください", "← 목록": "← 一覧", "← 이전 글": "← 前の記事", "다음 글 →": "次の記事 →", "목차": "目次", "분 읽기": "分で読めます", "이 글 어떠셨나요?": "どうでしたか？", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "コメントの代わりにメールで受け付けています。意見・質問・雑談、何でも歓迎です。", "메일 보내기": "メールを送る", "Gmail로 쓰기": "Gmailで書く", "복사": "コピー", "글을 찾을 수 없어요.": "記事が見つかりません。", "강도현": "カン・ドヒョン", "나의 방향": "私の方向", "AI 시대 고찰": "AI時代を考える", "일상": "日常", "운동": "運動", "생각": "思ったこと", "일기": "日記", "오늘 있었던 일을 적어요.": "今日あったことを書きます。", "최신순": "新しい順", "오래된순": "古い順", "연락처": "連絡先", "재밌게 살자.": "人生、楽しもう。", "연락": "連絡先", "글 보기": "記事を見る", "글 수": "記事", "시리즈 수": "シリーズ", "태그 수": "タグ"}, "zh": {"프로젝트에서 나온 개념": "项目中遇到的概念", "프로젝트 노트": "项目笔记", "글": "文章", "소개": "关于", "포트폴리오": "作品集", "메일": "邮件", "최근 글": "最近文章", "태그": "标签", "시리즈": "系列", "전체": "全部", "전체 글": "全部文章", "고정": "置顶", "검색": "搜索", "맞는 글이 없어요.": "没有找到。", "불러오는 중…": "加载中…", "링크 복사": "复制链接", "복사됨 ✓": "已复制 ✓", "주소창에서 복사해 주세요": "请从地址栏复制", "← 목록": "← 列表", "← 이전 글": "← 上一篇", "다음 글 →": "下一篇 →", "목차": "目录", "분 읽기": "分钟阅读", "이 글 어떠셨나요?": "你觉得怎么样？", "댓글 대신 메일로 받고 있어요. 의견·질문·잡담 모두 환영합니다.": "这里不设评论，欢迎发邮件。意见、问题、闲聊都可以。", "메일 보내기": "发邮件", "Gmail로 쓰기": "用 Gmail 写", "복사": "复制", "글을 찾을 수 없어요.": "找不到这篇文章。", "강도현": "姜道贤", "나의 방향": "我的方向", "AI 시대 고찰": "AI 时代的思考", "일상": "日常", "운동": "运动", "생각": "想法", "일기": "日记", "오늘 있었던 일을 적어요.": "写下今天发生的事。", "최신순": "最新", "오래된순": "最早", "연락처": "联系方式", "재밌게 살자.": "好好享受生活。", "연락": "联系方式", "글 보기": "查看文章", "글 수": "篇", "시리즈 수": "个系列", "태그 수": "个标签"}};
   D.ko={'글 수':'글','시리즈 수':'시리즈','태그 수':'태그'};
+  (function(){var X={en:{'CS 공부':'CS','CS 공부 순서':'CS study path','운영체제부터 AI까지, 번호 순서대로':'From OS to AI, in numbered order','준비 중':'Coming soon','편 준비됨':'ready','위에서부터 번호 순서대로 읽으면 돼요. 앞 글이 뒤 글의 바탕이에요.':'Read top to bottom in number order. Each post builds on the one before.','전체 보기':'View all','더보기':'More','이 개념을 언급한 글':'Posts that mention this'},
+    ja:{'CS 공부':'CS','CS 공부 순서':'CS 学習順','운영체제부터 AI까지, 번호 순서대로':'OSからAIまで、番号順に','준비 중':'準備中','편 준비됨':'本 公開済み','위에서부터 번호 순서대로 읽으면 돼요. 앞 글이 뒤 글의 바탕이에요.':'上から番号順に読めばOK。前の記事が次の記事の土台です。','전체 보기':'すべて見る','더보기':'もっと見る','이 개념을 언급한 글':'この概念に触れた記事'},
+    zh:{'CS 공부':'CS','CS 공부 순서':'CS 学习顺序','운영체제부터 AI까지, 번호 순서대로':'从操作系统到 AI，按编号顺序','준비 중':'准备中','편 준비됨':'篇已就绪','위에서부터 번호 순서대로 읽으면 돼요. 앞 글이 뒤 글의 바탕이에요.':'从上往下按编号读即可，前一篇是后一篇的基础。','전체 보기':'查看全部','더보기':'更多','이 개념을 언급한 글':'提到这个概念的文章'}};
+    Object.keys(X).forEach(function(l){Object.keys(X[l]).forEach(function(k){if(!D[l][k])D[l][k]=X[l][k]})})})();
   function t(k){return (D[LANG]&&D[LANG][k])||k}
   function pt(p){return LANG!=='ko'&&p['title_'+LANG]?p['title_'+LANG]:p.title}
   function ps(p){return LANG!=='ko'&&p['summary_'+LANG]?p['summary_'+LANG]:p.summary}
@@ -33,7 +37,7 @@
   tb.onclick=function(){var l=root.dataset.theme==='light';root.dataset.theme=l?'dark':'light';try{localStorage.setItem('blog-theme',root.dataset.theme)}catch(e){}var bodyEl=document.getElementById('body');if(bodyEl)drawMermaid(bodyEl)};
 
   function chrome(){
-    var n=document.querySelectorAll('.hd nav a');n[0].textContent=t('글');n[1].textContent=t('소개');
+    var n=document.querySelectorAll('.hd nav a');n[0].textContent=t('글');if(n[2]){n[1].textContent=t('CS 공부');n[2].textContent=t('소개')}else n[1].textContent=t('소개');
     document.querySelectorAll('.tl2')[0].textContent=t('포트폴리오');
     document.documentElement.lang=LANG;
     document.getElementById('lang').value=LANG;
@@ -43,7 +47,7 @@
   var TREE=[["AI",["AI 원리","AI 용어사전","AI 소식·분석","AI 모델","하네스·에이전트","LLM 앱 만들기","Claude 활용"]],["GitHub",["GitHub 레포"]],["CS",["컴퓨터 구조","운영체제","네트워크","데이터베이스","소프트웨어 공학","자료구조·알고리즘","정보보안","백엔드","프론트엔드","클라우드·배포","서비스 인프라","CS·설계 기초"]],["자격증",["정보처리기사","SQLD","ADsP","빅데이터분석기사"]],["자동화",["마케팅 자동화","업무 자동화"]],["프로젝트 노트",["프로젝트에서 나온 개념"]],["일기장",["나의 방향","AI 시대 고찰"]]];
   function side(cur){
     var tg=counts('tags'),sr=counts('series'),rec=posts.slice(0,4);
-    return'<aside class="side"><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
+    return'<aside class="side"><a class="glass box cslink" href="#/cs"><b>'+t('CS 공부 순서')+'</b><span>'+t('운영체제부터 AI까지, 번호 순서대로')+' →</span></a><div class="glass prof"><button class="av" type="button" id="av" aria-label="profile photo"><span class="ph one"><img src="img/me.jpg" alt="강도현"></span></button><div><h2><a href="#/about" style="color:inherit">'+t('강도현')+'</a></h2><p>'+t('재밌게 살자.')+'</p></div></div>'+
       '<div class="glass box ctc"><h3>'+t('연락처')+'</h3><div class="lk"><a href="https://dohyunkang.github.io/" target="_blank" rel="noopener">'+t('포트폴리오')+'</a><a href="https://www.instagram.com/00.dhk" target="_blank" rel="noopener">Instagram</a><a href="mailto:'+MAIL+'">'+t('메일')+'</a></div></div>'+
       '<div class="glass box rank"><h3>'+t('최근 글')+'</h3>'+rec.map(function(p,i){return'<a href="'+link(p)+'"><b>'+(i+1)+'</b><span>'+esc(pt(p))+'</span></a>'}).join('')+'</div>'+
       '<div class="glass box tagbox"><h3>'+t('태그')+'</h3><div class="chips"><a class="chip'+(!cur?' on':'')+'" href="#/">'+t('전체')+'<b>'+posts.length+'</b></a>'+
@@ -81,7 +85,7 @@
       pg.html='<nav class="pager" aria-label="pages">'+(state.page>1?'<button type="button" data-p="'+(state.page-1)+'">←</button>':'')+nums.map(function(n){return n==='…'?'<span>…</span>':'<button type="button" data-p="'+n+'"'+(n===state.page?' class="on" aria-current="page"':'')+'>'+n+'</button>'}).join('')+(state.page<pages?'<button type="button" data-p="'+(state.page+1)+'">→</button>':'')+'</nav>'}
     var hero=(!filter&&!q)?'<section class="hero"><p class="eb">DOHYUN.LOG</p><h1 class="serif">Day by day.</h1><p>Enjoy your life, just do it.</p><div class="st"><b>'+posts.length+'</b>'+t('글 수')+' · <b>'+Object.keys(counts('series')).length+'</b>'+t('시리즈 수')+' · <b>'+Object.keys(counts('tags')).length+'</b>'+t('태그 수')+'</div><div class="dk-gow"><button class="btn pri dk-go" type="button">'+t('글 보기')+' ↓</button></div></section>':'<section class="hero" style="padding-bottom:20px"><h1 style="font-size:2rem">'+esc(t(title))+'</h1></section>';
     var feat=mains.length?'<div class="glass feat roll" id="roll"><div class="roll-track">'+mains.map(function(p,i){return'<a class="roll-slide" href="'+link(p)+'">'+thumb(p)+'<div class="fb"><div class="lb">'+(i+1)+' / '+mains.length+'</div><h2>'+esc(pt(p))+'</h2><p>'+esc(ps(p))+'</p><span class="meta">'+esc(p.date)+p.tags.map(function(x){return' · #'+esc(t(x))}).join('')+'</span></div></a>'}).join('')+'</div><div class="roll-dots">'+mains.map(function(_,i){return'<button type="button" aria-label="'+(i+1)+' / '+mains.length+'"'+(i?'':' class="on"')+'></button>'}).join('')+'</div></div>':'';
-    app.innerHTML=((!filter&&!q)?'<div class="dk"><div class="dk-stage">'+hero+'</div></div>':hero)+'<div class="grid"><section class="main">'+feat+'<div class="glass list"><div class="lh"><h3>'+t(mains.length?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><details class="sdrop"><summary class="btn">'+t('시리즈')+' ▾</summary><div class="tdrop">'+TREE.map(function(g){var sr2=counts('series'),n=0;g[1].forEach(function(x){n+=sr2[x]||0});return'<div class="tg"><a class="tgh'+(cur==='c:'+g[0]?' on':'')+'" href="#/cat/'+encodeURIComponent(g[0])+'">'+esc(t(g[0]))+'<b>'+n+'</b></a><div class="chips">'+g[1].map(function(x){return'<a class="chip'+(cur==='s:'+x?' on':'')+'" href="#/series/'+encodeURIComponent(x)+'">'+esc(t(x))+'<b>'+(sr2[x]||0)+'</b></a>'}).join('')+'</div></div>'}).join('')+'</div></details><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
+    app.innerHTML=hero+'<div class="grid"><section class="main">'+feat+'<div class="glass list"><div class="lh"><h3>'+t(mains.length?'전체 글':'글')+' <span class="meta">'+shown.length+'</span></h3><details class="sdrop"><summary class="btn">'+t('시리즈')+' ▾</summary><div class="tdrop">'+TREE.map(function(g){var sr2=counts('series'),n=0;g[1].forEach(function(x){n+=sr2[x]||0});return'<div class="tg"><a class="tgh'+(cur==='c:'+g[0]?' on':'')+'" href="#/cat/'+encodeURIComponent(g[0])+'">'+esc(t(g[0]))+'<b>'+n+'</b></a><div class="chips">'+g[1].map(function(x){return'<a class="chip'+(cur==='s:'+x?' on':'')+'" href="#/series/'+encodeURIComponent(x)+'">'+esc(t(x))+'<b>'+(sr2[x]||0)+'</b></a>'}).join('')+'</div></div>'}).join('')+'</div></details><button class="btn srt" id="srt" type="button">'+(state.asc?'↑ '+t('오래된순'):'↓ '+t('최신순'))+'</button><input id="q" type="search" placeholder="'+t('검색')+'" value="'+esc(state.q)+'"></div>'+
       (rest.length?pg.items.map(row).join('')+pg.html:'<p class="empty">'+(shown.length?'':t('맞는 글이 없어요.'))+'</p>')+'</div></section>'+side(cur)+'</div>';
     [].forEach.call(document.querySelectorAll('.pager [data-p]'),function(b){b.onclick=function(){state.page=+b.getAttribute('data-p');home(filter,title,cur);var l=document.querySelector('.list');if(l)scrollTo(0,l.getBoundingClientRect().top+pageYOffset-80)}});
     document.getElementById('srt').onclick=function(){state.asc=!state.asc;home(filter,title,cur)};
@@ -89,7 +93,7 @@
     qi.oninput=function(){state.q=qi.value.trim();var pos=qi.selectionStart;home(filter,title,cur);var n=document.getElementById('q');n.focus();n.setSelectionRange(pos,pos)};
     rollInit();
     progress(false);
-    if(!filter&&!q)deckInit('home');else{deckOff();reveal()}
+    deckOff();reveal()
   }
 
   // 소개 = 회사 임직원 프로필 페이지처럼
@@ -240,21 +244,110 @@
     });
   }
 
+  // ── 용어 자동 링크: glossary.json(용어→설명 글) + backlinks.json(이 개념을 언급한 글) ──
+  // 매칭 규칙은 tools/glossary.py와 같다. 바꾸면 둘 다 바꿀 것.
+  var GL=null;
+  function glLoad(){
+    if(!GL)GL=Promise.all([fetch('glossary.json').then(function(r){return r.ok?r.json():{terms:[]}}),fetch('backlinks.json').then(function(r){return r.ok?r.json():{}})]).then(function(a){return{terms:a[0].terms||[],back:a[1]||{}}}).catch(function(){return{terms:[],back:{}}});
+    return GL;
+  }
+  function reEsc(x){return x.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&')}
+  var MCache={};
+  function matcher(terms,lang,key){
+    if(key&&MCache[key+lang])return MCache[key+lang];
+    var map={},cs=[],ci=[];
+    terms.forEach(function(tm){(tm.all||[]).concat(tm[lang]||[]).forEach(function(a){var sens=!/[a-z]/.test(a);map[(sens?'S:'+a:'I:'+a.toLowerCase())]=tm;(sens?cs:ci).push(a)})});
+    function rx(l,fl){l=l.filter(function(x,i){return l.indexOf(x)===i}).sort(function(a,b){return b.length-a.length});return l.length?new RegExp(l.map(reEsc).join('|'),fl):null}
+    var M={map:map,rs:[[rx(cs,'g'),true],[rx(ci,'gi'),false]]};if(key)MCache[key+lang]=M;return M;
+  }
+  var WC=/[A-Za-z0-9_]/,HC=/[\uac00-\ud7a3]/;
+  function okB(text,s,e,a){var p=s>0?text.charAt(s-1):'',n=text.charAt(e);if(WC.test(a.charAt(0))&&p&&WC.test(p))return false;if(WC.test(a.charAt(a.length-1))&&n&&WC.test(n))return false;if(HC.test(a.charAt(0))&&p&&HC.test(p))return false;return true}
+  function findTerms(M,text){
+    var c=[];M.rs.forEach(function(r){var re=r[0];if(!re)return;re.lastIndex=0;var m;while((m=re.exec(text))){c.push([m.index,m.index+m[0].length,m[0],r[1]]);re.lastIndex=m.index+1}});
+    c.sort(function(a,b){return a[0]-b[0]||(b[1]-b[0])-(a[1]-a[0])});
+    var out=[],last=-1;c.forEach(function(x){if(x[0]<last||!okB(text,x[0],x[1],x[2]))return;var tm=M.map[(x[3]?'S:'+x[2]:'I:'+x[2].toLowerCase())];if(!tm)return;out.push([x[0],x[1],tm]);last=x[1]});
+    return out;
+  }
+  function linkTerms(b,p,G){
+    var M=matcher(G.terms,LANG,'all:'),has={},done={},n=0,MAX=12;posts.forEach(function(x){has[x.slug]=1});
+    var skip=/^(PRE|CODE|A|H1|H2|H3|H4|H5|H6|BUTTON|SCRIPT|STYLE|SVG)$/;
+    var w=document.createTreeWalker(b,NodeFilter.SHOW_TEXT,{acceptNode:function(nd){for(var e=nd.parentNode;e&&e!==b;e=e.parentNode){if(skip.test(e.nodeName.toUpperCase())||(e.classList&&e.classList.contains('mermaid-wrap')))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+    var nodes=[],nd;while((nd=w.nextNode()))nodes.push(nd);
+    nodes.forEach(function(nd){
+      if(n>=MAX)return;var text=nd.nodeValue,hits=findTerms(M,text).filter(function(h){var s=h[2].slug;if(s===p.slug||done[s]||!has[s]||(h[2].skip_series||[]).indexOf(p.series)>-1)return false;if(n>=MAX)return false;done[s]=1;n++;return true});
+      if(!hits.length)return;var frag=document.createDocumentFragment(),pos=0;
+      hits.forEach(function(h){if(h[0]>pos)frag.appendChild(document.createTextNode(text.slice(pos,h[0])));var a=document.createElement('a');a.className='gl';a.href=link({slug:h[2].slug});var tp=posts.filter(function(x){return x.slug===h[2].slug})[0];if(tp)a.title=pt(tp);a.textContent=text.slice(h[0],h[1]);frag.appendChild(a);pos=h[1]});
+      if(pos<text.length)frag.appendChild(document.createTextNode(text.slice(pos)));nd.parentNode.replaceChild(frag,nd);
+    });
+  }
+  // 이 글이 설명하는 개념을 언급한 글: backlinks.json(본문 기준, 스크립트가 만듦) + 아직 반영 안 된 새 글은 제목·요약으로 바로 찾음
+  function backlinks(p,G){
+    var el=document.getElementById('blk');if(!el)return;
+    var mine=G.terms.filter(function(tm){return tm.slug===p.slug})[0];if(!mine){el.hidden=true;return}
+    var list=(G.back[p.slug]||[]).slice(),M=matcher([mine],LANG);
+    posts.forEach(function(x){if(x.slug!==p.slug&&list.indexOf(x.slug)<0&&(mine.skip_series||[]).indexOf(x.series)<0&&findTerms(M,pt(x)+' \n '+(ps(x)||'')).length)list.push(x.slug)});
+    var by={};posts.forEach(function(x){by[x.slug]=x});
+    list=list.filter(function(s){return by[s]}).sort(function(a,b){return by[a].date<by[b].date?1:by[a].date>by[b].date?-1:0});
+    if(!list.length){el.hidden=true;return}
+    var N=8,item=function(s){var x=by[s];return'<li><a href="'+link(x)+'"><span>'+esc(pt(x))+'</span><small>'+esc(x.date)+(x.series?' · '+esc(t(x.series)):'')+'</small></a></li>'};
+    el.innerHTML='<h2>'+t('이 개념을 언급한 글')+' <b>'+list.length+'</b></h2><ul>'+list.slice(0,N).map(item).join('')+'</ul>'+(list.length>N?'<details><summary>'+t('더보기')+' +'+(list.length-N)+'</summary><ul>'+list.slice(N).map(item).join('')+'</ul></details>':'');
+    el.hidden=false;
+  }
+
+  var tocIO=null;
+  function tocOff(){if(tocIO){tocIO.disconnect();tocIO=null}}
+  function buildToc(b){
+    tocOff();
+    var hs=[].slice.call(b.querySelectorAll('h2,h3')),side=document.getElementById('toc'),mob=document.getElementById('mtoc');
+    if(hs.length<2||!side||!mob)return;
+    var html=hs.map(function(h){return'<a data-to="'+h.id+'" class="'+(h.tagName==='H3'?'l3':'l2')+'">'+esc(h.textContent)+'</a>'}).join('');
+    side.innerHTML='<h3>'+t('목차')+'</h3>'+html;side.hidden=false;
+    mob.querySelector('nav').innerHTML=html;mob.hidden=false;
+    // 주소(#/post/..)를 바꾸지 않고 스크롤만: 해시를 바꾸면 라우터가 다른 페이지로 착각함
+    [].forEach.call(document.querySelectorAll('#toc a,#mtoc a'),function(a){a.onclick=function(){var el=document.getElementById(a.getAttribute('data-to'));if(el)el.scrollIntoView({behavior:RM.matches?'auto':'smooth',block:'start'});mob.open=false}});
+    if(!('IntersectionObserver' in window))return;
+    var links=[].slice.call(side.querySelectorAll('a'));
+    tocIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-to')===e.target.id)})}})},{rootMargin:'-70px 0px -70% 0px'});
+    hs.forEach(function(h){tocIO.observe(h)});
+  }
+
+  // CS 공부 순서: cs.json(순서) + index.json(제목·요약)을 합쳐서 번호 목록으로
+  var CS=null;
+  function csPage(){
+    document.title=t('CS 공부 순서')+' · dohyun.log';progress(false);
+    app.innerHTML='<p class="empty">'+t('불러오는 중…')+'</p>';
+    (CS?Promise.resolve(CS):fetch('cs.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){CS=d;return d})).then(function(d){
+      if(location.hash!=='#/cs')return;
+      var L=function(o){return o?(o[LANG]||o.ko||''):''},by={};posts.forEach(function(p){by[p.slug]=p});
+      var done=0,all=0;
+      var secs=d.sections.map(function(sec,si){
+        var items=sec.items.map(function(it,ii){
+          var no=(si+1)+'-'+(ii+1),p=typeof it==='string'?by[it]:null;all++;
+          if(p){done++;return'<li><a class="csi" href="'+link(p)+'"><span class="no">'+no+'</span><span class="tx"><b>'+esc(pt(p))+'</b><small>'+esc(ps(p))+'</small></span></a></li>'}
+          var tt=typeof it==='string'?it:L(it.title);
+          return'<li><div class="csi soon"><span class="no">'+no+'</span><span class="tx"><b>'+esc(tt)+'</b><small>'+t('준비 중')+'</small></span></div></li>'}).join('');
+        return'<section class="cssec" id="cs'+(si+1)+'"><h2><span>'+(si+1)+'</span>'+esc(L(sec.title))+'</h2><p class="csd">'+esc(L(sec.desc))+'</p><ol>'+items+'</ol></section>'}).join('');
+      var nav=d.sections.map(function(sec,si){return'<a data-to="cs'+(si+1)+'"><span>'+(si+1)+'</span>'+esc(L(sec.title))+'</a>'}).join('');
+      app.innerHTML='<div class="cswrap"><header class="cshead"><p class="bcat">CS</p><h1>'+t('CS 공부 순서')+'</h1><p class="bsub">'+t('위에서부터 번호 순서대로 읽으면 돼요. 앞 글이 뒤 글의 바탕이에요.')+'</p><p class="csst"><b>'+done+'</b> / '+all+' '+t('편 준비됨')+'</p><nav class="csnav">'+nav+'</nav></header>'+secs+'</div>';
+      [].forEach.call(app.querySelectorAll('.csnav a'),function(a){a.onclick=function(){var el=document.getElementById(a.getAttribute('data-to'));if(el)el.scrollIntoView({behavior:RM.matches?'auto':'smooth'})}});
+    }).catch(function(){app.innerHTML='<p class="empty">'+errMsg()+'</p>'});
+  }
+
   function post(slug){
     var i=posts.map(function(x){return x.slug}).indexOf(slug),p=posts[i];
     if(!p){app.innerHTML='<p class="empty">'+t('글을 찾을 수 없어요.')+'</p>';return}
     document.title=pt(p)+' · dohyun.log';
     var older=posts[i+1],newer=posts[i-1];
-    app.innerHTML='<article class="bpost"><h1>'+esc(pt(p))+'</h1>'+(ps(p)?'<p class="bsub">'+esc(ps(p))+'</p>':'')+'<p class="bby"><a class="bav" href="#/about"><img src="img/me.jpg" alt=""></a>by <a href="#/about">'+t('강도현')+'</a><span>'+bdate(p.date)+'</span><span id="rt"></span></p>'+
-      '<div class="pbody" id="body">'+t('불러오는 중…')+'</div><div class="bkeys"><strong>keyword</strong>'+(p.series?'<a href="#/series/'+encodeURIComponent(p.series)+'">'+esc(t(p.series))+'</a>':'')+p.tags.map(function(x){return'<a href="#/tag/'+encodeURIComponent(x)+'">'+esc(t(x))+'</a>'}).join('')+'</div>'+
+    app.innerHTML='<div class="pwrap"><article class="bpost">'+(p.series?'<p class="bcat"><a href="#/series/'+encodeURIComponent(p.series)+'">'+esc(t(p.series))+'</a></p>':'')+'<h1>'+esc(pt(p))+'</h1>'+(ps(p)?'<p class="bsub">'+esc(ps(p))+'</p>':'')+'<p class="bby"><a class="bav" href="#/about"><img src="img/me.jpg" alt=""></a>by <a href="#/about">'+t('강도현')+'</a><span>'+bdate(p.date)+'</span><span id="rt"></span></p>'+
+      '<details class="mtoc" id="mtoc" hidden><summary>'+t('목차')+'</summary><nav></nav></details><div class="pbody" id="body">'+t('불러오는 중…')+'</div><section class="blk" id="blk" hidden></section><div class="bkeys"><strong>keyword</strong>'+(p.series?'<a href="#/series/'+encodeURIComponent(p.series)+'">'+esc(t(p.series))+'</a>':'')+p.tags.map(function(x){return'<a href="#/tag/'+encodeURIComponent(x)+'">'+esc(t(x))+'</a>'}).join('')+'</div>'+
       '<div class="bnav">'+(older?'<a href="'+link(older)+'"><span>'+t('← 이전 글')+'</span>'+esc(pt(older))+'</a>':'<span></span>')+(newer?'<a class="bnext" href="'+link(newer)+'"><span>'+t('다음 글 →')+'</span>'+esc(pt(newer))+'</a>':'<span></span>')+'</div>'+
-      '<p class="blinks"><button type="button" id="cplink">'+t('링크 복사')+'</button><a href="#/">'+t('← 목록')+'</a></p><section class="bmail" id="cmt"></section></article>';
+      '<p class="blinks"><button type="button" id="cplink">'+t('링크 복사')+'</button><a href="#/">'+t('← 목록')+'</a></p><section class="bmail" id="cmt"></section></article><aside class="toc" id="toc" hidden></aside></div>';
     document.getElementById('cplink').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(function(){b.textContent=t('복사됨 ✓')},function(){b.textContent=t('주소창에서 복사해 주세요')})};
     fetch('posts/'+encodeURIComponent(p.slug)+(LANG!=='ko'?'.'+LANG:'')+'.md').then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return fetch('posts/'+encodeURIComponent(p.slug)+'.md').then(function(r){return r.text()})}).then(function(md){
       var b=document.getElementById('body');b.innerHTML=marked.parse(md);drawMermaid(b);[].forEach.call(b.querySelectorAll('img'),function(im){im.loading='lazy';im.decoding='async'});[].forEach.call(b.querySelectorAll('details'),function(d){d.open=true});
       document.getElementById('rt').textContent=mins(b.textContent)+t('분 읽기');
       [].forEach.call(b.querySelectorAll('h2,h3'),function(h,k){h.id='h'+k});
-      [].forEach.call(b.querySelectorAll('pre'),function(pre){if(pre.querySelector('code.language-mermaid,code.mermaid'))return;var code=pre.querySelector('code');if(!code)return;var c=document.createElement('button');c.className='cp';c.textContent=t('복사');c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(code.textContent);c.textContent='✓';setTimeout(function(){c.textContent=t('복사')},1200)};pre.appendChild(c)});
+      [].forEach.call(b.querySelectorAll('pre'),function(pre){if(pre.querySelector('code.language-mermaid,code.mermaid'))return;var code=pre.querySelector('code');if(!code)return;var c=document.createElement('button');c.className='cp';c.textContent=t('복사');c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(code.textContent);c.textContent='✓';setTimeout(function(){c.textContent=t('복사')},1200)};pre.appendChild(c);var lg=(code.className.match(/language-([\w+#-]+)/)||[])[1];if(lg)pre.setAttribute('data-lang',lg)});buildToc(b);glLoad().then(function(G){if(!document.body.contains(b))return;linkTerms(b,p,G);backlinks(p,G)});
       scrollTo(0,0);
     }).catch(function(){var bb=document.getElementById('body');if(bb)bb.textContent=errMsg()});
     progress(true);
@@ -281,14 +374,15 @@
     };
   }
   function route(){
-    deckOff();chrome();setTimeout(lightbox,0);var h=location.hash,m;
+    deckOff();tocOff();chrome();setTimeout(lightbox,0);var h=location.hash,m;document.body.setAttribute('data-view',h.indexOf('#/post/')===0?'post':h==='#/cs'?'cs':h==='#/about'?'about':'list');
     if(m=h.match(/^#\/post\/(.+)$/))post(decodeURIComponent(m[1]));
     else if(m=h.match(/^#\/tag\/(.+)$/)){var t=decodeURIComponent(m[1]);home(function(p){return p.tags.indexOf(t)>=0},'#'+t,'t:'+t)}
     else if(m=h.match(/^#\/series\/(.+)$/)){var s=decodeURIComponent(m[1]);var pg0=TREE.filter(function(x){return x[1].indexOf(s)>-1})[0];home(function(p){return p.series===s},(pg0?pg0[0]+' › ':'')+s,'s:'+s)}
     else if(m=h.match(/^#\/cat\/(.+)$/)){var c=decodeURIComponent(m[1]),g=TREE.filter(function(x){return x[0]===c})[0];home(function(p){return g&&g[1].indexOf(p.series)>-1},c,'c:'+c)}
     else if(h==='#/about')about();
+    else if(h==='#/cs')csPage();
     else home(null,'전체 글','');
-    document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'?'#/about':(h.indexOf('#/post')===0?'':'#/')))});
+    document.querySelectorAll('.hd nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===(h==='#/about'||h==='#/cs'?h:(h.indexOf('#/post')===0?'':'#/')))});
     if(h.indexOf('#/post')!==0)scrollTo(0,0);
   }
   fetch('posts/index.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){posts=d.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0});

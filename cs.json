@@ -1,0 +1,32 @@
+{
+  "_note": "CS 공부 순서(#/cs). 글 내용은 posts/index.json에서 slug로 찾아 쓴다. index.json에 없는 slug나 planned 항목은 '준비 중'으로 보인다. 새 글을 순서에 넣으려면 해당 section의 items에 slug 한 줄만 추가.",
+  "sections": [
+    {"title": {"ko": "운영체제", "en": "Operating Systems", "ja": "オペレーティングシステム", "zh": "操作系统"},
+     "desc": {"ko": "프로그램이 실제로 어떻게 돌아가는지부터.", "en": "Start with how programs actually run.", "ja": "プログラムが実際にどう動くかから。", "zh": "从程序到底怎么运行开始。"},
+     "items": ["cs-os", "os-process-thread", "os-scheduling", "os-sync-deadlock",
+       {"planned": true, "title": {"ko": "동기·비동기와 블로킹·논블로킹", "en": "Sync/async and blocking/non-blocking", "ja": "同期・非同期とブロッキング・ノンブロッキング", "zh": "同步/异步与阻塞/非阻塞"}},
+       "os-memory", "os-filesystem"]},
+    {"title": {"ko": "JS·Node 런타임", "en": "JS & Node runtime", "ja": "JS・Node ランタイム", "zh": "JS·Node 运行时"},
+     "desc": {"ko": "스레드 하나로 여러 일을 처리하는 방식.", "en": "How one thread handles many things.", "ja": "スレッド一つで多くの処理をこなす仕組み。", "zh": "单线程如何处理多件事。"},
+     "items": [
+       {"planned": true, "title": {"ko": "JS·Node 이벤트 루프", "en": "The JS/Node event loop", "ja": "JS・Node のイベントループ", "zh": "JS·Node 事件循环"}},
+       "be-async-queue"]},
+    {"title": {"ko": "네트워크", "en": "Networking", "ja": "ネットワーク", "zh": "网络"},
+     "desc": {"ko": "요청 하나가 상대 서버까지 가는 길.", "en": "The path one request takes to a server.", "ja": "リクエスト一つがサーバーに届くまで。", "zh": "一个请求到达服务器的路径。"},
+     "items": ["cs-network", "net-osi-tcpip", "net-tcp-udp", "net-http", "net-socket", "net-dns-routing"]},
+    {"title": {"ko": "데이터베이스", "en": "Databases", "ja": "データベース", "zh": "数据库"},
+     "desc": {"ko": "데이터를 어떻게 나누고, 지키고, 빨리 찾나.", "en": "How data is split, protected and found fast.", "ja": "データをどう分け、守り、速く探すか。", "zh": "数据怎么拆分、保护、快速查找。"},
+     "items": ["db-rdb-sql", "db-normalization", "db-transaction", "db-index", "db-nosql", "db-cache-redis", "db-scaling"]},
+    {"title": {"ko": "클라우드·인프라", "en": "Cloud & infrastructure", "ja": "クラウド・インフラ", "zh": "云与基础设施"},
+     "desc": {"ko": "만든 걸 서버에 올리고 버티게 하기.", "en": "Getting it onto servers and keeping it up.", "ja": "作ったものをサーバーに載せて支える。", "zh": "把做好的东西部署上去并扛住流量。"},
+     "items": ["cloud-basics",
+       {"planned": true, "title": {"ko": "EC2·VPC·IAM", "en": "EC2, VPC and IAM", "ja": "EC2・VPC・IAM", "zh": "EC2·VPC·IAM"}},
+       "cloud-serverless", "infra-request-journey", "infra-load-balancer", "infra-autoscaling", "infra-cdn-cache", "cloud-docker", "cloud-k8s-intro", "cloud-k8s-deploy", "cloud-cicd"]},
+    {"title": {"ko": "소프트웨어 공학", "en": "Software engineering", "ja": "ソフトウェア工学", "zh": "软件工程"},
+     "desc": {"ko": "고치기 쉬운 코드를 짜는 원칙.", "en": "Principles for code that is easy to change.", "ja": "直しやすいコードを書く原則。", "zh": "写出好改的代码的原则。"},
+     "items": ["cs-procedural-oop", "cs-solid", "cs-design-patterns", "be-coupling-cohesion", "be-layered-architecture", "se-testing", "be-testing"]},
+    {"title": {"ko": "AI 개발 기초", "en": "AI engineering basics", "ja": "AI 開発の基礎", "zh": "AI 开发基础"},
+     "desc": {"ko": "지금 쓰는 에이전트·도구가 돌아가는 원리.", "en": "How the agents and tools I use actually work.", "ja": "今使っているエージェントやツールの仕組み。", "zh": "正在用的智能体和工具的原理。"},
+     "items": ["ai-context", "ai-context-window", "ai-tool-use", "ai-mcp", "app-mcp-server", "ai-agent-loop", "ai-harness", "ai-skills", "ai-subagent"]}
+  ]
+}

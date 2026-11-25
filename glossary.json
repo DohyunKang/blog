@@ -1,0 +1,1939 @@
+{
+ "_note": "용어 → 설명 글(slug). 글을 그릴 때 본문에서 처음 나온 곳 하나만 링크된다(코드·제목·기존 링크·자기 글 제외). all=모든 언어 공통, ko/en/ja/zh=언어별 표현. skip_series=그 시리즈 글에선 링크 안 함(같은 말을 다른 뜻으로 쓰는 경우). 고친 뒤엔 python3 tools/glossary.py 로 검사.",
+ "terms": [
+  {
+   "slug": "cs-os",
+   "ko": [
+    "운영체제"
+   ],
+   "en": [
+    "operating system",
+    "operating systems"
+   ],
+   "ja": [
+    "オペレーティングシステム"
+   ],
+   "zh": [
+    "操作系统"
+   ]
+  },
+  {
+   "slug": "os-process-thread",
+   "ko": [
+    "프로세스",
+    "스레드",
+    "멀티스레드",
+    "멀티 스레드",
+    "멀티프로세스",
+    "멀티 프로세스"
+   ],
+   "en": [
+    "thread",
+    "threads",
+    "multithreading",
+    "multi-threading",
+    "multiprocessing"
+   ],
+   "ja": [
+    "プロセス",
+    "スレッド",
+    "マルチスレッド"
+   ],
+   "zh": [
+    "进程",
+    "线程",
+    "多线程"
+   ]
+  },
+  {
+   "slug": "os-scheduling",
+   "ko": [
+    "CPU 스케줄링",
+    "스케줄링",
+    "컨텍스트 스위칭",
+    "문맥 교환"
+   ],
+   "en": [
+    "CPU scheduling",
+    "context switch",
+    "context switching"
+   ],
+   "ja": [
+    "スケジューリング",
+    "コンテキストスイッチ"
+   ],
+   "zh": [
+    "CPU调度",
+    "上下文切换"
+   ]
+  },
+  {
+   "slug": "os-sync-deadlock",
+   "ko": [
+    "교착상태",
+    "교착 상태",
+    "데드락",
+    "뮤텍스",
+    "세마포어",
+    "경쟁 상태",
+    "레이스 컨디션"
+   ],
+   "en": [
+    "deadlock",
+    "deadlocks",
+    "mutex",
+    "semaphore",
+    "race condition"
+   ],
+   "ja": [
+    "デッドロック",
+    "ミューテックス",
+    "セマフォ",
+    "競合状態"
+   ],
+   "zh": [
+    "死锁",
+    "互斥锁",
+    "信号量",
+    "竞态条件"
+   ]
+  },
+  {
+   "slug": "os-memory",
+   "ko": [
+    "가상 메모리",
+    "페이징",
+    "페이지 폴트"
+   ],
+   "en": [
+    "virtual memory",
+    "paging",
+    "page fault"
+   ],
+   "ja": [
+    "仮想メモリ",
+    "ページング"
+   ],
+   "zh": [
+    "虚拟内存",
+    "分页"
+   ]
+  },
+  {
+   "slug": "os-filesystem",
+   "ko": [
+    "파일 시스템",
+    "파일시스템"
+   ],
+   "en": [
+    "file system",
+    "filesystem"
+   ],
+   "ja": [
+    "ファイルシステム"
+   ],
+   "zh": [
+    "文件系统"
+   ]
+  },
+  {
+   "slug": "ca-cpu",
+   "all": [
+    "CPU"
+   ],
+   "ko": [
+    "레지스터"
+   ],
+   "en": [
+    "register"
+   ],
+   "ja": [
+    "レジスタ"
+   ],
+   "zh": [
+    "寄存器"
+   ]
+  },
+  {
+   "slug": "ca-memory-hierarchy",
+   "ko": [
+    "메모리 계층",
+    "캐시 메모리",
+    "CPU 캐시"
+   ],
+   "en": [
+    "memory hierarchy",
+    "CPU cache",
+    "cache memory"
+   ],
+   "ja": [
+    "メモリ階層",
+    "キャッシュメモリ"
+   ],
+   "zh": [
+    "存储层次",
+    "CPU缓存"
+   ]
+  },
+  {
+   "slug": "ca-data-representation",
+   "ko": [
+    "2의 보수",
+    "부동소수점"
+   ],
+   "en": [
+    "two's complement",
+    "floating point",
+    "floating-point"
+   ],
+   "ja": [
+    "2の補数",
+    "浮動小数点"
+   ],
+   "zh": [
+    "补码",
+    "浮点数"
+   ]
+  },
+  {
+   "slug": "cs-network",
+   "ko": [
+    "네트워크 기초"
+   ],
+   "en": [
+    "computer networking"
+   ],
+   "ja": [
+    "ネットワークの基礎"
+   ],
+   "zh": [
+    "网络基础"
+   ]
+  },
+  {
+   "slug": "net-osi-tcpip",
+   "all": [
+    "TCP/IP",
+    "OSI"
+   ],
+   "ko": [
+    "OSI 7계층"
+   ],
+   "en": [
+    "OSI model"
+   ],
+   "ja": [
+    "OSI参照モデル"
+   ],
+   "zh": [
+    "OSI七层"
+   ]
+  },
+  {
+   "slug": "net-tcp-udp",
+   "all": [
+    "TCP",
+    "UDP"
+   ],
+   "ko": [
+    "3-way 핸드셰이크",
+    "3웨이 핸드셰이크"
+   ],
+   "en": [
+    "three-way handshake"
+   ],
+   "ja": [
+    "3ウェイハンドシェイク"
+   ],
+   "zh": [
+    "三次握手"
+   ]
+  },
+  {
+   "slug": "net-http",
+   "all": [
+    "HTTP",
+    "HTTPS",
+    "TLS"
+   ]
+  },
+  {
+   "slug": "net-socket",
+   "all": [
+    "WebSocket",
+    "SSE"
+   ],
+   "ko": [
+    "웹소켓",
+    "소켓",
+    "롱 폴링",
+    "롱폴링"
+   ],
+   "en": [
+    "socket",
+    "sockets",
+    "long polling",
+    "Server-Sent Events"
+   ],
+   "ja": [
+    "ソケット",
+    "ロングポーリング"
+   ],
+   "zh": [
+    "套接字",
+    "长轮询"
+   ]
+  },
+  {
+   "slug": "net-dns-routing",
+   "all": [
+    "DNS"
+   ],
+   "ko": [
+    "IP 라우팅",
+    "IP 주소",
+    "라우팅 테이블"
+   ],
+   "en": [
+    "IP routing",
+    "IP address",
+    "routing table"
+   ],
+   "ja": [
+    "IPアドレス",
+    "ルーティングテーブル"
+   ],
+   "zh": [
+    "IP地址",
+    "路由表"
+   ]
+  },
+  {
+   "slug": "db-rdb-sql",
+   "all": [
+    "SQL",
+    "RDBMS"
+   ],
+   "ko": [
+    "관계형 DB",
+    "관계형 데이터베이스",
+    "RDB"
+   ],
+   "en": [
+    "relational database",
+    "relational databases"
+   ],
+   "ja": [
+    "リレーショナルデータベース",
+    "RDB"
+   ],
+   "zh": [
+    "关系型数据库",
+    "关系数据库"
+   ]
+  },
+  {
+   "slug": "db-normalization",
+   "ko": [
+    "정규화",
+    "반정규화",
+    "정규형"
+   ],
+   "en": [
+    "normalization",
+    "normal form",
+    "denormalization"
+   ],
+   "ja": [
+    "正規化",
+    "正規形"
+   ],
+   "zh": [
+    "范式",
+    "规范化"
+   ],
+   "skip_series": [
+    "ADsP",
+    "빅데이터분석기사",
+    "AI 원리"
+   ]
+  },
+  {
+   "slug": "db-transaction",
+   "all": [
+    "ACID"
+   ],
+   "ko": [
+    "트랜잭션",
+    "격리 수준"
+   ],
+   "en": [
+    "transaction",
+    "transactions",
+    "isolation level"
+   ],
+   "ja": [
+    "トランザクション",
+    "分離レベル"
+   ],
+   "zh": [
+    "事务",
+    "隔离级别"
+   ]
+  },
+  {
+   "slug": "db-index",
+   "ko": [
+    "인덱스",
+    "B+트리",
+    "B-트리"
+   ],
+   "en": [
+    "database index",
+    "B-tree",
+    "B+ tree"
+   ],
+   "ja": [
+    "インデックス",
+    "B木"
+   ],
+   "zh": [
+    "索引",
+    "B+树"
+   ],
+   "skip_series": [
+    "자료구조·알고리즘"
+   ]
+  },
+  {
+   "slug": "db-nosql",
+   "all": [
+    "NoSQL",
+    "MongoDB"
+   ],
+   "ko": [
+    "몽고DB"
+   ]
+  },
+  {
+   "slug": "db-cache-redis",
+   "all": [
+    "Redis"
+   ],
+   "ko": [
+    "레디스"
+   ]
+  },
+  {
+   "slug": "db-scaling",
+   "ko": [
+    "샤딩",
+    "레플리케이션",
+    "읽기 복제본"
+   ],
+   "en": [
+    "sharding",
+    "replication",
+    "read replica"
+   ],
+   "ja": [
+    "シャーディング",
+    "レプリケーション"
+   ],
+   "zh": [
+    "分片",
+    "主从复制",
+    "读写分离"
+   ]
+  },
+  {
+   "slug": "db-vector",
+   "ko": [
+    "벡터 DB",
+    "벡터 데이터베이스"
+   ],
+   "en": [
+    "vector database",
+    "vector DB"
+   ],
+   "ja": [
+    "ベクトルDB",
+    "ベクトルデータベース"
+   ],
+   "zh": [
+    "向量数据库"
+   ]
+  },
+  {
+   "slug": "cloud-basics",
+   "all": [
+    "IaaS",
+    "PaaS",
+    "SaaS"
+   ],
+   "ko": [
+    "클라우드 컴퓨팅"
+   ],
+   "en": [
+    "cloud computing"
+   ],
+   "ja": [
+    "クラウドコンピューティング"
+   ],
+   "zh": [
+    "云计算"
+   ]
+  },
+  {
+   "slug": "cloud-docker",
+   "all": [
+    "Docker"
+   ],
+   "ko": [
+    "도커",
+    "컨테이너"
+   ],
+   "en": [
+    "container",
+    "containers"
+   ],
+   "ja": [
+    "コンテナ"
+   ],
+   "zh": [
+    "容器"
+   ]
+  },
+  {
+   "slug": "cloud-k8s-intro",
+   "all": [
+    "Kubernetes",
+    "K8s",
+    "k8s"
+   ],
+   "ko": [
+    "쿠버네티스"
+   ],
+   "ja": [
+    "クバネティス"
+   ]
+  },
+  {
+   "slug": "cloud-cicd",
+   "all": [
+    "CI/CD"
+   ],
+   "ko": [
+    "지속적 통합",
+    "지속적 배포"
+   ],
+   "en": [
+    "continuous integration",
+    "continuous delivery",
+    "continuous deployment"
+   ],
+   "ja": [
+    "継続的インテグレーション"
+   ],
+   "zh": [
+    "持续集成",
+    "持续部署"
+   ]
+  },
+  {
+   "slug": "cloud-serverless",
+   "ko": [
+    "서버리스"
+   ],
+   "en": [
+    "serverless"
+   ],
+   "ja": [
+    "サーバーレス"
+   ],
+   "zh": [
+    "无服务器"
+   ]
+  },
+  {
+   "slug": "cloud-secrets",
+   "ko": [
+    "환경변수",
+    "환경 변수"
+   ],
+   "en": [
+    "environment variable",
+    "environment variables"
+   ],
+   "ja": [
+    "環境変数"
+   ],
+   "zh": [
+    "环境变量"
+   ]
+  },
+  {
+   "slug": "cloud-observability",
+   "ko": [
+    "관측성",
+    "옵저버빌리티"
+   ],
+   "en": [
+    "observability"
+   ],
+   "ja": [
+    "オブザーバビリティ",
+    "可観測性"
+   ],
+   "zh": [
+    "可观测性"
+   ]
+  },
+  {
+   "slug": "infra-load-balancer",
+   "ko": [
+    "로드밸런서",
+    "로드 밸런서",
+    "로드밸런싱",
+    "부하 분산"
+   ],
+   "en": [
+    "load balancer",
+    "load balancers",
+    "load balancing"
+   ],
+   "ja": [
+    "ロードバランサー",
+    "負荷分散"
+   ],
+   "zh": [
+    "负载均衡"
+   ]
+  },
+  {
+   "slug": "infra-autoscaling",
+   "ko": [
+    "오토스케일링",
+    "오토 스케일링",
+    "스케일 아웃",
+    "스케일아웃"
+   ],
+   "en": [
+    "autoscaling",
+    "auto scaling",
+    "auto-scaling",
+    "scale out"
+   ],
+   "ja": [
+    "オートスケーリング",
+    "スケールアウト"
+   ],
+   "zh": [
+    "自动扩缩容",
+    "自动伸缩",
+    "横向扩展"
+   ]
+  },
+  {
+   "slug": "infra-cdn-cache",
+   "all": [
+    "CDN"
+   ]
+  },
+  {
+   "slug": "infra-rate-limit",
+   "ko": [
+    "레이트 리밋",
+    "레이트리밋",
+    "속도 제한"
+   ],
+   "en": [
+    "rate limit",
+    "rate limiting",
+    "rate limits"
+   ],
+   "ja": [
+    "レートリミット",
+    "レート制限"
+   ],
+   "zh": [
+    "限流",
+    "速率限制"
+   ]
+  },
+  {
+   "slug": "be-api-rest",
+   "all": [
+    "REST",
+    "RESTful"
+   ]
+  },
+  {
+   "slug": "be-auth",
+   "all": [
+    "OAuth",
+    "JWT"
+   ],
+   "en": [
+    "authentication",
+    "authorization"
+   ],
+   "ja": [
+    "認証",
+    "認可"
+   ],
+   "zh": [
+    "身份验证",
+    "鉴权"
+   ]
+  },
+  {
+   "slug": "be-async-queue",
+   "all": [
+    "Kafka",
+    "RabbitMQ"
+   ],
+   "ko": [
+    "메시지 큐",
+    "메시지큐"
+   ],
+   "en": [
+    "message queue",
+    "message queues"
+   ],
+   "ja": [
+    "メッセージキュー"
+   ],
+   "zh": [
+    "消息队列"
+   ]
+  },
+  {
+   "slug": "be-coupling-cohesion",
+   "ko": [
+    "결합도",
+    "응집도"
+   ],
+   "en": [
+    "coupling",
+    "cohesion"
+   ],
+   "ja": [
+    "結合度",
+    "凝集度"
+   ],
+   "zh": [
+    "耦合",
+    "内聚"
+   ]
+  },
+  {
+   "slug": "be-layered-architecture",
+   "ko": [
+    "레이어드 아키텍처",
+    "계층형 아키텍처"
+   ],
+   "en": [
+    "layered architecture"
+   ],
+   "ja": [
+    "レイヤードアーキテクチャ"
+   ],
+   "zh": [
+    "分层架构"
+   ]
+  },
+  {
+   "slug": "cs-solid",
+   "all": [
+    "SOLID"
+   ]
+  },
+  {
+   "slug": "cs-design-patterns",
+   "ko": [
+    "디자인 패턴",
+    "싱글톤",
+    "전략 패턴",
+    "옵저버 패턴"
+   ],
+   "en": [
+    "design pattern",
+    "design patterns",
+    "singleton",
+    "strategy pattern",
+    "observer pattern"
+   ],
+   "ja": [
+    "デザインパターン",
+    "シングルトン"
+   ],
+   "zh": [
+    "设计模式",
+    "单例模式"
+   ]
+  },
+  {
+   "slug": "cs-procedural-oop",
+   "all": [
+    "OOP"
+   ],
+   "ko": [
+    "객체지향",
+    "객체 지향"
+   ],
+   "en": [
+    "object-oriented"
+   ],
+   "ja": [
+    "オブジェクト指向"
+   ],
+   "zh": [
+    "面向对象"
+   ]
+  },
+  {
+   "slug": "cs-git",
+   "all": [
+    "Git"
+   ],
+   "ko": [
+    "깃"
+   ]
+  },
+  {
+   "slug": "se-testing",
+   "ko": [
+    "단위 테스트",
+    "유닛 테스트",
+    "회귀 테스트",
+    "통합 테스트",
+    "블랙박스 테스트",
+    "화이트박스 테스트"
+   ],
+   "en": [
+    "unit test",
+    "unit tests",
+    "regression test",
+    "integration test",
+    "black-box testing"
+   ],
+   "ja": [
+    "単体テスト",
+    "ユニットテスト",
+    "回帰テスト",
+    "結合テスト"
+   ],
+   "zh": [
+    "单元测试",
+    "回归测试",
+    "集成测试"
+   ]
+  },
+  {
+   "slug": "sec-owasp",
+   "all": [
+    "OWASP",
+    "XSS",
+    "CSRF"
+   ],
+   "ko": [
+    "SQL 인젝션"
+   ],
+   "en": [
+    "SQL injection"
+   ],
+   "ja": [
+    "SQLインジェクション"
+   ],
+   "zh": [
+    "SQL注入"
+   ]
+  },
+  {
+   "slug": "sec-prompt-injection",
+   "ko": [
+    "프롬프트 인젝션"
+   ],
+   "en": [
+    "prompt injection"
+   ],
+   "ja": [
+    "プロンプトインジェクション"
+   ],
+   "zh": [
+    "提示注入",
+    "提示词注入"
+   ]
+  },
+  {
+   "slug": "sec-authn-crypto",
+   "ko": [
+    "해시 함수",
+    "대칭키",
+    "공개키",
+    "암호화"
+   ],
+   "en": [
+    "hash function",
+    "public key",
+    "symmetric key",
+    "encryption"
+   ],
+   "ja": [
+    "ハッシュ関数",
+    "公開鍵",
+    "暗号化"
+   ],
+   "zh": [
+    "哈希函数",
+    "公钥",
+    "加密"
+   ]
+  },
+  {
+   "slug": "fe-rendering-modes",
+   "all": [
+    "CSR",
+    "SSR",
+    "SSG"
+   ]
+  },
+  {
+   "slug": "fe-browser-render",
+   "all": [
+    "DOM"
+   ],
+   "ko": [
+    "리플로우",
+    "리페인트"
+   ],
+   "en": [
+    "reflow",
+    "repaint"
+   ],
+   "ja": [
+    "リフロー",
+    "リペイント"
+   ],
+   "zh": [
+    "重排",
+    "重绘"
+   ]
+  },
+  {
+   "slug": "fe-state",
+   "ko": [
+    "상태 관리"
+   ],
+   "en": [
+    "state management"
+   ],
+   "ja": [
+    "状態管理"
+   ],
+   "zh": [
+    "状态管理"
+   ]
+  },
+  {
+   "slug": "fe-accessibility",
+   "ko": [
+    "웹 접근성",
+    "접근성"
+   ],
+   "en": [
+    "accessibility"
+   ],
+   "ja": [
+    "アクセシビリティ"
+   ],
+   "zh": [
+    "无障碍",
+    "可访问性"
+   ]
+  },
+  {
+   "slug": "algo-complexity",
+   "all": [
+    "Big-O"
+   ],
+   "ko": [
+    "시간복잡도",
+    "시간 복잡도",
+    "빅오"
+   ],
+   "en": [
+    "time complexity"
+   ],
+   "ja": [
+    "時間計算量"
+   ],
+   "zh": [
+    "时间复杂度"
+   ]
+  },
+  {
+   "slug": "algo-dp",
+   "ko": [
+    "동적 계획법",
+    "다이나믹 프로그래밍"
+   ],
+   "en": [
+    "dynamic programming"
+   ],
+   "ja": [
+    "動的計画法"
+   ],
+   "zh": [
+    "动态规划"
+   ]
+  },
+  {
+   "slug": "algo-graph-search",
+   "all": [
+    "BFS",
+    "DFS"
+   ],
+   "ko": [
+    "너비 우선 탐색",
+    "깊이 우선 탐색"
+   ],
+   "en": [
+    "breadth-first search",
+    "depth-first search"
+   ],
+   "ja": [
+    "幅優先探索",
+    "深さ優先探索"
+   ],
+   "zh": [
+    "广度优先搜索",
+    "深度优先搜索"
+   ]
+  },
+  {
+   "slug": "algo-greedy",
+   "ko": [
+    "그리디",
+    "탐욕 알고리즘"
+   ],
+   "en": [
+    "greedy algorithm"
+   ],
+   "ja": [
+    "貪欲法"
+   ],
+   "zh": [
+    "贪心算法"
+   ]
+  },
+  {
+   "slug": "algo-recursion",
+   "ko": [
+    "재귀",
+    "백트래킹"
+   ],
+   "en": [
+    "recursion",
+    "backtracking"
+   ],
+   "ja": [
+    "再帰",
+    "バックトラッキング"
+   ],
+   "zh": [
+    "递归",
+    "回溯"
+   ]
+  },
+  {
+   "slug": "algo-sort-search",
+   "ko": [
+    "이분 탐색",
+    "이진 탐색"
+   ],
+   "en": [
+    "binary search"
+   ],
+   "ja": [
+    "二分探索"
+   ],
+   "zh": [
+    "二分查找",
+    "二分搜索"
+   ]
+  },
+  {
+   "slug": "algo-stack-queue",
+   "ko": [
+    "스택"
+   ],
+   "en": [
+    "deque"
+   ],
+   "ja": [
+    "スタック"
+   ],
+   "zh": [
+    "栈"
+   ]
+  },
+  {
+   "slug": "algo-tree-heap",
+   "ko": [
+    "우선순위 큐",
+    "이진 힙"
+   ],
+   "en": [
+    "priority queue",
+    "binary heap"
+   ],
+   "ja": [
+    "優先度付きキュー"
+   ],
+   "zh": [
+    "优先队列"
+   ]
+  },
+  {
+   "slug": "algo-shortest-path",
+   "ko": [
+    "다익스트라",
+    "유니온 파인드",
+    "위상 정렬"
+   ],
+   "en": [
+    "Dijkstra",
+    "union-find",
+    "topological sort"
+   ],
+   "ja": [
+    "ダイクストラ",
+    "トポロジカルソート"
+   ],
+   "zh": [
+    "迪杰斯特拉",
+    "并查集",
+    "拓扑排序"
+   ]
+  },
+  {
+   "slug": "algo-two-pointer",
+   "ko": [
+    "투 포인터",
+    "슬라이딩 윈도우",
+    "누적합"
+   ],
+   "en": [
+    "two pointers",
+    "sliding window",
+    "prefix sum"
+   ],
+   "ja": [
+    "スライディングウィンドウ",
+    "累積和"
+   ],
+   "zh": [
+    "双指针",
+    "滑动窗口",
+    "前缀和"
+   ]
+  },
+  {
+   "slug": "ai-llm",
+   "all": [
+    "LLM",
+    "LLMs"
+   ],
+   "ko": [
+    "대규모 언어 모델"
+   ],
+   "en": [
+    "large language model"
+   ],
+   "ja": [
+    "大規模言語モデル"
+   ],
+   "zh": [
+    "大语言模型"
+   ]
+  },
+  {
+   "slug": "ai-mcp",
+   "all": [
+    "MCP",
+    "Model Context Protocol"
+   ]
+  },
+  {
+   "slug": "ai-harness",
+   "ko": [
+    "하네스"
+   ],
+   "en": [
+    "harness"
+   ],
+   "ja": [
+    "ハーネス"
+   ],
+   "zh": [
+    "harness"
+   ]
+  },
+  {
+   "slug": "ai-context",
+   "ko": [
+    "컨텍스트 엔지니어링",
+    "컨텍스트"
+   ],
+   "en": [
+    "context engineering"
+   ],
+   "ja": [
+    "コンテキストエンジニアリング"
+   ],
+   "zh": [
+    "上下文工程"
+   ]
+  },
+  {
+   "slug": "ai-context-window",
+   "ko": [
+    "컨텍스트 윈도우",
+    "컨텍스트 창"
+   ],
+   "en": [
+    "context window"
+   ],
+   "ja": [
+    "コンテキストウィンドウ"
+   ],
+   "zh": [
+    "上下文窗口"
+   ]
+  },
+  {
+   "slug": "ai-tool-use",
+   "all": [
+    "function calling",
+    "tool use"
+   ],
+   "ko": [
+    "도구 호출",
+    "툴 호출"
+   ],
+   "en": [
+    "tool calling"
+   ],
+   "ja": [
+    "ツール呼び出し"
+   ],
+   "zh": [
+    "工具调用",
+    "函数调用"
+   ]
+  },
+  {
+   "slug": "ai-agent-loop",
+   "ko": [
+    "에이전트 루프"
+   ],
+   "en": [
+    "agent loop"
+   ],
+   "ja": [
+    "エージェントループ"
+   ],
+   "zh": [
+    "智能体循环",
+    "代理循环"
+   ]
+  },
+  {
+   "slug": "ai-subagent",
+   "ko": [
+    "서브에이전트",
+    "멀티에이전트",
+    "멀티 에이전트"
+   ],
+   "en": [
+    "subagent",
+    "subagents",
+    "sub-agent",
+    "multi-agent"
+   ],
+   "ja": [
+    "サブエージェント",
+    "マルチエージェント"
+   ],
+   "zh": [
+    "子智能体",
+    "子代理",
+    "多智能体"
+   ]
+  },
+  {
+   "slug": "ai-skills",
+   "all": [
+    "SKILL.md",
+    "Agent Skills"
+   ],
+   "ko": [
+    "스킬"
+   ],
+   "ja": [
+    "スキル"
+   ]
+  },
+  {
+   "slug": "ai-compaction",
+   "all": [
+    "compaction"
+   ],
+   "ko": [
+    "컴팩션"
+   ],
+   "ja": [
+    "コンパクション"
+   ]
+  },
+  {
+   "slug": "ai-session",
+   "ko": [
+    "대화 기록"
+   ],
+   "en": [
+    "conversation history"
+   ],
+   "ja": [
+    "会話履歴"
+   ],
+   "zh": [
+    "对话记录"
+   ]
+  },
+  {
+   "slug": "ai-rag",
+   "all": [
+    "RAG"
+   ],
+   "ko": [
+    "검색 증강 생성"
+   ],
+   "en": [
+    "retrieval-augmented generation"
+   ],
+   "ja": [
+    "検索拡張生成"
+   ],
+   "zh": [
+    "检索增强生成"
+   ]
+  },
+  {
+   "slug": "ai-embedding",
+   "ko": [
+    "임베딩",
+    "벡터 검색"
+   ],
+   "en": [
+    "embedding",
+    "embeddings",
+    "vector search"
+   ],
+   "ja": [
+    "埋め込み",
+    "エンベディング",
+    "ベクトル検索"
+   ],
+   "zh": [
+    "嵌入",
+    "向量检索",
+    "向量搜索"
+   ]
+  },
+  {
+   "slug": "ai-hallucination",
+   "ko": [
+    "할루시네이션",
+    "환각"
+   ],
+   "en": [
+    "hallucination",
+    "hallucinations"
+   ],
+   "ja": [
+    "ハルシネーション"
+   ],
+   "zh": [
+    "幻觉"
+   ]
+  },
+  {
+   "slug": "ai-prompt-caching",
+   "ko": [
+    "프롬프트 캐싱"
+   ],
+   "en": [
+    "prompt caching"
+   ],
+   "ja": [
+    "プロンプトキャッシュ",
+    "プロンプトキャッシング"
+   ],
+   "zh": [
+    "提示缓存",
+    "提示词缓存"
+   ]
+  },
+  {
+   "slug": "ai-prompt",
+   "ko": [
+    "프롬프트 엔지니어링"
+   ],
+   "en": [
+    "prompt engineering"
+   ],
+   "ja": [
+    "プロンプトエンジニアリング"
+   ],
+   "zh": [
+    "提示工程",
+    "提示词工程"
+   ]
+  },
+  {
+   "slug": "ai-sampling",
+   "all": [
+    "top-p"
+   ]
+  },
+  {
+   "slug": "ai-reasoning",
+   "ko": [
+    "추론 모델",
+    "생각 토큰"
+   ],
+   "en": [
+    "reasoning model",
+    "reasoning models",
+    "thinking tokens"
+   ],
+   "ja": [
+    "推論モデル"
+   ],
+   "zh": [
+    "推理模型"
+   ]
+  },
+  {
+   "slug": "ai-structured-output",
+   "all": [
+    "JSON Schema"
+   ],
+   "ko": [
+    "구조화 출력",
+    "구조화된 출력"
+   ],
+   "en": [
+    "structured output",
+    "structured outputs"
+   ],
+   "ja": [
+    "構造化出力"
+   ],
+   "zh": [
+    "结构化输出"
+   ]
+  },
+  {
+   "slug": "ai-multimodal",
+   "ko": [
+    "멀티모달"
+   ],
+   "en": [
+    "multimodal"
+   ],
+   "ja": [
+    "マルチモーダル"
+   ],
+   "zh": [
+    "多模态"
+   ]
+  },
+  {
+   "slug": "ai-evals",
+   "all": [
+    "evals",
+    "Evals"
+   ],
+   "ko": [
+    "LLM 평가"
+   ]
+  },
+  {
+   "slug": "ai-finetuning",
+   "all": [
+    "LoRA",
+    "QLoRA"
+   ],
+   "ko": [
+    "파인튜닝",
+    "미세조정"
+   ],
+   "en": [
+    "fine-tuning",
+    "finetuning"
+   ],
+   "ja": [
+    "ファインチューニング"
+   ],
+   "zh": [
+    "微调"
+   ]
+  },
+  {
+   "slug": "ai-quantization",
+   "ko": [
+    "양자화",
+    "증류"
+   ],
+   "en": [
+    "quantization",
+    "distillation"
+   ],
+   "ja": [
+    "量子化",
+    "蒸留"
+   ],
+   "zh": [
+    "量化",
+    "蒸馏"
+   ]
+  },
+  {
+   "slug": "ai-guardrails",
+   "ko": [
+    "가드레일"
+   ],
+   "en": [
+    "guardrail",
+    "guardrails"
+   ],
+   "ja": [
+    "ガードレール"
+   ],
+   "zh": [
+    "护栏"
+   ]
+  },
+  {
+   "slug": "ai-graphrag",
+   "all": [
+    "GraphRAG"
+   ]
+  },
+  {
+   "slug": "ai-knowledge-graph",
+   "ko": [
+    "지식그래프",
+    "지식 그래프"
+   ],
+   "en": [
+    "knowledge graph",
+    "knowledge graphs"
+   ],
+   "ja": [
+    "ナレッジグラフ",
+    "知識グラフ"
+   ],
+   "zh": [
+    "知识图谱"
+   ]
+  },
+  {
+   "slug": "ai-graph-db",
+   "all": [
+    "Neo4j",
+    "Cypher"
+   ],
+   "ko": [
+    "그래프 DB",
+    "그래프 데이터베이스"
+   ],
+   "en": [
+    "graph database"
+   ],
+   "ja": [
+    "グラフDB",
+    "グラフデータベース"
+   ],
+   "zh": [
+    "图数据库"
+   ]
+  },
+  {
+   "slug": "ai-ontology-triple",
+   "all": [
+    "RDF"
+   ],
+   "ko": [
+    "온톨로지"
+   ],
+   "en": [
+    "ontology"
+   ],
+   "ja": [
+    "オントロジー"
+   ],
+   "zh": [
+    "本体论"
+   ]
+  },
+  {
+   "slug": "ai-observability",
+   "ko": [
+    "LLM 관측성",
+    "트레이싱"
+   ],
+   "en": [
+    "LLM observability",
+    "tracing"
+   ],
+   "ja": [
+    "トレーシング"
+   ],
+   "zh": [
+    "链路追踪"
+   ]
+  },
+  {
+   "slug": "ml-transformer",
+   "all": [
+    "Transformer",
+    "self-attention"
+   ],
+   "ko": [
+    "트랜스포머",
+    "어텐션"
+   ],
+   "en": [
+    "attention mechanism"
+   ],
+   "ja": [
+    "トランスフォーマー",
+    "アテンション"
+   ],
+   "zh": [
+    "注意力机制"
+   ]
+  },
+  {
+   "slug": "ml-neural-net",
+   "ko": [
+    "신경망",
+    "역전파"
+   ],
+   "en": [
+    "neural network",
+    "neural networks",
+    "backpropagation"
+   ],
+   "ja": [
+    "ニューラルネットワーク",
+    "誤差逆伝播"
+   ],
+   "zh": [
+    "神经网络",
+    "反向传播"
+   ]
+  },
+  {
+   "slug": "ml-diffusion",
+   "ko": [
+    "확산 모델",
+    "디퓨전 모델"
+   ],
+   "en": [
+    "diffusion model",
+    "diffusion models"
+   ],
+   "ja": [
+    "拡散モデル"
+   ],
+   "zh": [
+    "扩散模型"
+   ]
+  },
+  {
+   "slug": "ml-pretraining",
+   "all": [
+    "RLHF"
+   ],
+   "ko": [
+    "사전학습",
+    "사전 학습"
+   ],
+   "en": [
+    "pretraining",
+    "pre-training"
+   ],
+   "ja": [
+    "事前学習"
+   ],
+   "zh": [
+    "预训练"
+   ]
+  },
+  {
+   "slug": "ml-inference",
+   "all": [
+    "KV cache"
+   ],
+   "ko": [
+    "KV 캐시",
+    "추론 최적화"
+   ],
+   "en": [
+    "inference optimization"
+   ],
+   "ja": [
+    "KVキャッシュ"
+   ],
+   "zh": [
+    "KV缓存",
+    "推理优化"
+   ]
+  },
+  {
+   "slug": "ml-basics",
+   "ko": [
+    "머신러닝",
+    "딥러닝"
+   ],
+   "en": [
+    "machine learning",
+    "deep learning"
+   ],
+   "ja": [
+    "機械学習",
+    "ディープラーニング",
+    "深層学習"
+   ],
+   "zh": [
+    "机器学习",
+    "深度学习"
+   ]
+  },
+  {
+   "slug": "ml-local-models",
+   "all": [
+    "Ollama",
+    "llama.cpp"
+   ],
+   "ko": [
+    "로컬 모델"
+   ],
+   "en": [
+    "local model",
+    "local models"
+   ],
+   "ja": [
+    "ローカルモデル"
+   ],
+   "zh": [
+    "本地模型"
+   ]
+  },
+  {
+   "slug": "be-error-logging",
+   "ko": [
+    "구조화 로그",
+    "로깅"
+   ],
+   "en": [
+    "structured logging",
+    "logging"
+   ],
+   "ja": [
+    "ロギング",
+    "構造化ログ"
+   ],
+   "zh": [
+    "结构化日志"
+   ]
+  },
+  {
+   "slug": "fe-component",
+   "ko": [
+    "컴포넌트"
+   ],
+   "en": [
+    "component",
+    "components"
+   ],
+   "ja": [
+    "コンポーネント"
+   ],
+   "zh": [
+    "组件"
+   ]
+  },
+  {
+   "slug": "fe-performance",
+   "all": [
+    "Core Web Vitals",
+    "LCP"
+   ]
+  },
+  {
+   "slug": "sec-privacy",
+   "ko": [
+    "개인정보"
+   ],
+   "en": [
+    "personal data",
+    "personal information"
+   ],
+   "ja": [
+    "個人情報"
+   ],
+   "zh": [
+    "个人信息"
+   ]
+  },
+  {
+   "slug": "algo-array-hash",
+   "ko": [
+    "해시 테이블",
+    "해시맵",
+    "해시 맵"
+   ],
+   "en": [
+    "hash table",
+    "hash map",
+    "hashmap"
+   ],
+   "ja": [
+    "ハッシュテーブル"
+   ],
+   "zh": [
+    "哈希表"
+   ]
+  },
+  {
+   "slug": "se-methodology",
+   "ko": [
+    "애자일",
+    "스크럼",
+    "워터폴",
+    "폭포수 모델"
+   ],
+   "en": [
+    "agile",
+    "scrum",
+    "waterfall model"
+   ],
+   "ja": [
+    "アジャイル",
+    "スクラム",
+    "ウォーターフォール"
+   ],
+   "zh": [
+    "敏捷开发",
+    "Scrum",
+    "瀑布模型"
+   ]
+  },
+  {
+   "slug": "ca-io-bus",
+   "all": [
+    "DMA"
+   ],
+   "ko": [
+    "인터럽트"
+   ],
+   "en": [
+    "interrupt",
+    "interrupts"
+   ],
+   "ja": [
+    "割り込み"
+   ],
+   "zh": [
+    "中断"
+   ]
+  },
+  {
+   "slug": "cloud-k8s-deploy",
+   "all": [
+    "HPA"
+   ],
+   "ko": [
+    "롤링 업데이트",
+    "헬스체크",
+    "헬스 체크"
+   ],
+   "en": [
+    "rolling update",
+    "health check",
+    "health checks"
+   ],
+   "ja": [
+    "ローリングアップデート",
+    "ヘルスチェック"
+   ],
+   "zh": [
+    "滚动更新",
+    "健康检查"
+   ]
+  },
+  {
+   "slug": "infra-ai-serving",
+   "ko": [
+    "모델 서빙"
+   ],
+   "en": [
+    "model serving"
+   ],
+   "ja": [
+    "モデルサービング"
+   ],
+   "zh": [
+    "模型服务"
+   ]
+  },
+  {
+   "slug": "ai-generative",
+   "ko": [
+    "생성형 AI"
+   ],
+   "en": [
+    "generative AI"
+   ],
+   "ja": [
+    "生成AI"
+   ],
+   "zh": [
+    "生成式AI",
+    "生成式 AI"
+   ]
+  },
+  {
+   "slug": "ai-cost-routing",
+   "ko": [
+    "모델 라우팅"
+   ],
+   "en": [
+    "model routing"
+   ],
+   "ja": [
+    "モデルルーティング"
+   ],
+   "zh": [
+    "模型路由"
+   ]
+  }
+ ]
+}
