@@ -103,6 +103,105 @@ ETag: "8097d38e"
 
 本文ではなくヘッダーのみが返ってきた。クライアントは保持しているキャッシュをそのまま使用すればよい。内容が変更された場合、サーバーは新しい `ETag` とともに 200 ステータスコードと新しい本文を返す。ファイル名にバージョンが含まれる静的なファイルについては、MDN が推奨する例として、`Cache-Control: public, max-age=31536000, immutable` のように非常に新鮮であると明示し、サーバーへの問い合わせを回避するパターンが紹介されている。キャッシュがブラウザだけでなく中間（CDN）にも存在するという話は、[詳細 → CDN とキャッシュ階層](#/post/infra-cdn-cache) を参照のこと。
 
+## ステートレス: サーバーはさっきの人を覚えていない
+
+1. **ステートレス (stateless)**: HTTP のリクエストは1つ1つが独立しています。サーバーはプロトコルのレベルでは「さっきログインしたあの人」を覚えていません。上でソケット1つでリクエストを4つ送ったときも、サーバーはそれぞれを別々に処理しました。接続がつながっていること(持続的接続)と状態を覚えていることは別の話です。
+2. **なぜそう作ったか**: サーバーがクライアントごとの記憶を持たなければ、どのサーバーが次のリクエストを受けても構いません。サーバーを増やしたり、1台が落ちても別のサーバーに回したりしやすくなります。[ロードバランサー](#/post/infra-load-balancer) や [オートスケーリング](#/post/infra-autoscaling) が簡単な理由です。
+3. **それでもログインは覚える必要がある**: なので状態をリクエストごとに載せて送ります。方法は2つです。サーバーにセッションを保存してその鍵(セッション ID)だけをクッキーでやり取りするか、状態そのものを署名したトークン(JWT など)で持ち歩くか。違いは [認証と認可](#/post/be-auth) で詳しく見ます。どちらでも HTTP 自体はステートレスのままで、状態はヘッダーに載って運ばれます。
+
+## クッキー: 状態を運ぶヘッダー
+
+**クッキー** は、サーバーが `Set-Cookie` レスポンスヘッダーで「これを持っておいて次に送って」と渡すと、ブラウザが保存しておき、条件に合うリクエストごとに `Cookie` リクエストヘッダーとして自動で付ける小さな値です。ローカルでそのまま再現してみました。
+
+```python
+import threading, urllib.request, http.cookiejar
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+class H(BaseHTTPRequestHandler):
+    def log_message(self, *a): pass
+    def do_GET(self):
+        print(f'서버가 받은 Cookie: {self.headers.get("Cookie")}')
+        self.send_response(200)
+        if self.path == '/login':
+            self.send_header('Set-Cookie', 'sid=abc123; Path=/; HttpOnly; SameSite=Lax; Max-Age=3600')
+        self.end_headers(); self.wfile.write(b'ok')
+
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H)
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+base = f'http://127.0.0.1:{srv.server_address[1]}'
+
+jar = http.cookiejar.CookieJar()                       # 브라우저의 쿠키 저장소 역할
+opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+for path in ['/', '/login', '/me', '/me']:
+    r = opener.open(base + path)
+    print(f'GET {path} -> Set-Cookie: {r.headers.get("Set-Cookie")}')
+```
+
+```
+서버가 받은 Cookie: None
+GET / -> Set-Cookie: None
+서버가 받은 Cookie: None
+GET /login -> Set-Cookie: sid=abc123; Path=/; HttpOnly; SameSite=Lax; Max-Age=3600
+서버가 받은 Cookie: sid=abc123
+GET /me -> Set-Cookie: None
+서버가 받은 Cookie: sid=abc123
+GET /me -> Set-Cookie: None
+```
+
+(`서버가 받은 Cookie` は「サーバーが受け取った Cookie」です。)`/login` で一度受け取ってからは、私が何もしなくても毎回のリクエストに `sid=abc123` が付きました。サーバーは相変わらずステートレスで、クライアントが状態の鍵を毎回見せ直す構造です。
+
+`Set-Cookie` の後ろに付く属性が実務では重要です。MDN を基準にまとめました。
+
+| 属性 | 意味 | 付け忘れると |
+|---|---|---|
+| `Expires` / `Max-Age` | いつまで保存するか | ブラウザを閉じると消えるセッションクッキー |
+| `Domain` / `Path` | どのホスト・パスへのリクエストに付けるか | クッキーを設定したホストにだけ付く(サブドメインは除く) |
+| `Secure` | HTTPS のリクエストにだけ付ける | 平文の HTTP で漏れうる |
+| `HttpOnly` | JavaScript の `document.cookie` で読めない | XSS でセッションクッキーを盗まれうる |
+| `SameSite` | 別サイトから始まったリクエストに付けるか (`Strict`/`Lax`/`None`) | Chrome などは `Lax` として扱う、ブラウザにより異なる |
+
+`SameSite=None` は別サイトからも送るという意味なので、`Secure` が一緒に必要です。セッションクッキーなら `Secure; HttpOnly; SameSite=Lax`(または `Strict`)が無難な出発点です。`SameSite` は、別のサイトが私のクッキー付きのリクエストをこっそり送らせる攻撃 (CSRF) を減らしてくれます。攻撃側の話は [ウェブ脆弱性と OWASP](#/post/sec-owasp) にあります。
+
+## CORS: ブラウザが別オリジンのレスポンスを止める理由
+
+1. **オリジン (origin)**: スキーム + ホスト + ポート。`https://a.com` と `https://a.com:8443`、`http://a.com` はすべて別のオリジンです。
+2. **同一オリジンポリシー (SOP)**: ブラウザは、あるオリジンのスクリプトが別のオリジンのレスポンスを読めないようにします。これがないと、私が開いた悪意のあるページが私のクッキーを載せて銀行の API を呼び、レスポンスまで読めてしまいます。
+3. **CORS (オリジン間リソース共有)**: SOP に穴を開ける許可の仕組みです。サーバーが `Access-Control-Allow-Origin` などのレスポンスヘッダーで「このオリジンは読んでいい」と伝えると、ブラウザがスクリプトにレスポンスを渡します。なので CORS エラーは、止める仕組みというより許可がないという印です。
+4. **プリフライト (preflight)**: サーバーの状態を変えうるリクエストなら、ブラウザは本リクエストの前に `OPTIONS` で先に尋ねます。GET・HEAD・POST で、ヘッダーが既定の許可リストの範囲内、`Content-Type` がフォームか `text/plain` の「単純リクエスト」だけがそのまま送られます。`Content-Type: application/json` の POST はプリフライトの対象です。
+5. **認証情報付きリクエスト**: `fetch(..., {credentials: 'include'})` でクッキーを載せるには、サーバーが `Access-Control-Allow-Credentials: true` を返し、`Allow-Origin` に `*` ではなく正確なオリジンを書く必要があります。
+
+```mermaid
+sequenceDiagram
+    participant B as ブラウザ (ページのオリジン A)
+    participant S as API サーバー (オリジン B)
+    Note over B,S: 単純リクエスト: すぐ送る
+    B->>S: GET /simple (Origin: A)
+    S-->>B: 200 + 本文
+    Note left of B: Allow-Origin に A がなければ<br/>スクリプトにレスポンスを渡さない
+    Note over B,S: プリフライトが必要なリクエスト
+    B->>S: OPTIONS /json (Access-Control-Request-Method: POST)
+    S-->>B: 204 + Allow-Origin: A, Allow-Headers: Content-Type
+    B->>S: POST /json (Content-Type: application/json)
+    S-->>B: 200
+```
+
+自分で確かめてみました。127.0.0.1:9001 にページを、127.0.0.1:9002 に API を立て(ポートが違うので別オリジン)、ヘッドレス Chrome でページを開いて `fetch` を2つ実行しました。API サーバーは受け取ったリクエストをログに出しました。
+
+```
+# CORS ヘッダーなしで応答したとき
+ページの結果   simple GET: TypeError / json POST: TypeError
+サーバーログ   GET /simple | Origin: http://127.0.0.1:9001
+              OPTIONS /json | 要求メソッド: POST | 要求ヘッダー: content-type
+
+# Access-Control-Allow-Origin: http://127.0.0.1:9001 を返したとき
+ページの結果   simple GET: secret / json POST: 200
+サーバーログ   GET /simple, OPTIONS /json, POST /json
+```
+
+ここで2つのことが分かります。1つ目、許可がないときも単純な GET はサーバーまで届いて処理されました。ブラウザがレスポンスをスクリプトに渡さなかっただけです。なので CORS はサーバーを守る仕組みではなく、状態を変える処理を GET で作ってはいけない理由がここにも出てきます。2つ目、JSON の POST はプリフライトが拒否されると本リクエストがまったく送られませんでした。`curl` やサーバー同士の呼び出しに CORS がないのも同じ話です。ブラウザだけが守るルールです。
+
+解決は結局サーバー側です。API サーバーが許可するオリジンを正確に書いて応答するか、開発中ならフロントの開発サーバーのプロキシで同一オリジンに見せます。`Access-Control-Allow-Origin: *` をどこにでも付けるのは、クッキー認証とは一緒に使えませんし、公開 API でなければ避けるべきです。
+
 ## HTTPS: TLS ハンドシェイクの概要
 
 HTTPS は HTTP メッセージを TLS チャンネル内に封入して送信するものである。TLS 1.3(RFC 8446) のハンドシェイクは概ね以下の通り進行する。
@@ -145,16 +244,41 @@ TLS 1.3 がネゴシエートされ、クライアントが証明書のホスト
 
 ## バージョンごとの違い：1.1, 2, 3
 
-3 つのバージョンの意味（メソッド、ステータスコード、ヘッダーの概念）は同じだが、伝送方式が異なる。
+3つのバージョンの意味(メソッド、ステータスコード、ヘッダーの概念)は同じで、転送方式が違います。
 
 | | HTTP/1.1 | HTTP/2 | HTTP/3 |
 |---|---|---|---|
-| 形式 | テキスト | バイナリ | バイナリ |
-| 接続 1 つあたり | リクエストを順次（パイプラインは存在したが） | 複数のリクエストを同時に（マルチプレクシング） | 同時、ストリームごとに独立 |
-| 下の伝送 | TCP | TCP | QUIC(UDP の上) |
-| ヘッダー | 毎回そのまま | 圧縮 | 圧縮 |
+| 形式 | テキスト | バイナリフレーム | バイナリフレーム |
+| 1つの接続で | リクエストを順番に(パイプラインはあった) | 複数のリクエストを同時に(多重化) | 同時に、ストリームごとに独立 |
+| 下の転送 | TCP | TCP | QUIC (UDP の上) |
+| ヘッダー | 毎回そのまま | 圧縮 (HPACK) | 圧縮 (QPACK) |
+| 暗号化 | 任意(HTTPS なら TLS) | ブラウザは TLS 上でのみ使う | QUIC に TLS 1.3 が組み込み、必須 |
+| 最初のリクエストまでの往復 | TCP 1 + TLS 1.3 1 = 2 RTT | 同じ | 1 RTT(再接続は 0-RTT 可能) |
+| 標準 | RFC 9112 | RFC 9113 | RFC 9114 (QUIC は RFC 9000) |
 
-1.1 では接続の再利用が可能になったが、前のレスポンスが終わるまで次のレスポンスを受け取れない head-of-line 問題があり、ブラウザはドメインあたり TCP 接続を最大 6 つ開いて回避していた。HTTP/2 は 1 つの接続内で並列リクエストを許可することでこの制約を取り除いた。ただし、TCP の上だけで動作するため、パケットが 1 つ失われると TCP が再送信する間、その接続上のすべてのストリームが待機することになる。HTTP/3 では TCP の代わりに UDP 上の QUIC を使用し、QUIC は各ストリームごとに損失検知と再送信を個別に行うため、損失が発生したストリームのみが停止する。TCP 自体の動作については [詳細 → TCP と UDP](#/post/net-tcp-udp) で引き続き解説する。
+1.1 は接続を再利用できるようになりましたが、前のレスポンスが終わらないと次のレスポンスを受け取れない head-of-line 問題があり、ブラウザはオリジンあたり TCP 接続を最大6本開いて回避していました。HTTP/2 は1つの接続での並列リクエストを許してこの制約をなくしました。ただし1本の TCP の上で動くので、パケットが1つ失われて TCP が再送している間、その接続のすべてのストリームが一緒に待ちます。HTTP/3 は TCP の代わりに UDP 上の QUIC を使い、QUIC がストリームごとに損失検出と再送を別々に行うので、損失が起きたストリームだけが止まります。TCP 自体の動作は [詳しく → TCP と UDP](#/post/net-tcp-udp) で続けて見ます。
+
+もう少し踏み込みます。
+
+1. **HTTP/1.1 の限界**: パイプライニングはレスポンスをリクエストの順に返す必要があったので、前のレスポンスが1つ遅いと後ろが全部詰まり、中間プロキシとの互換性の問題も多くて、ブラウザは既定で無効にするようになりました。なので実際には接続を6本開き、画像を1枚にまとめる(スプライト)、ドメインを分ける(ドメインシャーディング)といった小技がよく使われました。
+2. **HTTP/2 のフレームとストリーム**: メッセージを HEADERS フレームと DATA フレームに切って送ります。フレームごとにストリーム番号が付くので、1つの接続の上で複数のリクエストのフレームが混ざって流れても、受け手が番号で組み立て直します。テキストの改行の代わりに長さを書いたフレームを使うのは、[ソケットの記事](#/post/net-socket) の長さ前置フレーミングと同じ発想です。おかげで 1.1 時代の小技がかえって損になりました。
+3. **HPACK ヘッダー圧縮**: リクエストごとにほぼ同じ `User-Agent`、`Cookie`、`Accept` を繰り返し送っていた無駄を減らします。よく使うヘッダーはあらかじめ決めた表(静的テーブル)の番号で、この接続で一度送ったヘッダーは接続ごとの表(動的テーブル)の番号で送ります。
+4. **なくなった機能**: HTTP/2 にはリクエストされる前にサーバーがリソースを先に送るサーバープッシュがありましたが、期待ほどの効果がなく Chrome がサポートを外しました。最初の仕様のストリーム優先度の方式も RFC 9113 で廃止され、より単純な `Priority` ヘッダー方式 (RFC 9218) が別に出ました。
+5. **HTTP/3 と QUIC**: TCP の接続確立と TLS ハンドシェイクを1つの QUIC ハンドシェイクにまとめ、最初のリクエストまでの往復が減りました。接続を IP・ポートではなく接続 ID で識別するので、Wi-Fi から LTE に切り替わって IP が変わっても接続を続けられます(コネクションマイグレーション)。UDP の上なので、OS カーネルではなくアプリ側のライブラリが輻輳制御と再送を実装し、そのぶん改良が早く配布されます。代償として CPU を多く使い、UDP を遮断するネットワークでは使えません。
+6. **バージョンはどう決まるか**: クライアントが選ぶのではなく交渉します。HTTP/2 は TLS ハンドシェイク中に ALPN という拡張で `h2` を選びます。HTTP/3 は最初からは使えないので、サーバーが HTTP/2 のレスポンスに `Alt-Svc: h3=":443"` ヘッダー(または DNS の HTTPS レコード)で「UDP 443 で h3 も使える」と知らせると、次から試します。
+
+`curl` で実際のサイトに聞いてみました。
+
+```
+$ curl -s -o /dev/null -D - --http2 https://www.google.com
+HTTP/2 200
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+$ curl -s -o /dev/null -D - --http2 https://dohyunkang.github.io/blog/
+HTTP/2 200
+```
+
+Google は HTTP/2 で答えつつ、`alt-svc` で HTTP/3 も使えると知らせてきました。このブログ (GitHub Pages) も HTTP/2 で返ってきました。`curl --http3-only` で HTTP/3 接続も試しましたが、私の実行環境では応答がないまま止まり、確認できませんでした。UDP が遮断されたネットワークで起きることで、ブラウザならこういうとき静かに HTTP/2 に戻ります。
 
 ## よくある誤解
 
@@ -163,6 +287,22 @@ TLS 1.3 がネゴシエートされ、クライアントが証明書のホスト
 - 401 と 403 は同じ意味ではない。認証されていないものと、権限がないものの違いである。
 - HTTP/2 が TCP の限界をすべて解消するわけではない。その限界を解決したのは HTTP/3 側である。
 - HTTPS でも HTTP メッセージ自体はそのまま変わらない。変化するのはその下のチャネルである。
+- 持続的接続なら状態がある: 接続を再利用してもリクエストはそれぞれ独立しています。ログイン状態はクッキーやトークンでリクエストごとに載せ直されます。
+- CORS はサーバーを守る: 止めるのはブラウザで、単純リクエストは許可がなくてもサーバーまで届きます。`curl` やサーバー間の呼び出しには適用されません。
+- CORS エラーはフロントで直す: 許可はレスポンスヘッダーで出すものなので、サーバー(または開発用プロキシ)で直します。
+- `HttpOnly` ならクッキーは安全: スクリプトから読めなくするだけです。平文での送信は `Secure`、別サイト発のリクエストは `SameSite` が別に防ぎます。
+
+## 自分で説明できるべき核心概念
+
+1. **HTTP メッセージ**: 開始行、ヘッダー、空行、本文。本文の終わりは `Content-Length` か chunked で知らせます。
+2. **安全とべき等**: GET は状態を変えず、PUT・DELETE は何度送っても結果が同じ。再試行していいかがここで分かれます。
+3. **ステータスコード**: 最初の桁で読みます。401 は認証なし、403 は権限なし、304 はキャッシュをそのまま使ってよい。
+4. **キャッシュ**: `no-cache` は確認してから再利用、`no-store` は保存禁止。`ETag` と `If-None-Match` で 304 を受け取ります。
+5. **ステートレス**: サーバーはリクエスト間を覚えていません。だからサーバーを増やしやすく、状態はクッキー・トークンで毎回載せて送ります。
+6. **クッキーと属性**: `Set-Cookie` で受け取り `Cookie` で自動送信。セッションクッキーは `Secure; HttpOnly; SameSite`。
+7. **SOP と CORS**: オリジンはスキーム+ホスト+ポート。ブラウザが別オリジンのレスポンスを止め、サーバーが `Access-Control-Allow-*` ヘッダーで許可します。JSON の POST のようなリクエストは OPTIONS のプリフライトが先に行きます。
+8. **TLS 1.3**: 1-RTT のハンドシェイク、証明書と署名でサーバーを確認します。0-RTT データはリプレイ攻撃に弱いです。
+9. **HTTP/1.1 → 2 → 3**: 2 は1本の TCP 接続にストリームを混ぜる多重化とヘッダー圧縮、3 は QUIC (UDP) で TCP の head-of-line 問題と接続確立の往復を減らしました。バージョンは ALPN と Alt-Svc で交渉します。
 
 ## おすすめの記事
 
@@ -172,10 +312,27 @@ TLS 1.3 がネゴシエートされ、クライアントが証明書のホスト
 - [자세히 → DNS 와 IP·라우팅](#/post/net-dns-routing): 연결 맺기 전에 일어나는 일
 - [자세히 → API 와 REST](#/post/be-api-rest): 메서드와 상태코드를 API 에서 쓰는 법
 
-## 근거 링크
+## 根拠となるリンク
 
 - MDN, HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 - MDN, HTTP response status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 - MDN, Evolution of HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP
 - MDN, HTTP caching: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching
 - RFC 8446, The Transport Layer Security (TLS) Protocol Version 1.3: https://www.rfc-editor.org/rfc/rfc8446.html
+- MDN, Using HTTP cookies: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies
+- MDN, Set-Cookie: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie
+- MDN, Cross-Origin Resource Sharing (CORS): https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS
+- MDN, Same-origin policy: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+- RFC 9113, HTTP/2: https://www.rfc-editor.org/rfc/rfc9113.html
+- RFC 7541, HPACK: https://www.rfc-editor.org/rfc/rfc7541.html
+- RFC 9114, HTTP/3: https://www.rfc-editor.org/rfc/rfc9114.html
+- RFC 9000, QUIC: https://www.rfc-editor.org/rfc/rfc9000.html
+- RFC 7838, HTTP Alternative Services: https://www.rfc-editor.org/rfc/rfc7838.html
+
+参考(同じテーマを図で分かりやすくまとめた韓国語の記事)
+
+- Inpa Dev, Stateful / Stateless の違い: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-Stateful-Stateless-%EC%A0%95%EB%A6%AC
+- Inpa Dev, ブラウザの Cookie ヘッダーの扱い方: https://inpa.tistory.com/entry/HTTP-%F0%9F%8C%90-%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%BF%A0%ED%82%A4-%EA%B0%9C%EB%85%90-Cookie-%ED%97%A4%EB%8D%94-%EB%8B%A4%EB%A3%A8%EA%B8%B0
+- Inpa Dev, 悪名高い CORS の概念と解決法: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-CORS-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-%F0%9F%91%8F
+- Inpa Dev, HTTP 2.0 の紹介と通信技術: https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-20-%ED%86%B5%EC%8B%A0-%EA%B8%B0%EC%88%A0-%EC%9D%B4%EC%A0%9C%EB%8A%94-%ED%99%95%EC%8B%A4%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
+- Inpa Dev, HTTP 3.0 の紹介と通信技術: https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-30-%ED%86%B5%EC%8B%A0-%EA%B8%B0%EC%88%A0-%EC%9D%B4%EC%A0%9C%EB%8A%94-%ED%99%95%EC%8B%A4%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90

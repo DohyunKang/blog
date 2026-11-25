@@ -270,6 +270,121 @@ opcode 1 代表文本帧。在握手阶段读取头部的代码并未假设单�
 
 从结果可以看出，WebSocket 并非一种新的传输机制，而是在 TCP socket 之上叠加了“用 HTTP 打招呼、用帧说话”的约定。
 
+## 服务器主动通知的四种方法
+
+答案不只有 WebSocket。浏览器接收服务器消息的方法大致有四种，选哪种取决于“谁说话、说得多频繁”。
+
+1. **轮询 (Polling)**：客户端每隔固定时间（例如 5 秒）用普通 HTTP 请求问一次“有新的吗？”。没有新消息时请求和响应也照样往返，有了新消息也要等到下一次询问才知道。
+2. **长轮询 (Long Polling)**：请求一样，但服务器不立刻回答，而是把响应挂起，直到有新消息或超时。客户端收到响应后马上发出下一个请求。延迟变短了，但每条消息仍然需要一个新请求。
+3. **SSE (Server-Sent Events)**：一次请求，响应不结束而是一直流下去。在 `Content-Type: text/event-stream` 响应的正文里，连续写入由 `data: ...` 行组成、以空行结尾的事件。它是服务器到客户端的单向通道，而且就是普通 HTTP，所以代理、认证、HTTP/2 都能照常使用。
+4. **WebSocket**：如上所述，先用 HTTP 打招呼，然后把同一个 TCP 连接变成双向的帧通道。双方随时都能发送。
+
+```mermaid
+sequenceDiagram
+    participant C as 客户端
+    participant S as 服务器
+    Note over C,S: 轮询
+    C->>S: GET /news
+    S-->>C: 200 (没有)
+    C->>S: GET /news (5 秒后)
+    S-->>C: 200 (消息 1)
+    Note over C,S: 长轮询
+    C->>S: GET /news
+    Note right of S: 有消息之前一直挂起响应
+    S-->>C: 200 (消息 1)
+    C->>S: GET /news (立刻再发)
+```
+
+```mermaid
+sequenceDiagram
+    participant C as 客户端
+    participant S as 服务器
+    Note over C,S: SSE (一个响应持续很久)
+    C->>S: GET /stream (Accept: text/event-stream)
+    S-->>C: 200 text/event-stream
+    S-->>C: data: 消息 1
+    S-->>C: data: 消息 2
+    Note over C,S: WebSocket (同一 TCP 上双向)
+    C->>S: GET /chat (Upgrade: websocket)
+    S-->>C: 101 Switching Protocols
+    C->>S: 帧 "你好"
+    S-->>C: 帧 "嗨"
+    S-->>C: 帧 "有新消息"
+```
+
+| | 轮询 | 长轮询 | SSE | WebSocket |
+|---|---|---|---|---|
+| 方向 | 客户端→服务器提问 | 客户端→服务器提问 | 服务器→客户端 | 双向 |
+| 协议 | HTTP | HTTP | HTTP（响应保持打开） | 以 HTTP 开始，之后是 WebSocket 帧 |
+| 延迟 | 最多一个轮询间隔 | 短 | 短 | 短 |
+| 空请求浪费 | 多 | 少 | 无 | 无 |
+| 服务器要持有的 | 几乎没有 | 等待中的请求 | 打开的响应 | 打开的连接 |
+| 断开后重连 | 下一次轮询就是重试 | 应用重新请求 | 浏览器 `EventSource` 自动重连 | 应用自己实现 |
+| 数据 | 任意 | 任意 | UTF-8 文本 | 文本、二进制 |
+
+什么时候用哪个。我是这样划分的。
+
+- 几分钟才变一次的仪表盘、任务进度这类，**轮询**最简单也够用。服务器不需要保存状态。
+- 消息很少但一来就要马上知道，而基础设施又不喜欢长连接，就用**长轮询**。WebSocket 出现之前聊天就是这样做的，现在 WebSocket 被挡住时也还拿它当备用方案。
+- 服务器单方面持续推送的通知、日志、token 流式输出，适合 **SSE**。客户端有话要说时，另外发一个普通 POST 就行。
+- 聊天、协同编辑、游戏这种双方频繁说话的场景，用 **WebSocket**。
+
+### 为什么 LLM 流式输出用 SSE
+
+ChatGPT 或 Claude 的回答一点点冒出来，大多是 SSE。Anthropic 文档写着设置 `"stream": true` 后，响应会通过 server-sent events 逐步返回，实际的事件就是 `event: content_block_delta` 和 `data: {...}` 行的重复。请求只有一次（携带提示词的 POST），之后只有服务器在说话，所以没必要用到双向的 WebSocket。它就是普通 HTTP，可以直接沿用现有的负载均衡器和认证，这一点也很重要。
+
+有一个坑。浏览器的 `EventSource` 只能发 GET，也不能附加自定义请求头。LLM 调用需要把提示词放在正文里 POST，还要带上 API 密钥的请求头，所以不用 `EventSource`，而是用 `fetch` 发请求，把响应正文当作流来读，自己切分 `data:` 行。前面说的“边界由应用来定”在这里同样成立：空行就是事件的边界。
+
+<details>
+<summary>直接接收原始 SSE 响应（已运行确认）</summary>
+
+我用 Python 的 `http.server` 写了一个每隔 0.2 秒推送一个 token、共四个的服务器，再用 socket 接收并打印到达时间。
+
+```python
+import socket, threading, time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+class H(BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+    def log_message(self, *a): pass
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/event-stream')
+        self.send_header('Cache-Control', 'no-cache')
+        self.end_headers()
+        for i, tok in enumerate(['안', '녕', '하', '세요']):
+            self.wfile.write(f'id: {i}\ndata: {tok}\n\n'.encode()); self.wfile.flush()
+            time.sleep(0.2)
+        self.wfile.write(b'event: done\ndata: [DONE]\n\n'); self.wfile.flush()
+        self.close_connection = True
+
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H)
+port = srv.server_address[1]
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+
+s = socket.create_connection(('127.0.0.1', port))
+s.sendall(b'GET /stream HTTP/1.1\r\nHost: x\r\nAccept: text/event-stream\r\n\r\n')
+t0 = time.perf_counter()
+while (d := s.recv(4096)):
+    for line in d.decode().splitlines():
+        if line.startswith('data:'):
+            print(f'{time.perf_counter()-t0:.1f}s', line)
+```
+
+```
+0.0s data: 안
+0.2s data: 녕
+0.4s data: 하
+0.6s data: 세요
+0.8s data: [DONE]
+```
+
+只有一个响应，但正文每 0.2 秒到一点。这个例子既没有 `Content-Length` 也没有 chunked，而是靠关闭连接来表示结束。实际的服务器通常用 chunked 发送。如果用浏览器的 `EventSource` 接收，`id:` 会被记住，断线重连时通过 `Last-Event-ID` 请求头发回服务器。MDN 提到，以冒号开头的行是注释，会被忽略，可以用作保持连接的信号。
+
+</details>
+
+MDN 还指出了 SSE 的一个限制。不走 HTTP/2 时，浏览器对每个域名最多只开 6 个连接，所以开多个标签页时 SSE 会把连接占满。HTTP/2 在一个连接里混用多个流（默认大约 100 个），这个问题基本不存在。版本差异见 [HTTP 和 HTTPS](#/post/net-http)。
+
 ## 常见误解
 
 - "WebSocket 与 TCP 是不同的连接"：它们实际上是同一个 TCP 连接。握手完成后，仅仅是该连接的通信方式发生了变化。
@@ -277,6 +392,18 @@ opcode 1 代表文本帧。在握手阶段读取头部的代码并未假设单�
 - "掩码是安全功能"：RFC 中阐明的目的是防止中间设备混淆以及恶意脚本对字节的篡改。隐藏内容是由 TLS 完成的。
 - "WebSocket 总是优于轮询"：由于连接保持打开状态，服务器必须为每个连接持有资源。这一点会引出与 [负载均衡器](#/post/infra-load-balancer) 或 [异步处理与消息队列](#/post/be-async-queue) 相关的设计考量。
 - "浏览器 `WebSocket` 会自动调节速度"：MDN 指出该 API 不支持背压（即接收方无法承受时，发送方减速的机制）。如果消息到达速度快于处理能力，可能导致内存耗尽或 CPU 占用率达到 100%；若遇到此类问题，建议使用 WebTransport API。
+- “实时就一定要用 WebSocket”：只有服务器说话的通知或 LLM token 流式输出用 SSE 就够了，还能沿用 HTTP 基础设施。几分钟才变一次的数据用轮询更简单。
+- “SSE 是没人用的老技术”：主流 LLM API 的流式响应用的就是 SSE 格式。
+
+## 必须能自己讲清楚的核心概念
+
+1. **Socket**：操作系统提供的通信端点。TCP socket 只传递字节流，不提供消息边界。
+2. **分帧**：由应用决定边界的方法。固定长度、分隔符、长度前缀、关闭连接四选一。WebSocket 帧的长度字段和 SSE 的空行都是同一个问题的答案。
+3. **阻塞与事件循环**：`recv()` 默认会等待并停住。用 `select` 一类只挑出就绪的 socket 处理，一个线程就能应付很多连接。
+4. **WebSocket 握手**：HTTP GET + `Upgrade: websocket`，服务器用 101 和 `Sec-WebSocket-Accept` 回应。之后同一个 TCP 连接变成双向帧通道。
+5. **掩码**：只有客户端→服务器的帧做 XOR 掩码。它是防止中间设备混淆的机制，不是加密。
+6. **轮询、长轮询、SSE、WebSocket**：按谁提问、谁说话来选。只有服务器一直说就用 SSE，双方都说用 WebSocket，很少变化用轮询。
+7. **LLM 流式输出 = SSE**：一次 POST 之后服务器推送 `data:` 事件。在浏览器里常常用 `fetch` 流而不是 `EventSource` 来读。
 
 ## 推荐阅读文章
 
@@ -291,3 +418,11 @@ opcode 1 代表文本帧。在握手阶段读取头部的代码并未假设单�
 - Python 官方文档，Socket Programming HOWTO: https://docs.python.org/3/howto/sockets.html
 - RFC 6455, The WebSocket Protocol（仅阅读前 100,000 字符）: https://www.rfc-editor.org/rfc/rfc6455.html
 - MDN, The WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+- MDN, Using server-sent events: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+- Anthropic 文档, Streaming Messages: https://docs.anthropic.com/en/docs/build-with-claude/streaming
+
+参考（用图解把同一主题讲得很清楚的韩语文章）
+
+- Inpa Dev, Polling / Long Polling / Server Sent Event / WebSocket 总结: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-Polling-Long-Polling-Server-Sent-Event-WebSocket-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC
+- Inpa Dev, Server Sent Events 总结（含用法）: https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-Server-Sent-Events-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%EC%82%AC%EC%9A%A9%EB%B2%95
+- Inpa Dev, 从历史讲起的 WebSocket: https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-%EC%9B%B9-%EC%86%8C%EC%BC%93-Socket-%EC%97%AD%EC%82%AC%EB%B6%80%ED%84%B0-%EC%A0%95%EB%A6%AC

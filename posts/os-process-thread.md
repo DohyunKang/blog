@@ -84,6 +84,40 @@ spawn
 출력 마지막의 `spawn`은 Python 문서가 Windows와 macOS의 기본 시작 방식이라고 적은 것과 같다. 이 방식은 부모가 새 Python 인터프리터 프로세스를 시작하고, 자식은 `run()`에 필요한 자원만 물려받는다. 문서에 따르면 `fork`는 POSIX에서만 쓰고, 자식이 부모와 사실상 똑같은 상태로 시작한다.
 </details>
 
+## 주소 공간 안을 그려 보면
+
+표로 본 "공유한다/따로 갖는다"를 그림으로 옮기면 이렇다. 프로세스 하나의 주소 공간은 보통 네 구역으로 나눠 설명한다. 낮은 주소부터 적었다.
+
+1. **코드(text) 영역**: 실행할 기계어. 읽기 전용이라 같은 프로그램을 여러 번 띄우면 OS가 물리 메모리 한 벌을 같이 쓰게 할 수 있다.
+2. **데이터 영역**: 전역 변수와 `static` 변수. 초깃값이 있는 것(data)과 0으로 시작하는 것(bss)으로 다시 나뉜다. 프로그램이 끝날 때까지 산다.
+3. **힙(heap)**: 실행 중에 `malloc`이나 `new`로 달라고 한 메모리. 크기를 미리 모르는 데이터가 여기 간다. 위쪽으로 자란다고 그리는 게 관례다.
+4. **스택(stack)**: 함수를 부를 때마다 지역 변수, 매개변수, 돌아갈 주소를 쌓는 곳. 함수가 끝나면 그 칸이 바로 치워진다. 아래쪽으로 자란다고 그린다.
+
+```mermaid
+flowchart LR
+    subgraph P["프로세스 하나의 주소 공간"]
+        direction TB
+        CODE["코드(text)<br/>읽기 전용 기계어"]
+        DATA["데이터(data/bss)<br/>전역·static 변수"]
+        HEAP["힙 ↑<br/>malloc / new"]
+        GAP["(빈 공간, 공유 라이브러리 등)"]
+        S1["스레드 1의 스택 ↓"]
+        S2["스레드 2의 스택 ↓"]
+    end
+    T1(["스레드 1<br/>PC·레지스터"]) --> S1
+    T2(["스레드 2<br/>PC·레지스터"]) --> S2
+    T1 -. 같이 씀 .-> CODE
+    T1 -. 같이 씀 .-> DATA
+    T1 -. 같이 씀 .-> HEAP
+    T2 -. 같이 씀 .-> CODE
+    T2 -. 같이 씀 .-> DATA
+    T2 -. 같이 씀 .-> HEAP
+```
+
+스레드가 공유하는 건 코드, 데이터, 힙이고, 스레드마다 따로인 건 스택과 레지스터(프로그램 카운터 포함)다. 앞의 `counter` 실험이 이 그림 그대로다. 전역 변수는 데이터 영역에 있으니 스레드가 바꾼 값이 부모에게 보였고, 자식 프로세스는 주소 공간이 통째로 따로라 안 보였다.
+
+실제 배치는 이 그림보다 복잡하다. 요즘 OS는 보안을 위해 구역의 시작 주소를 실행마다 흩뜨리고(ASLR), 스레드 스택은 힙과 스택 사이 어딘가에 따로 잡힌다. 그림은 "무엇이 어디 속하나"를 보는 지도로만 쓰면 된다. 주소가 실제 메모리로 어떻게 바뀌는지는 [메모리 관리와 가상 메모리](#/post/os-memory)에 있다.
+
 ## 컨텍스트 스위칭에서 달라지는 점
 
 CPU 하나가 프로세스 A를 돌리다 B로 넘어가는 과정을 OSTEP은 이렇게 설명한다. 타이머 인터럽트가 걸리면 하드웨어가 A의 사용자 레지스터를 A의 커널 스택에 저장하고 커널로 들어간다. OS가 A에서 B로 바꾸기로 하면 `switch()` 루틴이 A의 커널 레지스터를 A의 프로세스 구조체에 저장하고, B의 것을 복원하고, 커널 스택을 B의 것으로 바꾼다. 마지막에 return-from-trap이 B의 레지스터를 복원하며 B가 달린다. 교재는 레지스터 저장이 두 번(하드웨어가 하나, 소프트웨어가 하나) 일어난다는 점을 짚는다.
@@ -218,6 +252,143 @@ gil enabled: True
 스레드는 순차와 거의 같았고, 프로세스는 빨랐다. 프로세스 쪽 시간에는 인터프리터를 띄우는 시간이 들어 있는데도 그랬다. 계산이 더 길면 차이가 더 벌어질 것이다. I/O를 기다리는 일이면 스레드도 도움이 된다.
 </details>
 
+## 멀티 프로세스냐 멀티 스레드냐
+
+일을 여러 갈래로 나눌 때 프로세스를 여럿 띄울지, 한 프로세스 안에 스레드를 여럿 둘지 골라야 한다. 지금까지 본 차이를 한 표로 모으면 이렇다.
+
+| | 멀티 프로세스 | 멀티 스레드 |
+|---|---|---|
+| 메모리 | 각자 주소 공간, 많이 쓴다 | 하나를 나눠 쓰고, 스택만 추가 |
+| 만드는·바꾸는 비용 | 크다(주소 공간 준비, 페이지 테이블 교체) | 작다 |
+| 데이터 주고받기 | IPC가 필요하고 복사 비용이 든다 | 변수로 바로, 대신 락이 필요 |
+| 하나가 죽으면 | 그 프로세스만 죽는다 | 같은 프로세스 전체가 죽을 수 있다 |
+| 흔한 버그 | 통신 프로토콜 실수 | 경쟁 상태, 교착상태 |
+| 보안 격리 | OS가 막아 준다 | 같은 메모리라 격리 없음 |
+| 어울리는 일 | 서로 믿지 않는 작업, 죽어도 되는 작업, CPU 계산(파이썬처럼 GIL이 있을 때) | 데이터를 많이 공유하는 작업, I/O 대기가 많은 작업 |
+
+정답이 하나는 아니다. 그래서 실제 프로그램은 둘을 섞는다. 아래 두 예가 그렇다.
+
+## 실제 예: 크롬과 Node.js
+
+### 크롬은 탭을 프로세스로 나눈다
+
+크롬은 대표적인 멀티 프로세스 프로그램이다. Chrome 개발자 블로그 설명으로는 역할마다 프로세스가 따로 있다.
+
+1. **브라우저 프로세스**: 주소창, 탭, 뒤로 가기 같은 바깥 화면과 다른 프로세스 관리. 파일·네트워크 같은 권한 있는 일은 여기나 별도 서비스 프로세스가 맡는다.
+2. **렌더러 프로세스**: 웹 페이지의 HTML, CSS, 자바스크립트를 실행한다. 사이트마다 따로 띄운다(Site Isolation). 다른 사이트의 iframe도 별도 렌더러로 간다.
+3. **GPU 프로세스**: 화면 그리기를 한곳에서 처리한다.
+4. **네트워크·유틸리티 프로세스**: 네트워크 같은 기능을 서비스로 떼어 낸 것.
+
+```mermaid
+flowchart TB
+    B["브라우저 프로세스<br/>주소창·탭·권한 있는 일"]
+    R1["렌더러 A<br/>site-a.com"]
+    R2["렌더러 B<br/>site-b.com"]
+    G["GPU 프로세스"]
+    N["네트워크 서비스"]
+    B <-- IPC --> R1
+    B <-- IPC --> R2
+    B <-- IPC --> G
+    B <-- IPC --> N
+```
+
+이렇게 나눈 이유가 위 표의 "하나가 죽으면"과 "보안 격리" 두 줄이다. 한 탭의 페이지가 무한 루프에 빠지거나 죽어도 그 렌더러만 죽고 나머지 탭은 산다. 렌더러는 권한을 최소로 줄인 샌드박스 안에서 돌아서, 악성 페이지가 렌더러를 장악해도 다른 사이트의 메모리나 내 파일을 바로 읽지 못한다. 대가는 메모리다. 프로세스마다 주소 공간과 기본 자원이 따로 들기 때문에, 블로그 설명으로는 크롬이 기기 메모리와 CPU에 맞춰 프로세스 수에 한도를 두고, 한도에 닿으면 같은 사이트의 탭 여러 개를 한 프로세스에서 돌린다. 크롬 작업 관리자(Shift+Esc)를 열면 이 프로세스들이 실제로 보인다.
+
+### Node.js는 스레드 하나로 시작해서 필요할 때 늘린다
+
+Node.js는 반대쪽에서 출발한다. 내 자바스크립트 코드는 기본적으로 스레드 하나에서 돈다.
+
+1. **이벤트 루프**: 자바스크립트를 실행하는 스레드 하나가 "할 일 큐"에서 콜백을 하나씩 꺼내 실행한다. Node 공식 문서는 루프를 timers, pending callbacks, poll(I/O), check(`setImmediate`), close callbacks 같은 단계로 설명한다. 네트워크 I/O는 OS에 맡기고 끝났다는 알림만 받으니, 앞 [소켓 글](#/post/net-socket)의 `select` 서버처럼 스레드 하나로 연결 수천 개를 다룬다.
+2. **libuv 스레드 풀**: OS가 비동기로 못 해 주는 일(파일 읽기, 일부 암호 연산, 압축, `dns.lookup`)은 뒤에서 스레드 풀이 처리한다. 기본 크기는 4이고 `UV_THREADPOOL_SIZE`로 바꾼다. 그러니 "Node는 단일 스레드"는 내 JS 코드에 한정된 말이다.
+3. **cluster**: 같은 서버 코드를 프로세스 여러 개로 띄워 코어를 다 쓰는 모듈이다. 공식 문서에 따르면 Windows를 뺀 플랫폼의 기본은 주 프로세스가 포트에서 연결을 받아 워커들에 라운드 로빈으로 나눠 주는 방식이다. 워커끼리는 메모리를 공유하지 않는다. 멀티 프로세스다.
+4. **worker_threads**: 한 프로세스 안에 자바스크립트 스레드를 더 만든다. 각 워커는 자기 이벤트 루프를 갖고 `postMessage`로 메시지를 주고받으며, `SharedArrayBuffer`로 메모리를 공유할 수도 있다. 공식 문서는 CPU를 많이 쓰는 JS 작업에 쓰라고 하고, I/O 작업에는 별 도움이 안 된다고 적는다.
+
+```mermaid
+flowchart LR
+    subgraph PROC["Node 프로세스 하나"]
+        direction TB
+        Q["콜백 큐"] --> L["이벤트 루프<br/>(내 JS 코드가 도는 스레드)"]
+        L -- 파일·압축·암호 --> TP["libuv 스레드 풀(기본 4)"]
+        TP -- 끝났어요 --> Q
+        L -- postMessage --> W["worker_threads<br/>(별도 JS 스레드)"]
+        W -- postMessage --> Q
+    end
+    OS["OS 커널<br/>(네트워크 I/O 알림)"] -- 준비됨 --> Q
+```
+
+<details>
+<summary>계산이 이벤트 루프를 막는 것과 워커로 옮긴 것 (실행 확인)</summary>
+
+100ms마다 도는 타이머를 걸어 두고, 피보나치 40을 메인 스레드와 워커 스레드에서 각각 계산했다. Node 24, 리눅스에서 돌렸다.
+
+```js
+const { Worker, isMainThread, parentPort, workerData } = require('node:worker_threads');
+function fib(n) { return n < 2 ? n : fib(n - 1) + fib(n - 2); }
+
+if (isMainThread) {
+  const mode = process.argv[2];               // 'main' 또는 'worker'
+  const t0 = Date.now();
+  let ticks = 0;
+  const iv = setInterval(() => ticks++, 100);  // 100ms마다 한 번씩 오면 정상
+  const done = (r) => {
+    clearInterval(iv);
+    console.log(`${mode}: fib=${r}, ${Date.now() - t0}ms 동안 타이머 ${ticks}번`);
+  };
+  if (mode === 'main') {
+    setTimeout(() => done(fib(40)), 0);       // 메인 스레드에서 계산
+  } else {
+    const w = new Worker(__filename, { workerData: 40 });
+    w.on('message', done);                    // 워커 스레드에서 계산
+  }
+} else {
+  parentPort.postMessage(fib(workerData));
+}
+```
+
+```
+main: fib=102334155, 830ms 동안 타이머 0번
+worker: fib=102334155, 847ms 동안 타이머 8번
+```
+
+메인에서 계산한 0.8초 동안 타이머는 한 번도 못 돌았다. 서버였다면 그동안 모든 요청이 멈췄다는 뜻이다. 워커로 옮기자 같은 시간 동안 타이머가 8번 돌았다. 계산 시간 자체는 비슷하다. 빨라진 게 아니라 이벤트 루프가 안 막힌 것이다.
+
+cluster도 돌려 봤다. 워커 프로세스 둘이 같은 8124 포트로 서버를 열고, 주 프로세스가 요청 6개를 보냈다.
+
+```js
+const cluster = require('node:cluster');
+const http = require('node:http');
+if (cluster.isPrimary) {
+  for (let i = 0; i < 2; i++) cluster.fork();
+  // 둘 다 listening이 되면 fetch 6번 → 응답에 담긴 pid를 센다
+} else {
+  http.createServer((req, res) => res.end(String(process.pid))).listen(8124);
+}
+```
+
+```
+primary 185877 응답한 워커: { '185884': 3, '185885': 3 }
+```
+
+pid가 다른 두 프로세스가 3번씩 나눠 받았다. 포트 하나를 프로세스 여럿이 같이 쓰는 건 주 프로세스가 연결을 받아 넘겨 주기 때문이다.
+
+</details>
+
+## 프로세스끼리 말하는 방법(IPC)
+
+프로세스는 주소 공간이 갈라져 있으니 OS가 마련한 통로로 말해야 한다. 이걸 IPC(프로세스 간 통신)라 한다. 자주 보는 것만 추렸다.
+
+| 방법 | 어떻게 | 쓰는 곳 |
+|---|---|---|
+| **파이프** | 한쪽이 쓰면 다른 쪽이 읽는 바이트 통로. 이름 없는 파이프는 부모·자식 사이 | 셸의 `ls \| grep`, 파이썬 `multiprocessing.Pipe` |
+| **이름 있는 파이프(FIFO)** | 파일 시스템에 이름이 있는 파이프. 관계없는 프로세스끼리도 연결 | 간단한 로컬 연동 |
+| **메시지 큐** | 경계가 있는 메시지 단위로 넣고 꺼냄 | POSIX 메시지 큐, `multiprocessing.Queue`(속은 파이프+직렬화) |
+| **공유 메모리** | 같은 물리 메모리를 두 주소 공간에 붙임. 복사가 없어 제일 빠름 | 대용량 데이터, 대신 동기화(락·세마포어)를 직접 |
+| **소켓** | 네트워크와 같은 API. 같은 기계면 유닉스 도메인 소켓 | DB 접속, 다른 기계와도 같은 코드 |
+| **시그널** | 번호 하나짜리 알림(예: 종료하라는 SIGTERM) | `kill`, Ctrl+C |
+| **메모리 맵 파일** | 파일을 주소 공간에 매핑해 여럿이 읽고 씀 | 큰 파일 공유 |
+
+고르는 기준은 대충 이렇다. 바이트 흐름이면 파이프, 메시지 단위면 큐, 크고 자주 바뀌는 데이터면 공유 메모리, 나중에 다른 기계로 갈 수 있으면 처음부터 소켓. 공유 메모리를 쓰는 순간 스레드에서 본 경쟁 상태가 프로세스 사이에서 그대로 돌아온다는 점은 기억해 둘 만하다. 앞의 크롬 그림에서 프로세스를 잇는 IPC 화살표, cluster의 주 프로세스와 워커 사이 통신도 전부 이 목록 위에 만든 것이다.
+
 ## 흔한 오해
 
 - 스레드는 가벼운 프로세스일 뿐이다: 주소 공간을 공유한다는 차이가 안전성과 통신 방식을 바꾼다. 가볍다는 건 그 결과다.
@@ -226,6 +397,21 @@ gil enabled: True
 - 스레드를 늘리면 빨라진다: 코어 수를 넘으면 전환이 늘고, 공유 데이터에는 락이 필요해진다.
 - Blocked 프로세스가 CPU를 잡고 기다린다: 기다리는 동안 CPU는 다른 프로세스에게 넘어간다.
 
+- 크롬은 탭 하나에 프로세스 하나다: 기준은 탭이 아니라 사이트에 가깝다. 다른 사이트의 iframe은 별도 프로세스로 가고, 프로세스 수가 한도에 닿으면 같은 사이트 탭끼리 한 프로세스를 쓰기도 한다.
+- Node.js는 완전한 단일 스레드다: 내 JS 코드가 도는 스레드가 하나일 뿐이고, 파일 I/O 등은 libuv 스레드 풀이 처리한다. `worker_threads`로 JS 스레드도 늘릴 수 있다.
+- `worker_threads`를 쓰면 I/O가 빨라진다: 공식 문서는 CPU 작업용이라고 적는다. I/O는 원래 이벤트 루프가 안 막고 처리한다.
+
+## 직접 설명할 수 있어야 할 핵심 개념
+
+1. **프로세스와 스레드**: 프로세스는 실행 중인 프로그램이고 자기 주소 공간을 가진다. 스레드는 그 안의 실행 흐름이고 주소 공간을 공유한다.
+2. **메모리 구역**: 코드·데이터·힙은 스레드끼리 공유, 스택과 레지스터는 스레드마다 따로. 지역 변수는 스택, 전역 변수는 데이터, `new`로 만든 건 힙.
+3. **컨텍스트 스위칭**: 레지스터를 저장·복원하는 일. 프로세스 전환은 주소 공간(페이지 테이블)까지 바꿔서 더 비싸다.
+4. **fork / exec / wait**: 복사본을 만들고, 다른 프로그램으로 갈아입고, 끝나길 기다린다.
+5. **경쟁 상태**: 공유 데이터를 여러 스레드가 동시에 읽고 쓰면 타이밍에 따라 결과가 바뀐다. 락으로 막는다.
+6. **멀티 프로세스 vs 멀티 스레드**: 격리와 안정성이냐, 가벼움과 쉬운 공유냐. 크롬은 격리를 위해 프로세스를 나눴다.
+7. **Node 이벤트 루프와 확장**: JS는 스레드 하나에서 콜백을 차례로 돈다. CPU 계산은 `worker_threads`, 코어 전체 활용은 `cluster`(프로세스 여러 개).
+8. **IPC**: 파이프, 메시지 큐, 공유 메모리, 소켓, 시그널. 공유 메모리는 빠르지만 동기화가 내 몫이다.
+
 ## 근거 링크
 
 - OSTEP, The Abstraction: The Process: https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf
@@ -233,6 +419,19 @@ gil enabled: True
 - OSTEP, Mechanism: Limited Direct Execution: https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf
 - OSTEP, Concurrency: An Introduction: https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf
 - Python 문서, multiprocessing: https://docs.python.org/3/library/multiprocessing.html
+- Chrome for Developers, Inside look at modern web browser (part 1): https://developer.chrome.com/blog/inside-browser-part1
+- Chromium, Multi-process Architecture: https://www.chromium.org/developers/design-documents/multi-process-architecture/
+- Chromium, Site Isolation: https://www.chromium.org/Home/chromium-security/site-isolation/
+- Node.js 문서, The Node.js Event Loop: https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+- Node.js 문서, Cluster: https://nodejs.org/api/cluster.html
+- Node.js 문서, Worker threads: https://nodejs.org/api/worker_threads.html
+- Linux man-pages, pipe(7) · shm_overview(7) · unix(7): https://man7.org/linux/man-pages/man7/pipe.7.html
+
+참고(같은 주제를 그림으로 잘 정리한 글)
+
+- Inpa Dev, 완전히 정복하는 프로세스 vs 스레드 개념: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%E2%9A%94%EF%B8%8F-%EC%93%B0%EB%A0%88%EB%93%9C-%EC%B0%A8%EC%9D%B4
+- Inpa Dev, 멀티 프로세스 vs 멀티 스레드 비교 총정리: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-multi-process-multi-thread
+- Inpa Dev, 스레드를 많이 쓸수록 항상 성능이 좋아질까?: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-Is-more-threads-always-better
 
 ← 개념 지도로 (#/post/cs-map)
 

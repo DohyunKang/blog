@@ -270,6 +270,121 @@ opcode 1 はテキストフレームです。ハンドシェークでヘッダ�
 
 結果を見ると、ウェブソケットは新しい転送手段ではなく、TCP ソケットの上に「HTTP で挨拶し、フレームで話す」という約束を載せたものであることがコードからわかります。
 
+## サーバーから先に知らせる4つの方法
+
+答えは WebSocket だけではありません。ブラウザがサーバーの知らせを受け取る方法は大きく4つあり、どれを選ぶかは「誰がどれくらいの頻度で話すか」で決まります。
+
+1. **ポーリング (Polling)**: クライアントが決まった間隔(例: 5秒)ごとに普通の HTTP リクエストで「新しいのある?」と聞きます。新しい知らせがなくてもリクエストとレスポンスが行き来し、知らせが出ても次に聞くまで分かりません。
+2. **ロングポーリング (Long Polling)**: リクエストは同じですが、サーバーはすぐに答えず、知らせが出るかタイムアウトになるまでレスポンスを保留します。レスポンスを受け取ったクライアントはすぐ次のリクエストを出します。遅延は短くなりますが、知らせ1つごとに新しいリクエストが1つ必要です。
+3. **SSE (Server-Sent Events)**: 1回のリクエストでレスポンスを終わらせず、流し続けます。`Content-Type: text/event-stream` のレスポンス本文に、`data: ...` 行と空行で終わるイベントを続けて書く方式です。サーバーからクライアントへの一方向で、ただの HTTP なのでプロキシ・認証・HTTP/2 をそのまま使えます。
+4. **WebSocket**: 上で見たとおり HTTP で挨拶したあと、同じ TCP 接続を双方向のフレーム通路に切り替えます。どちらからでもいつでも送れます。
+
+```mermaid
+sequenceDiagram
+    participant C as クライアント
+    participant S as サーバー
+    Note over C,S: ポーリング
+    C->>S: GET /news
+    S-->>C: 200 (なし)
+    C->>S: GET /news (5秒後)
+    S-->>C: 200 (知らせ 1)
+    Note over C,S: ロングポーリング
+    C->>S: GET /news
+    Note right of S: 知らせが出るまでレスポンスを保留
+    S-->>C: 200 (知らせ 1)
+    C->>S: GET /news (すぐ再送)
+```
+
+```mermaid
+sequenceDiagram
+    participant C as クライアント
+    participant S as サーバー
+    Note over C,S: SSE (1つのレスポンスが長く続く)
+    C->>S: GET /stream (Accept: text/event-stream)
+    S-->>C: 200 text/event-stream
+    S-->>C: data: 知らせ 1
+    S-->>C: data: 知らせ 2
+    Note over C,S: WebSocket (同じ TCP 上で双方向)
+    C->>S: GET /chat (Upgrade: websocket)
+    S-->>C: 101 Switching Protocols
+    C->>S: フレーム「こんにちは」
+    S-->>C: フレーム「やあ」
+    S-->>C: フレーム「新着メッセージ」
+```
+
+| | ポーリング | ロングポーリング | SSE | WebSocket |
+|---|---|---|---|---|
+| 方向 | クライアント→サーバーに質問 | クライアント→サーバーに質問 | サーバー→クライアント | 双方向 |
+| プロトコル | HTTP | HTTP | HTTP (レスポンスが開いたまま) | HTTP で始まり WebSocket フレームへ |
+| 遅延 | 最大でポーリング間隔 | 短い | 短い | 短い |
+| 空振りリクエスト | 多い | 少ない | なし | なし |
+| サーバーが抱えるもの | ほぼなし | 待機中のリクエスト | 開いたレスポンス | 開いた接続 |
+| 切れたときの再接続 | 次のポーリングが再試行 | アプリが再リクエスト | ブラウザの `EventSource` が自動再接続 | アプリが自分で実装 |
+| データ | 何でも | 何でも | UTF-8 テキスト | テキスト・バイナリ |
+
+いつ何を使うか。私の基準はこうです。
+
+- 数分に1回変わるダッシュボードやジョブの進捗くらいなら **ポーリング** が一番単純で十分です。サーバーが状態を持つ必要もありません。
+- 知らせはまれだが来たらすぐ知りたい、でもインフラが長い接続を嫌うなら **ロングポーリング** です。WebSocket 以前のチャットはこう作られていて、今も WebSocket が使えないときの代替手段として使われます。
+- サーバーが一方的に送り続ける通知、ログ、トークンのストリーミングは **SSE** が合います。クライアントが送りたいときだけ普通の POST を送ればいいです。
+- チャット、共同編集、ゲームのように双方が頻繁に話すなら **WebSocket** です。
+
+### LLM のストリーミングが SSE な理由
+
+ChatGPT や Claude の回答が少しずつ表示されるのは、ほとんどが SSE です。Anthropic のドキュメントには `"stream": true` を指定するとレスポンスが server-sent events で少しずつ届くとあり、実際のイベントは `event: content_block_delta` と `data: {...}` 行の繰り返しです。リクエストは1回(プロンプトを載せた POST)で、その後はサーバーだけが話すので、双方向の WebSocket まで行く理由がありません。ただの HTTP なので既存のロードバランサーや認証をそのまま使えるのも大きいです。
+
+落とし穴が1つあります。ブラウザの `EventSource` は GET しか送れず、任意のヘッダーも付けられません。本文にプロンプトを載せて POST し API キーのヘッダーを付ける必要がある LLM 呼び出しは、`EventSource` の代わりに `fetch` でリクエストし、レスポンス本文をストリームとして読みながら `data:` 行を自分で切り分けます。前に見た「境界はアプリが決める」がここでもそのままです。空行がイベントの境界です。
+
+<details>
+<summary>SSE レスポンスを生のまま受け取る (実行確認)</summary>
+
+Python の `http.server` でトークン4つを0.2秒間隔で流すサーバーを作り、ソケットで受け取りながら到着時刻を表示しました。
+
+```python
+import socket, threading, time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+class H(BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+    def log_message(self, *a): pass
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/event-stream')
+        self.send_header('Cache-Control', 'no-cache')
+        self.end_headers()
+        for i, tok in enumerate(['안', '녕', '하', '세요']):
+            self.wfile.write(f'id: {i}\ndata: {tok}\n\n'.encode()); self.wfile.flush()
+            time.sleep(0.2)
+        self.wfile.write(b'event: done\ndata: [DONE]\n\n'); self.wfile.flush()
+        self.close_connection = True
+
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H)
+port = srv.server_address[1]
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+
+s = socket.create_connection(('127.0.0.1', port))
+s.sendall(b'GET /stream HTTP/1.1\r\nHost: x\r\nAccept: text/event-stream\r\n\r\n')
+t0 = time.perf_counter()
+while (d := s.recv(4096)):
+    for line in d.decode().splitlines():
+        if line.startswith('data:'):
+            print(f'{time.perf_counter()-t0:.1f}s', line)
+```
+
+```
+0.0s data: 안
+0.2s data: 녕
+0.4s data: 하
+0.6s data: 세요
+0.8s data: [DONE]
+```
+
+レスポンスは1つなのに、本文が0.2秒ごとに少しずつ届きました。この例は `Content-Length` も chunked もなしで、接続を閉じることで終わりを知らせています。実際のサーバーは普通 chunked で送ります。ブラウザの `EventSource` で受けると `id:` が記憶され、切断後に再接続するとき `Last-Event-ID` ヘッダーでサーバーに戻ります。MDN によれば、コロンで始まる行はコメントとして無視され、接続維持用の信号に使えます。
+
+</details>
+
+MDN が指摘する SSE の制約もあります。HTTP/2 でない場合、ブラウザはドメインあたり最大6本しか接続を開かないので、タブを複数開くと SSE が接続を使い切ってしまいます。HTTP/2 では1本の接続に多数のストリーム(既定で100本ほど)を混ぜて使うので、この問題はほぼありません。バージョンの違いは [HTTP と HTTPS](#/post/net-http) にあります。
+
 ## よくある誤解
 
 - "WebSocket は TCP と異なる接続である": 同じ TCP 接続です。ハンドシェイクが完了した後、その接続の通信プロトコル（プロトコル）のみが変更されます。
@@ -277,6 +392,18 @@ opcode 1 はテキストフレームです。ハンドシェークでヘッダ�
 - "マスキングはセキュリティ機能である": RFC が明記した目的は、中間機器の混乱防止と悪意のあるスクリプトによるバイト操作の防止です。コンテンツを隠すのは TLS の役割です。
 - "WebSocket は常にポーリングより優れている": 接続を常時維持するため、サーバー側は接続数に応じたリソースを確保する必要があります。この点は [ロードバランサー](#/post/infra-load-balancer) や [非同期処理とメッセージキュー](#/post/be-async-queue) とともに設計に反映されます。
 - "ブラウザの `WebSocket` は自動的に速度制御を行う": MDN は、この API がバックプレッシャー（受け手が処理しきれない場合に送信側を遅らせる仕組み）をサポートしていないと述べています。メッセージが処理速度よりも速く届くとメモリ不足や CPU 使用率が 100% になる可能性があるとしており、問題がある場合は WebTransport API を検討するよう推奨しています。
+- 「リアルタイムなら必ず WebSocket」: サーバーだけが話す通知や LLM のトークンストリーミングは SSE で十分で、HTTP インフラをそのまま使えます。数分単位で変わるデータならポーリングのほうが単純です。
+- 「SSE は古い技術で使われていない」: 主要な LLM API のストリーミングレスポンスは SSE 形式です。
+
+## 自分で説明できるべき核心概念
+
+1. **ソケット**: OS が提供する通信の端点。TCP ソケットはバイトの流れだけを渡し、メッセージの境界はくれません。
+2. **フレーミング**: 境界をアプリが決める方法。固定長、区切り文字、長さの前置、接続を閉じる、のどれか。WebSocket フレームの長さフィールドも SSE の空行も同じ問題への答えです。
+3. **ブロッキングとイベントループ**: `recv()` は既定で待って止まります。`select` 系で準備できたソケットだけを選んで処理すれば、1スレッドで多くの接続を扱えます。
+4. **WebSocket ハンドシェイク**: HTTP GET + `Upgrade: websocket`、サーバーは 101 と `Sec-WebSocket-Accept` で応えます。以後、同じ TCP 接続が双方向のフレーム通路になります。
+5. **マスキング**: クライアント→サーバーのフレームだけ XOR でマスクします。中間装置の混乱を防ぐ仕組みで、暗号化ではありません。
+6. **ポーリング・ロングポーリング・SSE・WebSocket**: 誰が聞き誰が話すかで選びます。サーバーだけが話し続けるなら SSE、双方が話すなら WebSocket、まれにしか変わらないならポーリング。
+7. **LLM ストリーミング = SSE**: POST 1回のあと、サーバーが `data:` イベントを流します。ブラウザでは `EventSource` ではなく `fetch` のストリームで読むことが多いです。
 
 ## 関連記事
 
@@ -291,3 +418,11 @@ opcode 1 はテキストフレームです。ハンドシェークでヘッダ�
 - Python 公式ドキュメント、Socket Programming HOWTO: https://docs.python.org/3/howto/sockets.html
 - RFC 6455, The WebSocket Protocol（冒頭 100,000 文字まで参照）: https://www.rfc-editor.org/rfc/rfc6455.html
 - MDN, The WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+- MDN, Using server-sent events: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+- Anthropic ドキュメント, Streaming Messages: https://docs.anthropic.com/en/docs/build-with-claude/streaming
+
+参考(同じテーマを図で分かりやすくまとめた韓国語の記事)
+
+- Inpa Dev, Polling / Long Polling / Server Sent Event / WebSocket まとめ: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-Polling-Long-Polling-Server-Sent-Event-WebSocket-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC
+- Inpa Dev, Server Sent Events まとめ(使い方付き): https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-Server-Sent-Events-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%EC%82%AC%EC%9A%A9%EB%B2%95
+- Inpa Dev, WebSocket を歴史から整理: https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-%EC%9B%B9-%EC%86%8C%EC%BC%93-Socket-%EC%97%AD%EC%82%AC%EB%B6%80%ED%84%B0-%EC%A0%95%EB%A6%AC

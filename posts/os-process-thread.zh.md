@@ -84,6 +84,40 @@ spawn
 输出末尾的 `spawn` 表示 Python 文档中所述的 Windows 和 macOS 默认启动方式：父进程启动新的 Python 解释器进程，子进程仅继承运行 `run()` 所需的资源。根据文档，`fork` 仅在 POSIX 系统中使用，且子进程以与父进程几乎完全相同的状态启动。
 </details>
 
+## 把地址空间里面画出来
+
+把表格里“共享/各自拥有”画成图就是这样。一个进程的地址空间通常分成四个区域来讲，下面从低地址往上写。
+
+1. **代码 (text) 区**：要执行的机器码。它是只读的，所以同一个程序启动多次时，操作系统可以让它们共用一份物理内存。
+2. **数据区**：全局变量和 `static` 变量。又分为有初始值的 (data) 和从 0 开始的 (bss)。一直存活到程序结束。
+3. **堆 (heap)**：运行时用 `malloc` 或 `new` 申请的内存。事先不知道大小的数据放在这里。惯例上画成向上增长。
+4. **栈 (stack)**：每次调用函数，都会在这里压入局部变量、参数和返回地址。函数结束后那一格马上被清掉。画成向下增长。
+
+```mermaid
+flowchart LR
+    subgraph P["一个进程的地址空间"]
+        direction TB
+        CODE["代码 (text)<br/>只读机器码"]
+        DATA["数据 (data/bss)<br/>全局、static 变量"]
+        HEAP["堆 ↑<br/>malloc / new"]
+        GAP["（空闲区域、共享库等）"]
+        S1["线程 1 的栈 ↓"]
+        S2["线程 2 的栈 ↓"]
+    end
+    T1(["线程 1<br/>PC、寄存器"]) --> S1
+    T2(["线程 2<br/>PC、寄存器"]) --> S2
+    T1 -. 共享 .-> CODE
+    T1 -. 共享 .-> DATA
+    T1 -. 共享 .-> HEAP
+    T2 -. 共享 .-> CODE
+    T2 -. 共享 .-> DATA
+    T2 -. 共享 .-> HEAP
+```
+
+线程共享的是代码、数据和堆，每个线程各自拥有的是栈和寄存器（包括程序计数器）。前面的 `counter` 实验正是这张图。全局变量在数据区，所以线程改的值父进程看得到；子进程的地址空间整个是另一份，所以看不到。
+
+实际布局比这张图复杂。现代操作系统为了安全，每次运行都会打乱各区域的起始地址 (ASLR)，线程栈则另外分配在堆和栈之间的某处。这张图只当作看“什么属于哪里”的地图就够了。地址如何变成实际内存，见 [内存管理与虚拟内存](#/post/os-memory)。
+
 ## 上下文切换中的差异
 
 OSTEP 对 CPU 从执行进程 A 切换到 B 的过程描述如下：当定时器中断发生时，硬件将 A 的用户寄存器保存到 A 的内核栈中，并进入内核。操作系统决定从 A 切换到 B 后，`switch()` 例程将 A 的内核寄存器保存到 A 的进程结构体中，恢复 B 的寄存器，并将内核栈切换为 B 的。最后，通过返回陷阱（return-from-trap）恢复 B 的寄存器，B 开始执行。教材指出寄存器保存发生了两次（一次由硬件完成，一次由软件完成）。
@@ -218,6 +252,143 @@ gil enabled: True
 线程的运行时间与顺序执行几乎相同，而进程反而更快。尽管进程耗时中包含了启动解释器的时间，结果依然如此。如果计算量更大，差异会更加明显。如果是等待 I/O 的场景，使用线程也会有所帮助。
 </details>
 
+## 多进程还是多线程
+
+把工作分成几路时，要在“启动多个进程”和“在一个进程里放多个线程”之间做选择。把目前看到的区别汇总成一张表：
+
+| | 多进程 | 多线程 |
+|---|---|---|
+| 内存 | 各自的地址空间，占用多 | 共用一个，只多出栈 |
+| 创建、切换成本 | 高（准备地址空间、切换页表） | 低 |
+| 交换数据 | 需要 IPC，有复制成本 | 直接通过变量，但需要锁 |
+| 一个崩溃时 | 只有那个进程崩溃 | 整个进程都可能崩溃 |
+| 常见 bug | 通信协议写错 | 竞态条件、死锁 |
+| 安全隔离 | 操作系统负责隔离 | 同一块内存，没有隔离 |
+| 适合的工作 | 互不信任的任务、崩了也没关系的任务、CPU 计算（像 Python 这样有 GIL 时） | 大量共享数据的任务、I/O 等待多的任务 |
+
+没有唯一的正确答案，所以实际的程序会把两者混着用。下面两个例子就是这样。
+
+## 实际例子：Chrome 和 Node.js
+
+### Chrome 把标签页拆成进程
+
+Chrome 是典型的多进程程序。按 Chrome 开发者博客的说明，不同角色各有自己的进程。
+
+1. **浏览器进程**：地址栏、标签页、后退按钮这些外层界面，以及管理其他进程。文件、网络这类有权限的工作由它或单独的服务进程负责。
+2. **渲染进程**：执行网页的 HTML、CSS 和 JavaScript。每个站点单独启动一个 (Site Isolation)。跨站点的 iframe 也会放到单独的渲染进程。
+3. **GPU 进程**：在一个地方统一处理绘制。
+4. **网络、工具进程**：把网络等功能拆成服务。
+
+```mermaid
+flowchart TB
+    B["浏览器进程<br/>地址栏、标签页、有权限的工作"]
+    R1["渲染进程 A<br/>site-a.com"]
+    R2["渲染进程 B<br/>site-b.com"]
+    G["GPU 进程"]
+    N["网络服务"]
+    B <-- IPC --> R1
+    B <-- IPC --> R2
+    B <-- IPC --> G
+    B <-- IPC --> N
+```
+
+这样拆分的理由就是上表里“一个崩溃时”和“安全隔离”这两行。某个标签页的页面陷入死循环或崩溃，也只有那个渲染进程挂掉，其他标签页照常运行。渲染进程运行在权限最小化的沙箱里，即使恶意页面控制了渲染进程，也无法直接读取其他站点的内存或我的文件。代价是内存。每个进程都要单独的地址空间和基础资源，博客里说 Chrome 会根据设备的内存和 CPU 给进程数设上限，达到上限后就把同一站点的多个标签页放在一个进程里运行。打开 Chrome 的任务管理器 (Shift+Esc) 就能真正看到这些进程。
+
+### Node.js 从一个线程起步，需要时再增加
+
+Node.js 从另一端出发。我写的 JavaScript 代码默认在一个线程上运行。
+
+1. **事件循环**：执行 JavaScript 的那一个线程，从“待办队列”里一次取出一个回调执行。Node 官方文档把循环分成 timers、pending callbacks、poll (I/O)、check (`setImmediate`)、close callbacks 等阶段来说明。网络 I/O 交给操作系统，只接收“完成了”的通知，所以就像 [socket 那篇](#/post/net-socket) 里的 `select` 服务器一样，一个线程就能处理成千上万个连接。
+2. **libuv 线程池**：操作系统没法异步完成的工作（读文件、部分加密运算、压缩、`dns.lookup`）由后台的线程池处理。默认大小是 4，可以用 `UV_THREADPOOL_SIZE` 修改。所以“Node 是单线程”只是针对我的 JS 代码而言。
+3. **cluster**：把同一份服务器代码启动成多个进程、用满所有核心的模块。按官方文档，除 Windows 外所有平台的默认做法，是主进程在端口上接受连接，再以轮转 (round-robin) 方式分给各个工作进程。工作进程之间不共享内存。这是多进程。
+4. **worker_threads**：在一个进程里再创建 JavaScript 线程。每个 worker 有自己的事件循环，用 `postMessage` 收发消息，也可以通过 `SharedArrayBuffer` 共享内存。官方文档建议把它用于 CPU 密集的 JS 任务，并说明它对 I/O 任务帮助不大。
+
+```mermaid
+flowchart LR
+    subgraph PROC["一个 Node 进程"]
+        direction TB
+        Q["回调队列"] --> L["事件循环<br/>（运行我的 JS 的线程）"]
+        L -- 文件、压缩、加密 --> TP["libuv 线程池（默认 4）"]
+        TP -- 完成 --> Q
+        L -- postMessage --> W["worker_threads<br/>（单独的 JS 线程）"]
+        W -- postMessage --> Q
+    end
+    OS["操作系统内核<br/>（网络 I/O 就绪通知）"] -- 就绪 --> Q
+```
+
+<details>
+<summary>计算阻塞事件循环 vs 移到 worker（已运行确认）</summary>
+
+我设了一个每 100ms 触发一次的定时器，然后分别在主线程和 worker 线程里计算斐波那契 40。在 Linux 上用 Node 24 运行。
+
+```js
+const { Worker, isMainThread, parentPort, workerData } = require('node:worker_threads');
+function fib(n) { return n < 2 ? n : fib(n - 1) + fib(n - 2); }
+
+if (isMainThread) {
+  const mode = process.argv[2];               // 'main' 또는 'worker'
+  const t0 = Date.now();
+  let ticks = 0;
+  const iv = setInterval(() => ticks++, 100);  // 100ms마다 한 번씩 오면 정상
+  const done = (r) => {
+    clearInterval(iv);
+    console.log(`${mode}: fib=${r}, ${Date.now() - t0}ms 동안 타이머 ${ticks}번`);
+  };
+  if (mode === 'main') {
+    setTimeout(() => done(fib(40)), 0);       // 메인 스레드에서 계산
+  } else {
+    const w = new Worker(__filename, { workerData: 40 });
+    w.on('message', done);                    // 워커 스레드에서 계산
+  }
+} else {
+  parentPort.postMessage(fib(workerData));
+}
+```
+
+```
+main: fib=102334155, 830ms 동안 타이머 0번
+worker: fib=102334155, 847ms 동안 타이머 8번
+```
+
+（`동안 타이머 N번` 的意思是“这段时间里定时器触发了 N 次”。）在主线程计算的 0.8 秒里，定时器一次都没能执行。如果是服务器，就意味着这段时间所有请求都卡住了。移到 worker 之后，同样的时间里定时器执行了 8 次。计算时间本身差不多。不是变快了，而是事件循环不再被阻塞。
+
+我也试了 cluster。两个工作进程在同一个 8124 端口上开服务器，主进程发了 6 个请求。
+
+```js
+const cluster = require('node:cluster');
+const http = require('node:http');
+if (cluster.isPrimary) {
+  for (let i = 0; i < 2; i++) cluster.fork();
+  // 둘 다 listening이 되면 fetch 6번 → 응답에 담긴 pid를 센다
+} else {
+  http.createServer((req, res) => res.end(String(process.pid))).listen(8124);
+}
+```
+
+```
+primary 185877 응답한 워커: { '185884': 3, '185885': 3 }
+```
+
+两个 pid 不同的进程各接了 3 个。多个进程能共用一个端口，是因为主进程接受连接后再转交出去。
+
+</details>
+
+## 进程之间怎么说话 (IPC)
+
+进程的地址空间是分开的，所以必须通过操作系统准备的通道来说话。这叫 IPC（进程间通信）。只挑常见的几种：
+
+| 方法 | 怎么做 | 用在哪里 |
+|---|---|---|
+| **管道** | 一端写、另一端读的字节通道。匿名管道用于父子进程之间 | shell 的 `ls \| grep`、Python 的 `multiprocessing.Pipe` |
+| **命名管道 (FIFO)** | 在文件系统里有名字的管道，无亲缘关系的进程也能连接 | 简单的本地对接 |
+| **消息队列** | 以有边界的消息为单位放入和取出 | POSIX 消息队列、`multiprocessing.Queue`（内部是管道+序列化） |
+| **共享内存** | 把同一块物理内存挂到两个地址空间。没有复制，最快 | 大数据量，但同步（锁、信号量）要自己做 |
+| **Socket** | 和网络一样的 API。同一台机器上用 Unix 域套接字 | 数据库连接，跨机器也是同一套代码 |
+| **信号** | 只有一个编号的通知（例如要求退出的 SIGTERM） | `kill`、Ctrl+C |
+| **内存映射文件** | 把文件映射到地址空间，多个进程一起读写 | 共享大文件 |
+
+大致的选择标准是：字节流用管道，按消息就用队列，又大又经常变的数据用共享内存，以后可能搬到别的机器就一开始用 socket。值得记住的是，一旦用了共享内存，线程那里看到的竞态条件就会原样回到进程之间。前面 Chrome 图里连接进程的 IPC 箭头，以及 cluster 主进程和工作进程之间的通信，都是建立在这张清单之上的。
+
 ## 常见误区
 
 - 线程只是轻量级的进程：共享地址空间这一区别改变了安全性和通信方式。“轻量”是由此产生的结果。
@@ -225,6 +396,20 @@ gil enabled: True
 - `fork()` 会启动新程序：它仅创建副本，运行其他程序的是 `exec()`。
 - 增加线程数就能提速：一旦超过核心数量，上下文切换会增加，且共享数据需要加锁。
 - Blocked 状态的进程仍占用 CPU 等待：在等待期间，CPU 会被分配给其他进程。
+- Chrome 是一个标签页一个进程：单位更接近站点而不是标签页。跨站点的 iframe 会进入单独的进程，进程数达到上限时，同一站点的标签页也可能共用一个进程。
+- Node.js 是彻底的单线程：只是运行我的 JS 代码的线程只有一个，文件 I/O 等由 libuv 线程池处理。用 `worker_threads` 也能增加 JS 线程。
+- 用 `worker_threads` 能让 I/O 变快：官方文档说它是给 CPU 任务用的。I/O 本来就不会阻塞事件循环。
+
+## 必须能自己讲清楚的核心概念
+
+1. **进程与线程**：进程是运行中的程序，拥有自己的地址空间。线程是其中的执行流，共享地址空间。
+2. **内存区域**：代码、数据、堆由线程共享，栈和寄存器每个线程各一份。局部变量在栈上，全局变量在数据区，`new` 出来的在堆上。
+3. **上下文切换**：保存和恢复寄存器。进程切换还要换地址空间（页表），所以更贵。
+4. **fork / exec / wait**：复制一份、换成另一个程序、等待它结束。
+5. **竞态条件**：多个线程同时读写共享数据，结果随时序变化。用锁来防止。
+6. **多进程 vs 多线程**：要隔离和稳定，还是要轻量和容易共享。Chrome 为了隔离拆成了多个进程。
+7. **Node 事件循环与扩展**：JS 在一个线程上依次执行回调。CPU 计算交给 `worker_threads`，用满所有核心靠 `cluster`（多个进程）。
+8. **IPC**：管道、消息队列、共享内存、socket、信号。共享内存快，但同步要自己负责。
 
 ## 参考链接
 
@@ -233,6 +418,19 @@ gil enabled: True
 - OSTEP, Mechanism: Limited Direct Execution: https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf
 - OSTEP, Concurrency: An Introduction: https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf
 - Python 文档，multiprocessing: https://docs.python.org/3/library/multiprocessing.html
+- Chrome for Developers, Inside look at modern web browser (part 1): https://developer.chrome.com/blog/inside-browser-part1
+- Chromium, Multi-process Architecture: https://www.chromium.org/developers/design-documents/multi-process-architecture/
+- Chromium, Site Isolation: https://www.chromium.org/Home/chromium-security/site-isolation/
+- Node.js 文档, The Node.js Event Loop: https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+- Node.js 文档, Cluster: https://nodejs.org/api/cluster.html
+- Node.js 文档, Worker threads: https://nodejs.org/api/worker_threads.html
+- Linux man-pages, pipe(7) · shm_overview(7) · unix(7): https://man7.org/linux/man-pages/man7/pipe.7.html
+
+参考（用图解把同一主题讲得很清楚的韩语文章）
+
+- Inpa Dev, 彻底搞懂进程与线程: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%E2%9A%94%EF%B8%8F-%EC%93%B0%EB%A0%88%EB%93%9C-%EC%B0%A8%EC%9D%B4
+- Inpa Dev, 多进程与多线程对比: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-multi-process-multi-thread
+- Inpa Dev, 线程越多性能就一定越好吗？: https://inpa.tistory.com/entry/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-Is-more-threads-always-better
 
 ← 概念地图 (#/post/cs-map)
 

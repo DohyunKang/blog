@@ -270,6 +270,121 @@ opcode 1은 텍스트 프레임이다. 핸드셰이크에서 헤더를 읽는 �
 
 결과를 보면 웹소켓이 새로운 전송 수단이 아니라, TCP 소켓 위에 "HTTP로 인사하고 프레임으로 말한다"는 약속을 얹은 것임이 코드로 보인다.
 
+## 서버가 먼저 알려 주는 네 가지 방법
+
+웹소켓만 답은 아니다. 브라우저가 서버 소식을 받는 방법은 크게 넷이고, 무엇을 고를지는 "누가 얼마나 자주 말하나"로 갈린다.
+
+1. **폴링(Polling)**: 클라이언트가 정해진 간격(예: 5초)마다 평범한 HTTP 요청으로 "새 거 있어?"를 묻는다. 새 소식이 없어도 요청과 응답이 오가고, 소식이 생겨도 다음 질문 때까지 늦게 안다.
+2. **롱 폴링(Long Polling)**: 요청은 같지만 서버가 바로 답하지 않고, 새 소식이 생기거나 타임아웃이 될 때까지 응답을 붙잡아 둔다. 응답을 받은 클라이언트는 곧바로 다음 요청을 다시 건다. 지연은 짧아지지만 소식 하나마다 요청이 하나씩 새로 필요하다.
+3. **SSE(Server-Sent Events)**: 요청 한 번에 응답을 끝내지 않고 계속 흘려보낸다. `Content-Type: text/event-stream`인 응답 본문에 `data: ...` 줄과 빈 줄로 끝나는 이벤트를 이어서 쓰는 방식이다. 서버에서 클라이언트로만 흐르는 단방향이고, 그냥 HTTP라서 프록시·인증·HTTP/2를 그대로 탄다.
+4. **웹소켓(WebSocket)**: 위에서 본 대로 HTTP로 인사한 뒤 같은 TCP 연결을 양방향 프레임 통로로 바꾼다. 양쪽이 아무 때나 보낼 수 있다.
+
+```mermaid
+sequenceDiagram
+    participant C as 클라이언트
+    participant S as 서버
+    Note over C,S: 폴링
+    C->>S: GET /news
+    S-->>C: 200 (없음)
+    C->>S: GET /news (5초 뒤)
+    S-->>C: 200 (소식 1)
+    Note over C,S: 롱 폴링
+    C->>S: GET /news
+    Note right of S: 소식 생길 때까지 응답을 붙잡음
+    S-->>C: 200 (소식 1)
+    C->>S: GET /news (바로 다시)
+```
+
+```mermaid
+sequenceDiagram
+    participant C as 클라이언트
+    participant S as 서버
+    Note over C,S: SSE (응답 하나가 길게 이어짐)
+    C->>S: GET /stream (Accept: text/event-stream)
+    S-->>C: 200 text/event-stream
+    S-->>C: data: 소식 1
+    S-->>C: data: 소식 2
+    Note over C,S: 웹소켓 (같은 TCP 위 양방향)
+    C->>S: GET /chat (Upgrade: websocket)
+    S-->>C: 101 Switching Protocols
+    C->>S: 프레임 "안녕"
+    S-->>C: 프레임 "반가워"
+    S-->>C: 프레임 "새 메시지 왔어"
+```
+
+| | 폴링 | 롱 폴링 | SSE | 웹소켓 |
+|---|---|---|---|---|
+| 방향 | 클라→서버 질문 | 클라→서버 질문 | 서버→클라 | 양방향 |
+| 프로토콜 | HTTP | HTTP | HTTP (응답이 계속 열림) | HTTP로 시작 후 웹소켓 프레임 |
+| 지연 | 최대 폴링 간격만큼 | 짧음 | 짧음 | 짧음 |
+| 빈 요청 낭비 | 많음 | 적음 | 없음 | 없음 |
+| 서버가 들고 있는 것 | 거의 없음 | 대기 중인 요청 | 열린 응답 | 열린 연결 |
+| 끊겼을 때 다시 연결 | 다음 폴링이 곧 재시도 | 앱이 다시 요청 | 브라우저 `EventSource`가 자동 재연결 | 앱이 직접 구현 |
+| 데이터 | 아무거나 | 아무거나 | UTF-8 텍스트 | 텍스트·바이너리 |
+
+언제 무엇을 쓰나. 내가 정리한 기준은 이렇다.
+
+- 몇 분에 한 번 바뀌는 대시보드, 작업 진행률 정도면 **폴링**이 제일 단순하고 충분하다. 서버가 상태를 들고 있을 필요가 없다.
+- 소식이 드물지만 오면 바로 알아야 하는데 인프라가 긴 연결을 싫어하면 **롱 폴링**이다. 웹소켓 이전에 채팅을 이렇게 만들었고, 지금도 웹소켓이 막힐 때 대체 수단으로 쓰인다.
+- 서버가 일방적으로 계속 보내는 알림, 로그, 토큰 스트리밍은 **SSE**가 맞는다. 클라이언트가 보낼 게 있으면 그때만 평범한 POST를 보내면 된다.
+- 채팅, 공동 편집, 게임처럼 양쪽이 자주 말하면 **웹소켓**이다.
+
+### LLM 스트리밍이 SSE인 이유
+
+ChatGPT나 Claude 답이 한 글자씩 올라오는 건 대부분 SSE다. Anthropic 문서는 `"stream": true`를 주면 응답이 server-sent events로 조금씩 온다고 적고, 실제 이벤트는 `event: content_block_delta`와 `data: {...}` 줄의 반복이다. 요청은 한 번(프롬프트를 담은 POST)이고 그 뒤로는 서버만 말하니, 양방향인 웹소켓까지 갈 이유가 없다. 그냥 HTTP라서 기존 로드밸런서와 인증을 그대로 쓴다는 점도 크다.
+
+한 가지 함정이 있다. 브라우저의 `EventSource`는 GET만 보내고 원하는 헤더를 붙일 수 없다. 프롬프트를 본문에 실어 POST하고 API 키 헤더를 붙여야 하는 LLM 호출은 `EventSource` 대신 `fetch`로 요청하고 응답 본문을 스트림으로 읽으면서 `data:` 줄을 직접 나눈다. 앞에서 본 "경계는 앱이 정한다"가 여기서도 그대로다. 빈 줄이 이벤트 경계다.
+
+<details>
+<summary>SSE 응답을 날것으로 받아 보기 (실행 확인)</summary>
+
+파이썬 `http.server`로 토큰 네 개를 0.2초 간격으로 흘리는 서버를 만들고, 소켓으로 받으며 도착 시각을 찍었다.
+
+```python
+import socket, threading, time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+class H(BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+    def log_message(self, *a): pass
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/event-stream')
+        self.send_header('Cache-Control', 'no-cache')
+        self.end_headers()
+        for i, tok in enumerate(['안', '녕', '하', '세요']):
+            self.wfile.write(f'id: {i}\ndata: {tok}\n\n'.encode()); self.wfile.flush()
+            time.sleep(0.2)
+        self.wfile.write(b'event: done\ndata: [DONE]\n\n'); self.wfile.flush()
+        self.close_connection = True
+
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H)
+port = srv.server_address[1]
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+
+s = socket.create_connection(('127.0.0.1', port))
+s.sendall(b'GET /stream HTTP/1.1\r\nHost: x\r\nAccept: text/event-stream\r\n\r\n')
+t0 = time.perf_counter()
+while (d := s.recv(4096)):
+    for line in d.decode().splitlines():
+        if line.startswith('data:'):
+            print(f'{time.perf_counter()-t0:.1f}s', line)
+```
+
+```
+0.0s data: 안
+0.2s data: 녕
+0.4s data: 하
+0.6s data: 세요
+0.8s data: [DONE]
+```
+
+응답은 하나인데 본문이 0.2초마다 조금씩 왔다. 이 예제는 `Content-Length`도 chunked도 없이 연결을 닫는 것으로 끝을 알렸다. 실제 서버는 보통 chunked로 보낸다. 브라우저 `EventSource`로 받으면 `id:`가 기억됐다가, 끊긴 뒤 재연결할 때 `Last-Event-ID` 헤더로 서버에 돌아간다. MDN은 콜론으로 시작하는 줄은 주석이라 무시되고, 연결 유지용 신호로 쓸 수 있다고 적는다.
+
+</details>
+
+MDN이 짚는 SSE 제약도 있다. HTTP/2가 아닐 때는 브라우저가 도메인당 연결을 6개까지만 열기 때문에, 탭을 여러 개 띄우면 SSE가 연결을 다 잡아먹는다. HTTP/2에서는 연결 하나에 스트림을 여럿(기본 100개 정도) 섞어 쓰니 이 문제가 거의 없다. 버전 차이는 [HTTP와 HTTPS](#/post/net-http)에 있다.
+
 ## 흔한 오해
 
 - "웹소켓은 TCP와 다른 연결이다": 같은 TCP 연결이다. 핸드셰이크가 끝난 뒤 그 연결의 말투만 바뀐다.
@@ -277,6 +392,18 @@ opcode 1은 텍스트 프레임이다. 핸드셰이크에서 헤더를 읽는 �
 - "마스킹은 보안 기능이다": RFC가 밝힌 목적은 중간 장치 혼동과 악의적 스크립트의 바이트 조작 방지다. 내용을 숨기는 건 TLS가 한다.
 - "웹소켓은 무조건 폴링보다 낫다": 연결을 계속 열어 두므로 서버가 연결 수만큼 자원을 들고 있어야 한다. 이 부분은 [로드밸런서](#/post/infra-load-balancer)나 [비동기 처리와 메시지 큐](#/post/be-async-queue)와 함께 설계로 이어진다.
 - "브라우저 `WebSocket`은 알아서 속도를 조절해 준다": MDN은 이 API가 백프레셔(받는 쪽이 감당 못 할 때 보내는 쪽을 늦추는 장치)를 지원하지 않는다고 적는다. 메시지가 처리 속도보다 빨리 오면 메모리가 차거나 CPU가 100%가 될 수 있다고 하고, 그게 문제면 WebTransport API를 보라고 한다.
+- "실시간이면 무조건 웹소켓": 서버만 말하는 알림이나 LLM 토큰 스트리밍은 SSE로 충분하고, HTTP 인프라를 그대로 쓴다. 몇 분 단위로 바뀌는 데이터는 폴링이 더 단순하다.
+- "SSE는 오래된 기술이라 안 쓴다": 주요 LLM API의 스트리밍 응답이 SSE 형식이다.
+
+## 직접 설명할 수 있어야 할 핵심 개념
+
+1. **소켓**: OS가 주는 통신 끝점. TCP 소켓은 바이트 흐름만 넘기고 메시지 경계는 주지 않는다.
+2. **프레이밍**: 경계를 앱이 정하는 방법. 고정 길이, 구분자, 길이 접두, 연결 닫기 중 하나다. 웹소켓 프레임의 길이 필드와 SSE의 빈 줄도 같은 문제의 답이다.
+3. **블로킹과 이벤트 루프**: `recv()`는 기본적으로 기다리며 멈춘다. `select`류로 준비된 소켓만 골라 처리하면 스레드 하나로 많은 연결을 다룬다.
+4. **웹소켓 핸드셰이크**: HTTP GET + `Upgrade: websocket`, 서버는 101과 `Sec-WebSocket-Accept`로 답한다. 이후 같은 TCP 연결이 양방향 프레임 통로가 된다.
+5. **마스킹**: 클라이언트→서버 프레임만 XOR 마스킹한다. 중간 장치 혼동을 막는 장치이고 암호화가 아니다.
+6. **폴링·롱 폴링·SSE·웹소켓**: 묻는 쪽과 말하는 쪽이 누구인지로 고른다. 서버만 계속 말하면 SSE, 양쪽이 말하면 웹소켓, 드물게 바뀌면 폴링.
+7. **LLM 스트리밍 = SSE**: POST 한 번 뒤 서버가 `data:` 이벤트를 흘린다. 브라우저에서는 `EventSource` 대신 `fetch` 스트림으로 읽는 경우가 많다.
 
 ## 같이 보면 좋은 글
 
@@ -291,3 +418,11 @@ opcode 1은 텍스트 프레임이다. 핸드셰이크에서 헤더를 읽는 �
 - Python 공식 문서, Socket Programming HOWTO: https://docs.python.org/3/howto/sockets.html
 - RFC 6455, The WebSocket Protocol (앞 100,000자까지만 읽음): https://www.rfc-editor.org/rfc/rfc6455.html
 - MDN, The WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+- MDN, Using server-sent events: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+- Anthropic 문서, Streaming Messages: https://docs.anthropic.com/en/docs/build-with-claude/streaming
+
+참고(같은 주제를 그림으로 잘 정리한 글)
+
+- Inpa Dev, Polling / Long Polling / Server Sent Event / WebSocket 정리: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-Polling-Long-Polling-Server-Sent-Event-WebSocket-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC
+- Inpa Dev, Server Sent Events 정리: https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-Server-Sent-Events-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%EC%82%AC%EC%9A%A9%EB%B2%95
+- Inpa Dev, 웹 소켓 정리 (역사부터 차근차근): https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-%EC%9B%B9-%EC%86%8C%EC%BC%93-Socket-%EC%97%AD%EC%82%AC%EB%B6%80%ED%84%B0-%EC%A0%95%EB%A6%AC

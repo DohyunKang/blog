@@ -271,6 +271,121 @@ Opcode 1 represents a text frame. The section reading the header during the hand
 
 Looking at the results, it becomes clear from the code that WebSockets are not a new transport mechanism but rather a promise layered on top of TCP sockets: "say hello via HTTP and speak via frames."
 
+## Four ways for the server to tell you first
+
+WebSockets aren't the only answer. There are roughly four ways for a browser to hear news from a server, and which one fits depends on "who talks, and how often."
+
+1. **Polling**: the client asks "anything new?" with a plain HTTP request at a fixed interval (say, every 5 seconds). Requests and responses go back and forth even when there's nothing new, and when something does happen you only find out at the next ask.
+2. **Long Polling**: same request, but the server doesn't answer right away. It holds the response until there's news or a timeout. As soon as the client gets a response, it sends the next request. Latency drops, but every piece of news still needs a fresh request.
+3. **SSE (Server-Sent Events)**: one request, and the response just keeps flowing instead of ending. The body of a `Content-Type: text/event-stream` response is a series of events, each made of `data: ...` lines and ending with a blank line. It's one-way, server to client, and since it's plain HTTP it goes through proxies, auth and HTTP/2 as-is.
+4. **WebSocket**: as above, it says hello over HTTP and then turns the same TCP connection into a two-way frame channel. Either side can send at any time.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    Note over C,S: Polling
+    C->>S: GET /news
+    S-->>C: 200 (nothing)
+    C->>S: GET /news (5s later)
+    S-->>C: 200 (news 1)
+    Note over C,S: Long polling
+    C->>S: GET /news
+    Note right of S: holds the response until news arrives
+    S-->>C: 200 (news 1)
+    C->>S: GET /news (right away)
+```
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    Note over C,S: SSE (one long response)
+    C->>S: GET /stream (Accept: text/event-stream)
+    S-->>C: 200 text/event-stream
+    S-->>C: data: news 1
+    S-->>C: data: news 2
+    Note over C,S: WebSocket (two-way over the same TCP)
+    C->>S: GET /chat (Upgrade: websocket)
+    S-->>C: 101 Switching Protocols
+    C->>S: frame "hi"
+    S-->>C: frame "hey"
+    S-->>C: frame "new message"
+```
+
+| | Polling | Long polling | SSE | WebSocket |
+|---|---|---|---|---|
+| Direction | client asks server | client asks server | server → client | both ways |
+| Protocol | HTTP | HTTP | HTTP (response stays open) | starts as HTTP, then WebSocket frames |
+| Latency | up to the poll interval | short | short | short |
+| Wasted empty requests | many | few | none | none |
+| What the server holds | almost nothing | waiting requests | open responses | open connections |
+| Reconnect after a drop | next poll is the retry | app re-requests | browser `EventSource` reconnects automatically | app implements it |
+| Data | anything | anything | UTF-8 text | text and binary |
+
+When to use which. This is how I sort it out.
+
+- A dashboard that changes every few minutes, or a job progress bar: **polling** is simplest and good enough. The server doesn't need to hold any state.
+- News is rare but must arrive immediately, and your infrastructure dislikes long connections: **long polling**. Chat was built this way before WebSockets, and it's still used as a fallback when WebSockets are blocked.
+- Notifications, logs, token streaming that the server keeps pushing one way: **SSE**. When the client has something to say, it just sends a normal POST.
+- Chat, collaborative editing, games where both sides talk often: **WebSocket**.
+
+### Why LLM streaming is SSE
+
+When a ChatGPT or Claude answer appears a few characters at a time, that's mostly SSE. Anthropic's docs say that setting `"stream": true` streams the response incrementally with server-sent events, and the actual events are repeated `event: content_block_delta` and `data: {...}` lines. There's one request (a POST carrying the prompt) and after that only the server talks, so there's no reason to go all the way to two-way WebSockets. Being plain HTTP, it also reuses the existing load balancers and auth, which matters a lot.
+
+One trap. The browser's `EventSource` only sends GET and can't attach custom headers. An LLM call needs a POST with the prompt in the body and an API key header, so instead of `EventSource` you request with `fetch`, read the response body as a stream, and split the `data:` lines yourself. The "the app defines the boundaries" idea from earlier shows up again: a blank line is the event boundary.
+
+<details>
+<summary>Receiving a raw SSE response (ran it)</summary>
+
+I made a server with Python's `http.server` that streams four tokens 0.2 seconds apart, and printed the arrival time while reading it over a socket.
+
+```python
+import socket, threading, time
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+class H(BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+    def log_message(self, *a): pass
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/event-stream')
+        self.send_header('Cache-Control', 'no-cache')
+        self.end_headers()
+        for i, tok in enumerate(['안', '녕', '하', '세요']):
+            self.wfile.write(f'id: {i}\ndata: {tok}\n\n'.encode()); self.wfile.flush()
+            time.sleep(0.2)
+        self.wfile.write(b'event: done\ndata: [DONE]\n\n'); self.wfile.flush()
+        self.close_connection = True
+
+srv = ThreadingHTTPServer(('127.0.0.1', 0), H)
+port = srv.server_address[1]
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+
+s = socket.create_connection(('127.0.0.1', port))
+s.sendall(b'GET /stream HTTP/1.1\r\nHost: x\r\nAccept: text/event-stream\r\n\r\n')
+t0 = time.perf_counter()
+while (d := s.recv(4096)):
+    for line in d.decode().splitlines():
+        if line.startswith('data:'):
+            print(f'{time.perf_counter()-t0:.1f}s', line)
+```
+
+```
+0.0s data: 안
+0.2s data: 녕
+0.4s data: 하
+0.6s data: 세요
+0.8s data: [DONE]
+```
+
+One response, but the body arrived bit by bit every 0.2 seconds. This example signals the end by closing the connection, with neither `Content-Length` nor chunked encoding. Real servers usually send it chunked. If you receive it with the browser's `EventSource`, the `id:` is remembered and sent back to the server as a `Last-Event-ID` header when it reconnects after a drop. MDN notes that a line starting with a colon is a comment and is ignored, which makes it handy as a keep-alive signal.
+
+</details>
+
+MDN also points out an SSE limitation. When not on HTTP/2, the browser opens at most 6 connections per domain, so with several tabs open SSE can eat them all up. On HTTP/2 many streams (about 100 by default) share one connection, so this mostly goes away. The version differences are in [HTTP and HTTPS](#/post/net-http).
+
 ## Common Misconceptions
 
 - "WebSockets are a different connection than TCP": They use the same TCP connection. Only the protocol changes after the handshake is complete.
@@ -278,6 +393,18 @@ Looking at the results, it becomes clear from the code that WebSockets are not a
 - "Masking is a security feature": The purpose stated in the RFC is to prevent intermediate devices from being confused and to prevent malicious scripts from manipulating bytes. Hiding content is handled by TLS.
 - "WebSockets are always better than polling": Since the connection remains open, the server must hold resources for each connection. This aspect leads into design considerations involving [load balancers](#/post/infra-load-balancer) or [asynchronous processing and message queues](#/post/be-async-queue).
 - "The browser's `WebSocket` automatically adjusts speed": MDN notes that this API does not support backpressure (a mechanism to slow down the sender when the receiver cannot handle incoming data). If messages arrive faster than they can be processed, memory may fill up or CPU usage could reach 100%. In such cases, it recommends using the WebTransport API.
+- "Real-time means WebSocket, always": server-only notifications or LLM token streaming are fine with SSE, which keeps using your HTTP infrastructure. Data that changes every few minutes is simpler with polling.
+- "SSE is old tech nobody uses": the streaming responses of the major LLM APIs are in SSE format.
+
+## Core concepts you should be able to explain yourself
+
+1. **Socket**: a communication endpoint the OS gives you. A TCP socket passes a byte stream and gives no message boundaries.
+2. **Framing**: how the app sets boundaries. Fixed length, delimiter, length prefix, or closing the connection. The length field in WebSocket frames and SSE's blank line answer the same problem.
+3. **Blocking and the event loop**: `recv()` waits and stops by default. Picking only the ready sockets with `select`-style calls lets one thread handle many connections.
+4. **WebSocket handshake**: HTTP GET + `Upgrade: websocket`; the server answers 101 with `Sec-WebSocket-Accept`. After that the same TCP connection becomes a two-way frame channel.
+5. **Masking**: only client→server frames are XOR-masked. It keeps intermediaries from getting confused; it isn't encryption.
+6. **Polling, long polling, SSE, WebSocket**: choose by who asks and who talks. Server talks constantly: SSE. Both talk: WebSocket. Changes rarely: polling.
+7. **LLM streaming = SSE**: after one POST the server streams `data:` events. In the browser it's often read with a `fetch` stream rather than `EventSource`.
 
 ## Related Reading
 
@@ -292,3 +419,11 @@ Looking at the results, it becomes clear from the code that WebSockets are not a
 - Python official documentation, Socket Programming HOWTO: https://docs.python.org/3/howto/sockets.html
 - RFC 6455, The WebSocket Protocol (read only the first 100,000 characters): https://www.rfc-editor.org/rfc/rfc6455.html
 - MDN, The WebSocket API: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+- MDN, Using server-sent events: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+- Anthropic docs, Streaming Messages: https://docs.anthropic.com/en/docs/build-with-claude/streaming
+
+Further reading (well-illustrated Korean posts on the same topic)
+
+- Inpa Dev, Polling / Long Polling / Server Sent Event / WebSocket: https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-Polling-Long-Polling-Server-Sent-Event-WebSocket-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC
+- Inpa Dev, Server Sent Events (with usage): https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-Server-Sent-Events-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%EC%82%AC%EC%9A%A9%EB%B2%95
+- Inpa Dev, WebSocket, from its history: https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-%EC%9B%B9-%EC%86%8C%EC%BC%93-Socket-%EC%97%AD%EC%82%AC%EB%B6%80%ED%84%B0-%EC%A0%95%EB%A6%AC
