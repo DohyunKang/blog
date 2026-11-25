@@ -1934,6 +1934,101 @@
    "zh": [
     "模型路由"
    ]
+  },
+  {
+   "slug": "cloud-aws-core",
+   "all": [
+    "EC2",
+    "VPC",
+    "IAM",
+    "AMI",
+    "EBS"
+   ],
+   "ko": [
+    "서브넷",
+    "보안 그룹",
+    "NAT 게이트웨이",
+    "인터넷 게이트웨이"
+   ],
+   "en": [
+    "subnet",
+    "subnets",
+    "security group",
+    "security groups",
+    "NAT gateway",
+    "internet gateway"
+   ],
+   "ja": [
+    "サブネット",
+    "セキュリティグループ",
+    "NAT ゲートウェイ",
+    "インターネットゲートウェイ"
+   ],
+   "zh": [
+    "子网",
+    "安全组",
+    "NAT 网关",
+    "互联网网关"
+   ]
+  },
+  {
+   "slug": "js-event-loop",
+   "all": [
+    "libuv"
+   ],
+   "ko": [
+    "이벤트 루프",
+    "마이크로태스크",
+    "콜 스택"
+   ],
+   "en": [
+    "event loop",
+    "microtask",
+    "microtasks",
+    "call stack"
+   ],
+   "ja": [
+    "イベントループ",
+    "マイクロタスク",
+    "コールスタック"
+   ],
+   "zh": [
+    "事件循环",
+    "微任务",
+    "调用栈"
+   ]
+  },
+  {
+   "slug": "os-concurrency-async",
+   "ko": [
+    "동시성",
+    "병렬성",
+    "논블로킹",
+    "블로킹 I/O",
+    "동기·비동기",
+    "동기/비동기",
+    "비동기 I/O"
+   ],
+   "en": [
+    "concurrency",
+    "parallelism",
+    "non-blocking",
+    "nonblocking",
+    "blocking I/O",
+    "asynchronous I/O"
+   ],
+   "ja": [
+    "並行性",
+    "並列性",
+    "ノンブロッキング",
+    "非同期 I/O"
+   ],
+   "zh": [
+    "并发",
+    "并行",
+    "非阻塞",
+    "异步 I/O"
+   ]
   }
  ]
 }

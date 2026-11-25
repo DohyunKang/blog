@@ -221,6 +221,7 @@
 "news-repo-1",
 "news-repo-2",
 "news-repo-3",
+"net-socket",
 "ai-graph-db",
 "ai-graphrag",
 "ai-knowledge-graph"
@@ -431,6 +432,7 @@
 "algo-dp"
 ],
 "algo-recursion": [
+"js-event-loop",
 "algo-map",
 "ai-structured-output",
 "db-nosql",
@@ -463,6 +465,8 @@
 "jb-algorithm-complexity"
 ],
 "algo-stack-queue": [
+"os-concurrency-async",
+"js-event-loop",
 "algo-map",
 "be-error-logging",
 "cs-os",
@@ -501,7 +505,8 @@
 "infra-autoscaling",
 "infra-ai-serving",
 "jb-integration-api",
-"bd-collection-storage"
+"bd-collection-storage",
+"os-process-thread"
 ],
 "be-auth": [
 "concepts-from-automation-app",
@@ -510,7 +515,8 @@
 "cloud-secrets",
 "sec-authn-crypto",
 "ai-mcp",
-"mk-shortform-pipeline"
+"mk-shortform-pipeline",
+"net-http"
 ],
 "be-coupling-cohesion": [
 "be-map",
@@ -526,6 +532,8 @@
 "be-map"
 ],
 "ca-cpu": [
+"os-concurrency-async",
+"js-event-loop",
 "cloud-k8s-intro",
 "cloud-k8s-deploy",
 "ai-quantization",
@@ -542,6 +550,7 @@
 "os-process-thread",
 "os-scheduling",
 "os-memory",
+"net-http",
 "net-socket",
 "ca-memory-hierarchy",
 "ca-data-representation",
@@ -558,7 +567,15 @@
 "ca-memory-hierarchy": [
 "os-scheduling"
 ],
+"cloud-aws-core": [
+"cloud-basics",
+"cloud-secrets",
+"infra-autoscaling",
+"jb-network",
+"net-dns-routing"
+],
 "cloud-basics": [
+"cloud-aws-core",
 "cloud-k8s-intro",
 "ai-observability",
 "cloud-map",
@@ -573,6 +590,7 @@
 "se-cicd"
 ],
 "cloud-docker": [
+"js-event-loop",
 "news-261124-a",
 "news-261119-a",
 "cloud-k8s-intro",
@@ -616,6 +634,7 @@
 "ai-observability"
 ],
 "cloud-secrets": [
+"cloud-aws-core",
 "llm-proxy-model-routing",
 "scoped-secret-keys",
 "concepts-from-automation-app",
@@ -797,7 +816,8 @@
 "db-map",
 "db-nosql",
 "infra-autoscaling",
-"jb-physical-design"
+"jb-physical-design",
+"net-http"
 ],
 "db-transaction": [
 "db-map",
@@ -879,13 +899,15 @@
 "net-http"
 ],
 "infra-load-balancer": [
+"cloud-aws-core",
 "cloud-k8s-intro",
 "cloud-k8s-deploy",
 "infra-map",
 "infra-request-journey",
 "infra-autoscaling",
 "infra-ai-serving",
-"news-harness-3"
+"news-harness-3",
+"net-socket"
 ],
 "infra-rate-limit": [
 "fallback-and-rollback",
@@ -895,6 +917,11 @@
 "app-mcp-server",
 "infra-load-balancer",
 "ai-llm"
+],
+"js-event-loop": [
+"os-concurrency-async",
+"os-process-thread",
+"net-socket"
 ],
 "ml-basics": [
 "ml-map",
@@ -970,6 +997,7 @@
 "news-repo-3"
 ],
 "net-dns-routing": [
+"cloud-aws-core",
 "cloud-k8s-intro",
 "mk-261105-c",
 "infra-map",
@@ -1027,6 +1055,7 @@
 "jb-network"
 ],
 "net-socket": [
+"os-concurrency-async",
 "news-261125-a",
 "news-261112-a",
 "concepts-from-automation-app",
@@ -1057,11 +1086,26 @@
 "net-dns-routing",
 "net-socket"
 ],
+"os-concurrency-async": [
+"js-event-loop",
+"news-261109-b",
+"db-transaction",
+"cloud-serverless",
+"infra-ai-serving",
+"jb-normalization-transaction",
+"jb-sql-basic",
+"jb-os",
+"news-repo-3",
+"os-sync-deadlock",
+"net-socket",
+"ca-io-bus"
+],
 "os-filesystem": [
 "ai-skills",
 "cloud-docker",
 "ai-mcp",
 "bd-collection-storage",
+"os-process-thread",
 "ca-io-bus"
 ],
 "os-memory": [
@@ -1074,6 +1118,8 @@
 "ca-memory-hierarchy"
 ],
 "os-process-thread": [
+"os-concurrency-async",
+"js-event-loop",
 "news-261125-a",
 "llm-proxy-model-routing",
 "news-261118-a",
@@ -1135,9 +1181,12 @@
 "cs-os",
 "repo-ollama",
 "jb-os",
+"os-process-thread",
 "os-filesystem"
 ],
 "os-sync-deadlock": [
+"os-concurrency-async",
+"js-event-loop",
 "db-map",
 "db-transaction",
 "infra-ai-serving",
@@ -1198,7 +1247,8 @@
 "sec-keys",
 "sec-prompt-injection",
 "mk-comment-bot",
-"jb-security"
+"jb-security",
+"net-http"
 ],
 "sec-privacy": [
 "news-261119-a",
