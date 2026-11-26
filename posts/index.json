@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261126-a",
+    "title": "diagram-design, 코딩 에이전트가 그림자 없는 다이어그램을 HTML 한 장으로 그리고 스크립트로 검사하게 하는 스킬",
+    "date": "2026-11-26",
+    "tags": [
+      "공부노트",
+      "AI",
+      "에이전트"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "📐",
+    "summary": "오늘 트렌딩에 있던 diagram-design을 읽어 보니, 디자인 취향을 숫자 규칙으로 적어 두고 마지막 확인은 같이 들어 있는 검사 스크립트에 맡기는 구조였다.",
+    "title_en": "diagram-design: a skill that has coding agents draw shadow-free diagrams as one HTML file and check them with scripts",
+    "summary_en": "I read diagram-design, on today's Trending. It writes design taste down as numeric rules and leaves the final check to scripts that ship with it.",
+    "title_ja": "diagram-design、コーディングエージェントが影のない図を HTML 一枚で描き、スクリプトで検査するスキル",
+    "summary_ja": "今日のトレンドにあった diagram-design を読んでみたら、デザインの好みを数字のルールに書き、最後の確認は同梱の検査スクリプトに任せる構造だった。",
+    "title_zh": "diagram-design:让编码代理用一个 HTML 文件画出无阴影的图,再用脚本检查的技能",
+    "summary_zh": "读了今天趋势榜上的 diagram-design。它把设计品味写成数字规则,最后一步交给随附的检查脚本。"
+  },
+  {
     "slug": "links-as-data-backlinks",
     "title": "링크를 손으로 걸지 않기로 했다",
     "date": "2026-11-25",

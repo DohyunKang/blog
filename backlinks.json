@@ -326,6 +326,7 @@
 "claude-tokens"
 ],
 "ai-skills": [
+"news-261126-a",
 "news-261124-a",
 "news-261123-a",
 "news-261122-a",
@@ -719,6 +720,7 @@
 "cs-design-patterns"
 ],
 "db-cache-redis": [
+"news-261126-a",
 "db-map",
 "infra-map",
 "be-auth",
@@ -843,6 +845,7 @@
 "ai-rag"
 ],
 "fe-accessibility": [
+"news-261126-a",
 "news-261121-a",
 "news-261114-a",
 "concepts-from-automation-app",
