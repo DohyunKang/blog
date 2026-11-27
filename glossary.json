@@ -2067,6 +2067,23 @@
     "循环 Transformer",
     "循环Transformer"
    ]
+  },
+  {
+   "slug": "cli-device-code-login",
+   "ko": [
+    "기기 코드 방식",
+    "디바이스 코드"
+   ],
+   "en": [
+    "device code flow",
+    "device authorization grant"
+   ],
+   "ja": [
+    "デバイスコードフロー"
+   ],
+   "zh": [
+    "设备码流程"
+   ]
   }
  ]
 }

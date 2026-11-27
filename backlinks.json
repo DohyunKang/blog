@@ -513,6 +513,7 @@
 "os-process-thread"
 ],
 "be-auth": [
+"cli-device-code-login",
 "concepts-from-automation-app",
 "be-map",
 "app-guardrails",

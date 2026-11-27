@@ -1,5 +1,24 @@
 [
   {
+    "slug": "cli-device-code-login",
+    "title": "코드를 받아 브라우저에 넣었더니 엉뚱한 계정에 붙었다",
+    "date": "2026-11-27",
+    "tags": [
+      "공부노트",
+      "보안",
+      "CS"
+    ],
+    "series": "프로젝트에서 나온 개념",
+    "emoji": "🔑",
+    "summary": "터미널 도구에 다시 로그인하다가, 어느 계정으로 붙는지는 브라우저가 정한다는 걸 알았다.",
+    "title_en": "I Typed the Code into the Browser and It Attached to the Wrong Account",
+    "summary_en": "Logging a terminal tool back in, I learned it's the browser that decides which account it attaches to.",
+    "title_ja": "コードをブラウザに入れたら、違うアカウントにつながった",
+    "summary_ja": "ターミナルのツールにログインし直していて、どのアカウントにつながるかはブラウザが決めると知った。",
+    "title_zh": "把代码输进浏览器，结果连到了别的账号",
+    "summary_zh": "给终端工具重新登录时才知道，连到哪个账号是由浏览器决定的。"
+  },
+  {
     "slug": "news-261127-a",
     "title": "Inkling 2 Mini, 가운데 층을 세 번 돌려서 작은 모델이 더 깊게 생각하게 한 루프 트랜스포머",
     "date": "2026-11-27",
