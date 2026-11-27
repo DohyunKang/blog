@@ -2049,6 +2049,24 @@
    "zh": [
     "反向链接"
    ]
+  },
+  {
+   "slug": "news-261127-a",
+   "ko": [
+    "루프 트랜스포머",
+    "루프드 트랜스포머"
+   ],
+   "en": [
+    "looped transformer",
+    "looped transformers"
+   ],
+   "ja": [
+    "ループトランスフォーマー"
+   ],
+   "zh": [
+    "循环 Transformer",
+    "循环Transformer"
+   ]
   }
  ]
 }

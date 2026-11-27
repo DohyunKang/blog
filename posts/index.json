@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261127-a",
+    "title": "Inkling 2 Mini, 가운데 층을 세 번 돌려서 작은 모델이 더 깊게 생각하게 한 루프 트랜스포머",
+    "date": "2026-11-27",
+    "tags": [
+      "공부노트",
+      "AI",
+      "LLM"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🔁",
+    "summary": "이번 주 계속 보이던 Inkling 2 Mini를 읽어 보니, 층을 늘리지 않고 같은 층을 여러 번 돌려서 생각할 깊이를 얻는 구조였다.",
+    "title_en": "Inkling 2 Mini: a looped transformer that runs its middle layers three times so a small model can think deeper",
+    "summary_en": "I read up on Inkling 2 Mini, which was everywhere this week. Instead of adding layers, it reuses the same ones several times to get more depth.",
+    "title_ja": "Inkling 2 Mini、真ん中の層を3回回して小さいモデルに深く考えさせるループトランスフォーマー",
+    "summary_ja": "今週ずっと見かけた Inkling 2 Mini を読んでみたら、層を増やさずに同じ層を何度も回して考える深さを得る構造だった。",
+    "title_zh": "Inkling 2 Mini:把中间层跑三遍、让小模型想得更深的循环 Transformer",
+    "summary_zh": "读了这周到处都在说的 Inkling 2 Mini。它不加层,而是把同一组层重复跑几遍来换取思考深度。"
+  },
+  {
     "slug": "news-261126-a",
     "title": "diagram-design, 코딩 에이전트가 그림자 없는 다이어그램을 HTML 한 장으로 그리고 스크립트로 검사하게 하는 스킬",
     "date": "2026-11-26",
