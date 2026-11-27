@@ -277,6 +277,7 @@
 "claude-tokens"
 ],
 "ai-quantization": [
+"news-261128-a",
 "news-261127-a",
 "ml-map",
 "ai-map",
@@ -380,6 +381,7 @@
 "news-repo-2"
 ],
 "ai-tool-use": [
+"news-261128-a",
 "news-261125-a",
 "agent-orchestration",
 "ai-observability",
@@ -759,6 +761,7 @@
 "ai-graph-db"
 ],
 "db-normalization": [
+"news-261128-a",
 "mk-261106-c",
 "db-map",
 "sqld-map",
@@ -940,6 +943,7 @@
 "ai-generative"
 ],
 "ml-inference": [
+"news-261128-a",
 "ai-quantization",
 "ml-map",
 "ai-map",
@@ -951,6 +955,7 @@
 "news-repo-3"
 ],
 "ml-local-models": [
+"news-261128-a",
 "news-261127-a",
 "same-button-different-result",
 "ai-quantization",

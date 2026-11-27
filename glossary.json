@@ -1693,17 +1693,21 @@
    ],
    "ko": [
     "KV 캐시",
-    "추론 최적화"
+    "추론 최적화",
+    "투기적 디코딩"
    ],
    "en": [
-    "inference optimization"
+    "inference optimization",
+    "speculative decoding"
    ],
    "ja": [
-    "KVキャッシュ"
+    "KVキャッシュ",
+    "投機的デコーディング"
    ],
    "zh": [
     "KV缓存",
-    "推理优化"
+    "推理优化",
+    "投机解码"
    ]
   },
   {
@@ -2083,6 +2087,23 @@
    ],
    "zh": [
     "设备码流程"
+   ]
+  },
+  {
+   "slug": "news-261128-a",
+   "ko": [
+    "삼진 가중치",
+    "ternary 가중치"
+   ],
+   "en": [
+    "ternary weights",
+    "ternary weight"
+   ],
+   "ja": [
+    "三値重み"
+   ],
+   "zh": [
+    "三值权重"
    ]
   }
  ]

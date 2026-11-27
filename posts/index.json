@@ -1,5 +1,24 @@
 [
   {
+    "slug": "news-261128-a",
+    "title": "Ternary Bonsai 2.5, 가중치를 -1·0·1 세 값으로만 적어서 27B 모델을 6GB에 넣은 PrismML의 에이전트용 모델",
+    "date": "2026-11-28",
+    "tags": [
+      "공부노트",
+      "AI",
+      "로컬모델"
+    ],
+    "series": "AI 소식·분석",
+    "emoji": "🌳",
+    "summary": "이번 주 로컬 모델 얘기에 계속 나오던 Bonsai 2.5를 읽어 보니, 가중치를 세 가지 값으로만 적어서 54GB짜리 모델을 6GB로 줄인 거였다.",
+    "title_en": "Ternary Bonsai 2.5: PrismML's agent model that fits a 27B model into 6GB by storing weights as just -1, 0, and 1",
+    "summary_en": "I read up on Bonsai 2.5, which kept coming up in local-model talk this week. It shrinks a 54GB model to 6GB by storing every weight as one of three values.",
+    "title_ja": "Ternary Bonsai 2.5、重みを -1・0・1 の3つの値だけで持って27Bモデルを6GBに収めた PrismML のエージェント向けモデル",
+    "summary_ja": "今週ローカルモデルの話でずっと出てきた Bonsai 2.5 を読んでみたら、重みを3種類の値だけで持って54GBのモデルを6GBに縮めたものだった。",
+    "title_zh": "Ternary Bonsai 2.5:只用 -1、0、1 三个值存权重,把 27B 模型塞进 6GB 的 PrismML 智能体模型",
+    "summary_zh": "读了这周本地模型话题里一直出现的 Bonsai 2.5。它把每个权重都存成三个值之一,把 54GB 的模型压到了 6GB。"
+  },
+  {
     "slug": "cli-device-code-login",
     "title": "코드를 받아 브라우저에 넣었더니 엉뚱한 계정에 붙었다",
     "date": "2026-11-27",
